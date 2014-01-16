@@ -148,7 +148,7 @@ f_doNotRemoveBodies = [];
 // F3 - AI Skill Selector (Coop)
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_isFriendly = [west,civilian];
+f_isFriendly = [];
 []  execVM "f\server\f_setAISkill.sqf";
 
 // ====================================================================================
@@ -165,7 +165,7 @@ f_isFriendly = [west,civilian];
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// [20] execVM "f\common\f_nametags.sqf";
+[10] execVM "f\common\f_nametags.sqf";
 
 // ====================================================================================
 
