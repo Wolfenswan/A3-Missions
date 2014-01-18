@@ -64,7 +64,7 @@ switch (_unitfaction) do
 // 		["GrpNATO_HMG1",  2, "HMG1", "ColorOrange"] spawn fnc_folk_localGroupMarker;
 // 		["GrpNATO_MTR1",  5, "MTR1", "ColorOrange"] spawn fnc_folk_localGroupMarker;
 // 		["GrpNATO_HAT1",  3, "HAT1", "ColorOrange"] spawn fnc_folk_localGroupMarker;
-// 		["GrpNATO_SAM1",  3, "SAM1", "ColorOrange"] spawn fnc_folk_localGroupMarker;
+ 		["GrpNATO_SAM1",  3, "SAM1", "ColorOrange"] spawn fnc_folk_localGroupMarker;
 
 		["GrpNATO_ENG1",  6, "ENG1", "ColorOrange"] spawn fnc_folk_localGroupMarker;
 

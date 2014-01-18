@@ -165,7 +165,7 @@ f_isFriendly = [];
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[10] execVM "f\common\f_nametags.sqf";
+[20] execVM "f\common\f_nametags.sqf";
 
 // ====================================================================================
 
@@ -195,3 +195,7 @@ f_isFriendly = [];
 
 [] execVM "f\common\f_safeStart.sqf";
 
+
+// Wolvenswan - post Init scripts
+
+[] execVM "ws_scripts\ws_postInit.sqf";

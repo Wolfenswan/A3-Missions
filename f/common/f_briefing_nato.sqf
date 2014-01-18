@@ -33,7 +33,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
+All AARs and Grenadiers (CO,DC,SLs,FTLs) have MRCO scopes.
 "]];
 
 // ====================================================================================
@@ -47,17 +47,9 @@ COMMANDER'S INTENT
 <br/>
 *** Insert very short summary of plan here. ***
 <br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
 FIRE SUPPORT PLAN
 <br/>
 *** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
 "]];
 
 // ====================================================================================
@@ -67,7 +59,10 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We begin <marker name='mkrStart'>here</marker>.<br/>
+2. Move into the <marker name='mkrAO'>AO</marker>, towards the <marker name='mkrAAF'>airfield</marker>.<br/>
+3. Clear the <marker name='mkrAAF_1'>occupied town</marker> of any enemy presence.<br/>
+4. Destroy any forces defending the barracks on and around the airfield.
 "]];
 
 // ====================================================================================
@@ -77,15 +72,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+With the tensions between CSAT and NATO having reached a new high, our position towards the Altis Armed Forces (AAF) and their self-proclaimed neutrality has shifted. Recent intelligence reports suggest, that they have been negotiating with CSAT to allow Altis being used as a R&R area by their forces. As an pre-emptive measure, NATO is launching an attack to seize and hold a bridehead.<br/> Your platoon has reached the south-eastern tip of the island by boats during the night and is now preparing to move out at early morning.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+Mostly AAF regulars, possibly support by a few MRAP vehicles.<br/>
+Few patrols in the countryside, but expect build up areas to be heavily defended.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-*** Insert information about friendly forces here.***
+None.
 "]];
 
 // ====================================================================================

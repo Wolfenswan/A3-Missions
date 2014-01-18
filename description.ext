@@ -15,9 +15,9 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "fa3_c60_lowTide";
 onLoadMission = "Made with the F3 Mission Development Framework";
-author = "*** Insert mission author name here. ***";
+author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
 
 // ============================================================================================
@@ -26,6 +26,7 @@ loadScreen = "logo.paa";
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 enableDebugConsole = 1;
+allowFunctionsRecompile = 1;
 
 // ============================================================================================
 
@@ -123,7 +124,7 @@ class Params
                 title = "$STR_f_param_timeOfDay";
                 values[] = {0,1,2,3,4,5,6,7};
                 texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
-                default = 3;
+                default = 1;
                 code = "f_param_timeOfDay = %1";
         };
 
@@ -132,7 +133,7 @@ class Params
 		title = "$STR_f_param_weather";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10};
 		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8,$STR_f_param_weather_Option9,$STR_f_param_weather_Option10};
-		default = 0;
+		default = 9;
 		code = "f_param_weather = %1";
 	};
 
@@ -184,6 +185,17 @@ class Params
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
+
+// WS_CACHING
+
+	class ws_param_caching
+	{
+		title = "Unit caching (> 800m)";
+		values[] = {0,1};
+		texts[] = {"Off","On"};
+		default = 0;
+		code = "ws_param_caching = %1";
+	};
 
 };
 
@@ -336,11 +348,13 @@ class CfgFunctions
 			class checkHC {file = "ws_fnc\tools\ws_fnc_checkHC.sqf"};
 			class broadcast {file = "ws_fnc\tools\ws_fnc_broadcast.sqf";};
 			class showFPS {file = "ws_fnc\tools\ws_fnc_showFPS.sqf";};
+			class listPlayers {file = "ws_fnc\tools\ws_fnc_listPlayers.sqf";};
 			class nearPlayer {file = "ws_fnc\tools\ws_fnc_nearPlayer.sqf";};
 		};
 		class getPos
 		{
 			class getPos {file ="ws_fnc\getPos\ws_fnc_getPos.sqf";};
+			class getEPos	{file ="ws_fnc\getPos\ws_fnc_getEPos.sqf";};
 			class nearestRoadPos {file = "ws_fnc\getPos\ws_fnc_NearestRoadPos.sqf";};
 			class nearestLandPos {file = "ws_fnc\getPos\ws_fnc_NearestLandPos.sqf";};
 			class getPosInArea {file = "ws_fnc\getPos\ws_fnc_getPosInArea.sqf";};

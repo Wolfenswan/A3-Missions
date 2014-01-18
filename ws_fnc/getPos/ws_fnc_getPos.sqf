@@ -5,7 +5,6 @@
 //
 // FEATURE
 // Turn input into legit positional array [x,y,z], returns array
-// For a more powerful getPos script look up SHK_pos by Shuko
 //
 // USAGE
 // Minimal:
@@ -55,19 +54,10 @@ if (_count > 5) then {_building = _this select 5;};
 if (_count > 6) then {_water = _this select 6;};
 
 //Interpreting variables
-
-//Getting a good position from the parsed values
-switch (typename _posloc) do {
-	case "STRING": {_pos = getMarkerPos _posloc;};
-	case "OBJECT": {_pos = getPos _posloc;};
-	case "GROUP": {_pos = getPos (leader _posLoc)};
-	case "ARRAY": {_pos = _posloc};
-	default {[_posloc,["ARRAY","OBJECT","STRING","GROUP"],"ws_fnc_getPos"] call ws_fnc_typecheck;};
-};
+_pos = _posloc call ws_fnc_getEpos;
 
 _posX = (_pos select 0);
 _posY = (_pos select 1);
-_pos set [2,0];
 
 //Fault checks
 //Checking the variables we have against what we should have
@@ -99,9 +89,6 @@ switch (typename _posradius) do {
 }	;
 };
 
-
-
-
 //If the position has to be on dry land
 if (!_water && (surfaceIsWater _pos)) then {
 	_pos = [_pos] call ws_fnc_NearestLandPos;
@@ -109,7 +96,6 @@ if (!_water && (surfaceIsWater _pos)) then {
 
 //If building positions are disallowed
 if (!_building && (count (_pos nearObjects ["House",10]) >= 1)) then {
-	player sidechat "2";
 	_i = 0;
 	_distance = 0;
 	_done = false;
