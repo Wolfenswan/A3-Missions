@@ -121,13 +121,13 @@ f_doNotRemoveBodies = [];
 // [[GroupName],100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // BLUFOR > NATO
-// [BLUFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
+//[BLUFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // OPFOR > CSAT
-// [OPFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
+[OPFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // INDEPENDENT > AAF
-// [INDEPENDENT,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
+[INDEPENDENT,100,2] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // ====================================================================================
 
@@ -149,7 +149,7 @@ f_doNotRemoveBodies = [];
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 f_isFriendly = [];
-[]  execVM "f\server\f_setAISkill.sqf";
+//[]  execVM "f\server\f_setAISkill.sqf";
 
 // ====================================================================================
 
@@ -194,4 +194,3 @@ f_isFriendly = [];
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [] execVM "f\common\f_safeStart.sqf";
-
