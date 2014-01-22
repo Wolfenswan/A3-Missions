@@ -36,21 +36,6 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 All AARs and Grenadiers (CO,DC,SLs,FTLs) have MRCO scopes.
 "]];
 
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-"]];
 
 // ====================================================================================
 
@@ -61,7 +46,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. We begin <marker name='mkrStart'>here</marker>.<br/>
 2. Move into the <marker name='mkrAO'>AO</marker>, towards the <marker name='mkrAAF'>airfield</marker>.<br/>
-3. Clear the <marker name='mkrAAF_1'>occupied town</marker> of any enemy presence.<br/>
+3. Clear the <marker name='mkrAAF_2'>occupied town</marker> of any enemy presence.<br/>
 4. Destroy any forces defending the barracks on and around the airfield.
 "]];
 
@@ -72,7 +57,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-With the tensions between CSAT and NATO having reached a new high, our position towards the Altis Armed Forces (AAF) and their self-proclaimed neutrality has shifted. Recent intelligence reports suggest, that they have been negotiating with CSAT to allow Altis being used as a R&R area by their forces. As an pre-emptive measure, NATO is launching an attack to seize and hold a bridehead.<br/> Your platoon has reached the south-eastern tip of the island by boats during the night and is now preparing to move out at early morning.
+With the tensions between CSAT and NATO having reached a new high, our position towards the Altis Armed Forces (AAF) and their self-proclaimed neutrality has shifted. Recent intelligence reports suggest, that they have been negotiating with CSAT to allow Altis being used as a RnR area by their forces. <br/><br/>As a pre-emptive measure, NATO is launching an attack to seize and hold a bridgehead. Your platoon has reached the south-eastern tip of the island by boats during the night and is now preparing to move out at early morning.
 <br/><br/>
 ENEMY FORCES
 <br/>
