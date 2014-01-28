@@ -43,9 +43,11 @@ _units = [];
 [_units,["ARRAY"],"ws_fnc_loadVehicle"] call ws_fnc_typecheck;
 
 
-if ((_veh emptyPositions "Driver") > 0) then {(_units select 0) assignAsDriver _veh; (_units select 0) moveInDriver _veh;_units = _units - [(_units select 0) ];};
-if ((_veh emptyPositions "Gunner") > 0) then {(_units select 0) assignAsGunner _veh; (_units select 0) moveInGunner _veh;_units = _units - [(_units select 0) ];};
-if ((_veh emptyPositions "Commander") > 0) then {(_units select 0) assignAsCommander _veh; (_units select 0) moveInCommander _veh;_units = _units - [(_units select 0) ];};
+if ((_veh emptyPositions "Driver") > 0 && count _units > 0 && !(lockedDriver _veh)) then {(_units select 0) assignAsDriver _veh; (_units select 0) moveInDriver _veh;_units = _units - [(_units select 0) ];};
+
+if ((_veh emptyPositions "Gunner") > 0 && count _units > 0 && !(_veh lockedTurret [0])) then {(_units select 0) assignAsGunner _veh; (_units select 0) moveInGunner _veh;_units = _units - [(_units select 0) ];};
+
+if ((_veh emptyPositions "Commander") > 0 && count _units > 0 && !(_veh lockedTurret [1])) then {(_units select 0) assignAsCommander _veh; (_units select 0) moveInCommander _veh;_units = _units - [(_units select 0) ];};
 
 while {_veh emptyPositions "CARGO" > 0 && count _units > 0} do {
 	(_units select 0) moveInCargo _veh; (_units select 0) assignAsCargo _veh;_units = _units - [(_units select 0)];

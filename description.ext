@@ -17,7 +17,7 @@ class Header
 
 onLoadName = "*** Insert mission name here. ***";
 onLoadMission = "Made with the F3 Mission Development Framework";
-author = "Made by Wolfenswan [FA]";
+author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
 
 // ============================================================================================
@@ -184,6 +184,17 @@ class Params
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
+
+	// WS_CACHING
+
+	class ws_param_caching
+	{
+		title = "Unit caching (> 800m)";
+		values[] = {0,1};
+		texts[] = {"Off","On"};
+		default = 0;
+		code = "ws_param_caching = %1";
+	};
 
 };
 
@@ -369,3 +380,112 @@ class CfgFunctions
 };
 
 // ============================================================================================
+class CfgORBAT
+{
+	class FA
+	{
+		// Unit ID
+		id = 1;
+		// Unit ID type
+		//	0 - show as ordinal number, e.g. "7th" (default)
+		//	1 - show as roman numeral, e.g. "VII"
+		//	2 - show as NATO phonetical alphabet word, e.g. "Golf"
+		idType = 0;
+		 // Unit side from CfgChainOfCommand >> Sides
+		side = "East";
+		 // Unit size from CfgChainOfCommand >> Sizes
+		size = "Platoon";
+		 // Unit type from CfgChainOfCommand >> Types
+		type = "MotorizedInfantry";
+
+		// Unit insignia, displayed in ORBAT background and in tooltip
+		//insignia = "logo.paa";
+		// Insignia image color, white by default
+		// Can be either RGBA array, or class from CfgMarkerColors
+		//colorInisgnia[] = "ColorRed";
+
+		// Name of unit commander
+		// - can be either direct name, or class from CfgWords >> GenericNames (random name from the list is then selected)
+		commander = "Wolfenswan";
+		// Rank of unit commander (by default selected based on unit size)
+		commanderRank = "Captain";
+		// Group tags. When opening ORBAT viewer, user can define what tags will be accepted.
+		tags[] = {GrpCSAT_CO};
+
+		// ALTERNATIVE SETTINGS
+		// Custom text and short text, can still use some arguments when defined:
+		// 	%1 - ID (e.g. "7th")
+		// 	%2 - Type (e.g. "Infantry")
+		// 	%3 - Size (e.g. "Division")
+		text = "%1 Agrarian Revolutionary %3";
+		textShort = "%1 FA %3";
+		// Custom texture, will replace icon set by 'type' param.
+	//	texture = "\ca\missions_f\data\orbat\customTexture_ca.paa";
+		// Custom color, will replace color set by 'side' param.
+		// Can be either RGBA array, or class from CfgMarkerColors
+		//color[] = {0,0,1,1};
+
+		// Subordinates, searched on the same level as this class.
+		//subordinates[] = {CSAT_ALPHA,CSAT_BRAVO,CSAT_CHARLIE};
+
+		// When 'subordinates' are missing, child classes will be used. They can have their own subs - number of tiers is not limited.
+		class CSAT_ALPHA
+		{
+			id = 1;
+			type = "Infantry";
+			size = "Squad";
+			side = "east";
+			//commander = "NATOMen";
+			text = "Alpha";
+			textShort = "ALPHA";
+			tags[] = {};
+
+
+			class CSAT_ALPHA_A1
+			{
+				id = 1;
+				type = "Infantry";
+				size = "FireTeam";
+				side = "east";
+				//commander = "NATOMen";
+				text = "A1";
+				textShort = "A1";
+				tags[] = {};
+	 		};
+	 		class CSAT_ALPHA_A2
+			{
+				id = 1;
+				type = "Infantry";
+				size = "FireTeam";
+				side = "east";
+				//commander = "NATOMen";
+				text = "A2";
+				textShort = "A2";
+				tags[] = {};
+	 		};
+ 		};
+ 	class CSAT_BRAVO
+		{
+			id = 2;
+			type = "Infantry";
+			size = "Squad";
+			side = "east";
+			//commander = "NATOMen";
+			text = "Bravo";
+			textShort = "Bravo";
+			tags[] = {};
+ 		};
+ 	class CSAT_Charlie
+		{
+			id = 3;
+			type = "Infantry";
+			size = "Squad";
+			side = "east";
+			//commander = "NATOMen";
+			text = "CHARLIE";
+			textShort = "CHARLIE";
+			tags[] = {};
+ 		};
+	};
+
+};
