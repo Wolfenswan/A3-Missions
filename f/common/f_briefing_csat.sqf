@@ -77,7 +77,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+Since CSAT forces have landed in Altis 1 month ago we have been making steady progress and the suprised AAF forces were unable to put up any real resistance. In order to gain full control over Altis we need to seize the <marker name=''>central Airport</marker>. The AAF is aware of it's strategical importance and has set up defensive positions at the surrounding towns. Further complicating the situation is a NATO mechanized element, who are joining the conflict earlier than expected. As they will most likely deploy Panther AA vehicles, we have lost our air superiority for the time being.
 <br/><br/>
 ENEMY FORCES
 <br/>
