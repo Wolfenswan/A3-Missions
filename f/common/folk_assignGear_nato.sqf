@@ -45,7 +45,7 @@
 _rifle = "arifle_MX_pointer_F";
 _riflemag = "30Rnd_65x39_caseless_mag";
 _riflemag_tr = "30Rnd_65x39_caseless_mag_Tracer";
-_rifle_attach = ["acc_pointer_IR","optic_Aco"];
+_rifle_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Standard Carabineer (Medic, Rifleman (AT), MAT Gunner, MTR Gunner, Carabineer)
 _carbine = "arifle_MXC_F";
@@ -70,7 +70,7 @@ _glrifle = "arifle_MX_GL_F";
 _glriflemag = "30Rnd_65x39_caseless_mag";
 _glriflemag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 _glmag = "1Rnd_HE_Grenade_shell";
-_glrifle_attach = ["acc_pointer_IR","optic_Aco"];
+_glrifle_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Smoke for FTLs, Squad Leaders, etc
 _glsmokewhite = "1Rnd_Smoke_Grenade_shell";
