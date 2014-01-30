@@ -57,7 +57,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-With the tensions between CSAT and NATO having reached a new high, our position towards the Altis Armed Forces (AAF) and their self-proclaimed neutrality has shifted. Recent intelligence reports suggest, that they have been negotiating with CSAT to allow Altis being used as a RnR area by their forces. <br/><br/>As a pre-emptive measure, NATO is launching an attack to seize and hold a bridgehead. Your platoon has reached the south-eastern tip of the island by boats during the night and is now preparing to move out at early morning.
+With the tensions between CSAT and NATO having reached a new high, our position towards the Altis Armed Forces (AAF) and their self-proclaimed neutrality has shifted. Recent intelligence reports suggest, that they have been negotiating with CSAT to allow Altis being used as a RnR area by their forces. <br/><br/>As a pre-emptive measure, NATO is launching an attack to seize and hold a beachhead. Your platoon has reached the south-eastern tip of the island by boats during the night and is now preparing to move out at early morning.
 <br/><br/>
 ENEMY FORCES
 <br/>
