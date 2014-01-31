@@ -10,6 +10,10 @@ if !(isDedicated) then {
 };
 
 if (isServer) then {
+
+	sleep 0.1;
+	{_x unassignItem "NVGoggles_INDEP"} forEach f_var_men_RES;
+
 	if (ws_param_caching == 1) then {
 		waitUntil {time > 40};
 		[750] call ws_fnc_cInit;

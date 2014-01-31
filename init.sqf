@@ -165,7 +165,7 @@ f_isFriendly = [];
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[10] execVM "f\common\f_nametags.sqf";
+// [10] execVM "f\common\f_nametags.sqf";
 
 // ====================================================================================
 
