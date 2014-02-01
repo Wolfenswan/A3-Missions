@@ -89,6 +89,9 @@ switch (typename _posradius) do {
 }	;
 };
 
+
+
+
 //If the position has to be on dry land
 if (!_water && (surfaceIsWater _pos)) then {
 	_pos = [_pos] call ws_fnc_NearestLandPos;

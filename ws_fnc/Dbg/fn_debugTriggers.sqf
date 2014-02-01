@@ -6,7 +6,6 @@ if !(_debug) exitWith {};
 if !(isNil "ws_dbg_trg") exitWith {};
 
 onMapSingleClick "player setPos _pos";
-player allowDammage false;
 
 //Radio triggers to assist with debugging
 

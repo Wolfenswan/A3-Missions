@@ -1,18 +1,23 @@
+/*
+ws_fnc_gUncache
+Latest: 15.01.2014
+
+based on Black Mamba's work, which in turn is based on Nou and Jaynus' work. (All credit to them)
+
+FEATURE
+Enables Simulation and AI behaviour on all units but the group leader (or vehicle crew). Moves all disabled units out of view.
+*/
+
  {
 if(_x != leader _this && !("Driver" in assignedVehicleRole _x)) then {
 
                 if (vehicle _x == _x) then {
 
                                         // Workaround for ws_taskDefend:
-                                        // Sometimes units moved by taskDefend get assigned formationPosition z-level -100 after caching. This makes sure they get put back into their spot
+                                        // For some reason units moved by taskDefend get assigned formationPosition z-level -100 after caching
                                         _pos = _x getVariable ["ws_bpos",formationPosition _x];
 
-                                        // To be sure: If z-position is still underground, set it to 0.
-                                        if (_pos select 2 < 5) then {_pos set [2,0]};
-
-                                        player globalchat format ["%1:%2",_x,_pos];
-
-                                        _x setPos _pos;
+                                        _x setPosATL _pos;
                 };
                                 _x allowDamage true;
                                 _x enableSimulation true;
