@@ -195,3 +195,4 @@ f_isFriendly = [];
 
 [] execVM "f\common\f_safeStart.sqf";
 
+[] execVM "ws_scripts\ws_postInit.sqf";

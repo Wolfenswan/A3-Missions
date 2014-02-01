@@ -14,7 +14,7 @@ PARAMETERS:
 1. Center of town. Can be ellipse/rectangle marker, object or location     | MANDATORY - string (markername) or object name
 2. Radius of area to be considered																				 | MANDATORY - int
 3. Side of units to spawn																									 | MANDATORY - side (east, west, resistance)
-4. Number of units.																								         | OPTIONAL - integer - default is No. of available building positions/10
+4. Number of units.																								         | OPTIONAL - integer - default is No. of available buildings/2
 5. Array of classes to spawn																		           | OPTIONAL - array w. strings  - default are classes defined below
 
 EXAMPLE
@@ -25,7 +25,7 @@ array of created units
 
 // Default classes (Arma 3)
 // BLUFOR
-_wclasses = ["B_Soldier_lite_F"];
+_wclasses = ["B_Soldier_lite_F","B_Soldier_F","B_Soldier_GL_F"];
 // OPFOR
 _eclasses = ["O_Soldier_lite_F"];
 // INDEPENDENT
@@ -47,7 +47,8 @@ _classes = if (count _this > 4) then {_this select 4} else {[]};
 {[_x,["SCALAR"],"ws_fnc_createGarrison"] call ws_fnc_typecheck;} forEach [_int,_radius];
 {[_x,["ARRAY"],"ws_fnc_createGarrison"] call ws_fnc_typecheck;} forEach [_classes,_area];
 
-_buildings = [_area,_radius] call ws_fnc_collectBuildings;
+// Collect buildings and assign building positions
+_buildings = [_area,_radius,true,true] call ws_fnc_collectBuildings;
 
 // If default classes are being used, select the corresponding array
 if (count _classes == 0) then {
@@ -61,20 +62,12 @@ if (count _classes == 0) then {
 	};
 };
 
-// Collect building positions
-
-{
-	_ba = [_x] call ws_fnc_getBPos;
-	if (count _ba == 0) then {_buildings = _buildings - [_x]};
-} forEach _buildings;
-
 // If no amount of units is set, calculate default
 if (_int == 0) then {
-	_int = round (count _bpos / 10);
+	_int = round (count _buildings / 2);
 };
 
 _grp = createGroup _side;
-_units = units _grp;
 
 //Rewrite?
 for "_x" from 1 to _int do {
@@ -106,7 +99,11 @@ for "_x" from 1 to _int do {
 	// Create a unit and move it into place
   _u = _grp createUnit [_classes call ws_fnc_selectRandom,_area,[],5,"NONE"];
 	_u setPosATL _bp;
+	_u setDir (random 360);
   dostop _u;
+  if (random 1 > 0.75) then {_unit setunitpos "Middle";};
+
+  _u setVariable ["ws_bpos",_bp];
 
   if (_debug) then
   	{_mkr = createMarker [format ["%1-bpos",_u],getPos _u];_mkr setMarkerSize [0.5,0.5];_mkr setMarkerType "mil_dot";_mkr setMarkerColor "ColorGreen";};
@@ -120,4 +117,5 @@ for "_x" from 1 to _int do {
 
 _grp enableAttack false; // Prevent the group leader to issue attack orders to the members, improving their attack from buildings
 
+_units = units _grp;
 _units

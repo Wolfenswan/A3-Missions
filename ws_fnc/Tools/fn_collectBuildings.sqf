@@ -30,6 +30,9 @@ _flag2 = if (count _this > 3) then {_this select 3} else {false};
 
 _buildings = [];
 
+// Buildings that have valid building positions but are crap (e.g. piers)
+_barray = ["Land_Pier_small_F"];
+
 //Fill buildings array with classes shared by both games
 {
 _buildings = _buildings + nearestObjects [_pos,[_x],_radius];
@@ -52,6 +55,7 @@ if (_flag1) then {
 	{
 		_bp = _x buildingPos 0;
  		if (str _bp == "[0,0,0]" || typeName _bp != typeName []) then {_buildings = _buildings - [_x]};
+ 		if (_x isKindOf "Piers_base_F" )
 	} forEach _buildings;
 };
 

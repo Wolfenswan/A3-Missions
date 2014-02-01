@@ -33,31 +33,13 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
-"]];
-
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+Motorized:<br/>
+1 x IFRIT (unarmed)<br/>
+3 x 'Marid' APC (HMG) - one per squad<br/>
+3 x 'Marid' APC (un-armed) - one per squad<br/><br/>
+Air:<br/>
+1 x Mi-48 'Kalman'<br/>
+2 x PO-30 'Orca' (rockets)
 "]];
 
 // ====================================================================================
@@ -67,7 +49,10 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We begin <marker name='mkrMoto'>here</marker>.<br/>
+2. Proceed into the AO.
+3. Eliminate NATO AA support (indicated by <marker name='mkrB'>these markers</marker>) where possible.<br/>
+4. Kill the AAF officers in <marker name='mkrAHQ'>Neochori</marker> and <marker name='mkrAHQ_2'>Stavros</marker>.
 "]];
 
 // ====================================================================================
@@ -77,15 +62,19 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-Since CSAT forces have landed in Altis 1 month ago we have been making steady progress and the suprised AAF forces were unable to put up any real resistance. In order to gain full control over Altis we need to seize the <marker name=''>central Airport</marker>. The AAF is aware of it's strategical importance and has set up defensive positions at the surrounding towns. Further complicating the situation is a NATO mechanized element, who are joining the conflict earlier than expected. As they will most likely deploy Panther AA vehicles, we have lost our air superiority for the time being.
+Since CSAT forces have landed in Altis one month ago, we have been making steady progress against the suprised and overwhelmed AAF. However, these small victories should not be overestimated: In order to gain full control over Altis, we need to seize the <marker name='mkrAir'>central Airport</marker>. The AAF is aware of it's strategical importance and has set up defensive positions at the surrounding towns. A NATO mechanized element further complicates the situation, as they are boosting the AAF's lacking firepower significantly.<br/><br/>
+While a combined force of <marker name='mkrArmor'>armored and motorized elements</marker> are going to attack the airport and tie up the defenders there, <marker name='mkrMoto'>our platoon</marker> is tasked to attack via the mountain roads and eliminate the officers of the <marker name='mkrAHQ'>AAF's forward command posts</marker>. The second priority is destryoing the <marker name='mkrB_2'>NATO AA support</marker> in order to regain aerial superiority.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+AAF: Infantry and light vehicles, possibly Gorgons as well.<br/>
+NATO: Infantry and Cheetah AA. Helicopters might be diverted if we get too close.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-*** Insert information about friendly forces here.***
+None in the direct AO.<br/><br/>
+NOTE<br/>
+If the attack helicopter is used, it is suggested to enforce a 'no explosive damage to built up areas' ROF.
 "]];
 
 // ====================================================================================
