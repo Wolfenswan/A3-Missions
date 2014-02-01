@@ -50,7 +50,7 @@ Air:<br/>
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. We begin <marker name='mkrMoto'>here</marker>.<br/>
-2. Proceed into the AO.
+2. Proceed into the AO.<br/>
 3. Eliminate NATO AA support (indicated by <marker name='mkrB'>these markers</marker>) where possible.<br/>
 4. Kill the AAF officers in <marker name='mkrAHQ'>Neochori</marker> and <marker name='mkrAHQ_2'>Stavros</marker>.
 "]];
