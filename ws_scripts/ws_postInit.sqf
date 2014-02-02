@@ -1,4 +1,6 @@
-if !(isDedicated) then {
+_hc = [] call ws_fnc_checkHC;
+
+if !(isDedicated && !_hc) then {
  waitUntil {time > 15};
 	[
 		[
@@ -9,10 +11,25 @@ if !(isDedicated) then {
 	] spawn BIS_fnc_typeText;
 };
 
+if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
+
+	{[_x,150,resistance,(5+round random 3)] call ws_fnc_createGarrison;} forEach ["mkrT","mkrT_1","mkrT_2","mkrN","mkrN_1"];
+
+	{[_x,50,resistance,(2+round random 1)] call ws_fnc_createGarrison;} forEach ["mkrS","mkrS_1","mkrS_2","mkrS_3","mkrS_4"];
+
+	["mkrN_2",100,resistance,(4+round random 2)] call ws_fnc_createGarrison;
+	["mkrO",20,resistance,5] call ws_fnc_createGarrison;
+	["mkrO_1",20,resistance,5] call ws_fnc_createGarrison;
+	["mkrH",20,west,2] call ws_fnc_createGarrison;
+	["mkrBS",40,west,10] call ws_fnc_createGarrison;
+	["mkrH_1",55,west,4] call ws_fnc_createGarrison;
+	["mkrH_2",20,west,6] call ws_fnc_createGarrison;
+};
+
 if (isServer) then {
 
 	sleep 0.1;
-	{_x unassignItem "NVGoggles_INDEP"} forEach f_var_men_RES;
+	{_x unassignItem "NVGoggles_INDEP"} forEach allUnits - playableUnits;
 };
 
 if (ws_param_caching == 1) then {
