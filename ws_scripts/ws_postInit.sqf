@@ -1,6 +1,6 @@
 _hc = [] call ws_fnc_checkHC;
 
-if !(isDedicated && !_hc) then {
+if (!isDedicated && !_hc) then {
  waitUntil {time > 15};
 	[
 		[
@@ -30,6 +30,7 @@ if (isServer) then {
 
 	sleep 0.1;
 	{_x unassignItem "NVGoggles_INDEP"} forEach allUnits - playableUnits;
+	[] execVM "f\server\f_setAISkill.sqf";
 };
 
 if (ws_param_caching == 1) then {
