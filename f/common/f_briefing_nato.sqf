@@ -2,7 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// FACTION: NATO
+// FACTION: BLUE
 
 // ====================================================================================
 
@@ -33,7 +33,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
+Up to 2 x Ghosthawk, carrying demo charges.
 "]];
 
 // ====================================================================================
@@ -45,19 +45,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+Locate the convoy and destroy the caches.
 "]];
 
 // ====================================================================================
@@ -67,7 +55,14 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We begin <marker name='mkrNATO'>here</marker>.<br/>
+2. We need to locate the convoy.<br/>
+3. Deploy our forces, move in to destroy the caches and extract.<br/>
+4. CSAT motorized and heliborn forces might be send from <marker name='mkrCSAT'>their CSAT</marker>. They will probably try and seize the caches, don't let this happen.<br/><br/>
+NOTE<br/>
+To seize the crates at least one CSAT unit must be within 10m of them for one full minutes.<br/>
+For NATO to be successful they need to either wipe out the CSAT platoon or destroy all four crates and the HEMTT and fall back at least 2.5k from the AO.<br/>
+All four caches are next to the HEMTT truck. The crates and the truck can only be destroyed by demo charges.
 "]];
 
 // ====================================================================================
@@ -77,15 +72,17 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+A Mi-48 on morning patrol intercepted a FIA convoy, transporting weaponry we had given to the rebels. As we have lost contact with the intelligence officer accompanying the convoy we need to search around it's last known location or wait for him re-establish contact. To prevent any CSAT forces from seizing the NATO crates as evidence, we are deploying heliborn forces to support the FIA and - if necessary - destroy the crates.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+Motorized CSAT forces, possibly supported by heliborn troops from their <marker name='mkrCSAT'>base</marker>.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-*** Insert information about friendly forces here.***
+A FIA platoon at the convoy.<br/><br/>
+NOTE<br/>
+This can be played as a three-way adversarial where FIA have to defend the caches at all costs while NATO wants nothing but to destroy them.
 "]];
 
 // ====================================================================================

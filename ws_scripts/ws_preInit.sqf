@@ -1,18 +1,75 @@
-if (isNil "ws_initDone") then {ws_initDone = false};
 
+
+if !(isServer) exitWith {};
+
+if (isNil "ws_initDone") then {ws_initDone = false};
 ws_debug = if (ws_param_dbg == 0) then {false} else {true};
 
-if !(isServer) exitWith {ws_initDone = true};
+_markers  = ["mkrConv"] call ws_fnc_collectMarkers;
+ws_convoy =  getMarkerPos (_markers call ws_fnc_selectRandom); publicvariable "ws_convoy";
 
-// Disable Thermal Imaging for these vehicles
-{_x disableTIEquipment true;} forEach [];
+if (isnil "ws_caches_destroyed") then {ws_caches_destroyed = false};publicvariable "ws_caches_destroyed";
 
-// Further tweaking to vehicles
-//{_x removeWeaponGlobal "GMG_40mm"; _x lockTurret [[1],true];} forEach [];
-//{_x removeWeaponGlobal "HMG_127_APC";_x lockTurret [[0],true];} forEach [];
+//Place FIA next to convoy
+{	{_pos = [ws_convoy,100] call ws_fnc_getPos;
+_x setPos _pos} forEach units _x
+} forEach [GrpNATO_Int,GrpFIA_CO,GrpFIA_DC,GrpFIA_ASL,GrpFIA_A1,GrpFIA_A2,GrpFIA_A3,GrpFIA_BSL,GrpFIA_B1,GrpFIA_B2,GrpFIA_B3];
 
-// Load up vehicles with groups
-// [veh1,group1,group2.....groupN] call ws_fnc_loadVehicle
-[Veh,Grp] call ws_fnc_loadVehicle;
+
+//Load US
+{{_x moveInCargo VehBlu_Th1} forEach units _x} forEach [GrpNATO_A1,GrpNATO_CO];
+{{_x moveInCargo VehBlu_Th3} forEach units _x} forEach [GrpNATO_B1];
+
+//Place CSAT
+_csat_convoy = [CSAT_CAR1,CSAT_MRAP1,CSAT_MRAP2,CSAT_Tr1,CSAT_Tr2];
+if (isNil "ws_var_placement") then {ws_var_placement = paramsarray select 7};
+_placement_jitter = [2000,3000];
+switch (ws_var_placement) do {
+	case 0: {_placement_jitter = [1000,2000];};
+	case 1: {_placement_jitter = [2000,3000];};
+	case 2: {_placement_jitter = [3000,4000];};
+	default {_placement_jitter = [2000,3000];};
+};
+
+_pos = ws_convoy;
+while {(_pos distance ws_convoy) < (_placement_jitter select 0)} do {
+	_pos = [ws_convoy,(_placement_jitter select 1),(_placement_jitter select 0),360,true,false] call ws_fnc_getPos;
+};
+
+_roads = _pos nearRoads 20;
+_posarray = [];
+
+if ((count _roads) < (count _csat_convoy)) then {
+	_x = 25;
+		while {((count _roads) < (count _csat_convoy))} do {
+			_roads = _pos nearRoads _x;
+			_x = _x + 5;
+	};
+};
+
+//Collect positions along road
+{
+_pos = [_x,2] call ws_fnc_getPos;
+_posarray = _posarray + [_pos];
+} forEach _roads;
+
+{
+if !(isNil "_x") then {
+	_x setPos (_posarray select _forEachIndex);
+};
+} forEach _csat_convoy;
+
+
+//Load CSAT vehicles
+{{_x moveInCargo CSAT_Tr1} forEach units _x} forEach [GrpCSAT_A1,GrpCSAT_A2,GrpCSAT_A3];
+{{_x moveInCargo CSAT_Tr2} forEach units _x} forEach [GrpCSAT_B1,GrpCSAT_B2,GrpCSAT_B3];
+if (isNil "GrpCSAT_A1" && isNil "GrpCSAT_A2" && isNil "GrpCSAT_A3" && isNil "GrpCSAT_ASL") then {deleteVehicle CSAT_Tr1;};
+if (isNil "GrpCSAT_B1" && isNil "GrpCSAT_B2" && isNil "GrpCSAT_B3" && isNil "GrpCSAT_BSL") then {deleteVehicle CSAT_Tr2;};
+if (isNil "GrpCSAT_MRAP1") then {deleteVehicle CSAT_MRAP1;};
+if (isNil "GrpCSAT_MRAP2") then {deleteVehicle CSAT_MRAP2;};
+
+//Place the convoy
+ws_placeconvoy = [] call compile PreprocessFile "ws_scripts\ws_convoy.sqf";
+
 
 ws_initDone = true;

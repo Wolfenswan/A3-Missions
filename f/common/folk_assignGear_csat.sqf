@@ -589,21 +589,9 @@ _backpack = {
 		// BACKPACK: ENGINEER
 		case "eng":
 		{
-			// BACKPACK: LIGHT
-			if (f_param_backpacks == 1) then {
-				_unit addBackpack _baglarge;
+				_unit addBackpack _bagsmall;
 				clearMagazineCargoGlobal (unitBackpack _unit);
 				(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-				(unitBackpack _unit) addMagazineCargoGlobal [_APmine2, 2];
-				(unitBackpack _unit) addMagazineCargoGlobal [_ATmine , 1];
-			};
-			// BACKPACK: HEAVY
-			if (f_param_backpacks == 2) then {
-				_unit addBackpack _baglarge;
-				clearMagazineCargoGlobal (unitBackpack _unit);
-				(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-				(unitBackpack _unit) addMagazineCargoGlobal [_ATmine , 2];
-			};
 		};
 
 			// BACKPACK: SUBMACHINEGUNNER (SMG)
@@ -855,12 +843,10 @@ switch (_typeofUnit) do
 // LOADOUT: ENGINEER
 	case "eng":
 	{
-		_unit addmagazines [_carbinemag,7];
-		_unit addweapon _carbine;
+		_unit addmagazines [_smgmag,5];
+		_unit addweapon _smg;
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_satchel,2];
-		_unit addItem "MineDetector";
 		["eng"] call _backpack;
 	};
 

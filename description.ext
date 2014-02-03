@@ -15,7 +15,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "fa3_a95_afriendinneed";
 onLoadMission = "Made with the F3 Mission Development Framework";
 author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
@@ -187,23 +187,23 @@ class Params
 
 // Wolfenswan - Parameters
 
-	class ws_param_caching
-	{
-		title = "Unit caching (> 800m)";
-		values[] = {0,500,650,850,1000,1250,1500};
-		texts[] = {"Off","500m","650m","850m","1000m","1250m","1500"};
-		default = 850;
-		code = "ws_param_caching = %1";
-	};
+	  class ws_param_marker
+        {
+                title = "Jitter of convoy marker for US forces";
+                values[] = {0,1,2,3,9999};
+                texts[] = {"Pinpoint","1.5k - 2.5k","2.5k - 3k (default)","3.5k - 5k","none (use int. officer)"};
+                default = 2;
+                code = "ws_var_jitter = %1";
+        };
 
-	class ws_param_hc
-	{
-		title = "Headless Client";
-		values[] = {0,1};
-		texts[] = {"Off","On"};
-		default = 0;
-		code = "ws_param_hc = %1";
-	};
+  class ws_param_placement
+        {
+                title = "Min/Max spawn distance for CSAT from convoy";
+                values[] = {0,1,2};
+                texts[] = {"1k - 2k","2k - 3k (default)","3k - 4k"};
+                default = 1;
+                code = "ws_var_placement = %1";
+        };
 
 	class ws_param_dbg
 	{
@@ -243,9 +243,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "FIA destroyed";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "All FIA forces were eliminated";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -253,9 +253,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "CSAT wiped out";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "All CSAT units in the AO were killed.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -263,9 +263,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "Ending #3";
+		title = "Caches secured!";
 		subtitle = "";
-		description = "*** Insert debriefing #3 here. ***";
+		description = "CSAT was able to secure all caches";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -273,9 +273,9 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "Ending #4";
+		title = "Caches destroyed";
 		subtitle = "";
-		description = "*** Insert debriefing #4 here. ***";
+		description = "NATO forces were able to destroy all caches and evac from the AO.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};

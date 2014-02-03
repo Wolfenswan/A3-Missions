@@ -211,8 +211,8 @@ _unit unassignItem _nvg;
 _unit removeItem _nvg;
 };
 
-_unit addItem _nvg;
-_unit assignItem _nvg;					// add universal NVG for this faction
+//_unit addItem _nvg;
+//_unit assignItem _nvg;					// add universal NVG for this faction
 
 //removeAllItems _unit;						// remove default items: map, compass, watch, radio (and GPS for team/squad leaders)
 //unit addItem "ItemGPS"; 					// add gps to this faction

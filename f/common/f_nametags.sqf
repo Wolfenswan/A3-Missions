@@ -13,8 +13,8 @@
 
 // MODIFYABLE
 F_SHOWGROUP_NAMETAGS = true;			// Display unit's group (uses GroupID)
-F_SHOWDISTANCE_NAMETAGS = true; // Show distance to player
-F_SHOWVEHICLE_NAMETAGS = true; // Show vehicle player is in
+F_SHOWDISTANCE_NAMETAGS = false; // Show distance to player
+F_SHOWVEHICLE_NAMETAGS = false; // Show vehicle player is in
 
 F_SIZE_NAMETAGS = 0.04; // The size the names are displayed in
 F_HEIGHT_NAMETAGS = 0; // The height of the name tags for infantry (0 = hovering over unit, -1 = about belt height)
