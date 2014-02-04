@@ -64,6 +64,38 @@ switch (_typeofUnit) do
 		};
 	};
 
+	case "smg":
+	{
+		if(!isnil "_baseUniform" && {count _baseUniform > 0}) then
+		{
+		_unit adduniform (_baseUniform call BIS_fnc_selectRandom);
+		};
+		if(!isnil "_baseHelmet" && {count _baseHelmet > 0}) then
+		{
+		_unit addheadgear "H_MilCap_dgtl";
+		};
+		if(!isnil "_lightrig" && {count _lightrig > 0}) then
+		{
+		_unit addvest "V_TacVestCamo_khk";
+		};
+	};
+
+	case "smg2":
+	{
+		if(!isnil "_baseUniform" && {count _baseUniform > 0}) then
+		{
+		_unit adduniform (_baseUniform call BIS_fnc_selectRandom);
+		};
+		if(!isnil "_baseHelmet" && {count _baseHelmet > 0}) then
+		{
+		_unit addheadgear "H_MilCap_dgtl";
+		};
+		if(!isnil "_lightrig" && {count _lightrig > 0}) then
+		{
+		_unit addvest "V_TacVestCamo_khk";
+		};
+	};
+
 	default
 	{
 		if(!isnil "_baseUniform" && {count _baseUniform > 0}) then

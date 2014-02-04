@@ -10,6 +10,7 @@ while{_unit == (leader _grp) && alive _unit} do
 		if(alive _x) then
 		{
 			_colorTeam = ((assignedTeam _x) call f_getColorMarker);
+			if (isNil "_colorTeam") exitWith {};
 			// if _colorTeam is not equal to whatever is set on the unit we must update the other units in the group
 			if((_x getvariable ["assignedTeam","ColorWhite"]) != _colorTeam) then
 			{

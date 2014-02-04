@@ -1,7 +1,25 @@
-_hc = [] call ws_fnc_checkHC;
+if (isServer) then {
+	_mkrs = ["mkrM"] call ws_fnc_collectMarkers;
+	ws_meetingM = _mkrs call ws_fnc_selectRandom;
+	{_x setPos (getMarkerPos ws_meetingM)} forEach [TrgM,TrgM_1];
+	publicVariable "ws_meetingM";
+};
+
+if (side player == BLUFOR) then {
+	waitUntil {!isNil "ws_meetingM"};
+	_mkr = createMarkerLocal ["meeting",getMarkerPos ws_meetingM];
+	_mkr setMarkerTypeLocal "mil_triangle";
+	_mkr setMarkerColorLocal "colorGreen";
+	_mkr setMarkerSizeLocal [0.5,0.5];
+	_mkr2 = createMarkerLocal ["meeting2",getMarkerPos ws_meetingM];
+	_mkr2 setMarkerShapeLocal "Ellipse";
+	_mkr2 setMarkerSizeLocal [10,10];
+	_mkr2 setMarkerBrushLocal "Border";
+	_mkr2 setMarkerColorLocal "colorGreen";
+};
 
 // Display a short text intro
-if (!isDedicated && !_hc) then {
+if (!isDedicated) then {
  ["OPERATION XYZ","CENTRAL ALTIS"] spawn {
 	 waitUntil {time > 15};
 		[
@@ -12,23 +30,4 @@ if (!isDedicated && !_hc) then {
 			] , 0, 0.7
 		] spawn BIS_fnc_typeText;
 	};
-};
-
-
-// Do stuff on either HC or Server (e.g. spawning)
-if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
-
-};
-
-// Do more stuff on the server
-if (isServer) then {
-
-	// If units were spawned, AI skill is set again
-	[] execVM "f\server\f_setAISkill.sqf";
-};
-
-// Start the caching
-if (ws_param_caching != 0) then {
-	waitUntil {time > 30};
-	[ws_param_caching] call ws_fnc_cInit;
 };

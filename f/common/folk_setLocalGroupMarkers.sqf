@@ -98,8 +98,8 @@ switch (_unitfaction) do
 
 	case "blu_g_f":
 	{
-		["GrpFIA_CO", 0, "CO", "ColorYellow"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_DC", 0, "DC", "ColorYellow"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_CO", 0, "O1", "ColorYellow"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_DC", 0, "O2", "ColorYellow"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_ASL", 0, "ASL", "ColorRed"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_A1", 1, "A1", "ColorRed"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_A2", 1, "A2", "ColorRed"] spawn f_fnc_localGroupMarker;
@@ -123,8 +123,8 @@ switch (_unitfaction) do
 
 		["GrpFIA_ENG1",  6, "ENG1", "ColorOrange"] spawn f_fnc_localGroupMarker;
 
- 		["GrpFIA_IFV1",  7, "IFV1", "ColorRed"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_IFV2",  7, "IFV2", "ColorRed"] spawn f_fnc_localGroupMarker;
+ 		["GrpFIA_Tech1",  7, "TECH1", "ColorRed"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_Tech2",  7, "TECH2", "ColorRed"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_IFV3",  7, "IFV3", "ColorBlue"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_IFV4",  7, "IFV4", "ColorBlue"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_IFV5",  7, "IFV5", "ColorGreen"] spawn f_fnc_localGroupMarker;
@@ -239,6 +239,7 @@ switch (_unitfaction) do
 		["GrpAAF_C1", 1, "C1", "ColorGreen"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_C2", 1, "C2", "ColorGreen"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_C3", 1, "C3", "ColorGreen"] spawn f_fnc_localGroupMarker;
+		["GrpAAF_R", 1, "Recon", "ColorGreen"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_MMG1", 2, "MMG1", "ColorOrange"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_MAT1", 3, "MAT1", "ColorOrange"] spawn f_fnc_localGroupMarker;
 

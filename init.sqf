@@ -72,14 +72,6 @@ f_script_setLocalVars = [] execVM "f\common\f_setLocalVars.sqf";
 
 // ====================================================================================
 
-// F3 - Multiplayer Ending Controller
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_endSelected = -1;
-[] execVM "f\common\f_mpEndSetUp.sqf";
-
-// ====================================================================================
-
 // F3 - Automatic Body Removal
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
@@ -121,13 +113,13 @@ f_doNotRemoveBodies = [];
 // [[GroupName],100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // BLUFOR > NATO
-// [BLUFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
+[BLUFOR,100,2] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // OPFOR > CSAT
 // [OPFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // INDEPENDENT > AAF
-// [INDEPENDENT,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
+[INDEPENDENT,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // ====================================================================================
 
@@ -195,3 +187,4 @@ f_isFriendly = [];
 
 [] execVM "f\common\f_safeStart.sqf";
 
+[] execVm "ws_scripts\ws_postInit.sqf";

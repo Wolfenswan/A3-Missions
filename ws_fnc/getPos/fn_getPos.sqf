@@ -56,8 +56,9 @@ if (_count > 6) then {_water = _this select 6;};
 //Interpreting variables
 _pos = _posloc call ws_fnc_getEpos;
 
-_posX = (_pos select 0);
-_posY = (_pos select 1);
+_posX = _pos select 0;
+_posY = _pos select 1;
+_posZ = _pos select 2;
 
 //Fault checks
 //Checking the variables we have against what we should have
@@ -73,32 +74,32 @@ switch (typename _posradius) do {
 		if (_posradius > 0) then {
 		_newX = _posX + ((random _posradius) * sin _dir);
 		_newY = _posY + ((random _posradius) * cos _dir);
-		_pos = [_newX,_newY,0];
+		_npos = [_newX,_newY,0];
 
-		if (_mindis > 0) then {
-			while {_pos distance _posloc < _mindis} do {
-				_newX = _posX + ((random _posradius) * sin _dir);
-				_newY = _posY + ((random _posradius) * cos _dir);
-				_pos = [_newX,_newY,0];
+			if (_mindis > 0) then {
+				while {_npos distance _pos < _mindis} do {
+					_newX = _posX + ((random _posradius) * sin _dir);
+					_newY = _posY + ((random _posradius) * cos _dir);
+					_npos = [_newX,_newY,0];
+				};
 			};
+		_pos = _npos;
 		};
-		};
+
 	};
+
 	case "BOOL": {
-	_pos = [_posloc] call ws_fnc_getPosInArea;
-}	;
+		_pos = [_posloc] call ws_fnc_getPosInArea;
+	};
 };
 
-
-
-
 //If the position has to be on dry land
-if (!_water && (surfaceIsWater _pos)) then {
+if (!_water && {surfaceIsWater _pos}) then {
 	_pos = [_pos] call ws_fnc_NearestLandPos;
 };
 
 //If building positions are disallowed
-if (!_building && (count (_pos nearObjects ["House",10]) >= 1)) then {
+if (!_building && {count (_pos nearObjects ["House",10]) >= 1}) then {
 	_i = 0;
 	_distance = 0;
 	_done = false;

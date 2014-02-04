@@ -26,6 +26,7 @@ loadScreen = "logo.paa";
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 enableDebugConsole = 1;
+allowFunctionsRecompile = 1;
 
 // ============================================================================================
 
@@ -123,22 +124,22 @@ class Params
                 title = "$STR_f_param_timeOfDay";
                 values[] = {0,1,2,3,4,5,6,7};
                 texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
-                default = 3;
+                default = 1;
                 code = "f_param_timeOfDay = %1";
         };
 
 	class f_param_weather
 	{
 		title = "$STR_f_param_weather";
-		values[] = {0,1,2,3,4,5,6,7,8,9,10};
-		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8,$STR_f_param_weather_Option9,$STR_f_param_weather_Option10};
+		values[] = {0,1,2,3,4,5,6,7,8,9};
+		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8,"Light Fog"};
 		default = 0;
 		code = "f_param_weather = %1";
 	};
 
 // ============================================================================================
 
-// F3 - AI Skill Selector (coop)
+//  - AI Skill Selector (coop)
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 	class f_param_AISkill_Friendly
@@ -187,22 +188,22 @@ class Params
 
 // Wolfenswan - Parameters
 
-	class ws_param_caching
+	class ws_param_uav
 	{
-		title = "Unit caching (> 800m)";
-		values[] = {0,500,650,850,1000,1250,1500};
-		texts[] = {"Off","500m","650m","850m","1000m","1250m","1500"};
-		default = 850;
-		code = "ws_param_caching = %1";
+		title = "UAV is armed (6 Skalpel ATGM - need to be guided by laser)";
+		values[] = {0,1};
+		texts[] = {"No","Yes"};
+		default = 0;
+		code = "ws_param_uav = %1";
 	};
 
-	class ws_param_hc
+	class ws_param_civs
 	{
-		title = "Headless Client";
+		title = "Civilians in town";
 		values[] = {0,1};
-		texts[] = {"Off","On"};
-		default = 0;
-		code = "ws_param_hc = %1";
+		texts[] = {"No","Yes"};
+		default = 1;
+		code = "ws_param_civs = %1";
 	};
 
 	class ws_param_dbg
@@ -210,7 +211,7 @@ class Params
 		title = "ws_fnc debug";
 		values[] = {0,1};
 		texts[] = {"Off","On"};
-		default = 0;
+		default = 1;
 		code = "ws_param_dbg = %1";
 	};
 
@@ -243,9 +244,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "FIA victory";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "All AAF attackers were killed.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -253,9 +254,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "AAF victory";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "The entirity of the FIA forces were wiped out.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -263,9 +264,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "Ending #3";
+		title = "FIA victory";
 		subtitle = "";
-		description = "*** Insert debriefing #3 here. ***";
+		description = "Both officers escaped after an successful meeting.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -273,9 +274,9 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "Ending #4";
+		title = "AAF victory";
 		subtitle = "";
-		description = "*** Insert debriefing #4 here. ***";
+		description = "Both officers were killed.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -283,9 +284,9 @@ class CfgDebriefing
 
 	class End5
 	{
-		title = "Ending #5";
+		title = "FIA Victory";
 		subtitle = "";
-		description = "*** Insert debriefing #5 here. ***";
+		description = "While one officer was killed, the other managed to escape after the meeting had taken place.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -293,9 +294,9 @@ class CfgDebriefing
 
 	class End6
 	{
-		title = "Ending #6";
+		title = "AAF victory";
 		subtitle = "";
-		description = "*** Insert debriefing #6 here. ***";
+		description = "While one officer escaped, the other was killed before the meeting could take place.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -339,6 +340,15 @@ class CfgFunctions
 			{
 			};
 			class drawNameTag
+			{
+			};
+			class mpEndBroadcast
+			{
+			};
+			class mpEndReceiver
+			{
+			};
+			class setGroupID
 			{
 			};
 		};

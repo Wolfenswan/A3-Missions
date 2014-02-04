@@ -2,8 +2,80 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
+// OPEN THE ARRAY CONTAING ALL GROUPS
+// Do not comment or delete this line!
+_groups = [
+
+// ====================================================================================
+
 // GROUP IDs: BLUFOR > NATO
 // Automatically assigns intelligible names to groups
+
+["GrpNATO_CO","NATO CO -"],
+["GrpNATO_DC","NATO DC -"],
+["GrpNATO_ASL","NATO ASL -"],
+
+// ====================================================================================
+
+// GROUP IDs: BLUFOR > FIA
+// Automatically assigns intelligible names to groups
+
+["GrpFIA_CO","FIA O1 -"],
+["GrpFIA_DC","FIA O2 -"],
+["GrpFIA_ASL","FIA ASL -"],
+["GrpFIA_A1","FIA A2 -"],
+["GrpFIA_A2","FIA A2 -"],
+["GrpFIA_A3","FIA A3 -"],
+["GrpFIA_BSL","FIA ASL -"],
+["GrpFIA_B1","FIA A2 -"],
+["GrpFIA_B2","FIA A2 -"],
+["GrpFIA_B3","FIA A3 -"],
+["GrpFIA_CSL","FIA ASL -"],
+["GrpFIA_C1","FIA A2 -"],
+["GrpFIA_C2","FIA A2 -"],
+["GrpFIA_C3","FIA A3 -"],
+["GrpFIA_Tech1","FIA Tech1 -"],
+["GrpFIA_Tech2","FIA Tech2 -"],
+
+// ====================================================================================
+
+// GROUP IDs: OPFOR > CSAT
+// Automatically assigns intelligible names to groups
+
+// ====================================================================================
+
+// GROUP IDs: INDEPENDENT > AAF
+// Automatically assigns intelligible names to groups
+
+["GrpAAF_CO","AAF O1 -"],
+["GrpAAF_DC","AAF O2 -"],
+["GrpAAF_ASL","AAF ASL -"],
+["GrpAAF_A1","AAF A2 -"],
+["GrpAAF_A2","AAF A2 -"],
+["GrpAAF_A3","AAF A3 -"],
+["GrpAAF_BSL","AAF ASL -"],
+["GrpAAF_B1","AAF A2 -"],
+["GrpAAF_B2","AAF A2 -"],
+["GrpAAF_B3","AAF A3 -"],
+["GrpAAF_CSL","AAF ASL -"],
+["GrpAAF_C1","AAF A2 -"],
+["GrpAAF_C2","AAF A2 -"],
+["GrpAAF_C3","AAF A3 -"],
+["GrpAAF_R","AAF R1 -"]
+
+// ====================================================================================
+
+// END OF THE ARRAY CONTAING ALL GROUPS
+// Do not comment or delete this line!
+];
+
+// ====================================================================================
+
+// SET GROUP IDS
+// Execute setGroupID Function for all factions
+{_x spawn f_fnc_setGroupID} forEach _groups;
+
+/*
 if(!isnil "GrpNATO_CO") then {GrpNATO_CO setGroupId ["NATO CO -","GroupColor0"];};
 if(!isnil "GrpNATO_DC") then {GrpNATO_DC setGroupId ["NATO DC -","GroupColor0"];};
 if(!isnil "GrpNATO_ASL") then {GrpNATO_ASL setGroupId ["NATO ASL -","GroupColor0"];};

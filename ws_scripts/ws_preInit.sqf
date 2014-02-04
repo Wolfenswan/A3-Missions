@@ -4,15 +4,29 @@ ws_debug = if (ws_param_dbg == 0) then {false} else {true};
 
 if !(isServer) exitWith {ws_initDone = true};
 
-// Disable Thermal Imaging for these vehicles
-{_x disableTIEquipment true;} forEach [];
+if (!isNil "GrpAAF_R") then {
+	_mkr = (["mkrR"] call ws_fnc_collectMarkers) call ws_fnc_selectRandom;
+	{
+		_x setPos  ([_mkr,5,1] call ws_fnc_getPos);
+		_x setDir ([_x,town] call BIS_fnc_dirTo);
+		_x setUnitPos "middle";
+	} forEach units GrpAAF_R;
+};
 
-// Further tweaking to vehicles
-//{_x removeWeaponGlobal "GMG_40mm"; _x lockTurret [[1],true];} forEach [];
-//{_x removeWeaponGlobal "HMG_127_APC";_x lockTurret [[0],true];} forEach [];
+car1 setDir ([car1,town] call BIS_fnc_dirTo);
+car1 setVectorUp(surfaceNormal(getPos car1 ));
+VehFIA_Tech1 setPos ([car1,50,15,0,true] call ws_fnc_getPos);
+VehFIA_Tech1 setDir ([VehFIA_Tech1,town] call BIS_fnc_dirTo);
+VehFIA_Tech1 setVectorUp(surfaceNormal(getPos VehFIA_Tech1));
 
-// Load up vehicles with groups
-// [veh1,group1,group2.....groupN] call ws_fnc_loadVehicle
-[Veh,Grp] call ws_fnc_loadVehicle;
+car2 setDir ([car2,town] call BIS_fnc_dirTo);
+car2 setVectorUp(surfaceNormal(getPos car2));
+VehFIA_Tech2 setPos ([car2,50,15,0,true] call ws_fnc_getPos);
+VehFIA_Tech2 setDir ([VehFIA_Tech2,town] call BIS_fnc_dirTo);
+VehFIA_Tech2 setVectorUp(surfaceNormal(getPos VehFIA_Tech2));
+
+if (ws_param_civs == 1) then {
+	[town,250,20,20] execVM "ws_scripts\ws_populateTown.sqf";
+};
 
 ws_initDone = true;
