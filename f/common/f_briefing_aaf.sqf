@@ -21,7 +21,8 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS.
+Made by Wolfenswan for Folk ARPS.<br/>
+Inspired by the original Warlords for Arma2 by Housemaster.
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -33,31 +34,14 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
-"]];
-
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+Ground-Transport:<br/>
+3 x Zamak<br/>
+1 x Strider (unarmed)<br/>
+1 x Strider (HMG)<br/>
+Helicopters:<br/>
+1 x Mohawk (carries 16)<br/>
+2 x Hellcat (unarmed - carries 6)<br/>
+1 x Hellcat (armed - carries 6)
 "]];
 
 // ====================================================================================
@@ -67,7 +51,11 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We begin <marker name='mkrAAF'>here</marker>.<br/>
+2. Proceed towards the <marker name='mkrTown'>target town</marker> and locate the meeting place of the officers. Strike swiftly to take them out.<br/><br/>
+VICTORY CONDITIONS<br/>
+FIA wins if both officers conduct their meeting (5 minutes) and escape to 2.5km distance from the town.<br/>
+AAF wins if both officers are taken out or they flee before the meeting has taken place.
 "]];
 
 // ====================================================================================
@@ -77,15 +65,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+Two high-ranking FIA officers are about to meet in a town nearby. We are tasked to intercept the meeting and take out the officers before they can escape.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+Lightly armed infantry and technicals.
 <br/><br/>
-FRIENDLY FORCES
-<br/>
-*** Insert information about friendly forces here.***
+FIA MEETING<br/>
+The meeting takes place at a randomized location. For the meeting to conduct the two officers have to stay within the indicated circle for 5 consecutive minutes.<br/><br/>
+ROE<br/>
+If Hellcat or Abibala are armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in (just like in real life).
 "]];
 
 // ====================================================================================

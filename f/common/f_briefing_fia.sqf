@@ -2,7 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// FACTION: FIA
+// FACTION: AAF
 
 // ====================================================================================
 
@@ -21,7 +21,8 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS.
+Made by Wolfenswan for Folk ARPS.<br/>
+Inspired by the original Warlords for Arma2 by Housemaster.
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -33,31 +34,10 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
-"]];
-
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+Ground-Transport:<br/>
+2 x Offroads (one for each officer)<br/>
+2 x Offroads (armed - accompanying each officer)<br/><br/>
+Several civilian vehicles can be found in the town.
 "]];
 
 // ====================================================================================
@@ -67,7 +47,12 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We begin <marker name='mkrTown'>here</marker>.<br/>
+2. Protect the officers while they conduct their <marker name='ws_meeting>meeting</marker>.
+3. Repell any assaults by the <marker name='mkrAAF'>AAF</marker> and provide safe escort for the officers away from the AO.<br/><br/>
+VICTORY CONDITIONS<br/>
+FIA wins if both officers conduct their meeting (5 minutes) and escape to 2.5km distance from the town.<br/>
+AAF wins if both officers are taken out or they flee before the meeting has taken place.
 "]];
 
 // ====================================================================================
@@ -77,15 +62,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+Two of our high-ranking FIA officers are about to hold an important meeting in a <marker name='mkrTown'>nearby town</marker>. While the AAF has been dormant for a while, we are sure the dicator's lapdogs will try and take out our leaders. We must not let this happen.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+AAF regulars, both motorized and airborn. They will possibly use UAVs against us.
 <br/><br/>
-FRIENDLY FORCES
-<br/>
-*** Insert information about friendly forces here.***
+FIA MEETING<br/>
+The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for 5 consecutive minutes.<br/><br/>
+ROE<br/>
+If Hellcat or Abibala are armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in (just like in real life).
 "]];
 
 // ====================================================================================

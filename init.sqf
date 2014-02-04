@@ -75,10 +75,10 @@ f_script_setLocalVars = [] execVM "f\common\f_setLocalVars.sqf";
 // F3 - Automatic Body Removal
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_removeBodyDelay = 180;
-f_removeBodyDistance = 500;
-f_doNotRemoveBodies = [];
-[] execVM "f\common\f_addRemoveBodyEH.sqf";
+// f_removeBodyDelay = 180;
+// f_removeBodyDistance = 500;
+// f_doNotRemoveBodies = [];
+// [] execVM "f\server\f_addRemoveBodyEH.sqf";
 
 // ====================================================================================
 
@@ -157,7 +157,7 @@ f_isFriendly = [];
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[10] execVM "f\common\f_nametags.sqf";
+[20] execVM "f\common\f_nametags.sqf";
 
 // ====================================================================================
 

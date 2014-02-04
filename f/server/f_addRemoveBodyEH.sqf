@@ -2,30 +2,22 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// JIP CHECK
-// Prevents the script executing until the player has synchronised correctly:
+// RUN THE SCRIPT ONLY SERVER SIDE AND ON HEADLESS CLIENT
 
-#include "f_waitForJIP.sqf"
+if (!isServer && hasInterface) exitWith {};
 
 // ====================================================================================
 
 // DECLARE VARIABLES AND FUNCTIONS
 
-private ["_men","_str_Men","_str_menLessExempt","_handle"];
-
-// ====================================================================================
-
-// WAIT FOR COMMON LOCAL VARIABLES TO BE SET
-// Before executing this script, we wait for the script 'f_setLocalVars.sqf' to run:
-
-waitUntil {scriptDone f_script_setLocalVars};
+private ["_men","_str_Men","_handle"];
 
 // ====================================================================================
 
 // SET KEY VARIABLES
-// Using a common variable, we will create an array containing all men.
+// Using a common variable, we will create an array containing all men, minus playable units.
 
-_men = allUnits;
+_men = allUnits - playableUnits;
 
 // DEBUG
 if (f_var_debugMode == 1) then
@@ -41,7 +33,7 @@ if (f_var_debugMode == 1) then
 if (isNil "f_doNotRemoveBodies") then {f_doNotRemoveBodies = []};
 
 {
-	_x setVariable ["f_removeBodyEH",true];
+ _x setVariable ["f_removeBodyEH",true];
 } forEach f_doNotRemoveBodies;
 
 // ====================================================================================
@@ -51,8 +43,8 @@ if (isNil "f_doNotRemoveBodies") then {f_doNotRemoveBodies = []};
 
 {
 _handle = _x getVariable ["f_removeBodyEH",false];
-if !(_handle) then {
-	_x addEventHandler ["killed", {(_this select 0) execVM "f\server\f_removeBody.sqf"}];
+if !(_handle && local _x) then {
+	_x addEventHandler ["killed", {(_this select 0) spawn f_fnc_removeBody}];
 	_x setVariable ["f_removeBodyEH",true];
 	};
 } forEach _men;

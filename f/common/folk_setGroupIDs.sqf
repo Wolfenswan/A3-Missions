@@ -61,7 +61,11 @@ _groups = [
 ["GrpAAF_C1","AAF A2 -"],
 ["GrpAAF_C2","AAF A2 -"],
 ["GrpAAF_C3","AAF A3 -"],
-["GrpAAF_R","AAF R1 -"]
+["GrpAAF_TH1","AAF TH1 -"],
+["GrpAAF_TH2","AAF TH2 -"],
+["GrpAAF_TH3","AAF TH3 -"],
+["GrpAAF_AH1","AAF AH1 -"],
+["GrpAAF_R","AAF Recon -"]
 
 // ====================================================================================
 
