@@ -1,11 +1,7 @@
-if (isServer) then {
-	_mkrs = ["mkrM"] call ws_fnc_collectMarkers;
-	ws_meetingM = _mkrs call ws_fnc_selectRandom;
-	{_x setPos (getMarkerPos ws_meetingM)} forEach [TrgM,TrgM_1];
-	publicVariable "ws_meetingM";
-};
+if (isNil "ws_meeting") then {ws_meeting = false};
 
 if (side player == BLUFOR) then {
+	{_x setMarkerAlphaLocal 0} forEach ["mkrVeh","mkrVeh_1"];
 	waitUntil {!isNil "ws_meetingM"};
 	_mkr = createMarkerLocal ["meeting",getMarkerPos ws_meetingM];
 	_mkr setMarkerTypeLocal "mil_triangle";

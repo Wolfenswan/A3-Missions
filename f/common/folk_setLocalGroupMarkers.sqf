@@ -261,7 +261,7 @@ switch (_unitfaction) do
 		["GrpAAF_IFV8",  7, "IFV8", "ColorOrange"] spawn f_fnc_localGroupMarker;
 
  		["GrpAAF_TNK1",  7, "TNK1", "ColorRed"] spawn f_fnc_localGroupMarker;
-
+ 		["GrpAAF_AH1",  8, "AH1", "ColorRed"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_TH1",  8, "TH1", "ColorRed"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_TH2",  8, "TH2", "ColorBlue"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_TH3",  8, "TH3", "ColorGreen"] spawn f_fnc_localGroupMarker;

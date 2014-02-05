@@ -36,7 +36,8 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 Ground-Transport:<br/>
 2 x Offroads (one for each officer)<br/>
-2 x Offroads (armed - accompanying each officer)<br/><br/>
+2 x Offroads (armed - accompanying each officer)<br/>
+Drive carefully - we don't have any spare tires<br/><br/>
 Several civilian vehicles can be found in the town.
 "]];
 
@@ -48,10 +49,13 @@ Several civilian vehicles can be found in the town.
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. We begin <marker name='mkrTown'>here</marker>.<br/>
-2. Protect the officers while they conduct their <marker name='ws_meeting>meeting</marker>.
+2. Protect the officers while they conduct their <marker name='meeting'>meeting</marker>.<br/>
 3. Repell any assaults by the <marker name='mkrAAF'>AAF</marker> and provide safe escort for the officers away from the AO.<br/><br/>
+OFFICER MEETING<br/>
+The starting locations of the officers are randomized and their distance can benefit either of the two sides.<br/>
+The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for 10 consecutive minutes.<br/><br/>
 VICTORY CONDITIONS<br/>
-FIA wins if both officers conduct their meeting (5 minutes) and escape to 2.5km distance from the town.<br/>
+FIA wins if both officers conduct their meeting and escape to 2.5km distance from the town.<br/>
 AAF wins if both officers are taken out or they flee before the meeting has taken place.
 "]];
 
@@ -68,10 +72,11 @@ ENEMY FORCES
 <br/>
 AAF regulars, both motorized and airborn. They will possibly use UAVs against us.
 <br/><br/>
-FIA MEETING<br/>
-The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for 5 consecutive minutes.<br/><br/>
+
 ROE<br/>
-If Hellcat or Abibala are armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in (just like in real life).
+If Hellcat or Abibala are armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in (just like in real life).<br/><br/>
+FOG<br/>
+Morning fog might covering the lower areas (under 75m). This means that Agios itself is clear of fog but the southern and eastern approach will likely be covered. An aerial approach is suggested with heavy morning fog.
 "]];
 
 // ====================================================================================

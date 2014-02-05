@@ -13,6 +13,11 @@ if (!isNil "GrpAAF_R") then {
 	} forEach units GrpAAF_R;
 };
 
+_mkrs = ["mkrM"] call ws_fnc_collectMarkers;
+ws_meetingM = _mkrs call ws_fnc_selectRandom;
+{_x setPos (getMarkerPos ws_meetingM)} forEach [TrgM,TrgM_1,TrgM_2];
+publicVariable "ws_meetingM";
+
 car1 setDir ([car1,town] call BIS_fnc_dirTo);
 car1 setVectorUp(surfaceNormal(getPos car1 ));
 VehFIA_Tech1 setPos ([car1,50,15,0,true] call ws_fnc_getPos);
@@ -28,5 +33,11 @@ VehFIA_Tech2 setVectorUp(surfaceNormal(getPos VehFIA_Tech2));
 if (ws_param_civs == 1) then {
 	[town,250,20,20] execVM "ws_scripts\ws_populateTown.sqf";
 };
+
+
+if (ws_param_uav == 0) then {
+	VehAAF_UAV removeMagazineTurret ["6Rnd_LG_scalpel",[-1]];
+};
+
 
 ws_initDone = true;

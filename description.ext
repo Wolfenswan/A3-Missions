@@ -5,9 +5,9 @@
 
 class Header
 {
-	gameType = Coop;
+	gameType = DM;
 	minPlayers = 1;
-	maxPlayers = 320;
+	maxPlayers = 106;
 };
 
 // ============================================================================================
@@ -15,7 +15,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "fa3_a106_Manhunt";
 onLoadMission = "Made with the F3 Mission Development Framework";
 author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
@@ -26,7 +26,6 @@ loadScreen = "logo.paa";
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 enableDebugConsole = 1;
-allowFunctionsRecompile = 1;
 
 // ============================================================================================
 
@@ -131,9 +130,9 @@ class Params
 	class f_param_weather
 	{
 		title = "$STR_f_param_weather";
-		values[] = {0,1,2,3,4,5,6,7,8,9};
-		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8,"Light Fog"};
-		default = 0;
+		values[] = {0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8,"Light Morning Fog (up to 75m)","Heavy Morning Fog (up to 75m)"};
+		default = 9;
 		code = "f_param_weather = %1";
 	};
 
@@ -190,10 +189,10 @@ class Params
 
 	class ws_param_uav
 	{
-		title = "UAV is armed (6 Skalpel ATGM - need to be guided by laser)";
+		title = "Abibala UAV has ATGMs";
 		values[] = {0,1};
 		texts[] = {"No","Yes"};
-		default = 0;
+		default = 1;
 		code = "ws_param_uav = %1";
 	};
 
@@ -211,7 +210,7 @@ class Params
 		title = "ws_fnc debug";
 		values[] = {0,1};
 		texts[] = {"Off","On"};
-		default = 1;
+		default = 0;
 		code = "ws_param_dbg = %1";
 	};
 

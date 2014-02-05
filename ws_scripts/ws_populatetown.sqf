@@ -59,7 +59,7 @@ _radius = _this select 1;
 
 _buildings = [];
 _posarray = [];
-_bposarray = [];
+_bpa = [];
 _civilians = _center getVariable ["ws_civilians",[]];
 
 //Fill buildings array & get building positions
@@ -77,15 +77,15 @@ if (count _this > 4) then {_cars = _this select 4};
 //Add building positions to the posarray
 while {count _posarray <= _inside} do {
 	_building = _buildings call ws_fnc_selectRandom;
-	_bposarray = _building getVariable ["ws_bpos",[]];
-	if (count _bposarray == 0) then {_bposarray = [_building] call ws_fnc_getBpos;};
+	_bpa = _building getVariable ["ws_bpos",[]];
+	if (count _bpa == 0) then {_bpa = [_building] call ws_fnc_getBpos;};
 
-	_i = floor (random (count _bposarray));
-	_bpos = _bposarray select _i;
+	_i = floor (random (count _bpa));
+	_bpos = _bpa select _i;
 	_posarray = _posarray + [_bpos];
-	_bposarray set [_i,0];			//Workaround as in http://community.bistudio.com/wiki/Array#Subtraction
-	_bposarray = _bposarray - [0];
-	_building setVariable ["ws_bpos",_bposarray];
+	_bpa set [_i,0];			//Workaround as in http://community.bistudio.com/wiki/Array#Subtraction
+	_bpa = _bpa - [0];
+	_building setVariable ["ws_bpos",_bpa];
 };
 
 if (count _posarray < _inside) then {_inside = count _posarray};
@@ -125,7 +125,7 @@ _grp = createGroup civilian;
 	_grp enableAttack false;
 	_civ disableAI "Autotarget"; _civ disableAI "target";_civ disableAI "FSM";
 	_civ setDir (random 360);
-	if (getPosATL _civ select 2 != _x select 2) then {_civ setPos [_x select 0,_x select 1,1];_civ setposatl  _x};
+	if (getPosATL _civ select 2 != _x select 2) then {_civ setPos [_x select 0,_x select 1,1];};
 	//_civ addEventHandler ["killed"]
 } forEach _posarray;
 
