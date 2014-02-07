@@ -16,7 +16,7 @@ if (side player == BLUFOR) then {
 
 // Display a short text intro
 if (!isDedicated) then {
- ["OPERATION XYZ","CENTRAL ALTIS"] spawn {
+ ["MANHUNT","CENTRAL ALTIS"] spawn {
 	 waitUntil {time > 15};
 		[
 			[

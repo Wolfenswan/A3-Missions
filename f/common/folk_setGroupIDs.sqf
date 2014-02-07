@@ -47,8 +47,8 @@ _groups = [
 // GROUP IDs: INDEPENDENT > AAF
 // Automatically assigns intelligible names to groups
 
-["GrpAAF_CO","AAF O1 -"],
-["GrpAAF_DC","AAF O2 -"],
+["GrpAAF_CO","AAF CO -"],
+["GrpAAF_DC","AAF DC -"],
 ["GrpAAF_ASL","AAF ASL -"],
 ["GrpAAF_A1","AAF A2 -"],
 ["GrpAAF_A2","AAF A2 -"],
@@ -77,7 +77,7 @@ _groups = [
 
 // SET GROUP IDS
 // Execute setGroupID Function for all factions
-{_x spawn f_fnc_setGroupID} forEach _groups;
+{_x call f_fnc_setGroupID} forEach _groups;
 
 /*
 if(!isnil "GrpNATO_CO") then {GrpNATO_CO setGroupId ["NATO CO -","GroupColor0"];};
