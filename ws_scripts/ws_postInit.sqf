@@ -27,3 +27,17 @@ if (!isDedicated) then {
 		] spawn BIS_fnc_typeText;
 	};
 };
+
+if (isServer) then {
+
+	if (ws_param_civs == 1) then {
+		[town,200,5,20] execVM "ws_scripts\ws_populateTown.sqf";
+		[town_1,200,5,20] execVM "ws_scripts\ws_populateTown.sqf";
+	};
+
+
+	if (ws_param_uav == 0) then {
+		VehAAF_UAV removeMagazineTurret ["6Rnd_LG_scalpel",[-1]];
+	};
+
+};

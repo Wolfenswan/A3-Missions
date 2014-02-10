@@ -30,14 +30,4 @@ VehFIA_Tech2 setPos ([car2,50,15,0,true] call ws_fnc_getPos);
 VehFIA_Tech2 setDir ([VehFIA_Tech2,town] call BIS_fnc_dirTo);
 VehFIA_Tech2 setVectorUp(surfaceNormal(getPos VehFIA_Tech2));
 
-if (ws_param_civs == 1) then {
-	[town,250,20,20] execVM "ws_scripts\ws_populateTown.sqf";
-};
-
-
-if (ws_param_uav == 0) then {
-	VehAAF_UAV removeMagazineTurret ["6Rnd_LG_scalpel",[-1]];
-};
-
-
 ws_initDone = true;

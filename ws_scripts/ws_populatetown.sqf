@@ -113,24 +113,21 @@ for "_x" from 1 to _cars do {
 	};
 };
 
-
-_grp = createGroup grpNull;
 {
 	_grp = createGroup civilian;
 	_civ = _grp createUnit [(_civclasses call ws_fnc_selectRandom),_x,[],0,"NONE"];
-	_civ setBehaviour "CARELESS";
-	_civ setSpeedMode "LIMITED";
+	//_civ setBehaviour "CARELESS";
+	//_civ setSpeedMode "LIMITED";
 	_center setVariable ["ws_civilians",_civilians +[_civ]];
 	_civilians = _center getVariable ["ws_civilians",[]];
 	//doStop _civ;
-	_grp enableAttack false;
-	_civ disableAI "Autotarget"; _civ disableAI "target";_civ disableAI "FSM";
+	//_grp enableAttack false;
+	//_civ disableAI "Autotarget"; _civ disableAI "target";
 	_civ setDir (random 360);
 	if (getPosATL _civ select 2 != _x select 2) then {_civ setPos [_x select 0,_x select 1,1];};
 	//_civ addEventHandler ["killed"]
 } forEach _posarray;
 
-//[_grp] execVM "ws_scripts\walk.sqf";
 
 _civilians = _center getVariable ["ws_civilians",[]];
 _civilians
