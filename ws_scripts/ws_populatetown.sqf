@@ -114,8 +114,9 @@ for "_x" from 1 to _cars do {
 };
 
 
-_grp = createGroup civilian;
+_grp = createGroup grpNull;
 {
+	_grp = createGroup civilian;
 	_civ = _grp createUnit [(_civclasses call ws_fnc_selectRandom),_x,[],0,"NONE"];
 	_civ setBehaviour "CARELESS";
 	_civ setSpeedMode "LIMITED";
@@ -129,7 +130,7 @@ _grp = createGroup civilian;
 	//_civ addEventHandler ["killed"]
 } forEach _posarray;
 
-[_grp] execVM "ws_scripts\walk.sqf";
+//[_grp] execVM "ws_scripts\walk.sqf";
 
 _civilians = _center getVariable ["ws_civilians",[]];
 _civilians
