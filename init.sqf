@@ -53,7 +53,7 @@ f_script_setTeamColours = [] execVM "f\common\f_setTeamColours.sqf";
 // F3 - Fireteam Member Markers
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[] execVM "f\common\f_setlocalFTMemberMarkers.sqf";
+[] spawn f_fnc_SetLocalFTMemberMarkers;
 
 // ====================================================================================
 
@@ -86,7 +86,7 @@ f_endSelected = -1;
 f_removeBodyDelay = 180;
 f_removeBodyDistance = 500;
 f_doNotRemoveBodies = [];
-[] execVM "f\common\f_addRemoveBodyEH.sqf";
+[] execVM "f\server\f_addRemoveBodyEH.sqf";
 
 // ====================================================================================
 
@@ -121,13 +121,13 @@ f_doNotRemoveBodies = [];
 // [[GroupName],100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // BLUFOR > NATO
-//[BLUFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
+// [BLUFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // OPFOR > CSAT
-[OPFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
+// [OPFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // INDEPENDENT > AAF
-[INDEPENDENT,100,2] execVM "f\server\f_endOnCasualtiesCap.sqf";
+// [INDEPENDENT,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // ====================================================================================
 
@@ -149,7 +149,7 @@ f_doNotRemoveBodies = [];
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 f_isFriendly = [];
-//[]  execVM "f\server\f_setAISkill.sqf";
+[]  execVM "f\server\f_setAISkill.sqf";
 
 // ====================================================================================
 
@@ -165,8 +165,11 @@ f_isFriendly = [];
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[10] execVM "f\common\f_nametags.sqf";
 
+f_showGroup_Nametags = true;			// Display unit's group (uses GroupID)
+// f_showDistance_Nametags = true;	// Show distance to player
+// f_showVehicle_Nametags = true;		// Show vehicle player is in
+[20] execVM "f\common\f_nametags.sqf";
 // ====================================================================================
 
 // F3 - Group E&E Check
@@ -194,3 +197,11 @@ f_isFriendly = [];
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [] execVM "f\common\f_safeStart.sqf";
+
+// ====================================================================================
+
+// F3 - AI Unit Caching
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+[30] spawn f_fnc_cInit;
+
