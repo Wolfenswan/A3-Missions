@@ -205,3 +205,7 @@ f_showGroup_Nametags = true;			// Display unit's group (uses GroupID)
 
 [30] spawn f_fnc_cInit;
 
+// ====================================================================================
+
+// Wolfenswan - execute post Init scripts
+[] execVM "ws_scripts\ws_postInit.sqf";
