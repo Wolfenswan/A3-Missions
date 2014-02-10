@@ -52,7 +52,7 @@ _rifle_attach = ["acc_pointer_IR","optic_MRCO"];
 _carbine = "arifle_Katiba_C_F";
 _carbinemag = "30Rnd_65x39_caseless_green";
 _carbinemag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
-_carbine_attach = ["acc_pointer_IR","optic_ACO_grn"];
+_carbine_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Standard Submachine Gun/Personal Defence Weapon (Aircraft Pilot, Submachinegunner)
 _smg = "SMG_02_F";
@@ -121,7 +121,7 @@ _bagmediumdiver =  "B_AssaultPack_blk";	// used by divers
 _AR = "LMG_Mk200_F";
 _ARmag = "200Rnd_65x39_cased_Box";
 _ARmag_tr = "200Rnd_65x39_cased_Box_Tracer";
-_AR_attach = ["acc_pointer_IR","optic_ACO_grn"];
+_AR_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Medium MG
 _MMG = "LMG_Zafir_F";
