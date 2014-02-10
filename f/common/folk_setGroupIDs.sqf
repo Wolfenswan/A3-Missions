@@ -149,6 +149,10 @@ if(!isnil "GrpCSAT_HMG1") then {GrpCSAT_HMG1 setGroupId ["CSAT HMG1 -","GroupCol
 if(!isnil "GrpCSAT_MTR1") then {GrpCSAT_MTR1 setGroupId ["CSAT MTR1 -","GroupColor0"];};
 if(!isnil "GrpCSAT_HAT1") then {GrpCSAT_HAT1 setGroupId ["CSAT GrpCSAT_HAT1 -","GroupColor0"];};
 
+
+if(!isnil "GrpCSAT_MRAP1") then {GrpCSAT_MRAP1 setGroupId ["CSAT IFV1 -","GroupColor0"];};
+if(!isnil "GrpCSAT_MRAP2") then {GrpCSAT_MRAP2 setGroupId ["CSAT IFV2 -","GroupColor0"];};
+
 if(!isnil "GrpCSAT_IFV1") then {GrpCSAT_IFV1 setGroupId ["CSAT IFV1 -","GroupColor0"];};
 if(!isnil "GrpCSAT_IFV2") then {GrpCSAT_IFV2 setGroupId ["CSAT IFV2 -","GroupColor0"];};
 if(!isnil "GrpCSAT_IFV3") then {GrpCSAT_IFV3 setGroupId ["CSAT IFV3 -","GroupColor0"];};

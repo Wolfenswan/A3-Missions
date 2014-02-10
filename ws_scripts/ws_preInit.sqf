@@ -54,8 +54,9 @@ _posarray = _posarray + [_pos];
 } forEach _roads;
 
 {
-if !(isNil "_x") then {
+if !(isNil format ["%1",_x]) then {
 	_x setPos (_posarray select _forEachIndex);
+	_x setDir ([_x,ws_convoy] call BIS_fnc_dirTo);
 };
 } forEach _csat_convoy;
 
