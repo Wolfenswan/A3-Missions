@@ -1,4 +1,12 @@
+// Modify these
+// ws_eola_caches_present = 4; // Caches to be placed - overrides parameter
+// ws_eola_caches_target = 4;   // Caches that need to be destroyed - overrides parameter
+ws_eola_ending = 3;
+ws_eola_defenders = opfor;		// Which side is defending? blufor, opfor or independent.
+
+
 if (isNil "ws_initDone") then {ws_initDone = false};
+if (ws_initDone) exitWith {};
 
 ws_debug = if (ws_param_dbg == 0) then {false} else {true};
 
@@ -7,12 +15,41 @@ if !(isServer) exitWith {ws_initDone = true};
 // Disable Thermal Imaging for these vehicles
 {_x disableTIEquipment true;} forEach [];
 
-// Further tweaking to vehicles
-//{_x removeWeaponGlobal "GMG_40mm"; _x lockTurret [[1],true];} forEach [];
-//{_x removeWeaponGlobal "HMG_127_APC";_x lockTurret [[0],true];} forEach [];
+if (isNil "ws_mkr_array") then {ws_mkr_array = [];};
 
-// Load up vehicles with groups
-// [veh1,group1,group2.....groupN] call ws_fnc_loadVehicle
-[Veh,Grp] call ws_fnc_loadVehicle;
+_markers = ["mkrEolaCache"] call ws_fnc_collectMarkers;
+
+ws_cache_array = [];
+for "_x" from 1 to ws_eola_caches_present do {
+	_mkr = _markers call ws_fnc_selectRandom; _markers = _markers - [_mkr];
+	_pos = [_mkr,true,0,360,false,false] call ws_fnc_getPos;
+	_box = "O_supplyCrate_F" createVehicle _pos;
+
+	ws_cache_array = ws_cache_array + [_box];
+	clearMagazineCargoGlobal _box; clearWeaponCargoGlobal _box; clearItemCargoGlobal _box; clearBackpackCargoGlobal _box;
+
+	_box addEventHandler [
+	"HandleDamage",
+	{
+	 _box = _this select 0;
+	 _ammoName = _this select 4;
+
+	 if (_ammoName == "DemoCharge_Remote_Ammo") then {
+	 	[_box] execVM "ws_scripts\ws_eola_cache_destroyed.sqf";
+	 	};
+	}];
+};
+
+ {
+		_mkr = createMarker [format ["%1",_x],getPos _x];
+		_mkr setMarkerColor "ColorWhite";
+		_mkr setMarkerSize [0.5,0.5];
+		_mkr setMarkerType "mil_triangle";
+		ws_mkr_array = ws_mkr_array + [_mkr];
+		_mkr setMarkerAlpha 0;
+	} forEach ws_cache_array;
+
+publicVariable "ws_mkr_array";
+
 
 ws_initDone = true;

@@ -201,15 +201,6 @@ class Params
 
 // Wolfenswan - Parameters
 
-	class ws_param_hc
-	{
-		title = "Headless Client";
-		values[] = {0,1};
-		texts[] = {"Off","On"};
-		default = 0;
-		code = "ws_param_hc = %1";
-	};
-
 	class ws_param_dbg
 	{
 		title = "ws_fnc debug";
@@ -217,6 +208,24 @@ class Params
 		texts[] = {"Off","On"};
 		default = 0;
 		code = "ws_param_dbg = %1";
+	};
+
+	class ws_param_caches_present
+	{
+		title = "Caches present";
+		values[] = {2,4,6,8,10,12};
+		texts[] = {"2","4","6","8","10","12"};
+		default = 6;
+		code = "ws_eola_caches_present = %1";
+	};
+
+	class ws_param_caches_target
+	{
+		title = "Caches to destroy";
+		values[] = {2,4,6,8,10,12};
+		texts[] = {"2","4","6","8","10","12"};
+		default = 4;
+		code = "ws_eola_caches_target = %1";
 	};
 
 };
@@ -248,9 +257,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "BLUFOR looses!";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "All BLUFOR units were killed.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -258,9 +267,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "AAF looses!";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "All AAF units were killed.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -268,9 +277,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "Ending #3";
+		title = "OPFOR looses!";
 		subtitle = "";
-		description = "*** Insert debriefing #3 here. ***";
+		description = "All CSAT units were killed.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -278,9 +287,9 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "Ending #4";
+		title = "Attackers win!";
 		subtitle = "";
-		description = "*** Insert debriefing #4 here. ***";
+		description = "All caches were destroyed!";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
