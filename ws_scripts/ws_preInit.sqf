@@ -1,9 +1,4 @@
-// Modify these
-// ws_eola_caches_present = 4; // Caches to be placed - overrides parameter
-// ws_eola_caches_target = 4;   // Caches that need to be destroyed - overrides parameter
-ws_eola_ending = 3;
-ws_eola_defenders = opfor;		// Which side is defending? blufor, opfor or independent.
-
+#include "ws_eola_setup.sqf";
 
 if (isNil "ws_initDone") then {ws_initDone = false};
 if (ws_initDone) exitWith {};
@@ -18,6 +13,7 @@ if !(isServer) exitWith {ws_initDone = true};
 if (isNil "ws_mkr_array") then {ws_mkr_array = [];};
 
 _markers = ["mkrEolaCache"] call ws_fnc_collectMarkers;
+if (count _markers < ws_eola_caches_present) then {ws_eola_caches_present = count _markers};
 
 ws_cache_array = [];
 for "_x" from 1 to ws_eola_caches_present do {
