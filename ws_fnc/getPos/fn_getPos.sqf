@@ -85,7 +85,7 @@ switch (typename _posradius) do {
 		};
 	};
 	case "BOOL": {
-	_pos = [_posloc] call ws_fnc_getPosInArea;
+		_pos = [_posloc] call ws_fnc_getPosInArea;
 }	;
 };
 
@@ -93,21 +93,24 @@ switch (typename _posradius) do {
 
 
 //If the position has to be on dry land
-if (!_water && {(surfaceIsWater _pos)}) then {
+if (!_water && (surfaceIsWater _pos)) then {
 	_pos = [_pos] call ws_fnc_NearestLandPos;
 };
 
 //If building positions are disallowed
-if (!_building && {(count (_pos nearObjects ["House",10]) >= 1)}) then {
+if (!_building && (count (_pos nearObjects ["House",5]) >= 1)) then {
 	_i = 0;
 	_distance = 0;
 	_done = false;
-	while {!_done && _i <= 50} do {
+	while {!_done && _i <= 100} do {
 		for "_x" from 0 to 340 step 20 do {
-			_distance = _distance + 5;
-			_pos set [0,_posX + (_distance * sin _x)];
-			_pos set [1,_posY + (_distance * cos _x)];
-			if !(count (_pos nearObjects ["House",10]) >= 1) exitWith {_done = true};
+			if (typeName _posradius == "BOOL") then {_pos = [_posloc] call ws_fnc_getPosInArea;} else {
+				_distance = _distance + 5;
+				_pos set [0,_posX + (_distance * sin _x)];
+				_pos set [1,_posY + (_distance * cos _x)];
+			};
+
+			if !(count (_pos nearObjects ["House",5]) >= 1) exitWith {_done = true};
 		};
 		_i = _i + 1;
 	};
