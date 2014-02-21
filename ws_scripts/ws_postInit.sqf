@@ -26,9 +26,3 @@ if (isServer) then {
 	// If units were spawned, AI skill is set again
 	[] execVM "f\server\f_setAISkill.sqf";
 };
-
-// Start the caching
-if (ws_param_caching != 0) then {
-	waitUntil {time > 30};
-	[ws_param_caching] call ws_fnc_cInit;
-};
