@@ -13,7 +13,7 @@ private ["_timeOfDay","_weather","_MissionOvercast","_MissionRain","_MissionRain
 
 #include "f_waitForJIP.sqf"
 
-waitUntil {!isNil "f_param_weather" && !isnil "f_param_weather"};
+waitUntil {!isNil "f_param_timeofday"};
 // ====================================================================================
 
 // SET KEY VARIABLES
@@ -22,7 +22,7 @@ waitUntil {!isNil "f_param_weather" && !isnil "f_param_weather"};
 _timeOfDay = f_param_timeOfDay;
 
 // WARNING: WEATHER PARAMETER IS DISABLED UNTIL CERTAIN ARMA 3 COMMANDS ARE FIXED
-_weather = f_param_weather;
+_weather = 8;
 
 
 // ====================================================================================
@@ -139,13 +139,13 @@ switch (_weather) do
 // Storm
 	case 8:
 	{
-		_MissionOvercast = 1;
-		_MissionRain = 1;
+		_MissionOvercast = 0.8;
+		_MissionRain = 0.4;
 		_MissionRainbow = 0;
 		_MissionLightnings = 1;
 		_MissionWindStr = 1;
 		_MissionWindGusts = 1;
-		_MissionFog = 0;
+		_MissionFog =[1,1,3];
 		_MissionWaves = 1;
 		_MissionHumidity = 1;
 	};
@@ -158,7 +158,7 @@ switch (_weather) do
 		_MissionLightnings = 0;
 		_MissionWindStr = 0;
 		_MissionWindGusts = 0;
-		_MissionFog = 0.3;
+		_MissionFog = [1,1,3];
 		_MissionWaves = 0;
 		_MissionHumidity = 0.7;
 	};
@@ -208,57 +208,26 @@ if(!isDedicated) then
 
 switch (_timeOfDay) do
 {
-// Dawn
+
 	case 0:
 	{
-		setDate [2030, 5, 11, 5, 0];
+		setDate [2030, 5, 11, 18, 55];
 	};
-// Early Morning
 	case 1:
 	{
-		setDate [2030, 5, 11, 6, 0];
-	};
-// Morning
-	case 2:
-	{
-		setDate [2030, 5, 11, 9, 0];
-	};
-// Noon
-	case 3:
-	{
-		setDate [2030, 5, 11, 12, 0];
-	};
-// Afternoon
-	case 4:
-	{
-		setDate [2030, 5, 11, 15, 0];
-	};
-// Evening
-	case 5:
-	{
-		setDate [2030, 5, 11, 17, 40];
-	};
-// Dusk
-	case 6:
-	{
-		setDate [2030, 5, 11, 19, 10];
-	};
-// Night
-	case 7:
-	{
-		setDate [2030, 5, 11, 0, 0];
+		setDate [2030, 5, 11, 20, 10];
 	};
 };
 // ====================================================================================
 
 // reset the values here, to make sure nothing freaky happens ,like rain.
 0 setOvercast _MissionOvercast;
-0 setFog _MissionFog;
 0 setRain _MissionRain;
 0 setRainbow _MissionRainbow;
 0 setWindStr  _MissionWindStr;
 0 setWindForce _MissionWindGusts;
 0 setWaves _MissionWaves;
+0 setFog _MissionFog;
 
 // ====================================================================================
 

@@ -68,6 +68,19 @@ if (_unitfaction == "BLU_G_F") exitwith {
 	};
 };
 
+
+if (_unitfaction == "OPF_G_F") exitwith {
+
+#include "f\common\f_briefing_fia.sqf"
+
+// DEBUG
+	if (f_var_debugMode == 1) then
+	{
+	player sideChat format ["DEBUG (briefing.sqf): Briefing for %1 slot selected.",_unitfaction];
+	};
+};
+
+
 // ====================================================================================
 
 // BRIEFING: OPFOR > CSAT

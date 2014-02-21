@@ -43,6 +43,7 @@ private [
 _typeofUnit = toLower (_this select 0);
 _unit = _this select 1;
 _faction = toLower (faction _unit);
+f_param_backpacks = 0;
 
 // If the unitfaction is different from the group leader's faction and the unit is not a vehicle, the latters faction is used
 if ((_unit isKindOF "CAManBase")&&(_faction != toLower (faction (leader group _unit)))) then {_faction = toLower (faction (leader group _unit))};
@@ -76,6 +77,11 @@ if (_faction == "BLU_F") then {
 if (_faction == "BLU_G_F") then {
 #include "folk_assignGear_fia.sqf"
 };
+
+if (_faction == "OPF_G_F") then {
+#include "folk_assignGear_fai.sqf"
+};
+
 
 // ====================================================================================
 

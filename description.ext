@@ -69,22 +69,6 @@ class Params
 
 // ============================================================================================
 
-// F3 - Folk Assign Gear Script
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-// WARNING: DO NOT DISABLE THIS COMPONENT OR PLACE ANY OTHER PARAMETERS BEFORE OR AFTER IT MUST
-// BE REFERENCABLE AS "f_param_backpacks" FOR GEAR SCRIPTS TO WORK CORRECTLY
-
-        class f_param_backpacks
-        {
-                title = "$STR_f_param_backpacks";
-                values[] = {0,1,2};
-                texts[] = {"Off","Light","Heavy"};
-                default = 1;
-                code = "f_param_backpacks = %1";
-        };
-
-// ============================================================================================
-
 // F3 - ACRE Support
 // Credits: Please see the F2 online manual (http://www.ferstaberinde.com/f3/en/)
 // WARNING: DO NOT DISABLE THIS COMPONENT OR CHANGE POSITION IN PARAMS; IT MUST BE REFERENCABLE
@@ -113,28 +97,14 @@ class Params
                 code = "f_var_mission_timer = %1";
         };
 
-// ============================================================================================
-
-// F3 - Mission Conditions Selector
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-        class f_param_timeOfDay
+  class f_param_timeOfDay
         {
                 title = "$STR_f_param_timeOfDay";
-                values[] = {0,1,2,3,4,5,6,7};
-                texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
-                default = 3;
+                values[] = {0,1};
+                texts[] = {"Dark","Really dark"};
+                default = 0;
                 code = "f_param_timeOfDay = %1";
         };
-
-	class f_param_weather
-	{
-		title = "$STR_f_param_weather";
-		values[] = {0,1,2,3,4,5,6,7,8,9,10};
-		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8,$STR_f_param_weather_Option9,$STR_f_param_weather_Option10};
-		default = 0;
-		code = "f_param_weather = %1";
-	};
 
 // ============================================================================================
 

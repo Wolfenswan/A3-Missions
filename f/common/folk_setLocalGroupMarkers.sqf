@@ -166,6 +166,74 @@ switch (_unitfaction) do
 
 // ====================================================================================
 
+// MARKERS: OPFOR > FAI
+// Markers seen by players in FIA slots.
+
+	case "opf_g_f":
+	{
+		["GrpFAI_CO", 0, "CO", "ColorYellow"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_DC", 0, "DC", "ColorYellow"] spawn f_fnc_localGroupMarker;
+
+		["GrpFAI_ASL", 0, "ASL", "ColorRed"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_A1", 1, "A1", "ColorRed"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_A2", 1, "A2", "ColorRed"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_A3", 1, "A3", "ColorRed"] spawn f_fnc_localGroupMarker;
+
+		["GrpFAI_BSL", 0, "BSL", "ColorBlue"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_B1", 1, "B1", "ColorBlue"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_B2", 1, "B2", "ColorBlue"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_B3", 1, "B3", "ColorBlue"] spawn f_fnc_localGroupMarker;
+
+		["GrpFAI_CSL", 0, "CSL", "ColorGreen"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_C1", 1, "C1", "ColorGreen"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_C2", 1, "C2", "ColorGreen"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_C3", 1, "C3", "ColorGreen"] spawn f_fnc_localGroupMarker;
+
+		["GrpFAI_MMG1", 2, "MMG1", "ColorOrange"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_MAT1", 3, "MAT1", "ColorOrange"] spawn f_fnc_localGroupMarker;
+
+		["GrpFAI_ST1",  4, "ST1", "ColorOrange"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_HMG1",  2, "HMG1", "ColorOrange"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_MTR1",  5, "MTR1", "ColorOrange"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_HAT1",  3, "HAT1", "ColorOrange"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_SAM1",  3, "SAM1", "ColorOrange"] spawn f_fnc_localGroupMarker;
+
+		["GrpFAI_ENG1",  6, "ENG1", "ColorOrange"] spawn f_fnc_localGroupMarker;
+
+ 		["GrpFAI_IFV1",  7, "IFV1", "ColorRed"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_IFV2",  7, "IFV2", "ColorRed"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_IFV3",  7, "IFV3", "ColorBlue"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_IFV4",  7, "IFV4", "ColorBlue"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_IFV5",  7, "IFV5", "ColorGreen"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_IFV6",  7, "IFV6", "ColorGreen"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_IFV7",  7, "IFV7", "ColorOrange"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_IFV8",  7, "IFV8", "ColorOrange"] spawn f_fnc_localGroupMarker;
+
+ 		["GrpFAI_TNK1",  7, "TNK1", "ColorRed"] spawn f_fnc_localGroupMarker;
+
+		["GrpFAI_TH1",  8, "TH1", "ColorRed"] spawn f_fnc_localGroupMarker;
+ 		["GrpFAI_TH2",  8, "TH2", "ColorRed"] spawn f_fnc_localGroupMarker;
+ 		["GrpFAI_TH3",  8, "TH3", "ColorBlue"] spawn f_fnc_localGroupMarker;
+ 		["GrpFAI_TH4",  8, "TH4", "ColorBlue"] spawn f_fnc_localGroupMarker;
+ 		["GrpFAI_TH5",  8, "TH5", "ColorGreen"] spawn f_fnc_localGroupMarker;
+  		["GrpFAI_TH6",  8, "TH6", "ColorGreen"] spawn f_fnc_localGroupMarker;
+   		["GrpFAI_TH7",  8, "TH7", "ColorOrange"] spawn f_fnc_localGroupMarker;
+		["GrpFAI_TH8",  8, "TH8", "ColorOrange"] spawn f_fnc_localGroupMarker;
+
+		["GrpFAI_AH1",  8, "AH1", "ColorRed"] spawn f_fnc_localGroupMarker;
+
+		["GrpFAI_DT1",  4, "DT1", "ColorOrange"] spawn f_fnc_localGroupMarker;
+
+		["UnitFAI_CO_M", 0, "COM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
+		["UnitFAI_DC_M", 0, "DCM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
+		["UnitFAI_ASL_M", 0, "AM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
+		["UnitFAI_BSL_M", 0, "BM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
+		["UnitFAI_CSL_M", 0, "CM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
+
+	};
+
+// ====================================================================================
+
 // MARKERS: OPFOR > CSAT
 // Markers seen by players in CSAT slots.
 
@@ -221,7 +289,7 @@ switch (_unitfaction) do
 		["GrpCSAT_TH8",  8, "TH8", "ColorOrange"] spawn f_fnc_localGroupMarker;
 
 		["GrpCSAT_AH1",  8, "AH1", "ColorRed"] spawn f_fnc_localGroupMarker;
-		
+
 		["GrpCSAT_DT1",  4, "DT1", "ColorOrange"] spawn f_fnc_localGroupMarker;
 
 		["UnitCSAT_CO_M", 0, "COM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
