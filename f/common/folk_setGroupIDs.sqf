@@ -81,6 +81,11 @@ if(!isnil "GrpFIA_C1") then {GrpFIA_C1 setGroupId ["FIA C1 -","GroupColor0"];};
 if(!isnil "GrpFIA_C2") then {GrpFIA_C2 setGroupId ["FIA C2 -","GroupColor0"];};
 if(!isnil "GrpFIA_C3") then {GrpFIA_C3 setGroupId ["FIA C3 -","GroupColor0"];};
 
+if(!isnil "GrpFIA_DSL") then {GrpFIA_DSL setGroupId ["FIA DSL -","GroupColor0"];};
+if(!isnil "GrpFIA_D1") then {GrpFIA_D1 setGroupId ["FIA D1 -","GroupColor0"];};
+if(!isnil "GrpFIA_D2") then {GrpFIA_D2 setGroupId ["FIA D2 -","GroupColor0"];};
+if(!isnil "GrpFIA_D3") then {GrpFIA_D3 setGroupId ["FIA D3 -","GroupColor0"];};
+
 if(!isnil "GrpFIA_MMG1") then {GrpFIA_MMG1 setGroupId ["FIA MMG1 -","GroupColor0"];};
 if(!isnil "GrpFIA_MAT1") then {GrpFIA_MAT1 setGroupId ["FIA MAT1 -","GroupColor0"];};
 if(!isnil "GrpFIA_ENG1") then {GrpFIA_ENG1 setGroupId ["FIA ENG1 -","GroupColor0"];};

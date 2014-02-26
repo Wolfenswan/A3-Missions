@@ -45,13 +45,13 @@
 _rifle = "arifle_TRG21_F";
 _riflemag = "30Rnd_556x45_Stanag";
 _riflemag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
-_rifle_attach = ["acc_pointer_IR","optic_Aco"];
+_rifle_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Standard Carabineer (Medic, Rifleman (AT), MAT Gunner, MTR Gunner, Carabineer)
 _carbine = "arifle_TRG20_F";
 _carbinemag = "30Rnd_556x45_Stanag";
 _carbinemag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
-_carbine_attach = ["acc_pointer_IR","optic_Aco"];
+_carbine_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Standard Submachine Gun/Personal Defence Weapon (Aircraft Pilot, Submachinegunner)
 _smg = "SMG_01_F";
@@ -70,7 +70,7 @@ _glrifle = "arifle_TRG21_GL_F";
 _glriflemag = "30Rnd_556x45_Stanag";
 _glriflemag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 _glmag = "1Rnd_HE_Grenade_shell";
-_glrifle_attach = ["acc_pointer_IR","optic_Aco"];
+_glrifle_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Smoke for FTLs, Squad Leaders, etc
 _glsmokewhite = "1Rnd_Smoke_Grenade_shell";
@@ -120,13 +120,13 @@ _bagmediumdiver =  "B_AssaultPack_blk";			// used by divers
 _AR = "LMG_Mk200_F";
 _ARmag = "200Rnd_65x39_cased_Box";
 _ARmag_tr = "200Rnd_65x39_cased_Box_Tracer";
-_AR_attach = ["acc_pointer_IR","optic_ACO"];
+_AR_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Medium MG
 _MMG = "LMG_Zafir_F";
 _MMGmag = "150Rnd_762x51_Box";
 _MMGmag_tr = "150Rnd_762x51_Box_Tracer";
-_MMG_attach = ["acc_pointer_IR","optic_ACO"];
+_MMG_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Rifleman AT
 _RAT = "launch_RPG32_F";

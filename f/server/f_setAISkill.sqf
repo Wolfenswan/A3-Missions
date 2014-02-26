@@ -36,13 +36,13 @@ f_skillSet = [
 0.55,		// aimingAccuracy
 0.6,		// aimingShake
 0.7,		// aimingSpeed
-1,		// endurance
+2,		// endurance
 0.5,		// spotDistance
 0.7,		// spotTime
-1,		// courage
-1,		// reloadSpeed
-1,		// commanding
-1		// general
+2,		// courage
+1.25,		// reloadSpeed
+1.5,		// commanding
+2		// general
 ];
 
 // These are the ranges in which skills can differ between two soldiers on the same skill level.

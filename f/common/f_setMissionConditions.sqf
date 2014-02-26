@@ -54,7 +54,7 @@ switch (_weather) do
 		_MissionLightnings = 0;
 		_MissionWindStr = 0.25;
 		_MissionWindGusts = 0.5;
-		_MissionFog = 0;
+		_MissionFog = [0.9,0.1,3];
 		_MissionWaves = 0.25;
 		_MissionHumidity = 0.2;
 	};
@@ -80,7 +80,7 @@ switch (_weather) do
 		_MissionLightnings = 0;
 		_MissionWindStr = 0;
 		_MissionWindGusts = 0;
-		_MissionFog = 0;
+		_MissionFog = [0.9,0.1,3];
 		_MissionWaves = 0.1;
 		_MissionHumidity = 0.2;
 	};
@@ -93,7 +93,7 @@ switch (_weather) do
 		_MissionLightnings = 0;
 		_MissionWindStr = 0.25;
 		_MissionWindGusts = 0.5;
-		_MissionFog = 0;
+		_MissionFog = [0.9,0.1,3];
 		_MissionWaves = 0.25;
 		_MissionHumidity = 0.2;
 	};
@@ -106,7 +106,7 @@ switch (_weather) do
 		_MissionLightnings = 0;
 		_MissionWindStr = 0.75;
 		_MissionWindGusts = 1;
-		_MissionFog = 0;
+		_MissionFog = [0.9,0.1,3];
 		_MissionWaves = 0.75;
 		_MissionHumidity = 0.2;
 	};
@@ -211,12 +211,12 @@ switch (_timeOfDay) do
 // Dawn
 	case 0:
 	{
-		setDate [2030, 5, 11, 5, 0];
+		setDate [2030, 5, 11, 4, 45];
 	};
 // Early Morning
 	case 1:
 	{
-		setDate [2030, 5, 11, 6, 0];
+		setDate [2030, 5, 11, 5, 10];
 	};
 // Morning
 	case 2:

@@ -121,7 +121,7 @@ f_doNotRemoveBodies = [];
 // [[GroupName],100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // BLUFOR > NATO
-// [BLUFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
+[BLUFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // OPFOR > CSAT
 // [OPFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
@@ -148,8 +148,8 @@ f_doNotRemoveBodies = [];
 // F3 - AI Skill Selector (Coop)
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_isFriendly = [];
-[]  execVM "f\server\f_setAISkill.sqf";
+f_isFriendly = [west,civilian];
+[] execVM "f\server\f_setAISkill.sqf";
 
 // ====================================================================================
 
@@ -165,11 +165,11 @@ f_isFriendly = [];
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-
 f_showGroup_Nametags = true;			// Display unit's group (uses GroupID)
-// f_showDistance_Nametags = true;	// Show distance to player
-// f_showVehicle_Nametags = true;		// Show vehicle player is in
+f_showDistance_Nametags = false;	// Show distance to player
+f_showVehicle_Nametags = false;		// Show vehicle player is in
 [20] execVM "f\common\f_nametags.sqf";
+
 // ====================================================================================
 
 // F3 - Group E&E Check
@@ -207,5 +207,16 @@ f_showGroup_Nametags = true;			// Display unit's group (uses GroupID)
 
 // ====================================================================================
 
-// Wolfenswan - execute post Init scripts
-[] execVM "ws_scripts\ws_postInit.sqf";
+// Mission specific settings
+
+objCounter = 0;
+
+// Display a short text intro
+if (!isDedicated) then {
+
+ // First string is mission name, second location of AO
+ ["'BAY'","NORTH-WEST ALTIS"] spawn {
+	 waitUntil {time > 10};
+		[_this select 0, _this select 1] call ws_fnc_showIntro
+	};
+};

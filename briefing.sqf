@@ -109,7 +109,7 @@ if (_unitfaction == "IND_F") exitwith {
 
 if (_unitfaction == "CIV_F") exitwith {
 
-#include "f\common\f_briefing_civ.sqf"
+#include "f\common\f_briefing_fia.sqf"
 
 // DEBUG
 	if (f_var_debugMode == 1) then

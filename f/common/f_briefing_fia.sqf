@@ -21,7 +21,7 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS.
+Made with love for Folk ARPS by Fer and Wolfenswan.
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -33,32 +33,13 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
+STARTING POSITIONS<br/>
+Whilst coming ashore our squads have become dispersed.
+<br/><br/>
+EMBEDDED REPORTERS<br/>
+Up to 2 reporters may have landed with us.
 "]];
 
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
-"]];
 
 // ====================================================================================
 
@@ -67,7 +48,7 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+Sieze <marker name = 'mkrObj3'>Krya Nera</marker> and the nearby <marker name = 'mkrObj4'>airstrip</marker>.
 "]];
 
 // ====================================================================================
@@ -77,15 +58,11 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+Our landing against Ammolofi Bay is in disarray, but we can still seize our objectives before the enemy reserve arrives.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
-<br/><br/>
-FRIENDLY FORCES
-<br/>
-*** Insert information about friendly forces here.***
+A company of enemy infantry holds <marker name = 'mkrObj3'>Krya Nera</marker> and the nearby <marker name = 'mkrObj4'>airstrip</marker>, but small detachments will be billeted nearby. Reserve units are expected from the direction of <marker name = 'mkrReserve'>Abdera</marker>. Heavy duty units might be called in, should they start considering us a real threat.
 "]];
 
 // ====================================================================================

@@ -14,7 +14,11 @@
         };
 
                 // All unit's are hidden, and if the unit is inside a vehicle, the vehicle is hidden as well
+
                 _x hideObject true;
                 if (vehicle _x != _x) then {(vehicle _x) hideObject true};
 
+sleep 0.1;
 } forEach units _this;
+
+true;
