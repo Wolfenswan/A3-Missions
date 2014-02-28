@@ -1,5 +1,6 @@
 /*ws_fnc_spawnGarrison
 By Wolfenswan [FA]: wolfenswanarps@gmail.com | folkarps.com
+Usage Guide: http://www.folkarps.com/forum/viewtopic.php?f=48&t=1224
 
 FEATURE
 Populates the buildings in the given area with the given number of units
@@ -10,6 +11,9 @@ Minimal:
 Full:
 [center,radius,side,integer,array] call ws_fnc_createGarrison
 
+NOTE
+Make sure to call this only on the server or headless client. The function itself does not check where it is run.
+
 PARAMETERS:
 1. Center of town. Can be marker, object or location     | MANDATORY - string (markername) or object name
 2. Radius of area to be considered																				 | MANDATORY - int
@@ -18,6 +22,9 @@ PARAMETERS:
 5. Array of classes to spawn																		           | OPTIONAL - array w. strings  - default are classes defined below
 
 EXAMPLE
+["mkrOutpost",50,resistance] call ws_fnc_createGarrison; - his will create units in buildings 50m around the marker named "mkrOutpost". The number of units will the the number of buildings in the radius divided by 2. The classes of the units will be taken from the default array (by default light riflemen).
+
+[UnitNATO_General,150,west,50,["B_Soldier_AR","B_Soldier_GL"]] call ws_fnc_createGarrison; - Place 50 NATO soldiers in buildings in a 150m radius around the Object (unit) named UnitNATO_General. All of them will be either AT or Grenadier.
 
 RETURNS
 array of created units
@@ -27,7 +34,7 @@ array of created units
 // BLUFOR
 _wclasses = ["B_Soldier_lite_F"];
 // OPFOR
-_eclasses = ["O_Soldier_lite_F","O_Soldier_lite_F","O_Soldier_F","O_Soldier_F","O_Soldier_F","O_Soldier_AR_F","O_Soldier_GL_F"];
+_eclasses = ["O_Soldier_lite_F"];
 // INDEPENDENT
 _iclasses = ["I_Soldier_lite_F"];
 
