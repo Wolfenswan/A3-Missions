@@ -34,7 +34,7 @@ array of created units
 // BLUFOR
 _wclasses = ["B_Soldier_lite_F"];
 // OPFOR
-_eclasses = ["O_Soldier_lite_F"];
+_eclasses = ["O_Soldier_lite_F","O_Soldier_lite_F","O_Soldier_F","O_Soldier_F","O_Soldier_AR_F"];
 // INDEPENDENT
 _iclasses = ["I_Soldier_lite_F"];
 

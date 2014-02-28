@@ -54,7 +54,7 @@ switch (_weather) do
 		_MissionLightnings = 0;
 		_MissionWindStr = 0.25;
 		_MissionWindGusts = 0.5;
-		_MissionFog = [0.9,0.1,3];
+		_MissionFog = [0.8,0.15,2.8];
 		_MissionWaves = 0.25;
 		_MissionHumidity = 0.2;
 	};
