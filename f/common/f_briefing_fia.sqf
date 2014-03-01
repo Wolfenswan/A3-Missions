@@ -62,7 +62,7 @@ Our landing against Ammolofi Bay is in disarray, but we can still seize our obje
 <br/><br/>
 ENEMY FORCES
 <br/>
-A company of enemy infantry holds <marker name = 'mkrObj3'>Krya Nera</marker> and the nearby <marker name = 'mkrObj4'>airstrip</marker>, but small detachments will be billeted nearby. Reserve units are expected from the direction of <marker name = 'mkrReserve'>Abdera</marker>. Heavy duty units might be called in, should they start considering us a real threat.
+A company of enemy infantry holds <marker name = 'mkrObj3'>Krya Nera</marker> and the nearby <marker name = 'mkrObj4'>airstrip</marker>, but small detachments will be billeted nearby. Reserve units are expected from the direction of <marker name = 'mkrReserve'>Abdera</marker>.
 "]];
 
 // ====================================================================================

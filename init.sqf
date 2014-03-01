@@ -211,11 +211,15 @@ f_showVehicle_Nametags = false;		// Show vehicle player is in
 
 objCounter = 0;
 
+// Play intro music
+
+playMusic  "finalemusic";
+
 // Display a short text intro
 if (!isDedicated) then {
 
  // First string is mission name, second location of AO
- ["'BAY'","NORTH-WEST ALTIS"] spawn {
+ ["AMMOLOFI BAY","North-West Altis"] spawn {
 	 waitUntil {time > 10};
 		[_this select 0, _this select 1] call ws_fnc_showIntro
 	};
