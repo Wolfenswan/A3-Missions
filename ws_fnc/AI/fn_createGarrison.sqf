@@ -112,7 +112,7 @@ for "_x" from 1 to _int do {
 
   _u setDir _dir;
 
-  if (random 1 > 0.75) then {_u setunitpos "Middle";};
+  if (random 1 > 0.75) then {_u setunitpos "Middle";} else {_u setUnitPos "UP"};
 
   _u setVariable ["ws_bpos",_bp];
 

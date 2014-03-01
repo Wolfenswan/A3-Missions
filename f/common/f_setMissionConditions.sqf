@@ -211,7 +211,7 @@ switch (_timeOfDay) do
 // Dawn
 	case 0:
 	{
-		setDate [2030, 5, 11, 4, 45];
+		setDate [2030, 5, 11, 4, 35];
 	};
 // Early Morning
 	case 1:
