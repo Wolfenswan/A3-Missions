@@ -41,3 +41,5 @@ if (isServer) then {
 	};
 
 };
+
+I_soldier_UAV_F connectTerminalToUav VehAAF_UAV;

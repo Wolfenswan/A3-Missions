@@ -38,7 +38,7 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 3 x Zamak<br/>
 1 x Strider (unarmed)<br/>
 1 x Strider (HMG)<br/><br/>
-<marker name='mkrVeh_1>Helicopters:</marker><br/>
+<marker name='mkrVeh_1'>Helicopters:</marker><br/>
 1 x Mohawk (carries 16)<br/>
 2 x Hellcat (unarmed - carries 6)<br/>
 1 x Hellcat (armed - carries 6)
