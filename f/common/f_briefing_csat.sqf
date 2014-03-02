@@ -45,7 +45,7 @@ An unarmed Ifrit and a HMG Ifrit are available.
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-1. Seize the <marker name='mkrAO'>facility</marker>. If for 10 seconds no AAF unit should be present while CSAT are inside, CSAT will have taken it.<br/>
+1. Seize the <marker name='mkrAO'>facility</marker>. If for 15 seconds no AAF unit should be present while CSAT are inside, CSAT will have taken it.<br/>
 2. We can use the <marker name='mkrTown'>town</marker> to our advantage, but AAF might try the same.
 "]];
 
