@@ -9,7 +9,7 @@ if (side player == BLUFOR) then {
 	_mkr setMarkerSizeLocal [0.5,0.5];
 	_mkr2 = createMarkerLocal ["meeting2",getMarkerPos ws_meetingM];
 	_mkr2 setMarkerShapeLocal "Ellipse";
-	_mkr2 setMarkerSizeLocal [10,10];
+	_mkr2 setMarkerSizeLocal [12,12];
 	_mkr2 setMarkerBrushLocal "Border";
 	_mkr2 setMarkerColorLocal "colorGreen";
 };
