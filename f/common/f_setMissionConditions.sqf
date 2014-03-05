@@ -211,27 +211,27 @@ switch (_timeOfDay) do
 // Dawn
 	case 0:
 	{
-		setDate [2030, 5, 11, 5, 0];
+		setDate [2030, 5, 11, 5, 10];
 	};
 // Early Morning
 	case 1:
 	{
-		setDate [2030, 5, 11, 6, 0];
+		setDate [2030, 5, 11, 6, 15];
 	};
 // Morning
 	case 2:
 	{
-		setDate [2030, 5, 11, 9, 0];
+		setDate [2030, 5, 11, 9, 05];
 	};
 // Noon
 	case 3:
 	{
-		setDate [2030, 5, 11, 12, 0];
+		setDate [2030, 5, 11, 12, 05];
 	};
 // Afternoon
 	case 4:
 	{
-		setDate [2030, 5, 11, 15, 0];
+		setDate [2030, 5, 11, 15, 05];
 	};
 // Evening
 	case 5:
@@ -246,7 +246,7 @@ switch (_timeOfDay) do
 // Night
 	case 7:
 	{
-		setDate [2030, 5, 11, 0, 0];
+		setDate [2030, 5, 11, 0, 05];
 	};
 };
 // ====================================================================================

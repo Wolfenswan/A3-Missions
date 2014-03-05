@@ -31,8 +31,8 @@ if (!isDedicated) then {
 if (isServer) then {
 
 	if (ws_param_civs == 1) then {
-		[town,200,5,20] execVM "ws_scripts\ws_populateTown.sqf";
-		[town_1,200,5,20] execVM "ws_scripts\ws_populateTown.sqf";
+		[town,200,5,10] execVM "ws_scripts\ws_populateTown.sqf";
+		[town_1,200,5,10] execVM "ws_scripts\ws_populateTown.sqf";
 	};
 
 
@@ -42,4 +42,6 @@ if (isServer) then {
 
 };
 
-I_soldier_UAV_F connectTerminalToUav VehAAF_UAV;
+if !(isNil "UnitAAF_CO_UAV") then {
+UnitAAF_CO_UAV connectTerminalToUav VehAAF_UAV;
+};

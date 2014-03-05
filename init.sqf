@@ -138,14 +138,6 @@ f_doNotRemoveBodies = [];
 
 // ====================================================================================
 
-// F3 - AI Skill Selector (Coop)
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_isFriendly = [];
-[]  execVM "f\server\f_setAISkill.sqf";
-
-// ====================================================================================
-
 // F3 - AI Skill Selector (A&D)
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
