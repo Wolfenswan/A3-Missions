@@ -31,16 +31,16 @@ class Mission
 	};
 	addOnsAuto[]=
 	{
-		"a3_characters_f_gamma",
+		"A3_Characters_F_Gamma",
 		"A3_Characters_F_INDEP",
 		"A3_Characters_F_Civil",
 		"A3_Characters_F_OPFOR",
 		"a3_characters_f_beta",
 		"A3_Characters_F_BLUFOR",
-		"a3_soft_f_gamma_offroad",
+		"A3_Soft_F_Gamma_Offroad",
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_Gamma_HEMTT",
-		"a3_soft_f_truck",
+		"A3_Soft_F_Truck",
 		"A3_Structures_F_Wrecks",
 		"A3_Air_F_Beta_Heli_Transport_01",
 		"A3_Weapons_F_Ammoboxes",
@@ -52,7 +52,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_a95_aFriendInNeed_v2";
+		briefingName="fa3_a95_aFriendInNeed_v3";
 		overviewText="CSAT attempts to seize NATO weapons smuggled by a FIA convoy. Meanwhile NATO heliborn forces are deployed to destroy the evidence. (CSAT should be equal to or slightly more than NATO + FIA). This can be played as a three-way adversarial where FIA have to defend the caches at all costs while NATO wants to destroy them.";
 		startWeather=0.84999996;
 		startWind=0;
@@ -1809,7 +1809,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="c1";
-			init="nul = this spawn {  {_this animate [_x,1];} forEach  [""hideConstruction"",""hideBumper2""];  _this lockCargo true;    _posArray = [[0,-1.5,0.2]];   {  _misc = ""Land_CargoBox_V1_F"" createVehicle [0,0,0];  _misc attachTo [_this,_x];  _misc setDir 0;  } forEach _posArray;  };";
+			init="if (isServer) then {nul = this spawn {  {_this animate [_x,1];} forEach  [""hideConstruction"",""hideBumper2""];  _this lockCargo true;    _posArray = [[0,-1.5,0.2]];   {  _misc = ""Land_CargoBox_V1_F"" createVehicle [0,0,0];  _misc attachTo [_this,_x];  _misc setDir 0;  } forEach _posArray;  };};";
 			description="FIA Alpha 1 Fireteam Leader";
 		};
 		class Item1
@@ -1834,7 +1834,7 @@ class Mission
 			lock="LOCKED";
 			skill=0.60000002;
 			text="c3";
-			init="clearMagazineCargoGlobal this; clearWeaponCargoGlobal this; nul = [this,""oil"",""large""] execVM ""ws_scripts\smokecolumn.sqf"";";
+			init="if (isServer) then {clearMagazineCargoGlobal this; clearWeaponCargoGlobal this; nul = [this,""oil"",""large""] execVM ""ws_scripts\smokecolumn.sqf"";};";
 			description="FIA Alpha 1 Fireteam Leader";
 		};
 		class Item3
@@ -1859,7 +1859,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="c5";
-			init="nul =  this spawn {  {_this animate [_x,1];} forEach  [""hideConstruction"",""hideBumper2""];  _this lockCargo true;    _posArray = [[-0.4,-1.2,-0.2],[0.4,-1.2,-0.2],[-0.4,-1.85,-0.2],[0.4,-1.85,-0.2],[-0.4,-2.45,-0.2],[0.4,-2.45,-0.2]];    {_misc = ""Land_MetalBarrel_F"" createVehicle [0,0,0];_misc attachTo [_this,_x];_misc setDir random 360;} forEach _posArray;  };  ";
+			init="if (isServer) then {nul =  this spawn {  {_this animate [_x,1];} forEach  [""hideConstruction"",""hideBumper2""];  _this lockCargo true;    _posArray = [[-0.4,-1.2,-0.2],[0.4,-1.2,-0.2],[-0.4,-1.85,-0.2],[0.4,-1.85,-0.2],[-0.4,-2.45,-0.2],[0.4,-2.45,-0.2]];    {_misc = ""Land_MetalBarrel_F"" createVehicle [0,0,0];_misc attachTo [_this,_x];_misc setDir random 360;} forEach _posArray;  };  };";
 		};
 		class Item5
 		{
@@ -1884,7 +1884,7 @@ class Mission
 			leader=1;
 			skill=0.60000002;
 			text="c7";
-			init="nul = [this,""oil"",""small""] execVM ""ws_scripts\smokecolumn.sqf"";";
+			init="if (isServer) then {nul = [this,""oil"",""small""] execVM ""ws_scripts\smokecolumn.sqf"";};";
 		};
 		class Item7
 		{
@@ -1971,24 +1971,22 @@ class Mission
 		class Item15
 		{
 			position[]={11615.22,22.908043,11899.223};
-			azimut=306.91611;
+			azimut=306.91599;
 			id=122;
 			side="EMPTY";
 			vehicle="O_Truck_02_transport_F";
 			skill=0.60000002;
 			text="CSAT_Tr2";
-			init="this disableTIEquipment true;";
 		};
 		class Item16
 		{
 			position[]={11602.203,23.213873,11875.979};
-			azimut=297.33185;
+			azimut=297.332;
 			id=123;
 			side="EMPTY";
 			vehicle="O_Truck_02_transport_F";
 			skill=0.60000002;
 			text="CSAT_Tr1";
-			init="this disableTIEquipment true;";
 		};
 		class Item17
 		{
