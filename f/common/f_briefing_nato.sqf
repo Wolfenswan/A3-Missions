@@ -81,8 +81,6 @@ Motorized CSAT forces, possibly supported by heliborn troops from their <marker 
 FRIENDLY FORCES
 <br/>
 A FIA platoon at the convoy.<br/><br/>
-NOTE<br/>
-This can be played as a three-way adversarial where FIA have to defend the caches at all costs while NATO wants nothing but to destroy them.
 "]];
 
 // ====================================================================================

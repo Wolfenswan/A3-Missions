@@ -77,7 +77,7 @@ All four caches are next to the HEMTT truck. The crates and the truck can only b
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 A Mi-48 on morning patrol intercepted a <marker name='fia_conv'>FIA convoy</marker>. Before engaging the gunner noticed unusual activity around one of the vehicles.
-As our intelligence service has been suspecting that the NATO forces on the island have been supplying FIA in order to undermine our presence we are going to send your platoon to investigate, mob up the FIA survivors and if seize all NATO caches as proof.
+As our intelligence service has been suspecting that the NATO forces on the island have been supplying FIA in order to undermine our presence we are going to send your platoon to investigate, mob up the FIA survivors and seize all NATO caches as evidence.
 <br/><br/>
 ENEMY FORCES
 <br/>

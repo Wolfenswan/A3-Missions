@@ -45,7 +45,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-Defend the crates at all costs.
+Defend the convoy until NATO arrives, then assist them in removing the evidence.
 "]];
 
 // ====================================================================================
@@ -72,7 +72,7 @@ All four caches are next to the HEMTT truck. The crates and the truck can only b
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-A Mi-48 on morning patrol intercepted one of our <marker name='fia_conv'>convoys</marker>. It seems they noticed the 'goods' we were carrying, as instead of annhilating us they just disabled the vehicles. We need to defend the NATO weapons we were transporting from any infantry they might send.
+A Mi-48 on morning patrol intercepted one of our <marker name='fia_conv'>convoys</marker>. It seems they noticed the 'goods' we were carrying and merely focused on disabling the vehicles. We need to defend the NATO weapons we were transporting from any mop up force they might send.
 <br/><br/>
 ENEMY FORCES
 <br/>
@@ -81,8 +81,6 @@ Motorized CSAT forces, possibly supported by heliborn troops from their <marker 
 FRIENDLY FORCES
 <br/>
 Our NATO friends might be sent by heli.<br/><br/>
-NOTE<br/>
-This can be played as a three-way adversarial where FIA have to defend the caches at all costs while NATO wants nothing but to destroy them.
 "]];
 
 // ====================================================================================

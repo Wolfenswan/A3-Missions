@@ -43,24 +43,24 @@ _x addEventHandler [
 
 //Randomize damage on convoy
 {
-_x lockDriver true;
-_x setDamage (0.4+(random 0.2));
-_x setFuel (random 0.4);
-_x setVehicleAmmo (0.5+(random 0.3));
-if (random 1 > 0.3) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitLFWheel" >> "name"),1]};
-_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitLBWheel" >> "name"),1];
-if (random 1 > 0.3) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitRFWheel" >> "name"),1]};
-if (random 1 > 0.5) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitRBWheel" >> "name"),1]};
-if (random 1 > 0.3) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitGlass1" >> "name"),0.8]};
-if (random 1 > 0.5) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitGlass2" >> "name"),0.8]};
-if (random 1 > 0.3) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitGlass3" >> "name"),0.8]};
-if (random 1 > 0.5) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitGlass4" >> "name"),0.8]};
-_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "engine"),1];
+	_x lockDriver true;
+	_x setDamage (0.4+(random 0.2));
+	_x setFuel (random 0.4);
+	_x setVehicleAmmo (0.5+(random 0.3));
+	if (random 1 > 0.3) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitLFWheel" >> "name"),1]};
+	_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitLBWheel" >> "name"),1];
+	if (random 1 > 0.3) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitRFWheel" >> "name"),1]};
+	if (random 1 > 0.5) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitRBWheel" >> "name"),1]};
+	if (random 1 > 0.3) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitGlass1" >> "name"),0.8]};
+	if (random 1 > 0.5) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitGlass2" >> "name"),0.8]};
+	if (random 1 > 0.3) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitGlass3" >> "name"),0.8]};
+	if (random 1 > 0.5) then {_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "HitGlass4" >> "name"),0.8]};
+	_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "engine"),1];
 } forEach _convoy;
 
 //Attach trigger
 {_x setPos (getPos c3);
-_x setTriggerArea [10, 10, 0, true];
+	_x setTriggerArea [10, 10, 0, true];
 } forEach [Trg1,Trg2,Trg3,Trg4,Trg5,Trg6,Trg7];
 
 //Create markers
