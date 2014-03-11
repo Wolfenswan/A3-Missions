@@ -2,7 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// FACTION: AAF
+// FACTION: GREEN
 
 // ====================================================================================
 
@@ -33,7 +33,9 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
+VEHICLES<br/>
+Up to 2 x 'Strider HMG' MRAP(no thermals)<br/>
+Up to 1 x 'Gorgon' IFV (no thermals)
 "]];
 
 // ====================================================================================
@@ -45,19 +47,11 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
+Dislodge any FIA presence from the villages and mountaintop.
 <br/><br/>
 FIRE SUPPORT PLAN
 <br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+Three mortar units are on standby, controlled by the dedicated spotter.
 "]];
 
 // ====================================================================================
@@ -67,7 +61,10 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We are inserted <marker name='f_insert'>here</marker>, any vehicle support moving in from <marker name='mkrVeh'>this direction</marker>.<br/>
+2. Clear <marker name='mkrGalati'>Galati</marker> and vincinity of hostile forces.<br/>
+3. Investigate the <marker name='mkrTop'>mountain top</marker> and destroy all enemy presence.<br/>
+4. If forces admit proceed to <marker name='mkrAbdera'>Abdera</marker> to wipe out remaining FIA forces.<br/>
 "]];
 
 // ====================================================================================
@@ -77,15 +74,15 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+FIA rebels have been plagueing north-west Altis for a long time now, repeatedly disrupting our supply lines and raiding villages. Our platoon is inserting in the early morning hours to clear house in two FIA strongholds and to weaken their local presence.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+Lightly armed irregular forces with vehicle support.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-*** Insert information about friendly forces here.***
+None.
 "]];
 
 // ====================================================================================

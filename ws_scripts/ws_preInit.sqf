@@ -13,6 +13,9 @@ if !(isServer) exitWith {ws_initDone = true};
 
 // Load up vehicles with groups
 // [veh1,group1,group2.....groupN] call ws_fnc_loadVehicle
-[Veh,Grp] call ws_fnc_loadVehicle;
+[VehAAF_Th1,GrpAAF_ASL,GrpAAF_A1,GrpAAF_A2,GrpAAF_A3] call ws_fnc_loadVehicle;
+[VehAAF_Th2,GrpAAF_BSL,GrpAAF_B1,GrpAAF_B2,GrpAAF_B3] call ws_fnc_loadVehicle;
+[VehAAF_Th3,GrpAAF_CSL,GrpAAF_C1,GrpAAF_C2,GrpAAF_C3] call ws_fnc_loadVehicle;
+[VehAAF_Th4,GrpAAF_CO,GrpAAF_MMG1,GrpAAF_MAT1] call ws_fnc_loadVehicle;
 
 ws_initDone = true;
