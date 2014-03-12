@@ -34,7 +34,6 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 VEHICLES<br/>
-Up to 2 x 'Strider HMG' MRAP(no thermals)<br/>
 Up to 1 x 'Gorgon' IFV (no thermals)
 "]];
 
@@ -61,7 +60,7 @@ Three mortar units are on standby, controlled by the dedicated spotter.
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-1. We are inserted <marker name='f_insert'>here</marker>, any vehicle support moving in from <marker name='mkrVeh'>this direction</marker>.<br/>
+1. We are inserted <marker name='f_insert'>here</marker> by helicopter, any vehicle support moving in from <marker name='mkrVeh'>this direction</marker>.<br/>
 2. Clear <marker name='mkrGalati'>Galati</marker> and vincinity of hostile forces.<br/>
 3. Investigate the <marker name='mkrTop'>mountain top</marker> and destroy all enemy presence.<br/>
 4. If forces admit proceed to <marker name='mkrAbdera'>Abdera</marker> to wipe out remaining FIA forces.<br/>
@@ -80,9 +79,8 @@ ENEMY FORCES
 <br/>
 Lightly armed irregular forces with vehicle support.
 <br/><br/>
-FRIENDLY FORCES
-<br/>
-None.
+ROE<br/>
+No excessive explosive damage (HE rockets, autocannon etc) to built up areas.
 "]];
 
 // ====================================================================================

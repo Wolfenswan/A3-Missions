@@ -46,13 +46,13 @@
 _rifle = "arifle_Mk20_MRCO_F";
 _riflemag = "30Rnd_556x45_Stanag";
 _riflemag_tr = "30Rnd_556x45_Stanag_Tracer_Yellow";
-_rifle_attach = ["acc_pointer_IR","optic_ACO_grn"];
+_rifle_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Standard Carabineer (Medic, Rifleman (AT), MAT Gunner, MTR Gunner, Carabineer)
 _carbine = "arifle_Mk20C_F";
 _carbinemag = "30Rnd_556x45_Stanag";
 _carbinemag_tr = "30Rnd_556x45_Stanag_Tracer_Yellow";
-_carbine_attach = ["acc_pointer_IR","optic_ACO_grn"];
+_carbine_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Standard Submachine Gun/Personal Defence Weapon (Aircraft Pilot, Submachinegunner)
 _smg = "SMG_02_F";
@@ -71,7 +71,7 @@ _glrifle = "arifle_Mk20_GL_MRCO_pointer_F";
 _glriflemag = "30Rnd_556x45_Stanag";
 _glriflemag_tr = "30Rnd_556x45_Stanag_Tracer_Yellow";
 _glmag = "1Rnd_HE_Grenade_shell";
-_glrifle_attach = ["acc_pointer_IR","optic_ACO_grn"];
+_glrifle_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Smoke for FTLs, Squad Leaders, etc
 _glsmokewhite = "1Rnd_Smoke_Grenade_shell";
@@ -121,13 +121,13 @@ _bagmediumdiver =  "B_AssaultPack_blk";			// used by divers
 _AR = "LMG_Mk200_F";
 _ARmag = "200Rnd_65x39_cased_Box";
 _ARmag_tr = "200Rnd_65x39_cased_Box_Tracer";
-_AR_attach = ["acc_pointer_IR","optic_ACO_grn"];
+_AR_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Medium MG
 _MMG = "LMG_Zafir_F";
 _MMGmag = "150Rnd_762x51_Box";
 _MMGmag_tr = "150Rnd_762x51_Box_Tracer";
-_MMG_attach = ["acc_pointer_IR","optic_ACO"];
+_MMG_attach = ["acc_pointer_IR","optic_MRCO"];
 
 // Rifleman AT
 _RAT = "launch_NLAW_F";
@@ -586,22 +586,19 @@ _backpack = {
 			// NO BACKPACK (STILL ADD SMALL FOR TOOLKIT)
 			if (f_param_backpacks == 0) then {
 				_unit addBackpack _bagsmall;
-				clearMagazineCargoGlobal (unitBackpack _unit);
 				(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
 			};
 			// BACKPACK: LIGHT
 			if (f_param_backpacks == 1) then {
-				_unit addBackpack _baglarge;
+				_unit addBackpack _bagsmall;
 				clearMagazineCargoGlobal (unitBackpack _unit);
 				(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-				(unitBackpack _unit) addItemCargoGlobal [_satchel,2];
 			};
 			// BACKPACK: HEAVY
 			if (f_param_backpacks == 2) then {
-				_unit addBackpack _baglarge;
+				_unit addBackpack _bagsmall;
 				clearMagazineCargoGlobal (unitBackpack _unit);
 				(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-				(unitBackpack _unit) addItemCargoGlobal [_satchel,4];
 			};
 		};
 
@@ -929,8 +926,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_riflemag,7];
 		_unit addmagazines [_riflemag_tr,2];
 		_unit addweapon _rifle;
-		_unit addmagazines [_grenade,3];
-		_unit addmagazines [_mgrenade,3];
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,3];
 		["r"] call _backpack;
 	};
@@ -941,8 +938,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_carbinemag,7];
 		_unit addmagazines [_carbinemag_tr,2];
 		_unit addweapon _carbine;
-		_unit addmagazines [_grenade,3];
-		_unit addmagazines [_mgrenade,3];
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,3];
 		["car"] call _backpack;
 	};
@@ -962,10 +959,21 @@ switch (_typeofUnit) do
 	{
 		_unit addmagazines [_smgmag,7];
 		_unit addweapon _smg;
-		_unit addmagazines [_grenade,3];
-		_unit addmagazines [_mgrenade,3];
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,3];
 		["smg"] call _backpack;
+	};
+
+// LOADOUT: SUBMACHINEGUNNER
+	case "smg2":
+	{
+		_unit addmagazines [_smgmag,7];
+		_unit addweapon _smg;
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
+		_unit addmagazines [_smokegrenade,3];
+		["eng"] call _backpack;
 	};
 
 // LOADOUT: GRENADIER
@@ -976,8 +984,8 @@ switch (_typeofUnit) do
 		_unit addweapon _glrifle;
 		_unit addmagazines [_glmag,6];
 		_unit addmagazines [_glsmokewhite,2];
-		_unit addmagazines [_grenade,3];
-		_unit addmagazines [_mgrenade,3];
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
 		_unit addmagazines [_smokegrenade,2];
 		["g"] call _backpack;
 	};

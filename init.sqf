@@ -127,7 +127,7 @@ f_doNotRemoveBodies = [];
 // [OPFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // INDEPENDENT > AAF
-// [INDEPENDENT,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
+[INDEPENDENT,80,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
 
 // ====================================================================================
 
