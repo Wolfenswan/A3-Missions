@@ -1,6 +1,8 @@
 if (isNil "ws_initDone") then {ws_initDone = false};
 if (isNil "ws_convoy_go") then {ws_convoy_go = false};
-if (isNil "ws_spooted") then {ws_spotted = false};
+if (isNil "ws_spotted") then {ws_spotted = false};
+if (isNil "ws_obj_cnt ") then {ws_obj_cnt  = 0};
+
 
 ws_debug = if (ws_param_dbg == 0) then {false} else {true};
 
@@ -26,6 +28,9 @@ if !(isServer) exitWith {ws_initDone = true};
 
 [VehFia_Tr1,GrpFIA1,GrpFIA2] call ws_fnc_loadVehicle;
 [VehFia_Tr2,GrpFIA3,GrpFIA4] call ws_fnc_loadVehicle;
+
+if (isNil "GrpAAF_MRAP1") then {deleteVehicle VehGrn_MRAP1};
+if (isNil "GrpAAF_MRAP2") then {deleteVehicle VehGrn_MRAP2};
 
 
 ws_initDone = true;

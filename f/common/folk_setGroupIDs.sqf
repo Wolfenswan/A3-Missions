@@ -193,6 +193,8 @@ _groups = [
 ["GrpAAF_HAT1","AAF HAT1 -"],
 ["GrpAAF_HMG1","AAF HMG1 -"],
 ["GrpAAF_MTR1","AAF MTR1 -"],
+["GrpAAF_MRAP1","AAF MRAP1 -"],
+["GrpAAF_MRAP2","AAF MRAP2 -"],
 
 ["GrpAAF_ST1","AAF ST1 -"],
 ["GrpAAF_DT1","AAF DT1 -"],

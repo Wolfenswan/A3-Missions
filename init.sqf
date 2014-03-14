@@ -208,4 +208,5 @@ f_showGroup_Nametags = true;			// Display unit's group (uses GroupID)
 // ====================================================================================
 
 // Wolfenswan - execute post Init scripts
+sleep 0.1;
 [] execVM "ws_scripts\ws_postInit.sqf";

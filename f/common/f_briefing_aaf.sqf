@@ -34,7 +34,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 VEHICLES<br/>
-Up to 1 x 'Gorgon' IFV (no thermals)
+Up to 2 x 'Strider' MRAP (no thermals)
 "]];
 
 // ====================================================================================
@@ -46,11 +46,15 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-Dislodge any FIA presence from the villages and mountaintop.
+Dislodge any FIA presence from the villages and mountaintop. Use Alpha squad to ambush any reinforcements coming from Abdera.
+<br/><br/>
+MOVEMENT PLAN
+<br/>
+Alpha is <marker name='f_insert'>in the north</marker> and move to an ambush location. HQ suggests <marker name='mkrAmbush'>these</marker> <marker name='mkrAmbush_1'>two</marker> locations. Do not move too close to Abdera, as it might alert the FIA to what we are up to. The rest of the platoon assaults Galati head on, in order to lure out enemy reinforcements. HQ suggests either of the <marker name='mkrApproach'>two routes</marker> though advises against an attack from the direct south-west.
 <br/><br/>
 FIRE SUPPORT PLAN
 <br/>
-Three mortar units are on standby, controlled by the dedicated spotter.
+Two mortar units are on standby, controlled by the dedicated spotter.
 "]];
 
 // ====================================================================================
@@ -60,10 +64,11 @@ Three mortar units are on standby, controlled by the dedicated spotter.
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-1. We are inserted <marker name='f_insert'>here</marker> by helicopter, any vehicle support moving in from <marker name='mkrVeh'>this direction</marker>.<br/>
-2. Clear <marker name='mkrGalati'>Galati</marker> and vincinity of hostile forces.<br/>
-3. Investigate the <marker name='mkrTop'>mountain top</marker> and destroy all enemy presence.<br/>
-4. If forces admit proceed to <marker name='mkrAbdera'>Abdera</marker> to wipe out remaining FIA forces.<br/>
+1. Alpha is inserted <marker name='f_insert'>here</marker> by helicopter, the rest of the platoon is moving in from <marker name='mkrVeh'>this direction</marker>.<br/>
+2. Attack <marker name='mkrGalati'>Galati</marker>, to prompt reinforcements to move in from the direction of <marker name='mkrAbdera'>Abdera</marker>.<br/>
+3. Alpha ambushes the reinforcements while the motorized element clears out Galati.
+4. Merge your elements to clear the <marker name='mkrTop'>mountain top</marker>  and take the <marker name='mkrRelay>comm tower </marker>.<br/>
+5. If forces permit proceed to <marker name='mkrAbdera'>Abdera</marker>, to wipe out remaining FIA forces.<br/>
 "]];
 
 // ====================================================================================
@@ -73,14 +78,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-FIA rebels have been plagueing north-west Altis for a long time now, repeatedly disrupting our supply lines and raiding villages. Our platoon is inserting in the early morning hours to clear house in two FIA strongholds and to weaken their local presence.
+FIA rebels have been plagueing north-west Altis for a long time now, repeatedly disrupting our supply lines and raiding villages. Our platoon is moving in in the early morning hours to clear house in two FIA strongholds and to weaken their local presence.
 <br/><br/>
 ENEMY FORCES
 <br/>
 Lightly armed irregular forces with vehicle support.
 <br/><br/>
-ROE<br/>
-No excessive explosive damage (HE rockets, autocannon etc) to built up areas.
+FRIENDLY FORCES
+<br/>
+A recon team is in place west of Abdera to monitor FIA movement.
+<br/><br/>
 "]];
 
 // ====================================================================================
