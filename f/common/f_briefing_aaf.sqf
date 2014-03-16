@@ -66,8 +66,8 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. Alpha is inserted <marker name='f_insert'>here</marker> by helicopter, the rest of the platoon is moving in from <marker name='mkrVeh'>this direction</marker>.<br/>
 2. Attack <marker name='mkrGalati'>Galati</marker>, to prompt reinforcements to move in from the direction of <marker name='mkrAbdera'>Abdera</marker>.<br/>
-3. Alpha ambushes the reinforcements while the motorized element clears out Galati.
-4. Merge your elements to clear the <marker name='mkrTop'>mountain top</marker>  and take the <marker name='mkrRelay>comm tower </marker>.<br/>
+3. Alpha ambushes the reinforcements while the motorized element clears out Galati.<br/>
+4. Merge your elements to clear the <marker name='mkrTop'>mountain top</marker> and take the nearby <marker name='mkrRelay'>comm tower</marker>.<br/>
 5. If forces permit proceed to <marker name='mkrAbdera'>Abdera</marker>, to wipe out remaining FIA forces.<br/>
 "]];
 
