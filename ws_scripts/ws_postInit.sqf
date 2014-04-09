@@ -13,7 +13,7 @@ if (!isDedicated && !_hc) then {
 
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 
-	{[_x,150,resistance,(6+round random 6)] call ws_fnc_createGarrison;} forEach ["mkrT","mkrT_1","mkrT_2","mkrN","mkrN_1"];
+	{[_x,150,resistance,(6+round random 4)] call ws_fnc_createGarrison;} forEach ["mkrT","mkrT_1","mkrT_2","mkrN","mkrN_1"];
 
 	{[_x,50,resistance,(3+round random 2)] call ws_fnc_createGarrison;} forEach ["mkrS","mkrS_1","mkrS_2","mkrS_3","mkrS_4","mkrS_5"];
 
@@ -21,7 +21,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 	["mkrO",20,resistance,6] call ws_fnc_createGarrison;
 	["mkrO_1",20,resistance,6] call ws_fnc_createGarrison;
 	["mkrH",20,west,5] call ws_fnc_createGarrison;
-	["mkrBS",40,west,15] call ws_fnc_createGarrison;
+	["mkrBS",40,west,12] call ws_fnc_createGarrison;
 	["mkrH_1",55,west,6] call ws_fnc_createGarrison;
 	["mkrH_2",20,west,10] call ws_fnc_createGarrison;
 };
