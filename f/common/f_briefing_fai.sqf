@@ -44,8 +44,7 @@ We all have SMGs with flashlights and a few grenades.
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-1. Get to the Swamp-Dacha and hold the area for 5 minutes.<br/>
-2. Pump each and every FIA bastard full of lead.
+Kill ever FIA bastard that tries to take the hotel.<br/>
 "]];
 
 // ====================================================================================
@@ -55,7 +54,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-The FIA bastards are trying to steal a drug cache from us. Get there first!
+The FIA bastards are trying to steal our drugs and take the hotel from us. We were here first!
 <br/><br/>
 ENEMY FORCES
 <br/>

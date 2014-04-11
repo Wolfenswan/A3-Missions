@@ -145,7 +145,7 @@ switch (_weather) do
 		_MissionLightnings = 1;
 		_MissionWindStr = 1;
 		_MissionWindGusts = 1;
-		_MissionFog =[1,1,3];
+		_MissionFog =[0.5,0.055,75];
 		_MissionWaves = 1;
 		_MissionHumidity = 1;
 	};
@@ -211,7 +211,7 @@ switch (_timeOfDay) do
 
 	case 0:
 	{
-		setDate [2030, 5, 11, 19, 05];
+		setDate [2030, 5, 11, 4, 55];
 	};
 	case 1:
 	{

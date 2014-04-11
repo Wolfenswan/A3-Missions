@@ -2,7 +2,7 @@ _hc = [] call ws_fnc_checkHC;
 
 // Display a short text intro
 if (!isDedicated && !_hc) then {
- ["OPERATION XYZ","CENTRAL ALTIS"] spawn {
+ ["ROOMSERVICE","NORTHERN ALTIS"] spawn {
 	 waitUntil {time > 15};
 		[
 			[
@@ -12,17 +12,4 @@ if (!isDedicated && !_hc) then {
 			] , 0, 0.7
 		] spawn BIS_fnc_typeText;
 	};
-};
-
-
-// Do stuff on either HC or Server (e.g. spawning)
-if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
-
-};
-
-// Do more stuff on the server
-if (isServer) then {
-
-	// If units were spawned, AI skill is set again
-	[] execVM "f\server\f_setAISkill.sqf";
 };
