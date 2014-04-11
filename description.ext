@@ -185,7 +185,7 @@ class Params
 		title = "ws_fnc debug";
 		values[] = {0,1};
 		texts[] = {"Off","On"};
-		default = 0;
+		default = 1;
 		code = "ws_param_dbg = %1";
 	};
 
@@ -331,6 +331,9 @@ class CfgFunctions
 			class nearPlayer
 			{
 			};
+			class setGroupID
+			{
+			};
 		};
 		class cache
 		{
@@ -348,6 +351,7 @@ class CfgFunctions
 	};
 	class WS
 	{
+
 		class debug
 		{
 			file = "ws_fnc\dbg";
@@ -371,6 +375,14 @@ class CfgFunctions
 			class nearPlayer {};
 			class listPlayers {};
 		};
+		class effects
+		{
+			file = "ws_fnc\effects";
+			class createTripflare {};
+			class createLightning {};
+			class createCAS {};
+			class createOrdnance {};
+		};
 		class misc
 		{
 			file = "ws_fnc\misc";
@@ -378,7 +390,6 @@ class CfgFunctions
 			class attachLight {};
 			class attachChem {};
 			class attachIR {};
-			class tripFlare {};
 			class broadcast {};
 			class showIntro {};
 		};
@@ -403,6 +414,7 @@ class CfgFunctions
 			class taskDefend {};
 			class taskCrew {};
 			class taskAmbush {};
+			class taskLand {};
 			class addWaypoint {};
 			class setAIMode {};
 		};
@@ -418,6 +430,7 @@ class CfgFunctions
 		class init {
 			class init {file = "ws_fnc\ws_fnc_init.sqf";preInit = 1;};
 		};
+
 	};
 };
 
