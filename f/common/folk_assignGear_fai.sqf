@@ -157,7 +157,7 @@ _APmine2 = "APERSMine_Range_Mag";
 
 // Base
 _baseUniform = ["U_BG_Guerilla1_1","U_BG_Guerilla2_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_Guerilla3_1","U_BG_Guerilla3_2"];
-_baseHelmet = ["H_Booniehat_gry"];
+_baseHelmet = ["H_Bandanna_khk"];
 _lightRig = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
 _mediumRig = ["V_PlateCarrier1_blk"]; 	// default for all infantry classes
 _heavyRig = ["V_PlateCarrier1_blk"];

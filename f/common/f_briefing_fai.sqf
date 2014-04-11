@@ -59,11 +59,11 @@ The FIA bastards are trying to steal a drug cache from us. Get there first!
 <br/><br/>
 ENEMY FORCES
 <br/>
-They wear brown hats.
+They are without any fashion sense and thus wear hats.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-We have greay hats.<br/><br/>
+We are superior in taste and have bandanas<br/><br/>
 "]];
 
 // ====================================================================================
