@@ -45,7 +45,7 @@ We all have SMGs with flashlights and a few grenades.
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. Get to the Swamp-Dacha and hold the area for 5 minutes.<br/>
-2. Pump each and every FAI bastard full of lead.
+2. Pump each and every FIA bastard full of lead.
 "]];
 
 // ====================================================================================
@@ -55,15 +55,15 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-The FAI bastards are trying to steal a drug cache from us. Get there first!
+The FIA bastards are trying to steal a drug cache from us. Get there first!
 <br/><br/>
 ENEMY FORCES
 <br/>
-They wear gray hats.
+They wear brown hats.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-We have brown hats.<br/><br/>
+We have greay hats.<br/><br/>
 "]];
 
 // ====================================================================================

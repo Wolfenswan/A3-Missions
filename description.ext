@@ -5,7 +5,7 @@
 
 class Header
 {
-	gameType = Coop;
+	gameType = TDM;
 	minPlayers = 1;
 	maxPlayers = 373;
 };
@@ -15,7 +15,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "Swampfolk";
 onLoadMission = "Made with the F3 Mission Development Framework";
 author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
@@ -88,6 +88,7 @@ class Params
 // F3 - Mission Timer/Safe Start
 // Credits: Please see the F2 online manual (http://www.ferstaberinde.com/f3/en/)
 
+/*
         class f_param_mission_timer
         {
                 title = "$STR_f_param_mission_timer";
@@ -127,6 +128,7 @@ class Params
 		default = 1;
 		code = "f_param_AISkill_Enemy = %1";
 	};
+
 
 // ============================================================================================
 
@@ -180,6 +182,7 @@ class Params
 		code = "ws_param_hc = %1";
 	};
 
+
 	class ws_param_dbg
 	{
 		title = "ws_fnc debug";
@@ -188,6 +191,7 @@ class Params
 		default = 1;
 		code = "ws_param_dbg = %1";
 	};
+*/
 
 };
 
@@ -218,9 +222,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "FAI Victory";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "The FAI managed to seize the drugs or kill all FIA members. Either way, they win!";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -228,9 +232,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "FIA Victory";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "The FIA managed to seize the drugs or kill all FIA members. Either way, they win!";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};

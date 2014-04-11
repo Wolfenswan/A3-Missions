@@ -13,13 +13,13 @@ private ["_timeOfDay","_weather","_MissionOvercast","_MissionRain","_MissionRain
 
 #include "f_waitForJIP.sqf"
 
-waitUntil {!isNil "f_param_timeofday"};
+//waitUntil {!isNil "f_param_timeofday"};
 // ====================================================================================
 
 // SET KEY VARIABLES
 // Conditions are set in the parameters screen (during mission set-up).
 
-_timeOfDay = f_param_timeOfDay;
+_timeOfDay = 0;
 
 // WARNING: WEATHER PARAMETER IS DISABLED UNTIL CERTAIN ARMA 3 COMMANDS ARE FIXED
 _weather = 8;
@@ -211,7 +211,7 @@ switch (_timeOfDay) do
 
 	case 0:
 	{
-		setDate [2030, 5, 11, 18, 55];
+		setDate [2030, 5, 11, 19, 05];
 	};
 	case 1:
 	{
