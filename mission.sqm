@@ -23,7 +23,8 @@ class Mission
 		"a3_map_altis",
 		"a3_armor_f_epb_mbt_03",
 		"a3_air_f_epb_heli_light_03",
-		"A3_Modules_F_Effects"
+		"A3_Modules_F_Effects",
+		"A3_Modules_F_Curator_Lightning"
 	};
 	addOnsAuto[]=
 	{
@@ -32,12 +33,14 @@ class Mission
 		"A3_Characters_F_INDEP",
 		"A3_Characters_F_OPFOR",
 		"A3_Modules_F_Effects",
+		"A3_Modules_F_Curator_Lightning",
+		"A3_Characters_F_BLUFOR",
 		"a3_map_altis"
 	};
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="F3 WS";
+		briefingName="fa3_aXX_SwampFolk";
 		overviewText="*** Insert mission description here. ***";
 		startWeather=0.84999996;
 		startWind=0;
@@ -58,7 +61,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=143;
+		items=145;
 		class Item0
 		{
 			side="CIV";
@@ -5222,10 +5225,49 @@ class Mission
 				};
 			};
 		};
+		class Item143
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21344.729,0.00069214031,14739.597};
+					placement=50;
+					id=246;
+					side="LOGIC";
+					vehicle="ModuleLightning_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=0;
+					synchronizations[]={1};
+				};
+			};
+		};
+		class Item144
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21831.377,7.702888,14501.376};
+					id=247;
+					side="WEST";
+					vehicle="B_Soldier_F";
+					leader=1;
+					skill=0.60000002;
+					text="test";
+				};
+			};
+		};
 	};
 	class Markers
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			position[]={21112.885,20.674784,7398.3081};
@@ -5252,10 +5294,16 @@ class Mission
 			b=12;
 			drawBorder=1;
 		};
+		class Item3
+		{
+			position[]={21729.738,1.9786427,14565.604};
+			name="mkr1";
+			type="Empty";
+		};
 	};
 	class Sensors
 	{
-		items=6;
+		items=7;
 		class Item0
 		{
 			position[]={20887.627,2.6456273,14621.697};
@@ -5369,6 +5417,23 @@ class Mission
 				titleEffect="PLAIN DOWN";
 				title="FAI takes the shack!";
 			};
+		};
+		class Item6
+		{
+			position[]={21418.385,0,14740.484};
+			a=0;
+			b=0;
+			activationBy="ANY";
+			activationType="NOT PRESENT";
+			timeoutMin=5;
+			timeoutMid=5;
+			timeoutMax=5;
+			age="UNKNOWN";
+			class Effects
+			{
+			};
+			synchronizations[]={0};
+			syncId=1;
 		};
 	};
 };
