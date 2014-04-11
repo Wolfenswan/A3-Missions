@@ -32,8 +32,10 @@ _dummy setDir _dir;
 
 [_dummy,nil,true] call BIS_fnc_moduleCAS;
 
-sleep 10;
+[_dummy] spawn {
+	sleep 10;
 
-deleteVehicle _dummy;
+	deleteVehicle (_this select 0);
+};
 
 true

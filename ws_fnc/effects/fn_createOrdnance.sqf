@@ -30,6 +30,10 @@ _dummy setVariable ["type",_class];
 
 [_dummy,nil,true] call BIS_fnc_moduleProjectile;
 
-sleep 30;
+[_dummy] spawn {
+	sleep 10;
 
-deleteVehicle _dummy;
+	deleteVehicle (_this select 0);
+};
+
+true
