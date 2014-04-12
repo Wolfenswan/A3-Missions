@@ -96,12 +96,12 @@ player globalchat format["Time in ms: %1", diag_tickTime - _startTime];
 
 
 [VehFIA_Car1,GrpFIA_CO,GrpFIA_DC] call ws_fnc_loadVehicle;
-[VehFIA_Car2,GrpFIA_ASL] call ws_fnc_loadVehicle;
-[VehFIA_Car3,GrpFIA_BSL] call ws_fnc_loadVehicle;
-[VehFIA_Car4,GrpFIA_CSL] call ws_fnc_loadVehicle;
-[VehFIA_Truck1,GrpFIA_A1,GrpFIA_A2,GrpFIA_A3] call ws_fnc_loadVehicle;
-[VehFIA_Truck2,GrpFIA_B1,GrpFIA_B2,GrpFIA_B3] call ws_fnc_loadVehicle;
-[VehFIA_Truck3,GrpFIA_C1,GrpFIA_C2,GrpFIA_C3] call ws_fnc_loadVehicle;
+[VehFIA_Car2,GrpFIA_ASL,GrpFIA_A1] call ws_fnc_loadVehicle;
+[VehFIA_Car3,GrpFIA_BSL,GrpFIA_B1] call ws_fnc_loadVehicle;
+[VehFIA_Car4,GrpFIA_CSL,GrpFIA_C1] call ws_fnc_loadVehicle;
+[VehFIA_Truck1,GrpFIA_A2,GrpFIA_A3] call ws_fnc_loadVehicle;
+[VehFIA_Truck2,GrpFIA_B2,GrpFIA_B3] call ws_fnc_loadVehicle;
+[VehFIA_Truck3,GrpFIA_C2,GrpFIA_C3] call ws_fnc_loadVehicle;
 
 [VehAAF_Car1,GrpAAF_CO,GrpAAF_DC] call ws_fnc_loadVehicle;
 [VehAAF_Truck1,GrpAAF_ASL,GrpAAF_A1,GrpAAF_A2,GrpAAF_A3] call ws_fnc_loadVehicle;
