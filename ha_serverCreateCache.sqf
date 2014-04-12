@@ -1,4 +1,4 @@
-/* 
+/*
  * Creates a cache at desired location.
  * by: harakka
  */
@@ -40,7 +40,7 @@ _crate addEventHandler [
 	}];
 
 _camonet = "CamoNet_INDP_open_F" createVehicle _pos;
-[_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F", "B_G_Soldier_F", "B_G_Soldier_lite_F"],[], [], [0.1,0.1], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
+[_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F", "B_G_Soldier_F", "B_G_Soldier_lite_F"],[], [], [0.6,0.6], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
 
 // Set marker settings
 _marker = createMarker [_markerName, _pos];

@@ -14,7 +14,7 @@ f_ha_createMarkers = {
 } forEach _this select 0;
 ["EnemiesSpotted",[]] call BIS_fnc_showNotification;
 };
- 
+
 if(!isServer) exitWith{};
 
 sleep 5;
@@ -47,14 +47,14 @@ while {true} do {
 	{
 		_pos = position _x;
 		// The random pos code lifted from Kylania & Big Dawg KS (http://forums.bistudio.com/showthread.php?t=122517)
-		_ang = random 360;  
-		_dis = random 30; 
-		_dx = sin(_ang)*_dis; 
-		_dy = cos(_ang)*_dis; 
+		_ang = random 360;
+		_dis = random 30;
+		_dx = sin(_ang)*_dis;
+		_dy = cos(_ang)*_dis;
 		_posWithJitter = [(_pos select 0) + _dx, (_pos select 1) + _dy, 0];
-		
+
 		//_spottingMarkers set [_markerReuseIndex, [format ["%1:%2", date select 3, date select 4], _posWithJitter]];
-		_spottingMarkers set [_markerReuseIndex, [format ["%1", time], _posWithJitter]];
+		_spottingMarkers set [_markerReuseIndex, [format ["%1:%2", date select 3, date select 4], _posWithJitter]];
 		_markerReuseIndex = _markerReuseIndex + 1;
 		if (_markerReuseIndex > _markerCount) then {_markerReuseIndex = 0;};
 	} forEach _spottedThisRound;
