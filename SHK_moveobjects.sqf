@@ -55,15 +55,22 @@ _objects = nearestobjects [_aPos,_types,_range];
 
   _origPos = [((_dPos select 0) + (_dst * sin _dir)), ((_dPos select 1) + (_dst * cos _dir)), 0];
 
+  _pos = [_origPos, 0, 150, 0, 0, 8, 0] call BIS_fnc_findSafePos;
+  if (count _pos == 0) then {_pos = [_origPos, 0, 500, 0, 0, 8, 0] call BIS_fnc_findSafePos;};
+  _x setPos _pos;
   //_correctedPos = _origPos findEmptyPosition [0, 300, typeOf _x];
-  if (_x isKindOf "Car") then { _correctedPos = _origPos findEmptyPosition [0, 500, typeOf _x];
+
+ /* if (_x isKindOf "Car") then { _correctedPos = _origPos findEmptyPosition [0, 500, typeOf _x];
   } else {
     _correctedPos = _origPos findEmptyPosition [1, 500, typeOf _x];
   };
   if (count _correctedPos == 0) then {
-	diag_log "WARNING: Failed to find empty position for unit, damage may occur.";
-	_x setPos _origPos;
+  diag_log "WARNING: Failed to find empty position for unit, damage may occur.";
+  _x setPos _origPos;
   } else {
     _x setPos _correctedPos;
   };
+  */
+  _x setVectorUp (surfaceNormal (getPosATL _x));
+  _x setVelocity [0,0,0];
 } foreach _objects;
