@@ -17,7 +17,7 @@ if (ws_fnc_compiled) exitWith {};
 
 // DEBUG
 // To enable debug mode either change false to true or put ws_debug = true in any unit init
-ws_debug = missionNameSpace getVariable ["ws_debug",true];
+ws_debug = missionNameSpace getVariable ["ws_debug",false];
 
 // Check if A3 is running
 
