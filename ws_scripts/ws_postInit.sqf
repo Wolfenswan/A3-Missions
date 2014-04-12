@@ -22,7 +22,6 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 
 // Do more stuff on the server
 if (isServer) then {
-
 	// If units were spawned, AI skill is set again
 	[] execVM "f\server\f_setAISkill.sqf";
 };
