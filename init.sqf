@@ -83,10 +83,10 @@ f_endSelected = -1;
 // F3 - Automatic Body Removal
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_removeBodyDelay = 180;
-f_removeBodyDistance = 500;
-f_doNotRemoveBodies = [];
-[] execVM "f\server\f_addRemoveBodyEH.sqf";
+// f_removeBodyDelay = 180;
+// f_removeBodyDistance = 500;
+// f_doNotRemoveBodies = [];
+// [] execVM "f\server\f_addRemoveBodyEH.sqf";
 
 // ====================================================================================
 
@@ -148,8 +148,8 @@ f_doNotRemoveBodies = [];
 // F3 - AI Skill Selector (Coop)
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_isFriendly = [];
-[]  execVM "f\server\f_setAISkill.sqf";
+// f_isFriendly = [west,civilian];
+// [] execVM "f\server\f_setAISkill.sqf";
 
 // ====================================================================================
 
@@ -165,11 +165,11 @@ f_isFriendly = [];
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-
-f_showGroup_Nametags = true;			// Display unit's group (uses GroupID)
+// f_showGroup_Nametags = true;			// Display unit's group (uses GroupID)
 // f_showDistance_Nametags = true;	// Show distance to player
 // f_showVehicle_Nametags = true;		// Show vehicle player is in
-[20] execVM "f\common\f_nametags.sqf";
+// [20] execVM "f\common\f_nametags.sqf";
+
 // ====================================================================================
 
 // F3 - Group E&E Check
@@ -207,5 +207,4 @@ f_showGroup_Nametags = true;			// Display unit's group (uses GroupID)
 
 // ====================================================================================
 
-// Wolfenswan - execute post Init scripts
-[] execVM "ws_scripts\ws_postInit.sqf";
+[] execVM "ha_spottingMarkers.sqf";

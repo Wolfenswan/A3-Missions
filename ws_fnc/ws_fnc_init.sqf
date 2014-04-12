@@ -17,7 +17,7 @@ if (ws_fnc_compiled) exitWith {};
 
 // DEBUG
 // To enable debug mode either change false to true or put ws_debug = true in any unit init
-ws_debug = missionNameSpace getVariable ["ws_debug",false];
+ws_debug = missionNameSpace getVariable ["ws_debug",true];
 
 // Check if A3 is running
 
@@ -46,8 +46,8 @@ if !(ws_game_a3) then {
 	ws_fnc_nearPlayer = compile preprocessfile "ws_fnc\tools\fn_nearPlayer.sqf";
 
 	//Misc Functions
-	ws_fnc_switchLights = compile preprocessfile "ws_fnc\tools\fn_switchLights.sqf";
-	ws_fnc_attachLight = compile preprocessfile "ws_fnc\tools\fn_attachLight.sqf";
+	ws_fnc_switchLights = compile preprocessfile "ws_fnc\misc\fn_switchLights.sqf";
+	ws_fnc_attachLight = compile preprocessfile "ws_fnc\misc\fn_attachLight.sqf";
 
 	//GetPos Functions
 	ws_fnc_getPos = compile preprocessfile "ws_fnc\getPos\fn_getPos.sqf";

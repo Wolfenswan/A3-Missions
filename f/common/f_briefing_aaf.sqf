@@ -21,7 +21,11 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS.
+Made by harakka with love for Folk ARPS. Special thanks to Head and Wolfenswan for scripting help. Thanks to all FA session players for suggestions and bugreports.
+<br/>
+<br/>
+Uses SHK_moveobjects.sqf by Shuko: http://forums.bistudio.com/showthread.php?92018-SHK_moveobjects<br/>
+Uses Wolfenswan's function library: http://www.folkarps.com/forum/viewtopic.php?f=48&t=785
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -33,7 +37,14 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
+DESTROYING CACHES
+<br/>
+Satchel charges must be used to destroy caches. Fireteam leaders, assistant automatic riflemen and riflemen carry a satchel each.
+<br/><br/>
+TRANSPORT
+<br/>
+1x Offroad with CO and DC elements premounted<br/>
+3x Transport truck with squad pre-mounted per truck</br>
 "]];
 
 // ====================================================================================
@@ -45,19 +56,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+Destroy the marked FIA equipment caches by using satchels, with minimum casualties to your squad.
 "]];
 
 // ====================================================================================
@@ -65,10 +64,10 @@ SPECIAL TASKS
 // NOTES: MISSION
 // The code below creates the mission sub-section of notes.
 
-_mis = player createDiaryRecord ["diary", ["Mission","
-<br/>
-*** Insert the mission here. ***
-"]];
+_mis = player createDiaryRecord ["diary", ["Mission",format["
+OBJECTIVES<br/>
+Destroy FIA weapon caches. Mission is successful once either %1 out of %2 caches are destroyed, or all FIA units have been eliminated.
+", ha_param_cacheVictoryNum, ha_param_cacheNum+5]]];
 
 // ====================================================================================
 
@@ -77,15 +76,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+AAF intel has indicated locations of several FIA guerrilla equipment caches.
+However FIA is about to relocate the caches, and we must move in swiftly to intercept them and destroy the caches.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+FIA guerrillas, number unknown. No armed vehicles or armor. The caches are very likely to be guarded. The enemy can communicate your location amongst themselves if you are spotted.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-*** Insert information about friendly forces here.***
+None.
 "]];
 
 // ====================================================================================

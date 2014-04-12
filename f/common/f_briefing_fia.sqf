@@ -21,7 +21,11 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS.
+Made by harakka with love for Folk ARPS. Special thanks to Head and Wolfenswan for scripting help. Thanks to all FA session players for suggestions and bugreports.
+<br/>
+<br/>
+Uses SHK_moveobjects.sqf and SHK_pos by Shuko: http://forums.bistudio.com/showthread.php?92018-SHK_moveobjects<br/>
+Uses Wolfenswan's function library: http://www.folkarps.com/forum/viewtopic.php?f=48&t=785
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -33,7 +37,14 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
+CACHES
+<br/>
+Each cache is guarded by 2-5 friendly AI units. AAF must use satchel charges to destroy caches. The friendly AI will report enemy sightings to you via map markers, unless they are wiped out very quickly. These markers are accurate to about 30 meters and include a timestamp.
+<br/><br/>
+TRANSPORT
+<br/>
+1x Offroad with CO and DC elements premounted<br/>
+3x Transport truck with squad pre-mounted per truck</br>
 "]];
 
 // ====================================================================================
@@ -45,19 +56,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+Assist our comrades in protecting the equipment caches, and eliminate any CDF soldiers sent to destroy them.
 "]];
 
 // ====================================================================================
@@ -65,10 +64,10 @@ SPECIAL TASKS
 // NOTES: MISSION
 // The code below creates the mission sub-section of notes.
 
-_mis = player createDiaryRecord ["diary", ["Mission","
-<br/>
-*** Insert the mission here. ***
-"]];
+_mis = player createDiaryRecord ["diary", ["Mission",format["
+OBJECTIVES<br/>
+Protect the weapon caches and eliminate AAF troops. The enemy is victorious if they destroy %1 out of %2 caches, or all of our soldiers are dead.
+", ha_param_cacheVictoryNum, ha_param_cacheNum+5]]];
 
 // ====================================================================================
 
@@ -77,15 +76,15 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+An ex-comrade has leaked information to AAF about the location of our equipment caches, and AAF is on their way to destroy them. This valuable equipment is vital in our strife to keep our country free and has been acquired at great expense. The caches must be protected with any available means until we can relocate them. Our boys are already standing guard at each cache. Your job is to help safeguard the caches, and hunt down the AAF soldiers sent to destroy them.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+AAF force of unknown size, no armed vehicles or armor.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-*** Insert information about friendly forces here.***
+Every cache is manned by 2-5 comrades. Konstantinos is ill and couldn't come today, so Vasilis is filling out for him. If you see him, don't joke about the amateurishly wrapped shemagh, he tries really hard.
 "]];
 
 // ====================================================================================

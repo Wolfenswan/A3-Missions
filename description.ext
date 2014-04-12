@@ -5,9 +5,9 @@
 
 class Header
 {
-	gameType = Coop;
-	minPlayers = 1;
-	maxPlayers = 373;
+	gameType = TDM;
+	minPlayers = 2;
+	maxPlayers = 98;
 };
 
 // ============================================================================================
@@ -15,9 +15,9 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "Cratesistance";
 onLoadMission = "Made with the F3 Mission Development Framework";
-author = "Wolfenswan [FA]";
+author = "harakka";
 loadScreen = "logo.paa";
 
 // ============================================================================================
@@ -49,8 +49,62 @@ respawnTemplates[] = {"f_Spectator"};
 // F3 - Start of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
 
+class CfgNotifications
+{
+	class CacheDestroyed {
+		description="Attackers have detonated one of the caches!";
+		title="Cache destroyed";
+		iconPicture="\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		//iconPicture="\A3\ui_f\data\map\mapcontrol\taskIconCreates_ca.paa";
+	};
+	
+	class MissionTimer {
+		description="Half of mission time remaining!";
+		title="Mission time reminder";
+		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+	};
+	
+	class EnemiesSpotted {
+		description="Cache guards report enemy sightings! Markers added to map.";
+		title="Enemies spotted";
+		iconPicture="\A3\UI_F\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa";
+	};
+		
+};
+
 class Params
 {
+
+// ============================================================================================
+// Custom options for Cratesistance
+
+		class ha_param_missionTime
+		{
+				title = "Mission length in minutes";
+				values[] = {0,2,15,20,25,30,35,40, 45, 50, 55, 60};
+				texts[] = {"Disable timer","2","15","20","25","30","35","40", "45", "50", "55", "60"};
+				default = 0;
+				code = "ha_param_missionTime = %1";
+		};
+
+		class ha_param_cacheNum
+		{
+				title = "Number of caches";
+				values[] = {0,1,2,3,4,5};
+				texts[] = {"5","6","7","8","9","10"};
+				default = 0;
+				code = "ha_param_cacheNum = %1";
+		};
+		
+		class ha_param_cacheVictoryNum
+		{
+				title = "Number of destroyed caches for attacker victory";
+				values[] = {1,2,3,4,5,6,7,8,9};
+				texts[] = {"1","2","3","4","5","6","7","8","9"};
+				default = 3;
+				code = "ha_param_cacheVictoryNum = %1";
+		};
+		
 
 // ============================================================================================
 
@@ -141,22 +195,22 @@ class Params
 // F3 - AI Skill Selector (coop)
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-	class f_param_AISkill_Friendly
-	{
-		title = "$STR_f_param_AISkill_Friendly";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-				code = "f_param_AISkill_Friendly = %1";
-	};
-	class f_param_AISkill_Enemy
-	{
-		title = "$STR_f_param_AISkill_Enemy";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_Enemy = %1";
-	};
+//	class f_param_AISkill_Friendly
+//	{
+//		title = "$STR_f_param_AISkill_Friendly";
+//		values[] = {0,1,2,3};
+//		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+//		default = 1;
+//		code = "f_param_AISkill_Friendly = %1";
+//	};
+//	class f_param_AISkill_Enemy
+//	{
+//		title = "$STR_f_param_AISkill_Enemy";
+//		values[] = {0,1,2,3};
+//		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+//		default = 1;
+//		code = "f_param_AISkill_Enemy = %1";
+//	};
 
 // ============================================================================================
 
@@ -199,26 +253,6 @@ class Params
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
 
-// Wolfenswan - Parameters
-
-	class ws_param_hc
-	{
-		title = "Headless Client";
-		values[] = {0,1};
-		texts[] = {"Off","On"};
-		default = 0;
-		code = "ws_param_hc = %1";
-	};
-
-	class ws_param_dbg
-	{
-		title = "ws_fnc debug";
-		values[] = {0,1};
-		texts[] = {"Off","On"};
-		default = 1;
-		code = "ws_param_dbg = %1";
-	};
-
 };
 
 // ============================================================================================
@@ -248,9 +282,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "AAF Victory";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "AAF have destroyed all caches. AAF wins.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -258,9 +292,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "FIA Victory";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "FIA successfully held on to their precious vital caches. FIA wins.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -268,9 +302,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "Ending #3";
+		title = "AAF Victory";
 		subtitle = "";
-		description = "*** Insert debriefing #3 here. ***";
+		description = "FIA forces has been wiped out. AAF wins.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -278,9 +312,9 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "Ending #4";
+		title = "FIA Victory";
 		subtitle = "";
-		description = "*** Insert debriefing #4 here. ***";
+		description = "AAF forces have been wiped out. FIA wins.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -288,9 +322,9 @@ class CfgDebriefing
 
 	class End5
 	{
-		title = "Ending #5";
+		title = "Mission time limit reached";
 		subtitle = "";
-		description = "*** Insert debriefing #5 here. ***";
+		description = "Mission time limit was reached. No-one wins.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -361,9 +395,6 @@ class CfgFunctions
 			class nearPlayer
 			{
 			};
-			class setGroupID
-			{
-			};
 		};
 		class cache
 		{
@@ -405,14 +436,6 @@ class CfgFunctions
 			class nearPlayer {};
 			class listPlayers {};
 		};
-		class effects
-		{
-			file = "ws_fnc\effects";
-			class createTripflare {};
-			class createLightning {};
-			class createCAS {};
-			class createOrdnance {};
-		};
 		class misc
 		{
 			file = "ws_fnc\misc";
@@ -420,6 +443,7 @@ class CfgFunctions
 			class attachLight {};
 			class attachChem {};
 			class attachIR {};
+			class tripFlare {};
 			class broadcast {};
 			class showIntro {};
 		};
