@@ -57,19 +57,19 @@ class CfgNotifications
 		iconPicture="\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
 		//iconPicture="\A3\ui_f\data\map\mapcontrol\taskIconCreates_ca.paa";
 	};
-	
+
 	class MissionTimer {
 		description="Half of mission time remaining!";
 		title="Mission time reminder";
 		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
 	};
-	
+
 	class EnemiesSpotted {
 		description="Cache guards report enemy sightings! Markers added to map.";
 		title="Enemies spotted";
 		iconPicture="\A3\UI_F\data\GUI\Cfg\Notifications\tridentEnemy_ca.paa";
 	};
-		
+
 };
 
 class Params
@@ -95,7 +95,7 @@ class Params
 				default = 0;
 				code = "ha_param_cacheNum = %1";
 		};
-		
+
 		class ha_param_cacheVictoryNum
 		{
 				title = "Number of destroyed caches for attacker victory";
@@ -104,7 +104,7 @@ class Params
 				default = 3;
 				code = "ha_param_cacheVictoryNum = %1";
 		};
-		
+
 
 // ============================================================================================
 
@@ -238,7 +238,7 @@ class Params
 
 // F3 - Caching
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
+/*
 	class f_param_caching
 	{
 		title = "$STR_f_param_caching";
@@ -247,6 +247,7 @@ class Params
 		default = 0;
 		code = "f_param_caching = %1";
 	};
+*/
 
 // ============================================================================================
 
@@ -436,6 +437,14 @@ class CfgFunctions
 			class nearPlayer {};
 			class listPlayers {};
 		};
+		class effects
+		{
+			file = "ws_fnc\effects";
+			class createTripflare {};
+			class createLightning {};
+			class createCAS {};
+			class createOrdnance {};
+		};
 		class misc
 		{
 			file = "ws_fnc\misc";
@@ -443,7 +452,6 @@ class CfgFunctions
 			class attachLight {};
 			class attachChem {};
 			class attachIR {};
-			class tripFlare {};
 			class broadcast {};
 			class showIntro {};
 		};
