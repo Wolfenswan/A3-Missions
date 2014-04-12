@@ -1,65 +1,90 @@
 if (!isServer) exitWith {};
 call compile preprocessfile "SHK_pos\shk_pos_init.sqf";
 
+
 ha_score = 0;
 
 _startTime = diag_tickTime;
-_cacheDistMin = 200;		// Min distance for generating new cache
-_cacheDistMax = 600;		// Max distance for generating new cache
-_spawnMinSideDistance = 8000;		// Min distance sides spawn from one another
-_spawnDefenderMinCacheDistance = 100;	// Min distance for defender to spawn from any cache
-_spawnDefenderMaxCacheDistance = 400;	// Max distance for defender to spawn from any cache
-_spawnAttackerMinCacheDistance = 500;	// Min distance for attacker to spawn from any cache
-_spawnAttackerMaxCacheDistance = 1000;		// Max distance for attacker to spawn from any cache
-_cacheNum = 5;		// Number of waypoints
+_cacheDistMin = 500;				// Min distance for generating new cache
+_cacheDistMax = _cacheDistMin*4;				// Max distance for generating new cache
+_cacheDistRand = 150; 				//Random factor for cache placement
+_spawnMinSideDistance = 2000;		// Min distance sides spawn from one another
+_spawnMaxSideDistance = 4000;		// Max distance sides spawn from one another
+_spawnDefenderMinCacheDistance = 250;	// Min distance for defender to spawn from any cache
+_spawnDefenderMaxCacheDistance = _cacheDistMax + _cacheDistRand;	// Max distance for defender to spawn from any cache
+_spawnAttackerMinCacheDistance = 800;	// Min distance for attacker to spawn from any cache
+_cacheNum = ha_param_cacheNum;		// Number of waypoints
 _cacheList = [];	// List of all cache coordinates
 _blacklist = ["mkr_blacklist"] call ws_fnc_collectMarkers;	// List of area markers where caches won't spawn
+
+{_x setMarkerAlpha 0} forEach (_blacklist + ["mkr_playArea"]);
 
 // Find position of first cache
 _cacheList = _cacheList + [["mkr_playArea", false, _blacklist] call SHK_pos];
 
+_nmkr = createMarkerLocal [format["mkr_%1",(_cachelist select 0)],(_cachelist select 0)];
+_nmkr setMarkerShapeLocal "RECTANGLE";
+_nmkr setMarkerSizeLocal [_cacheDistMax*2,_cacheDistMax*2];
+_nmkr setMarkerAlphaLocal 0;
+
 // Find rest of cache positions one by one (starting from 2, since we already added 1)
 _cacheCur = _cacheList select 0;
 for "_i" from 2 to _cacheNum do {
-	_cacheNext = ["mkr_playArea", false, _blacklist] call SHK_pos;
+	_cacheNext = [_nmkr, false, _blacklist] call SHK_pos;
 	_debugIterations = 0;
-	while {_cacheCur distance _cacheNext < _cacheDistMin || {_cacheCur distance _cacheNext > _cacheDistMax}} do {
-		_cacheNext = ["mkr_playArea", false, _blacklist] call SHK_pos;
+	_nearCaches = {_x distance _cacheNext <= _cacheDistMin + random _cacheDistRand - random _cacheDistRand} count _cacheList;
+	_farCaches = {_x distance _cacheNext >= _cacheDistMax + random _cacheDistRand - random _cacheDistRand} count _cacheList;
+	while {(_nearCaches + _farCaches) > 0} do {
+		_cacheNext = [_nmkr, false, _blacklist] call SHK_pos;
+		_nearCaches = {_x distance _cacheNext <= _cacheDistMin} count _cacheList;
+		_farCaches = {_x distance _cacheNext >= _cacheDistMax} count _cacheList;
+		diag_log format ["%1",[_nearCaches,_farCaches]];
 		_debugIterations = _debugIterations + 1;
+		if (_debugIterations > 1000) exitWith {diag_log "Too long loop"};
 	};
 	diag_log format["Position %1 found after %2 iterations", _i, _debugIterations];
 	_cacheList = _cacheList + [_cacheNext];
 };
 
+_nmkr setMarkerSizeLocal [_spawnDefenderMaxCacheDistance*3,_spawnDefenderMaxCacheDistance*3];
+
 // Find defender start position
 _posDefenderStart = [];
 _debugIterations = 0;
 while {count _posDefenderStart == 0} do {
-	_potentialPos = ["mkr_playArea", false, _blacklist] call SHK_pos;
-	{
-		if (_potentialPos distance _x >= _spawnDefenderMinCacheDistance && _potentialPos distance _x <= _spawnDefenderMaxCacheDistance) exitWith {
-			_posDefenderStart = _potentialPos;
-			diag_log format["Defender spawn found after %1 iterations", _debugIterations];
-		};
-	} forEach _cacheList;
+	_potentialPos = [_nmkr, false, _blacklist] call SHK_pos;
+	_nearCaches = {_x distance _potentialPos <= _spawnDefenderMinCacheDistance} count _cacheList;
+	_farCaches = {_x distance _potentialPos >= _spawnDefenderMaxCacheDistance} count _cacheList;
+	if (_nearCaches + _farCaches == 0) exitWith {
+		_posDefenderStart = _potentialPos;
+		diag_log format["Defender spawn found after %1 iterations", _debugIterations];
+	};
 	_debugIterations = _debugIterations + 1;
+	if (_debugIterations > 500) exitWith {diag_log "Too long loop"};
 };
+
+_nmkr setMarkerSizeLocal [_spawnMinSideDistance,_spawnMinSideDistance];
 
 // Find attacker start position
 _posAttackerStart = [];
 _debugIterations = 0;
 while {count _posAttackerStart == 0} do {
-	_potentialPos = ["mkr_playArea", false, _blacklist] call SHK_pos;
-	{
-		if (_potentialPos distance _x >= _spawnAttackerMinCacheDistance && _potentialPos distance _x <= _spawnAttackerMaxCacheDistance && _potentialPos distance _posDefenderStart >= _spawnMinSideDistance) exitWith {
-			_posAttackerStart = _potentialPos;
-			diag_log format["Attacker spawn found after %1 iterations", _debugIterations];
-		};
-	} forEach _cacheList;
+	_potentialPos = [_nmkr, false, _blacklist] call SHK_pos;
+	_nearCaches = {_x distance _potentialPos <= _spawnAttackerMinCacheDistance} count _cacheList;
+	_toonear = _potentialPos distance _posDefenderStart <= _spawnMinSideDistance;
+	_toofar = _potentialPos distance _posDefenderStart >= _spawnMaxSideDistance;
+
+	if (_nearCaches == 0 && !_toonear && !_toofar) exitWith {
+		_posAttackerStart = _potentialPos;
+		diag_log format["Attacker spawn found after %1 iterations", _debugIterations];
+	};
 	_debugIterations = _debugIterations + 1;
+	if (_debugIterations > 500) exitWith {diag_log "Too long loop"};
 };
 
+
 player globalchat format["Time in ms: %1", diag_tickTime - _startTime];
+
 
 {
 	[_forEachIndex, _x] call compile preprocessFileLineNumbers "ha_serverCreateCache.sqf";

@@ -3,7 +3,7 @@
   Author: Shuko (miika.jarvinen@pp3.inet.fi, shuko@quakenet)
   Version 0.31
   Modified by harakka to use findEmptyPosition for final object position
-  
+
   Moves set of objects from A to B, retaining the direction and distance from
   a point of reference.
 
@@ -14,7 +14,7 @@
     3: Array or String      Optional. Type of objects to search for.
     4: Number or Object     Optional. Direction adjustment. Affects position of objects, not the dir they will be facing.
     5: Number or Object     Optional. Direction the objects will be facing after they are moved.
-    
+
   Examples:
     nul = [gl1,gl2,50] execvm "shk_moveobjects.sqf"
     nul = [start,destination,100,"Man"] execvm "shk_moveobjects.sqf"
@@ -54,14 +54,14 @@ _objects = nearestobjects [_aPos,_types,_range];
   if (!isnil "_fDir") then {_x setdir _fDir};
 
   _origPos = [((_dPos select 0) + (_dst * sin _dir)), ((_dPos select 1) + (_dst * cos _dir)), 0];
-  
+
   //_correctedPos = _origPos findEmptyPosition [0, 300, typeOf _x];
-  if (_x isKindOf "Car") then { _correctedPos = _origPos findEmptyPosition [0, 300, typeOf _x];
+  if (_x isKindOf "Car") then { _correctedPos = _origPos findEmptyPosition [0, 500, typeOf _x];
   } else {
-    _correctedPos = _origPos findEmptyPosition [1, 300, typeOf _x];
+    _correctedPos = _origPos findEmptyPosition [1, 500, typeOf _x];
   };
   if (count _correctedPos == 0) then {
-	_x globalChat "WARNING: Failed to find empty position for unit, damage may occur.";
+	diag_log "WARNING: Failed to find empty position for unit, damage may occur.";
 	_x setPos _origPos;
   } else {
     _x setPos _correctedPos;
