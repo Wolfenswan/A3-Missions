@@ -17,7 +17,8 @@ if (!isDedicated && !_hc) then {
 
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
-
+	[FIA,500,west,20 + round (count playableUnits)/2] call ws_fnc_createGarrison;
+	[FIA_1,150,west,10] call ws_fnc_createGarrison;
 };
 
 // Do more stuff on the server

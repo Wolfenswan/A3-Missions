@@ -42,22 +42,16 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 // The code below creates the execution sub-section of notes.
 
 _exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
+<br/
 FIRE SUPPORT PLAN
 <br/>
-*** Insert fire support instructions here. ***
+CO can call in mortar strikes via the radio support menu (0-8).<br/>
+As soon as AA has been taken out Wildcat-CAS and a supply drop will be available.
 <br/><br/>
-SPECIAL TASKS
+PRIORITY TARGETS
 <br/>
-*** Insert instructions for specific units here. ***
+Any manpads and static AA in the area need to be destroyed.<br/>
+If present disable or - if necessary - destroy the Mora IFV.<br/>
 "]];
 
 // ====================================================================================
@@ -67,7 +61,9 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We are inserted <marker name='mkrInsert'>here</marker>. Markers indicating the drops for each squad, attachments are with CO.<br/>
+2. Proceed into the indicated AO, towards <marker name='mkrFIA'>TOWNNAME</marker>.<br/>
+3. Eliminate the majority of the FIA forces and all high priority targets (see EXECUTION).<br/><br/>
 "]];
 
 // ====================================================================================
@@ -77,15 +73,15 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+FIA rebels have had a firm grip on the western part of Altis for too long. From <marker name='mkrFIA'>TOWNNAME</marker> they are easily able to conduct raids into our territory and use it as a base for their smuggling operations that are supplying the camps further land inwards. Dislodging them will be a crucial blow to their structure and the first step to regain control of our island. Our platoon is inserted by heli to the West, while mechanized elements are blocking the roads leading away to the east and north-east.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+The FIA are mostly irregulars with assault rifles, smgs and technicals. In a recent raid the FIA managed to obtain a working Mora IFV as well as an assortment static weapons. It's very possible they are present in the AO.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-*** Insert information about friendly forces here.***
+<marker name='mkrAAF>Motorized forces</marker> are preventing the FIA from fleeing towards Kavala.
 "]];
 
 // ====================================================================================

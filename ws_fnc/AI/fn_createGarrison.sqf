@@ -33,7 +33,7 @@ array of created units
 
 // Default classes (Arma 3)
 // BLUFOR
-_wclasses = ["B_Soldier_lite_F"];
+_wclasses = ["B_G_Soldier_lite_F","B_G_Soldier_F"];
 // OPFOR
 _eclasses = ["O_Soldier_lite_F"];
 // INDEPENDENT
