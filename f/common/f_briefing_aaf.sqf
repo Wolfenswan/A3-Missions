@@ -43,7 +43,7 @@ Satchel charges must be used to destroy caches. Fireteam leaders, assistant auto
 <br/><br/>
 TRANSPORT
 <br/>
-1x Offroad with CO and DC elements premounted<br/>
+1x Strider<br/>
 3x Transport truck with squad pre-mounted per truck</br>
 "]];
 
@@ -67,7 +67,7 @@ Destroy the marked FIA equipment caches by using satchels, with minimum casualti
 _mis = player createDiaryRecord ["diary", ["Mission",format["
 OBJECTIVES<br/>
 Destroy FIA weapon caches. Mission is successful once either %1 out of %2 caches are destroyed, or all FIA units have been eliminated.
-", ha_param_cacheVictoryNum, ha_param_cacheNum+5]]];
+", ha_param_cacheVictoryNum, ha_param_cacheNum]]];
 
 // ====================================================================================
 

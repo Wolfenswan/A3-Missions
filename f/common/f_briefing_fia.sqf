@@ -43,8 +43,8 @@ Each cache is guarded by 2-5 friendly AI units. AAF must use satchel charges to 
 <br/><br/>
 TRANSPORT
 <br/>
-1x Offroad with CO and DC elements premounted<br/>
-3x Transport truck with squad pre-mounted per truck</br>
+1x Offroad with CO and DC premounted<br/>
+For each squad 1 x Offroad and 1 x Truck.<br/>
 "]];
 
 // ====================================================================================
@@ -56,7 +56,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-Assist our comrades in protecting the equipment caches, and eliminate any CDF soldiers sent to destroy them.
+Assist our comrades in protecting the equipment caches, and eliminate any AAF soldiers sent to destroy them.
 "]];
 
 // ====================================================================================
@@ -67,7 +67,7 @@ Assist our comrades in protecting the equipment caches, and eliminate any CDF so
 _mis = player createDiaryRecord ["diary", ["Mission",format["
 OBJECTIVES<br/>
 Protect the weapon caches and eliminate AAF troops. The enemy is victorious if they destroy %1 out of %2 caches, or all of our soldiers are dead.
-", ha_param_cacheVictoryNum, ha_param_cacheNum+5]]];
+", ha_param_cacheVictoryNum, ha_param_cacheNum]]];
 
 // ====================================================================================
 

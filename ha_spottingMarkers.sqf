@@ -28,9 +28,9 @@ _spotters = [];
 } forEach allGroups;
 
 _spottingMarkers = [];
-_markerCount = 30;
+_markerCount = 10;
 _markerReuseIndex = 0;
-_waitBetweenChecks = 30;
+_waitBetweenChecks = 60;
 
 while {true} do {
 	_spottedThisRound = [];

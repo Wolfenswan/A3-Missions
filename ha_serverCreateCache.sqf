@@ -35,7 +35,8 @@ _crate addEventHandler [
 		ha_score = ha_score + 1;
 		if (ha_score >= ha_param_cacheVictoryNum) then { [1] execVM "f\server\f_mpEndBroadcast.sqf";};
 		[["CacheDestroyed", []], "BIS_fnc_showNotification", true, false] spawn BIS_fnc_MP;
-	 	1
+	 	_crate setDamage 1;
+	 	deleteVehicle _crate;
 	 };
 	}];
 

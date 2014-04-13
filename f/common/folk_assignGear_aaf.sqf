@@ -782,9 +782,13 @@ switch (_typeofUnit) do
 // LOADOUT: ASSISTANT AUTOMATIC RIFLEMAN
 	case "aar":
 	{
-
+		_unit addmagazines [_riflemag,7];
+		_unit addmagazines [_riflemag_tr,2];
 		_unit addweapon _rifle;
-
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
+		_unit addmagazines [_smokegrenade,2];
+		["aar"] call _backpack;
 	};
 
 // LOADOUT: RIFLEMAN (AT)
