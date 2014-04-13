@@ -143,9 +143,9 @@ switch (_weather) do
 		_MissionRain = 0.4;
 		_MissionRainbow = 0;
 		_MissionLightnings = 1;
-		_MissionWindStr = 1;
-		_MissionWindGusts = 1;
-		_MissionFog =[0.5,0.055,75];
+		_MissionWindStr = 0;
+		_MissionWindGusts = 0;
+		_MissionFog =[0.5,0.055,55];
 		_MissionWaves = 1;
 		_MissionHumidity = 1;
 	};
@@ -196,11 +196,8 @@ switch (_weather) do
 // Use new values for _MissionTime, _MissionOvercast and _MissionFog to set
 // mission conditions on server and all clients (including JIP clients).
 
-if(!isDedicated) then
-{
-
 [_MissionOvercast,_MissionFog,_MissionRain,_MissionRainbow,_MissionWindStr,_MissionWindGusts,_MissionWaves,_MissionHumidity] call f_fnc_SetWeather;
-};
+
 // ====================================================================================
 
 // SELECT MISSION TIME OF DAY
@@ -227,7 +224,8 @@ switch (_timeOfDay) do
 0 setWindStr  _MissionWindStr;
 0 setWindForce _MissionWindGusts;
 0 setWaves _MissionWaves;
-0 setFog _MissionFog;
+0 setFog [0.5,0.055,55];
+forceWeatherChange;
 
 // ====================================================================================
 
@@ -243,8 +241,6 @@ switch (_timeOfDay) do
  	player sideChat format ["DEBUG (f\common\f_setMissionConditions.sqf): _MissionFog: %1",_MissionFog];
  	player sideChat format ["DEBUG (f\common\f_setMissionConditions.sqf): _MissionWaves: %1",_MissionWaves];
  };
-
-sleep 10;
 
 // ====================================================================================
 

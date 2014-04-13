@@ -21,3 +21,5 @@ simulWeatherSync;
 skiptime 1;
 
 simulWeatherSync;
+
+forceWeatherChange;
