@@ -17,8 +17,25 @@ if (!isDedicated && !_hc) then {
 
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
-	[FIA,500,west,20 + round (count playableUnits)/2] call ws_fnc_createGarrison;
-	[FIA_1,150,west,10] call ws_fnc_createGarrison;
+
+	_weapons = [
+		["hgun_PDW2000_F",8],
+		["SMG_01_F",8],
+		["SMG_02_ACO_F",8],
+		["arifle_Mk20C_F",6],
+		["arifle_TRG20_ACO_F",6],
+		["arifle_TRG21_F",5],
+		["arifle_TRG20_ACO_F",5],
+		["arifle_Katiba_C_F",5]
+	];
+
+	_units = [FIA,500,west,20 + round (count playableUnits)/2] call ws_fnc_createGarrison;
+	_units = _units +  ([FIA_1,150,west,10] call ws_fnc_createGarrison);
+
+	{
+		_wp = _weapons call ws_fnc_selectRandom;
+		[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
+	} forEach _units;
 };
 
 // Do more stuff on the server

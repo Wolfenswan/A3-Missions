@@ -27,6 +27,8 @@ _short = "Land_BagFence_Short_F";
 _tower = "Land_BagBunker_Tower_F";
 _block = "BlockConcrete_F";
 
+_o = objNull;
+
 switch (_this select 0) do {
 
 // Concrete block w. wooden ramps & bags shielding sides and front.
@@ -69,7 +71,6 @@ case 2: {
 
 // Concrete block w. wooden ramps & bags shielding sides and front. Raised Static in center (HMG by default)
 case 3: {
-	_static = "B_HMG_01_high_F";
 	_height = 2.5; //Modify this depending on static used.
 
 	_b = _block createVehicle [0,0,0];
@@ -136,7 +137,6 @@ case 6: {
 	if !(_thermal) then {_o disableTIEquipment true;};
 	};
 };
-
 
 _pos = (getPosATL _obj);
 _b setPosATL _pos;
