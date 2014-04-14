@@ -75,34 +75,6 @@ class CfgNotifications
 class Params
 {
 
-// ============================================================================================
-// Custom options for Cratesistance
-
-		class ha_param_missionTime
-		{
-				title = "Mission length in minutes";
-				values[] = {0,2,15,20,25,30,35,40, 45, 50, 55, 60};
-				texts[] = {"Disable timer","2","15","20","25","30","35","40", "45", "50", "55", "60"};
-				default = 0;
-				code = "ha_param_missionTime = %1";
-		};
-
-		class ha_param_cacheNum
-		{
-				title = "Number of caches";
-				values[] = {4,5,6,7,8,9,10};
-				default = 6;
-				code = "ha_param_cacheNum = %1";
-		};
-
-		class ha_param_cacheVictoryNum
-		{
-				title = "Number of destroyed caches for attacker victory";
-				values[] = {1,2,3,4,5,6,7,8};
-				default = 3;
-				code = "ha_param_cacheVictoryNum = %1";
-		};
-
 
 // ============================================================================================
 
@@ -150,6 +122,8 @@ class Params
                 default = 0;
                 code = "f_var_acre = %1";
         };
+
+
 
 // ============================================================================================
 
@@ -251,6 +225,36 @@ class Params
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
+
+
+// ============================================================================================
+// Custom options for Cratesistance
+
+		class ha_param_missionTime
+		{
+				title = "Mission length in minutes";
+				values[] = {0,2,15,20,25,30,35,40, 45, 50, 55, 60};
+				texts[] = {"Disable timer","2","15","20","25","30","35","40", "45", "50", "55", "60"};
+				default = 0;
+				code = "ha_param_missionTime = %1";
+		};
+
+		class ha_param_cacheNum
+		{
+				title = "Number of caches";
+				values[] = {4,5,6,7,8,9,10};
+				default = 6;
+				code = "ha_param_cacheNum = %1";
+		};
+
+		class ha_param_cacheVictoryNum
+		{
+				title = "Number of destroyed caches for attacker victory";
+				values[] = {1,2,3,4,5,6,7,8};
+				default = 3;
+				code = "ha_param_cacheVictoryNum = %1";
+		};
+
 
 };
 
