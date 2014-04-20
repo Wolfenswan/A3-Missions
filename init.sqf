@@ -141,7 +141,7 @@ f_doNotRemoveBodies = [];
 // [OPFOR,100] execVM "f\server\f_casualtiesCapAdv.sqf";
 
 // INDEPENDENT
-// [INDEPENDENT,100] execVM "f\server\f_casualtiesCapAdv.sqf";
+[INDEPENDENT,100] execVM "f\server\f_casualtiesCapAdv.sqf";
 
 // ====================================================================================
 

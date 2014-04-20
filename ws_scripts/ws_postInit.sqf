@@ -2,7 +2,7 @@ _hc = [] call ws_fnc_checkHC;
 
 // Display a short text intro
 if (!isDedicated && !_hc) then {
- ["OPERATION XYZ","CENTRAL ALTIS"] spawn {
+ ["SURFIN","WESTERN SHORELINE"] spawn {
 	 waitUntil {time > 15};
 		[
 			[
@@ -16,6 +16,7 @@ if (!isDedicated && !_hc) then {
 
 
 // Do stuff on either HC or Server (e.g. spawning)
+waitUntil {!isNil "ws_param_hc"};
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 
 	_weapons = [
@@ -29,8 +30,10 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 		["arifle_Katiba_C_F",5]
 	];
 
-	_units = [FIA,500,west,20 + round (count playableUnits)/2] call ws_fnc_createGarrison;
-	_units = _units +  ([FIA_1,150,west,10] call ws_fnc_createGarrison);
+	_units = [FIA,450,west,20 + round (count playableUnits)/3] call ws_fnc_createGarrison;
+	_units = _units +  ([FIA_1,150,west,8] call ws_fnc_createGarrison);
+	_units = _units +  ([FIA_2,250,west,10 + round (count playableUnits)/3] call ws_fnc_createGarrison);
+	_units = _units +  ([FIA_3,50,west,8] call ws_fnc_createGarrison);
 
 	{
 		_wp = _weapons call ws_fnc_selectRandom;

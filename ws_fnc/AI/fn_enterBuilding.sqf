@@ -58,7 +58,9 @@ if !(_occupied && (count _bposleft > 0) && (count _units > 0)) then {
 		waituntil {unitready _unit};
 
 		//Silly fix to make sure units are on the correct z-level. For some reason they don't like stairs when using doMove
-		if ((getPos _unit select 2) != (_pos select 2)) then {_unit setPos _pos;_unit doMove _pos;waituntil {unitready _unit};};
+		if ((getPos _unit select 2) != (_pos select 2)) then {_unit setPos _pos;_unit doMove _pos;waituntil {unitready _unit};
+
+		};
 
 		dostop _unit;
 		if (random 1 > 0.75) then {_unit setunitpos "Middle";};

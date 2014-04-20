@@ -181,7 +181,7 @@ _groups = [
 ["GrpAAF_BSL","AAF BSL -"],
 ["GrpAAF_B1","AAF B1 -"],
 ["GrpAAF_B2","AAF B2 -"],
-["GrpAAF_B3","AAF A3 -"],
+["GrpAAF_B3","AAF B3 -"],
 
 ["GrpAAF_CSL","AAF CSL -"],
 ["GrpAAF_C1","AAF C1 -"],
@@ -216,7 +216,7 @@ _groups = [
 ["GrpAAF_TH6","AAF TH6 -"],
 ["GrpAAF_TH7","AAF TH7 -"],
 ["GrpAAF_TH8","AAF TH8 -"],
-["GrpAAF_AH1","AAF AH1 -"]
+["GrpAAF_AH1","AAF AB1 -"]
 
 // ====================================================================================
 
@@ -228,4 +228,4 @@ _groups = [
 
 // SET GROUP IDS
 // Execute setGroupID Function for all factions
-{_x spawn f_fnc_setGroupID} forEach _groups;
+{_x call f_fnc_setGroupID} forEach _groups;

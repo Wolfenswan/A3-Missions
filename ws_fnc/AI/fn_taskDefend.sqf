@@ -39,7 +39,7 @@ private ["_debug","_game","_count","_milarrayA2","_badarrayA2","_badarrayA3","_m
 "_buildings","_vehicles","_milbuildings","_staticarray","_badarray","_milarray","_units","_static"];
 
 //Customizable Variables
-_treshold = 3; //Minimum number of available building positions for a civilian building to be considered (for mil. building all spots will always be used)
+_treshold = 0; //Minimum number of available building positions for a civilian building to be considered (for mil. building all spots will always be used)
 
 // ARMA 2 only
 // Military buildings that are garrisoned before civilian buildings
