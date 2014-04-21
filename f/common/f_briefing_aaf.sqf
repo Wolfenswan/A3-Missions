@@ -44,6 +44,8 @@ All Rifleman AT carry HE rockets.
 
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
+MOVEMENT PLAN<br/>
+The direct approach towards the town is quite exposed. Our best are the buildings along the main road, the defilate to the North and the <marker name='mkrFort'>old bunkers</marker> on the southern hill.<br/><br/>
 FIRE SUPPORT
 <br/>
 CO can call in mortar strikes via the radio support menu (0-8).<br/>

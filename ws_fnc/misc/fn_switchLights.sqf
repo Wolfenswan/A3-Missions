@@ -40,7 +40,7 @@ else {
 		sleep 0.1;
 		{
 			if (_switch == "OFF") then {
-				_x setHit ["light_1_hitpoint", 0.97]; //off
+				_lamp setHit ["light_1_hitpoint", 0.97]; //off
 			} else {
 				_x setHit ["light_1_hitpoint", 0]; //on
 			};

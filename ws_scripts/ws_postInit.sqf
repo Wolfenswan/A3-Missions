@@ -30,10 +30,10 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 		["arifle_Katiba_C_F",5]
 	];
 
-	_units = [FIA,450,west,20 + round (count playableUnits)/3] call ws_fnc_createGarrison;
-	_units = _units +  ([FIA_1,150,west,8] call ws_fnc_createGarrison);
-	_units = _units +  ([FIA_2,250,west,10 + round (count playableUnits)/3] call ws_fnc_createGarrison);
-	_units = _units +  ([FIA_3,50,west,8] call ws_fnc_createGarrison);
+	_units = [FIA,250,west,6 + round (count playableUnits)/3] call ws_fnc_createGarrison;
+	_units = _units +  ([FIA_1,180,west,6] call ws_fnc_createGarrison);
+	_units = _units +  ([FIA_2,200,west,4 + round (count playableUnits)/4] call ws_fnc_createGarrison);
+	_units = _units +  ([FIA_4,150,west,8] call ws_fnc_createGarrison);
 
 	{
 		_wp = _weapons call ws_fnc_selectRandom;

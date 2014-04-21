@@ -84,7 +84,7 @@ f_endSelected = -1;
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 f_removeBodyDelay = 180;
-f_removeBodyDistance = 500;
+f_removeBodyDistance = 400;
 f_doNotRemoveBodies = [];
 [] execVM "f\server\f_addRemoveBodyEH.sqf";
 
