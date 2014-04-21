@@ -357,6 +357,9 @@ class CfgFunctions
 			class nearPlayer
 			{
 			};
+			class setGroupID
+			{
+			};
 		};
 		class cache
 		{
@@ -374,6 +377,7 @@ class CfgFunctions
 	};
 	class WS
 	{
+
 		class debug
 		{
 			file = "ws_fnc\dbg";
@@ -389,16 +393,31 @@ class CfgFunctions
 			file = "ws_fnc\tools";
 			class selectRandom {};
 			class gameCheck {preInit=1;};
-			class switchLights {};
-			class attachLight {};
 			class collectMarkers {};
 			class collectBuildings {};
 			class loadVehicle {};
 			class checkHC {};
-			class broadcast {};
 			class showFPS {};
 			class nearPlayer {};
 			class listPlayers {};
+		};
+		class effects
+		{
+			file = "ws_fnc\effects";
+			class createTripflare {};
+			class createLightning {};
+			class createCAS {};
+			class createOrdnance {};
+		};
+		class misc
+		{
+			file = "ws_fnc\misc";
+			class switchLights {};
+			class attachLight {};
+			class attachChem {};
+			class attachIR {};
+			class broadcast {};
+			class showIntro {};
 		};
 		class getPos
 		{
@@ -421,6 +440,7 @@ class CfgFunctions
 			class taskDefend {};
 			class taskCrew {};
 			class taskAmbush {};
+			class taskLand {};
 			class addWaypoint {};
 			class setAIMode {};
 		};
@@ -436,6 +456,7 @@ class CfgFunctions
 		class init {
 			class init {file = "ws_fnc\ws_fnc_init.sqf";preInit = 1;};
 		};
+
 	};
 };
 
