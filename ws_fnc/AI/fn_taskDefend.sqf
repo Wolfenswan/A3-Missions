@@ -41,7 +41,6 @@ private ["_debug","_game","_count","_milarrayA2","_badarrayA2","_badarrayA3","_m
 //Customizable Variables
 _treshold = 2; //Minimum number of available building positions for a civilian building to be considered (for mil. building all spots will always be used)
 
-
 // ARMA 2 only
 // Military buildings that are garrisoned before civilian buildings
 _milarrayA2 = ["Land_Fort_Watchtower","Land_Fort_Watchtower_EP1","Land_fortified_nest_small","Land_fortified_nest_small_EP1","Land_fortified_nest_big","Land_fortified_nest_big_EP1","Land_Mil_Guardhouse_EP1","Land_Mil_ControlTower","Land_Mil_ControlTower_EP1"];
