@@ -10,10 +10,16 @@ ws_convoy =  getMarkerPos (_markers call ws_fnc_selectRandom); publicvariable "w
 
 if (isnil "ws_caches_destroyed") then {ws_caches_destroyed = false};publicvariable "ws_caches_destroyed";
 
+_fia = [];
+
+{if (side leader _x == independent) then {
+	_fia set [count _fia,_x];
+};} forEach allGroups;
+
 //Place FIA next to convoy
 {	{_pos = [ws_convoy,100] call ws_fnc_getPos;
 _x setPos _pos} forEach units _x
-} forEach [GrpNATO_Int,GrpFIA_CO,GrpFIA_DC,GrpFIA_ASL,GrpFIA_A1,GrpFIA_A2,GrpFIA_A3,GrpFIA_BSL,GrpFIA_B1,GrpFIA_B2,GrpFIA_B3];
+} forEach _fia;
 
 //Load US
 {{_x moveInCargo VehBlu_Th1} forEach units _x} forEach [GrpNATO_A1,GrpNATO_CO];
