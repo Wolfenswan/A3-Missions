@@ -73,7 +73,7 @@ if (_faction == "BLU_F") then {
 // The following block of code executes only if the player is in a FIA slot; it
 // automatically includes a file which contains the appropriate equipment data.
 
-if (_faction == "BLU_G_F") then {
+if (_faction == "ind_G_F") then {
 #include "folk_assignGear_fia.sqf"
 };
 

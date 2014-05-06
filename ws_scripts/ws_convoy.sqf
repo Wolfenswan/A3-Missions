@@ -104,4 +104,7 @@ _mkr setMarkerColor "ColorRed";
 _mkr setMarkerAlpha 0;
 } forEach [a1,a2,a3,a4];
 
+Zeus_range setPos (getMarkerPos "fia_conv");
+Zeus_area synchronizeObjectsAdd [Zeus_range];
+
 true

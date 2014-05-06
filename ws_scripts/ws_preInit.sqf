@@ -18,7 +18,8 @@ _fia = [];
 
 //Place FIA next to convoy
 {	{_pos = [ws_convoy,100] call ws_fnc_getPos;
-_x setPos _pos} forEach units _x
+_x setPos _pos} forEach units _x;
+Zeus_EdObj synchronizeObjectsAdd (units _x);
 } forEach _fia;
 
 //Load US
