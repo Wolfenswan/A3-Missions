@@ -5,14 +5,14 @@ ha_score = 0;
 ws_debug = false;
 
 _startTime = diag_tickTime;
-_cacheDistMin = 500;				// Min distance for generating new cache
-_cacheDistMax = _cacheDistMin*4;				// Max distance for generating new cache
+_cacheDistMin = 450;				// Min distance for generating new cache
+_cacheDistMax = _cacheDistMin*3.5;	// Max distance for generating new cache
 _cacheDistRand = 150; 				//Random factor for cache placement
 _spawnMinSideDistance = 2500;		// Min distance sides spawn from one another
 _spawnMaxSideDistance = 4000;		// Max distance sides spawn from one another
 _spawnDefenderMinCacheDistance = 250;	// Min distance for defender to spawn from any cache
 _spawnDefenderMaxCacheDistance = _cacheDistMax + _cacheDistRand;	// Max distance for defender to spawn from any cache
-_spawnAttackerMinCacheDistance = 800;	// Min distance for attacker to spawn from any cache
+_spawnAttackerMinCacheDistance = 1000;	// Min distance for attacker to spawn from any cache
 _cacheNum = ha_param_cacheNum;		// Number of waypoints
 _cacheList = [];	// List of all cache coordinates
 _blacklist = ["mkr_blacklist"] call ws_fnc_collectMarkers;	// List of area markers where caches won't spawn

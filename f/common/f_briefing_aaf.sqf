@@ -67,7 +67,7 @@ Destroy the marked FIA equipment caches by using satchels, with minimum casualti
 _mis = player createDiaryRecord ["diary", ["Mission",format["
 OBJECTIVES<br/>
 Destroy FIA weapon caches. Mission is successful once either %1 out of %2 caches are destroyed, or all FIA units have been eliminated.
-", ha_param_cacheVictoryNum, ha_param_cacheNum]]];
+",ha_param_cacheVictoryNum,ha_param_cacheNum]]];
 
 // ====================================================================================
 
