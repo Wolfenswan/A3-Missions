@@ -33,7 +33,8 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-2 x M2 Technicals were part of the convoy and their guns still operational.
+2 x M2 Technicals were part of the convoy and their guns are still operational.
+Use manual control to enter them.
 "]];
 
 // ====================================================================================
@@ -45,7 +46,9 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-Defend the convoy until NATO arrives, then assist them in removing the evidence.
+Lead our glorious defense.<br/><br/>
+ZEUS ABILITIES<br/>
+Use your ZEUS key to control our defense. You can freely place units in a 500m radius. As CSAT forces approach your abilities will be reduced to giving commands to units. You can always take control of units.
 "]];
 
 // ====================================================================================
@@ -58,7 +61,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 1. We begin <marker name='fia_conv'>here</marker>.<br/>
 2. We need to hold the area around the <marker name='fia_conv'>convoy</marker> and defend our caches.<br/>
 3. CSAT forces will attack in full force, possibly supported by heliborn troops from their <marker name='mkrCSAT'>base</marker>.<br/>
-4. NATO heliborn forces might be send from <marker name='mkrNATO'>their foothold</marker> to destroy the crates.<br/><br/>
+4. NATO heliborn forces will be send from <marker name='mkrNATO'>their foothold</marker> to destroy the crates.<br/><br/>
 NOTE<br/>
 To seize the crates at least one CSAT unit must be within 10m of them for one full minute.<br/>
 For NATO to be successful they need to either wipe out the CSAT platoon or destroy all four crates and the HEMTT and fall back at least 2.5k from the AO.<br/>
@@ -72,15 +75,16 @@ All four caches are next to the HEMTT truck. The crates and the truck can only b
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-A Mi-48 on morning patrol intercepted one of our <marker name='fia_conv'>convoys</marker>. It seems they noticed the 'goods' we were carrying and merely focused on disabling the vehicles. We need to defend the NATO weapons we were transporting from any mop up force they might send.
+A Mi-48 on morning patrol intercepted one of our <marker name='fia_conv'>convoys</marker>. You are in charge of defending our goods against any aggressors.
 <br/><br/>
-ENEMY FORCES
+CSAT FORCES
 <br/>
 Motorized CSAT forces, possibly supported by heliborn troops from their <marker name='mkrCSAT'>base</marker>.
 <br/><br/>
-FRIENDLY FORCES
+NATO FORCES
 <br/>
-Our NATO friends might be sent by heli.<br/><br/>
+NATO will sent heliborn troops to destroy the crates that are evidence of their support to us.<br/>
+If they are friendly to us or not is set by the host before the mission!
 "]];
 
 // ====================================================================================

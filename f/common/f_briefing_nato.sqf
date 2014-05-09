@@ -33,7 +33,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-Up to 2 x Ghosthawk, carrying demo charges.
+All FTLs and AARs carry one demo-charge each.
 "]];
 
 // ====================================================================================
@@ -74,13 +74,14 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 A Mi-48 on morning patrol intercepted a FIA convoy, transporting weaponry we had given to the rebels. As we have lost contact with the intelligence officer accompanying the convoy we need to search around it's last known location or wait for him re-establish contact. To prevent any CSAT forces from seizing the NATO crates as evidence, we are deploying heliborn forces to support the FIA and - if necessary - destroy the crates.
 <br/><br/>
-ENEMY FORCES
+CSAT FORCES
 <br/>
 Motorized CSAT forces, possibly supported by heliborn troops from their <marker name='mkrCSAT'>base</marker>.
 <br/><br/>
-FRIENDLY FORCES
+FIA FORCES
 <br/>
-A FIA platoon at the convoy.<br/><br/>
+FIA forces are probably defending their convoy.<br/>
+Whether they are friendly to us or not is set by the host before the mission!
 "]];
 
 // ====================================================================================

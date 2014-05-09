@@ -1,9 +1,13 @@
-
-
 if !(isServer) exitWith {};
 
 if (isNil "ws_initDone") then {ws_initDone = false};
 ws_debug = if (ws_param_dbg == 0) then {false} else {true};
+
+if (ws_var_friendly == 1) then {
+	west setfriend [resistance,1];
+	resistance setfriend [west,1];
+};
+
 
 _markers  = ["mkrConv"] call ws_fnc_collectMarkers;
 ws_convoy =  getMarkerPos (_markers call ws_fnc_selectRandom); publicvariable "ws_convoy";
@@ -17,14 +21,17 @@ _fia = [];
 };} forEach allGroups;
 
 //Place FIA next to convoy
-{	{_pos = [ws_convoy,100] call ws_fnc_getPos;
-_x setPos _pos} forEach units _x;
+{
+	_pos = [ws_convoy,100] call ws_fnc_getPos;
+	{
+		_x setPos ([_pos,5] call ws_fnc_getPos);
+	} forEach units _x;
 Zeus_EdObj synchronizeObjectsAdd (units _x);
 } forEach _fia;
 
 //Load US
-{{_x moveInCargo VehBlu_Th1} forEach units _x} forEach [GrpNATO_A1,GrpNATO_CO];
-{{_x moveInCargo VehBlu_Th3} forEach units _x} forEach [GrpNATO_B1];
+//{{_x moveInCargo VehBlu_Th1} forEach units _x} forEach [GrpNATO_A1,GrpNATO_CO];
+//{{_x moveInCargo VehBlu_Th3} forEach units _x} forEach [GrpNATO_B1];
 
 //Place CSAT
 _csat_convoy = [CSAT_CAR1,CSAT_MRAP1,CSAT_MRAP2,CSAT_Tr1,CSAT_Tr2];

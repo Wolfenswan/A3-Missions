@@ -1,11 +1,19 @@
 if (isNil "ws_caches_destroyed") then {ws_caches_destroyed = false;};
-if (isNIl "GrpNATO_Int") then {GrpNATO_Int = grpNull};
-if (faction player != "BLU_F" || (group player == GrpNATO_Int)) then{"fia_conv" setMarkerAlphaLocal 1;};
-if (faction player == "BLU_G_F" || (group player == GrpNATO_Int)) then {{_x setMarkerAlphaLocal 1;};}forEach ["a1","a2","a3","a4"];
+if (faction player == "ind_g_f") then {{_x setMarkerAlphaLocal 1;};}forEach ["a1","a2","a3","a4"];
 
-if (ws_var_jitter != 9999) then {if (faction player == "BLU_F" && !(group player == GrpNATO_Int)) then{"us_conv" setMarkerAlphaLocal 1;"us_conv1" setMarkerAlphaLocal 1;};};
+if (isNil "ws_var_jitter") then {ws_var_jitter = "ws_var_jitter" call BIS_fnc_getParamValue;};
+if (isNil "ws_var_friendly") then {diag_log "setting ws_var_friendly";ws_var_friendly = "ws_var_friendly" call BIS_fnc_getParamValue;};
 
+if (ws_var_jitter != 9999) then {
+	if (faction player == "BLU_F") then{
+		"us_conv" setMarkerAlphaLocal 1;"us_conv1" setMarkerAlphaLocal 1;
+	} else {"fia_conv" setMarkerAlphaLocal 1;};
+};
 
+if (ws_var_friendly == 1) then {
+	west setfriend [resistance,1];
+	resistance setfriend [west,1];
+};
 
 // Display a short text intro
 if (!isDedicated) then {
@@ -27,12 +35,28 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 
 };
 
+
+
 // Do more stuff on the server
 if (isServer) then {
+	_gear = [
+		["hgun_PDW2000_F",8],
+		["SMG_01_F",8],
+		["SMG_02_ACO_F",8],
+		["arifle_Mk20C_F",6],
+		["arifle_TRG20_ACO_F",6],
+		["arifle_TRG21_F",5],
+		["arifle_Katiba_C_F",5]
+	];
 
-	// If units were spawned, AI skill is set again
-	[] execVM "f\server\f_setAISkill.sqf";
+	{
+		if (side _x == independent && !isPlayer _x) then {
+			_wp = _gear call ws_fnc_selectRandom;
+			[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
+		};
+	} forEach allUnits;
 };
+
 
 // Start the caching
 if (ws_param_caching != 0) then {

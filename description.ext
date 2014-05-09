@@ -5,7 +5,7 @@
 
 class Header
 {
-	gameType = DM;
+	gameType = TDM;
 	minPlayers = 1;
 	maxPlayers = 373;
 };
@@ -146,7 +146,7 @@ class Params
 		title = "$STR_f_param_AISkill_Friendly";
 		values[] = {0,1,2,3};
 		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
+		default = 2;
 				code = "f_param_AISkill_Friendly = %1";
 	};
 	class f_param_AISkill_Enemy
@@ -154,33 +154,10 @@ class Params
 		title = "$STR_f_param_AISkill_Enemy";
 		values[] = {0,1,2,3};
 		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
+		default = 2;
 		code = "f_param_AISkill_Enemy = %1";
 	};
 
-// ============================================================================================
-
-// F3 - AI Skill Selector (A&D)
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-//	class f_param_AISkill_BLUFOR
-//	{
-//		title = "$STR_f_param_AISkill_BLUFOR";
-//		values[] = {0,1,2,3};
-//		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-//		default = 1;
-//		code = "f_param_AISkill_BLUFOR = %1";
-//	};
-//	class f_param_AISkill_OPFOR
-//	{
-//		title = "$STR_f_param_AISkill_OPFOR";
-//		values[] = {0,1,2,3};
-//		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-//		default = 1;
-//		code = "f_param_AISkill_OPFOR = %1";
-//	};
-
-// ============================================================================================
 // ============================================================================================
 
 // F3 - End of Params code blocks.
@@ -207,6 +184,15 @@ class Params
                 code = "ws_var_placement = %1";
         };
 
+	class ws_param_friendly
+	{
+	        title = "FIA are friendly to";
+	        values[] = {0,1};
+	        texts[] = {"Nobody","NATO"};
+	        default = 0;
+	        code = "ws_var_friendly = %1";
+	};
+
 	class ws_param_dbg
 	{
 		title = "ws_fnc debug";
@@ -216,11 +202,13 @@ class Params
 		code = "ws_param_dbg = %1";
 	};
 
-
-	#define GUERFRIENDLY_DEFAULT	1
-	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
-
 };
+
+
+/*
+	#define GUERFRIENDLY_DEFAULT	-1
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+*/
 
 // ============================================================================================
 

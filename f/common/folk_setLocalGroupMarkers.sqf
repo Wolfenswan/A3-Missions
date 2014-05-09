@@ -101,7 +101,7 @@ switch (_unitfaction) do
 // MARKERS: BLUFOR > FIA
 // Markers seen by players in FIA slots.
 
-	case "blu_g_f":
+	case "ind_g_f":
 	{
 		["GrpFIA_CO", 0, "CO", "ColorYellow"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_DC", 0, "DC", "ColorYellow"] spawn f_fnc_localGroupMarker;

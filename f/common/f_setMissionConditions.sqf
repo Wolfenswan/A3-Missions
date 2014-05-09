@@ -13,7 +13,7 @@ private ["_timeOfDay","_weather","_MissionOvercast","_MissionRain","_MissionRain
 
 #include "f_waitForJIP.sqf"
 
-waitUntil {!isNil "f_param_weather" && !isnil "f_param_weather"};
+waitUntil {!isNil "f_param_weather" && !isnil "f_param_timeOfDay"};
 // ====================================================================================
 
 // SET KEY VARIABLES
@@ -263,18 +263,6 @@ switch (_timeOfDay) do
 // ====================================================================================
 
 // DEBUG
- if (f_var_debugMode == 1) then
- {
- 	player sideChat format ["DEBUG (f\common\f_setMissionConditions.sqf): _MissionOvercast: %1",_MissionOvercast];
- 	player sideChat format ["DEBUG (f\common\f_setMissionConditions.sqf): _MissionRain: %1",_MissionRain];
- 	player sideChat format ["DEBUG (f\common\f_setMissionConditions.sqf): _MissionRainbow: %1",_MissionRainbow];
- 	player sideChat format ["DEBUG (f\common\f_setMissionConditions.sqf): _MissionLightnings: %1",_MissionLightnings];
- 	player sideChat format ["DEBUG (f\common\f_setMissionConditions.sqf): _MissionWindStr: %1",_MissionWindStr];
- 	player sideChat format ["DEBUG (f\common\f_setMissionConditions.sqf): _MissionWindGusts: %1",_MissionWindGusts];
- 	player sideChat format ["DEBUG (f\common\f_setMissionConditions.sqf): _MissionFog: %1",_MissionFog];
- 	player sideChat format ["DEBUG (f\common\f_setMissionConditions.sqf): _MissionWaves: %1",_MissionWaves];
- };
-
 sleep 10;
 
 // ====================================================================================
