@@ -30,4 +30,7 @@ VehFIA_Tech2 setPos ([car2,50,15,0,true] call ws_fnc_getPos);
 VehFIA_Tech2 setDir ([VehFIA_Tech2,town] call BIS_fnc_dirTo);
 VehFIA_Tech2 setVectorUp(surfaceNormal(getPos VehFIA_Tech2));
 
+if (isNil "GrpFIA_Tech1") then {deleteVehicle VehFIA_Tech1};
+if (isNil "GrpFIA_Tech2") then {deleteVehicle VehFIA_Tech2};
+
 ws_initDone = true;

@@ -74,6 +74,7 @@ if (_faction == "BLU_F") then {
 // automatically includes a file which contains the appropriate equipment data.
 
 if (_faction == "BLU_G_F") then {
+	f_param_backpacks = 0;
 #include "folk_assignGear_fia.sqf"
 };
 

@@ -19,9 +19,9 @@ private ["_i","_distance","_increment","_roads","_done"];
 _pos = (_this select 0) call ws_fnc_getEPos;
 
 _i = 0;
-_distance = 5;
+_distance = 10;
 if (count _this > 1) then {_distance = _this select 1};
-_increment = 10;
+_increment = 50;
 if (count _this > 2) then {_increment = _this select 2};
 _done = false;
 
