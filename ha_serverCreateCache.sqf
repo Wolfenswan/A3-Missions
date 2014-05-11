@@ -42,7 +42,12 @@ _crate addEventHandler [
 	}];
 
 _camonet = "CamoNet_INDP_open_F" createVehicle _pos;
-[_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F", "B_G_Soldier_F", "B_G_Soldier_lite_F"],[], [], [0.6,0.6], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
+_grp = [_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F", "B_G_Soldier_F", "B_G_Soldier_lite_F"],[], [], [0.2,0.2], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
+
+f_param_AISkill_Enemy = 3;
+f_param_AISkill_Friendly = 3;
+f_isFriendly = [west];
+(units _grp) execVm "f\server\f_setAISkill.sqf";
 
 // Set marker settings
 _marker = createMarker [_markerName, _pos];
