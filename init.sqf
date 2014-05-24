@@ -102,7 +102,7 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-[OPFOR,75,{hint 'The convoy has taken sufficient casualties. Time to fall back'},false] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[OPFOR,80,{[] execVM 'ws_scripts\ws_convoyDead.sqf'},false] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
 // [INDEPENDENT,100,3] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
@@ -134,7 +134,7 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 
 // ====================================================================================
 
-// F3 - Group E&E Check
+// F3 - E&E Check
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 // [GroupName,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";

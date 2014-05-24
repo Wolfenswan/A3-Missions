@@ -26,10 +26,14 @@ _safe = 0;
 _units = [];
 _pos = [];
 
+waitUntil {sleep 0.1;scriptDone f_script_setLocalVars};
+
 // ====================================================================================
 
 // POPULATE UNITS ARRAY
 // Conduct several checks against the first variable to see if we're dealing with a specific unit, a group or an array of several groups or units.
+
+player globalchat format ["%1",typeName _check];
 
 switch (typeName _check) do {
 	case "GROUP": {_units = units _check};
@@ -41,9 +45,19 @@ switch (typeName _check) do {
 			if (typeName _x == "GROUP") then {_units = _units + units _x};
 		} forEach _check;
 	};
+	case "SIDE": {
+		hint "side!";
+		switch (_check) do {
+			case west: 			{_units = f_var_men_BLU};
+			case blufor: 		{_units = f_var_men_BLU};
+			case east: 			{_units = f_var_men_OPF};
+			case opfor: 		{_units = f_var_men_OPF};
+			case resistance: 	{_units = f_var_men_RES};
+			case independent: 	{_units = f_var_men_RES};
+			case civilian: 		{_units = f_var_men_CIV};
+		};
+	};
 };
-
-player globalchat format ["%1",_units];
 
 if (count _units == 0) exitWith {player globalchat format ["DEBUG (f\EandECheck\f_EandECheckLoop.sqf): _units array is empty! passed array = %1, units array = %2",_check,_units];};
 
@@ -113,7 +127,7 @@ if (typeName _end == typeName 0) exitWith {
 };
 
 if (typeName _end == typeName {}) exitWith {
-	[] spawn _end
+	[_end,"bis_fnc_spawn",true] call BIS_fnc_MP;
 };
 
 player GlobalChat format ["DEBUG (f\EandECheck\f_EandECheckLoop.sqf): Ending didn't fire, should either be code or scalar. _end = %1, typeName _end: %2",_end,typeName _end];
