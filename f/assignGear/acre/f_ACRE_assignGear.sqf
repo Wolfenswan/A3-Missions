@@ -61,11 +61,7 @@ _unit = _this select 1;					// expecting name of unit; originally passed by usin
 // DELETE ALL RADIOS
 // All previously assigned radios must be deleted, in order to set the radio frequencies per side.
 
-<<<<<<< .merge_file_a07068
-_clearRadiosHandle = _this execVM "f\common\fa_ACRE_clearRadios.sqf";
-=======
 _clearRadiosHandle = _this execVM "f\assignGear\acre\fa_ACRE_clearRadios.sqf";
->>>>>>> .merge_file_a09212
 
 waitUntil{scriptDone _clearRadiosHandle};
 
@@ -93,21 +89,13 @@ switch (_typeofUnit) do
 		_unit addItem _radio1;
 		_unit addItem _radio2;
 	};
-<<<<<<< .merge_file_a07068
-  
-=======
 
->>>>>>> .merge_file_a09212
 // LOADOUT: DEPUTY COMMANDER AND SQUAD LEADER
 	case "dc":
 	{
 		_unit addItem _radio1;
 		_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	}; 
-=======
 	};
->>>>>>> .merge_file_a09212
 
 // LOADOUT: MEDIC
 	case "m":
@@ -119,44 +107,19 @@ switch (_typeofUnit) do
 	case "ftl":
 	{
 		_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};	
-=======
 	};
->>>>>>> .merge_file_a09212
 
 
 // LOADOUT: AUTOMATIC RIFLEMAN
 	case "ar":
 	{
 		//_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};	
-	
-=======
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: ASSISTANT AUTOMATIC RIFLEMAN
 	case "aar":
 	{
 		//_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};			
-	
-// LOADOUT: RIFLEMAN (AT)	
-	case "rat":
-	{
-		//_unit addItem _radio2;
-	};		
-	
-// LOADOUT: SURFACE TO AIR MISSILE GUNNER 
-	case "samg":
-	{
-		_unit addItem _radio2;
-	};			
-	
-=======
 	};
 
 // LOADOUT: RIFLEMAN (AT)
@@ -171,27 +134,10 @@ switch (_typeofUnit) do
 		_unit addItem _radio2;
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: ASSISTANT SURFACE TO AIR MISSILE GUNNER
 	case "samag":
 	{
 		//_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};			
-	
-// LOADOUT: MEDIUM MG GUNNER	
-	case "mmgg":
-	{
-		_unit addItem _radio2;
-	};			
-
-// LOADOUT: MEDIUM MG ASSISTANT GUNNER	
-	case "mmgag":
-	{
-		//_unit addItem _radio2;		
-	};
-	
-=======
 	};
 
 // LOADOUT: MEDIUM MG GUNNER
@@ -206,54 +152,21 @@ switch (_typeofUnit) do
 		//_unit addItem _radio2;
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: HEAVY MG GUNNER
 	case "hmgg":
 	{
 		_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};	
-	
-=======
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: HEAVY MG ASSISTANT GUNNER
 	case "hmgag":
 	{
 		//_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};		
-=======
 	};
->>>>>>> .merge_file_a09212
 
 // LOADOUT: MEDIUM AT GUNNER
 	case "matg":
 	{
-<<<<<<< .merge_file_a07068
-		_unit addItem _radio2;	
-	};	
-	
-// LOADOUT: MEDIUM AT ASSISTANT GUNNER	
-	case "matag":
-	{
-		//_unit addItem _radio2;
-	};	
-	
-// LOADOUT: HEAVY AT GUNNER
-	case "hatg":
-	{
-		_unit addItem _radio2;	
-	};	
-	
-// LOADOUT: HEAVY AT ASSISTANT GUNNER	
-	case "hatag":
-	{
-		//_unit addItem _radio2;			
-	};		
-	
-=======
 		_unit addItem _radio2;
 	};
 
@@ -275,52 +188,31 @@ switch (_typeofUnit) do
 		//_unit addItem _radio2;
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: MORTAR GUNNER
 	case "mtrg":
 	{
 		_unit addItem _radio1;
 		_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};	
-	
-=======
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: MORTAR ASSISTANT GUNNER
 	case "mtrag":
 	{
 		//_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};		
-	
-=======
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: SNIPER
 	case "sn":
 	{
 		_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};		
-	
-=======
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: SPOTTER
 	case "sp":
 	{
 		//_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};			
-	
-=======
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: GROUND VEHICLE CREW
 	case "c":
 	{
@@ -328,43 +220,23 @@ switch (_typeofUnit) do
 				_unit addItem _radio1;
 			};
 		_unit addItem _radio2;
-<<<<<<< .merge_file_a07068
-	};			
-	
-=======
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: AIR VEHICLE PILOTS
 	case "p":
 	{
 		if(leader group _unit == _unit) then {
 				_unit addItem _radio1;
 			};
-<<<<<<< .merge_file_a07068
-		_unit addItem _radio2;				
-	};		
-	
-=======
 		_unit addItem _radio2;
 	};
 
->>>>>>> .merge_file_a09212
 // LOADOUT: ENGINEER
 	case "eng":
 	{
 		if(leader group _unit == _unit) then {
 				_unit addItem _radio1;
 			};
-<<<<<<< .merge_file_a07068
-		_unit addItem _radio2;	
-	};	
-		
-// LOADOUT: RIFLEMAN
-	case "r":
-	{
-		//_unit addItem _radio2;	
-=======
 		_unit addItem _radio2;
 	};
 
@@ -372,37 +244,24 @@ switch (_typeofUnit) do
 	case "r":
 	{
 		//_unit addItem _radio2;
->>>>>>> .merge_file_a09212
 	};
 
 // LOADOUT: CARABINEER
 	case "car":
 	{
-<<<<<<< .merge_file_a07068
-		//_unit addItem _radio2;	
-=======
 		//_unit addItem _radio2;
->>>>>>> .merge_file_a09212
 	};
 
 // LOADOUT: SUBMACHINEGUNNER
 	case "smg":
 	{
-<<<<<<< .merge_file_a07068
-		//_unit addItem _radio2;	
-=======
 		//_unit addItem _radio2;
->>>>>>> .merge_file_a09212
 	};
 
 // LOADOUT: GRENADIER
 	case "gren":
 	{
-<<<<<<< .merge_file_a07068
-		//_unit addItem _radio2;	
-=======
 		//_unit addItem _radio2;
->>>>>>> .merge_file_a09212
 	};
 
 // CARGO: CAR - room for 10 weapons and 50 cargo items
@@ -410,13 +269,8 @@ switch (_typeofUnit) do
 	{
 		_unit addItemCargoGlobal [_radio2, 1];
 		_unit addItemCargoGlobal [_radio1, 1];
-<<<<<<< .merge_file_a07068
-	};	
-	
-=======
 	};
 
->>>>>>> .merge_file_a09212
 // CARGO: TRUCK - room for 50 weapons and 200 cargo items
 	case "v_tr":
 	{
@@ -424,11 +278,7 @@ switch (_typeofUnit) do
 		_unit addItemCargoGlobal [_radio1, 4];
 
 	};
-<<<<<<< .merge_file_a07068
-	
-=======
 
->>>>>>> .merge_file_a09212
 // CARGO: IFV - room for 10 weapons and 100 cargo items
 	case "v_ifv":
 	{
@@ -437,21 +287,12 @@ switch (_typeofUnit) do
 
 	};
 
-<<<<<<< .merge_file_a07068
-	
-// LOADOUT: DEFAULT/UNDEFINED (use RIFLEMAN)
-   default
-   {
-		_unit addItem _radio2;		
-		if (true) exitwith {player globalchat format ["DEBUG (f\common\folk_assignGear_acre.sqf): Unit = %1. Gear template %2 does not exist, used Rifleman instead.",_unit,_typeofunit]};
-=======
 
 // LOADOUT: DEFAULT/UNDEFINED (use RIFLEMAN)
    default
    {
 		_unit addItem _radio2;
 		if (true) exitwith {player globalchat format ["DEBUG (f\assignGear\acre\f_assignGear_acre.sqf): Unit = %1. Gear template %2 does not exist, used Rifleman instead.",_unit,_typeofunit]};
->>>>>>> .merge_file_a09212
    };
 
 

@@ -14,21 +14,13 @@ GrpPickInit =
     {
         private "_grp";
         _grp = _x;
-<<<<<<< .merge_file_a08400
-        if (side(_grp) == side(player) && (faction (leader _grp) == faction player ) && (alive (leader _grp) ) && (_grp != group(player))) then
-=======
         if (side(_grp) == side(player) && {(faction (leader _grp) == faction player ) && (alive (leader _grp)) && !(_grp == group player)}) then
->>>>>>> .merge_file_a09320
         {
             GrpList set [GrpCount, _grp];
             private "_idx";
             _idx = COMBO lbAdd str(_grp); COMBO lbSetValue [_idx, GrpCount + 1];
             GrpCount = GrpCount + 1;
         };
-<<<<<<< .merge_file_a08400
-    } forEach allGroups;
-
-=======
 
         if (_grp == group player && {count units _grp > 1}) then {
             GrpList set [GrpCount, _grp];
@@ -41,7 +33,6 @@ GrpPickInit =
      GrpList set [GrpCount, grpNull];
      _idx = COMBO lbAdd "NONE"; COMBO lbSetValue [_idx, GrpCount + 1];
 
->>>>>>> .merge_file_a09320
     _sel = player getVariable "GrpPicker_Selection";
     if (!isNil '_sel') then
     {

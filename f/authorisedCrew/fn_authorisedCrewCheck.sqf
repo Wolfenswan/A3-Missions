@@ -2,22 +2,9 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-<<<<<<< .merge_file_a07552
-// JIP CHECK
-// Prevents the script executing until the player has synchronised correctly:
-
-#include "f_waitForJIP.sqf"
-
-// ====================================================================================
-
-// DECLARE VARIABLES AND FUNCTIONS
-
-private ["_fromEH","_vehicle","_vehicleRole","_unitToCheck","_restrictedCrew","_warningMsg"];
-=======
 // DECLARE VARIABLES AND FUNCTIONS
 
 private ["_fromEH","_vehicle","_vehicleRole","_unitToCheck","_restrictedCrew","_warningMsg","_restrictcargo"];
->>>>>>> .merge_file_a07352
 
 // ====================================================================================
 
@@ -25,12 +12,6 @@ private ["_fromEH","_vehicle","_vehicleRole","_unitToCheck","_restrictedCrew","_
 // Using the arguments passed to the script, we first define some local variables.
 
 _fromEH = _this select 0;
-<<<<<<< .merge_file_a07552
-_vehicle = _fromEH select 0;
-_vehicleRole = _fromEH select 1;
-_unitToCheck = _fromEH select 2;
-_restrictedCrew = _this select 1;
-=======
 _restrictedList= _this select 1;
 _restrictcargo = if (count _this > 2) then {_this select 2} else {false};
 
@@ -38,7 +19,6 @@ _vehicle = _fromEH select 0;
 _vehicleRole = _fromEH select 1;
 _unitToCheck = _fromEH select 2;
 
->>>>>>> .merge_file_a07352
 _warningMsg = localize "STR_f_UnauthorisedCrew_Warning";
 
 // DEBUG
@@ -54,23 +34,6 @@ if (f_var_debugMode == 1) then
 
 // ====================================================================================
 
-<<<<<<< .merge_file_a07552
-// PERFORM CHECKS
-// We do not need to perform all of this script on all clients simulaneously, so if
-// the unit triggering the the event handler is local to another client, we exit the
-// script. Unless the unit is entering as cargo, or part of the authorised crew, it
-// is ejected from the vehicle with a warning message (as a hint).
-
-if ((local _unitToCheck) && (_vehicleRole != "CARGO") && (!(_unitToCheck in _restrictedCrew))) then
-{
-	hint format ["%1",_warningMsg];
-	_unitToCheck action ["getout",_vehicle];
-};
-
-// ====================================================================================
-
-if (true) exitWith {};
-=======
 // PERFORM CHECKS I
 // We do not need to perform all of this script on all clients simulaneously, so if
 // the unit triggering the the event handler is local to another client or entering the vehicle in a cargo slot, we exit the
@@ -100,4 +63,3 @@ if (_unitToCheck in _restrictedUnits || ({_unitToCheck isKindOf _x} count _restr
 
 ["UnauthorisedCrew",[_warningMsg]] call BIS_fnc_showNotification;
 _unitToCheck action ["getout",_vehicle];
->>>>>>> .merge_file_a07352

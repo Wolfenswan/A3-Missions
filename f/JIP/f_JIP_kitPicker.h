@@ -7,11 +7,7 @@ class KitPicker
     enableSimulation = 1;
     enableDisplay = 1;
 
-<<<<<<< .merge_file_a05984
-    onLoad = "if (isNil 'KitPickInit') then {call compile preprocessFileLineNumbers 'f\common\f_JIP_kitPicker.sqf'}; _this call KitPickInit;";
-=======
     onLoad = "if (isNil 'KitPickInit') then {call compile preprocessFileLineNumbers 'f\JIP\f_JIP_kitPicker.sqf'}; _this call KitPickInit;";
->>>>>>> .merge_file_a09704
 
     class controlsBackground
     {
@@ -61,11 +57,7 @@ class KitPicker
             soundCollapse[] = NOSOUND;
 
             maxHistoryDelay = 1.0;
-<<<<<<< .merge_file_a05984
-            class ScrollBar
-=======
             class ComboScrollBar
->>>>>>> .merge_file_a09704
             {
                 color[] = {1, 1, 1, 0.6};
                 colorActive[] = {1, 1, 1, 1};
