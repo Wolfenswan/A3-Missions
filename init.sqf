@@ -102,18 +102,18 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-// [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+// [OPFOR,100,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
-// [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+// [INDEPENDENT,100,3] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // ====================================================================================
 
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// [] execVM "f\setAISKill\f_setAISkill.sqf";
-// f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
+[] execVM "f\setAISKill\f_setAISkill.sqf";
+//  = independent; // Optional: The civilian AI will use this side's settings
 
 // ====================================================================================
 
@@ -178,3 +178,6 @@ f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear?
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [30] spawn f_fnc_cInit;
+
+[] execVM "ws_scripts\ws_postInit.sqf";
+
