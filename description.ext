@@ -7,7 +7,7 @@ class Header
 {
 	gameType = Coop;
 	minPlayers = 1;
-	maxPlayers = 373;
+	maxPlayers = 395;
 };
 
 // ============================================================================================
@@ -235,6 +235,24 @@ class Params
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
+
+	class ws_param_hc
+	{
+		title = "Headless client";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 0;
+        code = "ws_param_hc = %1";
+	};
+
+	class ws_param_dbg
+	{
+		title = "WS fnc debug";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 0;
+        code = "ws_param_dbg = %1";
+	};
 
 };
 
