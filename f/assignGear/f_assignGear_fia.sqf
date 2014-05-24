@@ -166,9 +166,9 @@ _MTR = "B_Mk6Mortar_Wpn";
 _MTRmount = "B_Mk6Mortar_Support";
 
 // Medium AT
-_MAT = "launch_NLAW_F";
-_MATmag1 = "NLAW_F";
-_MATmag2 = "NLAW_F";
+_MAT = "launch_RPG32_F";
+_MATmag1 = "RPG32_F";
+_MATmag2 = "RPG32_HE_F";
 
 // Surface Air
 _SAM = "launch_B_Titan_F";
@@ -188,12 +188,12 @@ _APmine2 = "APERSMine_Range_Mag";
 // "medium" vests are used for all classes if they are not assigned a specific uniform
 
 _light = [];
-_heavy =  ["eng","engm"];
+_heavy =  [];
 _diver = ["div"];
 _pilot = ["p"];
 _crew = ["c"];
 _ghillie = ["sn","sp"];
-_specOp = [];
+_specOp = ["dc","co","eng","engm"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -233,8 +233,8 @@ _ghillieGlasses = [];
 
 // Spec Op (CTRG)
 _sfuniform = ["U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3"];
-_sfhelmet = ["V_PlateCarrierL_CTRG","V_PlateCarrierH_CTRG"];
-_sfRig = _mediumRig;
+_sfhelmet = ["H_Watchcap_blk"];
+_sfRig = ["V_PlateCarrierL_CTRG","V_PlateCarrierH_CTRG"];
 _sfGlasses = [];
 
 
@@ -277,7 +277,7 @@ if (_isMan) then {
 		_unit removeItem _nvg;
 	};
 	// uncomment to remove nvgoogles
-	_unit linkItem _nvg;					// add universal NVG for this faction
+	//_unit linkItem _nvg;					// add universal NVG for this faction
 
 	//removeAllItems _unit;						// remove default items: map, compass, watch, radio (and GPS for team/squad leaders)
 	//_unit linkItem "ItemGPS"; 					// add gps to this faction
@@ -315,11 +315,11 @@ switch (_typeofUnit) do
 // LOADOUT: COMMANDER
 	case "co":
 	{
-		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
+		_unit addmagazines ["30Rnd_65x39_caseless_mag",7];
+		_unit addmagazines ["30Rnd_65x39_caseless_mag_Tracer",2];
 		_unit addmagazines [_glmag,3];
 		_unit addmagazines [_glsmokewhite,4];
-		_unit addweapon _glrifle;					//_COrifle
+		_unit addweapon "arifle_MX_GL_Black_F";					//_COrifle
 		_unit addmagazines [_pistolmag,2];
 		_unit addweapon _pistol;
 		_unit addmagazines [_grenade,1];
@@ -334,11 +334,11 @@ switch (_typeofUnit) do
 // LOADOUT: DEPUTY COMMANDER AND SQUAD LEADER
 	case "dc":
 	{
-		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
+		_unit addmagazines ["30Rnd_65x39_caseless_mag",7];
+		_unit addmagazines ["30Rnd_65x39_caseless_mag_Tracer",2];
 		_unit addmagazines [_glmag,3];
 		_unit addmagazines [_glsmokewhite,4];
-		_unit addweapon _glrifle;					//_DCrifle
+		_unit addweapon "arifle_MX_GL_Black_F";
 		_unit addmagazines [_pistolmag,2];
 		_unit addweapon _pistol;
 		_unit addmagazines [_grenade,1];
@@ -452,6 +452,7 @@ switch (_typeofUnit) do
 		_unit addweapon _carbine;
 		_unit addweapon _MAT;
 		_unit addmagazines [_MATMag1,1];
+		_unit addmagazines [_MATMag2,1];
 	};
 
 // LOADOUT: MEDIUM AT ASSISTANT GUNNER
@@ -514,12 +515,12 @@ switch (_typeofUnit) do
 // LOADOUT: ENGINEER (DEMO)
 	case "eng":
 	{
-		_unit addmagazines [_carbinemag,7];
-		_unit addweapon _carbine;
+		_unit addmagazines ["30Rnd_65x39_caseless_mag",7];
+		_unit addweapon "arifle_MXC_Black_F";
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_satchel,2];
+		_unit addmagazines [_satchel,1];
 		_unit addItem "MineDetector";
 		["eng"] call _backpack;
 	};

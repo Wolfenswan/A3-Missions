@@ -10,11 +10,11 @@ enableSaving [false, false];
 // F3 - MapClick Teleport
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// f_var_mapClickTeleport_Uses = 0;					// How often the teleport action can be used. 0 = infinite usage.
-// f_var_mapClickTeleport_TimeLimit = 0; 			// If higher than 0 the action will be removed after the given time.
-// f_var_mapClickTeleport_GroupTeleport = false; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
-// f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
-// [] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
+f_var_mapClickTeleport_Uses = 1;				// How often the teleport action can be used. 0 = infinite usage.
+f_var_mapClickTeleport_TimeLimit = 60; 			// If higher than 0 the action will be removed after the given time.
+f_var_mapClickTeleport_GroupTeleport = true; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
+f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
+[] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
 
 // ====================================================================================
 
@@ -102,7 +102,7 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-// [OPFOR,100,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[OPFOR,75,{hint 'The convoy has taken sufficient casualties. Time to fall back'},false] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
 // [INDEPENDENT,100,3] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";

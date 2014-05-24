@@ -320,7 +320,8 @@ case "matag":
 	if (f_param_backpacks == 1) then {
 		_unit addBackpack _bagmedium;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 1];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 1];
 		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag_tr, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 2];
@@ -332,6 +333,7 @@ case "matag":
 		_unit addBackpack _baglarge;
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 3];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag_tr, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 3];
@@ -354,14 +356,14 @@ case "eng":
 		_unit addBackpack _baglarge;
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-		(unitBackpack _unit) addItemCargoGlobal [_satchel,2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_ATmine,2];
 	};
 	// BACKPACK: HEAVY
 	if (f_param_backpacks == 2) then {
 		_unit addBackpack _baglarge;
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-		(unitBackpack _unit) addItemCargoGlobal [_satchel,4];
+		(unitBackpack _unit) addMagazineCargoGlobal [_ATmine,4];
 	};
 };
 
@@ -379,14 +381,14 @@ case "engm":
 		_unit addBackpack _baglarge;
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-		(unitBackpack _unit) addMagazineCargoGlobal [_ATmine,1];
+		(unitBackpack _unit) addMagazineCargoGlobal [_ATmine,2];
 	};
 	// BACKPACK: HEAVY
 	if (f_param_backpacks == 2) then {
 		_unit addBackpack _baglarge;
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-		(unitBackpack _unit) addMagazineCargoGlobal [_ATmine,2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_ATmine,3];
 	};
 };
 
