@@ -17,7 +17,7 @@ if (!isDedicated && !_hc) then {
 
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
-	["mkrAAF",150,independent,16] call ws_fnc_createGarrison;
+	["mkrAAF",400,independent,40] call ws_fnc_createGarrison;
 };
 
 // Do more stuff on the server
@@ -26,7 +26,7 @@ if (isServer) then {
 	// If units were spawned, AI skill is set again
 	[] execVM "f\setAISkill\f_setAISkill.sqf";
 
-	_cnvmkrs = ["mkrConv"] call ws_fnc_collectMarkers;
-	[_cnvmkrs,[c1,c2,c3,c4,c5,c6],true] execVM "convoyDefend\convoyDefend_init.sqf";
+	_cnvmkrs = ["mkrFIAConv"] call ws_fnc_collectMarkers;
+	[_cnvmkrs,[fia_c1,fia_c2,fia_c3,fia_c4],true] execVM "convoyDefend\convoyDefend_init.sqf";
 
 };

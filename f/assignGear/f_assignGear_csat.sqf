@@ -164,7 +164,7 @@ _MTRmount = "B_Mk6Mortar_Support";
 // Medium AT
 _MAT = "launch_RPG32_F";
 _MATmag1 = "RPG32_F";
-_MATmag2 = "RPG32_F";
+_MATmag2 = "RPG32_HE_F";
 
 // Surface Air
 _SAM = "launch_O_Titan_F";
@@ -683,7 +683,7 @@ switch (_typeofUnit) do
 
 		_unit selectweapon primaryweapon _unit;
 
-		if (true) exitwith {player globalchat format ["DEBUG (f\common\folk_assignGear.sqf): Unit = %1. Gear template %2 does not exist, used Rifleman instead.",_unit,_typeofunit]};
+		if (true) exitwith {player globalchat format ["DEBUG (f\assignGear\folk_assignGear.sqf): Unit = %1. Gear template %2 does not exist, used Rifleman instead.",_unit,_typeofunit]};
    };
 
 

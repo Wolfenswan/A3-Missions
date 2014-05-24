@@ -38,8 +38,8 @@ switch (_timeOfDay) do
 // Dawn
 	case 0:
 	{
-		_hour = 5;
-		_minute = 30;
+		_hour = 3;
+		_minute = 10;
 	};
 // Early Morning
 	case 1:
@@ -62,8 +62,8 @@ switch (_timeOfDay) do
 // Afternoon
 	case 4:
 	{
-		_hour = 14;
-		_minute = 30;
+		_hour = 15;
+		_minute = 00;
 	};
 // Evening
 	case 5:

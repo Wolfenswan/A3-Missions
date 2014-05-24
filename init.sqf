@@ -10,11 +10,11 @@ enableSaving [false, false];
 // F3 - MapClick Teleport
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_var_mapClickTeleport_Uses = 1;				// How often the teleport action can be used. 0 = infinite usage.
-f_var_mapClickTeleport_TimeLimit = 60; 			// If higher than 0 the action will be removed after the given time.
-f_var_mapClickTeleport_GroupTeleport = true; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
-f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
-[] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
+//f_var_mapClickTeleport_Uses = 1;				// How often the teleport action can be used. 0 = infinite usage.
+//f_var_mapClickTeleport_TimeLimit = 60; 			// If higher than 0 the action will be removed after the given time.
+//f_var_mapClickTeleport_GroupTeleport = true; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
+//f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
+//[] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
 
 // ====================================================================================
 
@@ -99,10 +99,10 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // BLUFOR > NATO
-// [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-[OPFOR,80,{[] execVM 'ws_scripts\ws_convoyDead.sqf'},false] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[OPFOR,75,{[] execVM 'ws_scripts\ws_convoyDead.sqf'},false] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
 // [INDEPENDENT,100,3] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
