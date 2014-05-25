@@ -26,6 +26,7 @@ loadScreen = "logo.paa";
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 enableDebugConsole = 1;
+allowFUnctionsRecompile = 1;
 
 // ============================================================================================
 
@@ -55,6 +56,23 @@ class cfgNotifications
 		duration = 5; // How many seconds will the notification be displayed
 		priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
 		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
+	};
+
+	// Notification for the F3 Safe Start Component
+	class KillzoneDone
+	{
+		title = "Killzone secure";
+		description = "The killzone has been secured. It's time to lay low.";
+		iconPicture="\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa";
+		duration = 15;
+	};
+
+	class ConvoyDead
+	{
+		title = "Fall back!";
+		description = "The convoy has taken sufficient casualties.";
+		iconPicture="\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa";
+		duration = 15;
 	};
 
 	// Notification for the F3 Safe Start Component

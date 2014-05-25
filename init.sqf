@@ -102,7 +102,7 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-[OPFOR,75,{[] execVM 'ws_scripts\ws_convoyDead.sqf'},false] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[["GrpCSAT_c1","GrpCSAT_c2","GrpCSAT_c3","GrpCSAT_c4","GrpCSAT_c5","GrpCSAT_c6","GrpCSAT_c7","GrpCSAT_1","GrpCSAT_2","GrpCSAT_3"],15,{[] execVM 'ws_scripts\ws_convoyDead.sqf'},false] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
 // [INDEPENDENT,100,3] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";

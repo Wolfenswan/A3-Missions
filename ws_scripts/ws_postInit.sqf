@@ -1,32 +1,28 @@
 _hc = [] call ws_fnc_checkHC;
 
+// Set global variables
+if (isNil "ws_convoy_go") then {ws_convoy_go = false};
+
 // Display a short text intro
 if (!isDedicated && !_hc) then {
- ["OPERATION XYZ","CENTRAL ALTIS"] spawn {
+ [] spawn {
 	 waitUntil {time > 15};
-		[
-			[
-				[_this select 0, "<t align = 'center' shadow = '1' size = '0.9'>%1</t><br/>",5],
-				[_this select 1,"<t align = 'center' shadow = '1' size = '0.8'>%1</t><br/>",5],
-				 [format ["%3/%2/%1 %4:%5",date select 0, date select 1, date select 2,date select 3, date select 4],"<t align = 'center' shadow = '1' size = '0.6'>%1</t>",10]
-			] , 0, 0.7
-		] spawn BIS_fnc_typeText;
+		["3-10 to Kavala","To the East of Negades"] call ws_fnc_showIntro;
 	};
 };
 
 
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
-	["mkrAAF",400,independent,40] call ws_fnc_createGarrison;
+	//[AAF,250,independent,15] call ws_fnc_createGarrison;
+	//[AAF_1,250,independent,15] call ws_fnc_createGarrison;
 };
+
 
 // Do more stuff on the server
 if (isServer) then {
 
 	// If units were spawned, AI skill is set again
 	[] execVM "f\setAISkill\f_setAISkill.sqf";
-
-	_cnvmkrs = ["mkrFIAConv"] call ws_fnc_collectMarkers;
-	[_cnvmkrs,[fia_c1,fia_c2,fia_c3,fia_c4],true] execVM "convoyDefend\convoyDefend_init.sqf";
-
 };
+

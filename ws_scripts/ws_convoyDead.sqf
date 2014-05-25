@@ -1,4 +1,4 @@
-hint "convoy dead";
+["ConvoyDead"] call bis_fnc_showNotification;
 
 if (isServer) then {
 
