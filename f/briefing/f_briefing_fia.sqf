@@ -21,19 +21,11 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-*** Insert mission credits here. ***
+Made by Wolfenswan for Folk ARPS.<br/>
+wolfenswanarps@gmail.com
 <br/><br/>
+Uses Norrin's convoy script<br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
-"]];
-
-// ====================================================================================
-
-// NOTES: ADMINISTRATION
-// The code below creates the administration sub-section of notes.
-
-_adm = player createDiaryRecord ["diary", ["Administration","
-<br/>
-*** Insert information on administration and logistics here. ***
 "]];
 
 // ====================================================================================
@@ -43,21 +35,14 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
 MOVEMENT PLAN
 <br/>
-*** Insert movement instructions here. ***
+Stay inside the indicated AO (highlighted area) while approaching the killzone.
 <br/><br/>
-FIRE SUPPORT PLAN
+LAYING LOW
 <br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+After you have been notified about the killzone being clear, the leading elements (CO,DC,SLs) can use their radio to wait for the ambush (0-0-1).<br/>
+Time will skip forward to about 3:10 at night.
 "]];
 
 // ====================================================================================
@@ -67,7 +52,11 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We begin <marker name='mkrFIA'>here</marker>.<br/>
+2. Clear the <marker name='mkrKillzone'>killzone</marker> of enemy presence.<br/>
+3. Await the arrival of the night (See: EXECUTION for details).<br/>
+4. Ambush the convoy and destroy 3/4 of it.<br/>
+5. Fall back to the <marker name='mkrFIA_1'>extract location</marker>.
 "]];
 
 // ====================================================================================
@@ -77,15 +66,13 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+Word has slipped that CSAT are planning to transport an important device of unknown purpose into Kavala during the cover of the night. Embedded CTRG forces and FIA guerillas are planning to intercept and destroy it. Unfortunately a platoon of AAF conscripts has made camp at the <marker name='mkrKillzone'>designated killzone</marker> and needs to be cleared out first.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+A AAF platoon has taken position at the killzone. We won't need to worry about them alarming CSAT - lower-level communication between the two sides has been lackluster at best.<br/><br/>
+Composition of the CSAT convoy is unknown but expect armored vehicles. They tend to do helicopter passes before moving a convoy in, so be careful.
 <br/><br/>
-FRIENDLY FORCES
-<br/>
-*** Insert information about friendly forces here.***
 "]];
 
 // ====================================================================================

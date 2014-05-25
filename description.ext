@@ -15,7 +15,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "3-10 to Kavala";
 onLoadMission = "Made with the F3 Mission Development Framework";
 author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
@@ -64,6 +64,14 @@ class cfgNotifications
 		title = "Killzone secure";
 		description = "The killzone has been secured. It's time to lay low.";
 		iconPicture="\A3\ui_f\data\map\mapcontrol\taskIconDone_ca.paa";
+		duration = 15;
+	};
+
+	class Spotted
+	{
+		title = "Spotted!";
+		description = "The helicopter patrol has spotted your ambush!";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
 		duration = 15;
 	};
 
@@ -208,7 +216,7 @@ class Params
 
 // F3 - AI Skill Selector (A&D)
 // Credits: Please see the F3 online manual (http:www.ferstaberinde.com/f3/en/)
-
+/*
 	class f_param_AISkill_BLUFOR
 	{
 		title = "$STR_f_param_AISkill_BLUFOR";
@@ -217,13 +225,14 @@ class Params
 		default = 1;
 		code = "f_param_AISkill_BLUFOR = %1";
 	};
+*/
 
 	class f_param_AISkill_OPFOR
 	{
 		title = "$STR_f_param_AISkill_OPFOR";
 		values[] = {0,1,2,3};
 		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
+		default = 3;
 		code = "f_param_AISkill_OPFOR = %1";
 	};
 
@@ -268,7 +277,7 @@ class Params
 		title = "WS fnc debug";
 		values[] = {0,1};
          texts[] = {"Off","On"};
-		default = 1;
+		default = 0;
 		code = "ws_param_dbg = %1";
 	};
 
