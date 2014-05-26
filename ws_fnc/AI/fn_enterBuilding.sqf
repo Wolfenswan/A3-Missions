@@ -31,6 +31,8 @@ while {count _units != 0 && count _barray != 0} do {
 	_bUnits = _building getVariable ["ws_bUnits",0];
 	_bposleft = _building getVariable ["ws_bPosLeft",_bposarray];
 
+	if (count _bposarray == 0) exitWith {player globalchat "_bpossaray is empty!"};
+
 	// Loop until we find a good building
 	while {count _barray > 0 && {count _bposLeft == 0 || (_bUnits / count _bposarray >= _threshold)}} do {
 		_barray = _barray - [_building];

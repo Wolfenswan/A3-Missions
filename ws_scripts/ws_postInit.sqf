@@ -14,8 +14,8 @@ if (!isDedicated && !_hc) then {
 
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
-	[AAF,250,independent,15] call ws_fnc_createGarrison;
-	[AAF_1,250,independent,15] call ws_fnc_createGarrison;
+	[AAF,250,independent,10] call ws_fnc_createGarrison;
+	[AAF_1,250,independent,10] call ws_fnc_createGarrison;
 };
 
 
