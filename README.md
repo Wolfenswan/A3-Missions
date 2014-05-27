@@ -1,14 +1,15 @@
-Introduction
-===========
+<b>Introduction</b>
+This one of my missions created for ArmA3 with Folk ARPS. Based on a customized version of the F3 Mission Making Framework.
+The missions can be found on GitHub:<br/>
+<i>https://github.com/Wolfenswan/A3-Missions</i><br/>
+Each branch is a different mission, some are WIP.<br/>
 
-These are missions created for ArmA3 with Folk ARPS. Based on a customized version of the F3 Mission Making Framework.
-The missions can be found on GitHub:
-https://github.com/Wolfenswan/A3-Missions
-Each branch is a different mission, some are WIP.
+<b>Current F3 Version:</b><br/>
+<i>3-1-0RC1+</i>
 
-Current F3 Version:
-3-1-0RC1+
-
-Mission description
-===========
+<b>Mission description</b><br/>
 Template mission.
+
+<b>Contact</b><br/>
+folkarps.com<br/>
+wolfenswanarps@gmail.com<br/>
