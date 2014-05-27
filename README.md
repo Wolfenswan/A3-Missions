@@ -1,4 +1,4 @@
-<b>Introduction</b>
+<b>Introduction</b><br/>
 This one of my missions created for ArmA3 with Folk ARPS. Based on a customized version of the F3 Mission Making Framework.
 The missions can be found on GitHub:<br/>
 <i>https://github.com/Wolfenswan/A3-Missions</i><br/>
