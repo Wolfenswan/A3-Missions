@@ -10,6 +10,8 @@ if (!isDedicated && !ws_isHC) then {
 	};
 };
 
+if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParamValue;};
+
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 	//[] call ws_fnc_createGarrison
@@ -22,5 +24,5 @@ if (isServer) then {
 	[0] execVM "f\common\f_setLocalVars.sqf";
 
 	// If units were spawned set AI skill again
-	[] execVM "f\server\f_setAISkill.sqf";
+	[] execVM "f\setAISKill\f_setAISkill.sqf";
 };
