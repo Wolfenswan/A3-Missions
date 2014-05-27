@@ -7,6 +7,13 @@ enableSaving [false, false];
 
 // ====================================================================================
 
+// F3 - Mute Orders and Reports
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+enableSentences false;
+
+// ====================================================================================
+
 // F3 - MapClick Teleport
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
@@ -112,7 +119,7 @@ f_var_doNotRemoveBodies = [];
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[] execVM "f\setAISKill\f_setAISkill.sqf";
+// [] execVM "f\setAISKill\f_setAISkill.sqf";
 // f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
 
 // ====================================================================================
@@ -120,7 +127,7 @@ f_var_doNotRemoveBodies = [];
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
+// f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
 // f_showDistance_Nametags = true;			// Show distance to player
 // f_showVehicle_Nametags = true;			// Show vehicle player is in
 [20] execVM "f\nametag\f_nametags.sqf";
