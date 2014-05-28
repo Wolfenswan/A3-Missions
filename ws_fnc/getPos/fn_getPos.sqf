@@ -54,7 +54,7 @@ if (_count > 5) then {_building = _this select 5;};
 if (_count > 6) then {_water = _this select 6;};
 
 //Interpreting variables
-_pos = _posloc call ws_fnc_getEpos;
+_pos = [_posloc] call ws_fnc_getEpos;
 
 _posX = (_pos select 0);
 _posY = (_pos select 1);
@@ -76,7 +76,8 @@ switch (typename _posradius) do {
 		_pos = [_newX,_newY,0];
 
 		if (_mindis > 0) then {
-			while {_pos distance _posloc < _mindis} do {
+			_oldPos = _pos;
+			while {(_pos distance _oldPos) < _mindis} do {
 				_newX = _posX + ((random _posradius) * sin _dir);
 				_newY = _posY + ((random _posradius) * cos _dir);
 				_pos = [_newX,_newY,0];
@@ -85,7 +86,7 @@ switch (typename _posradius) do {
 		};
 	};
 	case "BOOL": {
-		_pos = [_posloc] call ws_fnc_getPosInArea;
+		_pos = [_posLoc] call ws_fnc_getPosInArea;
 }	;
 };
 
