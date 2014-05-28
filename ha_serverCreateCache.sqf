@@ -34,7 +34,7 @@ _crate addEventHandler [
 		(_crate getVariable "mkrName") setMarkerType "mil_objective";
 		(_crate getVariable "mkrName") setMarkerColor "colorRed";
 		ha_score = ha_score + 1;
-		if (ha_score >= ha_param_cacheVictoryNum) then { [1] execVM "f\server\f_mpEndBroadcast.sqf";};
+		if (ha_score >= ha_param_cacheVictoryNum) then { [1] call f_fnc_MpEnd;};
 		[["CacheDestroyed", []], "BIS_fnc_showNotification", true, false] spawn BIS_fnc_MP;
 	 	_crate setDamage 1;
 	 	deleteVehicle _crate;
