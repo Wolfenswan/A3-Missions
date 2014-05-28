@@ -34,6 +34,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 VEHICLES<br/>
+Bravo and Charlie squad start in their designated trucks.<br/>
 Up to 2 x 'Strider' MRAP (no thermals)
 "]];
 
@@ -54,7 +55,7 @@ Alpha is <marker name='f_insert'>in the north</marker> and move to an ambush loc
 <br/><br/>
 FIRE SUPPORT PLAN
 <br/>
-Two mortar units are on standby, controlled by the dedicated spotter.
+Two mortars are on standby and can be requested by the Alpha Squad Leader, using the support radio menu (0-8).
 "]];
 
 // ====================================================================================

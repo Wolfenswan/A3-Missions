@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-1-0RC2</i>
 
 <b>Mission description</b><br/>
-Template mission.
+A AAF platoon is tasked to dislodge FIA from their strongholds in north-west Altis. They are split in two sections: one is inserted by helicopter to intercept any FIA reinfocements, the bigger one assaults the FIA head on with MRAP support.
 
 <b>Contact</b><br/>
 folkarps.com<br/>

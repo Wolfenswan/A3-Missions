@@ -252,6 +252,8 @@ _groups = [
 ["GrpAAF_ENG1","AAF ENG1 -"],
 
 ["GrpAAF_IFV1","AAF IFV1 -"],
+["GrpAAF_MRAP1","AAF MRAP1 -"],
+["GrpAAF_MRAP2","AAF MRAP2 -"],
 ["GrpAAF_IFV2","AAF IFV2 -"],
 ["GrpAAF_IFV3","AAF IFV3 -"],
 ["GrpAAF_IFV4","AAF IFV4 -"],
