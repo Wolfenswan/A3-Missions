@@ -11,7 +11,7 @@ NOTE
 To avoid perfomance issues the garrisoning troops will just enter the building and stay there, they won't necessarily face in a smart direction
 
 RETURNS
-[mil buildings occupied (array), civ buildings occupied (array), units left (array)]
+units outside buildings (array)
 
 USAGE
 Minimal:
@@ -36,10 +36,11 @@ EXAMPLE
 
 private ["_debug","_game","_count","_milarrayA2","_badarrayA2","_badarrayA3","_milarrayA3",
 "_group","_newGroup","_pos","_radius","_guns","_garrison","_civil",
-"_buildings","_vehicles","_milbuildings","_staticarray","_badarray","_milarray","_units","_static"];
+"_buildings","_vehicles","_milbuildings","_staticarray","_badarray","_milarray","_units","_static","_mkr"];
 
 //Customizable Variables
-_treshold = 3; //Minimum number of available building positions for a civilian building to be considered (for mil. building all spots will always be used)
+_mthreshold = 0.9; // Percentage of building positions to occupy in military buildings (1=all)
+_cthreshold = 0.5; // Percentage of building positions to occupy in civilian buildings (1=all)
 
 // ARMA 2 only
 // Military buildings that are garrisoned before civilian buildings
@@ -87,31 +88,32 @@ if (ws_game_a3) then {
 
 //Remove undesired classes from the array and populate the array containg military buildings in the area
 {
-    if (!(str(_x buildingpos 1) == "[0,0,0]") && typeof _x in _milarray) then {_milbuildings = _milbuildings + [_x];_buildings = _buildings - [_x]};
-    if ((str(_x buildingpos _treshold) == "[0,0,0]") || (typeOf _x in _badarray)) then {_buildings = _buildings - [_x]};
+    if ((str(_x buildingpos 1) != "[0,0,0]") && typeof _x in _milarray) then {_milbuildings = _milbuildings + [_x];_buildings = _buildings - [_x]};
+    if ((str(_x buildingpos 0) == "[0,0,0]") || (typeOf _x in _badarray)) then {_buildings = _buildings - [_x]};
 } foreach _buildings;
-
-//Man the statics
-if (_guns) then {
-	[_group, _radius] call ws_fnc_taskCrew;
-};
 
 _units = units _group;
 _group enableAttack false; // Prevent the group leader to issue attack orders to the members, improving their attack from buildings
 
+//Man the statics
+if (_guns) then {
+	_units = [_group, _radius] call ws_fnc_taskCrew;
+};
+
 // Fill bunkers etc
 if (count _milbuildings > 0 && count _units > 0 && _garrison) then {
-_units = [_units,_milbuildings,0] call ws_fnc_enterbuilding;
+_units = [_units,_milbuildings,_mthreshold] call ws_fnc_enterbuilding;
 
-if (_debug) then {{_mkr = createMarker [format ["%1-bpos",_x],_x];_mkr setMarkerSize [0.4,0.4];_mkr setMarkerType "mil_dot";_mkr setMarkerColor "ColorWhite";}forEach _milbuildings;};
+	if (_debug) then {{_mkr = createMarker [format ["%1-bpos",_x],_x];_mkr setMarkerSize [0.4,0.4];_mkr setMarkerType "mil_dot";_mkr setMarkerColor "ColorWhite";}forEach _milbuildings;};
 };
 
 
 //Take position in regular buildings
 if (count _buildings > 0 && count _units > 0 && _civil) then {
-_units = [_units,_buildings,_treshold] call ws_fnc_enterbuilding;
-if (_debug) then {{_mkr = createMarker [format ["%1-bpos",_x],_x];_mkr setMarkerSize [0.4,0.4];_mkr setMarkerType "mil_dot";_mkr setMarkerColor "ColorWhite";}forEach _buildings;};
+_units = [_units,_buildings,_cthreshold] call ws_fnc_enterbuilding;
+	if (_debug) then {{_mkr = createMarker [format ["%1-bpos",_x],_x];_mkr setMarkerSize [0.4,0.4];_mkr setMarkerType "mil_dot";_mkr setMarkerColor "ColorWhite";}forEach _buildings;};
 };
+
 
 
 //If there's one unit left they either patrol or hold the area.
@@ -123,5 +125,5 @@ if (count _units >= 1) then {
 	};
 };
 
-[_milbuildings,_buildings,_units]
+_units
 
