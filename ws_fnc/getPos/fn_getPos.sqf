@@ -36,7 +36,7 @@ _debug = false; if !(isNil "ws_debug") then {_debug = ws_debug};   //Debug mode.
 
 //Declaring variables
 _count = count _this;
-_posloc = _this select 0;
+_posloc = (_this select 0) call ws_fnc_getEpos;
 _pos = [0,0,0];
 _posradius = 0;
 _mindis = 0;
@@ -54,7 +54,7 @@ if (_count > 5) then {_building = _this select 5;};
 if (_count > 6) then {_water = _this select 6;};
 
 //Interpreting variables
-_pos = _posloc call ws_fnc_getEpos;
+_pos = _posloc;
 
 _posX = (_pos select 0);
 _posY = (_pos select 1);
@@ -76,7 +76,7 @@ switch (typename _posradius) do {
 		_pos = [_newX,_newY,0];
 
 		if (_mindis > 0) then {
-			while {_pos distance _posloc < _mindis} do {
+			while {(_pos distance _posloc) < _mindis} do {
 				_newX = _posX + ((random _posradius) * sin _dir);
 				_newY = _posY + ((random _posradius) * cos _dir);
 				_pos = [_newX,_newY,0];
@@ -85,7 +85,7 @@ switch (typename _posradius) do {
 		};
 	};
 	case "BOOL": {
-	_pos = [_posloc] call ws_fnc_getPosInArea;
+		_pos = [_posloc] call ws_fnc_getPosInArea;
 }	;
 };
 
@@ -98,16 +98,19 @@ if (!_water && (surfaceIsWater _pos)) then {
 };
 
 //If building positions are disallowed
-if (!_building && (count (_pos nearObjects ["House",10]) >= 1)) then {
+if (!_building && (count (_pos nearObjects ["House",5]) >= 1)) then {
 	_i = 0;
 	_distance = 0;
 	_done = false;
-	while {!_done && _i <= 50} do {
+	while {!_done && _i <= 100} do {
 		for "_x" from 0 to 340 step 20 do {
-			_distance = _distance + 50;
-			_pos set [0,_posX + (_distance * sin _x)];
-			_pos set [1,_posY + (_distance * cos _x)];
-			if !(count (_pos nearObjects ["House",10]) >= 1) exitWith {_done = true};
+			if (typeName _posradius == "BOOL") then {_pos = [_posloc] call ws_fnc_getPosInArea;} else {
+				_distance = _distance + 5;
+				_pos set [0,_posX + (_distance * sin _x)];
+				_pos set [1,_posY + (_distance * cos _x)];
+			};
+
+			if !(count (_pos nearObjects ["House",5]) >= 1) exitWith {_done = true};
 		};
 		_i = _i + 1;
 	};

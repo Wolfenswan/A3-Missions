@@ -5,7 +5,7 @@
 
 class Header
 {
-	gameType = Coop;
+	gameType = TDM;
 	minPlayers = 1;
 	maxPlayers = 395;
 };
@@ -15,9 +15,9 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "Self-Service";
 onLoadMission = "Made with the F3 Mission Development Framework";
-author = "*** Insert mission author name here. ***";
+author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
 
 // ============================================================================================
@@ -56,6 +56,23 @@ class cfgNotifications
 		priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
 		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
 	};
+
+	class CSATcompound
+	{
+		title = "ALERT";
+		description = "CSAT forces have begun seizing the compund";
+		iconPicture = "\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 10;
+	};
+
+	class AAFcompound
+	{
+		title = "ALERT";
+		description = "AAF are in control of the compound again";
+		iconPicture = "\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 10;
+	};
+
 
 	// Notification for the F3 Safe Start Component
 	class SafeStart
@@ -247,9 +264,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "AAF victory";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "CSAT were wiped out.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -257,9 +274,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "CSAT victory";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "The AAF platoon was eliminated.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -267,9 +284,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "Ending #3";
+		title = "CSAT victory";
 		subtitle = "";
-		description = "*** Insert debriefing #3 here. ***";
+		description = "CSAT managed to take the facility from the AAF.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -346,6 +363,7 @@ class CfgRespawnTemplates
 
 class CfgFunctions
 {
+	#include "ws_fnc\config.hpp"
 	class F // Defines the "owner"
 	{
 		class common // category

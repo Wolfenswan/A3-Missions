@@ -33,8 +33,8 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
+CO + MMG1 are mounted in an unarmed Ifrit.<br/>
 Each squad starts in his own truck.<br/>
-An unarmed Ifrit and a HMG Ifrit are available.
 "]];
 
 
@@ -45,7 +45,7 @@ An unarmed Ifrit and a HMG Ifrit are available.
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-1. Seize the <marker name='mkrAO'>facility</marker>. If for 15 seconds no AAF unit should be present while CSAT are inside, CSAT will have taken it.<br/>
+1. Seize the <marker name='mkrAO'>facility</marker>. If for 30 seconds the number of CSAT units outweight the numbers of present AAF, CSAT will have taken it.<br/>
 2. We can use the <marker name='mkrTown'>town</marker> to our advantage, but AAF might try the same.
 "]];
 

@@ -102,10 +102,10 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-// [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
-// [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[INDEPENDENT,100,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // ====================================================================================
 
@@ -120,17 +120,17 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
+f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
 // f_showDistance_Nametags = true;			// Show distance to player
 // f_showVehicle_Nametags = true;			// Show vehicle player is in
-// [20] execVM "f\nametag\f_nametags.sqf";
+[20] execVM "f\nametag\f_nametags.sqf";
 
 // ====================================================================================
 
 // F3 - Simple Wounding System
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// [player] execVM "f\simplewoundingsystem\init.sqf";
+[player] execVM "f\simplewoundingsystem\init.sqf";
 
 // ====================================================================================
 
@@ -178,3 +178,9 @@ f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear?
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [30] spawn f_fnc_cInit;
+
+// Display a short text intro
+ 	[] spawn {
+	 waitUntil {time > 15};
+		["SELF-SERVICE","EASTERN ALTIS"] call ws_fnc_showIntro;
+	};
