@@ -6,26 +6,33 @@
 // The blocks of code below identifies equipment for this faction
 //
 // Defined loadouts:
-//		co		- commander
-//		dc 		- deputy commander
-//		m 		- medic
-//		ftl		- fire team leader
-//		ar 		- automatic rifleman
-//		aar		- assistant automatic rifleman
-//		rat		- rifleman (AT)
+//		co			- commander
+//		dc 			- deputy commander / squad leader
+//		m 			- medic
+//		ftl			- fire team leader
+//		ar 			- automatic rifleman
+//		aar			- assistant automatic rifleman
+//		rat			- rifleman (AT)
 //		mmgg		- medium mg gunner
 //		mmgag		- medium mg assistant
 //		matg		- medium AT gunner
 //		matag		- medium AT assistant
 //		mtrg		- mortar gunner (deployable)
 //		mtrag		- mortar assistant (deployable)
-//		p		- air vehicle pilots
-//		eng		- engineers
-// 		div		- divers
+//		vc			- vehicle commander
+//		vg			- vehicle gunner
+//		vd			- vehicle driver (repair)
+//		pp			- air vehicle pilot / co-pilot
+//		pcc			- air vehicle co-pilot (repair) / crew chief (repair)
+//		pp			- air vehicle crew
+//		eng			- engineer (demo)
+//		engm		- engineer (mines)
+//		uav			- UAV operator
+//		div    		- divers
 //
-//		r 		- rifleman
-//		car		- carabineer
-//		smg		- submachinegunner
+//		r 			- rifleman
+//		car			- carabineer
+//		smg			- submachinegunner
 //		gren		- grenadier
 //
 //		v_car		- car/4x4
@@ -190,10 +197,10 @@ _APmine2 = "APERSMine_Range_Mag";
 _light = [];
 _heavy =  [];
 _diver = ["div"];
-_pilot = ["p"];
-_crew = ["c"];
+_pilot = ["pp","pcc","pc"];
+_crew = ["cc","cg","cd"];
 _ghillie = ["sn","sp"];
-_specOp = ["dc","co","eng","engm"];
+_specOp = ["dc","co","eng","engm","uav"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -267,6 +274,7 @@ if (_isMan) then {
 
 	// We add a single first aid kit (FAK)
 
+	_unit addItem _firstaid;
 	_unit addItem _firstaid;
 
 	// The following code removes any pre-added NVGs
@@ -491,8 +499,30 @@ switch (_typeofUnit) do
 		_unit addBackpack _MTRmount;
 	};
 
-// LOADOUT: VEHICLE CREW
-	case "c":
+// LOADOUT: VEHICLE COMMANDER
+	case "vc":
+	{
+		_unit addmagazines [_smgmag,5];
+		_unit addweapon _smg;
+		_unit addmagazines [_smokegrenade,2];
+		_unit addItem "ItemGPS";
+		_unit assignItem "ItemGPS";
+		_unit addWeapon "Rangefinder";
+	};
+
+// LOADOUT: VEHICLE DRIVER
+	case "vd":
+	{
+		_unit addmagazines [_smgmag,5];
+		_unit addweapon _smg;
+		_unit addmagazines [_smokegrenade,2];
+		_unit addItem "ItemGPS";
+		_unit assignItem "ItemGPS";
+		["cc"] call _backpack;
+	};
+
+// LOADOUT: VEHICLE GUNNER
+	case "vg":
 	{
 		_unit addmagazines [_smgmag,5];
 		_unit addweapon _smg;
@@ -501,15 +531,31 @@ switch (_typeofUnit) do
 		_unit assignItem "ItemGPS";
 	};
 
-
 // LOADOUT: AIR VEHICLE PILOTS
-	case "p":
+	case "pp":
 	{
 		_unit addmagazines [_smgmag,5];
 		_unit addweapon _smg;
 		_unit addmagazines [_smokegrenade,2];
 		_unit addItem "ItemGPS";
 		_unit assignItem "ItemGPS";
+	};
+
+// LOADOUT: AIR VEHICLE CREW CHIEF
+	case "pcc":
+	{
+		_unit addmagazines [_smgmag,5];
+		_unit addweapon _smg;
+		_unit addmagazines [_smokegrenade,2];
+		["cc"] call _backpack;
+	};
+
+// LOADOUT: AIR VEHICLE CREW
+	case "pc":
+	{
+		_unit addmagazines [_smgmag,5];
+		_unit addweapon _smg;
+		_unit addmagazines [_smokegrenade,2];
 	};
 
 // LOADOUT: ENGINEER (DEMO)
@@ -541,8 +587,8 @@ switch (_typeofUnit) do
 // LOADOUT: UAV OPERATOR
 	case "uav":
 	{
-		_unit addmagazines [_carbinemag,7];
-		_unit addweapon _carbine;
+		_unit addmagazines ["30Rnd_65x39_caseless_mag",7];
+		_unit addweapon "arifle_MXC_Black_F";
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];

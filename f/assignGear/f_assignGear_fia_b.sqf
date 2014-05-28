@@ -11,7 +11,7 @@ case "m":
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addItemCargoGlobal [_medkit,1];
 		(unitBackpack _unit) addMagazineCargoGlobal [_smokegrenade, 4];
-		(unitBackpack _unit) addItemCargoGlobal [_firstaid, 4];
+		(unitBackpack _unit) addItemCargoGlobal [_firstaid, 8];
 	};
 	// BACKPACK: HEAVY
 	if (f_param_backpacks == 2) then {
@@ -450,4 +450,12 @@ case "div":
 case "uav":
 {
 	_unit addBackpack _baguav;
+};
+
+// BACKPACK: CREW CHIEFS & VEHICLE DRIVERS
+case "cc":
+{
+	_unit addBackpack _bagsmall;
+	clearMagazineCargoGlobal (unitBackpack _unit);
+	(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
 };

@@ -7,6 +7,13 @@ enableSaving [false, false];
 
 // ====================================================================================
 
+// F3 - Mute Orders and Reports
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+enableSentences false;
+
+// ====================================================================================
+
 // F3 - MapClick Teleport
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
@@ -113,17 +120,17 @@ f_var_doNotRemoveBodies = [];
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [] execVM "f\setAISKill\f_setAISkill.sqf";
-//  = independent; // Optional: The civilian AI will use this side's settings
+// f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
 
 // ====================================================================================
 
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
+f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
 // f_showDistance_Nametags = true;			// Show distance to player
 // f_showVehicle_Nametags = true;			// Show vehicle player is in
-// [20] execVM "f\nametag\f_nametags.sqf";
+[20] execVM "f\nametag\f_nametags.sqf";
 
 // ====================================================================================
 
@@ -179,5 +186,7 @@ f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear?
 
 [30] spawn f_fnc_cInit;
 
-[] execVM "ws_scripts\ws_postInit.sqf";
+// ====================================================================================
 
+// Wolfenswan - post Init
+[] execVM "ws_scripts\ws_postInit.sqf";

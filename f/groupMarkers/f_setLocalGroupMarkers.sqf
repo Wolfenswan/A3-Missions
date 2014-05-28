@@ -15,7 +15,6 @@ if (!isDedicated && (isNull player)) then
     waitUntil {sleep 0.1; !isNull player};
 };
 
-
 // ====================================================================================
 
 // DETECT PLAYER FACTION
