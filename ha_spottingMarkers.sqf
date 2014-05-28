@@ -5,13 +5,23 @@ f_ha_createMarkers = {
 {
 	_mkrText = _x select 0;
 	_mkrPos = _x select 1;
-	deleteMarkerLocal format["ha_spotting_%1", _forEachIndex];
 
 	_mkr = createMarkerLocal [format["ha_spotting_%1", _forEachIndex], _mkrPos];;
 	_mkr setMarkerShapeLocal "ICON";
 	_mkr setMarkerTypeLocal "hd_destroy";
 	_mkr setMarkerTextLocal _mkrText;
-} forEach _this select 0;
+
+	// Make the marker fade out
+	[_mkr] spawn {
+		for "_x" from 0 to 45 do {
+			(_this select 0) setMarkerAlphaLocal (1 - _x/45);
+			sleep 0.5;
+			if (markerAlpha (_this select 0) == 0) exitWith {deleteMarkerLocal (_this select 0)};
+		};
+	};
+
+} forEach _this;
+
 ["EnemiesSpotted",[]] call BIS_fnc_showNotification;
 };
 
@@ -30,7 +40,7 @@ _spotters = [];
 _spottingMarkers = [];
 _markerCount = 10;
 _markerReuseIndex = 0;
-_waitBetweenChecks = 60;
+_waitBetweenChecks = 20;
 
 while {true} do {
 	_spottedThisRound = [];
@@ -39,10 +49,28 @@ while {true} do {
 		// then send the non-spotted ones over as markers.
 	{
 		_spotter = _x;
+		_spotted = [];
+
+
+
 		if (alive _spotter) then {
-			_spottedThisRound = _spottedThisRound + ((_spotter call BIS_fnc_enemyTargets) - _spottedThisRound);
+		_spotted = _spotter call BIS_fnc_enemyTargets;
+		{
+			if (_x distance (_spotted select 0) < 100) then {_spotted = _spotted - [_x]};
+		} forEach (_spotted - [_spotted select 0]);
+
+		{
+			if !(_x in _spottedThisRound) then {
+				_spottedThisRound set [count _spottedThisRound,_x];
+			};
+		} forEach _spotted
 		};
+
 	} forEach _spotters;
+
+	// Reduce spotted array in size
+
+
 	// Grab the spotted units' positions with jitter added and send them over
 	{
 		_pos = position _x;
@@ -58,8 +86,10 @@ while {true} do {
 		_markerReuseIndex = _markerReuseIndex + 1;
 		if (_markerReuseIndex > _markerCount) then {_markerReuseIndex = 0;};
 	} forEach _spottedThisRound;
+
 	if (count _spottingMarkers > 0) then {
 		[_spottingMarkers,"f_ha_createMarkers", _spotterSide] call bis_fnc_mp;
 	};
+
 	sleep _waitBetweenChecks;
 };

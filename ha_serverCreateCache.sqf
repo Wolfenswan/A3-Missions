@@ -14,7 +14,7 @@ _tentativePos = _this select 1;
 _pos = _tentativePos findEmptyPosition [0, 300, "CamoNet_INDP_open_F"];
 if (count _pos == 0) then { _pos = _tentativePos };
 
-diag_log format["Creating cache, id: %1, pos: %2", _id, _pos];
+//diag_log format["Creating cache, id: %1, pos: %2", _id, _pos];
 _markerName = format["ha_cache_%1", _id];
 // Create checkpoint objects
 _crate = "Box_IND_Wps_F" createVehicle _pos;
@@ -44,10 +44,8 @@ _crate addEventHandler [
 _camonet = "CamoNet_INDP_open_F" createVehicle _pos;
 _grp = [_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F", "B_G_Soldier_F", "B_G_Soldier_lite_F"],[], [], [0.2,0.2], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
 
-f_param_AISkill_Enemy = 3;
-f_param_AISkill_Friendly = 3;
-f_isFriendly = [west];
-(units _grp) execVm "f\server\f_setAISkill.sqf";
+f_param_AISkill_BLUFOR = 3;
+(units _grp) execVm "f\setAISkill\f_setAISkill.sqf";
 
 // Set marker settings
 _marker = createMarker [_markerName, _pos];

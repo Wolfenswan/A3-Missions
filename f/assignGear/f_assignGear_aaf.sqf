@@ -272,7 +272,9 @@ if (_isMan) then {
 		_unit removeItem _nvg;
 	};
 	// uncomment to remove nvgoogles
-	_unit linkItem _nvg;					// add universal NVG for this faction
+	if (ws_param_nvg <= 1) then {
+		_unit linkItem _nvg;
+	};
 
 	//removeAllItems _unit;						// remove default items: map, compass, watch, radio (and GPS for team/squad leaders)
 	//_unit linkItem "ItemGPS"; 				// add gps to this faction
@@ -367,6 +369,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_smokegrenadegreen,2];
+		_unit addmagazines [_satchel,1];
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
@@ -382,6 +385,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_pistolmag,4];
+		_unit addmagazines [_satchel,1];
 		_unit addweapon _pistol;
 		["ar"] call _backpack;
 	};
