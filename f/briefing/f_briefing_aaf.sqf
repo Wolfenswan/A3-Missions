@@ -72,12 +72,10 @@ Two high-ranking FIA officers are about to meet in a town nearby. Our officers a
 <br/><br/>
 ENEMY FORCES
 <br/>
-Lightly armed infantry and technicals.
+Lightly armed infantry and technicals.<br/>
+They might be equipped with RPG32-HE, so avoid clustering.
 <br/><br/>
 ROE<br/>
-If Hellcat or Abibala are armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in to avoid collateral damage (you know, just like in real life).<br/><br/>
-FOG<br/>
-Morning fog might covering the lower areas (under 75m). This means that Agios itself is clear of fog but the southern and eastern approach will likely be covered. An aerial approach is suggested with heavy morning fog.
-"]];
+If Hellcat or Abibala are armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in to avoid collateral damage (you know, just like in real life).<br/><br/>"]];
 
 // ====================================================================================

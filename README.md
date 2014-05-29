@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-1-0RC3</i>
 
 <b>Mission description</b><br/>
-Template mission.
+AAF attempts to interrupt a FIA meeting in central Altis.
 
 <b>Contact</b><br/>
 folkarps.com<br/>

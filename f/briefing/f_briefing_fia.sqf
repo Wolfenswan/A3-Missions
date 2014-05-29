@@ -34,6 +34,8 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
+Our weapons have inferior range to the AAF guns, so avoid any long-range engagements.<br/>
+All RPG missiles are HE variants.<br/><br/>
 Ground-Transport:<br/>
 2 x Offroads (one for each officer)<br/>
 2 x Offroads (armed - accompanying each officer)<br/>
@@ -75,8 +77,6 @@ AAF regulars, both motorized and airborn. They will possibly use UAVs against us
 
 ROE<br/>
 If Hellcat or Abibala are armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in (just like in real life).<br/><br/>
-FOG<br/>
-Morning fog might covering the lower areas (under 75m). This means that Agios itself is clear of fog but the southern and eastern approach will likely be covered. An aerial approach is suggested with heavy morning fog.
 "]];
 
 // ====================================================================================

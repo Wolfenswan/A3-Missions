@@ -1,5 +1,7 @@
 if (isNil "ws_meeting") then {ws_meeting = false};
 
+0 setFog [0.4,0.025,40]
+
 if (side player == BLUFOR) then {
 	{_x setMarkerAlphaLocal 0} forEach ["mkrVeh","mkrVeh_1"];
 	waitUntil {!isNil "ws_meetingM"};

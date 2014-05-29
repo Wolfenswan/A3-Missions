@@ -196,7 +196,7 @@ _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = ["smg"];
+_specOp = ["smg","smg2"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -236,7 +236,7 @@ _ghillieGlasses = [];
 
 // Spec Op - no nice stuff for AAF :(
 _sfuniform = _baseUniform;
-_sfhelmet = ["H_MilCap_dgtl","H_MilCap_gry"];
+_sfhelmet = ["H_MilCap_dgtl"];
 _sfRig = ["V_Chestrig_oli"];
 _sfGlasses = [];
 
@@ -645,7 +645,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,1];
 		_unit addWeapon "Rangefinder";
 		_unit linkItem _uavterminal;
-		//["smg"] call _backpack;
+		["uav"] call _backpack;
 	};
 
 // LOADOUT: GRENADIER
