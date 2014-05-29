@@ -7,6 +7,9 @@ ws_debug = if (ws_param_dbg == 0) then {false} else {true};
 
 if !(isServer) exitWith {ws_initDone = true};
 
+publicVariable "ws_eola_defenders";
+publicVariable "ws_eola_ending";
+
 // Disable Thermal Imaging for these vehicles
 {_x disableTIEquipment true;} forEach [];
 
@@ -36,7 +39,7 @@ for "_x" from 1 to ws_eola_caches_present do {
 	}];
 };
 
- {
+ 	{
 		_mkr = createMarker [format ["%1",_x],getPos _x];
 		_mkr setMarkerColor "ColorWhite";
 		_mkr setMarkerSize [0.5,0.5];
