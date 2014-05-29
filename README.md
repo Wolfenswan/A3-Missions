@@ -8,7 +8,9 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-1-0RC3</i>
 
 <b>Mission description</b><br/>
-Template mission.
+A mission stub for cache-hunt adversarials. Randomized cache locations and settings configurable by parameter. Doesn't require any additional scripting. See<br/>
+folkarps.com/forum/viewtopic.php?f=44&t=1218&p=9297<br/>
+For a detailled explanation.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
