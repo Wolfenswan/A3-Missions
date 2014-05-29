@@ -30,12 +30,6 @@ if (!isDedicated) then {
 
 if (isServer) then {
 
-	if (ws_param_civs == 1) then {
-		[town,200,5,10] execVM "ws_scripts\ws_populateTown.sqf";
-		[town_1,200,5,10] execVM "ws_scripts\ws_populateTown.sqf";
-	};
-
-
 	if (ws_param_uav == 0) then {
 		VehAAF_UAV removeMagazineTurret ["6Rnd_LG_scalpel",[-1]];
 	};
@@ -43,5 +37,5 @@ if (isServer) then {
 };
 
 if !(isNil "UnitAAF_CO_UAV") then {
-UnitAAF_CO_UAV connectTerminalToUav VehAAF_UAV;
+	UnitAAF_CO_UAV connectTerminalToUav VehAAF_UAV;
 };
