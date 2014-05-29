@@ -139,7 +139,7 @@ f_var_doNotRemoveBodies = [];
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [player] execVM "f\simplewoundingsystem\init.sqf";
-// f_wound_breifing = true;
+f_wound_breifing = true;
 
 // ====================================================================================
 
