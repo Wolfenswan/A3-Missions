@@ -4,7 +4,7 @@ ws_debug = if (ws_param_dbg == 0) then {false} else {true};
 
 if !(isServer) exitWith {ws_initDone = true};
 
-0 setFog [0.4,0.025,40]
+0 setFog [0.4,0.025,40];
 
 if (!isNil "GrpAAF_R") then {
 	_mkr = (["mkrR"] call ws_fnc_collectMarkers) call ws_fnc_selectRandom;

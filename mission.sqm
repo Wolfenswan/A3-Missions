@@ -324,8 +324,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={9193.0146,114.51695,15732.416};
-					azimut=97.683044;
+					position[]={9207.3271,115.69738,15739.176};
+					azimut=97.682999;
 					id=14;
 					side="WEST";
 					vehicle="B_G_officer_F";
@@ -334,20 +334,20 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="UnitFIA_CO";
-					init="GrpFIA_CO = group this; nul = [""co"",this] call f_fnc_folk_assignGear;this moveInDriver car1;";
+					init="GrpFIA_CO = group this; nul = [""co"",this] call f_fnc_assignGear;this moveInDriver car1;";
 					description="FIA 1st Officer";
 				};
 				class Item1
 				{
-					position[]={9191.1543,114.81909,15735.005};
-					azimut=97.682831;
+					position[]={9205.4668,116.01602,15741.765};
+					azimut=97.6828;
 					id=15;
 					side="WEST";
 					vehicle="B_G_Soldier_lite_F";
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="GrpFIA_CO = group this; nul = [""r"",this] call f_fnc_folk_assignGear;this moveInCargo car1;";
+					init="GrpFIA_CO = group this; nul = [""r"",this] call f_fnc_assignGear;this moveInCargo car1;";
 					description="FIA Bodyguard";
 				};
 			};
@@ -370,13 +370,13 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="UnitFIA_DC";
-					init="GrpFIA_DC = group this; nul = [""co"",this] call f_fnc_folk_assignGear; this moveInDriver car2;";
+					init="GrpFIA_DC = group this; nul = [""co"",this] call f_fnc_assignGear; this moveInDriver car2;";
 					description="FIA 2nd Officer";
 				};
 				class Item1
 				{
 					position[]={9201.9297,115.23186,15736.891};
-					azimut=529.3645;
+					azimut=529.36499;
 					id=17;
 					side="WEST";
 					vehicle="B_G_Soldier_lite_F";
@@ -384,7 +384,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="UnitFIA_DC_M_1";
-					init="GrpFIA_DC = group this; nul = [""r"",this] call f_fnc_folk_assignGear; this moveInCargo car2;";
+					init="GrpFIA_DC = group this; nul = [""r"",this] call f_fnc_assignGear; this moveInCargo car2;";
 					description="FIA Bodyguard";
 				};
 			};
@@ -909,7 +909,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="GrpFIA_Tech1 = group this; nul = [""car"",this] call f_fnc_folk_assignGear; this moveInGunner VehFIA_Tech1;";
+					init="GrpFIA_Tech1 = group this; nul = [""car"",this] call f_fnc_assignGear ; this moveInGunner VehFIA_Tech1;";
 					description="FIA Technical 1 Gunner (with 1st Officer)";
 				};
 				class Item1
@@ -921,7 +921,7 @@ class Mission
 					vehicle="B_G_Soldier_lite_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="GrpFIA_Tech1 = group this; nul = [""car"",this] call f_fnc_folk_assignGear; this moveInDriver VehFIA_Tech1;";
+					init="GrpFIA_Tech1 = group this; nul = [""car"",this] call f_fnc_assignGear ; this moveInDriver VehFIA_Tech1;";
 					description="FIA Technical 1 Driver";
 				};
 			};
@@ -943,7 +943,7 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="GrpFIA_Tech2 = group this; nul = [""car"",this] call f_fnc_folk_assignGear; this moveInGunner VehFIA_Tech2;";
+					init="GrpFIA_Tech2 = group this; nul = [""car"",this] call f_fnc_assignGear ; this moveInGunner VehFIA_Tech2;";
 					description="FIA Technical 2 Gunner (with 2nd Officer)";
 				};
 				class Item1
@@ -955,7 +955,7 @@ class Mission
 					vehicle="B_G_Soldier_lite_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					init="GrpFIA_Tech2 = group this; nul = [""car"",this] call f_fnc_folk_assignGear; this moveInDriver VehFIA_Tech2;";
+					init="GrpFIA_Tech2 = group this; nul = [""car"",this] call f_fnc_assignGear ; this moveInDriver VehFIA_Tech2;";
 					description="FIA Technical 2 Driver";
 				};
 			};
