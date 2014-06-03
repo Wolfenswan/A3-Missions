@@ -55,8 +55,8 @@ _objects = nearestobjects [_aPos,_types,_range];
 
   _origPos = [((_dPos select 0) + (_dst * sin _dir)), ((_dPos select 1) + (_dst * cos _dir)), 0];
 
-  _pos = [_origPos, 0, 150, 0, 0, 8, 0] call BIS_fnc_findSafePos;
-  if (count _pos == 0) then {_pos = [_origPos, 0, 500, 0, 0, 8, 0] call BIS_fnc_findSafePos;};
+  _pos = [_origPos, 0, 150, 10, 0, 8, 0] call BIS_fnc_findSafePos;
+  if (count _pos == 0) then {_pos = [_origPos, 0, 500, 10, 0, 8, 0] call BIS_fnc_findSafePos;};
   _x setPos _pos;
   //_correctedPos = _origPos findEmptyPosition [0, 300, typeOf _x];
 

@@ -19,12 +19,16 @@ class Mission
 		"A3_Soft_F_HEMTT",
 		"A3_Soft_F_MRAP_01",
 		"a3_soft_f_gamma_offroad",
-		"A3_Soft_F_Truck"
+		"A3_Soft_F_Truck",
+		"a3_characters_f",
+		"a3_uav_f_characters_f_gamma"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_INDEP",
+		"a3_characters_f",
 		"A3_Characters_F_Gamma",
+		"a3_uav_f_characters_f_gamma",
 		"A3_Characters_F_Civil",
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_MRAP_03",
@@ -35,7 +39,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_a96_cratesistance_v10";
+		briefingName="fa3_a96_cratesistance_v11";
 		overviewText="AAF seeks and destroys FIA-defended caches. Fully randomized.";
 		resistanceWest=0;
 		startWeather=0.84999996;
@@ -57,13 +61,13 @@ class Mission
 	};
 	class Groups
 	{
-		items=31;
+		items=29;
 		class Item0
 		{
 			side="GUER";
 			class Vehicles
 			{
-				items=2;
+				items=4;
 				class Item0
 				{
 					position[]={18433.119,18.508448,8573.1143};
@@ -89,42 +93,33 @@ class Mission
 					init="GrpAAF_CO = group this; nul = [""m"",this] call f_fnc_assignGear ;";
 					description="AAF Medic";
 				};
+				class Item2
+				{
+					position[]={18433.557,17.395708,8566.3828};
+					id=2;
+					side="GUER";
+					vehicle="I_soldier_UAV_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="UnitAAF_CO_UAV";
+					init="GrpAAF_CO = group this; [""uav"",this] call f_fnc_assignGear;";
+					description="AAF UAV Operator";
+				};
+				class Item3
+				{
+					position[]={18436.447,17.383076,8566.1348};
+					id=3;
+					side="GUER";
+					vehicle="I_Soldier_repair_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					text="UnitAAF_CO_D";
+					init="GrpAAF_CO = group this; [""vd"",this] call f_fnc_assignGear;";
+					description="AAF Driver (Repair)";
+				};
 			};
 		};
 		class Item1
-		{
-			side="GUER";
-			class Vehicles
-			{
-				items=2;
-				class Item0
-				{
-					position[]={18432.701,17.394917,8556.4414};
-					id=2;
-					side="GUER";
-					vehicle="I_officer_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-					text="UnitAAF_DC";
-					init="GrpAAF_DC = group this; nul = [""dc"",this] call f_fnc_assignGear ;";
-					description="AAF Deputy Commander";
-				};
-				class Item1
-				{
-					position[]={18436.822,17.749846,8555.4063};
-					id=3;
-					side="GUER";
-					vehicle="I_medic_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					text="UnitAAF_DC_M";
-					init="GrpAAF_DO = group this; nul = [""m"",this] call f_fnc_assignGear ;";
-					description="AAF Medic";
-				};
-			};
-		};
-		class Item2
 		{
 			side="GUER";
 			class Vehicles
@@ -157,7 +152,7 @@ class Mission
 				};
 			};
 		};
-		class Item3
+		class Item2
 		{
 			side="GUER";
 			class Vehicles
@@ -215,7 +210,7 @@ class Mission
 				};
 			};
 		};
-		class Item4
+		class Item3
 		{
 			side="GUER";
 			class Vehicles
@@ -273,7 +268,7 @@ class Mission
 				};
 			};
 		};
-		class Item5
+		class Item4
 		{
 			side="GUER";
 			class Vehicles
@@ -331,7 +326,7 @@ class Mission
 				};
 			};
 		};
-		class Item6
+		class Item5
 		{
 			side="GUER";
 			class Vehicles
@@ -364,7 +359,7 @@ class Mission
 				};
 			};
 		};
-		class Item7
+		class Item6
 		{
 			side="GUER";
 			class Vehicles
@@ -422,7 +417,7 @@ class Mission
 				};
 			};
 		};
-		class Item8
+		class Item7
 		{
 			side="GUER";
 			class Vehicles
@@ -480,7 +475,7 @@ class Mission
 				};
 			};
 		};
-		class Item9
+		class Item8
 		{
 			side="GUER";
 			class Vehicles
@@ -538,7 +533,7 @@ class Mission
 				};
 			};
 		};
-		class Item10
+		class Item9
 		{
 			side="GUER";
 			class Vehicles
@@ -571,7 +566,7 @@ class Mission
 				};
 			};
 		};
-		class Item11
+		class Item10
 		{
 			side="GUER";
 			class Vehicles
@@ -629,7 +624,7 @@ class Mission
 				};
 			};
 		};
-		class Item12
+		class Item11
 		{
 			side="GUER";
 			class Vehicles
@@ -687,7 +682,7 @@ class Mission
 				};
 			};
 		};
-		class Item13
+		class Item12
 		{
 			side="GUER";
 			class Vehicles
@@ -745,12 +740,12 @@ class Mission
 				};
 			};
 		};
-		class Item14
+		class Item13
 		{
 			side="WEST";
 			class Vehicles
 			{
-				items=2;
+				items=4;
 				class Item0
 				{
 					position[]={21217.031,47.065716,9102.2002};
@@ -778,44 +773,33 @@ class Mission
 					init="GrpFIA_CO = group this; nul = [""m"",this] call f_fnc_assignGear ;";
 					description="FIA Medic";
 				};
-			};
-		};
-		class Item15
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=2;
-				class Item0
+				class Item2
 				{
-					position[]={21217.023,47.095543,9086.7461};
+					position[]={21220.563,46.67638,9093.4951};
 					id=48;
 					side="WEST";
-					vehicle="B_G_officer_F";
+					vehicle="B_G_engineer_F";
 					player="PLAY CDG";
-					leader=1;
-					rank="SERGEANT";
 					skill=0.60000002;
-					text="UnitFIA_DC";
-					init="GrpFIA_DC = group this; nul = [""dc"",this] call f_fnc_assignGear ;";
-					description="FIA Deputy Commander";
+					text="UnitFIA_CO_D";
+					init="GrpFIA_CO = group this; [""vd"",this] call f_fnc_assignGear;";
+					description="FIA Driver (Repair)";
 				};
-				class Item1
+				class Item3
 				{
-					position[]={21219.113,46.852158,9084.8711};
+					position[]={21217.381,46.993958,9093.6719};
 					id=49;
 					side="WEST";
-					vehicle="B_G_medic_F";
+					vehicle="B_G_Soldier_F";
 					player="PLAY CDG";
-					rank="CORPORAL";
 					skill=0.60000002;
-					text="UnitFIA_DC_M";
-					init="GrpFIA_DC = group this; nul = [""m"",this] call f_fnc_assignGear ;";
-					description="FIA Medic";
+					text="UnitFIA_CO_UAV";
+					init="GrpFIA_CO = group this; [""uav"",this] call f_fnc_assignGear;";
+					description="FIA UAV Operator";
 				};
 			};
 		};
-		class Item16
+		class Item14
 		{
 			side="WEST";
 			class Vehicles
@@ -850,7 +834,7 @@ class Mission
 				};
 			};
 		};
-		class Item17
+		class Item15
 		{
 			side="WEST";
 			class Vehicles
@@ -908,7 +892,7 @@ class Mission
 				};
 			};
 		};
-		class Item18
+		class Item16
 		{
 			side="WEST";
 			class Vehicles
@@ -966,7 +950,7 @@ class Mission
 				};
 			};
 		};
-		class Item19
+		class Item17
 		{
 			side="WEST";
 			class Vehicles
@@ -1024,7 +1008,7 @@ class Mission
 				};
 			};
 		};
-		class Item20
+		class Item18
 		{
 			side="WEST";
 			class Vehicles
@@ -1059,7 +1043,7 @@ class Mission
 				};
 			};
 		};
-		class Item21
+		class Item19
 		{
 			side="WEST";
 			class Vehicles
@@ -1117,7 +1101,7 @@ class Mission
 				};
 			};
 		};
-		class Item22
+		class Item20
 		{
 			side="WEST";
 			class Vehicles
@@ -1175,7 +1159,7 @@ class Mission
 				};
 			};
 		};
-		class Item23
+		class Item21
 		{
 			side="WEST";
 			class Vehicles
@@ -1233,7 +1217,7 @@ class Mission
 				};
 			};
 		};
-		class Item24
+		class Item22
 		{
 			side="WEST";
 			class Vehicles
@@ -1268,7 +1252,7 @@ class Mission
 				};
 			};
 		};
-		class Item25
+		class Item23
 		{
 			side="WEST";
 			class Vehicles
@@ -1326,7 +1310,7 @@ class Mission
 				};
 			};
 		};
-		class Item26
+		class Item24
 		{
 			side="WEST";
 			class Vehicles
@@ -1384,7 +1368,7 @@ class Mission
 				};
 			};
 		};
-		class Item27
+		class Item25
 		{
 			side="WEST";
 			class Vehicles
@@ -1442,7 +1426,7 @@ class Mission
 				};
 			};
 		};
-		class Item28
+		class Item26
 		{
 			side="LOGIC";
 			class Vehicles
@@ -1461,7 +1445,7 @@ class Mission
 				};
 			};
 		};
-		class Item29
+		class Item27
 		{
 			side="CIV";
 			class Vehicles
@@ -1481,7 +1465,7 @@ class Mission
 				};
 			};
 		};
-		class Item30
+		class Item28
 		{
 			side="CIV";
 			class Vehicles
