@@ -1,11 +1,11 @@
 <b>Introduction</b><br/>
-This is one of my missions created for ArmA3 with Folk ARPS. Based on a customized version of the F3 Mission Making Framework.<br/><br/>
-The missions can be found on GitHub:<br/>
+This is a mission-stub for a cache-hunt adversarial, created for ArmA3 with Folk ARPS and based on a customized version of the F3 Mission Making Framework.<br/><br/>
+My other missions can be found on GitHub:<br/>
 <i>https://github.com/Wolfenswan/A3-Missions</i><br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-1-0RC3</i>
+<i>3-1-0RC4</i>
 
 <b>Mission description</b><br/>
 A mission stub for cache-hunt adversarials. Randomized cache locations and settings configurable by parameter. Doesn't require any additional scripting. See<br/>
