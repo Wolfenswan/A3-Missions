@@ -24,10 +24,9 @@
     nul = [gl1,gl2,50,[],45,270] execvm "shk_moveobjects.sqf"
 
 */
-private ["_range","_objects","_aPos","_dPos","_xPos","_dir","_dst","_types","_dAdj","_fDir", "_origPos", "_correctedPos"];
+private ["_range","_objects","_aPos","_dPos","_xPos","_dir","_dst","_types","_dAdj","_fDir", "_origPos"];
 
 _origPos = [];
-_correctedPos = [];
 
 _aPos = _this select 0;
 _dPos = _this select 1;
@@ -55,22 +54,15 @@ _objects = nearestobjects [_aPos,_types,_range];
 
   _origPos = [((_dPos select 0) + (_dst * sin _dir)), ((_dPos select 1) + (_dst * cos _dir)), 0];
 
-  _pos = [_origPos, 0, 150, 10, 0, 8, 0] call BIS_fnc_findSafePos;
-  if (count _pos == 0) then {_pos = [_origPos, 0, 500, 10, 0, 8, 0] call BIS_fnc_findSafePos;};
-  _x setPos _pos;
-  //_correctedPos = _origPos findEmptyPosition [0, 300, typeOf _x];
+  _i = 50;
+  _pos = [];
 
- /* if (_x isKindOf "Car") then { _correctedPos = _origPos findEmptyPosition [0, 500, typeOf _x];
-  } else {
-    _correctedPos = _origPos findEmptyPosition [1, 500, typeOf _x];
+  while {count _pos == 0} do {
+    _pos = [_origPos, 0, _i, 10, 0, 8, 0] call BIS_fnc_findSafePos;
+    _i = _i + 50;
   };
-  if (count _correctedPos == 0) then {
-  diag_log "WARNING: Failed to find empty position for unit, damage may occur.";
-  _x setPos _origPos;
-  } else {
-    _x setPos _correctedPos;
-  };
-  */
+
+  _x setPos _pos;
   _x setVectorUp (surfaceNormal (getPosATL _x));
   _x setVelocity [0,0,0];
 } foreach _objects;

@@ -6,7 +6,7 @@ ws_debug = false;
 
 _startTime = diag_tickTime;
 _cacheDistMin = 450;				// Min distance for generating new cache
-_cacheDistMax = _cacheDistMin*3.5;	// Max distance for generating new cache
+_cacheDistMax = _cacheDistMin*(3.5 min ha_param_cacheNum);	// Max distance for generating new cache
 _cacheDistRand = 150; 				//Random factor for cache placement
 _spawnMinSideDistance = 2500;		// Min distance sides spawn from one another
 _spawnMaxSideDistance = 4000;		// Max distance sides spawn from one another
