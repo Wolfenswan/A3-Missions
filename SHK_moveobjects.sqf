@@ -54,12 +54,12 @@ _objects = nearestobjects [_aPos,_types,_range];
 
   _origPos = [((_dPos select 0) + (_dst * sin _dir)), ((_dPos select 1) + (_dst * cos _dir)), 0];
 
-  _i = 50;
-  _pos = [];
+  _pos = [_origPos, 0, 100, 10, 0, 8, 0] call BIS_fnc_findSafePos;
 
+  _i = 100;
   while {count _pos == 0} do {
-    _pos = [_origPos, 0, _i, 10, 0, 8, 0] call BIS_fnc_findSafePos;
-    _i = _i + 50;
+      _pos = [_origPos, 0, _i, 10, 0, 8, 0] call BIS_fnc_findSafePos;
+    _i = _i + 20;
   };
 
   _x setPos _pos;

@@ -2,27 +2,26 @@
 // The original version of this script was inspired by the Awarness Script v1.00 by afp, December 2009.
 
 f_ha_createMarkers = {
-{
-	_mkrText = _x select 0;
-	_mkrPos = _x select 1;
 
-	_mkr = createMarkerLocal [format["ha_spotting_%1", _forEachIndex], _mkrPos];;
-	_mkr setMarkerShapeLocal "ICON";
-	_mkr setMarkerTypeLocal "hd_destroy";
-	_mkr setMarkerTextLocal _mkrText;
+	{
+		_mkrText = _x select 0;
+		_mkrPos = _x select 1;
 
-	// Make the marker fade out
-	[_mkr] spawn {
-		for "_x" from 0 to 45 do {
-			(_this select 0) setMarkerAlphaLocal (1 - _x/45);
-			sleep 0.5;
-			if (markerAlpha (_this select 0) == 0) exitWith {deleteMarkerLocal (_this select 0)};
+		_mkr = createMarkerLocal [format["ha_spotting_%1", _forEachIndex], _mkrPos];;
+		_mkr setMarkerShapeLocal "ICON";
+		_mkr setMarkerTypeLocal "hd_destroy";
+		_mkr setMarkerTextLocal _mkrText;
+
+		// Make the marker fade out
+		[_mkr] spawn {
+			for "_x" from 0 to 45 do {
+				(_this select 0) setMarkerAlphaLocal (1 - _x/45);
+				sleep 0.5;
+				if (markerAlpha (_this select 0) == 0) exitWith {deleteMarkerLocal (_this select 0)};
+			};
 		};
-	};
 
-} forEach _this;
-
-["EnemiesSpotted",[]] call BIS_fnc_showNotification;
+	} forEach _this;
 };
 
 if(!isServer) exitWith{};
@@ -38,7 +37,7 @@ _spotters = [];
 } forEach allGroups;
 
 _spottingMarkers = [];
-_markerCount = 10;
+_markerCount = 6;
 _markerReuseIndex = 0;
 _waitBetweenChecks = 20;
 
@@ -85,6 +84,7 @@ while {true} do {
 		_spottingMarkers set [_markerReuseIndex, [format ["%1:%2", date select 3, date select 4], _posWithJitter]];
 		_markerReuseIndex = _markerReuseIndex + 1;
 		if (_markerReuseIndex > _markerCount) then {_markerReuseIndex = 0;};
+
 	} forEach _spottedThisRound;
 
 	if (count _spottingMarkers > 0) then {
