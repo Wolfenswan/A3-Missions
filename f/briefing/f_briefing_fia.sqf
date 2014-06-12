@@ -37,7 +37,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 MOVEMENT PLAN
 <br/>
-Enter the indicated AO (highlighted area) from the north-west on approach to the killzone.
+Stay within the indicated AO (highlighted area) while on approach to the killzone.
 <br/><br/>
 LAYING LOW
 <br/>
