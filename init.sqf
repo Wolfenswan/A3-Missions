@@ -21,6 +21,7 @@ enableSentences false;
 // f_var_mapClickTeleport_TimeLimit = 0; 			// If higher than 0 the action will be removed after the given time.
 // f_var_mapClickTeleport_GroupTeleport = false; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
 // f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
+// f_var_mapClickTeleport_Height = 0;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
 // [] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
 
 // ====================================================================================
@@ -185,6 +186,13 @@ f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear?
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [30] spawn f_fnc_cInit;
+
+// ====================================================================================
+
+// F3 - Radio Framework
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+[] execVM "f\radios\radio_init.sqf";
 
 // ====================================================================================
 

@@ -6,26 +6,33 @@
 // The blocks of code below identifies equipment for this faction
 //
 // Defined loadouts:
-//		co		- commander
-//		dc 		- deputy commander
-//		m 		- medic
-//		ftl		- fire team leader
-//		ar 		- automatic rifleman
-//		aar		- assistant automatic rifleman
-//		rat		- rifleman (AT)
+//		co			- commander
+//		dc 			- deputy commander / squad leader
+//		m 			- medic
+//		ftl			- fire team leader
+//		ar 			- automatic rifleman
+//		aar			- assistant automatic rifleman
+//		rat			- rifleman (AT)
 //		mmgg		- medium mg gunner
 //		mmgag		- medium mg assistant
 //		matg		- medium AT gunner
 //		matag		- medium AT assistant
 //		mtrg		- mortar gunner (deployable)
 //		mtrag		- mortar assistant (deployable)
-//		p		- air vehicle pilots
-//		eng		- engineers
-// 		div		- divers
+//		vc			- vehicle commander
+//		vg			- vehicle gunner
+//		vd			- vehicle driver (repair)
+//		pp			- air vehicle pilot / co-pilot
+//		pcc			- air vehicle co-pilot (repair) / crew chief (repair)
+//		pp			- air vehicle crew
+//		eng			- engineer (demo)
+//		engm		- engineer (mines)
+//		uav			- UAV operator
+//		div    		- divers
 //
-//		r 		- rifleman
-//		car		- carabineer
-//		smg		- submachinegunner
+//		r 			- rifleman
+//		car			- carabineer
+//		smg			- submachinegunner
 //		gren		- grenadier
 //
 //		v_car		- car/4x4
@@ -191,14 +198,14 @@ _light = [];
 _heavy =  ["eng","engm"];
 _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
-_crew = ["cc","cg","cd"];
+_crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
 _specOp = [];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
 
-_baseUniform = ["U_BG_Guerilla1_1","U_BG_Guerilla2_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_Guerilla3_1","U_BG_Guerilla3_2"];
+_baseUniform = ["U_BG_leader","U_BG_Guerilla1_1","U_BG_Guerilla2_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_Guerilla3_1","U_BG_Guerilla3_2"];
 _baseHelmet = ["H_Shemag_olive","H_Bandanna_khk","H_Booniehat_khk","H_Cap_oli","H_Watchcap_blk"];
 _baseGlasses = [];
 
@@ -214,14 +221,14 @@ _diverRig = ["V_RebreatherB"];
 _diverGlasses = ["G_Diving"];
 
 // Pilot
-_pilotUniform = ["U_B_HeliPilotCoveralls"];
-_pilotHelmet = ["H_PilotHelmetHeli_B"];
+_pilotUniform = _baseUniform;
+_pilotHelmet = _baseHelmet;
 _pilotRig = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
 _pilotGlasses = [];
 
 // Crewman
-_crewUniform = ["U_B_CombatUniform_mcam_vest"];
-_crewHelmet = ["H_HelmetCrew_B"];
+_crewUniform = _baseUniform;
+_crewHelmet = _baseHelmet;
 _crewRig = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
 _crewGlasses = [];
 
@@ -580,8 +587,8 @@ switch (_typeofUnit) do
 // LOADOUT: UAV OPERATOR
 	case "uav":
 	{
-		_unit addmagazines [_carbinemag,7];
-		_unit addweapon _carbine;
+		_unit addmagazines [_smgmag,5];
+		_unit addweapon _smg;
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
