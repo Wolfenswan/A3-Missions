@@ -189,5 +189,12 @@ f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear?
 
 // ====================================================================================
 
+// F3 - Radio Framework
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+[] execVM "f\radios\radio_init.sqf";
+
+// ====================================================================================
+
 // Wolfenswan - post Init
 [] execVM "ws_scripts\ws_postInit.sqf";
