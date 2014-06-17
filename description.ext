@@ -5,9 +5,9 @@
 
 class Header
 {
-	gameType = TDM;
+	gameType = Coop;
 	minPlayers = 1;
-	maxPlayers = 395;
+	maxPlayers = 405;
 };
 
 // ============================================================================================
@@ -15,9 +15,9 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "Self-Service";
+onLoadName = "*** Insert mission name here. ***";
 onLoadMission = "Made with the F3 Mission Development Framework";
-author = "Wolfenswan [FA]";
+author = "*** Insert mission author name here. ***";
 loadScreen = "logo.paa";
 
 // ============================================================================================
@@ -57,46 +57,44 @@ class cfgNotifications
 		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
 	};
 
-	class CSATcompound
-	{
-		title = "ALERT";
-		description = "CSAT forces have begun seizing the compund";
-		iconPicture = "\A3\ui_f\data\map\markers\military\warning_ca.paa";
-		duration = 10;
-	};
-
-	class AAFcompound
-	{
-		title = "ALERT";
-		description = "AAF are in control of the compound again";
-		iconPicture = "\A3\ui_f\data\map\markers\military\warning_ca.paa";
-		duration = 10;
-	};
-
-
-	// Notification for the F3 Safe Start Component
+	// Notifications for the F3 Safe Start Component
 	class SafeStart
 	{
 		title = "SAFE START";
 		description = "%1";
 		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
-		duration = 15;
+		duration = 59;
+	};
+	class SafeStartMissionStarting
+	{
+		title = "SAFE START";
+		description = "%1";
+		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+		duration = 3;
 	};
 
 	// Notification for the F3 Authorised Crew Component
 	class UnauthorisedCrew {
-		title= "Non-authorised crew!";
+		title= "NON-AUTHORISED CREW!";
 		description= "%1";
 		iconPicture = "\A3\ui_f\data\map\markers\military\warning_ca.paa";
-		duration = 10;
+		duration = 3;
 	};
 
 	// Notification for the F3 Authorised Crew Component
 	class MapClickTeleport {
-		title= "Teleport";
+		title= "NOTE";
 		description= "%1";
 		iconPicture = "\A3\ui_f\data\map\markers\military\start_ca.paa";
-		duration = 2;
+		duration = 3;
+	};
+
+	// Notification for the F3 JIP Component
+	class JIP {
+		title= "REINFORCEMENTS";
+		description= "%1";
+		iconPicture = "\A3\ui_f\data\map\markers\military\flag_ca.paa";
+		duration = 3;
 	};
 };
 
@@ -139,16 +137,16 @@ class Params
 
 // ============================================================================================
 
-// F3 - ACRE Support
-// Credits: Please see the F2 online manual (http://www.ferstaberinde.com/f3/en/)
+// F3 - Radio Systems Support
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-    class f_param_acre
+    class f_param_radios
     {
-            title = "ACRE";
-            values[] = {0,1};
-            texts[] = {"Off","On"};
+            title = "Radio System";
+            values[] = {0,1,2};
+            texts[] = {"Off","ACRE", "TFR"};
             default = 0;
-            code = "f_var_acre = %1";
+            code = "f_var_radios = %1";
     };
 
 // ============================================================================================
@@ -162,7 +160,7 @@ class Params
             values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
             texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
             default = 0;
-            code = "f_var_mission_timer = %1";
+            code = "f_param_mission_timer = %1";
     };
 
 // ============================================================================================
@@ -205,35 +203,35 @@ class Params
 
 // ============================================================================================
 
-// F3 - AI Skill Selector (A&D)
+// F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-//	class f_param_AISkill_BLUFOR
-//	{
-//		title = "$STR_f_param_AISkill_BLUFOR";
-//		values[] = {0,1,2,3};
-//		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-//		default = 1;
-//		code = "f_param_AISkill_BLUFOR = %1";
-//	};
-//
-//	class f_param_AISkill_OPFOR
-//	{
-//		title = "$STR_f_param_AISkill_OPFOR";
-//		values[] = {0,1,2,3};
-//		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-//		default = 1;
-//		code = "f_param_AISkill_OPFOR = %1";
-//	};
-//
-//	class f_param_AISkill_INDP
-//	{
-//		title = "$STR_f_param_AISkill_INDP";
-//		values[] = {0,1,2,3};
-//		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-//		default = 1;
-//		code = "f_param_AISkill_INDP = %1";
-//	};
+	class f_param_AISkill_BLUFOR
+	{
+		title = "$STR_f_param_AISkill_BLUFOR";
+		values[] = {0,1,2,3};
+		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+		default = 1;
+		code = "f_param_AISkill_BLUFOR = %1";
+	};
+
+	class f_param_AISkill_OPFOR
+	{
+		title = "$STR_f_param_AISkill_OPFOR";
+		values[] = {0,1,2,3};
+		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+		default = 1;
+		code = "f_param_AISkill_OPFOR = %1";
+	};
+
+	class f_param_AISkill_INDP
+	{
+		title = "$STR_f_param_AISkill_INDP";
+		values[] = {0,1,2,3};
+		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+		default = 1;
+		code = "f_param_AISkill_INDP = %1";
+	};
 
 // ============================================================================================
 
@@ -253,6 +251,24 @@ class Params
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
 
+	class ws_param_hc
+	{
+		title = "Headless client";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 0;
+        code = "ws_param_hc = %1";
+	};
+
+	class ws_param_dbg
+	{
+		title = "WS fnc debug";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 0;
+        code = "ws_param_dbg = %1";
+	};
+
 };
 
 // ============================================================================================
@@ -264,9 +280,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "AAF victory";
+		title = "Ending #1";
 		subtitle = "";
-		description = "CSAT were wiped out.";
+		description = "*** Insert debriefing #1 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -274,9 +290,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "CSAT victory";
+		title = "Ending #2";
 		subtitle = "";
-		description = "The AAF platoon was eliminated.";
+		description = "*** Insert debriefing #2 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -284,9 +300,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "CSAT victory";
+		title = "Ending #3";
 		subtitle = "";
-		description = "CSAT managed to take the facility from the AAF.";
+		description = "*** Insert debriefing #3 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -364,7 +380,7 @@ class CfgRespawnTemplates
 class CfgFunctions
 {
 	#include "ws_fnc\config.hpp"
-	class F // Defines the "owner"
+    class F // Defines the "owner"
 	{
 		class common // category
 		{
@@ -453,9 +469,20 @@ class CfgFunctions
 			file = "f\preMount";
 			class mountGroups{};
 		};
+		class radios
+		{
+			file = "f\radios";
+			class acre_removeRadios{};
+			class acre_addRadios{};
+			class acre_setRadioFrequencies{};
+			class acre_configureSpectatorChat{};
+			class tfr_removeRadios{};
+			class tfr_addRadios{};
+			class tfr_setRadioFrequencies{};
+			class tfr_configureSpectatorChat{};
+		};
 		#include "f\simplewoundingsystem\config.hpp"
 		#include "f\spect\functions.hpp"
-
 	};
 };
 

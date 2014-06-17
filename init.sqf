@@ -7,6 +7,13 @@ enableSaving [false, false];
 
 // ====================================================================================
 
+// F3 - Mute Orders and Reports
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+enableSentences false;
+
+// ====================================================================================
+
 // F3 - MapClick Teleport
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
@@ -14,6 +21,7 @@ enableSaving [false, false];
 // f_var_mapClickTeleport_TimeLimit = 0; 			// If higher than 0 the action will be removed after the given time.
 // f_var_mapClickTeleport_GroupTeleport = false; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
 // f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
+// f_var_mapClickTeleport_Height = 0;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
 // [] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
 
 // ====================================================================================
@@ -64,10 +72,10 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // F3 - Automatic Body Removal
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// f_var_removeBodyDelay = 180;
-// f_var_removeBodyDistance = 500;
-// f_var_doNotRemoveBodies = [];
-// [] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
+f_var_removeBodyDelay = 180;
+f_var_removeBodyDistance = 500;
+f_var_doNotRemoveBodies = [];
+[] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
 
 // ====================================================================================
 
@@ -102,10 +110,10 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-[OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+// [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
-[INDEPENDENT,100,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+// [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // ====================================================================================
 
@@ -120,7 +128,7 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
+// f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
 // f_showDistance_Nametags = true;			// Show distance to player
 // f_showVehicle_Nametags = true;			// Show vehicle player is in
 [20] execVM "f\nametag\f_nametags.sqf";
@@ -137,10 +145,8 @@ f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
 // F3 - Group E&E Check
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// [GroupName,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
-// [UnitName,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
-// [[GroupName1,GroupName2],ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
-// [[UnitName1,UnitName2],ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
+// [side,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
+// [["Grp1","Grp2"],ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
 
 // ====================================================================================
 
@@ -179,8 +185,14 @@ f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear?
 
 [30] spawn f_fnc_cInit;
 
-// Display a short text intro
- 	[] spawn {
-	 waitUntil {time > 15};
-		["SELF-SERVICE","EASTERN ALTIS"] call ws_fnc_showIntro;
-	};
+// ====================================================================================
+
+// F3 - Radio Framework
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+[] execVM "f\radios\radio_init.sqf";
+
+// ====================================================================================
+
+// Wolfenswan - post Init
+[] execVM "ws_scripts\ws_postInit.sqf";
