@@ -275,6 +275,8 @@ if (_isMan) then {
 	// We add a single first aid kit (FAK)
 
 	_unit addItem _firstaid;
+	_unit addItem _firstaid;
+	_unit addItem _firstaid;
 
 	// The following code removes any pre-added NVGs
 
