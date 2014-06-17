@@ -5,10 +5,10 @@ The missions can be found on GitHub:<br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-1-0RC6</i>
+<i>3-1-0</i>
 
 <b>Mission description</b><br/>
-Template mission.
+A AAF platoon sweeps to an ocean-side village held by FIA.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
