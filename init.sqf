@@ -149,10 +149,8 @@ f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
 // F3 - Group E&E Check
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// [GroupName,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
-// [UnitName,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
-// [[GroupName1,GroupName2],ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
-// [[UnitName1,UnitName2],ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
+// [side,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
+// [["Grp1","Grp2"],ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
 
 // ====================================================================================
 
