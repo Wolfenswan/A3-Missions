@@ -5,7 +5,7 @@ The missions can be found on GitHub:<br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-1-0RC4</i>
+<i>3-1-0</i>
 
 <b>Mission description</b><br/>
 AAF attempts to interrupt a FIA meeting in central Altis.
