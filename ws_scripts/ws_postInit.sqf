@@ -6,7 +6,7 @@ if (!isDedicated && !ws_isHC) then {
 	// Display a short text intro
  	[] spawn {
 	 waitUntil {time > 15};
-		["OPERATION XYZ","CENTRAL ALTIS"] call ws_fnc_showIntro;
+		["AFTERNOON DELIGHT","NORTH-WEST OF NEOCHORI"] call ws_fnc_showIntro;
 	};
 };
 
@@ -15,7 +15,7 @@ if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParam
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 
-	{(_x getVariable ["ws_garrison_settings"])} forEach [];
+	{(_x getVariable "ws_garrison_settings") call ws_fnc_createGarrison} forEach [AAF,NATO,NATO_1];
 };
 
 // Do more stuff exclusively on the server

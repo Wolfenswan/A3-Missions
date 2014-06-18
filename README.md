@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-1-0</i>
 
 <b>Mission description</b><br/>
-A motorized CSAT platoon attacks AAF forces and NATO outposts just west of Stavros.<br/>
+A motorized CSAT platoon attacks AAF forces and NATO outposts just north-west of Neochori.<br/>
 
 <b>Contact</b><br/>
 folkarps.com<br/>

@@ -92,6 +92,11 @@ _groups = [
 ["GrpFIA_DT1","FIA DT1 -"],
 ["GrpFIA_ENG1","FIA ENG1 -"],
 
+["GrpFIA_APC1","FIA APC1 -"],
+["GrpFIA_APC2","FIA APC2 -"],
+["GrpFIA_APC3","FIA APC3 -"],
+["GrpFIA_APC4","FIA APC4 -"],
+
 ["GrpFIA_IFV1","FIA IFV1 -"],
 ["GrpFIA_IFV2","FIA IFV2 -"],
 ["GrpFIA_IFV3","FIA IFV3 -"],

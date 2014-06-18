@@ -133,6 +133,11 @@ switch (_unitfaction) do
 
 		["GrpCSAT_ENG1",  6, "ENG1", "ColorOrange"] spawn f_fnc_localGroupMarker;
 
+		["GrpCSAT_APC1",  7, "APC1", "ColorRed"] spawn f_fnc_localGroupMarker;
+		["GrpCSAT_APC2",  7, "APC2", "ColorRed"] spawn f_fnc_localGroupMarker;
+ 		["GrpCSAT_APC3",  7, "APC3", "ColorBlue"] spawn f_fnc_localGroupMarker;
+		["GrpCSAT_APC4",  7, "APC4", "ColorBlue"] spawn f_fnc_localGroupMarker;
+
  		["GrpCSAT_IFV1",  7, "IFV1", "ColorRed"] spawn f_fnc_localGroupMarker;
 		["GrpCSAT_IFV2",  7, "IFV2", "ColorRed"] spawn f_fnc_localGroupMarker;
  		["GrpCSAT_IFV3",  7, "IFV3", "ColorBlue"] spawn f_fnc_localGroupMarker;

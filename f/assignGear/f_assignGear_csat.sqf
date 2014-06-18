@@ -55,7 +55,7 @@ _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
 _scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
 
 // Default setup
-_attachments = [_attach1,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_attach1,_scope2]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -276,6 +276,8 @@ if (_isMan) then {
 	// We add a single first aid kit (FAK)
 
 	_unit addItem _firstaid;
+	_unit addItem _firstaid;
+	_unit addItem _firstaid;
 
 	// The following code removes any pre-added NVGs
 
@@ -397,6 +399,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_pistolmag,4];
 		_unit addweapon _pistol;
 		["ar"] call _backpack;
+		_attachments = [_attach1,_scope1];
 	};
 
 // LOADOUT: ASSISTANT AUTOMATIC RIFLEMAN
@@ -593,6 +596,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,1];
 		_unit linkItem _uavterminal;
 		["uav"] call _backpack;
+		_attachments = [_attach1];
 	};
 
 // LOADOUT: Diver
@@ -641,6 +645,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,3];
 		_unit addmagazines [_smokegrenade,3];
 		["smg"] call _backpack;
+		_attachments = [_attach1,_scope1];
 	};
 
 // LOADOUT: GRENADIER
