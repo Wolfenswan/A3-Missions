@@ -9,67 +9,110 @@
 // RETURNS
 // Units that haven't been put into a building position
 
-private ["_debug","_units","_building","_treshold","_barray","_bpos","_bposarray","_bposleft","_occupied"];
-_debug = false; if !(isNil "ws_debug") then {_debug = ws_debug};
+private ["_debug","_units","_building","_threshold","_barray","_bpos","_bposarray","_bposleft","_bUnits","_occupied","_mkr"];
+_debug = if !(isNil "ws_debug") then {ws_debug} else {false};
 
 _units = _this select 0;
 _barray = _this select 1;
-_treshold = _this select 2;	//How many building positions can be empty to consider the building "occupied" (no more new units taking position)
+_threshold = if (count _this > 2) then {_this select 2} else {1};	//Percentage of building positions that can be taken before building is considered "full"
 
 if (typename _barray != "ARRAY") then {_barray = [_this select 1]};
+if (_threshold <= 0) then {_threshold = 0.1};
 
+// As long we have units and a more than one building we loop through either
 while {count _units != 0 && count _barray != 0} do {
-_building = _barray call ws_fnc_selectRandom;
-_occupied = _building getVariable ["ws_occupied",false];
-_bposarray = [_building] call ws_fnc_getBpos;
-_bposleft = _building getVariable ["ws_bpos",[]];
-if (_occupied || (count _bposarray == 0)) then {_barray = _barray - [_building];};
-if (count _bposarray != count _bposleft) exitWith {["ws_fnc_enterBuilding ERROR: ",[_bposarray,_bposleft], " are not equal! Exiting..."] call ws_fnc_debugText;};
 
-//["ws_fnc_enterbuilding DBG0: ",[_building,(count _bposleft),_occupied],""] call ws_fnc_debugText;
+	_building = _barray call ws_fnc_selectRandom;
+	_bposarray = _building getVariable ["ws_bpos",[]];
 
-if !(_occupied && (count _bposleft > 0) && (count _units > 0)) then {
+	if (count _bposarray == 0) then {_bposarray = [_building] call ws_fnc_getBpos;};
 
-	["ws_fnc_enterbuilding DBG1: ",[_building,(count _bposleft),_bposleft],""] call ws_fnc_debugText;
+	// Get variables to check if building can be used
+	_bUnits = _building getVariable ["ws_bUnits",0];
+	_bposleft = _building getVariable ["ws_bPosLeft",_bposarray];
 
+	// Loop until we find a good building
+	while {count _barray > 0 && {count _bposLeft == 0 || (_bUnits / count _bposarray >= _threshold)}} do {
+		_barray = _barray - [_building];
+
+		_building = _barray call ws_fnc_selectRandom;
+		_bposarray = _building getVariable ["ws_bPos",[]];
+		if (count _bposleft == 0) then {_bposarray = [_building] call ws_fnc_getBpos;};
+
+		// Get variables in order to check if building can be used
+		_bUnits = _building getVariable ["ws_bUnits",0];
+		_bposleft = _building getVariable ["ws_bPosLeft",_bposarray];
+	};
+
+
+	// If no good building was found, exit.
+	if (count _barray == 0) exitWith {};
+
+	// Otherwise continue to place unit:
 	_unit = _units call ws_fnc_selectrandom;
 	_units = _units - [_unit];
+
+	//Get a building position and remove it from the array
 	_i = floor (random (count _bposleft));
 	_bpos = _bposleft select _i;
-	if (isNil "_bpos") exitWith {};
-
 	_bposleft set [_i,0];			//Workaround as in http://community.bistudio.com/wiki/Array#Subtraction
 	_bposleft = _bposleft - [0];
-	_building setVariable ["ws_bpos",_bposleft];
 
-	//["ws_fnc_enterbuilding DBG2: ",[_unit,typeOf _building,_bpos,_bposleft],""] call ws_fnc_debugText;
-	[_unit,_bpos] spawn {
-		private ["_unit","_pos"];
+	// Set the new variables for the building
+	_building setVariable ["ws_bPosLeft",_bposleft,true];
+	_building setVariable ["ws_bUnits",_bUnits+1,true];
+
+	// For the unit spawn code to have it enter the building
+	[_unit,_bpos,_building] spawn {
+		private ["_unit","_pos","_dir"];
 
 		_unit = _this select 0;
 		_pos = _this select 1;
 
-		_unit setVariable ["ws_bpos",_pos];
-
+		_unit setVariable ["ws_bpos",_pos,true];
 		_unit doMove _pos;
-		waitUntil {_pos distance (getPos _unit) < 10};
+
+		waitUntil {_unit distance _pos < 5};
 		(group _unit) setSpeedMode "Limited";
 		sleep 1;
-		waituntil {unitready _unit};
 
-		//Silly fix to make sure units are on the correct z-level. For some reason they don't like stairs when using doMove
-		if ((getPos _unit select 2) != (_pos select 2)) then {_unit setPos _pos;_unit doMove _pos;waituntil {unitready _unit};};
+		// Wait 30 seconds for the unit to get ready
+		for "_i" from 0 to 30 do {
+			if (unitReady _unit || _unit distance _pos < 1) exitWith {};
+			sleep 1;
+		};
+
+		//Check the distance to the building position and the distance between z-levels (if the unit got stuck)
+		if (((getPosATL _unit) select 2) - (_pos select 2) < 0.2) then {
+			_unit setPosATL _pos;_unit moveTo _pos;
+
+				// Wait another 10 seconds for the unit to get ready
+				for "_i" from 0 to 10 do {
+					if (unitReady _unit || _unit distance _pos < 1) exitWith {};
+					sleep 1;
+				};
+		};
 
 		dostop _unit;
-		if (random 1 > 0.75) then {_unit setunitpos "Middle";};
+
+		if (random 1 > 0.75) then {_unit setunitpos "Middle";} else {_unit setUnitPos "Up"};
+		_dir = if (ws_game_A3) then {([_unit,(getPosATL (_this select 2))] call BIS_fnc_DirTo) +180} else {random 360};
+		_unit setDir _dir;
 
 		(group _unit) setSpeedMode "NORMAL";
-		//[_unit] call ws_fnc_clearView;
 	};
 
-	if (count _bposleft <= _treshold) then {_building setVariable ["ws_occupied",true];_barray = _barray - [_building]};
-	if (_debug) then {_mkr = createMarker [format ["%1-bpos",_bpos],_bpos];_mkr setMarkerSize [1,1];_mkr setMarkerType "mil_dot";_mkr setMarkerColor "ColorGreen";["ws_fnc_enterbuilding DBG3: ",[_building,(count _bposleft)],""] call ws_fnc_debugText;};
+	if (_debug) then {
+		_mkr = createMarker [format ["%1-bpos",_unit],_bpos];
+		_mkr setMarkerSize [0.5,0.5];
+		_mkr setMarkerType "mil_dot";
+		_mkr setMarkerColor "ColorGreen";
+		["ws_fnc_enterbuilding DBG3: ",[_building,(count _bposarray),(count _bposleft)]," - building: bpos/bposleft"] call ws_fnc_debugText;
 	};
+
+	// If the building doesn't have any bpos or is filled, it's removed from the building-array
+	if (count _bposleft == 0 || (_bUnits+1)/count _bposarray >= _threshold) then {_barray = _barray - [_building]};
+
 };
 
 _units

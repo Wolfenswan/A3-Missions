@@ -1,34 +1,31 @@
-_hc = [] call ws_fnc_checkHC;
+ws_isHC = [] call ws_fnc_checkHC;
 
-if (!isDedicated && !_hc) then {
- waitUntil {time > 15};
-	[
-		[
-			["OPERATION AFTERNOON DELIGHT", "<t align = 'center' shadow = '1' size = '0.9'>%1</t><br/>",5],
-			["CENTRAL ALTIS","<t align = 'center' shadow = '1' size = '0.8'>%1</t><br/>",5],
-			 [format ["%3/%2/%1 %4:%5",date select 0, date select 1, date select 2,date select 3, date select 4],"<t align = 'center' shadow = '1' size = '0.6'>%1</t>",10]
-		] , 0, 0.7
-	] spawn BIS_fnc_typeText;
+// On neither the server nor the HC
+if (!isDedicated && !ws_isHC) then {
+
+	// Display a short text intro
+ 	[] spawn {
+	 waitUntil {time > 15};
+		["OPERATION XYZ","CENTRAL ALTIS"] call ws_fnc_showIntro;
+	};
 };
 
-if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
+if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParamValue;};
 
-	{[_x,150,resistance,(6+round random 4)] call ws_fnc_createGarrison;} forEach ["mkrT","mkrT_1","mkrT_2","mkrN","mkrN_1"];
+// Do stuff on either HC or Server (e.g. spawning)
+if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 
-	{[_x,50,resistance,(3+round random 2)] call ws_fnc_createGarrison;} forEach ["mkrS","mkrS_1","mkrS_2","mkrS_3","mkrS_4","mkrS_5"];
-
-	["mkrN_2",100,resistance,(6+round random 2)] call ws_fnc_createGarrison;
-	["mkrO",20,resistance,6] call ws_fnc_createGarrison;
-	["mkrO_1",20,resistance,6] call ws_fnc_createGarrison;
-	["mkrH",20,west,5] call ws_fnc_createGarrison;
-	["mkrBS",40,west,12] call ws_fnc_createGarrison;
-	["mkrH_1",55,west,6] call ws_fnc_createGarrison;
-	["mkrH_2",20,west,10] call ws_fnc_createGarrison;
+	{(_x getVariable ["ws_garrison_settings"])} forEach [];
 };
 
+// Do more stuff exclusively on the server
 if (isServer) then {
 
 	sleep 0.1;
-	{_x unassignItem "NVGoggles_INDEP"} forEach allUnits - playableUnits;
-	[] execVM "f\server\f_setAISkill.sqf";
+
+	// Recalculate F3 variables
+	[0] execVM "f\common\f_setLocalVars.sqf";
+
+	// If units were spawned set AI skill again
+	[] execVM "f\setAISKill\f_setAISkill.sqf";
 };
