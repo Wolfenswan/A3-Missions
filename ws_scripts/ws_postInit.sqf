@@ -15,7 +15,7 @@ if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParam
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 
-	{(_x getVariable ["ws_garrison_settings"])} forEach [];
+	{(_x getVariable "ws_garrison_settings") call ws_fnc_createGarrison} forEach [];
 };
 
 // Do more stuff exclusively on the server
