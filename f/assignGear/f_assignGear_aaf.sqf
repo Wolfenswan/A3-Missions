@@ -270,6 +270,9 @@ if (_isMan) then {
 	// We add a single first aid kit (FAK)
 
 	_unit addItem _firstaid;
+	_unit addItem _firstaid;
+	_unit addItem _firstaid;
+	_unit addItem _firstaid;
 
 	// The following code removes any pre-added NVGs
 
@@ -370,7 +373,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glriflemag,7];
 		_unit addmagazines [_glriflemag_tr,2];
 		_unit addmagazines [_glmag,5];
-		_unit addmagazines [_glsmokewhite,4];
+		_unit addmagazines [_glsmokewhite,2];
 		_unit addweapon _glrifle;					//_FTLrifle
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
@@ -391,7 +394,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];
-		_unit addmagazines [_pistolmag,4];
+		_unit addmagazines [_pistolmag,2];
 		_unit addmagazines [_satchel,1];
 		_unit addweapon _pistol;
 		["ar"] call _backpack;
@@ -406,6 +409,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_grenade,2];
 		_unit addmagazines [_mgrenade,2];
 		_unit addmagazines [_smokegrenade,2];
+		_unit addmagazines [_satchel,1];
 		_unit addWeapon "Binocular";
 		["aar"] call _backpack;
 	};
@@ -615,6 +619,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_grenade,3];
 		_unit addmagazines [_mgrenade,3];
 		_unit addmagazines [_smokegrenade,3];
+		_unit addmagazines [_satchel,1];
 		["r"] call _backpack;
 	};
 

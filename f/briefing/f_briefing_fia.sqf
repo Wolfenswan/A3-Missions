@@ -39,7 +39,7 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 CACHES
 <br/>
-Each cache is guarded by 2-5 friendly AI units. AAF must use satchel charges to destroy caches. The friendly AI will report enemy sightings to you via map markers, unless they are wiped out very quickly. These markers are accurate to about 30 meters and include a timestamp.
+Each cache is guarded by a few friendly AI units. AAF must use satchel charges to destroy caches. The friendly AI will report enemy sightings to you via map markers, unless they are wiped out very quickly. These markers are accurate to about 30 meters and include a timestamp.
 <br/><br/>
 TRANSPORT
 <br/>
@@ -66,8 +66,9 @@ Assist our comrades in protecting the equipment caches, and eliminate any AAF so
 
 _mis = player createDiaryRecord ["diary", ["Mission",format["
 OBJECTIVES<br/>
-Protect the weapon caches and eliminate AAF troops. The enemy is victorious if they destroy %1 out of %2 caches, or all of our soldiers are dead.
-",ha_param_cacheVictoryNum,ha_param_cacheNum]]];
+Protect the weapon caches and eliminate AAF troops. The enemy is victorious if they destroy %1 out of %2 caches, or all of our soldiers are dead.<br/>
+If AAF take %3 % casualties, they will be forced to fall back.
+",ha_param_cacheVictoryNum,ha_param_cacheNum,ws_param_aafCas]]];
 
 // ====================================================================================
 
@@ -84,7 +85,7 @@ AAF force of unknown size, no armed vehicles or armor.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-Every cache is manned by 2-5 comrades. Konstantinos is ill and couldn't come today, so Vasilis is filling out for him. If you see him, don't joke about the amateurishly wrapped shemagh, he tries really hard.
+Every cache is manned by a few comrades. Konstantinos is ill and couldn't come today, so Vasilis is filling out for him. If you see him, don't joke about the amateurishly wrapped shemagh, he tries really hard.
 "]];
 
 // ====================================================================================
