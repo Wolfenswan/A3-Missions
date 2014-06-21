@@ -34,13 +34,36 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-Motorized:<br/>
-1 x IFRIT (unarmed)<br/>
-3 x 'Marid' APC (HMG) - one per squad<br/>
-3 x 'Marid' APC (un-armed) - one per squad<br/><br/>
-Air:<br/>
-1 x Mi-48 'Kalman'<br/>
-2 x PO-30 'Orca' (rockets)
+MAIN FORCE:<br/>
+1 x Ifrit<br/>
+5 x 'Marid'- APC (HMG)<br/><br/>
+REINFORCEMENTS:<br/>
+2 x 'Marid'- APC (HMG)<br/>
+1 x BTR-K<br/>
+1 x Support Truck (Ammo)<br/><br/>
+RESUPPLY:<br/>
+All Marids carry spare ammunition. The Ifrit carries extra Darter UAVs if required.
+"]];
+
+// ====================================================================================
+
+// NOTES: EXECUTION
+// The code below creates the execution sub-section of notes.
+
+_exe = player createDiaryRecord ["diary", ["Execution","
+<br/>
+RECON
+<br/>
+A UAV operator is attached to the element. Spare UAVs are carried by the Ifrit.
+<br/><br/>
+MOVEMENT PLAN
+<br/>
+Use the mobility of the APCs to your advantage. Avoid exhaustion by running everywhere.
+<br/><br/>
+FIRE SUPPORT PLAN
+<br/>
+Once the AA is disabled helicopter CAS is available.
+<br/><br/>
 "]];
 
 // ====================================================================================
@@ -51,9 +74,9 @@ Air:<br/>
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. We begin <marker name='mkrMoto'>here</marker>.<br/>
-2. Proceed into the AO.<br/>
-3. Eliminate NATO AA support (indicated by <marker name='mkrB'>these markers</marker>) where possible.<br/>
-4. Kill the AAF officers in <marker name='mkrAHQ'>Neochori</marker> and <marker name='mkrAHQ_2'>Stavros</marker>.
+2. Proceed into the AO (highlighted area).<br/>
+3. Eliminate NATO AA support (indicated by <marker name='mkrB'>these markers</marker>).<br/>
+4. Kill the AAF officers in <marker name='mkrAHQ_1'>Alikampos</marker> and <marker name='mkrAHQ'>Neochori</marker>.
 "]];
 
 // ====================================================================================
@@ -63,19 +86,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-Since CSAT forces have landed in Altis one month ago, we have been making steady progress against the suprised and overwhelmed AAF. However, these small victories should not be overestimated: In order to gain full control over Altis, we need to seize the <marker name='mkrAir'>central Airport</marker>. The AAF is aware of it's strategical importance and has set up defensive positions at the surrounding towns. A NATO mechanized element further complicates the situation, as they are boosting the AAF's lacking firepower significantly.<br/><br/>
-While a combined force of <marker name='mkrArmor'>armored and motorized elements</marker> are going to attack the airport and tie up the defenders there, <marker name='mkrMoto'>our platoon</marker> is tasked to attack via the mountain roads and eliminate the officers of the <marker name='mkrAHQ'>AAF's forward command posts</marker>. The second priority is destryoing the <marker name='mkrB_2'>NATO AA support</marker> in order to regain aerial superiority.
+To gain full control over Altis CSAT forces need to seize the central airport. While a combined force of <marker name='mkrArmor'>armored and mechanized elements</marker> are going to attack the airport and tie up the defenders there, <marker name='mkrMoto'>our platoon</marker> is tasked to attack via the mountain roads and eliminate the officers at the <marker name='mkrAHQ'>AAF's forward command posts</marker>. The second objective is destroying the <marker name='mkrB'>NATO SPAAG support</marker> in order to regain aerial superiority.
 <br/><br/>
 ENEMY FORCES
 <br/>
-AAF: Infantry and light vehicles, possibly Gorgons as well.<br/>
-NATO: Infantry and Cheetah AA. Helicopters might be diverted if we get too close.
+AAF: Infantry and light vehicles, possibly Gorgons in Neochori.<br/>
+NATO: Infantry and Cheetah SPAAG. They might divert airborn forces from the North if we put too much pressure on Neochori.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-None in the direct AO.<br/><br/>
-NOTE<br/>
-If the attack helicopter is used, it is suggested to enforce a 'no explosive damage to built up areas' ROF.
+A element is at standby to reinforce once we are pushing towards Neochori.<br/><br/>
 "]];
 
 // ====================================================================================

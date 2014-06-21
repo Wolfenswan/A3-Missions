@@ -7,7 +7,7 @@ class Header
 {
 	gameType = Coop;
 	minPlayers = 1;
-	maxPlayers = 405;
+	maxPlayers = 69;
 };
 
 // ============================================================================================
@@ -26,6 +26,7 @@ loadScreen = "logo.paa";
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 enableDebugConsole = 1;
+allowFunctionsRecompile = 1;
 
 // ============================================================================================
 
@@ -98,11 +99,19 @@ class cfgNotifications
 		duration = 3;
 	};
 
-	class ws_warning
+	class ws_alert
 	{
 		title = "ALERT";
 		description = "%1";
 		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\warning_ca.paa";
+		duration = 3;
+	};
+
+	class ws_taskdone
+	{
+		title = "TASK COMPLETED";
+		description = "%1";
+		iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
 		duration = 3;
 	};
 };
@@ -215,6 +224,7 @@ class Params
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
+/*
 	class f_param_AISkill_OPFOR
 	{
 		title = "$STR_f_param_AISkill_OPFOR";
@@ -223,8 +233,8 @@ class Params
 		default = 1;
 		code = "f_param_AISkill_OPFOR = %1";
 	};
+*/
 
-/*
 	class f_param_AISkill_BLUFOR
 	{
 		title = "$STR_f_param_AISkill_BLUFOR";
@@ -234,16 +244,15 @@ class Params
 		code = "f_param_AISkill_BLUFOR = %1";
 	};
 
-
 	class f_param_AISkill_INDP
 	{
 		title = "$STR_f_param_AISkill_INDP";
 		values[] = {0,1,2,3};
 		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
+		default = 2;
 		code = "f_param_AISkill_INDP = %1";
 	};
-*/
+
 
 // ============================================================================================
 
@@ -254,7 +263,7 @@ class Params
 	{
 		title = "Cache AI outside distance (m)";
 		values[] = {0,600,800,1000,1500,2000};
-		default = 0;
+		default = 1000;
 		code = "f_param_caching = %1";
 	};
 
@@ -277,7 +286,7 @@ class Params
 		title = "WS fnc debug";
         values[] = {0,1};
         texts[] = {"Off","On"};
-        default = 1;
+        default = 0;
         code = "ws_param_dbg = %1";
 	};
 
@@ -304,7 +313,7 @@ class CfgDebriefing
 	{
 		title = "Mission Success";
 		subtitle = "";
-		description = "The platoon succeeded in their objectives. NATO operations in the area have been dealt a significant blow.";
+		description = "The platoon succeeded in their objectives. NATO and AAF operations in the area are in disarray.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -312,9 +321,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "Ending #3";
+		title = "Mission Aborted";
 		subtitle = "";
-		description = "*** Insert debriefing #3 here. ***";
+		description = "Due to sustaining too many casualties the platoon was ordered to fall back and regroup. Fighting in the North continues.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};

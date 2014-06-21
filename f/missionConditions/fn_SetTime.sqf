@@ -62,7 +62,7 @@ switch (_timeOfDay) do
 // Afternoon
 	case 4:
 	{
-		_hour = 15;
+		_hour = 17;
 		_minute = 30;
 	};
 // Evening

@@ -10,7 +10,6 @@ if (isNil "f_param_caching" || {f_param_caching == 0}) exitWith {};
 // Wait for the mission to have launched before starting to cache.
 sleep 0.1;
 
-
 // Wait up to the desired time into the mission to give AI and players time to settle
 waitUntil {time > (_this select 0)};
 
@@ -25,6 +24,12 @@ if (!isDedicated && !(group player getVariable ["f_cacheExcl", false])) then {
 
 // Rest of the Script is only run server-side
 if !(isServer) exitWith {};
+
+// Set aggressiveness of caching
+// 1 - cache only non-leaders and non-drivers
+// 2 - cache no drivers and all non-moving units, incl. leaders
+// 3 - cache all units, incl. leaders and drivers
+f_var_cachingAggressiveness = 2;
 
 // ====================================================================================
 
@@ -41,7 +46,7 @@ f_cInit = true;
 
 // Define parameters
 _range = f_param_caching;	// The range outside of which to cache units
-_sleep = 6; 							// The time to sleep between checking
+_sleep = 6; 				// The time to sleep between checking
 
 [_range, _sleep] spawn f_fnc_cTracker;
 

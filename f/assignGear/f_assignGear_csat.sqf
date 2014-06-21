@@ -439,6 +439,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_pistolmag,4];
 		_unit addweapon _pistol;
 		["mmg"] call _backpack;
+		_attachments = [_attach1];
 	};
 
 // LOADOUT: MEDIUM MG ASSISTANT GUNNER
@@ -462,7 +463,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_carbinemag_tr,2];
 		_unit addweapon _carbine;
 		_unit addweapon _MAT;
-		_unit addmagazines [_MATMag1,1];
+		_unit addmagazines [_MATMag1,2];
 	};
 
 // LOADOUT: MEDIUM AT ASSISTANT GUNNER
@@ -499,6 +500,28 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit addWeapon "Rangefinder";
 		_unit addBackpack _MTRmount;
+	};
+
+// LOADOUT: SAM GUNNER
+	case "samg":
+	{
+		_unit addmagazines [_carbinemag,6];
+		_unit addmagazines [_smokegrenade,2];
+		_unit addweapon _carbine;
+		["samg"] call _backpack;
+		_unit addWeapon _sam;
+		_unit addMagazine _SAMmag;
+		_attachments = [_attach1,_scope1];
+	};
+
+// LOADOUT: SAM ASSISTANT GUNNER
+	case "samag":
+	{
+		_unit addmagazines [_riflemag,6];
+		_unit addmagazines [_smokegrenade,2];
+		_unit addweapon _rifle;
+		["samag"] call _backpack;
+		_attachments = [_attach1,_scope2];
 	};
 
 // LOADOUT: VEHICLE COMMANDER
@@ -669,18 +692,7 @@ switch (_typeofUnit) do
 		clearMagazineCargoGlobal _unit;
 		clearItemCargoGlobal _unit;
 		clearBackpackCargoGlobal _unit;
-		_unit addWeaponCargoGlobal [_carbine, 2];
-		_unit addMagazineCargoGlobal [_riflemag, 8];
-		_unit addMagazineCargoGlobal [_glriflemag, 8];
-		_unit addMagazineCargoGlobal [_carbinemag, 10];
-		_unit addMagazineCargoGlobal [_armag, 5];
-		_unit addMagazineCargoGlobal [_ratmag, 1];
-		_unit addMagazineCargoGlobal [_grenade, 4];
-		_unit addMagazineCargoGlobal [_smokegrenade, 4];
-		_unit addMagazineCargoGlobal [_smokegrenadegreen, 2];
-		_unit addMagazineCargoGlobal [_glmag, 4];
-		_unit addMagazineCargoGlobal [_glsmokewhite, 4];
-		_unit addItemCargoGlobal [_firstaid,4];
+		_unit addBackpackCargoGlobal [_baguav,2];
 	};
 
 // CARGO: TRUCK - room for 50 weapons and 200 cargo items

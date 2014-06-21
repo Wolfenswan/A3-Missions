@@ -135,29 +135,30 @@ _groups = [
 ["GrpCSAT_B2","CSAT B2 -"],
 ["GrpCSAT_B3","CSAT B3 -"],
 
-["GrpCSAT_CSL","CSAT CSL -"],
-["GrpCSAT_C1","CSAT C1 -"],
-["GrpCSAT_C2","CSAT C2 -"],
-["GrpCSAT_C3","CSAT C3 -"],
+["GrpCSAT_CSL","CSAT JSL -"],
+["GrpCSAT_C1","CSAT J1 -"],
+["GrpCSAT_C2","CSAT J2 -"],
+["GrpCSAT_C3","CSAT J3 -"],
 
-["GrpCSAT_MMG1","CSAT MMG1 -"],
-["GrpCSAT_MAT1","CSAT MAT1 -"],
+["GrpCSAT_WEP1","CSAT WEP1 -"],
+["GrpCSAT_WEP2","CSAT WEP2 -"],
 ["GrpCSAT_HAT1","CSAT HAT1 -"],
 ["GrpCSAT_HMG1","CSAT HMG1 -"],
 ["GrpCSAT_MTR1","CSAT MTR1 -"],
+["GrpCSAT_SAM1","CSAT SAM1 -"],
 
 ["GrpCSAT_ST1","CSAT ST1 -"],
 ["GrpCSAT_DT1","CSAT DT1 -"],
 ["GrpCSAT_ENG1","CSAT ENG1 -"],
 
-["GrpCSAT_IFV1","CSAT IFV1 -"],
-["GrpCSAT_IFV2","CSAT IFV2 -"],
-["GrpCSAT_IFV3","CSAT IFV3 -"],
-["GrpCSAT_IFV4","CSAT IFV4 -"],
-["GrpCSAT_IFV5","CSAT IFV5 -"],
-["GrpCSAT_IFV6","CSAT IFV6 -"],
-["GrpCSAT_IFV7","CSAT IFV7 -"],
-["GrpCSAT_IFV8","CSAT IFV8 -"],
+["GrpCSAT_APC1","CSAT APC1 -"],
+["GrpCSAT_APC2","CSAT APC2 -"],
+["GrpCSAT_APC3","CSAT APC3 -"],
+["GrpCSAT_APC4","CSAT APC4 -"],
+["GrpCSAT_APC5","CSAT APC5 -"],
+["GrpCSAT_APC6","CSAT APC6 -"],
+["GrpCSAT_APC7","CSAT APC7 -"],
+["GrpCSAT_APC8","CSAT APC8 -"],
 ["GrpCSAT_TNK1","CSAT TNK1 -"],
 
 ["GrpCSAT_TH1","CSAT TH1 -"],
@@ -169,6 +170,7 @@ _groups = [
 ["GrpCSAT_TH7","CSAT TH7 -"],
 ["GrpCSAT_TH8","CSAT TH8 -"],
 ["GrpCSAT_AH1","CSAT AH1 -"],
+["GrpCSAT_AH2","CSAT AH2 -"],
 
 // ====================================================================================
 

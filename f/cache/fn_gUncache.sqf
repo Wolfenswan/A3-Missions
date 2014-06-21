@@ -3,12 +3,14 @@
 // ====================================================================================
 
  {
-        if(_x != leader _this && !("Driver" in assignedVehicleRole _x)) then {
-                        _x allowDamage true;
-                        _x enableSimulation true;
-        };
-        _x hideObject false;
-        //if (vehicle _x != _x) then {(vehicle _x) hideObject false};
+    _x enableSimulationGlobal true;
+    _x hideObjectGlobal false;
+    //if (vehicle _x != _x) then {(vehicle _x) hideObject false};
+
+    // If the group leader is moving, set his group back next to him
+    if (speed leader _this > 0 && vehicle _x == _x) then {
+    	_x setPosATL (formationPosition _x);
+	};
 
 sleep 0.1;
 } forEach units _this;

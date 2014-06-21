@@ -8,7 +8,9 @@
 _briefing ="
 <br/>
 ADMIN SECTION<br/>
-This briefing section can only be seen by the current admin.
+This briefing section can only be seen by the current admin.<br/><br/>
+MISSION-MAKER NOTES<br/>
+It is recommended to start slotting reinforcements when the southern AA has been destroyed or is in the process of being assaulted.<br/>
 <br/><br/>
 ";
 

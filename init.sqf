@@ -120,16 +120,16 @@ f_var_doNotRemoveBodies = [];
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// [] execVM "f\setAISKill\f_setAISkill.sqf";
-// f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
+[] execVM "f\setAISKill\f_setAISkill.sqf";
+//f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
 
 // ====================================================================================
 
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
-// f_showDistance_Nametags = true;			// Show distance to player
+f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
+f_showDistance_Nametags = true;			// Show distance to player
 // f_showVehicle_Nametags = true;			// Show vehicle player is in
 [20] execVM "f\nametag\f_nametags.sqf";
 
@@ -183,7 +183,7 @@ f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear?
 // F3 - AI Unit Caching
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[30] spawn f_fnc_cInit;
+[15] spawn f_fnc_cInit;
 
 // ====================================================================================
 

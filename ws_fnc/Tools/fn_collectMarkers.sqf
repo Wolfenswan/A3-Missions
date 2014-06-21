@@ -8,7 +8,7 @@ USAGE
 ["markerName"] call ws_fnc_collectMarkers
 
 RETURNS
-Array of all existing markers
+Array of all existing markers following the naming system
 
 PARAMETERS
 1. Marker name (string) - must be name all other markers are based on.
