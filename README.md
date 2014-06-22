@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-1-0</i>
 
 <b>Mission description</b><br/>
-A AAF platoon sweeps to an ocean-side village held by FIA.
+A AAF platoon sweeps a FIA-held village at the ocean-side, just north-west of Kavala.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
