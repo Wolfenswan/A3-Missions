@@ -533,6 +533,7 @@ switch (_typeofUnit) do
 		_unit addItem "ItemGPS";
 		_unit assignItem "ItemGPS";
 		_unit addWeapon "Rangefinder";
+		_attachments = [_attach1,_scope1];
 	};
 
 // LOADOUT: VEHICLE DRIVER
@@ -544,6 +545,7 @@ switch (_typeofUnit) do
 		_unit addItem "ItemGPS";
 		_unit assignItem "ItemGPS";
 		["cc"] call _backpack;
+		_attachments = [_attach1,_scope1];
 	};
 
 // LOADOUT: VEHICLE GUNNER
@@ -554,6 +556,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit addItem "ItemGPS";
 		_unit assignItem "ItemGPS";
+		_attachments = [_attach1,_scope1];
 	};
 
 // LOADOUT: AIR VEHICLE PILOTS

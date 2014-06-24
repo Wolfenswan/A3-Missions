@@ -10,7 +10,7 @@ if !(isServer) exitWith {ws_initDone = true};
 if (isServer) then {
 //if (isNil "GrpCSAT_IFV1" && isNil "GrpCSAT_ENG1") then {deleteVehicle VehCSAT_IFV1};
 	{_x disableTIEquipment true;} forEach [VehCSAT_Tr1,VehCSAT_Tr2,VehCSAT_Tr3,VehCSAT_Tr4];
-	{_x removeWeaponGlobal "GMG_40mm"; _x lockTurret [[1],true];} forEach [VehCSAT_Tr1,VehCSAT_Tr2,VehCSAT_Tr3,VehCSAT_Tr4];
+	{_x removeWeaponGlobal "GMG_40mm";} forEach [VehCSAT_Tr1,VehCSAT_Tr2,VehCSAT_Tr3,VehCSAT_Tr4];
 };
 
 ws_initDone = true;
