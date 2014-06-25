@@ -67,7 +67,7 @@ Assist our comrades in protecting the equipment caches, and eliminate any AAF so
 _mis = player createDiaryRecord ["diary", ["Mission",format["
 OBJECTIVES<br/>
 Protect the weapon caches and eliminate AAF troops. The enemy is victorious if they destroy %1 out of %2 caches, or all of our soldiers are dead.<br/>
-If AAF take %3 % casualties, they will be forced to fall back.
+If AAF take %3 percent casualties, the mission will be considered a failure.
 ",ha_param_cacheVictoryNum,ha_param_cacheNum,ws_param_aafCas]]];
 
 // ====================================================================================

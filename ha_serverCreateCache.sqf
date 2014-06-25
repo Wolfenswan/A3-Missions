@@ -43,6 +43,7 @@ _crate addEventHandler [
 
 _camonet = "CamoNet_INDP_open_F" createVehicle _pos;
 _grp = [_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F", "B_G_Soldier_F", "B_G_Soldier_lite_F"],[], [], [0.2,0.2], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
+[_grp,_grp,["hold"]] call ws_fnc_addWaypoint;
 
 f_param_AISkill_BLUFOR = 3;
 (units _grp) execVm "f\setAISkill\f_setAISkill.sqf";

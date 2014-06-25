@@ -552,3 +552,11 @@ class CfgFunctions
 };
 
 // ============================================================================================
+
+
+// Disable ASR_AI3 radionet to make sure they stay at their caches.
+class asr_ai3 {
+	class sysdanger {
+		radionet = 0;                  // AI groups share known enemy locations over radio
+	};
+};

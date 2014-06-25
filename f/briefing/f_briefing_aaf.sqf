@@ -44,7 +44,7 @@ Satchel charges must be used to destroy caches. Fireteam leaders, assistant auto
 TRANSPORT
 <br/>
 1x Strider<br/>
-3x Transport truck with squad pre-mounted per truck</br>
+3x Transport truck with one squad pre-mounted per truck</br>
 "]];
 
 // ====================================================================================
@@ -56,7 +56,9 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-Destroy the marked FIA equipment caches by using satchels, with minimum casualties to your squad.
+Destroy the marked FIA equipment caches by using satchels, with minimum casualties to your squad.<br/><br/>
+HALO<br/>
+Command might be creative and try for something different today. If the HALO option is available, all group leaders can deploy themselves and their fireteam by using the 'HALO'-action and select their destination on the map. They will spawn in about 600m height and have to manually open their parachute or become green pancakes otherwise.
 "]];
 
 // ====================================================================================
@@ -67,7 +69,7 @@ Destroy the marked FIA equipment caches by using satchels, with minimum casualti
 _mis = player createDiaryRecord ["diary", ["Mission",format["
 OBJECTIVES<br/>
 Destroy FIA weapon caches. Mission is successful once either %1 out of %2 caches are destroyed, or all FIA units have been eliminated.<br/>
-If AAF take %3 % casualties, they will be forced to fall back.
+If AAF take %3 percent casualties, the mission will be considered a failure.
 ",ha_param_cacheVictoryNum,ha_param_cacheNum,ws_param_aafCas]]];
 
 // ====================================================================================

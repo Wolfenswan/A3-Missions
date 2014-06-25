@@ -39,7 +39,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_a96_cratesistance_v16";
+		briefingName="fa3_a96_cratesistance_v17";
 		overviewText="AAF seeks and destroys FIA-defended caches. Fully randomized.";
 		resistanceWest=0;
 		startWeather=0.84999996;
@@ -1428,20 +1428,21 @@ class Mission
 		};
 		class Item26
 		{
-			side="LOGIC";
+			side="CIV";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={16349.06,0,6563.5156};
+					position[]={21109.406,20.758421,7321.8423};
 					id=92;
-					side="LOGIC";
-					vehicle="Logic";
+					side="CIV";
+					vehicle="C_man_polo_1_F";
+					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
-					init="call compile preprocessFileLineNumbers ""ha_serverCreateMission.sqf"";";
-					description="Mission generation";
+					init="this addAction [""Start Camera"",""[] call bis_fnc_camera;"",[],2,false,true,"""",""driver _target == _this""]; this allowDamage false;";
+					description="Mission Observer";
 				};
 			};
 		};
@@ -1453,10 +1454,10 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={21109.406,20.758421,7321.8423};
+					position[]={21116.598,20.750269,7321.6001};
 					id=93;
 					side="CIV";
-					vehicle="C_man_polo_1_F";
+					vehicle="C_man_polo_2_F";
 					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
@@ -1467,21 +1468,20 @@ class Mission
 		};
 		class Item28
 		{
-			side="CIV";
+			side="LOGIC";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
-					position[]={21116.598,20.750269,7321.6001};
+					position[]={16310.194,0,6682.9775};
 					id=94;
-					side="CIV";
-					vehicle="C_man_polo_2_F";
-					player="PLAY CDG";
+					side="LOGIC";
+					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					init="this addAction [""Start Camera"",""[] call bis_fnc_camera;"",[],2,false,true,"""",""driver _target == _this""]; this allowDamage false;";
-					description="Mission Observer";
+					init="call compile preprocessFileLineNumbers ""ha_serverCreateMission.sqf"";";
+					description="Mission generation";
 				};
 			};
 		};

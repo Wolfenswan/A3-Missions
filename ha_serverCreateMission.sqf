@@ -87,11 +87,7 @@ while {count _posAttackerStart == 0} do {
 	[_forEachIndex, _x] call compile preprocessFileLineNumbers "ha_serverCreateCache.sqf";
 } forEach _cacheList;
 
-// Teleport player groups to start positions
-[markerPos "ha_atk_start", _posAttackerStart, 200, ["Man","Car"]] call compile preprocessfilelinenumbers  "shk_moveobjects.sqf";
-[markerPos "ha_def_start", _posDefenderStart, 200, ["Man","Car"]] call compile preprocessfilelinenumbers "shk_moveobjects.sqf";
-
-
+// Mount all groups
 [[VehFIA_Car1],["GrpFIA_CO","GrpFIA_DC"]] call f_fnc_mountGroups;
 [[VehFIA_Car2,VehFIA_Truck1],["GrpFIA_ASL","GrpFIA_A1","GrpFIA_A2","GrpFIA_A3"]] call f_fnc_mountGroups;
 [[VehFIA_Car3,VehFIA_Truck2],["GrpFIA_BSL","GrpFIA_B1","GrpFIA_B2","GrpFIA_B3"]] call f_fnc_mountGroups;
@@ -101,3 +97,7 @@ while {count _posAttackerStart == 0} do {
 [[VehAAF_Truck1],["GrpAAF_ASL","GrpAAF_A1","GrpAAF_A2","GrpAAF_A3"]] call f_fnc_mountGroups;
 [[VehAAF_Truck2],["GrpAAF_BSL","GrpAAF_B1","GrpAAF_B2","GrpAAF_B3"]] call f_fnc_mountGroups;
 [[VehAAF_Truck3],["GrpAAF_CSL","GrpAAF_C1","GrpAAF_C2","GrpAAF_C3"]] call f_fnc_mountGroups;
+
+// Teleport player vehicles to start positions
+[markerPos "ha_atk_start", _posAttackerStart, 200, ["Car"]] call compile preprocessfilelinenumbers  "shk_moveobjects.sqf";
+[markerPos "ha_def_start", _posDefenderStart, 200, ["Car"]] call compile preprocessfilelinenumbers "shk_moveobjects.sqf";

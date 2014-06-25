@@ -16,8 +16,9 @@ enableSentences false;
 
 // F3 - MapClick Teleport
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+_halo = if (isNil "ws_param_halo") then {"ws_param_halo" call bis_fnc_getParamValue} else {ws_param_halo};
 
-if ("ws_param_halo" call bis_fnc_getParamValue == 1 && side player == resistance) then {
+if (_halo == 1 && side player == resistance) then {
 
 f_var_mapClickTeleport_Uses = 1;					// How often the teleport action can be used. 0 = infinite usage.
 f_var_mapClickTeleport_TimeLimit = 90; 			// If higher than 0 the action will be removed after the given time.

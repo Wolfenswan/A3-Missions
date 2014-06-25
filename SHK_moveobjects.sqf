@@ -46,6 +46,8 @@ if (typename _dAdj == typename objNull) then {_dAdj = getdir _dAdj};
 _objects = nearestobjects [_aPos,_types,_range];
 
 {
+
+if !(count crew _x == 0) then {
   _xPos = getpos _x;
   _dir = ((_xPos select 0) - (_aPos select 0)) atan2 ((_xPos select 1) - (_aPos select 1));
   _dir = _dir + _dAdj;
@@ -54,15 +56,23 @@ _objects = nearestobjects [_aPos,_types,_range];
 
   _origPos = [((_dPos select 0) + (_dst * sin _dir)), ((_dPos select 1) + (_dst * cos _dir)), 0];
 
-  _pos = [_origPos, 0, 100, 10, 0, 8, 0] call BIS_fnc_findSafePos;
+  _pos = [_origPos, 0, 100, 20, 0, 8, 0] call BIS_fnc_findSafePos;
 
   _i = 100;
   while {count _pos == 0} do {
-      _pos = [_origPos, 0, _i, 10, 0, 8, 0] call BIS_fnc_findSafePos;
+      _pos = [_origPos, 0, _i, 20, 0, 8, 0] call BIS_fnc_findSafePos;
     _i = _i + 20;
   };
 
   _x setPos _pos;
   _x setVectorUp (surfaceNormal (getPosATL _x));
   _x setVelocity [0,0,0];
+
+  _origPos = _pos;
+} else {
+  // Remove empty vehicles
+  deleteVehicle _x;
+};
+
+
 } foreach _objects;
