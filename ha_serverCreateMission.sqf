@@ -18,7 +18,7 @@ _cacheNum = ha_param_cacheNum;		// Number of waypoints
 _cacheList = [];	// List of all cache coordinates
 _blacklist = ["mkr_blacklist"] call ws_fnc_collectMarkers;	// List of area markers where caches won't spawn
 
-{_x setMarkerAlpha 0} forEach (_blacklist + ["mkr_playArea"]);
+{_x setMarkerAlpha 0} forEach (_blacklist + ["mkr_playArea","ws_attack_start","ws_defend_start"]);
 
 // Find position of first cache
 _cacheList = _cacheList + [["mkr_playArea", false, _blacklist] call SHK_pos];
@@ -80,8 +80,11 @@ while {count _posAttackerStart == 0} do {
 ;		diag_log format["Attacker spawn found after %1 iterations", _debugIterations];
 	};
 	_debugIterations = _debugIterations + 1;
-	if (_debugIterations > 500) exitWith {diag_log "Too long loop"};
+	if (_debugIterations > 1000) exitWith {diag_log "Too long loop"};
 };
+
+"ws_attack_start" setMarkerPos _posAttackerStart;
+"ws_defender_start" setMarkerPos _posDefenderStart;
 
 {
 	[_forEachIndex, _x] call compile preprocessFileLineNumbers "ha_serverCreateCache.sqf";
@@ -98,6 +101,30 @@ while {count _posAttackerStart == 0} do {
 [[VehAAF_Truck2],["GrpAAF_BSL","GrpAAF_B1","GrpAAF_B2","GrpAAF_B3"]] call f_fnc_mountGroups;
 [[VehAAF_Truck3],["GrpAAF_CSL","GrpAAF_C1","GrpAAF_C2","GrpAAF_C3"]] call f_fnc_mountGroups;
 
-// Teleport player vehicles to start positions
-[markerPos "ha_atk_start", _posAttackerStart, 200, ["Car"]] call compile preprocessfilelinenumbers  "shk_moveobjects.sqf";
-[markerPos "ha_def_start", _posDefenderStart, 200, ["Car"]] call compile preprocessfilelinenumbers "shk_moveobjects.sqf";
+_posTemp = _posDefenderStart;
+{
+	_pos = [_posTemp, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
+	_x setPos _pos;
+	_posTemp = _pos;
+} forEach [VehFIA_Car1,VehFIA_Car2,VehFIA_Car3,VehFIA_Car4,VehFIA_Truck1,VehFIA_Truck2,VehFIA_Truck3];
+
+_posTemp = _posAttackerStart;
+{
+	_pos = [_posTemp, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
+	_x setPos _pos;
+	_posTemp = _pos;
+} forEach [VehAAF_Car1,VehAAF_Truck1,VehAAF_Truck2,VehAAF_Truck3];
+
+// Emergency function for admin to enable HALO in mission
+ws_fnc_HALO = {
+	if (side player == resistance) then {
+
+		f_var_mapClickTeleport_Uses = 1;					// How often the teleport action can be used. 0 = infinite usage.
+		f_var_mapClickTeleport_TimeLimit = 90; 			// If higher than 0 the action will be removed after the given time.
+		f_var_mapClickTeleport_GroupTeleport = true; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
+		f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
+		f_var_mapClickTeleport_Height = 600;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
+		[] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
+
+	};
+};

@@ -24,7 +24,7 @@ _cre = player createDiaryRecord ["diary", ["Credits","
 Made by harakka and wolfenswan with love for Folk ARPS. Special thanks to Head for scripting help. Thanks to all FA session players for suggestions and bugreports.
 <br/>
 <br/>
-Uses SHK_moveobjects.sqf and SHK_pos by Shuko: http://forums.bistudio.com/showthread.php?92018-SHK_moveobjects<br/>
+Uses SHK_POS by Shuko<br/>
 Uses Wolfenswan's function library: http://www.folkarps.com/forum/viewtopic.php?f=48&t=785
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)

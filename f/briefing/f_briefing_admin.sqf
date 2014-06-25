@@ -10,6 +10,9 @@ _briefing ="
 ADMIN SECTION<br/>
 This briefing section can only be seen by the current admin.
 <br/><br/>
+HALO:<br/>
+Click <execute expression=""[[],'ws_fnc_HALO',true] spawn BIS_fnc_MP;"">here</execute> to enable HALO option for AAF.<br/>
+<br/>
 ";
 
 // ====================================================================================

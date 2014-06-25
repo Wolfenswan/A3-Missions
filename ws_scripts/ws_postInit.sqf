@@ -2,8 +2,14 @@
 
 // Display a short text intro
 if (!isDedicated) then {
- ["CRATESISTANCE","SOMEWHERE IN ALTIS"] spawn {
-	 waitUntil {time > 15};
-		[_this select 0,_this select 1] call ws_fnc_showIntro;
-	};
+	if (side player == resistance) then {
+ 	"ws_attack_start" setMarkerAlphaLocal 1;
+ };
+ if (side player == blufor) then {
+ 	"ws_defend_start" setMarkerAlphaLocal 1;
+ };
+sleep 10;
+ ["CRATESISTANCE","SOMEWHERE IN ALTIS"] call ws_fnc_showIntro;
+
 };
+
