@@ -36,7 +36,7 @@ An incapacitated player only has a few minutes before her/his wounds become fata
 
 
 /// lets wait a bit.
-sleep 5;
+sleep 15;
 
 // default variables.
 _unit setVariable ["revive_down",false,true];

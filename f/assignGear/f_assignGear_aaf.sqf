@@ -629,11 +629,12 @@ switch (_typeofUnit) do
 // LOADOUT: SUBMACHINEGUNNER
 	case "smg":
 	{
-		_unit addmagazines [_smgmag,7];
+		_unit addmagazines [_smgmag,4];
 		_unit addweapon _smg;
-		_unit addmagazines [_grenade,3];
-		_unit addmagazines [_mgrenade,3];
-		_unit addmagazines [_smokegrenade,3];
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
+		_unit addmagazines [_smokegrenade,1];
+		_unit addWeapon "Binocular";
 		["smg"] call _backpack;
 	};
 

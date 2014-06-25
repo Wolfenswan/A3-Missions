@@ -21,7 +21,8 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-*** Insert mission credits here. ***
+Made by Wolfenswan for Folk ARPS (folkarps.com)<br/>
+Contact: wolfenswanarps@gmail.com
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -34,7 +35,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-1. Hold the <marker name='mkrAO'>facility</marker>. If for 30 seconds the number of CSAT units outweight the numbers of present AAF, CSAT will have seized it.<br/>
+1. Hold the <marker name='mkrAO'>facility</marker>. If for 120 seconds the number of CSAT units outweight the numbers of present AAF, CSAT will have seized it.<br/>
 2. We can use the <marker name='mkrTown'>town</marker> to our advantage.
 "]];
 
