@@ -454,6 +454,7 @@ switch (_typeofUnit) do
 // LOADOUT: MEDIUM AT GUNNER
 	case "matg":
 	{
+		f_param_backpacks = 2;
 		["matg"] call _backpack;
 		_unit addmagazines [_carbinemag,7];
 		_unit addmagazines [_carbinemag_tr,2];
@@ -465,6 +466,7 @@ switch (_typeofUnit) do
 // LOADOUT: MEDIUM AT ASSISTANT GUNNER
 	case "matag":
 	{
+		f_param_backpacks = 2;
 		_unit addmagazines [_carbinemag,7];
 		_unit addmagazines [_carbinemag_tr,2];
 		_unit addweapon _rifle;
@@ -560,6 +562,7 @@ switch (_typeofUnit) do
 // LOADOUT: ENGINEER (DEMO)
 	case "eng":
 	{
+		f_param_backpacks = 2;
 		_unit addmagazines ["30Rnd_65x39_caseless_mag",7];
 		_unit addweapon "arifle_MXC_Black_F";
 		_unit addmagazines [_smokegrenade,2];
