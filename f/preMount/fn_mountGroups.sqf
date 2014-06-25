@@ -93,7 +93,9 @@ if (count _vehs == 0 || count _grps == 0) exitWith {
 	// Temporary group array
 	_grpsT = _grps;
 	// As long there are spare seats and groups left
-	while {_emptyPositions > 0 && count _grpsT > 0 && locked _veh < 2} do {
+
+	while {_emptyPositions > 0 && count _grpsT > 0 && (locked _veh != 2)} do {
+		diag_log format ["loop:%1",_veh];
 		private ["_grp","_units","_run"];
 
 		_grp = _grpsT select 0;
@@ -109,6 +111,7 @@ if (count _vehs == 0 || count _grps == 0) exitWith {
 		};
 
 	   	if (_run) then {
+	   		diag_log format ["running:%1",_veh];
 	   		// Loop through all vehicle roles and place the units in them accordingly
 		   	{
 			   	_unit = _units select 0;

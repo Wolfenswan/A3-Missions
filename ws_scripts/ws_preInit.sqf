@@ -6,6 +6,7 @@ if !(isServer) exitWith {ws_initDone = true};
 
 // Disable Thermal Imaging for these vehicles
 {_x disableTIEquipment true;} forEach [];
+{_x removeWeaponGlobal "GMG_40mm";} forEach [c2,c7];
 
 // Further tweaking to vehicles
 //{_x removeWeaponGlobal "GMG_40mm"; _x lockTurret [[1],true];} forEach [];

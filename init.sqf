@@ -107,10 +107,11 @@ f_var_doNotRemoveBodies = [];
 // [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // BLUFOR > NATO
-// [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-// [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[["GrpCSAT_c1","GrpCSAT_c2","GrpCSAT_c3","GrpCSAT_c4","GrpCSAT_c5","GrpCSAT_c6","GrpCSAT_c7","GrpCSAT_c8","GrpCSAT_1","GrpCSAT_2","GrpCSAT_3","GrpCSAT_4","GrpCSAT_5"],75,{[] execVM 'ws_scripts\ws_convoyDead.sqf'},false] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+
 
 // INDEPENDENT > AAF
 // [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
