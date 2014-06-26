@@ -76,7 +76,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-FIA rebels have had a firm grip on the western part of Altis for too long. From <marker name='mkrFIA'>Agios Konstantinos</marker> they are easily able to conduct raids into our territory and use it as a base for their smuggling operations that are supplying the camps further land inwards. Dislodging them will be a crucial blow to their structure and the first step to regain control of our island. Our platoon is inserted by heli to the West, while mechanized elements are blocking the roads leading away to the east and north-east.
+FIA rebels have had a firm grip on the western part of Altis for too long. From <marker name='mkrFIA'>Agios Konstantinos</marker> they are easily able to conduct raids into our territory and use it as a base for their smuggling operations. Dislodging them will be a crucial blow to them and the first step to regain control of our island. Our platoon is inserted via heli to the West, while mechanized elements are blocking the roads leading away to the east and north-east.
 <br/><br/>
 ENEMY FORCES
 <br/>
