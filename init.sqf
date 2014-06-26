@@ -190,7 +190,6 @@ f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear?
 // 3 - cache all units, incl. group leaders and vehicle drivers
 f_var_cachingAggressiveness = 2;
 
-
 // ====================================================================================
 
 // F3 - Radio Framework
