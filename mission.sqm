@@ -60,7 +60,7 @@ class Mission
 	class Intel
 	{
 		briefingName="fa3_z73_aFriendInNeed_v2";
-		overviewText="CSAT attempts to seize NATO weapons smuggled by a FIA convoy. NATO heliborn forces are deployed to destroy the evidence.";
+		overviewText="CSAT attempts to seize NATO weapons smuggled by a FIA convoy. NATO heliborn forces are deployed to destroy the evidence. Suggested slotting: 3:2.";
 		resistanceWest=0;
 		startWeather=0.84999996;
 		startWind=0;
@@ -161,7 +161,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=60000000;
 					text="UnitCSAT_CO";
-					init="GrpCSAT_CO = group this; nul = [""co"",this] call f_fnc_folk_assignGear ; this moveInCargo CSAT_Car1;";
+					init="GrpCSAT_CO = group this; nul = [""co"",this] call f_fnc_assignGear ; this moveInCargo CSAT_Car1;";
 					description="CSAT Commander (Ifrit - unarmed)";
 				};
 				class Item1
@@ -175,7 +175,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_CO_M";
-					init="GrpCSAT_CO = group this; nul = [""m"",this] call f_fnc_folk_assignGear ; this moveInDriver CSAT_Car1;";
+					init="GrpCSAT_CO = group this; nul = [""m"",this] call f_fnc_assignGear ; this moveInDriver CSAT_Car1;";
 					description="CSAT Medic (Driver)";
 				};
 			};
@@ -199,7 +199,7 @@ class Mission
 					rank="SERGEANT";
 					skill=60000000;
 					text="UnitCSAT_ASL_SL";
-					init="GrpCSAT_ASL = group this; nul = [""dc"",this] call f_fnc_folk_assignGear ; this moveInCargo CSAT_Tr1;";
+					init="GrpCSAT_ASL = group this; nul = [""dc"",this] call f_fnc_assignGear ; this moveInCargo CSAT_Tr1;";
 					description="CSAT Alpha Squad Leader (Kamaz Truck)";
 				};
 				class Item1
@@ -214,7 +214,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_ASL_M";
-					init="GrpCSAT_ASL = group this; nul = [""m"",this] call f_fnc_folk_assignGear ; this moveInDriver CSAT_Tr1;";
+					init="GrpCSAT_ASL = group this; nul = [""m"",this] call f_fnc_assignGear ; this moveInDriver CSAT_Tr1;";
 					description="CSAT Alpha Medic (Driver)";
 				};
 			};
@@ -238,7 +238,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_A1_FTL";
-					init="GrpCSAT_A1 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A1 = group this; nul = [""ftl"",this] call f_fnc_assignGear ;";
 					description="CSAT Alpha 1 Fireteam Leader";
 				};
 				class Item1
@@ -252,7 +252,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_A1_AR";
-					init="GrpCSAT_A1 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A1 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="CSAT Alpha 1 Automatic Rifleman";
 				};
 				class Item2
@@ -266,7 +266,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_A1_AAR";
-					init="GrpCSAT_A1 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A1 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="CSAT Alpha 1 Assistant Automatic Rifleman";
 				};
 				class Item3
@@ -280,7 +280,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="GrpCSAT_A1_AT";
-					init="GrpCSAT_A1 = group this; nul = [""rat"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A1 = group this; nul = [""rat"",this] call f_fnc_assignGear ;";
 					description="CSAT Alpha 1 Rifleman (AT)";
 				};
 			};
@@ -304,7 +304,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_A2_FTL";
-					init="GrpCSAT_A2 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A2 = group this; nul = [""ftl"",this] call f_fnc_assignGear ;";
 					description="CSAT Alpha 2 Fireteam Leader";
 				};
 				class Item1
@@ -318,7 +318,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_A2_AR";
-					init="GrpCSAT_A2 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A2 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="CSAT Alpha 2 Automatic Rifleman";
 				};
 				class Item2
@@ -332,7 +332,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_A2_AAR";
-					init="GrpCSAT_A2 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A2 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="CSAT Alpha 2 Assistant Automatic Rifleman";
 				};
 				class Item3
@@ -346,7 +346,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="GrpCSAT_A2_AT";
-					init="GrpCSAT_A2 = group this; nul = [""r"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
 					description="CSAT Alpha 2 Rifleman";
 				};
 			};
@@ -370,7 +370,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_A3_FTL";
-					init="GrpCSAT_A3 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A3 = group this; nul = [""ftl"",this] call f_fnc_assignGear ;";
 					description="Red Alpha 3 Fireteam Leader";
 				};
 				class Item1
@@ -384,7 +384,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_A3_AR";
-					init="GrpCSAT_A3 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A3 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="Red Alpha 3 Automatic Rifleman";
 				};
 				class Item2
@@ -398,7 +398,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_A3_AAR";
-					init="GrpCSAT_A3 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A3 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="Red Alpha 3 Assistant Automatic Rifleman";
 				};
 				class Item3
@@ -412,7 +412,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="GrpCSAT_A3_AT";
-					init="GrpCSAT_A3 = group this; nul = [""rat"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_A3 = group this; nul = [""rat"",this] call f_fnc_assignGear ;";
 					description="Red Alpha 3 Rifleman (AT)";
 				};
 			};
@@ -436,7 +436,7 @@ class Mission
 					rank="SERGEANT";
 					skill=60000000;
 					text="UnitCSAT_BSL_SL";
-					init="GrpCSAT_BSL = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ; this moveInCargo CSAT_Tr2;";
+					init="GrpCSAT_BSL = group this; nul = [""ftl"",this] call f_fnc_assignGear ; this moveInCargo CSAT_Tr2;";
 					description="CSAT Bravo Squad Leader (Kamaz Truck)";
 				};
 				class Item1
@@ -451,7 +451,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_BSL_M";
-					init="GrpCSAT_BSL = group this; nul = [""m"",this] call f_fnc_folk_assignGear ; this moveInDriver CSAT_Tr2;";
+					init="GrpCSAT_BSL = group this; nul = [""m"",this] call f_fnc_assignGear ; this moveInDriver CSAT_Tr2;";
 					description="CSAT Bravo Medic (Driver)";
 				};
 			};
@@ -475,7 +475,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_B1_FTL";
-					init="GrpCSAT_B1 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear;";
+					init="GrpCSAT_B1 = group this; nul = [""ftl"",this] call f_fnc_assignGear;";
 					description="CSAT Bravo 1 Fireteam Leader";
 				};
 				class Item1
@@ -489,7 +489,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_B1_AR";
-					init="GrpCSAT_B1 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B1 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="CSAT Bravo 1 Automatic Rifleman";
 				};
 				class Item2
@@ -503,7 +503,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_B1_AAR";
-					init="GrpCSAT_B1 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B1 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="CSAT Bravo 1 Assistant Automatic Rifleman";
 				};
 				class Item3
@@ -517,7 +517,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="GrpCSAT_B1_AT";
-					init="GrpCSAT_B1 = group this; nul = [""rat"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B1 = group this; nul = [""rat"",this] call f_fnc_assignGear ;";
 					description="CSAT Bravo 1 Rifleman (AT)";
 				};
 			};
@@ -541,7 +541,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_B2_FTL";
-					init="GrpCSAT_B2 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B2 = group this; nul = [""ftl"",this] call f_fnc_assignGear ;";
 					description="CSAT Bravo 2 Fireteam Leader";
 				};
 				class Item1
@@ -555,7 +555,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_B2_AR";
-					init="GrpCSAT_B2 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B2 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="CSAT Bravo 2 Automatic Rifleman";
 				};
 				class Item2
@@ -569,7 +569,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_B2_AAR";
-					init="GrpCSAT_B2 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B2 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="CSAT Bravo 2 Assistant Automatic Rifleman";
 				};
 				class Item3
@@ -583,7 +583,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="GrpCSAT_B2_AT";
-					init="GrpCSAT_B2 = group this; nul = [""r"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
 					description="CSAT Bravo 2 Rifleman";
 				};
 			};
@@ -607,7 +607,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_B3_FTL";
-					init="GrpCSAT_B3 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B3 = group this; nul = [""ftl"",this] call f_fnc_assignGear ;";
 					description="Red Bravo 3 Fireteam Leader";
 				};
 				class Item1
@@ -621,7 +621,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_B3_AR";
-					init="GrpCSAT_B3 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B3 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="Red Bravo 3 Automatic Rifleman";
 				};
 				class Item2
@@ -635,7 +635,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="UnitCSAT_B3_AAR";
-					init="GrpCSAT_B3 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B3 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="Red Bravo 3 Assistant Automatic Rifleman";
 				};
 				class Item3
@@ -649,7 +649,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=60000000;
 					text="GrpCSAT_B3_AT";
-					init="GrpCSAT_B3 = group this; nul = [""rat"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_B3 = group this; nul = [""rat"",this] call f_fnc_assignGear ;";
 					description="Red Bravo 3 Rifleman (AT)";
 				};
 			};
@@ -672,7 +672,7 @@ class Mission
 					lock="UNLOCKED";
 					rank="SERGEANT";
 					skill=60000000;
-					init="GrpCSAT_D1 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ; {_x moveInCargo VehCSAT_TH1} forEach units group this;";
+					init="GrpCSAT_D1 = group this; nul = [""ftl"",this] call f_fnc_assignGear ; {_x moveInCargo VehCSAT_TH1} forEach units group this;";
 					description="CSAT Delta 1 Fireteam Leader (TH1)";
 				};
 				class Item1
@@ -687,7 +687,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_CSL_M_1";
-					init="GrpCSAT_D1 = group this; nul = [""m"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_D1 = group this; nul = [""m"",this] call f_fnc_assignGear ;";
 					description="CSAT Delta 1 Medic";
 				};
 				class Item2
@@ -700,7 +700,7 @@ class Mission
 					player="PLAY CDG";
 					lock="UNLOCKED";
 					skill=60000000;
-					init="GrpCSAT_D1 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_D1 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="CSAT Delta 1 Automatic Rifleman";
 				};
 				class Item3
@@ -713,7 +713,7 @@ class Mission
 					player="PLAY CDG";
 					lock="UNLOCKED";
 					skill=60000000;
-					init="GrpCSAT_D1 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_D1 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="CSAT Delta 1 Assistant Automatic Rifleman";
 				};
 				class Item4
@@ -726,7 +726,7 @@ class Mission
 					player="PLAY CDG";
 					lock="UNLOCKED";
 					skill=60000000;
-					init="GrpCSAT_D1 = group this; nul = [""gren"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_D1 = group this; nul = [""gren"",this] call f_fnc_assignGear ;";
 					description="CSAT Delta 1 Grenadier";
 				};
 				class Item5
@@ -739,7 +739,7 @@ class Mission
 					player="PLAY CDG";
 					lock="UNLOCKED";
 					skill=60000000;
-					init="GrpCSAT_D1 = group this; nul = [""r"",this] call f_fnc_folk_assignGear ;";
+					init="GrpCSAT_D1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
 					description="CSAT Delta 1 Rifleman";
 				};
 			};
@@ -761,7 +761,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=60000000;
-					init="GrpCSAT_MRAP1 = group this; nul = [""c"",this] call f_fnc_folk_assignGear ; this moveInGunner CSAT_MRAP1;";
+					init="GrpCSAT_MRAP1 = group this; nul = [""c"",this] call f_fnc_assignGear ; this moveInGunner CSAT_MRAP1;";
 					description="CSAT MRAP-1 Gunner (Ifrit HMG - no thermals)";
 				};
 				class Item1
@@ -775,7 +775,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitCSAT_TH1_P_1";
-					init="GrpCSAT_MRAP1 = group this; nul = [""eng"",this] call f_fnc_folk_assignGear ; this moveInDriver CSAT_MRAP1;";
+					init="GrpCSAT_MRAP1 = group this; nul = [""eng"",this] call f_fnc_assignGear ; this moveInDriver CSAT_MRAP1;";
 					description="CSAT MRAP-1 Driver (can repair)";
 				};
 			};
@@ -797,7 +797,7 @@ class Mission
 					leader=1;
 					rank="SERGEANT";
 					skill=60000000;
-					init="GrpCSAT_MRAP2= group this; nul = [""eng"",this] call f_fnc_folk_assignGear ; this moveInGunner CSAT_MRAP2;";
+					init="GrpCSAT_MRAP2= group this; nul = [""eng"",this] call f_fnc_assignGear ; this moveInGunner CSAT_MRAP2;";
 					description="CSAT MRAP-2 Gunner (Ifrit HMG - no thermals)";
 				};
 				class Item1
@@ -810,7 +810,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=60000000;
-					init="GrpCSAT_MRAP2 = group this; nul = [""eng"",this] call f_fnc_folk_assignGear ; this moveInDriver CSAT_MRAP1;";
+					init="GrpCSAT_MRAP2 = group this; nul = [""eng"",this] call f_fnc_assignGear ; this moveInDriver CSAT_MRAP1;";
 					description="CSAT MRAP-2 Driver (can repair)";
 				};
 			};
@@ -833,7 +833,7 @@ class Mission
 					rank="CAPTAIN";
 					skill=60000000;
 					text="UnitCSAT_TH1_P";
-					init="GrpCSAT_TH1 = group this; nul = [""p"",this] call f_fnc_folk_assignGear ; this moveInDriver VehCSAT_TH1;";
+					init="GrpCSAT_TH1 = group this; nul = [""p"",this] call f_fnc_assignGear ; this moveInDriver VehCSAT_TH1;";
 					description="CSAT Transport Helo 1 Pilot (Armed. Cargo: 8. Crew: 2)";
 				};
 				class Item1
@@ -847,7 +847,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=60000000;
 					text="UnitCSAT_TH1_CP";
-					init="GrpCSAT_TH1 = group this; nul = [""p"",this] call f_fnc_folk_assignGear ; this moveInTurret [VehCSAT_TH1,[0]];";
+					init="GrpCSAT_TH1 = group this; nul = [""p"",this] call f_fnc_assignGear ; this moveInTurret [VehCSAT_TH1,[0]];";
 					description="CSAT Transport Helo 1 Co-Pilot";
 				};
 			};
@@ -1205,7 +1205,7 @@ class Mission
 					leader=1;
 					skill=1;
 					text="UnitFIA_CO";
-					init="[""ftl"",this] call f_fnc_folk_assignGear ; GrpFIA_CO = group this;";
+					init="[""ftl"",this] call f_fnc_assignGear ; GrpFIA_CO = group this;";
 					description="FIA Officer (restricted ZEUS interface)";
 				};
 			};
@@ -1989,7 +1989,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=1;
 					text="UnitNATO_CO";
-					init="GrpNATO_CO = group this; nul = [""co"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_CO = group this; nul = [""co"",this] call f_fnc_assignGear ;";
 					description="NATO Commander";
 				};
 				class Item1
@@ -2003,7 +2003,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="UnitNATO_CO_M";
-					init="GrpNATO_CO = group this; nul = [""m"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_CO = group this; nul = [""m"",this] call f_fnc_assignGear ;";
 					description="NATO Medic";
 				};
 			};
@@ -2026,7 +2026,7 @@ class Mission
 					rank="SERGEANT";
 					skill=60000000;
 					text="UnitNATO_ASL_SL";
-					init="GrpNATO_ASL = group this; nul = [""dc"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_ASL = group this; nul = [""dc"",this] call f_fnc_assignGear ;";
 					description="NATO Alpha Squad Leader";
 				};
 				class Item1
@@ -2040,7 +2040,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitNATO_ASL_M";
-					init="GrpNATO_ASL = group this; nul = [""m"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_ASL = group this; nul = [""m"",this] call f_fnc_assignGear ;";
 					description="NATO Alpha Medic";
 				};
 			};
@@ -2063,7 +2063,7 @@ class Mission
 					rank="CORPORAL";
 					skill=1;
 					text="UnitNATO_A1_FTL";
-					init="GrpNATO_A1 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_A1 = group this; nul = [""ftl"",this] call f_fnc_assignGear ;";
 					description="NATO Alpha 1 Fireteam Leader";
 				};
 				class Item1
@@ -2076,7 +2076,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_A1_AR";
-					init="GrpNATO_A1 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_A1 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="NATO Alpha 1 Automatic Rifleman";
 				};
 				class Item2
@@ -2089,7 +2089,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_A1_AAR";
-					init="GrpNATO_A1 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_A1 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="NATO Alpha 1 Assistant Automatic Rifleman";
 				};
 				class Item3
@@ -2102,7 +2102,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_A1_AT";
-					init="GrpNATO_A1 = group this; nul = [""r"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_A1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
 					description="NATO Alpha 1 Rifleman";
 				};
 			};
@@ -2125,7 +2125,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitNATO_A2_FTL";
-					init="GrpNATO_A2 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_A2 = group this; nul = [""ftl"",this] call f_fnc_assignGear ;";
 					description="NATO Alpha 2 Fireteam Leader";
 				};
 				class Item1
@@ -2138,7 +2138,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_A2_AR";
-					init="GrpNATO_A2 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_A2 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="NATO Alpha 2 Automatic Rifleman";
 				};
 				class Item2
@@ -2151,7 +2151,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_A2_AAR";
-					init="GrpNATO_A2 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_A2 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="NATO Alpha 2 Assistant Automatic Rifleman";
 				};
 				class Item3
@@ -2164,7 +2164,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_A2_AT";
-					init="GrpNATO_A2 = group this; nul = [""r"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_A2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
 					description="NATO Alpha 2 Rifleman";
 				};
 			};
@@ -2187,7 +2187,7 @@ class Mission
 					rank="SERGEANT";
 					skill=60000000;
 					text="UnitNATO_BSL_SL";
-					init="GrpNATO_BSL = group this; nul = [""dc"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_BSL = group this; nul = [""dc"",this] call f_fnc_assignGear ;";
 					description="NATO Bravo Squad Leader";
 				};
 				class Item1
@@ -2201,7 +2201,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitNATO_BSL_M";
-					init="GrpNATO_BSL = group this; nul = [""m"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_BSL = group this; nul = [""m"",this] call f_fnc_assignGear ;";
 					description="NATO Bravo Medic";
 				};
 			};
@@ -2224,7 +2224,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitNATO_B1_FTL";
-					init="GrpNATO_B1 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_B1 = group this; nul = [""ftl"",this] call f_fnc_assignGear ;";
 					description="NATO Bravo 1 Fireteam Leader";
 				};
 				class Item1
@@ -2237,7 +2237,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_B1_AR";
-					init="GrpNATO_B1 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_B1 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="NATO Bravo 1 Automatic Rifleman";
 				};
 				class Item2
@@ -2250,7 +2250,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_B1_AAR";
-					init="GrpNATO_B1 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_B1 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="NATO Bravo 1 Assistant Automatic Rifleman";
 				};
 				class Item3
@@ -2263,7 +2263,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_B1_AT";
-					init="GrpNATO_B1 = group this; nul = [""r"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_B1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
 					description="NATO Bravo 1 Rifleman (AT)";
 				};
 			};
@@ -2286,7 +2286,7 @@ class Mission
 					rank="CORPORAL";
 					skill=60000000;
 					text="UnitNATO_B2_FTL";
-					init="GrpNATO_B2 = group this; nul = [""ftl"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_B2 = group this; nul = [""ftl"",this] call f_fnc_assignGear ;";
 					description="NATO Bravo 2 Fireteam Leader";
 				};
 				class Item1
@@ -2299,7 +2299,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_B2_AR";
-					init="GrpNATO_B2 = group this; nul = [""ar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_B2 = group this; nul = [""ar"",this] call f_fnc_assignGear ;";
 					description="NATO Bravo 2 Automatic Rifleman";
 				};
 				class Item2
@@ -2312,7 +2312,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_B2_AAR";
-					init="GrpNATO_B2 = group this; nul = [""aar"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_B2 = group this; nul = [""aar"",this] call f_fnc_assignGear ;";
 					description="NATO Bravo 2 Assistant Automatic Rifleman";
 				};
 				class Item3
@@ -2325,7 +2325,7 @@ class Mission
 					player="PLAY CDG";
 					skill=60000000;
 					text="UnitNATO_B2_AT";
-					init="GrpNATO_B2 = group this; nul = [""r"",this] call f_fnc_folk_assignGear ;";
+					init="GrpNATO_B2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
 					description="NATO Bravo 2 Rifleman";
 				};
 			};
@@ -2348,7 +2348,7 @@ class Mission
 					rank="CAPTAIN";
 					skill=60000000;
 					text="UnitNATO_TH1_P";
-					init="GrpNATO_TH1 = group this; nul = [""p"",this] call f_fnc_folk_assignGear ; this moveInDriver VehBLU_TH1;";
+					init="GrpNATO_TH1 = group this; nul = [""p"",this] call f_fnc_assignGear ; this moveInDriver VehBLU_TH1;";
 					description="NATO Transport Helo 1 Pilot (Cargo: 8. Crew: 4)";
 				};
 				class Item1
@@ -2362,7 +2362,7 @@ class Mission
 					rank="SERGEANT";
 					skill=60000000;
 					text="UnitNATO_TH1_G1";
-					init="GrpNATO_TH1 = group this; nul = [""p"",this] call f_fnc_folk_assignGear ; this moveInTurret [VehBLU_TH1,[1]];";
+					init="GrpNATO_TH1 = group this; nul = [""p"",this] call f_fnc_assignGear ; this moveInTurret [VehBLU_TH1,[1]];";
 					description="NATO Transport Helo 1 Gunner";
 				};
 			};
@@ -2385,7 +2385,7 @@ class Mission
 					rank="CAPTAIN";
 					skill=1;
 					text="UnitNATO_TH2_P";
-					init="GrpNATO_TH2 = group this; nul = [""p"",this] call f_fnc_folk_assignGear ; this moveInDriver VehBLU_TH2;";
+					init="GrpNATO_TH2 = group this; nul = [""p"",this] call f_fnc_assignGear ; this moveInDriver VehBLU_TH2;";
 					description="NATO Transport Helo 2 Pilot  (Cargo: 8. Crew: 4)";
 				};
 				class Item1
@@ -2399,7 +2399,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="UnitNATO_TH2_G1";
-					init="GrpNATO_TH2 = group this; nul = [""p"",this] call f_fnc_folk_assignGear ; this moveInTurret [VehBLU_TH2,[1]];";
+					init="GrpNATO_TH2 = group this; nul = [""p"",this] call f_fnc_assignGear ; this moveInTurret [VehBLU_TH2,[1]];";
 					description="NATO Transport Helo 2 Gunner";
 				};
 			};
@@ -2422,7 +2422,7 @@ class Mission
 					rank="CAPTAIN";
 					skill=1;
 					text="UnitNATO_AH1_2";
-					init="GrpNATO_TH3 = group this; nul = [""p"",this] call f_fnc_folk_assignGear ; this moveInDriver VehBLU_TH3;";
+					init="GrpNATO_TH3 = group this; nul = [""p"",this] call f_fnc_assignGear ; this moveInDriver VehBLU_TH3;";
 					description="NATO Transport Helo 3 Pilot - MH-9 Hummingbird (Cargo: 6)";
 				};
 				class Item1
@@ -2436,7 +2436,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="UnitNATO_AH1_2_1";
-					init="GrpNATO_TH3 = group this; nul = [""p"",this] call f_fnc_folk_assignGear ; this moveInTurret [VehBLU_TH3,[0]];";
+					init="GrpNATO_TH3 = group this; nul = [""p"",this] call f_fnc_assignGear ; this moveInTurret [VehBLU_TH3,[0]];";
 					description="NATO Transport Helo 3 Co-Pilot";
 				};
 			};
@@ -2459,7 +2459,7 @@ class Mission
 					rank="CAPTAIN";
 					skill=1;
 					text="UnitNATO_AH1";
-					init="GrpNATO_AH1 = group this; nul = [""p"",this] call f_fnc_folk_assignGear ; this moveInDriver VehBLU_AH1;";
+					init="GrpNATO_AH1 = group this; nul = [""p"",this] call f_fnc_assignGear ; this moveInDriver VehBLU_AH1;";
 					description="NATO Attack Helo 1 Pilot - AH-9 Pawnee (Minigun only)";
 				};
 				class Item1
@@ -2473,7 +2473,7 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="UnitNATO_AH1_1";
-					init="GroupNATO_AH1 = group this; nul = [""p"",this] call f_fnc_folk_assignGear ; this moveInTurret [VehBLU_AH1,[0]];";
+					init="GroupNATO_AH1 = group this; nul = [""p"",this] call f_fnc_assignGear ; this moveInTurret [VehBLU_AH1,[0]];";
 					description="NATO Attack Helo 1 Co-Pilot";
 				};
 			};
