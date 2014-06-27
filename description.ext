@@ -102,7 +102,7 @@ class cfgNotifications
 	{
 		title = "ALERT";
 		description = "%1";
-		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\warning_ca.paa";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
 		duration = 3;
 	};
 
@@ -192,16 +192,16 @@ class Params
 		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8};
 		default = 1;
 		function = "f_fnc_setWeather";		// This function is called to apply the values
-		isGlobal = 0;						// Execute this only on the server
+		isGlobal = 1;						// Execute this only on the server
 		code = "f_param_weather = %1";
 	};
 
 	class f_param_fog
 	{
-		title = "Fog";
+		title = "Fog (Valley floor)";
 		values[] = {0,1,2};
 		texts[] = {"None","Light","Heavy"};
-		default = 0;
+		default = 1;
 		function = "f_fnc_SetFog";			// This function is called to apply the values
 		isGlobal = 0;						// Execute this only on the server
 		code = "f_param_fog = %1";
@@ -268,6 +268,15 @@ class Params
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
+
+	class ws_param_sws
+	{
+		title = "F3 Wounding System";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 1;
+        code = "ws_param_sws = %1";
+	};
 
 	class ws_param_hc
 	{
