@@ -1,7 +1,7 @@
 if (isNil "ws_caches_destroyed") then {ws_caches_destroyed = false;};
 
 if (isNil "ws_var_jitter") then {ws_var_jitter = "ws_var_jitter" call BIS_fnc_getParamValue;};
-if (isNil "ws_var_friendly") then {diag_log "setting ws_var_friendly";ws_var_friendly = "ws_var_friendly" call BIS_fnc_getParamValue;};
+if (isNil "ws_var_friendly") then {ws_var_friendly = "ws_var_friendly" call BIS_fnc_getParamValue;};
 
 if (faction player == "BLU_F") then{
 	if (ws_var_jitter != 9999) then {
@@ -35,39 +35,3 @@ if (!isDedicated) then {
 		] spawn BIS_fnc_typeText;
 	};
 };
-
-/*
-// Do stuff on either HC or Server (e.g. spawning)
-if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
-
-};
-
-
-
-// Do more stuff on the server
-if (isServer) then {
-	_gear = [
-		["hgun_PDW2000_F",8],
-		["SMG_01_F",8],
-		["SMG_02_ACO_F",8],
-		["arifle_Mk20C_F",6],
-		["arifle_TRG20_ACO_F",6],
-		["arifle_TRG21_F",5],
-		["arifle_Katiba_C_F",5]
-	];
-
-	{
-		if (side _x == independent && !isPlayer _x) then {
-			_wp = _gear call ws_fnc_selectRandom;
-			[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
-		};
-	} forEach allUnits;
-};
-
-
-// Start the caching
-if (ws_param_caching != 0) then {
-	waitUntil {time > 30};
-	[ws_param_caching] call ws_fnc_cInit;
-};
-*/

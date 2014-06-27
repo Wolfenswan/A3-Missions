@@ -74,9 +74,9 @@ if !(isNil format ["%1",_x]) then {
 } forEach _csat_convoy;
 
 
-//Load CSAT vehicles
-{{_x moveInCargo CSAT_Tr1} forEach units _x} forEach [GrpCSAT_A1,GrpCSAT_A2,GrpCSAT_A3];
-{{_x moveInCargo CSAT_Tr2} forEach units _x} forEach [GrpCSAT_B1,GrpCSAT_B2,GrpCSAT_B3];
+//Delete unused CSAT vehicles
+//{{_x moveInCargo CSAT_Tr1} forEach units _x} forEach [GrpCSAT_A1,GrpCSAT_A2,GrpCSAT_A3];
+//{{_x moveInCargo CSAT_Tr2} forEach units _x} forEach [GrpCSAT_B1,GrpCSAT_B2,GrpCSAT_B3];
 if (isNil "GrpCSAT_A1" && isNil "GrpCSAT_A2" && isNil "GrpCSAT_A3" && isNil "GrpCSAT_ASL") then {deleteVehicle CSAT_Tr1;};
 if (isNil "GrpCSAT_B1" && isNil "GrpCSAT_B2" && isNil "GrpCSAT_B3" && isNil "GrpCSAT_BSL") then {deleteVehicle CSAT_Tr2;};
 if (isNil "GrpCSAT_MRAP1") then {deleteVehicle CSAT_MRAP1;};

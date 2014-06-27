@@ -102,7 +102,7 @@ class cfgNotifications
 	{
 		title = "ALERT";
 		description = "%1";
-		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\warning_ca.paa";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
 		duration = 3;
 	};
 
@@ -272,26 +272,37 @@ class Params
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
 
-// Wolfenswan - Parameters
+
+// WS-Parameters
 
 
-	  class ws_param_marker
-        {
-                title = "Jitter of convoy marker for US forces";
-                values[] = {0,1,2,3,9999};
-                texts[] = {"Pinpoint","1.5k - 2.5k","2.5k - 3k (default)","3.5k - 5k","no marker"};
-                default = 2;
-                code = "ws_var_jitter = %1";
-        };
+	class ws_param_sws
+	{
+		title = "F3 Wounding System";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 1;
+        code = "ws_param_sws = %1";
+	};
 
-  class ws_param_placement
-        {
-                title = "Min/Max spawn distance for CSAT from convoy";
-                values[] = {0,1,2};
-                texts[] = {"1k - 2k","2k - 3k (default)","3k - 4k"};
-                default = 1;
-                code = "ws_var_placement = %1";
-        };
+  class ws_param_marker
+    {
+            title = "Jitter of convoy marker for US forces";
+            values[] = {0,1,2,3,9999};
+            texts[] = {"Pinpoint","1.5k - 2.5k","2.5k - 3k (default)","3.5k - 5k","no marker"};
+            default = 2;
+            code = "ws_var_jitter = %1";
+    };
+
+	class ws_param_placement
+    {
+            title = "Min/Max spawn distance for CSAT from convoy";
+            values[] = {0,1,2};
+            texts[] = {"1k - 2k","2k - 3k (default)","3k - 4k"};
+            default = 1;
+            code = "ws_var_placement = %1";
+    };
+
 
 	class ws_param_friendly
 	{
@@ -300,6 +311,7 @@ class Params
 	        texts[] = {"Nobody","NATO"};
 	        default = 0;
 	        code = "ws_var_friendly = %1";
+	 };
 
 	class ws_param_dbg
 	{

@@ -98,7 +98,8 @@ _mkr setMarkerType "mil_destroy";
 _mkr setMarkerColor "ColorRed";
 _mkr setMarkerAlpha 0;
 
-{_mkr = createMarker [format["%1",_x],getPos _x];
+{
+_mkr = createMarker [format["%1",_x],getPos _x];
 _mkr setMarkerType "mil_dot";
 _mkr setMarkerColor "ColorRed";
 _mkr setMarkerAlpha 0;
