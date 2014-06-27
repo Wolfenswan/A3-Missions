@@ -98,6 +98,7 @@ while {count _units != 0 && count _barray != 0} do {
 		if (random 1 > 0.75) then {_unit setunitpos "Middle";} else {_unit setUnitPos "Up"};
 		_dir = if (ws_game_A3) then {([_unit,(getPosATL (_this select 2))] call BIS_fnc_DirTo) +180} else {random 360};
 		_unit setDir _dir;
+		_unit dowatch ([_unit, 25, _dir] call BIS_fnc_relPos);
 
 		(group _unit) setSpeedMode "NORMAL";
 	};

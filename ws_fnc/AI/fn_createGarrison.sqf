@@ -152,6 +152,7 @@ for "_x" from 1 to _int do {
 
   	_dir = if (ws_game_A3) then {([_u,_b] call BIS_fnc_DirTo) +180} else {random 360};
 	_u setDir _dir;
+	//_u dowatch ([_u, 25, _dir] call BIS_fnc_relPos);
 
     if (random 1 > 0.75) then {_u setunitpos "Middle";} else {_u setUnitPos "UP"};
 

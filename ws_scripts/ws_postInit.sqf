@@ -18,12 +18,38 @@ if (!isDedicated && !ws_ishc) then {
 waitUntil {!isNil "ws_param_hc"};
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_ishc)) then {
 	// ws_fnc_createGarrison;
+
 	[galati,200,west,4 + round (count playableUnits/5)] spawn ws_fnc_createGarrison;
 	[abdera,200,west,4 + round (count playableUnits/4)] spawn ws_fnc_createGarrison;
 	[top,100,west,6 + round random 4] spawn ws_fnc_createGarrison;
 	[outpost,300,west,6] spawn ws_fnc_createGarrison;
 	[outpost_1,100,west,3 + round random 3] spawn ws_fnc_createGarrison;
 	[outpost_2,100,west,3 + round random 3] spawn ws_fnc_createGarrison;
+
+	/*
+	_units = [];
+	_garrison = ([] call ws_fnc_collectObjectsNum);
+	{
+		_units = _units + ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
+		//deleteVehicle _x;
+	} forEach _garrison;
+
+
+	/*
+	_gear = [
+		["hgun_PDW2000_F",5],
+		["SMG_01_F",6],
+		["SMG_02_ACO_F",4],
+		["arifle_Mk20C_F",5],
+		["arifle_Katiba_C_F",5],
+		["arifle_TRG20_F",5]
+	];
+
+	{
+		_wp = _gear call ws_fnc_selectRandom;
+	[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
+	} forEach _units;
+	*/
 };
 
 // Do more stuff on the server
