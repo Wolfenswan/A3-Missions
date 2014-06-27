@@ -25,7 +25,10 @@
 
         // All unit's are hidden
         _x hideObjectGlobal true;
-        //if (vehicle _x != _x) then {(vehicle _x) hideObject true};
+
+        if (f_var_cachingAggressiveness == 3) then {
+          if (vehicle _x != _x) then {(vehicle _x) hideObjectGlobal true};
+    	};
 
 sleep 0.1;
 } forEach units _this;
