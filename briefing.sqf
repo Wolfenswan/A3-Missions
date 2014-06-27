@@ -2,10 +2,12 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// JIP CHECK
-// Prevents the script executing until the player has synchronised correctly:
+// MAKE SURE THE PLAYER INITIALIZES PROPERLY
 
-#include "f\common\f_waitForJIP.sqf"
+if (!isDedicated && (isNull player)) then
+{
+    waitUntil {sleep 0.1; !isNull player};
+};
 
 // ====================================================================================
 
@@ -26,8 +28,6 @@ _unitfaction = toLower (faction player);
 // If the unitfaction is different from the group leader's faction, the latters faction is used
 if (_unitfaction != toLower (faction (leader group player))) then {_unitfaction = toLower (faction (leader group player))};
 
-
-
 // DEBUG
 	if (f_var_debugMode == 1) then
 	{
@@ -36,13 +36,30 @@ if (_unitfaction != toLower (faction (leader group player))) then {_unitfaction 
 
 // ====================================================================================
 
+// BRIEFING: ADMIN
+// The following block of code executes only if the player is the current host
+// it automatically includes a file which contains the appropriate briefing data.
+
+if (serverCommandAvailable "#kick") then {
+
+#include "f\briefing\f_briefing_admin.sqf"
+
+// DEBUG
+	if (f_var_debugMode == 1) then
+	{
+		player sideChat format ["DEBUG (briefing.sqf): Briefing for host selected.",_unitfaction];
+	};
+};
+
+// ====================================================================================
+
 // BRIEFING: BLUFOR > NATO
 // The following block of code executes only if the player is in a NATO slot; it
 // automatically includes a file which contains the appropriate briefing data.
 
-if (_unitfaction == "BLU_F") exitwith {
+if (_unitfaction == "blu_f") exitwith {
 
-#include "f\common\f_briefing_nato.sqf"
+#include "f\briefing\f_briefing_nato.sqf"
 
 // DEBUG
 	if (f_var_debugMode == 1) then
@@ -53,13 +70,13 @@ if (_unitfaction == "BLU_F") exitwith {
 
 // ====================================================================================
 
-// BRIEFING: BLUFOR > FIA
+// BRIEFING: FIA
 // The following block of code executes only if the player is in a FIA slot; it
 // automatically includes a file which contains the appropriate briefing data.
 
-if (_unitfaction == "ind_G_F") exitwith {
+if (_unitfaction in ["blu_g_f","ind_g_f","opf_g_f"]) exitwith {
 
-#include "f\common\f_briefing_fia.sqf"
+#include "f\briefing\f_briefing_fia.sqf"
 
 // DEBUG
 	if (f_var_debugMode == 1) then
@@ -74,9 +91,9 @@ if (_unitfaction == "ind_G_F") exitwith {
 // The following block of code executes only if the player is in a CSAT slot; it
 // automatically includes a file which contains the appropriate briefing data.
 
-if (_unitfaction == "OPF_F") exitwith {
+if (_unitfaction == "opf_f") exitwith {
 
-#include "f\common\f_briefing_csat.sqf"
+#include "f\briefing\f_briefing_csat.sqf"
 
 // DEBUG
 	if (f_var_debugMode == 1) then
@@ -90,9 +107,9 @@ if (_unitfaction == "OPF_F") exitwith {
 // The following block of code executes only if the player is in a AAF
 // slot; it automatically includes a file which contains the appropriate briefing data.
 
-if (_unitfaction == "IND_F") exitwith {
+if (_unitfaction == "ind_f") exitwith {
 
-#include "f\common\f_briefing_aaf.sqf"
+#include "f\briefing\f_briefing_aaf.sqf"
 
 // DEBUG
 	if (f_var_debugMode == 1) then
@@ -107,9 +124,9 @@ if (_unitfaction == "IND_F") exitwith {
 // The following block of code executes only if the player is in a CIVILIAN
 // slot; it automatically includes a file which contains the appropriate briefing data.
 
-if (_unitfaction == "CIV_F") exitwith {
+if (_unitfaction == "civ_f") exitwith {
 
-#include "f\common\f_briefing_civ.sqf"
+#include "f\briefing\f_briefing_civ.sqf"
 
 // DEBUG
 	if (f_var_debugMode == 1) then
@@ -117,6 +134,8 @@ if (_unitfaction == "CIV_F") exitwith {
 	player sideChat format ["DEBUG (briefing.sqf): Briefing for %1 slot selected.",_unitfaction];
 	};
 };
+
+
 
 // ====================================================================================
 
