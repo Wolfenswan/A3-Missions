@@ -16,7 +16,7 @@ if (isnil "ws_caches_destroyed") then {ws_caches_destroyed = false};publicvariab
 
 _fia = [];
 
-{if (side leader _x == independent) then {
+{if (side leader _x == independent && !(isPlayer leader _x)) then {
 	_fia set [count _fia,_x];
 };} forEach allGroups;
 

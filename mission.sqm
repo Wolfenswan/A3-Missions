@@ -32,14 +32,15 @@ class Mission
 		"A3_Modules_F_Curator_Curator",
 		"A3_Modules_F",
 		"a3_uav_f_characters_f_gamma",
-		"A3_Air_F_Heli_Light_01"
+		"A3_Air_F_Heli_Light_01",
+		"a3_characters_f"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_Civil",
-		"a3_characters_f_gamma",
+		"a3_characters_f",
 		"A3_Characters_F_OPFOR",
-		"a3_characters_f_beta",
+		"A3_Characters_F_Gamma",
 		"A3_Modules_F_Curator_Curator",
 		"A3_Modules_F",
 		"A3_Characters_F_BLUFOR",
@@ -50,7 +51,6 @@ class Mission
 		"A3_Structures_F_Wrecks",
 		"A3_Air_F_Beta_Heli_Transport_01",
 		"A3_Weapons_F_Ammoboxes",
-		"a3_weapons_f_beta_ammoboxes",
 		"A3_Soft_F_MRAP_02",
 		"A3_Air_F_Heli_Light_02",
 		"A3_Air_F_Heli_Light_01",
@@ -81,7 +81,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=48;
+		items=49;
 		class Item0
 		{
 			side="CIV";
@@ -1196,7 +1196,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11461.181,23.302977,11529.378};
+					position[]={13593.359,15.694836,12191.884};
 					azimut=417197;
 					id=75;
 					side="GUER";
@@ -1205,7 +1205,7 @@ class Mission
 					leader=1;
 					skill=1;
 					text="UnitFIA_CO";
-					init="[""ftl"",this] call f_fnc_assignGear ; GrpFIA_CO = group this;";
+					init="[""ftl"",this] call f_fnc_assignGear ; GrpFIA_CO = group this; this allowDamage false;";
 					description="FIA Officer (restricted ZEUS interface)";
 				};
 			};
@@ -1218,13 +1218,13 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={11465.571,23.196791,11535.826};
+					position[]={11465.163,23.224453,11536.275};
 					class args
 					{
 						items=4;
 						class Item0
 						{
-							value="UnitFIA_CO";
+							value="[UnitFIA_CO,UnitFIA_CO_1]";
 							parentCls="ModuleCurator_F";
 							typeName="Owner";
 						};
@@ -1242,7 +1242,7 @@ class Mission
 						};
 						class Item3
 						{
-							value="0";
+							value="1";
 							parentCls="ModuleCurator_F";
 							typeName="Forced";
 						};
@@ -2478,6 +2478,28 @@ class Mission
 				};
 			};
 		};
+		class Item48
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={13595.381,15.65134,12192.956};
+					azimut=417197;
+					id=120;
+					side="GUER";
+					vehicle="I_G_officer_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=1;
+					text="UnitFIA_CO_1";
+					init="[""ftl"",this] call f_fnc_assignGear ; GrpFIA_CO = group this;this allowDamage false;";
+					description="FIA Officer (restricted ZEUS interface)";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
@@ -2486,7 +2508,7 @@ class Mission
 		{
 			position[]={11468.371,23.573431,11581.591};
 			azimut=32553800;
-			id=120;
+			id=121;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			leader=1;
@@ -2499,7 +2521,7 @@ class Mission
 		{
 			position[]={11451.18,23.749672,11557.171};
 			azimut=38930600;
-			id=121;
+			id=122;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
 			leader=1;
@@ -2510,7 +2532,7 @@ class Mission
 		{
 			position[]={11441.319,23.837879,11543.811};
 			azimut=339641;
-			id=122;
+			id=123;
 			side="EMPTY";
 			vehicle="B_Truck_01_box_F";
 			leader=1;
@@ -2524,7 +2546,7 @@ class Mission
 		{
 			position[]={11461.265,23.634171,11569.038};
 			azimut=33689000;
-			id=123;
+			id=124;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_armed_F";
 			leader=1;
@@ -2536,7 +2558,7 @@ class Mission
 		{
 			position[]={11435.415,23.870377,11533.472};
 			azimut=368717;
-			id=124;
+			id=125;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			leader=1;
@@ -2548,7 +2570,7 @@ class Mission
 		{
 			position[]={11424.715,23.868891,11521.483};
 			azimut=37738700;
-			id=125;
+			id=126;
 			side="EMPTY";
 			vehicle="B_G_Van_01_fuel_F";
 			leader=1;
@@ -2561,7 +2583,7 @@ class Mission
 		{
 			position[]={11417.425,23.766693,11511.484};
 			azimut=33689000;
-			id=126;
+			id=127;
 			side="EMPTY";
 			vehicle="Land_Wreck_Van_F";
 			leader=1;
@@ -2573,7 +2595,7 @@ class Mission
 		{
 			position[]={11408.116,23.609102,11499.476};
 			azimut=368717;
-			id=127;
+			id=128;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_armed_F";
 			leader=1;
@@ -2585,7 +2607,7 @@ class Mission
 			position[]={27128.951,24.298662,24884.197};
 			azimut=12752225;
 			offsetY=1;
-			id=128;
+			id=129;
 			side="EMPTY";
 			vehicle="B_Heli_Transport_01_F";
 			leader=1;
@@ -2595,7 +2617,7 @@ class Mission
 		class Item9
 		{
 			position[]={11430.82,23.868206,11549.703};
-			id=129;
+			id=130;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			skill=60000000;
@@ -2604,7 +2626,7 @@ class Mission
 		class Item10
 		{
 			position[]={11426.601,23.891239,11544.265};
-			id=130;
+			id=131;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			skill=60000000;
@@ -2613,7 +2635,7 @@ class Mission
 		class Item11
 		{
 			position[]={11430.112,23.881268,11541.21};
-			id=131;
+			id=132;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			skill=60000000;
@@ -2622,7 +2644,7 @@ class Mission
 		class Item12
 		{
 			position[]={11434.626,23.863625,11545.529};
-			id=132;
+			id=133;
 			side="EMPTY";
 			vehicle="B_supplyCrate_F";
 			skill=60000000;
@@ -2632,7 +2654,7 @@ class Mission
 		{
 			position[]={11595.896,23.114937,11897.325};
 			azimut=29446300;
-			id=133;
+			id=134;
 			side="EMPTY";
 			vehicle="O_MRAP_02_hmg_F";
 			skill=60000000;
@@ -2643,7 +2665,7 @@ class Mission
 		{
 			position[]={11611.261,22.885633,11898.334};
 			azimut=30691454;
-			id=134;
+			id=135;
 			side="EMPTY";
 			vehicle="O_Truck_02_transport_F";
 			skill=60000000;
@@ -2653,7 +2675,7 @@ class Mission
 		{
 			position[]={11602.203,23.213873,11875.979};
 			azimut=297332;
-			id=135;
+			id=136;
 			side="EMPTY";
 			vehicle="O_Truck_02_transport_F";
 			skill=60000000;
@@ -2663,7 +2685,7 @@ class Mission
 		{
 			position[]={11674.277,23.374763,11939.322};
 			azimut=395.40771;
-			id=136;
+			id=137;
 			side="EMPTY";
 			vehicle="O_Heli_Light_02_F";
 			skill=1;
@@ -2673,7 +2695,7 @@ class Mission
 		{
 			position[]={11589.644,23.136959,11884.15};
 			azimut=29446300;
-			id=137;
+			id=138;
 			side="EMPTY";
 			vehicle="O_MRAP_02_F";
 			skill=60000000;
@@ -2684,7 +2706,7 @@ class Mission
 		{
 			position[]={11607.088,23.132603,11918.243};
 			azimut=29446300;
-			id=138;
+			id=139;
 			side="EMPTY";
 			vehicle="O_MRAP_02_hmg_F";
 			skill=60000000;
@@ -2696,7 +2718,7 @@ class Mission
 			position[]={27144.889,24.750959,24904.691};
 			azimut=12752224;
 			offsetY=1;
-			id=139;
+			id=140;
 			side="EMPTY";
 			vehicle="B_Heli_Transport_01_F";
 			leader=1;
@@ -2708,7 +2730,7 @@ class Mission
 			position[]={27113.195,23.558395,24861.668};
 			azimut=123430.72;
 			offsetY=1;
-			id=140;
+			id=141;
 			side="EMPTY";
 			vehicle="B_Heli_Light_01_F";
 			leader=1;
@@ -2720,7 +2742,7 @@ class Mission
 			position[]={27099.572,23.0506,24844.973};
 			azimut=123434.19;
 			offsetY=1;
-			id=141;
+			id=142;
 			side="EMPTY";
 			vehicle="B_Heli_Light_01_armed_F";
 			leader=1;
@@ -3118,7 +3140,7 @@ class Mission
 			age="UNKNOWN";
 			name="Trg5";
 			expCond="this && !(ws_allCaches_destroyed)";
-			expActiv="myEnd=[3] execVM ""f\server\f_mpEndBroadcast.sqf"";";
+			expActiv="[3] call f_fnc_MpEnd;";
 			class Effects
 			{
 			};
@@ -3140,7 +3162,7 @@ class Mission
 			age="UNKNOWN";
 			name="Trg7";
 			expCond="this && (time > 5) && ws_allCaches_destroyed";
-			expActiv="myEnd=[4] execVM ""f\server\f_mpEndBroadcast.sqf"";";
+			expActiv="[4] call f_fnc_MpEnd;";
 			class Effects
 			{
 			};
