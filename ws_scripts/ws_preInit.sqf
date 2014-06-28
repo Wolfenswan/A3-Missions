@@ -24,6 +24,7 @@ switch (ws_var_placement) do {
 	case 1: {_placement_jitter = [2500,2500];};
 	case 2: {_placement_jitter = [3000,3000];};
 	case 3: {_placement_jitter = [3500,3500];};
+	case 4: {_placement_jitter = [4000,4000];};
 	default {_placement_jitter = [2000,3000];};
 };
 

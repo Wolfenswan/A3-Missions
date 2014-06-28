@@ -65,7 +65,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 3. FIA forces at the convoy will most likely offer heavy resistance. Use all force necessary.<br/>
 4. NATO heliborn forces might be send from <marker name='mkrNATO'>their foothold</marker>. Deal with them as the need arises.<br/><br/>
 NOTE<br/>
-To seize the crates at least one CSAT unit must be within 10m of them for one full minute.<br/>
+To seize the crates at least one CSAT unit must be within 10m of them for two full minutes.<br/>
 For NATO to be successful they need to either wipe out the CSAT platoon or destroy all four crates and the HEMTT and fall back at least 2.5k from the AO.<br/>
 All four caches are next to the HEMTT truck. The crates and the truck can only be destroyed by demo charges.
 "]];
