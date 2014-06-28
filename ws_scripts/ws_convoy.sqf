@@ -2,7 +2,7 @@ if !(isServer) exitWith {};
 
 //Dynamic convoy
 _convoy = [c1,c2,c3,c4,c5,c6,c7,c8];
-_center = [ws_convoy,0,0,360,true] call ws_fnc_getPos;
+_center = ws_convoy call ws_fnc_getEPos;
 _roads = _center nearRoads 20;
 _posarray = [];
 

@@ -25,7 +25,7 @@ if (faction player == "ind_g_f") then {{_x setMarkerAlphaLocal 1;};}forEach ["a1
 
 // Display a short text intro
 if (!isDedicated) then {
- ["A FRIEND IN NEED","WESTERN ALTIS"] spawn {
+ ["A FRIEND IN NEED","ALTIS"] spawn {
 	 waitUntil {time > 15};
 		[
 			[

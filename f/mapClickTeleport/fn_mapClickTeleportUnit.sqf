@@ -22,7 +22,7 @@ if (isNil "f_var_mapClickTeleport_Used") then {f_var_mapClickTeleport_Used = 0};
 
 ["MapClickTeleport",[f_var_mapClickTeleport_textSelect]] call BIS_fnc_showNotification;
 openMap [true, false];
-onMapSingleClick "f_var_mapClickTeleport_telePos = _pos; f_telePositionSelected = true;";
+onMapSingleClick "f_var_mapClickTeleport_telePos = _pos; publicVariable 'f_var_mapClickTeleport_telePos';f_telePositionSelected = true;";
 waitUntil {f_telePositionSelected};
 
 // Send the position to the server and move CSAT convoy
