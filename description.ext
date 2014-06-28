@@ -287,7 +287,7 @@ class Params
 
   class ws_param_marker
     {
-            title = "Jitter of convoy marker for US forces";
+            title = "Jitter of convoy marker for NATO forces";
             values[] = {0,1,2,3,9999};
             texts[] = {"Pinpoint","1.5k - 2.5k","2.5k - 3k (default)","3.5k - 5k","no marker"};
             default = 2;
@@ -296,13 +296,12 @@ class Params
 
 	class ws_param_placement
     {
-            title = "Min/Max spawn distance for CSAT from convoy";
-            values[] = {0,1,2};
-            texts[] = {"1k - 2k","2k - 3k (default)","3k - 4k"};
+            title = "Distance between CSAT and convoy";
+            values[] = {0,1,2,3};
+            texts[] = {"1.5k","2k","2.5k","3k"};
             default = 1;
             code = "ws_var_placement = %1";
     };
-
 
 	class ws_param_friendly
 	{

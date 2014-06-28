@@ -12,11 +12,15 @@ if (ws_var_friendly == 1) then {
 _markers  = ["mkrConv"] call ws_fnc_collectMarkers;
 ws_convoy =  getMarkerPos (_markers call ws_fnc_selectRandom); publicvariable "ws_convoy";
 
+ZEUS_Camera setPosATL ws_convoy;
+"mkrCSATBorder" setMarkerPos ws_convoy;
+"mkrCSATBorder" setMarkerAlpha 0;
+
 if (isnil "ws_caches_destroyed") then {ws_caches_destroyed = false};publicvariable "ws_caches_destroyed";
 
 _fia = [];
 
-{if (side leader _x == independent && !(isPlayer leader _x)) then {
+{if (side leader _x == independent && !(leader _x in playableUnits)) then {
 	_fia set [count _fia,_x];
 };} forEach allGroups;
 
@@ -34,6 +38,7 @@ Zeus_EdObj synchronizeObjectsAdd (units _x);
 //{{_x moveInCargo VehBlu_Th3} forEach units _x} forEach [GrpNATO_B1];
 
 //Place CSAT
+/*
 _csat_convoy = [CSAT_CAR1,CSAT_MRAP1,CSAT_MRAP2,CSAT_Tr1,CSAT_Tr2];
 if (isNil "ws_var_placement") then {ws_var_placement = paramsarray select 7};
 _placement_jitter = [2000,3000];
@@ -48,6 +53,8 @@ _pos = ws_convoy;
 while {(_pos distance ws_convoy) < (_placement_jitter select 0)} do {
 	_pos = [ws_convoy,(_placement_jitter select 1),(_placement_jitter select 0),360,true,false] call ws_fnc_getPos;
 };
+
+
 
 _roads = _pos nearRoads 20;
 _posarray = [];
@@ -72,7 +79,7 @@ if !(isNil format ["%1",_x]) then {
 	_x setDir ([_x,ws_convoy] call BIS_fnc_dirTo);
 };
 } forEach _csat_convoy;
-
+*/
 
 //Delete unused CSAT vehicles
 //{{_x moveInCargo CSAT_Tr1} forEach units _x} forEach [GrpCSAT_A1,GrpCSAT_A2,GrpCSAT_A3];

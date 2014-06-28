@@ -49,7 +49,7 @@ COMMANDER'S INTENT
 <br/>
 Lead our glorious defense.<br/><br/>
 ZEUS ABILITIES<br/>
-Use your ZEUS key to control our defense. You can freely place units in a 500m radius. As CSAT forces approach your abilities will be reduced to giving commands to units. You can always take control of units.
+Use your ZEUS key to control our defense. You can freely place units in a 600m radius. As CSAT forces approach your abilities will be reduced to giving commands to units. You can always take direct control of units.
 "]];
 
 // ====================================================================================

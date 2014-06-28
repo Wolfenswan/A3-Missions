@@ -22,8 +22,10 @@ if (isNil "f_var_mapClickTeleport_Used") then {f_var_mapClickTeleport_Used = 0};
 
 ["MapClickTeleport",[f_var_mapClickTeleport_textSelect]] call BIS_fnc_showNotification;
 openMap [true, false];
-onMapSingleClick "f_var_mapClickTeleport_telePos = _pos; f_telePositionSelected = true";
+onMapSingleClick "f_var_mapClickTeleport_telePos = _pos; f_telePositionSelected = true;";
 waitUntil {f_telePositionSelected};
+
+f_var_mapClickTeleport_telePos execVM "ws_scripts\ws_moveCSAT.sqf";
 
 // HALO - set height
 // If a HALO height is set, modify the clicked position accordingly
@@ -35,6 +37,7 @@ if (f_var_mapClickTeleport_Height != 0) then {
 // Move player
 // If the player is in a vehicle and not HALO-ing, the complete vehicle is moved. Otherwise the player is teleported.
 
+/*
 if (vehicle player != player && f_var_mapClickTeleport_Height == 0) then {
 	(vehicle player) setPos (f_var_mapClickTeleport_telePos findEmptyPosition [0,150,typeOf (vehicle player)]);
 } else {
@@ -50,6 +53,7 @@ if (f_var_mapClickTeleport_GroupTeleport) then {
 		[[_x,f_var_mapClickTeleport_telePos],"f_fnc_mapClickTeleportGroup",_x] spawn BIS_fnc_MP;
 	} forEach ((units group player) - [player]);
 };
+*/
 
 openMap false;
 

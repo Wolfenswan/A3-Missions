@@ -13,6 +13,7 @@ if (faction player == "BLU_F") then{
 	};
 } else {
 	"fia_conv" setMarkerAlphaLocal 1;
+	"mkrCSATBorder" setMarkerAlphaLocal 1;
 };
 
 if (ws_var_friendly == 1) then {
