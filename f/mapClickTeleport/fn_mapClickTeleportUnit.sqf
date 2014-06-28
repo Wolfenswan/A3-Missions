@@ -25,7 +25,8 @@ openMap [true, false];
 onMapSingleClick "f_var_mapClickTeleport_telePos = _pos; f_telePositionSelected = true;";
 waitUntil {f_telePositionSelected};
 
-f_var_mapClickTeleport_telePos execVM "ws_scripts\ws_moveCSAT.sqf";
+// Send the position to the server and move CSAT convoy
+[{f_var_mapClickTeleport_telePos execVM "ws_scripts\ws_moveCSAT.sqf";},"BIS_fnc_spawn",false] spawn BIS_fnc_MP;
 
 // HALO - set height
 // If a HALO height is set, modify the clicked position accordingly

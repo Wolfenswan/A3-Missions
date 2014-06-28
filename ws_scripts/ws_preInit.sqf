@@ -17,10 +17,10 @@ ZEUS_Camera setPosATL ws_convoy;
 "mkrCSATBorder" setMarkerAlpha 0;
 
 switch (ws_var_placement) do {
-	case 0: {_placement_jitter = [1500,1500];};
-	case 1: {_placement_jitter = [2000,2000];};
-	case 2: {_placement_jitter = [2500,2500];};
-	case 3: {_placement_jitter = [3000,3000];};
+	case 0: {_placement_jitter = [2000,2000];};
+	case 1: {_placement_jitter = [2500,2500];};
+	case 2: {_placement_jitter = [3000,3000];};
+	case 3: {_placement_jitter = [3500,3500];};
 	default {_placement_jitter = [2000,3000];};
 };
 

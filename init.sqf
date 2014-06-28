@@ -52,7 +52,9 @@ f_script_setTeamColours = [] execVM "f\setTeamColours\f_setTeamColours.sqf";
 // F3 - Fireteam Member Markers
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
+if (side player != resistance) then {
 [] spawn f_fnc_SetLocalFTMemberMarkers;
+};
 
 // ====================================================================================
 

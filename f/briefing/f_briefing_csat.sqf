@@ -89,7 +89,7 @@ FRIENDLY FORCES
 <br/>
 None.<br/><br/>
 TELEPORT<br/>
-At the beginning of the mission the CSAT CO can use his 'Teleport'-action to move the platoon into position. The vehicles will always be placed along the nearest stretch of road. It is important that all units remain in their vehicles for the teleport to work.
+At the beginning of the mission the CSAT CO can use his 'Teleport'-action to move the platoon into position, outside the red circle. The vehicles will always be placed along the nearest stretch of road. It is important that all units remain in their vehicles for the teleport to work.
 "]];
 
 // ====================================================================================
