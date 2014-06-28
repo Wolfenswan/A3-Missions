@@ -23,7 +23,7 @@ _posarray = _posarray + [_pos];
 //Place convoy
 {
 _pos = (_posarray select _forEachIndex);
-_x setPos _pos;  _x setDir random 360;_x allowCrewInImmobile true; _x setVectorUp(surfaceNormal(getPos _x));} forEach _convoy;
+_x setPos _pos;  _x setDir random 360;_x setVelocity [0, 0, 0]; _x setVectorUp(surfaceNormal(getPos _x));} forEach _convoy;
 
 {_x setPos ([c3,10,6] call ws_fnc_getPos);clearMagazineCargoGlobal _x ; clearWeaponCargoGlobal _x ;clearItemCargoGlobal _x ;_x setVectorUp(surfaceNormal(getPos _x));_x setDir (random 360);} forEach [a1,a2,a3,a4];
 

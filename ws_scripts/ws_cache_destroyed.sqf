@@ -13,5 +13,6 @@ if (ws_caches_destroyed < 5) then {
 
 } else {
 	[["All crates were destroyed!","PLAIN"],"BIS_fnc_titleText",true] spawn BIS_fnc_MP;
+	ws_allCaches_destroyed = true; publicVariable "ws_allCaches_destroyed";
 sleep 5;
 };

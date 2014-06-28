@@ -42,6 +42,7 @@ f_var_mapClickTeleport_Units = f_var_mapClickTeleport_Units - [objNull];
 // We end the script if it is not running on a server or if only group leaders can use
 // the action and the player is not the leader of his/her group
 
+f_var_mapClickTeleport_textDone = localize format ["STR_f_mapClick%1Done",_string];
 if (count f_var_mapClickTeleport_Units > 0 && !(player in f_var_mapClickTeleport_Units)) exitWith {};
 if (f_var_mapClickTeleport_GroupTeleport && player != leader group player)  exitWith {};
 

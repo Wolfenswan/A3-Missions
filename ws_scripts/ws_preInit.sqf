@@ -16,6 +16,16 @@ ZEUS_Camera setPosATL ws_convoy;
 "mkrCSATBorder" setMarkerPos ws_convoy;
 "mkrCSATBorder" setMarkerAlpha 0;
 
+switch (ws_var_placement) do {
+	case 0: {_placement_jitter = [1500,1500];};
+	case 1: {_placement_jitter = [2000,2000];};
+	case 2: {_placement_jitter = [2500,2500];};
+	case 3: {_placement_jitter = [3000,3000];};
+	default {_placement_jitter = [2000,3000];};
+};
+
+"mkrCSATBorder" setMarkerSize _placement_jitter;
+
 if (isnil "ws_caches_destroyed") then {ws_caches_destroyed = false};publicvariable "ws_caches_destroyed";
 
 _fia = [];
@@ -42,12 +52,7 @@ Zeus_EdObj synchronizeObjectsAdd (units _x);
 _csat_convoy = [CSAT_CAR1,CSAT_MRAP1,CSAT_MRAP2,CSAT_Tr1,CSAT_Tr2];
 if (isNil "ws_var_placement") then {ws_var_placement = paramsarray select 7};
 _placement_jitter = [2000,3000];
-switch (ws_var_placement) do {
-	case 0: {_placement_jitter = [1000,2000];};
-	case 1: {_placement_jitter = [2000,3000];};
-	case 2: {_placement_jitter = [3000,4000];};
-	default {_placement_jitter = [2000,3000];};
-};
+
 
 _pos = ws_convoy;
 while {(_pos distance ws_convoy) < (_placement_jitter select 0)} do {

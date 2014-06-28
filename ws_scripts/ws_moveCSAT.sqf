@@ -21,7 +21,9 @@ _posarray = _posarray + [_pos];
 
 {
 if !(isNil format ["%1",_x]) then {
-	_x setPos (_posarray select _forEachIndex);
+	_x setPosATL (_posarray select _forEachIndex);
 	_x setDir ([_x,ws_convoy] call BIS_fnc_dirTo);
 };
 } forEach _csat_convoy;
+
+[["MapClickTeleport",[f_var_mapClickTeleport_textDone]],"BIS_fnc_showNotification",east] spawn BIS_fnc_MP;

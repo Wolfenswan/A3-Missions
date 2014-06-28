@@ -1,4 +1,4 @@
-if (isNil "ws_caches_destroyed") then {ws_caches_destroyed = false;};
+if (isNil "ws_allCaches_destroyed") then {ws_allCaches_destroyed = false;};
 
 if (isNil "ws_var_jitter") then {ws_var_jitter = "ws_var_jitter" call BIS_fnc_getParamValue;};
 if (isNil "ws_var_friendly") then {ws_var_friendly = "ws_var_friendly" call BIS_fnc_getParamValue;};

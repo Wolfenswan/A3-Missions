@@ -83,13 +83,13 @@ As our intelligence service has been suspecting that the NATO forces on the isla
 ENEMY FORCES
 <br/>
 Light FIA forces, some of the M2 technicals accompanying the convoy might still be operational.<br/>
-If our suspicion is true, NATO heliborn forces might be deployed to remove all evidence.
+If our suspicion is true, NATO heliborn forces will be deployed to remove all evidence.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
 None.<br/><br/>
-NOTE<br/>
-This can be played as a three-way adversarial where FIA have to defend the caches at all costs while NATO wants nothing but to destroy them.
+TELEPORT<br/>
+At the beginning of the mission the CSAT CO can use his 'Teleport'-action to move the platoon into position. The vehicles will always be placed along the nearest stretch of road. It is important that all units remain in their vehicles for the teleport to work.
 "]];
 
 // ====================================================================================

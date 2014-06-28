@@ -57,7 +57,7 @@ if (f_var_mapClickTeleport_GroupTeleport) then {
 
 openMap false;
 
-["MapClickTeleport",[f_var_mapClickTeleport_textDone]] call BIS_fnc_showNotification;
+//["MapClickTeleport",[f_var_mapClickTeleport_textDone]] call BIS_fnc_showNotification;
 
 // ====================================================================================
 
