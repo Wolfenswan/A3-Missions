@@ -2,8 +2,8 @@ if !(isServer) exitWith {};
 
 //Dynamic convoy
 _convoy = [c1,c2,c3,c4,c5,c6,c7,c8];
-_center = ws_convoy call ws_fnc_getEPos;
-_roads = _center nearRoads 20;
+_center = ws_convoy;
+_roads = _center nearRoads 50;
 _posarray = [];
 
 if (count _roads < count _convoy) then {
@@ -14,11 +14,15 @@ if (count _roads < count _convoy) then {
 	};
 };
 
+diag_log "found roads";
+
 //Collect positions along road
 {
-_pos = [_x,2] call ws_fnc_getPos;
-_posarray = _posarray + [_pos];
+	_pos = _x call ws_fnc_getEPos;
+	_posarray = _posarray + [_pos];
 } forEach _roads;
+
+diag_log "calculated roads";
 
 //Place convoy
 {
@@ -64,9 +68,10 @@ _x addEventHandler [
 } forEach [Trg1,Trg2,Trg3,Trg4,Trg5,Trg6,Trg7];
 
 //Create markers
-if (isNil "ws_var_jitter") then {ws_var_jitter = paramsArray select 6};
+if (isNil "ws_param_jitter") then {ws_param_jitter = "ws_param_jitter" call BIS_fnc_getParamValue;};
+
 _marker_jitter = [2500,3500];
-switch (ws_var_jitter) do {
+switch (ws_param_jitter) do {
 	case 0: {_marker_jitter = [0,0];};
 	case 1: {_marker_jitter = [1500,2500];};
 	case 2: {_marker_jitter = [2500,3500];};
@@ -74,9 +79,10 @@ switch (ws_var_jitter) do {
 	default {_marker_jitter = [2500,3500];};
 };
 
+diag_log "creating markers";
 
 _pos = ws_convoy;
-while {_pos distance ws_convoy < _marker_jitter select 0} do {
+while {_pos distance ws_convoy < (_marker_jitter select 0)} do {
 	_pos = [ws_convoy,(_marker_jitter select 1),(_marker_jitter select 0),360,true] call ws_fnc_getPos;
 };
 
@@ -108,4 +114,4 @@ _mkr setMarkerAlpha 0;
 Zeus_range setPos (getMarkerPos "fia_conv");
 Zeus_area synchronizeObjectsAdd [Zeus_range];
 
-true
+diag_log "placed convoy";

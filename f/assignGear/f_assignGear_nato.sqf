@@ -377,6 +377,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_smokegrenadegreen,2];
+		_unit addmagazines [_satchel,1];
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
@@ -392,6 +393,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_pistolmag,4];
+		_unit addmagazines [_satchel,1];
 		_unit addweapon _pistol;
 		["ar"] call _backpack;
 	};
@@ -405,6 +407,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_grenade,2];
 		_unit addmagazines [_mgrenade,2];
 		_unit addmagazines [_smokegrenade,2];
+		_unit addmagazines [_satchel,1];
 		_unit addWeapon "Binocular";
 		["aar"] call _backpack;
 	};

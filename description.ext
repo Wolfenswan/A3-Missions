@@ -286,13 +286,13 @@ class Params
         code = "ws_param_sws = %1";
 	};
 
-  class ws_param_marker
+  class ws_param_jitter
     {
             title = "Jitter of convoy marker for NATO forces";
             values[] = {0,1,2,3,9999};
             texts[] = {"Pinpoint","1.5k - 2.5k","2.5k - 3k (default)","3.5k - 5k","no marker"};
             default = 2;
-            code = "ws_var_jitter = %1";
+            code = "ws_param_jitter = %1";
     };
 
 	class ws_param_placement
@@ -301,7 +301,7 @@ class Params
             values[] = {0,1,2,3,4};
             texts[] = {"2k","2.5k","3k","3.5k","4k"};
             default = 2;
-            code = "ws_var_placement = %1";
+            code = "ws_param_placement = %1";
     };
 
 	class ws_param_friendly
@@ -309,8 +309,8 @@ class Params
 	        title = "FIA are friendly to";
 	        values[] = {0,1};
 	        texts[] = {"Nobody","NATO"};
-	        default = 0;
-	        code = "ws_var_friendly = %1";
+	        default = 1;
+	        code = "ws_param_friendly = %1";
 	 };
 
 	class ws_param_dbg
@@ -379,7 +379,7 @@ class CfgDebriefing
 
 	class End5
 	{
-		title = "Caches destroyed";
+		title = "Draw";
 		subtitle = "";
 		description =  "The crates were destroyed but NATO were unable to pull out.";
 		// pictureBackground = "";

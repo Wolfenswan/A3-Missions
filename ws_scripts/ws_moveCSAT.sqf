@@ -2,7 +2,7 @@ _pos = _this;
 
 _csat_convoy = [CSAT_CAR1,CSAT_Tr1,CSAT_Tr2,CSAT_MRAP1,CSAT_MRAP2];
 
-_roads = _pos nearRoads 20;
+_roads = _pos nearRoads 25;
 _posarray = [];
 
 if ((count _roads) < (count _csat_convoy)) then {
@@ -13,16 +13,10 @@ if ((count _roads) < (count _csat_convoy)) then {
 	};
 };
 
-//Collect positions along road
-{
-_pos = [_x,2] call ws_fnc_getPos;
-_posarray = _posarray + [_pos];
-} forEach _roads;
-
 {
 _x allowDamage false;
-_x setPosATL (_posarray select _forEachIndex);
-_x setDir ([_x,ws_convoy] call BIS_fnc_dirTo);
+_x setPosATL ((_roads select _forEachIndex) call ws_fnc_getEPos);
+_x setDir ([_x,c3] call BIS_fnc_dirTo);
 _x allowDamage true;
 } forEach _csat_convoy;
 

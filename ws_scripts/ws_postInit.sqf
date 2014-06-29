@@ -1,25 +1,31 @@
 if (isNil "ws_allCaches_destroyed") then {ws_allCaches_destroyed = false;};
 
-if (isNil "ws_var_jitter") then {ws_var_jitter = "ws_var_jitter" call BIS_fnc_getParamValue;};
-if (isNil "ws_var_friendly") then {ws_var_friendly = "ws_var_friendly" call BIS_fnc_getParamValue;};
+if (isNil "ws_param_jitter") then {ws_param_jitter = "ws_param_jitter" call BIS_fnc_getParamValue;};
+if (isNil "ws_param_friendly") then {ws_param_friendly = "ws_param_friendly" call BIS_fnc_getParamValue;};
 
 if (faction player == "BLU_F") then{
-	if (ws_var_jitter != 9999) then {
-		if (ws_var_jitter == 0) then {
+	hintsilent "1";
+	if (ws_param_jitter != 9999) then {
+
+		if (ws_param_jitter == 0) then {
 			"fia_conv" setMarkerAlphaLocal 1;
 		} else {
-			"us_conv" setMarkerAlphaLocal 1;"us_conv1" setMarkerAlphaLocal 1;
+			"us_conv" setMarkerAlphaLocal 1;
+			"us_conv1" setMarkerAlphaLocal 1;
 		};
 	};
+
 } else {
 	"fia_conv" setMarkerAlphaLocal 1;
 	"mkrCSATBorder" setMarkerAlphaLocal 1;
 };
 
-if (ws_var_friendly == 1) then {
+
+if (ws_param_friendly == 1) then {
 	west setfriend [resistance,1];
 	resistance setfriend [west,1];
 };
+
 
 if (faction player == "ind_g_f") then {{_x setMarkerAlphaLocal 1;};}forEach ["a1","a2","a3","a4"];
 

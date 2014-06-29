@@ -19,7 +19,8 @@ ZEUS_Camera setPosATL ws_convoy;
 "mkrCSATBorder" setMarkerPos ws_convoy;
 "mkrCSATBorder" setMarkerAlpha 0;
 
-switch (ws_var_placement) do {
+if (isNil "ws_param_placement") then {ws_param_placement = "ws_param_placement" call BIS_fnc_getParamValue;};
+switch (ws_param_placement) do {
 	case 0: {_placement_jitter = [2000,2000];};
 	case 1: {_placement_jitter = [2500,2500];};
 	case 2: {_placement_jitter = [3000,3000];};
