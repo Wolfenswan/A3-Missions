@@ -138,7 +138,10 @@ f_var_doNotRemoveBodies = [];
 // F3 - Simple Wounding System
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
+_sws = if (isNil "ws_param_sws") then {"ws_param_sws" call bis_fnc_getParamValue} else {ws_param_sws};
+if (_sws == 1) then {
 [player] execVM "f\simplewoundingsystem\init.sqf";
+};
 
 // ====================================================================================
 
