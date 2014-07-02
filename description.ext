@@ -45,6 +45,7 @@ respawnTemplates[] = {"f_spectator","f_JIP"};
 
 class cfgNotifications
 {
+
 	// Notification Template
 	class Template
 	{
@@ -98,11 +99,27 @@ class cfgNotifications
 		duration = 3;
 	};
 
+<<<<<<< HEAD
 	// Notification for the F3 JIP Component
 	class ALERT {
 		title= "ALERT";
 		description= "%1";
 		iconPicture = "\A3\ui_f\data\map\markers\military\warning_ca.paa";
+=======
+	class ws_alert
+	{
+		title = "ALERT";
+		description = "%1";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 3;
+	};
+
+	class ws_taskdone
+	{
+		title = "TASK COMPLETED";
+		description = "%1";
+		iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
+>>>>>>> 8550df033a41e3ada880fa72b753bbd0d36ea99a
 		duration = 3;
 	};
 };
@@ -268,12 +285,21 @@ class Params
 
 // Wolfenswan - Parameters
 
+	class ws_param_sws
+	{
+		title = "F3 Wounding System";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 1;
+        code = "ws_param_sws = %1";
+	};
+
 	class ws_param_uav
 	{
 		title = "Abibala UAV has ATGMs";
 		values[] = {0,1};
 		texts[] = {"No","Yes"};
-		default = 1;
+		default = 0;
 		code = "ws_param_uav = %1";
 	};
 
