@@ -128,7 +128,7 @@ class cfgNotifications
 	{
 		title = "ALERT";
 		description = "%1";
-		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\warning_ca.paa";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
 		duration = 3;
 	};
 
@@ -294,6 +294,15 @@ class Params
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
+
+	class ws_param_sws
+	{
+		title = "F3 Wounding System";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 0;
+        code = "ws_param_sws = %1";
+	};
 
 	class ws_param_hc
 	{
