@@ -2367,8 +2367,8 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			idVehicle=12;
-			expCond="this && (alive UnitFIA_CO) && time > 300 && isServer";
-			expActiv="ws_o1_gone = true;";
+			expCond="this && (alive UnitFIA_CO) && time > 300";
+			expActiv="ws_o1_gone = true; publicVariable ""ws_o1_gone""; nul = [[""ws_alert"",[""The first officer has escaped""]],""bis_fnc_showNotification"",true] spawn BIS_fnc_MP;";
 			class Effects
 			{
 				titleType="TEXT";
@@ -2391,7 +2391,7 @@ class Mission
 			age="UNKNOWN";
 			idVehicle=15;
 			expCond="this && (alive UnitFIA_DC) && time > 300 && isServer";
-			expActiv="ws_o2_gone = true;";
+			expActiv="ws_o2_gone = true; publicVariable ""ws_o2_gone""; nul = [[""ws_alert"",[""The second officer has escaped""]],""bis_fnc_showNotification"",true] spawn BIS_fnc_MP;";
 			class Effects
 			{
 				titleType="TEXT";

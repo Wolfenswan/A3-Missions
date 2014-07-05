@@ -1,7 +1,7 @@
 if !(isServer) exitWith {};
 
 _time = 600;
-_i = 0;
+ws_meeting_passed = 0;
 
 [["ws_alert",["Our meeting has begun!"]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;
 
@@ -9,24 +9,25 @@ while {alive UnitFIA_CO && alive UnitFIA_DC} do {
 
 	while {(UnitFIA_CO distance TrgM <= 15) && (UnitFIA_DC distance TrgM <= 15)} do {
 		sleep 5;
-		_i = _i + 5;
-			if (_i == _time / 4) then {
+		ws_meeting_passed = ws_meeting_passed + 5;
+			if (ws_meeting_passed == _time / 4) then {
 				[["ws_alert",["A quarter of the meeting time has passed."]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;
 			};
 
-			if (_i == _time / 2) then {
+			if (ws_meeting_passed == _time / 2) then {
 				[["ws_alert",["Half of the meeting time has passed."]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;
 			};
 
-			if (_i == (_time / 4)*3) then {
+			if (ws_meeting_passed == (_time / 4)*3) then {
 				[["ws_alert",["Three quarters of the meeting time have passed."]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;
 			};
 
-			if (_i == (_time - 10)) then {
+			if (ws_meeting_passed == (_time - 10)) then {
 				[["ws_alert",["10 seconds to finish the meeting!"]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;
 			};
 
-		if (_i == _time) exitWith {ws_meeting_done = true};
+		publicVariable "ws_meeting_passed";
+		if (ws_meeting_passed >= _time) exitWith {ws_meeting_done = true};
 	};
 
 	if (ws_meeting_done) exitWith {
