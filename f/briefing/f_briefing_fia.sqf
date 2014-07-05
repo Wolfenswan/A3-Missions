@@ -57,7 +57,7 @@ OFFICER MEETING<br/>
 The starting locations of the officers are randomized and their distance can benefit either of the two sides.<br/>
 The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for %1 consecutive minutes.<br/><br/>
 VICTORY CONDITIONS<br/>
-FIA wins if both officers conduct their meeting and escape to 2.5km distance from the town.<br/>
+FIA wins if both officers conduct their meeting and escape the vicinity of the town (leave highlighted area).<br/>
 AAF wins if both officers are taken out or they flee before the meeting has taken place.
 ",ws_param_meeting]]];
 
