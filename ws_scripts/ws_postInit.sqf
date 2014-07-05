@@ -19,7 +19,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 		([_x] + (_x getVariable ["ws_garrison",[]])) call ws_fnc_createGarrison;
 	} forEach [AAF,AAF_1,AAF_2,AAF_3,AAF_4,AAF_5,AAF_6,AAF_7];
 };
-/*
+
 
 // Do more stuff on the server
 if (isServer) then {
@@ -36,6 +36,6 @@ if (isServer) then {
 	 [_x,"f_fnc_gCache",true,false] spawn BIS_fnc_MP;
 	 (group _x) setVariable ["f_cacheExcl", true, true];
 	 _x allowDamage false;
-	} forEach [c1,c2,c3,c4,c5,c6,c7,c8,VehCSAT_MH1,VehCSAT_MH2];
+	} forEach [c1,c2,c3,c4,c5,c6,c7,VehCSAT_MH1,VehCSAT_MH2];
 };
 

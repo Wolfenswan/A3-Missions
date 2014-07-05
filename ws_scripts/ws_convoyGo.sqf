@@ -9,7 +9,7 @@ waitUntil {sleep 0.1;scriptDone f_script_setLocalVars};
  _x setVectorUp surfaceNormal (getPosATL _x);
  sleep 0.1;
  _x allowDamage true;
-} forEach [c1,c2,c3,c4,c5,c6,c7,c8];
+} forEach [c1,c2,c3,c4,c5,c6,c7];
 
 {
  [_x,"f_fnc_gUnCache",true,false] spawn BIS_fnc_MP;
@@ -25,4 +25,4 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 
 private ["_cnvmkrs"];
 _cnvmkrs = ["mkrConv"] call ws_fnc_collectMarkers;
-[_cnvmkrs,[c1,c2,c3,c4,c5,c6,c7,c8],true] execVM "convoyDefend\convoyDefend_init.sqf";
+[_cnvmkrs,[c1,c2,c3,c4,c5,c6,c7],true] execVM "convoyDefend\convoyDefend_init.sqf";
