@@ -35,13 +35,12 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 <marker name='mkrVeh'>Ground-Transport:</marker><br/>
-3 x Zamak<br/>
+2 x Zamak<br/>
 1 x Strider (unarmed)<br/>
 1 x Strider (HMG)<br/><br/>
 <marker name='mkrVeh_1'>Helicopters:</marker><br/>
 1 x Mohawk (carries 16)<br/>
-2 x Hellcat (unarmed - carries 6)<br/>
-1 x Hellcat (armed - carries 6)
+2 x Hellcat (w. HMG - carries 6)<br/>
 "]];
 
 // ====================================================================================
@@ -76,6 +75,6 @@ Lightly armed infantry and technicals.<br/>
 They might be equipped with RPG32-HE, so avoid clustering.
 <br/><br/>
 ROE<br/>
-If Hellcat or Abibala are armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in to avoid collateral damage (you know, just like in real life).<br/><br/>"]];
+If the Abibala is armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in to avoid collateral damage (you know, just like in real life).<br/><br/>"]];
 
 // ====================================================================================

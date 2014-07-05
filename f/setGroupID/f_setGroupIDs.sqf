@@ -64,8 +64,8 @@ _groups = [
 // GROUP IDs: BLUFOR > FIA
 // Automatically assigns intelligible names to groups
 
-["GrpFIA_CO","FIA CO -"],
-["GrpFIA_DC","FIA DC -"],
+["GrpFIA_CO","FIA O1 -"],
+["GrpFIA_DC","FIA O2 -"],
 
 ["GrpFIA_ASL","FIA ASL -"],
 ["GrpFIA_A1","FIA A1 -"],

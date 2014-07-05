@@ -76,7 +76,7 @@ AAF regulars, both motorized and airborn. They will possibly use UAVs against us
 <br/><br/>
 
 ROE<br/>
-If Hellcat or Abibala are armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in (just like in real life).<br/><br/>
+If the Abibala is armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in (just like in real life).<br/><br/>
 "]];
 
 // ====================================================================================
