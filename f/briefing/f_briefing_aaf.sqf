@@ -48,17 +48,17 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 // NOTES: MISSION
 // The code below creates the mission sub-section of notes.
 
-_mis = player createDiaryRecord ["diary", ["Mission","
+_mis = player createDiaryRecord ["diary", ["Mission",format["
 <br/>
 1. We begin <marker name='mkrAAF'>here</marker>.<br/>
 2. Proceed towards the <marker name='mkrTown'>target town</marker> and locate the meeting place of the officers. Strike swiftly to take them out.<br/><br/>
 OFFICER MEETING<br/>
 The starting locations of the officers are randomized and their distance to the town can benefit either of the two sides.<br/>
-The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for 10 consecutive minutes.<br/><br/>
+The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for %1 consecutive minutes.<br/><br/>
 VICTORY CONDITIONS<br/>
 FIA wins if both officers conduct their meeting and escape to 2.5km distance from the town.<br/>
 AAF wins if both officers are taken out or they flee before the meeting has taken place.
-"]];
+",ws_param_meeting]]];
 
 // ====================================================================================
 

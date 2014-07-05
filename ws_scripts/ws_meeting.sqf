@@ -1,6 +1,6 @@
 if !(isServer) exitWith {};
 
-_time = 600;
+_time = ws_param_meeting * 60;
 ws_meeting_passed = 0;
 
 [["ws_alert",["Our meeting has begun!"]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;

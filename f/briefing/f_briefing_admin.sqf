@@ -10,6 +10,10 @@ _briefing ="
 ADMIN SECTION<br/>
 This briefing section can only be seen by the current admin.
 <br/><br/>
+
+MISSION-MAKER NOTES<br/>
+Monitor the variable ws_meeting_passed to see how much time of the meeting has passed.
+<br/><br/>
 ";
 
 // ====================================================================================
