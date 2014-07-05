@@ -1,4 +1,4 @@
-if (isNil "ws_meeting") then {ws_meeting = false};
+if (isNil "ws_meeting_done") then {ws_meeting_done = false};
 
 0 setFog [0.4,0.025,40];
 

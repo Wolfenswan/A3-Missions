@@ -195,8 +195,8 @@ _heavy =  ["eng","engm"];
 _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
-_ghillie = ["sn","sp"];
-_specOp = ["smg","smg2"];
+_ghillie = [];
+_specOp = ["smg","smg2","sn"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -626,6 +626,17 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,3];
 		_unit addmagazines [_smokegrenade,3];
 		["car"] call _backpack;
+	};
+
+// LOADOUT: CARABINEER
+	case "sn":
+	{
+		_unit addmagazines ["5Rnd_127x108_Mag",3];
+		_unit addweapon "srifle_GM6_SOS_F";
+		_unit addWeapon "Binocular";
+		_unit addmagazines [_pistolmag,4];
+		_unit addweapon _pistol;
+		_attachments = [_scope2];
 	};
 
 // LOADOUT: SUBMACHINEGUNNER
