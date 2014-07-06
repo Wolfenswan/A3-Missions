@@ -29,15 +29,3 @@ if (!isDedicated) then {
 		] spawn BIS_fnc_typeText;
 	};
 };
-
-if (isServer) then {
-
-	if (ws_param_uav == 0) then {
-		VehAAF_UAV removeMagazineTurret ["6Rnd_LG_scalpel",[-1]];
-	};
-
-};
-
-if !(isNil "UnitAAF_CO_UAV") then {
-	UnitAAF_CO_UAV connectTerminalToUav VehAAF_UAV;
-};

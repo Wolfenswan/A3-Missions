@@ -435,8 +435,7 @@ switch (_typeofUnit) do
 	case "matg":
 	{
 		["matg"] call _backpack;
-		_unit addmagazines [_carbinemag,7];
-		_unit addmagazines [_carbinemag_tr,2];
+		_unit addmagazines [_carbinemag,4];
 		_unit addweapon _carbine;
 		_unit addweapon _MAT;
 		_unit addmagazines [_MATMag2,1];
@@ -445,15 +444,9 @@ switch (_typeofUnit) do
 // LOADOUT: MEDIUM AT ASSISTANT GUNNER
 	case "matag":
 	{
-		_unit addmagazines [_carbinemag,7];
-		_unit addmagazines [_carbinemag_tr,2];
 		_unit addweapon _rifle;
 		_unit addWeapon "Rangefinder";
-		_unit addmagazines [_smokegrenade,2];
-		_unit addmagazines [_riflemag,2];
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_smokegrenade,2];
+		_unit addmagazines [_riflemag,4];
 		["matag"] call _backpack;
 	};
 

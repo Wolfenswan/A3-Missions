@@ -287,7 +287,6 @@ case "matg":
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 1];
 		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag_tr, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 1];
 		(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 1];
 		(unitBackpack _unit) addMagazineCargoGlobal [_smokegrenade, 1];
@@ -298,7 +297,6 @@ case "matg":
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag_tr, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_smokegrenade, 2];
@@ -322,8 +320,7 @@ case "matag":
 		_unit addBackpack _bagmedium;
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag_tr, 2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_riflemag, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_smokegrenade, 2];
@@ -333,11 +330,10 @@ case "matag":
 		_unit addBackpack _baglarge;
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 3];
-		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag_tr, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 3];
-		(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 3];
-		(unitBackpack _unit) addMagazineCargoGlobal [_smokegrenade, 3];
+		(unitBackpack _unit) addMagazineCargoGlobal [_riflemag, 4];
+		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_smokegrenade, 2];
 	};
     };
 
