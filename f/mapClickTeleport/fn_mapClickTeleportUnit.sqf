@@ -21,12 +21,14 @@ if (isNil "f_var_mapClickTeleport_Used") then {f_var_mapClickTeleport_Used = 0};
 // as well.
 
 ["MapClickTeleport",[f_var_mapClickTeleport_textSelect]] call BIS_fnc_showNotification;
-openMap [true, false];
+openMap [true, true];
 onMapSingleClick "f_var_mapClickTeleport_telePos = _pos; publicVariable 'f_var_mapClickTeleport_telePos';f_telePositionSelected = true;";
 waitUntil {f_telePositionSelected};
 
+if (vehicle player == UnitCSAT_CO) then {
 // Send the position to the server and move CSAT convoy
 [{f_var_mapClickTeleport_telePos execVM "ws_scripts\ws_moveCSAT.sqf";},"BIS_fnc_spawn",false] spawn BIS_fnc_MP;
+};
 
 // HALO - set height
 // If a HALO height is set, modify the clicked position accordingly
@@ -44,6 +46,9 @@ if (vehicle player != player && f_var_mapClickTeleport_Height == 0) then {
 } else {
 	player setPos f_var_mapClickTeleport_telePos;
 };
+*/
+
+player setPos f_var_mapClickTeleport_telePos;
 
 // Move group
 // If enabled, the player's group is moved next to him
@@ -54,9 +59,8 @@ if (f_var_mapClickTeleport_GroupTeleport) then {
 		[[_x,f_var_mapClickTeleport_telePos],"f_fnc_mapClickTeleportGroup",_x] spawn BIS_fnc_MP;
 	} forEach ((units group player) - [player]);
 };
-*/
 
-openMap false;
+openMap [false, false];
 
 //["MapClickTeleport",[f_var_mapClickTeleport_textDone]] call BIS_fnc_showNotification;
 

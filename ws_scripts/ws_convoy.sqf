@@ -62,10 +62,10 @@ _x addEventHandler [
 	_x setHit [getText(configFile >> "cfgVehicles" >> (TypeOf _x) >> "HitPoints" >> "engine"),1];
 } forEach _convoy;
 
-//Attach trigger
-{_x setPos (getPos c3);
-	_x setTriggerArea [10, 10, 0, true];
-} forEach [Trg1,Trg2,Trg3,Trg4,Trg5,Trg6,Trg7];
+//Move trigger
+Trg1 setPos (getPos c3);
+Trg1 setTriggerArea [10, 10, 0, true];
+
 
 //Create markers
 if (isNil "ws_param_jitter") then {ws_param_jitter = "ws_param_jitter" call BIS_fnc_getParamValue;};
@@ -83,12 +83,13 @@ diag_log "creating markers";
 
 _pos = ws_convoy;
 while {_pos distance ws_convoy < (_marker_jitter select 0)} do {
-	_pos = [ws_convoy,(_marker_jitter select 1),(_marker_jitter select 0),360,true] call ws_fnc_getPos;
+	_pos = [ws_convoy,(_marker_jitter select 1) - 500,(_marker_jitter select 0) - 500,360,true] call ws_fnc_getPos;
+	//_pos = [ws_convoy,(_marker_jitter select 1) - 500,50] call ws_fnc_NearestRoadPos;
 };
 
 _mkr = createMarker ["us_conv",_pos];
 _mkr setMarkerType "mil_unknown";
-_mkr setMarkerText "Last known location of convoy";
+_mkr setMarkerText "Convoy known to be in this area";
 _mkr setMarkerColor "ColorRed";
 _mkr setMarkerAlpha 0;
 

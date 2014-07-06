@@ -25,7 +25,7 @@ _increment = 50;
 if (count _this > 2) then {_increment = _this select 2};
 _done = false;
 
-while {!_done && _i <= 20} do {
+while {!_done && _i <= 25} do {
 	_roads = _pos nearroads _distance;
 	if (count _roads > 0) then {
 		_pos = getPos (_roads call ws_fnc_selectRandom);
@@ -33,7 +33,7 @@ while {!_done && _i <= 20} do {
 	} else {
 	_distance = _distance + _increment;
 	_i = _i + 1;
-	if (_i == 20) exitWith {_pos = _this select 0; ["ws_fnc_NearestRoadPos ERROR: No roads found in radius of",(_increment*20),""] call ws_fnc_DebugText};
+	if (_i == 25) exitWith {_done = true; _pos = _this select 0; ["ws_fnc_NearestRoadPos ERROR: No roads found in radius of",(_increment*20),""] call ws_fnc_DebugText};
 	};
 };
 

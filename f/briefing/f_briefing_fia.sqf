@@ -35,7 +35,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 2 x M2 Technicals were part of the convoy and their guns are still operational.
-Use manual control to enter them.
+Use remote control to enter them.
 "]];
 
 // ====================================================================================
@@ -49,7 +49,7 @@ COMMANDER'S INTENT
 <br/>
 Lead our glorious defense.<br/><br/>
 ZEUS ABILITIES<br/>
-Use your ZEUS key to control our defense. You can freely place units in a 500m radius. As CSAT forces approach, your abilities will be reduced to giving commands to units. You can always take direct control of units.
+You can freely place units in a 500m radius. As CSAT forces approach within that area your abilities will be reduced to only giving commands to groups. You can always take direct control of units (under 'MODULES'-menu).
 "]];
 
 // ====================================================================================
@@ -64,7 +64,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 3. CSAT forces will attack in full force, possibly supported by heliborn troops from their <marker name='mkrCSAT'>base</marker>.<br/>
 4. NATO heliborn forces will be send from <marker name='mkrNATO'>their foothold</marker> to destroy the crates.<br/><br/>
 NOTE<br/>
-To seize the crates at least one CSAT unit must be within 10m of them for two full minutes.<br/>
+To seize the crates at least one NATO unit must be within 10m of them for two full minutes.<br/>
 For NATO to be successful they need to either wipe out the CSAT platoon or destroy all four crates and the HEMTT and fall back at least 2.5k from the AO.<br/>
 All four caches are next to the HEMTT truck. The crates and the truck can only be destroyed by demo charges.
 "]];

@@ -54,17 +54,17 @@ Locate the convoy and destroy the caches.
 // NOTES: MISSION
 // The code below creates the mission sub-section of notes.
 
-_mis = player createDiaryRecord ["diary", ["Mission","
+_mis = player createDiaryRecord ["diary", ["Mission",format ["
 <br/>
 1. We begin <marker name='mkrNATO'>here</marker>.<br/>
 2. We need to locate the convoy.<br/>
-3. Deploy our forces, move in to destroy the caches and extract.<br/>
+3. Deploy our forces, move in to secure the caches and extract.<br/>
 4. CSAT motorized and heliborn forces might be send from <marker name='mkrCSAT'>their CSAT</marker>. They will probably try and seize the caches, don't let this happen.<br/><br/>
 NOTE<br/>
-To seize the crates at least one CSAT unit must be within 10m of them for two full minutes.<br/>
-For NATO to be successful they need to either wipe out the CSAT platoon or destroy all four crates and the HEMTT and fall back at least 2.5k from the AO.<br/>
+To seize the crates at least one NATO unit must be within 10m of them for two %1 minutes.<br/>
+For NATO to be successful they need to either wipe out the CSAT platoon or seize the crates, then fall back at least 2.5k from the AO.<br/>
 All four caches are next to the HEMTT truck. The crates and the truck can only be destroyed by demo charges.
-"]];
+",ws_param_time]]];
 
 // ====================================================================================
 

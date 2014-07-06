@@ -1,6 +1,6 @@
 _pos = _this;
 
-_csat_convoy = [CSAT_CAR1,CSAT_Tr1,CSAT_Tr2,CSAT_MRAP1,CSAT_MRAP2];
+_csat_convoy = [CSAT_CAR1,CSAT_Tr1,CSAT_Tr2];
 
 _roads = _pos nearRoads 25;
 _posarray = [];
