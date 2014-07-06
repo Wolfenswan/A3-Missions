@@ -97,11 +97,19 @@ class cfgNotifications
 		duration = 3;
 	};
 
+
 	class CacheDestroyed {
 		description="Attackers have detonated one of the caches!";
 		title="Cache destroyed";
 		iconPicture="\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
 		//iconPicture="\A3\ui_f\data\map\mapcontrol\taskIconCreates_ca.paa";
+};
+	class ws_alert
+	{
+		title = "ALERT";
+		description = "%1";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 3;
 	};
 
 	class MissionTimer {
@@ -275,6 +283,15 @@ class Params
 
 // ============================================================================================
 // Custom options for Cratesistance
+	class ws_param_sws
+	{
+		title = "F3 Wounding System";
+        values[] = {0,1};
+        texts[] = {"Off","On"};
+        default = 0;
+        code = "ws_param_sws = %1";
+	};
+
 
 		class ha_param_missionTime
 		{
