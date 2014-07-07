@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-1-0</i>
 
 <b>Mission description</b><br/>
-AAF defend their compound against CSAT attackers.
+https://github.com/Wolfenswan/A3-Missions/archive/fa3_a94_SelfService.zip
 
 <b>Contact</b><br/>
 folkarps.com<br/>
