@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-1-0</i>
 
 <b>Mission description</b><br/>
-AAF attempts to interrupt a FIA meeting in central Altis.
+A straightforward take & hold adversarial, where CSAT have to attack a AAF held storage compound. The surrounding terrain is diverse and allows for a number of approaches and defensive positions.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
