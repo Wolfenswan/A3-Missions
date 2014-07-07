@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-1-0</i>
 
 <b>Mission description</b><br/>
-A straightforward take & hold adversarial, where CSAT have to attack a AAF held storage compound. The surrounding terrain is diverse and allows for a number of approaches and defensive positions.
+Two FIA officers are planning to meet in a town in central Altis, AAF attempts to intercept and kill them.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
