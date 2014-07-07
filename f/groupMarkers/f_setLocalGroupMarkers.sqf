@@ -186,6 +186,9 @@ switch (_unitfaction) do
 		["GrpAAF_B2", 1, "B2", "ColorBlue"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_B3", 1, "B3", "ColorBlue"] spawn f_fnc_localGroupMarker;
 
+		["GrpAAF_J1", 1, "J1", "ColorGreen"] spawn f_fnc_localGroupMarker;
+		["GrpAAF_J2", 1, "J2", "ColorGreen"] spawn f_fnc_localGroupMarker;
+
 		["GrpAAF_CSL", 0, "CSL", "ColorGreen"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_C1", 1, "C1", "ColorGreen"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_C2", 1, "C2", "ColorGreen"] spawn f_fnc_localGroupMarker;
@@ -202,7 +205,7 @@ switch (_unitfaction) do
 
 		["GrpAAF_ENG1",  6, "ENG1", "ColorOrange"] spawn f_fnc_localGroupMarker;
 
- 		["GrpAAF_IFV1",  7, "IFV1", "ColorRed"] spawn f_fnc_localGroupMarker;
+ 		["GrpAAF_IFV1",  7, "MRAP1", "ColorRed"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_IFV2",  7, "IFV2", "ColorRed"] spawn f_fnc_localGroupMarker;
  		["GrpAAF_IFV3",  7, "IFV3", "ColorBlue"] spawn f_fnc_localGroupMarker;
 		["GrpAAF_IFV4",  7, "IFV4", "ColorBlue"] spawn f_fnc_localGroupMarker;

@@ -39,7 +39,6 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 1 x Strider (unarmed)<br/>
 1 x Strider (HMG)<br/><br/>
 <marker name='mkrVeh_1'>Helicopters:</marker><br/>
-1 x Mohawk (carries 16)<br/>
 2 x Hellcat (w. HMG - carries 6)<br/>
 "]];
 
@@ -67,14 +66,11 @@ AAF wins if both officers are taken out or they flee before the meeting has take
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-Two high-ranking FIA officers are about to meet in a town nearby. Our officers are growing weary of being insulted as useless sons of dogs and are sending us out to deal with this insolence. We are tasked to intercept the meeting and take out the officers before they can escape.
+Two high-ranking FIA officers are about to meet in a town nearby. Our officers are growing weary of being insulted as useless sons of dogs and are sending us out to deal with this insolence. We are tasked to intercept the meeting and take out the officers before they can escape. Time is of the essence!
 <br/><br/>
 ENEMY FORCES
 <br/>
 Lightly armed infantry and technicals.<br/>
-They might be equipped with RPG32-HE, so avoid clustering.
-<br/><br/>
-ROE<br/>
-If the Abibala is armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in to avoid collateral damage (you know, just like in real life).<br/><br/>"]];
+They might be equipped with RPG32-HE, so avoid clustering.<br/><br/>"]];
 
 // ====================================================================================
