@@ -1,5 +1,6 @@
 if (isNil "ws_allCaches_destroyed") then {ws_allCaches_destroyed = false;};
-if (isNil "ws_caches_seized") then {ws_caches_seized = false;};
+if (isNil "ws_caches_seized_n") then {ws_caches_seized_n = false;};
+if (isNil "ws_caches_seized_o") then {ws_caches_seized_o = false;};
 if (isNil "ws_param_jitter") then {ws_param_jitter = "ws_param_jitter" call BIS_fnc_getParamValue;};
 if (isNil "ws_param_friendly") then {ws_param_friendly = "ws_param_friendly" call BIS_fnc_getParamValue;};
 

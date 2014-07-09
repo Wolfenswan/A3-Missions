@@ -63,9 +63,11 @@ _mis = player createDiaryRecord ["diary", ["Mission",format ["
 2. We need to reach the <marker name='fia_conv'>convoy</marker> and destroy the caches.<br/>
 3. FIA forces at the convoy will most likely offer heavy resistance. Use all force necessary.<br/>
 4. NATO heliborn forces might be send from <marker name='mkrNATO'>their foothold</marker>. Deal with them as the need arises.<br/><br/>
-NOTE<br/>
-To seize the crates at least one NATO unit must be within 10m of them for two %1 minutes.<br/>
-For NATO to be successful they need to either wipe out the CSAT platoon or seize the crates, then fall back at least 2.5k from the AO.<br/>
+VICTORY CONDITIONS<br/>
+CSAT need to either wipe out the NATO platoon or seize the caches.<br/>
+NATO need to kill the CSAT attackers or prepare the caches for destruction, then fall back 2.5km from the AO.<br/>
+<br/><br/>
+To claim the caches at least one unit of the respective must be within 10m of them for %1 minutes.<br/>
 All four caches are next to the HEMTT truck. The crates and the truck can only be destroyed by demo charges.
 ",ws_param_time]]];
 
@@ -77,7 +79,7 @@ All four caches are next to the HEMTT truck. The crates and the truck can only b
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 A Mi-48 on morning patrol intercepted a <marker name='fia_conv'>FIA convoy</marker>. Before engaging the gunner noticed unusual activity around one of the vehicles.
-As our intelligence service has been suspecting that the NATO forces on the island have been supplying FIA in order to undermine our presence we are going to send your platoon to investigate, mob up the FIA survivors and seize all NATO caches as evidence.
+As intelligence has been suspecting that local MATO forces have been supplying FIA to undermine our operations, we are going to send your platoon to investigate. Mob up the FIA survivors and seize all cargo evidence.
 <br/><br/>
 ENEMY FORCES
 <br/>
