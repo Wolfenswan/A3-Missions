@@ -1,3 +1,6 @@
+if (isNil "ws_AirfieldDetected") then {ws_AirfieldDetected = false};
+
+
 ws_isHC = [] call ws_fnc_checkHC;
 
 // On neither the server nor the HC
@@ -6,7 +9,7 @@ if (!isDedicated && !ws_isHC) then {
 	// Display a short text intro
  	[] spawn {
 	 waitUntil {time > 15};
-		["OPERATION XYZ","CENTRAL ALTIS"] call ws_fnc_showIntro;
+		["OPERATION MOLOS","NORTH-EAST ALTIS"] call ws_fnc_showIntro;
 	};
 };
 
@@ -16,7 +19,7 @@ if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParam
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 
 	_units = [];
-	_garrison = ([] call ws_fnc_collectObjectsNum);
+	_garrison = ([AAF] call ws_fnc_collectObjectsNum);
 	{
 		_units = _units + ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
 		//deleteVehicle _x;
@@ -48,4 +51,14 @@ if (isServer) then {
 
 	// If units were spawned set AI skill again
 	[] execVM "f\setAISKill\f_setAISkill.sqf";
+
+	{
+	_unit = _x;
+		removeAllPrimaryWeaponItems _unit;
+				{
+					_unit addPrimaryWeaponItem _x;
+				} foreach ["acc_flashlight","optic_ACO_grn"];
+	//_unit enablegunlights "forceOn";
+	} forEach f_var_men_RES;
+
 };

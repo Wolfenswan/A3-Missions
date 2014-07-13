@@ -132,7 +132,7 @@ switch (_weather) do
 		_MissionOvercast = 1;
 		_MissionRain = 1;
 		_MissionRainbow = 0;
-		_MissionLightnings = 1;
+		_MissionLightnings = 1.1;
 		_MissionWindStr = 1;
 		_MissionWindGusts = 1;
 		_MissionWaves = 1;
@@ -154,6 +154,7 @@ _transition setRainbow _MissionRainbow;
 _transition setWindStr  _MissionWindStr;
 _transition setWindForce _MissionWindGusts;
 _transition setWaves _MissionWaves;
+_transition setLightnings _MissionLightnings;
 
 } else {
 	0 setOvercast  _MissionOvercast;
@@ -162,6 +163,7 @@ _transition setWaves _MissionWaves;
 	0 setWindStr  _MissionWindStr;
 	0 setWindForce _MissionWindGusts;
 	0 setWaves _MissionWaves;
+	0 setLightnings _MissionLightnings;
 	forceWeatherChange;
 };
 

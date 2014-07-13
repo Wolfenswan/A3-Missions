@@ -55,7 +55,7 @@ _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
 _scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
 
 // Default setup
-_attachments = [_attach1,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_attach1,_scope1,_silencer2]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -70,7 +70,7 @@ _hg_silencer1 = "muzzle_snds_L";	// 9mm suppressor
 _hg_scope1 = "optic_MRD";			// MRD
 
 // Default setup
-_hg_attachments= []; // The default attachment set for handguns, overwritten in the individual unitType
+_hg_attachments= [_hg_silencer1]; // The default attachment set for handguns, overwritten in the individual unitType
 
 // ====================================================================================
 
@@ -140,9 +140,9 @@ _chemyellow =  "Chemlight_yellow";
 _chemblue = "Chemlight_blue";
 
 // Backpacks
-_bagsmall = "B_AssaultPack_dgtl";			// carries 120, weighs 20
-_bagmedium = "B_FieldPack_ocamo";			// carries 200, weighs 30
-_baglarge =  "B_Carryall_ocamo"; 			// carries 320, weighs 40
+_bagsmall = "B_FieldPack_oucamo";			// carries 120, weighs 20
+_bagmedium = "B_FieldPack_oucamo";			// carries 200, weighs 30
+_baglarge =  "B_Carryall_oucamo"; 			// carries 320, weighs 40
 _bagmediumdiver =  "B_AssaultPack_blk";		// used by divers
 _baguav = "O_UAV_01_backpack_F";			// used by UAV operator
 
@@ -202,8 +202,8 @@ _specOp = [];
 // The outfit-piece is randomly selected from the array for each unit
 
 // Woodland-Hex
-_baseUniform = ["U_O_CombatUniform_ocamo"];
-_baseHelmet = ["H_HelmetO_ocamo"];
+_baseUniform = ["U_O_CombatUniform_oucamo"];//["U_O_CombatUniform_ocamo"];
+_baseHelmet = ["H_HelmetSpecO_blk"];//["H_HelmetO_ocamo"];
 _baseGlasses = [];
 
 // Urban
@@ -212,7 +212,7 @@ _baseGlasses = [];
 
 // Armored vests
 _lightRig = ["V_HarnessO_brn"];
-_mediumRig = ["V_HarnessOGL_brn"]; 	// default for all infantry classes
+_mediumRig =["V_HarnessOSpec_gry"]; //["V_HarnessOGL_brn"]; 	// default for all infantry classes
 _heavyRig = ["V_HarnessOGL_brn"];
 
 // Diver
@@ -294,6 +294,7 @@ if (_isMan) then {
 	//_unit linkItem "ItemRadio";
 	//_unit linkItem "ItemWatch";
 
+	_unit addmagazine _satchel;
 };
 
 // ====================================================================================
@@ -371,6 +372,7 @@ switch (_typeofUnit) do
 // LOADOUT: FIRE TEAM LEADER
 	case "ftl":
 	{
+		_unit addItem "MineDetector";
 		_unit addmagazines [_glriflemag,7];
 		_unit addmagazines [_glriflemag_tr,2];
 		_unit addmagazines [_glmag,5];
