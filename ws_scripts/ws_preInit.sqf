@@ -15,7 +15,7 @@ ws_convoy =  getMarkerPos _mkr; publicvariable "ws_convoy";
 
 diag_log format ["Using %1 @ %2",_mkr,ws_convoy];
 
-ZEUS_Camera setPosATL ws_convoy;
+ZEUS_Camera setPosATL [ws_convoy select 0,ws_convoy select 1,10];
 "mkrCSATBorder" setMarkerPos ws_convoy;
 "mkrCSATBorder" setMarkerAlpha 0;
 
