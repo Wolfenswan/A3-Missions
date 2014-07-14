@@ -204,7 +204,7 @@ _specOp = [];
 // Woodland-Hex
 _baseUniform = ["U_O_CombatUniform_oucamo"];//["U_O_CombatUniform_ocamo"];
 _baseHelmet = ["H_HelmetSpecO_blk"];//["H_HelmetO_ocamo"];
-_baseGlasses = [];
+_baseGlasses = ["G_Bandanna_blk"];
 
 // Urban
 //_baseUniform = ["U_O_CombatUniform_oucamo"];
@@ -595,6 +595,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,1];
 		_unit linkItem _uavterminal;
 		["uav"] call _backpack;
+		_attachments = [_attach1,_hg_silencer1];
 	};
 
 // LOADOUT: Diver

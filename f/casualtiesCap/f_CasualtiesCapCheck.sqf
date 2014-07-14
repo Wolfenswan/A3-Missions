@@ -153,7 +153,7 @@ while {true} do
 // Depending on input, either MPEnd or the parsed code itself is called
 
 if (typeName _end == typeName 0) exitWith {
-	[_end] call f_fnc_mpEnd;
+	[_end,false] call f_fnc_mpEnd;
 };
 
 if (typeName _end == typeName {}) exitWith {

@@ -9,7 +9,7 @@ if (!isDedicated && !ws_isHC) then {
 	// Display a short text intro
  	[] spawn {
 	 waitUntil {time > 15};
-		["OPERATION MOLOS","NORTH-EAST ALTIS"] call ws_fnc_showIntro;
+		["OPERATION 'MOLOS'","NORTH-EAST ALTIS"] call ws_fnc_showIntro;
 	};
 };
 
@@ -54,6 +54,9 @@ if (isServer) then {
 
 	{
 	_unit = _x;
+	if (_unit != leader group _unit) then {
+	_unit unlinkItem "NVGoggles_INDEP";
+	};
 		removeAllPrimaryWeaponItems _unit;
 				{
 					_unit addPrimaryWeaponItem _x;

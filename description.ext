@@ -188,8 +188,8 @@ class Params
 	class f_param_weather
 	{
 		title = "$STR_f_param_weather";
-		values[] = {0,1,2,3,4,5,6,7,8};
-		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8};
+		values[] = {8};
+		texts[] = {$STR_f_param_weather_Option8};
 		default = 8;
 		function = "f_fnc_setWeather";		// This function is called to apply the values
 		isGlobal = 0;						// Execute this only on the server
@@ -210,8 +210,8 @@ class Params
     class f_param_timeOfDay
 	{
 		title = "$STR_f_param_timeOfDay";
-		values[] = {0,1,2,3,4,5,6,7};
-		texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
+		values[] = {0,1};
+		texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1};
 		default = 0;
 		function = "f_fnc_setTime";			// This function is called to apply the values
  		isGlobal = 0;						// Execute this only on the server
@@ -306,9 +306,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "MISSION FAILURE";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "The platoon took too heavy losses";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -316,9 +316,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "MISSION SUCCESS";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "The platoon managed to fulfill it's objectives according to plan.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -326,9 +326,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "Ending #3";
+		title = "PARTIAL SUCCESS";
 		subtitle = "";
-		description = "*** Insert debriefing #3 here. ***";
+		description = "The platoon was able to destroy the communications tower, but unable to capture the airfield.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
