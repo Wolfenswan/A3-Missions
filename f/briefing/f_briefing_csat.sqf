@@ -96,7 +96,7 @@ Your platoon is inserted along the western coast, covered by the darkness of ear
 ENEMY FORCES
 <br/>
 A mix of AAF regulars and light vehicles. Heavier support might be brought in if the officer is able to call in for reinforcements.<br/>
-Should the enemy alerted to your presence before the communication tower is destroyed you'll likely face a sizeable number of reinforcements.
+Should the enemy be alerted to your presence before the communication tower is destroyed you'll likely face a sizeable number of reinforcements.
 <br/><br/>
 "]];
 

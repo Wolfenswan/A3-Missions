@@ -140,8 +140,8 @@ _chemyellow =  "Chemlight_yellow";
 _chemblue = "Chemlight_blue";
 
 // Backpacks
-_bagsmall = "B_FieldPack_oucamo";			// carries 120, weighs 20
-_bagmedium = "B_FieldPack_oucamo";			// carries 200, weighs 30
+_bagsmall = "B_AssaultPack_blk"; //"B_FieldPack_oucamo";			// carries 120, weighs 20
+_bagmedium = "B_AssaultPack_blk";//"B_FieldPack_oucamo";			// carries 200, weighs 30
 _baglarge =  "B_Carryall_oucamo"; 			// carries 320, weighs 40
 _bagmediumdiver =  "B_AssaultPack_blk";		// used by divers
 _baguav = "O_UAV_01_backpack_F";			// used by UAV operator
@@ -203,8 +203,8 @@ _specOp = [];
 
 // Woodland-Hex
 _baseUniform = ["U_O_CombatUniform_oucamo"];//["U_O_CombatUniform_ocamo"];
-_baseHelmet = ["H_HelmetSpecO_blk"];//["H_HelmetO_ocamo"];
-_baseGlasses = ["G_Bandanna_blk"];
+_baseHelmet = ["H_Watchcap_blk"];//["H_HelmetO_ocamo",""H_HelmetSpecO_blk""];
+_baseGlasses = ["G_Balaclava_blk"];
 
 // Urban
 //_baseUniform = ["U_O_CombatUniform_oucamo"];
@@ -212,7 +212,7 @@ _baseGlasses = ["G_Bandanna_blk"];
 
 // Armored vests
 _lightRig = ["V_HarnessO_brn"];
-_mediumRig =["V_HarnessOSpec_gry"]; //["V_HarnessOGL_brn"]; 	// default for all infantry classes
+_mediumRig =["V_PlateCarrier1_blk"]; //["V_HarnessOGL_brn"]; 	// default for all infantry classes
 _heavyRig = ["V_HarnessOGL_brn"];
 
 // Diver
