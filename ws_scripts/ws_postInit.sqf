@@ -46,6 +46,25 @@ if (isServer) then {
 	// Recalculate F3 variables
 	[0] execVM "f\common\f_setLocalVars.sqf";
 
+	// Stuff to happen AFTER mission launch
+	sleep 0.1;
+
 	// If units were spawned set AI skill again
 	[] execVM "f\setAISKill\f_setAISkill.sqf";
+
+	// NVG-removal, add flashlights
+	/*
+	{
+	_unit = _x;
+		if (!local _unit || isplayer _unit || "acc_flashlight" in primaryWeaponItems _unit) exitWith {};            // If the unit isn't local, a player or already has a flashlight exit
+		if ("acc_pointer_IR" in primaryWeaponItems _unit) then {_x removePrimaryWeaponItem "acc_pointer_IR"};       // Remove laser if equipped
+		_unit addPrimaryWeaponItem "acc_flashlight"; // Add flashlight
+
+		// Remove NVGs
+		if ({_x in assigneditems _unit} count ["NVGoggles_OPFOR","NVGoggles_INDEP","NVGoggles"] > 0) then {{_unit     unlinkItem _x} forEach ["NVGoggles_OPFOR","NVGoggles_INDEP","NVGoggles"] };
+
+		// Forces flashlights on
+		// _unit enablegunlights "forceOn";
+	} forEach allUnits;
+	*/
 };
