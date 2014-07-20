@@ -49,6 +49,7 @@ _attach2 = "acc_flashlight";	// Flashlight
 
 _silencer1 = "muzzle_snds_M";	// 5.56 suppressor
 _silencer2 = "muzzle_snds_H";	// 6.5 suppressor
+_silencer3 = "muzzle_snds_acp",
 
 _scope1 = "optic_ACO_grn";		// ACO
 _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
@@ -87,9 +88,9 @@ _carbinemag = "30Rnd_65x39_caseless_green";
 _carbinemag_tr = "30Rnd_65x39_caseless_green_mag_Tracer";
 
 // Standard Submachine Gun/Personal Defence Weapon (Aircraft Pilot, Submachinegunner)
-_smg = "SMG_02_F";
-_smgmag = "30Rnd_9x21_Mag";
-_smgmag_tr = "30Rnd_9x21_Mag";
+_smg = "SMG_01_F";
+_smgmag = "30Rnd_45ACP_Mag_SMG_01";
+_smgmag_tr = "30Rnd_45ACP_Mag_SMG_01_tracer_green";
 
 // Diver
 _diverWep = "arifle_SDAR_F";
@@ -129,6 +130,15 @@ _medkit = "Medikit";
 
 // Night Vision Goggles (NVGoggles)
 _nvg = "NVGoggles_OPFOR";
+
+/*
+_rifle = _smg;
+_carbine = _smg;
+_glrifle = _smg;
+_riflemag = _smgmag;
+_carbinemag = _smgmag;
+_glriflemag = _smgmag;
+*/
 
 // UAV Terminal
 _uavterminal = "O_UavTerminal";
@@ -196,7 +206,7 @@ _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = [];
+_specOp = ["smg"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -240,10 +250,10 @@ _ghillieRig = ["V_Chestrig_khk"];
 _ghillieGlasses = [];
 
 // Spec Op
-_sfuniform = ["U_O_SpecopsUniform_ocamo"];
-_sfhelmet = ["H_HelmetSpecO_ocamo","H_HelmetSpecO_blk"];
-_sfRig = _mediumRig;
-_sfGlasses = [];
+_sfuniform = ["U_O_CombatUniform_oucamo"];
+_sfhelmet = ["H_Watchcap_blk"];
+_sfRig = ["V_PlateCarrier1_blk"];
+_sfGlasses = ["G_Balaclava_blk"];
 
 
 // ====================================================================================
@@ -293,8 +303,6 @@ if (_isMan) then {
 	//_unit linkItem "ItemCompass";
 	//_unit linkItem "ItemRadio";
 	//_unit linkItem "ItemWatch";
-
-	_unit addmagazine _satchel;
 };
 
 // ====================================================================================
@@ -325,7 +333,7 @@ switch (_typeofUnit) do
 	case "co":
 	{
 		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
+		//_unit addmagazines [_glriflemag_tr,2];
 		_unit addmagazines [_glmag,3];
 		_unit addmagazines [_glsmokewhite,4];
 		_unit addweapon _glrifle;					//_COrifle
@@ -344,7 +352,7 @@ switch (_typeofUnit) do
 	case "dc":
 	{
 		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
+		//_unit addmagazines [_glriflemag_tr,2];
 		_unit addmagazines [_glmag,3];
 		_unit addmagazines [_glsmokewhite,4];
 		_unit addweapon _glrifle;					//_DCrifle
@@ -372,9 +380,8 @@ switch (_typeofUnit) do
 // LOADOUT: FIRE TEAM LEADER
 	case "ftl":
 	{
-		_unit addItem "MineDetector";
 		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
+		//_unit addmagazines [_glriflemag_tr,2];
 		_unit addmagazines [_glmag,5];
 		_unit addmagazines [_glsmokewhite,4];
 		_unit addweapon _glrifle;					//_FTLrifle
@@ -418,7 +425,7 @@ switch (_typeofUnit) do
 	case "rat":
 	{
 		_unit addmagazines [_carbinemag,7];
-		_unit addmagazines [_carbinemag_tr,2];
+		//_unit addmagazines [_carbinemag_tr,2];
 		_unit addweapon _carbine;
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
@@ -562,8 +569,8 @@ switch (_typeofUnit) do
 // LOADOUT: ENGINEER (DEMO)
 	case "eng":
 	{
-		_unit addmagazines [_carbinemag,7];
-		_unit addweapon _carbine;
+		_unit addmagazines [_riflemag,7];
+		_unit addweapon _rifle;
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
@@ -595,7 +602,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,1];
 		_unit linkItem _uavterminal;
 		["uav"] call _backpack;
-		_attachments = [_attach1,_hg_silencer1];
+		_attachments = [_attach1,_silencer3];
 	};
 
 // LOADOUT: Diver
@@ -650,12 +657,12 @@ switch (_typeofUnit) do
 	case "gren":
 	{
 		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
+		//_unit addmagazines [_glriflemag_tr,2];
 		_unit addweapon _glrifle;
 		_unit addmagazines [_glmag,6];
 		_unit addmagazines [_glsmokewhite,2];
-		_unit addmagazines [_grenade,3];
-		_unit addmagazines [_mgrenade,3];
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
 		_unit addmagazines [_smokegrenade,2];
 		["g"] call _backpack;
 	};

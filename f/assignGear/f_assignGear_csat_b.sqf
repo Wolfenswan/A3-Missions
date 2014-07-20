@@ -352,26 +352,14 @@ case "matag":
 // BACKPACK: ENGINEER (DEMO)
 case "eng":
 {
-	// NO BACKPACK (STILL ADD SMALL FOR TOOLKIT)
-	if (f_param_backpacks == 0) then {
-		_unit addBackpack _bagsmall;
-		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-	};
-	// BACKPACK: LIGHT
-	if (f_param_backpacks == 1) then {
-		_unit addBackpack _baglarge;
-		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-		(unitBackpack _unit) addItemCargoGlobal [_satchel,2];
-	};
-	// BACKPACK: HEAVY
-	if (f_param_backpacks == 2) then {
-		_unit addBackpack _baglarge;
-		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-		(unitBackpack _unit) addItemCargoGlobal [_satchel,4];
-	};
+	_unit addBackpack _bagmedium;
+	clearMagazineCargoGlobal (unitBackpack _unit);
+	(unitBackpack _unit) addMagazineCargoGlobal [_riflemag, 2];
+	(unitBackpack _unit) addMagazineCargoGlobal [_riflemag_tr, 1];
+	(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 1];
+	(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 1];
+	(unitBackpack _unit) addMagazineCargoGlobal [_smokegrenade, 1];
+	(unitBackpack _unit) addItemCargoGlobal [_satchel,2];
 };
 
 // BACKPACK: ENGINEER (MINES)

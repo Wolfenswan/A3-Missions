@@ -37,7 +37,7 @@ MILITARY PUTSCH<br/>
 The small island nation of Altis has long been a cause for concern. Deep within CSAT's mediterranean sphere of interest it allegiance was never clear and it's long lasting civil war has ripped the island apart. But as of three months ago a military putsch has toppled the parliament and claims to reinstate order. Albeit not proven yet, it is obvious that NATO has been involved in funding and encouraging this travesty. Under hazy pretense the AAF has already invited NATO 'peace-keepers' to Altis. CSAT cannot allow this development to continue, if they do not want a NATO outpost deep within their own territory.<br/><br/>
 SHADU CAMPAIGN<br/>
 Time to act is short: Only a few weeks remain before the first NATO troops are bound to arrive on Altis. Only the group tied to carrier 'Mandana' and several marine regiments are already active in the area. All of them are immediately redirected towards Altis while the campaign 'Shadu' is prepared. It's objective: To seize all strategical airports on Altis, topple the military regime and prevent NATO from establishing any presence on the island.<br/><br/>
-DAY 1: OPERATION MOLOS<br/>
+DAY 1: OPERATION YIELDING SABRE<br/>
 In the first operation of the campaign, a platoon of special forces is deployed in the far north-west to disrupt enemy communications and to take Molos airport.<br/><br/>
 "]];
 
