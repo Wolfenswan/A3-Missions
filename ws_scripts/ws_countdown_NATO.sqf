@@ -2,7 +2,7 @@
 
 if !(isServer) exitWith {};
 
-_time = ws_param_time * 60;
+_time = ws_param_time_n * 60;
 ws_time_passed_n = 0;
 _done = false;
 

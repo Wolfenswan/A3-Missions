@@ -286,13 +286,20 @@ class Params
         code = "ws_param_sws = %1";
 	};
 
-
-	class ws_param_time
+	class ws_param_time_o
     {
-            title = "Time in minutes for NATO to seize the crates";
-            values[] = {2,4,6,8,10,12};
-            default = 2;
-            code = "ws_param_time = %1";
+            title = "Time in minutes for CSAT to secure the CARGO";
+            values[] = {2,3,4,5,6,8,10,12};
+            default = 3;
+            code = "ws_param_time_o = %1";
+    };
+
+	class ws_param_time_n
+    {
+            title = "Time in minutes for NATO to rig the CARGO";
+            values[] = {2,3,4,5,6,8,10,12};
+            default = 3;
+            code = "ws_param_time_n = %1";
     };
 
   class ws_param_jitter
