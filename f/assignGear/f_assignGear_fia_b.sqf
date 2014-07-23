@@ -126,22 +126,22 @@ case "rat":
 	if (f_param_backpacks == 0) then {
 		_unit addBackpack _bagsmall;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 1];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 3];
 	};
 	// BACKPACK: LIGHT
 	if (f_param_backpacks == 1) then {
 		_unit addBackpack _bagmedium;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 1];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 3];
 	};
 	// BACKPACK: HEAVY
 	if (f_param_backpacks == 2) then {
 		_unit addBackpack _bagmedium;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 1];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag2, 3];
 	};
 };
 

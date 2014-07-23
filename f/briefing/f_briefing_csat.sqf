@@ -49,7 +49,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-Eliminate FIA forces and destroy the crates.
+Eliminate FIA forces and secure the cargo.
 "]];
 
 // ====================================================================================
@@ -61,14 +61,13 @@ _mis = player createDiaryRecord ["diary", ["Mission",format ["
 <br/>
 1. We begin a few k away from the <marker name='fia_conv'>convoy</marker>.<br/>
 2. We need to reach the <marker name='fia_conv'>convoy</marker> and destroy the caches.<br/>
-3. FIA forces at the convoy will most likely offer heavy resistance. Use all force necessary.<br/>
-4. NATO heliborn forces might be send from <marker name='mkrNATO'>their foothold</marker>. Deal with them as the need arises.<br/><br/>
+3. FIA forces at the convoy will most likely offer resistance. Use all force necessary.<br/>
+4. NATO heliborn forces might be send from <marker name='mkrNATO'>their airfield</marker>. Deal with them as the need arises.<br/><br/>
 VICTORY CONDITIONS<br/>
-CSAT need to either wipe out the NATO platoon or seize the caches.<br/>
-NATO need to kill the CSAT attackers or prepare the caches for destruction, then fall back 2.5km from the AO.<br/>
+CSAT need to either wipe out the NATO platoon or secure the HEMTT.<br/>
+NATO need to kill the CSAT attackers or rig the HEMTT to explode, then fall back 2.5km from the AO.<br/>
 <br/><br/>
-To claim the caches at least one unit of the respective must be within 10m of them for %1 minutes.<br/>
-All four caches are next to the HEMTT truck. The crates and the truck can only be destroyed by demo charges.
+To claim the cargo at least one unit of the respective side must be within a 10m radius of the HEMTT for %1 minutes.<br/>
 ",ws_param_time]]];
 
 // ====================================================================================
@@ -84,13 +83,13 @@ As intelligence has been suspecting that local MATO forces have been supplying F
 ENEMY FORCES
 <br/>
 Light FIA forces, some of the M2 technicals accompanying the convoy might still be operational.<br/>
-If our suspicion is true, NATO heliborn forces will be deployed to remove all evidence.
+If our suspicion is true, NATO heliborn forces might be deployed to remove all evidence.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
 None.<br/><br/>
 TELEPORT<br/>
-At the beginning of the mission the all CSAT group-leaders can use their 'Teleport'-action to move their team into position, outside the red circle. Transport-vehicles (see ADMINISTRATION) will be placed at nearby road positions of the spot the CSAT CO chose for his teleport. The MRAP crew needs to stay inside their vehicle.
+At the beginning of the mission the all CSAT group-leaders can use their 'Teleport'-action to move their team into position, outside the red circle. Transport-vehicles (see ADMINISTRATION) will be placed at nearby road positions of the spot the CSAT CO choses for his teleport. The MRAP and APC crews needs to stay inside their vehicles.
 "]];
 
 // ====================================================================================

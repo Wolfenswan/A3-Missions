@@ -29,10 +29,7 @@ diag_log "calculated roads";
 _pos = (_posarray select _forEachIndex);
 _x setPos _pos;  _x setDir random 360;_x setVelocity [0, 0, 0]; _x setVectorUp(surfaceNormal(getPos _x));} forEach _convoy;
 
-{_x setPos ([c3,10,6] call ws_fnc_getPos);clearMagazineCargoGlobal _x ; clearWeaponCargoGlobal _x ;clearItemCargoGlobal _x ;_x setVectorUp(surfaceNormal(getPos _x));_x setDir (random 360);} forEach [a1,a2,a3,a4];
-
-{
-_x addEventHandler [
+c3 addEventHandler [
 	"HandleDamage",
 	{
 	 _box = _this select 0;
@@ -42,8 +39,6 @@ _x addEventHandler [
 	 	[_box] execVM "ws_scripts\ws_cache_destroyed.sqf";
 	 	};
 	}];
-
-} forEach [a1,a2,a3,a4,c3];
 
 //Randomize damage on convoy
 {
@@ -65,7 +60,8 @@ _x addEventHandler [
 //Move trigger
 Trg1 setPos (getPos c3);
 Trg1 setTriggerArea [10, 10, 0, true];
-
+Trg2 setPos (getPos c3);
+Trg2 setTriggerArea [10, 10, 0, true];
 
 //Create markers
 if (isNil "ws_param_jitter") then {ws_param_jitter = "ws_param_jitter" call BIS_fnc_getParamValue;};
@@ -104,13 +100,6 @@ _mkr = createMarker ["fia_conv",getPos c3];
 _mkr setMarkerType "mil_destroy";
 _mkr setMarkerColor "ColorRed";
 _mkr setMarkerAlpha 0;
-
-{
-_mkr = createMarker [format["%1",_x],getPos _x];
-_mkr setMarkerType "mil_dot";
-_mkr setMarkerColor "ColorRed";
-_mkr setMarkerAlpha 0;
-} forEach [a1,a2,a3,a4];
 
 Zeus_range setPos (getMarkerPos "fia_conv");
 Zeus_area synchronizeObjectsAdd [Zeus_range];

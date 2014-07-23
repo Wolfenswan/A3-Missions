@@ -44,12 +44,14 @@ All FTLs and AARs carry one demo-charge each.
 // NOTES: EXECUTION
 // The code below creates the execution sub-section of notes.
 
+/*
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-Locate the convoy and protect the caches.
+Locate the convoy and secure th.
 "]];
+*/
 
 // ====================================================================================
 
@@ -63,11 +65,10 @@ _mis = player createDiaryRecord ["diary", ["Mission",format ["
 3. Deploy our forces and move in to secure the caches, then extract.<br/>
 4. CSAT motorized  They will probably try and seize the caches, don't let this happen.<br/><br/>
 VICTORY CONDITIONS<br/>
-CSAT need to either wipe out the NATO platoon or seize the caches.<br/>
-NATO need to kill the CSAT attackers or seize the caches, then fall back 2.5km from the AO.<br/>
+CSAT need to either wipe out the NATO platoon or secure the HEMTT.<br/>
+NATO need to kill the CSAT attackers or rig the HEMTT to explode, then fall back 2.5km from the AO.<br/>
 <br/><br/>
-To claim the caches at least one unit of the respective must be within 10m of them for %1 minutes.<br/>
-All four caches are next to the HEMTT truck. The crates and the truck can only be destroyed by demo charges.
+To claim the cargo at least one unit of the respective side must be within a 10m radius of the HEMTT for %1 minutes.<br/>
 ",ws_param_time]]];
 
 // ====================================================================================
@@ -77,11 +78,11 @@ All four caches are next to the HEMTT truck. The crates and the truck can only b
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-A Mi-48 on morning patrol intercepted a FIA convoy, transporting weaponry we had given to the rebels. As we have lost contact with the intelligence officer accompanying the convoy we need to search around it's last known location or wait for him re-establish contact. To prevent any CSAT forces from seizing the NATO crates as evidence, we are deploying heliborn forces to support the FIA and - if necessary - blow up the cargo.
+A Mi-48 on morning patrol intercepted a FIA convoy, transporting weaponry we had given to the rebels. As we have lost contact with the intelligence officer accompanying the convoy we need to search around it's last known location or wait for him re-establish contact. Thus your platoon is to deploy and rig the cargo to explode. We can deal with the consequences of a minor confrontation but CSAT musn't be allowed to secure the HEMTT. If CSAT would be able to secure the cargo and increment the NATO peacekeeping forces on Altis we would face nothing short of an international political fallout.
 <br/><br/>
 CSAT FORCES
 <br/>
-Motorized CSAT forces, possibly supported by heliborn troops from their <marker name='mkrCSAT'>base</marker>.
+Motorized CSAT forces.
 <br/><br/>
 FIA FORCES
 <br/>

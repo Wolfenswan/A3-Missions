@@ -8,6 +8,7 @@ if (ws_var_friendly == 1) then {
 	resistance setfriend [west,1];
 };
 
+CSAT_APC1 removeWeaponGlobal "GMG_40mm";
 
 _markers  = ["mkrConv"] call ws_fnc_collectMarkers;
 _mkr = (_markers call ws_fnc_selectRandom);
@@ -42,11 +43,15 @@ _fia = [];
 //Place FIA next to convoy
 {
 diag_log format ["Placing %1",_x];
-	_pos = [ws_convoy,100] call ws_fnc_getPos;
+	_pos = [ws_convoy,100,10] call ws_fnc_getPos;
 	{
 		_x setPos ([_pos,5] call ws_fnc_getPos);
 	} forEach units _x;
 Zeus_EdObj synchronizeObjectsAdd (units _x);
+} forEach _fia;
+
+{
+	[_x,getPosATL leader _x, 150] call BIS_fnc_taskPatrol;
 } forEach _fia;
 
 //Delete unused CSAT vehicles

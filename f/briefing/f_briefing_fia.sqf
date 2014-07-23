@@ -47,7 +47,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-Lead our glorious defense.<br/><br/>
+Lead our glorious defense. All FIA groups will begin the mission in randomized patrols. Just give them new orders to overwrite the patrols.<br/><br/>
 ZEUS ABILITIES<br/>
 You can freely place units in a 500m radius. As CSAT forces approach within that area your abilities will be reduced to only giving commands to groups. You can always take direct control of units (under 'MODULES'-menu).
 "]];

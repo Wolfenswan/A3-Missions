@@ -145,6 +145,10 @@ _groups = [
 ["GrpCSAT_DT1","CSAT DT1 -"],
 ["GrpCSAT_ENG1","CSAT ENG1 -"],
 
+["GrpCSAT_APC1","CSAT APC1 -"],
+["GrpCSAT_MRAP1","CSAT MRAP1 -"],
+["GrpCSAT_MRAP2","CSAT MRAP2 -"],
+
 ["GrpCSAT_IFV1","CSAT IFV1 -"],
 ["GrpCSAT_IFV2","CSAT IFV2 -"],
 ["GrpCSAT_IFV3","CSAT IFV3 -"],
