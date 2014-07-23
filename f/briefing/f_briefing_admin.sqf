@@ -10,6 +10,12 @@ _briefing ="
 ADMIN SECTION<br/>
 This briefing section can only be seen by the current admin.
 <br/><br/>
+MISSION MAKER NOTES<br/>
+Global vairables:<br/>
+ws_time_passed_o - time CSAT has been securing caches<br/>
+ws_caches_seized_o - if CSAT has seized the cargo<br/>
+ws_time_passed_n - time NATO has been securing caches<br/>
+ws_caches_seized_n - if NATO has seized the cargo<br/>
 ";
 
 // ====================================================================================
