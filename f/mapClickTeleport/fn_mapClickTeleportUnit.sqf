@@ -40,13 +40,11 @@ if (f_var_mapClickTeleport_Height != 0) then {
 // Move player
 // If the player is in a vehicle and not HALO-ing, the complete vehicle is moved. Otherwise the player is teleported.
 
-/*
 if (vehicle player != player && f_var_mapClickTeleport_Height == 0) then {
 	(vehicle player) setPos (f_var_mapClickTeleport_telePos findEmptyPosition [0,150,typeOf (vehicle player)]);
 } else {
 	player setPos f_var_mapClickTeleport_telePos;
 };
-*/
 
 player setPos f_var_mapClickTeleport_telePos;
 
