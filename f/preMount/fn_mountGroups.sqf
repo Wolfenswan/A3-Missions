@@ -116,14 +116,10 @@ if (count _vehs == 0 || count _grps == 0) exitWith {
 			   	_slot = _x select 0;
 			   	_path = _x select 1;
 
-			   //	diag_log format ["%1-%2-%3",_unit,_slot,_path];
-
 			   	// If the slot is not a cargo slot and crew should be slotted
 				if (_crew && {_slot != "CARGO" && isNull assignedVehicle _unit}) then{
-
 					if (_slot == "Driver" && (_veh emptyPositions "Driver") > 0 && !(lockedDriver _veh)) exitWith {_unit assignAsDriver _veh;_unit moveInDriver _veh;};
 					if (_slot == "Turret" && !(_veh lockedTurret _path) && isNull (_veh TurretUnit _path)) exitWith {_unit assignAsTurret [_veh,_path];_unit moveInTurret [_veh,_path];};
-
 				};
 
 			   	if (_slot == "CARGO" && isNull assignedVehicle _unit && !(_veh lockedCargo (_path select 0))) then {
