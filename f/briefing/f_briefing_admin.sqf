@@ -15,7 +15,7 @@ Global vairables:<br/>
 ws_time_passed_o - time CSAT has been securing caches<br/>
 ws_caches_seized_o - if CSAT has seized the cargo<br/>
 ws_time_passed_n - time NATO has been securing caches<br/>
-ws_caches_seized_n - if NATO has seized the cargo<br/>
+ws_caches_seized_n - if NATO has seized the cargo<br/><br/>
 ";
 
 // ====================================================================================
