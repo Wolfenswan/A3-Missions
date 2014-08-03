@@ -21,15 +21,18 @@ class Mission
 		"a3_soft_f_gamma_offroad",
 		"A3_Soft_F_Truck",
 		"a3_characters_f",
-		"a3_uav_f_characters_f_gamma"
+		"a3_uav_f_characters_f_gamma",
+		"A3_Characters_F_Bootcamp",
+		"A3_Modules_F"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_INDEP",
 		"a3_characters_f",
 		"A3_Characters_F_Gamma",
-		"a3_uav_f_characters_f_gamma",
+		"A3_Characters_F_Bootcamp",
 		"A3_Characters_F_Civil",
+		"A3_Modules_F",
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_MRAP_03",
 		"A3_Soft_F_Truck",
@@ -95,14 +98,14 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={18433.557,17.395708,8566.3828};
+					position[]={18431.982,17.694496,8567.7402};
 					id=2;
 					side="GUER";
 					vehicle="I_soldier_UAV_F";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitAAF_CO_UAV";
-					init="GrpAAF_CO = group this; [""uav"",this] call f_fnc_assignGear;";
+					init="GrpAAF_CO = group this; [""uav"",this] call f_fnc_assignGear; nul = this execVM ""f\common\f_chargeUAVaction.sqf"";";
 					description="AAF UAV Operator";
 				};
 				class Item3
@@ -748,7 +751,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={21217.031,47.065716,9102.2002};
+					position[]={21216.945,47.025684,9099.6807};
 					id=46;
 					side="WEST";
 					vehicle="B_G_officer_F";
@@ -775,7 +778,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={21220.563,46.67638,9093.4951};
+					position[]={21220.313,46.707531,9092.9092};
 					id=48;
 					side="WEST";
 					vehicle="B_G_engineer_F";
@@ -787,14 +790,14 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={21217.381,46.993958,9093.6719};
+					position[]={21216.961,47.045586,9093.2529};
 					id=49;
 					side="WEST";
 					vehicle="B_G_Soldier_F";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_CO_UAV";
-					init="GrpFIA_CO = group this; [""uav"",this] call f_fnc_assignGear;";
+					init="GrpFIA_CO = group this; [""uav"",this] call f_fnc_assignGear; nul = this execVM ""f\common\f_chargeUAVaction.sqf"";";
 					description="FIA UAV Operator";
 				};
 			};
