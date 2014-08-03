@@ -30,6 +30,15 @@ _this addMagazines ["Laserbatteries",4];
 
 // ====================================================================================
 
+// ADD BRIEFING ENTRY
+
+player createDiaryRecord ["diary", ["Charging UAV","
+<br/>
+To charge your UAV land it and select the according action while facing it. This will use up one of your batteries.
+"]];
+
+// ====================================================================================
+
 // SETUP CODE
 // The following code is executed when the "recharge UAV" action fires
 
