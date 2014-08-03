@@ -7,7 +7,7 @@ class Header
 {
 	gameType = Coop;
 	minPlayers = 1;
-	maxPlayers = 405;
+	maxPlayers = 453;
 };
 
 // ============================================================================================
@@ -44,6 +44,7 @@ respawnTemplates[] = {"f_spectator","f_JIP"};
 
 class cfgNotifications
 {
+
 	// Notification Template
 	class Template
 	{
@@ -112,6 +113,21 @@ class cfgNotifications
 		description = "All caches were destroyed!";
 		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
 		duration = 5;
+
+	class ws_alert
+	{
+		title = "ALERT";
+		description = "%1";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 3;
+	};
+
+	class ws_taskdone
+	{
+		title = "TASK COMPLETED";
+		description = "%1";
+		iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
+		duration = 3;
 	};
 };
 
@@ -161,9 +177,23 @@ class Params
     {
             title = "Radio System";
             values[] = {0,1,2};
-            texts[] = {"Off","ACRE", "TFR"};
+            texts[] = {"Off","ACRE","TFR"};
             default = 0;
             code = "f_var_radios = %1";
+    };
+
+// ============================================================================================
+
+// F3 - Medical Systems Support
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+    class f_param_medical
+    {
+            title = "Medical System";
+            values[] = {0,1,2};
+            texts[] = {"Arma 3 Default","F3 Simple Wounding System","Authentic Gameplay Mod"};
+            default = 0;
+            code = "f_var_medical = %1";
     };
 
 // ============================================================================================
@@ -271,16 +301,6 @@ class Params
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
-
-// Wolfenswan - Parameters
-	class ws_param_dbg
-	{
-		title = "WS fnc debug";
-        values[] = {0,1};
-        texts[] = {"Off","On"};
-        default = 0;
-        code = "ws_param_dbg = %1";
-	};
 
 // XEola-specific parameters
 	class ws_param_caches_present

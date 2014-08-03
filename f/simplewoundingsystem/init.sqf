@@ -5,7 +5,6 @@
 if (isDedicated) ExitWith {};
 _unit = _this select 0;
 
-
 // add breifing
 if(isNil "f_wound_briefing") then
 {
@@ -16,7 +15,7 @@ if(f_wound_briefing) then
 	[] spawn
 	{
 		waitUntil {scriptDone f_script_briefing};
-		_bstr = format ["OVERVIEW<br/>
+		_bstr = format ["<br/>OVERVIEW<br/>
 When a player is wounded to the point of being 'incapacitated' they become a casualty. Casualties are prone and unable to move.
 <br/><br/>
 TREATING CASUALTIES<br/>
@@ -36,7 +35,8 @@ An incapacitated player only has a few minutes before her/his wounds become fata
 
 
 /// lets wait a bit.
-sleep 5;
+sleep 60;
+hintsilent "SWS initialized";
 
 // default variables.
 _unit setVariable ["revive_down",false,true];
