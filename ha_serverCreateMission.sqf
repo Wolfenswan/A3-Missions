@@ -84,7 +84,7 @@ while {count _posAttackerStart == 0} do {
 };
 
 "ws_attack_start" setMarkerPos _posAttackerStart;
-"ws_defender_start" setMarkerPos _posDefenderStart;
+"ws_defend_start" setMarkerPos _posDefenderStart;
 
 {
 	[_forEachIndex, _x] call compile preprocessFileLineNumbers "ha_serverCreateCache.sqf";

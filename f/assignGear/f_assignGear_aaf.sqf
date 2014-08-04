@@ -738,6 +738,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,1];
 		_unit linkItem _uavterminal;
 		["uav"] call _backpack;
+		_unit addMagazines ["Laserbatteries",4];
 	};
 
 // LOADOUT: Diver

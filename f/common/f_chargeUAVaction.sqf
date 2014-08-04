@@ -1,4 +1,4 @@
-// F3 - UAV Recharging Action
+// F3 - UAV Recharging
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
@@ -24,17 +24,11 @@ private ["_code"];
 
 // ====================================================================================
 
-// ADD BATTERIES
-
-_this addMagazines ["Laserbatteries",4];
-
-// ====================================================================================
-
 // ADD BRIEFING ENTRY
 
 player createDiaryRecord ["diary", ["Charging UAV","
 <br/>
-To charge your UAV land it and select the according action while facing it. This will use up one of your batteries.
+In order to charge your UAV it needs to be landed and the engine turned off. When facing it you will be able to select the 'recharge UAV' action, which sets the UAV's fuel to 100% and uses up one of your batteries.
 "]];
 
 // ====================================================================================
@@ -51,7 +45,7 @@ _code = {
 
 	// Select an appriopriate animation
 	_move = switch (stance _unit) do {
-		case "STAND": {"AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon"};
+		case "STAND": {"AinvPknlMstpSnonWnonDnon_Putdown_AmovPknlMstpSnonWnonDnon"};
 		case "CROUCH": {"AinvPknlMstpSnonWnonDnon_Putdown_AmovPknlMstpSnonWnonDnon"};
 		case "PRONE": {"AinvPpneMstpSnonWnonDnon_Putdown_AmovPpneMstpSnonWnonDnon"};
 		default {"AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon"};
@@ -87,4 +81,4 @@ f_action_rechargeUAV = _this addAction [
  true,
  "",
  // Condition for action to show:
- "cursorTarget isKindOf 'UAV_01_base_F' && {{_x == 'Laserbatteries'} count magazines _this > 0 && fuel cursorTarget  < 1 && _this distance cursorTarget < 2 && isTouchingGround cursorTarget}"];
+ "cursorTarget isKindOf 'UAV_01_base_F' && {{_x == 'Laserbatteries'} count magazines _this > 0 && fuel cursorTarget  < 1 && _this distance cursorTarget < 2.5 && !(isEngineOn cursorTarget)}"];
