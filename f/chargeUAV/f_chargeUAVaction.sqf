@@ -1,4 +1,4 @@
-// F3 - UAV Recharging Action
+// F3 - UAV Recharging
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
@@ -14,7 +14,7 @@ if (!isDedicated && (isNull player)) then
 if !(local _this) exitWith {};
 
 // If the action has already been added, exit
-if (!isNil "f_action_rechargeUAV") exitWith {};
+if (!isNil "f_action_chargeUAV") exitWith {};
 
 // ====================================================================================
 
@@ -24,9 +24,12 @@ private ["_code"];
 
 // ====================================================================================
 
-// ADD BATTERIES
+// ADD BRIEFING ENTRY
 
-_this addMagazines ["Laserbatteries",4];
+player createDiaryRecord ["diary", ["Charge UAV","
+<br/>
+To charge your UAV it needs to be landed and the engine turned off. The 'Charge UAV' action will appear when facing it. This sets the UAV's fuel to 100% and uses up one of your batteries.
+"]];
 
 // ====================================================================================
 
@@ -51,7 +54,7 @@ _code = {
 
 	// Select an appriopriate animation
 	_move = switch (stance _unit) do {
-		case "STAND": {"AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon"};
+		case "STAND": {"AinvPknlMstpSnonWnonDnon_Putdown_AmovPknlMstpSnonWnonDnon"};
 		case "CROUCH": {"AinvPknlMstpSnonWnonDnon_Putdown_AmovPknlMstpSnonWnonDnon"};
 		case "PRONE": {"AinvPpneMstpSnonWnonDnon_Putdown_AmovPpneMstpSnonWnonDnon"};
 		default {"AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon"};
@@ -78,8 +81,8 @@ _code = {
 // SETUP ACTION
 // Add the action to recharge the UAV
 
-f_action_rechargeUAV = _this addAction [
-"Recharge UAV",	// Name
+f_action_chargeUAV = _this addAction [
+"Charge UAV",	// Name
  _code,			// Code to execute
  nil,
  1.5,			// Priority
@@ -87,4 +90,4 @@ f_action_rechargeUAV = _this addAction [
  true,
  "",
  // Condition for action to show:
- "cursorTarget isKindOf 'UAV_01_base_F' && {{_x == 'Laserbatteries'} count magazines _this > 0 && fuel cursorTarget  < 1 && _this distance cursorTarget < 2 && isTouchingGround cursorTarget}"];
+ "cursorTarget isKindOf 'UAV_01_base_F' && {{_x == 'Laserbatteries'} count magazines _this > 0 && fuel cursorTarget  < 1 && _this distance cursorTarget < 2.5 && !(isEngineOn cursorTarget)}"];
