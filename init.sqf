@@ -110,10 +110,10 @@ f_var_doNotRemoveBodies = [];
 // [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-// [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[OPFOR,100,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
-// [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // ====================================================================================
 
@@ -202,6 +202,7 @@ f_var_cachingAggressiveness = 2;
 // ====================================================================================
 
 // Wolfenswan - post Init
-[] execVM "ws_scripts\ws_postInit.sqf";
+sleep 2;
+["SELF SERVICE","CENTRAL ALTIS"] call ws_fnc_showIntro;
 
 

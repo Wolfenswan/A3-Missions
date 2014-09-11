@@ -21,18 +21,20 @@ class Mission
 		"a3_characters_f",
 		"A3_Soft_F_EPC_Truck_03",
 		"A3_Modules_F_Supports",
-		"A3_Static_F_Beta_Mortar_01"
+		"A3_Static_F_Beta_Mortar_01",
+		"a3_static_f_mortar_01"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_OPFOR",
 		"a3_characters_f",
 		"A3_Characters_F_Gamma",
-		"a3_uav_f_characters_f_gamma",
 		"A3_Characters_F_Civil",
 		"A3_Characters_F_INDEP",
+		"A3_Modules_F",
 		"A3_Modules_F_Supports",
 		"A3_Static_F_Beta_Mortar_01",
+		"a3_static_f_mortar_01",
 		"A3_Soft_F_EPC_Truck_03",
 		"A3_Soft_F_MRAP_02",
 		"A3_Structures_F_Wrecks",
@@ -41,7 +43,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_a90_SelfService_v10";
+		briefingName="fa3_a92_SelfService_v11";
 		overviewText="CSAT attempt to seize an AAF controlled storage facility.";
 		resistanceWest=0;
 		startWeather=0.84999996;
@@ -898,31 +900,33 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={18280.691,47.27417,15530.488};
-					azimut=144.71068;
+					position[]={18282.734,47.348362,15530.605};
+					azimut=174.07899;
 					id=48;
+					side="GUER";
+					vehicle="I_officer_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="UnitAAF_CO";
+					init="GrpAAF_CO = group this; [""co"",this] call f_fnc_assignGear;";
+					description="AAF Command";
+					syncId=0;
+					synchronizations[]={5};
+				};
+				class Item1
+				{
+					position[]={18281.057,47.293018,15531.551};
+					azimut=144.711;
+					id=49;
 					side="GUER";
 					vehicle="I_medic_F";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 					text="UnitAAF_CO_M";
 					init="GrpAAF_CO = group this; nul = [""m"",this] call f_fnc_assignGear;;";
 					description="AAF Medic";
-				};
-				class Item1
-				{
-					position[]={18282.734,47.348362,15530.605};
-					azimut=174.07899;
-					id=49;
-					side="GUER";
-					vehicle="I_Soldier_lite_F";
-					player="PLAY CDG";
-					skill=0.60000002;
-					init="GrpAAF_CO = group this; [""smg"",this] call f_fnc_assignGear;";
-					description="AAF Artillery Spotter (1 Mortar)";
-					syncId=0;
-					synchronizations[]={5};
 				};
 			};
 		};

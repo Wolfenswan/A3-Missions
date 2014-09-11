@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-1-1</i>
 
 <b>Mission description</b><br/>
-A straightforward take & hold adversarial, where CSAT have to attack a AAF held storage compound. The surrounding terrain is diverse and allows for a number of approaches and defensive positions.
+A straightforward seize & hold adversarial, where CSAT have to attack a AAF held storage compound. The surrounding terrain is varied and allows for a number of approaches and defensive positions.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
