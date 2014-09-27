@@ -34,11 +34,11 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 _bg= player createDiaryRecord ["diary", ["Background","
 <br/>
 MILITARY PUTSCH<br/>
-The small island nation of Altis has long been a cause for concern. Deep within CSAT's mediterranean sphere of interest it allegiance was never clear and it's long lasting civil war has ripped the island apart. But as of three months ago a military putsch has toppled the parliament and claims to reinstate order. Albeit not proven yet, it is obvious that NATO has been involved in funding and encouraging this travesty. Under hazy pretense the AAF has already invited NATO 'peace-keepers' to Altis. CSAT cannot allow this development to continue, if they do not want a NATO outpost deep within their own territory.<br/><br/>
+TODO TEXT of Altis has long been a cause for international concern. As of three months ago a military putsch has toppled the parliament and claims to reinstate order. Albeit not proven yet, it is obvious that NATO has been involved in funding and further encouraging this travesty. Already the new military junt has invited NATO 'peace-keepers' to Altis. If CSAT does not want a NATO outpost within their own sphere of interest this development must be stopped.<br/><br/>
 SHADU CAMPAIGN<br/>
-Time to act is short: Only a few weeks remain before the first NATO troops are bound to arrive on Altis. Only the group tied to carrier 'Mandana' and several marine regiments are already active in the area. All of them are immediately redirected towards Altis while the campaign 'Shadu' is prepared. It's objective: To seize all strategical airports on Altis, topple the military regime and prevent NATO from establishing any presence on the island.<br/><br/>
+The time-window for the campaign is short: Only a few weeks remain before the first NATO troops are bound to arrive on Altis. Only the group tied to carrier 'Mandana' and several marine regiments are already active in the area. All of them are immediately redirected towards Altis while further plans for the campaign nicknamed 'Shadu' is prepared. It's objective: To seize all strategical airports on Altis, topple the military regime and prevent NATO from establishing any presence on the island.<br/><br/>
 DAY 1: OPERATION YIELDING SABRE<br/>
-In the first operation of the campaign, a platoon of special forces is deployed in the far north-west to disrupt enemy communications and to take Molos airport.<br/><br/>
+In the first operation of the campaign, a platoon of special forces is deployed in the far north-west to disrupt enemy communications at Molos and prepare for seizing the north-western airport.<br/><br/>
 "]];
 
 // ====================================================================================
@@ -48,8 +48,8 @@ In the first operation of the campaign, a platoon of special forces is deployed 
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-All units carry a demo-charge and FTLs are equipped with Mine detectors.<br/>
-All assault rifles, carbines and pistols have silencers attached.
+All soldiers carry a spare silencer.<br/>
+FTLs carry mine detectors, FTL and AAR carry a demo charge each.<br/>
 "]];
 
 // ====================================================================================
@@ -61,16 +61,20 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-Avoid detection as long as possible.
+Given the AAF's pre-occupation with the FIA, they are most likely going to that we're just another guerilla raid. Expect things to get worse once they realize who we are.
+<br/><br/>
+STEALTH
+<br/>
+While all soldiers have been assigned silencers this mission is not intended to be a quiet affair. Be prepared to detach them once you've been detected and to hit the enemy hard and fast.
+<br/><br/>
+"]];
+
+/*
 <br/><br/>
 FIRE SUPPORT PLAN
 <br/>
-A Mi-48 team will become available as CAS support, should the need arise.
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
-"]];
+A Mi-48 is being prepped and will be available as CAS support after 20 minutes.
+*/
 
 // ====================================================================================
 
@@ -97,6 +101,11 @@ ENEMY FORCES
 <br/>
 A mix of AAF regulars and light vehicles. Heavier support might be brought in if the officer is able to call in for reinforcements.<br/>
 Should the enemy be alerted to your presence before the communication tower is destroyed you'll likely face a sizeable number of reinforcements.
+<br/><br/>
+FRIENDLY FORCES
+<br/>
+Other platoons are being prepared to capitalize on your attack.<br/>
+FIA forces have been engaging the AAF all over Altis. They'll hopefully serve as a distraction should we be detected.
 <br/><br/>
 "]];
 

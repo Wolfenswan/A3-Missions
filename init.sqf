@@ -150,6 +150,13 @@ f_var_doNotRemoveBodies = [];
 
 // ====================================================================================
 
+// F3 - GEAR Notes
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+[] execVM "f\briefing\f_gearNotes.sqf";
+
+// ====================================================================================
+
 // F3 - Join Group Action
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 

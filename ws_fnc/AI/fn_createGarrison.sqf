@@ -76,7 +76,7 @@ if (count _classes == 0) then {
 // Collect buildings and assign building positions
 _buildings = [_area,_radius,true,true] call ws_fnc_collectBuildings;
 
-if (count _buildings == 0) exitWith {["ws_fnc_createGarrison DBG: no buildings found at ",[_area],""] call ws_fnc_debugText};
+if (count _buildings == 0) exitWith {["ws_fnc_createGarrison DBG: no buildings found at ",[_this select 0, _area],""] call ws_fnc_debugText};
 
 // If no amount of units is set, calculate default
 if (_int == 0) then {

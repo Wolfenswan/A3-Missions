@@ -66,7 +66,7 @@ _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
 _scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
 
 // Default setup
-_attachments = [_attach1,_scope1,_silencer2]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_attach1,_scope2]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -315,6 +315,7 @@ if (_isMan) then {
 	};
 	// uncomment to remove nvgoogles
 	_unit linkItem _nvg;					// add universal NVG for this faction
+	_unit addItem _silencer2;
 
 	//removeAllItems _unit;						// remove default items: map, compass, watch, radio (and GPS for team/squad leaders)
 	//_unit linkItem "ItemGPS"; 					// add gps to this faction
@@ -401,16 +402,20 @@ switch (_typeofUnit) do
 	{
 		_unit addmagazines [_glriflemag,7];
 		//_unit addmagazines [_glriflemag_tr,2];
-		_unit addmagazines [_glmag,5];
+		_unit addmagazines [_glmag,4];
 		_unit addmagazines [_glsmokewhite,4];
 		_unit addweapon _glrifle;					//_FTLrifle
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_smokegrenadegreen,2];
+		_unit addmagazines [_pistolmag,4];
+		_unit addweapon _pistol;
+		_unit addItem "MineDetector";
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
+		(unitBackpack _unit) addMagazineCargoGlobal [_satchel, 1];
 	};
 
 
@@ -438,6 +443,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit addWeapon "Binocular";
 		["aar"] call _backpack;
+		(unitBackpack _unit) addMagazineCargoGlobal [_satchel, 1];
 	};
 
 // LOADOUT: RIFLEMAN (AT)

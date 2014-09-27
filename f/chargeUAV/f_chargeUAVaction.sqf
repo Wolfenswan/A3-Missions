@@ -33,15 +33,6 @@ To charge your UAV it needs to be landed and the engine turned off. The 'Charge 
 
 // ====================================================================================
 
-// CREATE BRIEFING ENTRY
-
-// Create a short briefing entry to explain the action
-player createDiaryRecord ["diary", ["UAV RECHARGING","
-<br/>
-When facing a landed, bag-carried UAV a 'recharge UAV' action will appear.
-To recharge the UAV the operator needs to have at least one battery.
-"]];
-
 // SETUP CODE
 // The following code is executed when the "recharge UAV" action fires
 
