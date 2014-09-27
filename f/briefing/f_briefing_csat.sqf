@@ -61,7 +61,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-Given the AAF's pre-occupation with the FIA, they are most likely going to that we're just another guerilla raid. Expect things to get worse once they realize who we are.
+Given the AAF's pre-occupation with the FIA, they are most likely going to assume us to be just another guerilla raid. Expect things to get worse once they realize who we are.
 <br/><br/>
 STEALTH
 <br/>
@@ -84,8 +84,8 @@ A Mi-48 is being prepped and will be available as CAS support after 20 minutes.
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. Your platoon is inserted along the <marker name='mkrInsert'>western coast</marker>.<br/>
-2. Proceed inwards to the town of <marker name='mkrTown'>Molos</marker> and <marker name='mkrAirport'>Molos airport</marker>.<br/>
-3. Destroy the communications tower in Molos. Avoid detection until this has been accomplished.
+2. Proceed inwards to the town of <marker name='mkrTown'>Molos</marker> and destroy the communications tower at the indicated location.<br/>
+3. Fall back towards the south-western forest to roundevauz with our FIA contacts. They are going to help you get further in-land.
 "]];
 
 // ====================================================================================
@@ -95,16 +95,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-Your platoon is inserted along the western coast, covered by the darkness of early morning and the on-going storm. Destroy the communication tower in Molos and seize <marker name='mkrAirport'>Molos airport</marker>. Avoid alerting the enemy in the AO until the comm-tower has been destroyed.
+Your platoon is inserted along the western coast, covered by the darkness of early morning and the on-going storm. Destroy the communication tower in Molos and subsequently rondevauz with our FIA contacts.
 <br/><br/>
 ENEMY FORCES
 <br/>
-A mix of AAF regulars and light vehicles. Heavier support might be brought in if the officer is able to call in for reinforcements.<br/>
+A mix of AAF regulars and light vehicles. Heavier support might be mobilized.<br/>
 Should the enemy be alerted to your presence before the communication tower is destroyed you'll likely face a sizeable number of reinforcements.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-Other platoons are being prepared to capitalize on your attack.<br/>
+Other platoons are being prepared to attack the AAF. Closest to you the 3rd Mechanized will assault the airport from the north-east.<br/>
 FIA forces have been engaging the AAF all over Altis. They'll hopefully serve as a distraction should we be detected.
 <br/><br/>
 "]];
