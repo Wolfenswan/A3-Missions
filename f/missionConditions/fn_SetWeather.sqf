@@ -130,7 +130,7 @@ switch (_weather) do
 	case 8:
 	{
 		_MissionOvercast = 1;
-		_MissionRain = 1;
+		_MissionRain = 0.4;
 		_MissionRainbow = 0;
 		_MissionLightnings = 1.1;
 		_MissionWindStr = 1;

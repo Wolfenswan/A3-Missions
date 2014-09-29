@@ -8,11 +8,7 @@ if !(isServer) exitWith {ws_initDone = true};
 {_x disableTIEquipment true;} forEach [];
 
 // Further tweaking to vehicles
-//{_x removeWeaponGlobal "GMG_40mm"; _x lockTurret [[1],true];} forEach [];
+{_x removeWeaponGlobal "GMG_40mm";} forEach [VehAAF_IFV1,VehAAF_IFV2,VehAAF_IFV3,VehAAF_IFV4];
 //{_x removeWeaponGlobal "HMG_127_APC";_x lockTurret [[0],true];} forEach [];
-
-// Load up vehicles with groups
-// [veh1,group1,group2.....groupN] call ws_fnc_loadVehicle
-[Veh,Grp] call ws_fnc_loadVehicle;
 
 ws_initDone = true;

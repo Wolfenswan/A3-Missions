@@ -16,7 +16,7 @@ private ["_text","_stuff","_weps","_mags","_items","_wepMags"];
 
 // SET UP KEY VARIABLES
 
-_text = "<br />NOTE: The GEAR shown below is only accurate at mission start.<br />
+_text = "<br />NOTE: The LOADOUT shown below is only accurate at mission start.<br />
 <br />";
 _stuff = [];
 
@@ -132,4 +132,4 @@ if !(backpack player == "") then {
 // Wait for the briefing script to finish, then add the created text
 
 waitUntil {scriptDone f_script_briefing};
-player createDiaryRecord ["diary", ["GEAR", _text]];
+player createDiaryRecord ["diary", ["LOADOUT", _text]];

@@ -1,5 +1,5 @@
-if (isNil "ws_AirfieldDetected") then {ws_AirfieldDetected = false};
-
+//Reduce ASR_AI3 radio range to gimp AI
+asr_ai3_sysdanger_radiorange = 100;
 
 ws_isHC = [] call ws_fnc_checkHC;
 
@@ -57,6 +57,7 @@ if (isServer) then {
 
 	// Equip flashlights on all AI
 	{
+		sleep 0.1;
 	  	private ["_unit"];
 		_unit = _x;
 
