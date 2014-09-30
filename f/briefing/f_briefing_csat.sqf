@@ -34,11 +34,11 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 _bg= player createDiaryRecord ["diary", ["Background","
 <br/>
 SITUATION IN ALTIS<br/>
-TODO TEXT of Altis has long been a cause for international concern. As of three months ago a military putsch has toppled the parliament and claims to reinstate order. Albeit not proven yet, it is obvious that NATO has been involved in funding and further encouraging this travesty. Already the new military junt has invited NATO 'peace-keepers' to Altis. If CSAT does not want a NATO outpost within their own sphere of interest this development must be stopped.<br/><br/>
+The tiny island nation of Altis has long since been a cause for international concern. As of three months ago a military putsch has toppled the parliament, claiming to reinstate order and democracy. Albeit not proven yet, it is obvious that NATO has been involved in funding and further encouraging this travesty. Already the new military junta has invited NATO 'peace-keepers' to Altis. If CSAT does not want a NATO outpost within their own sphere of interest this development must be stopped.<br/><br/>
 SHADU CAMPAIGN<br/>
-The time-window for the campaign is short: Only a few weeks remain before the first NATO troops are bound to arrive on Altis. Only the group tied to carrier 'Mandana' and several marine regiments are already active in the area. All of them are immediately redirected towards Altis while further plans for the campaign nicknamed 'Shadu' is prepared. It's objective: To seize all strategical airports on Altis, topple the military regime and prevent NATO from establishing any presence on the island.<br/><br/>
+The time-window for the operation is short: Barely a few weeks remain before the first NATO troops are bound to arrive on Altis. The 'Shadu' campaign aims to seize all strategical airports on Altis, topple the military regime and prevent NATO from establishing any presence on the island. While further forces are mobilized the only carrier within operational distance, the 'Mandana', is already preparing to deal the first blow.<br/><br/>
 27/07/2030: OPERATION YIELDING SABRE<br/>
-In the first operation of the campaign, a platoon of special forces is deployed in the far north-west to disrupt enemy communications at Molos and prepare for seizing the north-western airport.<br/><br/>
+In the first operation of the campaign, a platoon of special forces is deployed in the far north-west to assist the inbound marine regiments by disrupting enemy communications at Molos.<br/><br/>
 "]];
 
 // ====================================================================================
@@ -48,7 +48,7 @@ In the first operation of the campaign, a platoon of special forces is deployed 
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-All soldiers carry a spare silencer.<br/>
+All soldiers carry a spare (detached) silencer.<br/>
 FTLs carry mine detectors, FTL and AAR carry a demo charge each.<br/>
 "]];
 
@@ -65,7 +65,7 @@ Given the AAF's pre-occupation with the FIA, they are most likely going to assum
 <br/><br/>
 STEALTH
 <br/>
-While all soldiers have been assigned silencers this mission is not intended to be a quiet affair. Be prepared to detach them once you've been detected and to hit the enemy hard and fast.
+While using silencers is an option this mission is not intended to be a quiet affair. Be prepared to detach them once you've been detected and to hit the enemy hard and fast.
 <br/><br/>
 "]];
 
@@ -84,8 +84,8 @@ A Mi-48 is being prepped and will be available as CAS support after 20 minutes.
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. Your platoon is inserted along the <marker name='mkrInsert'>western</marker> <marker name='mkrInsert_1'>coast</marker>.<br/>
-2. Proceed inwards to the town of <marker name='mkrTown'>Molos</marker> and destroy the communications tower at the indicated location.<br/>
-3. Fall back towards the south-western forest to rendevouz with our <marker name='mkrExfil'>FIA contacts</marker>.
+2. Proceed inwards to the town of <marker name='mkrTown'>Molos</marker> and destroy the comm-tower at the indicated location.<br/>
+3. Fall back towards the south-western forest to meet our <marker name='mkrExfil'>FIA contacts</marker>.
 "]];
 
 // ====================================================================================
@@ -95,11 +95,11 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-Your platoon is inserted along the western coast. Destroy the comm-tower in Molos and meet with with our FIA contacts afterwards.
+Your platoon is inserted by helicopter. Move fast to destroy the AAF comm-tower in Molos. Afterwards move south-west to meet with our FIA contactsW.
 <br/><br/>
 ENEMY FORCES
 <br/>
-A mix of AAF regulars and light vehicles.<br/>
+A mix of infantry and light vehicles.<br/>
 Reinforcements are a possibility.
 <br/><br/>
 FRIENDLY FORCES
