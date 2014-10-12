@@ -7,7 +7,7 @@ class Header
 {
 	gameType = Coop;
 	minPlayers = 1;
-	maxPlayers = 405;
+	maxPlayers = 453;
 };
 
 // ============================================================================================
@@ -56,6 +56,15 @@ class cfgNotifications
 		duration = 5; // How many seconds will the notification be displayed
 		priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
 		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
+	};
+
+	// A generic warning notification
+	class Alert
+	{
+		title = "ALERT";
+		description = "%1";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 3;
 	};
 
 	// Notifications for the F3 Safe Start Component
@@ -161,9 +170,23 @@ class Params
     {
             title = "Radio System";
             values[] = {0,1,2};
-            texts[] = {"Off","ACRE", "TFR"};
+            texts[] = {"Off","ACRE","TFR"};
             default = 0;
             code = "f_var_radios = %1";
+    };
+
+// ============================================================================================
+
+// F3 - Medical Systems Support
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+    class f_param_medical
+    {
+            title = "Medical System";
+            values[] = {0,1,2};
+            texts[] = {"Arma 3 Default","F3 Simple Wounding System","Authentic Gameplay Mod"};
+            default = 0;
+            code = "f_var_medical = %1";
     };
 
 // ============================================================================================
@@ -407,6 +430,7 @@ class CfgRespawnTemplates
 class CfgFunctions
 {
 	#include "ws_fnc\config.hpp"
+
     class F // Defines the "owner"
 	{
 		class common // category
@@ -496,13 +520,24 @@ class CfgFunctions
 			file = "f\preMount";
 			class mountGroups{};
 		};
-		class radios
+		class zeus
 		{
-			file = "f\radios";
+			file = "f\zeus";
+			class zeusInit{};
+			class zeusAddAddons{};
+			class zeusAddObjects{};
+		};
+		class acre
+		{
+			file = "f\radios\acre";
 			class acre_removeRadios{};
 			class acre_addRadios{};
 			class acre_setRadioFrequencies{};
 			class acre_configureSpectatorChat{};
+		};
+		class tfr
+		{
+			file = "f\radios\tfr";
 			class tfr_removeRadios{};
 			class tfr_addRadios{};
 			class tfr_setRadioFrequencies{};
@@ -510,7 +545,14 @@ class CfgFunctions
 		};
 		#include "f\simplewoundingsystem\config.hpp"
 		#include "f\spect\functions.hpp"
+
 	};
 };
 
 // ============================================================================================
+
+// F3 - Custom Insignia
+
+class CfgUnitInsignia {
+	#include "f\assignGear\insignia\define.hpp"
+};
