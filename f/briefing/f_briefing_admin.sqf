@@ -38,7 +38,7 @@ _briefing = _briefing + "<br/><br/>";
 // ADD SECTION TO BECOME CURATOR
 
 _briefing = _briefing + "
-ACTIVE CURATOR<br/>
+ACTIVATE CURATOR<br/>
 By clicking <execute expression=""[[player],'f_fnc_zeusInit',false] spawn BIS_fnc_MP;"">here</execute> you will be able to activate the curator (or 'ZEUS') mode with all powers enabled and control over all units.<br/><br/>
 ";
 
