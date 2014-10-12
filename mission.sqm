@@ -23,27 +23,28 @@ class Mission
 		"a3_characters_f",
 		"a3_uav_f_characters_f_gamma",
 		"A3_Characters_F_Bootcamp",
-		"A3_Modules_F"
+		"A3_Modules_F",
+		"a3_soft_f_offroad_01"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_INDEP",
 		"a3_characters_f",
 		"A3_Characters_F_Gamma",
-		"A3_Characters_F_Bootcamp",
 		"A3_Characters_F_Civil",
 		"A3_Modules_F",
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_MRAP_03",
 		"A3_Soft_F_Truck",
 		"A3_Soft_F_Gamma_Offroad",
+		"a3_soft_f_offroad_01",
 		"a3_map_altis"
 	};
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_a96_cratesistance_v19";
-		overviewText="AAF seeks and destroys FIA-defended caches. Fully randomized.";
+		briefingName="fa3_a96_cratesistance_v20";
+		overviewText="AAF seeks and destroys FIA-defended caches. Fully randomized. F3 3-2-0 RC.";
 		resistanceWest=0;
 		startWeather=0.84999996;
 		startWind=0;
@@ -105,7 +106,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitAAF_CO_UAV";
-					init="GrpAAF_CO = group this; [""uav"",this] call f_fnc_assignGear; nul = this execVM ""f\common\f_chargeUAVaction.sqf"";";
+					init="GrpAAF_CO = group this; [""uav"",this] call f_fnc_assignGear; nul = this execVM ""f\chargeUAV\f_chargeUAVaction.sqf"";";
 					description="AAF UAV Operator";
 				};
 				class Item3
@@ -797,7 +798,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_CO_UAV";
-					init="GrpFIA_CO = group this; [""uav"",this] call f_fnc_assignGear; nul = this execVM ""f\common\f_chargeUAVaction.sqf"";";
+					init="GrpFIA_CO = group this; [""uav"",this] call f_fnc_assignGear; nul = this execVM ""f\chargeUAV\f_chargeUAVaction.sqf"";";
 					description="FIA UAV Operator";
 				};
 			};

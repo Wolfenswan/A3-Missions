@@ -5,11 +5,14 @@
 if (isDedicated) ExitWith {};
 _unit = _this select 0;
 
-
-
 // add breifing
 if(isNil "f_wound_briefing") then{f_wound_briefing = true;};
 if(isNil "f_wound_extraFAK") then {f_wound_extraFAK = 0};
+
+// Add extra FAKS
+for [{_i=1},{_i<=f_wound_extraFAK},{_i=_i+1}] do {
+	_unit addItem "FirstAidKit";
+};
 
 if(f_wound_briefing) then
 {
@@ -31,10 +34,6 @@ An incapacitated player only has a few minutes before her/his wounds become fata
 	};
 };
 
-
-
-
-
 /// lets wait a bit.
 sleep 60;
 hintsilent "SWS initialized";
@@ -45,9 +44,6 @@ _unit setVariable ["f_wound_bleeding",false];
 _unit setVariable ["f_wound_blood",100]; // other player dont need know this
 _unit setVariable ["f_wound_dragging",nil];
 
-for [{_i=1},{_i<=f_wound_extraFAK},{_i=_i+1}] do {
-	_unit addItem "FirstAidKit";
-};
 /// Lifeticker, manages bleeding and blood values.
 _unit spawn f_fnc_LifeTick;
 
