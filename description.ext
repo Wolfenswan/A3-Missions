@@ -57,6 +57,15 @@ class cfgNotifications
 		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
 	};
 
+	// A generic warning notification
+	class Alert
+	{
+		title = "ALERT";
+		description = "%1";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 3;
+	};
+
 	// Notifications for the F3 Safe Start Component
 	class SafeStart
 	{
@@ -297,16 +306,6 @@ class Params
 
 // ============================================================================================
 // Custom options for Cratesistance
-	class ws_param_sws
-	{
-		title = "F3 Wounding System";
-        values[] = {0,1};
-        texts[] = {"Off","On"};
-        default = 0;
-        code = "ws_param_sws = %1";
-	};
-
-
 		class ha_param_missionTime
 		{
 				title = "Mission length in minutes";
@@ -477,6 +476,7 @@ class CfgRespawnTemplates
 class CfgFunctions
 {
 	#include "ws_fnc\config.hpp"
+
     class F // Defines the "owner"
 	{
 		class common // category
@@ -565,13 +565,24 @@ class CfgFunctions
 			file = "f\preMount";
 			class mountGroups{};
 		};
-		class radios
+		class zeus
 		{
-			file = "f\radios";
+			file = "f\zeus";
+			class zeusInit{};
+			class zeusAddAddons{};
+			class zeusAddObjects{};
+		};
+		class acre
+		{
+			file = "f\radios\acre";
 			class acre_removeRadios{};
 			class acre_addRadios{};
 			class acre_setRadioFrequencies{};
 			class acre_configureSpectatorChat{};
+		};
+		class tfr
+		{
+			file = "f\radios\tfr";
 			class tfr_removeRadios{};
 			class tfr_addRadios{};
 			class tfr_setRadioFrequencies{};
@@ -579,15 +590,21 @@ class CfgFunctions
 		};
 		#include "f\simplewoundingsystem\config.hpp"
 		#include "f\spect\functions.hpp"
+
 	};
 };
 
 // ============================================================================================
-
 
 // Disable ASR_AI3 radionet to make sure they stay at their caches.
 class asr_ai3 {
 	class sysdanger {
 		radionet = 0;                  // AI groups share known enemy locations over radio
 	};
+};
+
+// F3 - Custom Insignia
+
+class CfgUnitInsignia {
+	#include "f\assignGear\insignia\define.hpp"
 };
