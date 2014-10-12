@@ -58,6 +58,15 @@ class cfgNotifications
 		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
 	};
 
+	// A generic warning notification
+	class Alert
+	{
+		title = "ALERT";
+		description = "%1";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 3;
+	};
+
 	// Notifications for the F3 Safe Start Component
 	class SafeStart
 	{
@@ -411,6 +420,7 @@ class CfgRespawnTemplates
 class CfgFunctions
 {
 	#include "ws_fnc\config.hpp"
+
     class F // Defines the "owner"
 	{
 		class common // category
@@ -500,13 +510,24 @@ class CfgFunctions
 			file = "f\preMount";
 			class mountGroups{};
 		};
-		class radios
+		class zeus
 		{
-			file = "f\radios";
+			file = "f\zeus";
+			class zeusInit{};
+			class zeusAddAddons{};
+			class zeusAddObjects{};
+		};
+		class acre
+		{
+			file = "f\radios\acre";
 			class acre_removeRadios{};
 			class acre_addRadios{};
 			class acre_setRadioFrequencies{};
 			class acre_configureSpectatorChat{};
+		};
+		class tfr
+		{
+			file = "f\radios\tfr";
 			class tfr_removeRadios{};
 			class tfr_addRadios{};
 			class tfr_setRadioFrequencies{};
@@ -514,7 +535,14 @@ class CfgFunctions
 		};
 		#include "f\simplewoundingsystem\config.hpp"
 		#include "f\spect\functions.hpp"
+
 	};
 };
 
 // ============================================================================================
+
+// F3 - Custom Insignia
+
+class CfgUnitInsignia {
+	#include "f\assignGear\insignia\define.hpp"
+};
