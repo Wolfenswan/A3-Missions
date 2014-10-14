@@ -106,6 +106,7 @@ _posTemp = _posDefenderStart;
 	_pos = [_posTemp, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
 	_x setPos _pos;
 	_posTemp = _pos;
+	if (count crew _x == 0) then {deleteVehicle _x};
 } forEach [VehFIA_Car1,VehFIA_Car2,VehFIA_Car3,VehFIA_Car4,VehFIA_Truck1,VehFIA_Truck2,VehFIA_Truck3];
 
 _posTemp = _posAttackerStart;
@@ -113,6 +114,7 @@ _posTemp = _posAttackerStart;
 	_pos = [_posTemp, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
 	_x setPos _pos;
 	_posTemp = _pos;
+	if (count crew _x == 0) then {deleteVehicle _x};
 } forEach [VehAAF_Car1,VehAAF_Truck1,VehAAF_Truck2,VehAAF_Truck3];
 
 // Emergency function for admin to enable HALO in mission
