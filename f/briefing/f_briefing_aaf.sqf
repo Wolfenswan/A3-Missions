@@ -7,7 +7,13 @@
 // ====================================================================================
 
 // TASKS
-// The code below creates tasks. A (commented-out) sample task is included.
+// The code below creates tasks. Two (commented-out) sample tasks are included.
+// Note: tasks should be entered into this file in reverse order.
+
+// _task2 = player createSimpleTask ["OBJ_2"];
+// _task2 setSimpleTaskDescription ["IN DEPTH OBJECTIVE DESCRIPTION", "SHORT OBJECTIVE DESCRIPTION", "WAYPOINT TEXT"];
+// _task2 setSimpleTaskDestination WAYPOINTLOCATION;
+// _task2 setTaskState "Created";
 
 // _task1 = player createSimpleTask ["OBJ_1"];
 // _task1 setSimpleTaskDescription ["IN DEPTH OBJECTIVE DESCRIPTION", "SHORT OBJECTIVE DESCRIPTION", "WAYPOINT TEXT"];
@@ -80,7 +86,7 @@ FIA rebels have had a firm grip on the western part of Altis for too long. From 
 <br/><br/>
 ENEMY FORCES
 <br/>
-The FIA are mostly irregulars with assault rifles, smgs and technicals. In a recent raid the FIA managed to obtain a working Mora IFV as well as an assortment of static weapons. It's very likely that they are used to defend the outpost.
+The FIA are mostly irregulars with assault rifles, smgs and technicals. In a recent raid the FIA managed to obtain a working Mora IFV as well as an assortment of static weapons, including mortars. It's very likely that they will be used in defence of the outpost.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
