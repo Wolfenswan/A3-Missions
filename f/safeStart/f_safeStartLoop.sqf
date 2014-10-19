@@ -6,7 +6,7 @@
 if !(isServer) exitWith {};
 
 // Redundant sleep to give everything a second to settle
-sleep 1;
+sleep 5;
 
 // Timer for the mission setup
 for [{_i = pv_mission_timer;},{_i > 0;},{_i = _i - 1;}] do

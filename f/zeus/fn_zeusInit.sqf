@@ -47,7 +47,7 @@ _unit assignCurator _curator;
 [_curator,_addons] call f_fnc_zeusAddAddons;
 
 //Add desired objects
-[_curator,_objects] call f_fnc_zeusAddObjects;
+//[_curator,_objects] call f_fnc_zeusAddObjects;
 
 // Reduce costs for all actions
 _curator setCuratorWaypointCost 0;
