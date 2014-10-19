@@ -150,10 +150,10 @@ f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
 
 // ====================================================================================
 
-// F3 - GEAR Notes
+// F3 - LOADOUT Notes
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[] execVM "f\briefing\f_gearNotes.sqf";
+[] execVM "f\briefing\f_loadoutNotes.sqf";
 
 // ====================================================================================
 
