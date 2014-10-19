@@ -5,9 +5,9 @@
 
 class Header
 {
-	gameType = TDM;
+	gameType = Coop;
 	minPlayers = 1;
-	maxPlayers = 405;
+	maxPlayers = 453;
 };
 
 // ============================================================================================
@@ -15,7 +15,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "A Friend in Need";
+onLoadName = "*** Insert mission name here. ***";
 onLoadMission = "Made with the F3 Mission Development Framework";
 author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
@@ -56,6 +56,15 @@ class cfgNotifications
 		duration = 5; // How many seconds will the notification be displayed
 		priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
 		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
+	};
+
+	// A generic warning notification
+	class Alert
+	{
+		title = "ALERT";
+		description = "%1";
+		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 3;
 	};
 
 	// Notifications for the F3 Safe Start Component
@@ -161,9 +170,23 @@ class Params
     {
             title = "Radio System";
             values[] = {0,1,2};
-            texts[] = {"Off","ACRE", "TFR"};
+            texts[] = {"Off","ACRE","TFR"};
             default = 0;
             code = "f_var_radios = %1";
+    };
+
+// ============================================================================================
+
+// F3 - Medical Systems Support
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+    class f_param_medical
+    {
+            title = "Medical System";
+            values[] = {0,1,2};
+            texts[] = {"Arma 3 Default","F3 Simple Wounding System","Authentic Gameplay Mod"};
+            default = 0;
+            code = "f_var_medical = %1";
     };
 
 // ============================================================================================
@@ -176,7 +199,7 @@ class Params
             title = "$STR_f_param_mission_timer";
             values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
             texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
-            default = 1;
+            default = 0;
             code = "f_param_mission_timer = %1";
     };
 
@@ -223,7 +246,6 @@ class Params
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-/*
 	class f_param_AISkill_BLUFOR
 	{
 		title = "$STR_f_param_AISkill_BLUFOR";
@@ -232,7 +254,6 @@ class Params
 		default = 1;
 		code = "f_param_AISkill_BLUFOR = %1";
 	};
-
 
 	class f_param_AISkill_OPFOR
 	{
@@ -243,7 +264,6 @@ class Params
 		code = "f_param_AISkill_OPFOR = %1";
 	};
 
-*/
 	class f_param_AISkill_INDP
 	{
 		title = "$STR_f_param_AISkill_INDP";
@@ -258,7 +278,6 @@ class Params
 // F3 - Caching
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-/*
 	class f_param_caching
 	{
 		title = "Cache AI outside distance (m)";
@@ -266,68 +285,20 @@ class Params
 		default = 0;
 		code = "f_param_caching = %1";
 	};
-*/
 
 // ============================================================================================
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
 
-
-// WS-Parameters
-
-
-	class ws_param_sws
+	class ws_param_hc
 	{
-		title = "F3 Wounding System";
+		title = "Headless client";
         values[] = {0,1};
         texts[] = {"Off","On"};
         default = 0;
-        code = "ws_param_sws = %1";
+        code = "ws_param_hc = %1";
 	};
-
-	class ws_param_time_o
-    {
-            title = "Time in minutes for CSAT to secure the CARGO";
-            values[] = {2,3,4,5,6,8,10,12};
-            default = 3;
-            code = "ws_param_time_o = %1";
-    };
-
-	class ws_param_time_n
-    {
-            title = "Time in minutes for NATO to rig the CARGO";
-            values[] = {2,3,4,5,6,8,10,12};
-            default = 3;
-            code = "ws_param_time_n = %1";
-    };
-
-  class ws_param_jitter
-    {
-            title = "Jitter of convoy marker for NATO forces";
-            values[] = {0,1,2,3,9999};
-            texts[] = {"Pinpoint","1.5k - 2.5k","2.5k - 3k (default)","3.5k - 5k","no marker"};
-            default = 2;
-            code = "ws_param_jitter = %1";
-    };
-
-	class ws_param_placement
-    {
-            title = "Distance between CSAT and convoy";
-            values[] = {0,1,2,3,4};
-            texts[] = {"2k","2.5k","3k","3.5k","4k"};
-            default = 2;
-            code = "ws_param_placement = %1";
-    };
-
-	class ws_param_friendly
-	{
-	        title = "FIA are friendly to";
-	        values[] = {0,1};
-	        texts[] = {"Nobody","NATO"};
-	        default = 1;
-	        code = "ws_param_friendly = %1";
-	 };
 
 	class ws_param_dbg
 	{
@@ -340,12 +311,6 @@ class Params
 
 };
 
-
-/*
-	#define GUERFRIENDLY_DEFAULT	-1
-	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
-*/
-
 // ============================================================================================
 
 // F3 - Briefing Template
@@ -355,9 +320,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "NATO destroyed";
+		title = "Ending #1";
 		subtitle = "";
-		description = "All NATO forces were eliminated";
+		description = "*** Insert debriefing #1 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -365,9 +330,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "CSAT wiped out";
+		title = "Ending #2";
 		subtitle = "";
-		description = "The CSAT element was successfully repelled.";
+		description = "*** Insert debriefing #2 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -375,9 +340,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "Cargo secured!";
+		title = "Ending #3";
 		subtitle = "";
-		description = "CSAT was able to recover intelligence incrementing NATO.";
+		description = "*** Insert debriefing #3 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -385,9 +350,9 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "Cargo destroyed";
+		title = "Ending #4";
 		subtitle = "";
-		description = "The cargo was destroyed and NATO pulled out successfully.";
+		description = "*** Insert debriefing #4 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -395,9 +360,9 @@ class CfgDebriefing
 
 	class End5
 	{
-		title = "Draw";
+		title = "Ending #5";
 		subtitle = "";
-		description =  "The crates were destroyed but NATO were unable to pull out.";
+		description = "*** Insert debriefing #5 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -455,6 +420,7 @@ class CfgRespawnTemplates
 class CfgFunctions
 {
 	#include "ws_fnc\config.hpp"
+
     class F // Defines the "owner"
 	{
 		class common // category
@@ -544,13 +510,24 @@ class CfgFunctions
 			file = "f\preMount";
 			class mountGroups{};
 		};
-		class radios
+		class zeus
 		{
-			file = "f\radios";
+			file = "f\zeus";
+			class zeusInit{};
+			class zeusAddAddons{};
+			class zeusAddObjects{};
+		};
+		class acre
+		{
+			file = "f\radios\acre";
 			class acre_removeRadios{};
 			class acre_addRadios{};
 			class acre_setRadioFrequencies{};
 			class acre_configureSpectatorChat{};
+		};
+		class tfr
+		{
+			file = "f\radios\tfr";
 			class tfr_removeRadios{};
 			class tfr_addRadios{};
 			class tfr_setRadioFrequencies{};
@@ -558,7 +535,14 @@ class CfgFunctions
 		};
 		#include "f\simplewoundingsystem\config.hpp"
 		#include "f\spect\functions.hpp"
+
 	};
 };
 
 // ============================================================================================
+
+// F3 - Custom Insignia
+
+class CfgUnitInsignia {
+	#include "f\assignGear\insignia\define.hpp"
+};
