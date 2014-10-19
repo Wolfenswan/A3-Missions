@@ -71,8 +71,8 @@ _mis = player createDiaryRecord ["diary", ["Mission",format ["
 3. Deploy our forces and move in to secure the caches, then extract.<br/>
 4. CSAT motorized  They will probably try and seize the caches, don't let this happen.<br/><br/>
 VICTORY CONDITIONS<br/>
-CSAT need to either wipe out the NATO platoon or secure the HEMTT.<br/>
-NATO need to kill the CSAT attackers or rig the HEMTT to explode, then fall back 2.5km from the AO.<br/>
+CSAT need to either wipe out 90% of the NATO platoon or secure the HEMTT.<br/>
+NATO need to kill 90% of the CSAT attackers or rig the HEMTT to explode, then fall back 2.5km from the AO.<br/>
 <br/><br/>
 To claim the cargo at least one unit of the respective side must be within a 10m radius of the HEMTT for %1 (CSAT) or %2 (NATO) minutes.<br/>
 ",ws_param_time_o,ws_param_time_n]]];

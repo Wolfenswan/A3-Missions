@@ -71,7 +71,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 4. NATO heliborn forces will be send from <marker name='mkrNATO'>their foothold</marker> to destroy the crates.<br/><br/>
 NOTE<br/>
 To seize the crates at least one NATO unit must be within 10m of them for two full minutes.<br/>
-For NATO to be successful they need to either wipe out the CSAT platoon or destroy all four crates and the HEMTT and fall back at least 2.5k from the AO.<br/>
+For NATO to be successful they need to either wipe out 90% of the CSAT platoon or destroy all four crates and the HEMTT and fall back at least 2.5k from the AO.<br/>
 All four caches are next to the HEMTT truck. The crates and the truck can only be destroyed by demo charges.
 "]];
 
