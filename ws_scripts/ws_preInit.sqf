@@ -42,17 +42,22 @@ _fia = [];
 
 //Place FIA next to convoy
 {
-diag_log format ["Placing %1",_x];
 	_pos = [ws_convoy,100,10] call ws_fnc_getPos;
 	{
 		_x setPos ([_pos,5] call ws_fnc_getPos);
 	} forEach units _x;
-Zeus_EdObj synchronizeObjectsAdd (units _x);
 } forEach _fia;
 
 {
 	[_x,getPosATL leader _x, 150] call BIS_fnc_taskPatrol;
 } forEach _fia;
+
+if (isNil "UnitFIA_CO_1") then {
+	FIA_ZEUS addCuratorEditableObjects [allUnits - playableUnits,true];
+} else {
+	FIA_ZEUS addCuratorEditableObjects [(units GrpFIA_A1 + units GrpFIA_A2 + units GrpFIA_A3),true];
+	FIA_ZEUS_1 addCuratorEditableObjects [(units GrpFIA_B1 + units GrpFIA_B2 + units GrpFIA_B3),true];
+};
 
 //Delete unused CSAT vehicles
 if (isNil "GrpCSAT_A1" && isNil "GrpCSAT_A2" && isNil "GrpCSAT_A3" && isNil "GrpCSAT_ASL") then {deleteVehicle CSAT_Tr1;};

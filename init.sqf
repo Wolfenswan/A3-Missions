@@ -111,10 +111,10 @@ f_var_doNotRemoveBodies = [];
 // [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // BLUFOR > NATO
-[BLUFOR,90,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+// [BLUFOR,90,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-[OPFOR,90,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+// [OPFOR,90,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // ====================================================================================
 

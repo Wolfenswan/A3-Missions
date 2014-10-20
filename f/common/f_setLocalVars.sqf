@@ -363,12 +363,14 @@ if (f_var_debugMode == 1) then
 // MAKE VARIABLES PUBLIC
 // All variables are sent to the connecting clients using publicvariable
 
+/*
 {publicvariable _x} forEach [
 "f_var_units","f_var_units_BLU","f_var_units_RES","f_var_units_OPF","f_var_units_CIV",
 "f_var_men","f_var_men_BLU","f_var_men_RES","f_var_men_OPF","f_var_men_CIV","f_var_men_players",
 "f_var_groups_BLU","f_var_groups_RES","f_var_groups_OPF","f_var_groups_CIV","f_var_groups","f_var_groups_players",
 "f_var_vehicles","f_var_vehicles_BLU","f_var_vehicles_RES","f_var_vehicles_OPF","f_var_vehicles_CIV"
 ];
+*/
 
 if (_sleep == 0) exitWith {};
 sleep _sleep;

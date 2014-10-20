@@ -46,8 +46,6 @@ if (vehicle player != player && f_var_mapClickTeleport_Height == 0) then {
 	player setPos f_var_mapClickTeleport_telePos;
 };
 
-player setPos f_var_mapClickTeleport_telePos;
-
 // Move group
 // If enabled, the player's group is moved next to him
 
