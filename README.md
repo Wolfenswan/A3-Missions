@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-2-0 DEV</i>
 
 <b>Mission description</b><br/>
-Template mission.
+Motorized CSAT and Airborn NATO fight for a ZEUS-controlled FIA convoy. Both need to seize and hold the cargo it has been carrying. FIA is friendly to NATO by default, but can be set to be hostile to both via parameter
 
 <b>Contact</b><br/>
 folkarps.com<br/>
