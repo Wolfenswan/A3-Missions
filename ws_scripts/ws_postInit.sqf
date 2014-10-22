@@ -43,6 +43,20 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 // Do more stuff exclusively on the server
 if (isServer) then {
 
+
+	if ({isNil _x} count ["GrpAAF_CSL","GrpAAF_C1","GrpAAF_C2","GrpAAF_C3"] == 4) then {
+		deleteVehicle VehAAF_TH3;
+	};
+
+	if ({isNil _x} count ["GrpAAF_BSL","GrpAAF_B1","GrpAAF_B2","GrpAAF_B3"] == 4) then {
+		deleteVehicle VehAAF_TH2;
+	};
+
+	if (isNil "GrpAAF_AH1") then {
+		deleteVehicle VehAAF_AH1;
+	};
+
+
 	// Recalculate F3 variables
 	[0] execVM "f\common\f_setLocalVars.sqf";
 
@@ -75,4 +89,6 @@ if (isServer) then {
        // _unit enablegunlights "forceOn";
 } forEach allUnits;
 	*/
+
+	6000 setFog [0.1,0.01,155];
 };

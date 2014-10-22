@@ -5,7 +5,7 @@ ws_debug = if (ws_param_dbg == 0) then {false} else {true};
 if !(isServer) exitWith {ws_initDone = true};
 
 // Disable Thermal Imaging for these vehicles
-{_x disableTIEquipment true;} forEach [];
+// {_x disableTIEquipment true;} forEach [];
 
 // Further tweaking to vehicles
 //{_x removeWeaponGlobal "GMG_40mm"; _x lockTurret [[1],true];} forEach [];
@@ -13,6 +13,6 @@ if !(isServer) exitWith {ws_initDone = true};
 
 // Load up vehicles with groups
 // [veh1,group1,group2.....groupN] call ws_fnc_loadVehicle
-[Veh,Grp] call ws_fnc_loadVehicle;
+// [Veh,Grp] call ws_fnc_loadVehicle;
 
 ws_initDone = true;

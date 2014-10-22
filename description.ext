@@ -15,7 +15,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "Hillside View";
 onLoadMission = "Made with the F3 Mission Development Framework";
 author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
@@ -228,9 +228,9 @@ class Params
 	class f_param_fog
 	{
 		title = "Fog";
-		values[] = {0,1,2};
-		texts[] = {"None","Light","Heavy"};
-		default = 0;
+		values[] = {1};
+		texts[] = {"Light"};
+		default = 1;
 		function = "f_fnc_SetFog";			// This function is called to apply the values
 		isGlobal = 0;						// Execute this only on the server
 		code = "f_param_fog = %1";
@@ -241,7 +241,7 @@ class Params
 		title = "$STR_f_param_timeOfDay";
 		values[] = {0,1,2,3,4,5,6,7};
 		texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
-		default = 4;
+		default = 2;
 		function = "f_fnc_setTime";			// This function is called to apply the values
  		isGlobal = 0;						// Execute this only on the server
  		code = "f_param_timeOfDay = %1";
