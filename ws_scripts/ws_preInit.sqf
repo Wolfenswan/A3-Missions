@@ -4,6 +4,8 @@ ws_debug = if (ws_param_dbg == 0) then {false} else {true};
 
 if !(isServer) exitWith {ws_initDone = true};
 
+{_x animateDoor ["door_back_R",1,true];_x animateDoor ["door_back_L",1,true];_x setCaptive true;clearItemCargoGlobal _x; clearWeaponCargoGlobal _x; clearMagazineCargoGlobal _x;} forEach [VehAAF_TH1,VehAAF_TH2,VehAAF_TH3,VehAAF_TH4];
+
 // Disable Thermal Imaging for these vehicles
 // {_x disableTIEquipment true;} forEach [];
 
