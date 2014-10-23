@@ -5,7 +5,7 @@ The missions can be found on GitHub:<br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-1-0</i>
+<i>3-2-0 RC1</i>
 
 <b>Mission description</b><br/>
 Two FIA officers are planning to meet in a town in central Altis, AAF attempts to intercept and kill them.
