@@ -2,14 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// Only run this component on the server
-if !(isServer) exitWith {};
-
 waitUntil {!isnil "f_var_debugMode"};
-
-_sleep = _this select 0;
-
-while {true} do {
 
 // ====================================================================================
 // DEBUG DEFINES
@@ -358,12 +351,3 @@ if (f_var_debugMode == 1) then
 	DEBUG_OUTPUT format ["DEBUG %2: f_var_vehicles_CIV = %1",_str_f_var_vehicles_CIV, SLV_NAME];
 };
 
-// ====================================================================================
-
-// MAKE VARIABLES PUBLIC
-// All variables are sent to the connecting clients using publicvariable
-
-if (_sleep == 0) exitWith {};
-sleep _sleep;
-
-};
