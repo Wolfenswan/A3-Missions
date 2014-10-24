@@ -1,5 +1,4 @@
-# F3-Folk ARPS Mission-making Template #
-
+# Folk ARPS Template #
 
 ## Changes from default F3 ##
 
