@@ -188,7 +188,7 @@ _MMGmag_tr = "150Rnd_762x51_Box_Tracer";
 
 // Rifleman AT
 _RAT = "launch_RPG32_F";
-_RATmag = "RPG32_F";
+_RATmag = "RPG32_HE_F";
 
 // Medium AT
 _MAT = "launch_RPG32_F";
