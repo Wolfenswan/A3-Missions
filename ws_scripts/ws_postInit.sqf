@@ -9,7 +9,7 @@ if (!isDedicated) then {
 	// Display a short text intro
  	[] spawn {
 	 waitUntil {time > 15};
-		["Jolly Blue","Altis"] call ws_fnc_showIntro;
+		["Jolly Blue XL","Somewhere on Altis"] call ws_fnc_showIntro;
 	};
 };
 
@@ -24,6 +24,12 @@ if (isServer) then {
 
 ZeusModule addEventHandler ["CuratorObjectPlaced",{(_this select 1) unlinkItem "ItemMap"; (_this select 1) unlinkItem "ItemGPS"; [(_this select 1)] execVM "f\setAISKill\f_setAISkill.sqf";}];
 ZeusModule addcuratorEditableObjects [playableUnits,true];
+
+if (player == UnitZeus || player == UnitZeus_1) then {
+	_mkr = createMarkerLocal  ["mkrZeus", ws_wreckloc];
+	_mkr setMarkerTypeLocal "mil_dot";
+	_mkr setMarkerTextLocal "Crashsite";
+};
 
 //Show black screen while waiting for wreck to be placed/explosion cleared
 [] spawn {

@@ -24,9 +24,9 @@ _groups = [
 ["GrpNATO_B2","NATO B2 -"],
 ["GrpNATO_B3","NATO B3 -"],
 
-["GrpNATO_CSL","NATO CSL -"],
-["GrpNATO_C1","NATO C1 -"],
-["GrpNATO_C2","NATO C2 -"],
+["GrpNATO_GRND","CTRG SL -"],
+["GrpNATO_GRND1","CTRG 1 -"],
+["GrpNATO_GRND2","CTRG 2 -"],
 ["GrpNATO_C3","NATO C3 -"],
 
 ["GrpNATO_MMG1","NATO MMG1 -"],
@@ -78,9 +78,9 @@ _groups = [
 ["GrpFIA_B2","FIA B2 -"],
 ["GrpFIA_B3","FIA B3 -"],
 
-["GrpFIA_CSL","FIA CSL -"],
-["GrpFIA_C1","FIA C1 -"],
-["GrpFIA_C2","FIA C2 -"],
+["GrpFIA_GRND","FIA CSL -"],
+["GrpFIA_GRND1","FIA C1 -"],
+["GrpFIA_GRND2","FIA C2 -"],
 ["GrpFIA_C3","FIA C3 -"],
 
 ["GrpFIA_MMG1","FIA MMG1 -"],

@@ -49,7 +49,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_cz23_JollyBlueXL_v2";
+		briefingName="fa3_cz25_JollyBlueXL_v1";
 		overviewText="A botched extraction requires NATO to clean up the evidence and extract the downed team.";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -96,7 +96,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={20133.227,56.950947,8990.0645};
+					position[]={20133.227,56.938057,8989.9434};
 					azimut=3.1136601;
 					id=1;
 					side="GUER";
@@ -110,7 +110,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={20135.199,56.795837,8991.4697};
+					position[]={20135.117,56.808582,8991.4697};
 					azimut=3.1136601;
 					id=2;
 					side="WEST";
@@ -342,7 +342,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20739.568,41.414417,9038.3301};
+					position[]={20739.568,41.399105,9038.125};
 					class args
 					{
 						items=3;
@@ -413,7 +413,7 @@ class Mission
 						items=4;
 						class Item0
 						{
-							value="UnitZeus";
+							value="UnitZeus_1";
 							parentCls="ModuleCurator_F";
 							typeName="Owner";
 						};
@@ -625,7 +625,7 @@ class Mission
 					skill=0.60000002;
 					text="UnitNATO_TH1_P";
 					init="GrpNATO_TH1 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehNATO_TH1;";
-					description="NATO Transport Helo 1 Pilot (Ghosthawk)";
+					description="NATO Transport Helo 1 Pilot - Ghosthawk";
 				};
 				class Item1
 				{
@@ -679,46 +679,9 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={20904.652,26.442213,7311.2939};
-					azimut=-36.188099;
-					id=27;
-					side="WEST";
-					vehicle="B_Helipilot_F";
-					player="PLAY CDG";
-					leader=1;
-					rank="CAPTAIN";
-					skill=0.60000002;
-					text="UnitNATO_TH2_P";
-					init="GrpNATO_TH2 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehNATO_TH2;";
-					description="NATO Transport Helo 2 Pilot (Mohawk)";
-				};
-				class Item1
-				{
-					position[]={20908.91,26.3016,7312.4409};
-					azimut=-36.188099;
-					id=28;
-					side="WEST";
-					vehicle="B_soldier_repair_F";
-					player="PLAY CDG";
-					rank="SERGEANT";
-					skill=0.60000002;
-					text="UnitNATO_TH2_G1";
-					init="GrpNATO_TH2 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH2,[1]];";
-					description="NATO Transport Helo 2 Crew Chief (Repair)";
-				};
-			};
-		};
-		class Item14
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=2;
-				class Item0
-				{
 					position[]={20860.486,27.376354,7279.3018};
 					azimut=-33.9935;
-					id=29;
+					id=27;
 					side="WEST";
 					vehicle="B_Helipilot_F";
 					player="PLAY CDG";
@@ -733,7 +696,7 @@ class Mission
 				{
 					position[]={20867.568,27.283829,7283.2368};
 					azimut=-33.9935;
-					id=30;
+					id=28;
 					side="WEST";
 					vehicle="B_soldier_repair_F";
 					player="PLAY CDG";
@@ -742,6 +705,71 @@ class Mission
 					text="UnitNATO_AH1_CP";
 					init="GrpNATO_AH1 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_AH1,[0]];";
 					description="NATO Attack Helo 1 Gunner (Repair)";
+				};
+			};
+		};
+		class Item14
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={20903.354,26.476267,7311.2461};
+					azimut=-37.539101;
+					id=29;
+					side="WEST";
+					vehicle="B_Helipilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.60000002;
+					text="UnitNATO_TH2_P";
+					init="GrpNATO_TH2 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehNATO_TH2;";
+					description="NATO Transport Helo 2 Pilot - Ghosthawk";
+				};
+				class Item1
+				{
+					position[]={20906.305,26.390835,7311.5688};
+					azimut=-37.539146;
+					id=30;
+					side="WEST";
+					vehicle="B_Helipilot_F";
+					player="PLAY CDG";
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					text="UnitNATO_TH2_CP";
+					init="GrpNATO_TH2 = group this; [""pp"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH2,[0]];";
+					description="NATO Transport Helo 2 Co-Pilot";
+				};
+				class Item2
+				{
+					position[]={20907.588,26.337744,7312.4878};
+					azimut=-37.539146;
+					id=31;
+					side="WEST";
+					vehicle="B_soldier_repair_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="UnitNATO_TH2_G1";
+					init="GrpNATO_TH2 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH2,[1]];";
+					description="NATO Transport Helo 2 Crew Chief (Repair)";
+				};
+				class Item3
+				{
+					position[]={20908.822,26.282278,7313.4126};
+					azimut=-37.539146;
+					id=32;
+					side="WEST";
+					vehicle="B_helicrew_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitNATO_TH2_G2";
+					init="GrpNATO_TH2 = group this; [""pc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH2,[2]];";
+					description="NATO Transport Helo 2 Gunner";
 				};
 			};
 		};
@@ -754,7 +782,7 @@ class Mission
 			position[]={20146.121,54.536858,8987.8232};
 			azimut=3.1136601;
 			offsetY=-0.30000001;
-			id=31;
+			id=33;
 			side="EMPTY";
 			vehicle="I_Heli_Transport_02_F";
 			skill=0.60000002;
@@ -770,7 +798,7 @@ class Mission
 		{
 			position[]={20884.391,27.068933,7292.7017};
 			azimut=-33.9935;
-			id=32;
+			id=34;
 			side="EMPTY";
 			vehicle="B_Heli_Transport_01_F";
 			leader=1;
@@ -780,26 +808,26 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={20910.234,26.385235,7306.0059};
-			azimut=-36.188099;
-			id=33;
-			side="EMPTY";
-			vehicle="I_Heli_Transport_02_F";
-			leader=1;
-			skill=0.60000002;
-			text="VehNATO_TH2";
-			init="{this setObjectTexture [_x,'#(argb,8,8,3)color(0.03,0.03,0.03,0.5)'];} forEach [0,1,2];";
-		};
-		class Item3
-		{
 			position[]={20864.615,27.326557,7280.2983};
 			azimut=-33.9935;
-			id=34;
+			id=35;
 			side="EMPTY";
 			vehicle="B_Heli_Light_01_armed_F";
 			leader=1;
 			skill=0.60000002;
 			text="VehNATO_AH1";
+		};
+		class Item3
+		{
+			position[]={20909.08,26.415461,7306.0859};
+			azimut=-37.539101;
+			id=36;
+			side="EMPTY";
+			vehicle="B_Heli_Transport_01_F";
+			leader=1;
+			skill=0.60000002;
+			text="VehNATO_TH2";
+			init="[""v_ifv"",this,""blu_g_f""] call f_fnc_assignGear;";
 		};
 	};
 	class Markers
