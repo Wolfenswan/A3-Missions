@@ -22,10 +22,10 @@ ws_wreckLoc = [_pos select 0,_pos select 1,0]; publicVariable "ws_wreckLoc";
 Wreck animateDoor ["door_back_R",1,true];Wreck animateDoor ["door_back_L",1,true];Wreck setCaptive true;
 
 // Setup grounded team
-{_x unassignItem "ItemGPS"; _x removeItem "ItemGPS"; _x unassignItem "ItemMap"; _x removeItem "ItemMap"; _x unlinkitem "ItemCompass"} forEach ((units GrpNATO_Grnd) + (units GrpNATO_Grnd1) + (units GrpNATO_Grnd2));
+{_x unassignItem "ItemGPS"; _x removeItem "ItemGPS"; _x unassignItem "ItemMap"; _x removeItem "ItemMap"; _x unlinkitem "ItemCompass"} forEach ((units GrpNATO_Grnd) + (units GrpNATO_Grnd1) + (units GrpNATO_Grnd2) + (units GrpNATO_Grnd3));
 
 if (ws_param_compass == 0) then {
-	{_x unlinkitem "ItemCompass"} forEach ((units GrpNATO_Grnd) + (units GrpNATO_Grnd1) + (units GrpNATO_Grnd2));
+	{_x unlinkitem "ItemCompass"} forEach ((units GrpNATO_Grnd) + (units GrpNATO_Grnd1) + (units GrpNATO_Grnd2) + (units GrpNATO_Grnd3));
 };
 
 ws_initDone = true; publicVariable "ws_initDone";
