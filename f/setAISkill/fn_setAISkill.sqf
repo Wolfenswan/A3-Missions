@@ -30,10 +30,10 @@ if (typename _skillarray == 'SCALAR') then {
 
 // We loop through all skilltypes and set them for the individual unit
 {
-_unit setSkill [_x,_skillarray select _forEachIndex];
+	_unit setSkill [_x,_skillarray select _forEachIndex];
 } forEach ['aimingAccuracy','aimingShake','aimingSpeed','endurance','spotDistance','spotTime','courage','reloadSpeed','commanding','general'];
 
-_unit setVariable ["f_setAISkill",true];
+_unit setVariable ["f_setAISkill",true,true];
 
 // Returns true
 true

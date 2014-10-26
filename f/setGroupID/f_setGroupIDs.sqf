@@ -27,7 +27,7 @@ _groups = [
 ["GrpNATO_GRND","CTRG SL -"],
 ["GrpNATO_GRND1","CTRG 1 -"],
 ["GrpNATO_GRND2","CTRG 2 -"],
-["GrpNATO_C3","NATO C3 -"],
+["GrpNATO_GRND3","CTRG 3 -"],
 
 ["GrpNATO_MMG1","NATO MMG1 -"],
 ["GrpNATO_HMG1","NATO HMG1 -"],

@@ -22,8 +22,13 @@ if (isServer) then {
 	};
 };
 
-ZeusModule addEventHandler ["CuratorObjectPlaced",{(_this select 1) unlinkItem "ItemMap"; (_this select 1) unlinkItem "ItemGPS"; [(_this select 1)] execVM "f\setAISKill\f_setAISkill.sqf";}];
-ZeusModule addcuratorEditableObjects [playableUnits,true];
+{
+_x addEventHandler ["CuratorObjectPlaced",{
+(_this select 1) unlinkItem "ItemMap"; (_this select 1) unlinkItem "ItemGPS";
+[[[(_this select 1)],'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false]call BIS_fnc_MP;
+}];
+_x addcuratorEditableObjects [playableUnits,true];
+} forEach [ZeusModule, ZeusModule_1];
 
 if (player == UnitZeus || player == UnitZeus_1) then {
 	_mkr = createMarkerLocal  ["mkrZeus", ws_wreckloc];
