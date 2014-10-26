@@ -5,7 +5,7 @@
 
 class Header
 {
-	gameType = Coop;
+	gameType = ZVP;
 	minPlayers = 1;
 	maxPlayers = 453;
 };
@@ -15,7 +15,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "Jolly Blue XL";
 onLoadMission = "Made with the F3 Mission Development Framework";
 author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
@@ -26,6 +26,7 @@ loadScreen = "logo.paa";
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 enableDebugConsole = 1;
+allowFunctionsRecompile = 1;
 
 // ============================================================================================
 
@@ -46,6 +47,7 @@ class cfgNotifications
 {
 
 	// Notification Template
+	/*
 	class Template
 	{
 		title = ""; // Tile displayed as text on black background. Filled by arguments.
@@ -57,6 +59,7 @@ class cfgNotifications
 		priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
 		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
 	};
+	*/
 
 	// A generic warning notification
 	class Alert
@@ -127,6 +130,36 @@ class cfgNotifications
 		description = "%1";
 		iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
 		duration = 3;
+	};
+
+	class WreckDestroyed
+	{
+		title = "Wreck destroyed"; // Tile displayed as text on black background. Filled by arguments.
+		iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
+		description = "%1"; // Brief description displayed as structured text. Colored by "color", filled by arguments.
+		duration = 5; // How many seconds will the notification be displayed
+	};
+
+	class DataCollected
+	{
+		title = "Data collected"; // Tile displayed as text on black background. Filled by arguments.
+		iconPicture = ""; // Small icon displayed in left part. Colored by "color", filled by arguments.
+		iconText = ""; // Short text displayed over the icon. Colored by "color", filled by arguments.
+		description = "%1 has picked up the data"; // Brief description displayed as structured text. Colored by "color", filled by arguments.
+		color[] = {1,1,1,1}; // Icon and text color
+		duration = 5; // How many seconds will the notification be displayed
+		priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
+	};
+
+	class TransferComplete
+	{
+		title = "Transfer complete!"; // Tile displayed as text on black background. Filled by arguments.
+		iconPicture = ""; // Small icon displayed in left part. Colored by "color", filled by arguments.
+		iconText = ""; // Short text displayed over the icon. Colored by "color", filled by arguments.
+		description = "Transfer has been completed."; // Brief description displayed as structured text. Colored by "color", filled by arguments.
+		color[] = {1,1,1,1}; // Icon and text color
+		duration = 5; // How many seconds will the notification be displayed
+		priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
 	};
 };
 
@@ -257,7 +290,7 @@ class Params
 		title = "$STR_f_param_AISkill_BLUFOR";
 		values[] = {0,1,2,3};
 		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
+		default = 2;
 		code = "f_param_AISkill_BLUFOR = %1";
 	};
 
@@ -266,16 +299,17 @@ class Params
 		title = "$STR_f_param_AISkill_OPFOR";
 		values[] = {0,1,2,3};
 		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
+		default = 2;
 		code = "f_param_AISkill_OPFOR = %1";
 	};
+
 
 	class f_param_AISkill_INDP
 	{
 		title = "$STR_f_param_AISkill_INDP";
 		values[] = {0,1,2,3};
 		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
+		default = 2;
 		code = "f_param_AISkill_INDP = %1";
 	};
 
@@ -284,6 +318,7 @@ class Params
 // F3 - Caching
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
+/*
 	class f_param_caching
 	{
 		title = "Cache AI outside distance (m)";
@@ -291,12 +326,15 @@ class Params
 		default = 0;
 		code = "f_param_caching = %1";
 	};
+*/
 
 // ============================================================================================
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
 
+// Wolfenswan - Parameters
+/*
 	class ws_param_hc
 	{
 		title = "Headless client";
@@ -305,14 +343,24 @@ class Params
         default = 0;
         code = "ws_param_hc = %1";
 	};
+*/
+
+	class ws_param_compass
+	{
+		title = "Survivors have a compass";
+		values[] = {0,1};
+		texts[] = {"No","Yes"};
+		default = 0;
+		code = "ws_param_compass = %1";
+	};
 
 	class ws_param_dbg
 	{
-		title = "WS fnc debug";
-        values[] = {0,1};
-        texts[] = {"Off","On"};
-        default = 0;
-        code = "ws_param_dbg = %1";
+		title = "ws_fnc debug";
+		values[] = {0,1};
+		texts[] = {"Off","On"};
+		default = 0;
+		code = "ws_param_dbg = %1";
 	};
 
 };
@@ -326,9 +374,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "MISSION FAILURE";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "The survivors were wiped out.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -336,9 +384,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "MISSION SUCCESS";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "The survivors extracted successfully and managed to fulfill all objectives.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -346,9 +394,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "Ending #3";
+		title = "PARTIAL SUCCESS";
 		subtitle = "";
-		description = "*** Insert debriefing #3 here. ***";
+		description = "The survivors extracted successfully but not all objectives were completed.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -356,9 +404,9 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "Ending #4";
+		title = "Partial success";
 		subtitle = "";
-		description = "*** Insert debriefing #4 here. ***";
+		description = "The mission was successful but not all objectives were completed.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -366,9 +414,9 @@ class CfgDebriefing
 
 	class End5
 	{
-		title = "Ending #5";
+		title = "Draw";
 		subtitle = "";
-		description = "*** Insert debriefing #5 here. ***";
+		description = "Both sides managed to accomplish one of their objectives.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -438,7 +486,6 @@ class CfgFunctions
 				preInit = 1;
 				postInit = 1;
 			};
-
 			class nearPlayer{};
 		};
 		class mpEnd
@@ -543,6 +590,7 @@ class CfgFunctions
 		#include "f\spect\functions.hpp"
 
 	};
+
 };
 
 // ============================================================================================

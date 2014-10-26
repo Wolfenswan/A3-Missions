@@ -3,16 +3,6 @@ private ["_b"];
 // Clear the area
 //_b = "Bo_GBU12_LGB" createVehicle [ws_wreckLoc select 0,ws_wreckLoc select 1,2];
 
-// Get good wreck location
-private ["_mkrs","_mkr","_pos"];
-_mkrs = ["mkrArea"] call ws_fnc_collectMarkers;
-{_x setMarkerAlpha 0;} forEach _mkrs;
-_mkr = _mkrs call ws_fnc_selectRandom;
-
-_pos = [([_mkr,true] call ws_fnc_getPos), 0, 500, 5, 0, 8, 0] call BIS_fnc_findSafePos;
-
-ws_wreckLoc = [_pos select 0,_pos select 1,0]; publicVariable "ws_wreckLoc";
-
 // Place the wreck after a sleep
 sleep 2;
 Wreck setPosATL ws_wreckLoc;

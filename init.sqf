@@ -107,7 +107,7 @@ f_var_doNotRemoveBodies = [];
 // [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // BLUFOR > NATO
-// [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[["GrpNATO_Grnd","GrpNATO_Grnd1","GrpNATO_Grnd2"],100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
 // [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
@@ -120,8 +120,8 @@ f_var_doNotRemoveBodies = [];
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// [] execVM "f\setAISKill\f_setAISkill.sqf";
-// f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
+[] execVM "f\setAISKill\f_setAISkill.sqf";
+f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
 
 // ====================================================================================
 
@@ -129,9 +129,9 @@ f_var_doNotRemoveBodies = [];
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 // f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
-// f_showDistance_Nametags = true;			// Show distance to player
-// f_showVehicle_Nametags = true;			// Show vehicle player is in
-// [20] execVM "f\nametag\f_nametags.sqf";
+f_showDistance_Nametags = true;			// Show distance to player
+f_showVehicle_Nametags = true;			// Show vehicle player is in
+[20] execVM "f\nametag\f_nametags.sqf";
 
 // ====================================================================================
 
@@ -139,7 +139,15 @@ f_var_doNotRemoveBodies = [];
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 // [side,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
-// [["Grp1","Grp2"],ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
+
+[["GrpNATO_Grnd","GrpNATO_Grnd1","GrpNATO_Grnd2"],"MkrNATO",500,{
+if (ws_colonel_extracted && ws_wreck_destroyed) then {
+	[2] call f_fnc_MPend;
+} else {
+	[3] call f_fnc_MPend;
+};
+}] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
+
 
 // ====================================================================================
 
@@ -183,13 +191,13 @@ f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear?
 // F3 - AI Unit Caching
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[30] spawn f_fnc_cInit;
+//[30] spawn f_fnc_cInit;
 
 // Note: Caching aggressiveness is set using the f_var_cachingAggressiveness variable; possible values:
 // 1 - cache only non-leaders and non-drivers
 // 2 - cache all non-moving units, always exclude vehicle drivers
 // 3 - cache all units, incl. group leaders and vehicle drivers
-f_var_cachingAggressiveness = 2;
+//f_var_cachingAggressiveness = 2;
 
 // ====================================================================================
 

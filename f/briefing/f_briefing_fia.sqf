@@ -27,8 +27,9 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS (folkarps.com)<br/>
-Contact: wolfenswanarps@gmail.com
+Made by Wolfenswan for Folk ARPS.<br/>
+Thanks to {C9}Jester for his smoke column script.<br/>
+Credits to Shuko for his ARMA2 mission Jolly Green.
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -40,31 +41,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
-"]];
-
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+We are very low on ammo and lost most of our gear in the crash. We've taken the emergency flares from the helicopter.
 "]];
 
 // ====================================================================================
@@ -74,7 +51,12 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We are at the crash location, somewhere in western Altis.<br/>
+2. Get your bearings and establish contact to NATO troops (flares, chemlights etc.).<br/>
+3. Bring all surviving troops back to base.<br/>
+OPTIONAL:<br/>
+1. Ensure the colonels survival.<br/>
+2. Use the demo charges transported by the extraction helicopter to destroy the wreck.<br/>
 "]];
 
 // ====================================================================================
@@ -84,15 +66,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+As part of a CTRG troop embedded with the FIA resistance, we were tasked to free a sympathizing AAF colonel. The whole thing went to shit and we had to shoot our way out. Although we reached the helicopter, it was shot down shortly after and we lost most of our gear in the crash.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
-<br/><br/>
+AAF forces will be on their way to mop up the survivors and take out the colonel.<br/><br/>
 FRIENDLY FORCES
 <br/>
-*** Insert information about friendly forces here.***
+NATO troops will hopefully be on their way to extract us.<br/><br/>
+NOTE<br/>
+It's suggested to have no radio contact between CTRG and NATO until they've met.
 "]];
 
 // ====================================================================================

@@ -16,6 +16,7 @@ _typeofUnit = toLower (_this select 0);
 _unit = _this select 1;
 
 _faction = toLower (faction _unit);
+
 if(count _this > 2) then
 {
   _faction = _this select 2;

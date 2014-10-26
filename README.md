@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-2-0 RC1</i>
 
 <b>Mission description</b><br/>
-Template mission.
+Inspired by the Shuko's ARMA2 classic Jolly Green, this survive-and-rescue mission drops a NATO squad in the middle of nowhere. They'll have to identify their location, while ZEUS-controlled forces advance towards their location.
 
 <b>Contact</b><br/>
 folkarps.com<br/>

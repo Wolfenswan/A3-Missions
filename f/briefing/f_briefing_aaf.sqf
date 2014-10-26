@@ -27,8 +27,9 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS (folkarps.com)<br/>
-Contact: wolfenswanarps@gmail.com
+Made by Wolfenswan for Folk ARPS.<br/>
+Thanks to {C9}Jester for his smoke column script.<br/>
+Credits to Shuko for his ARMA2 mission Jolly Green.
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -40,31 +41,10 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
-"]];
+We start in:<br/>
+CO/MMG1 - Strider (unarmed)<br/>
+Alpha/Bravo/Charlie - Zamak (one each)<br/>
 
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
 "]];
 
 // ====================================================================================
@@ -74,7 +54,9 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We begin near the <marker name='mkrWreckCircle2'>estimated crash site</marker>.<br/>
+2. Move in and kill all survivors, first and foremost the colonel.<br/>
+3. Transfer the data from the wreck and move away from the AO.
 "]];
 
 // ====================================================================================
@@ -84,15 +66,11 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+During the night unknown forces managed to free one of our colonels, who was under lockdown for assumed FIA-sympathies. They made it to their extraction helicopter but went down shortly after. We need to mop up any surviving forces and recover the helicopters flight computer, to get proof on who was behind this.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
-<br/><br/>
-FRIENDLY FORCES
-<br/>
-*** Insert information about friendly forces here.***
+If our suspicions are true, NATO forces will most likely be deployed to remove all  traces of evidence.
 "]];
 
 // ====================================================================================

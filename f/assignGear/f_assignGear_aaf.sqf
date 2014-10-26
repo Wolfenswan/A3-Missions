@@ -288,16 +288,16 @@ if (_isMan) then {
 	// HANDLE CLOTHES
 	// Handle clothes and helmets and such using the include file called next.
 
-	#include "f_assignGear_clothes.sqf";
+	//#include "f_assignGear_clothes.sqf";
 
 	// ====================================================================================
 
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	_unit linkItem _nvg;			// Add and equip the faction's nvg
+	//_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
-	_unit linkItem "ItemMap";		// Add and equip the map
+	//_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass
 	_unit linkItem "ItemRadio";		// Add and equip A3's default radio
 	_unit linkItem "ItemWatch";		// Add and equip a watch
@@ -330,6 +330,14 @@ switch (_typeofUnit) do
 // ====================================================================================
 
 // LOADOUT: COMMANDER
+
+	case "o":
+	{
+		_unit addmagazines ["6Rnd_45ACP_Cylinder",6];
+		_unit addweapon "hgun_Pistol_heavy_02_F";
+
+	};
+
 	case "co":
 	{
 		_unit addmagazines [_glriflemag,7];

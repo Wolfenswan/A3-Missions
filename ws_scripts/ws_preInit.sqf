@@ -4,15 +4,28 @@ ws_debug = if (ws_param_dbg == 0) then {false} else {true};
 
 if !(isServer) exitWith {ws_initDone = true};
 
-// Disable Thermal Imaging for these vehicles
-{_x disableTIEquipment true;} forEach [];
+// Get good wreck location
+private ["_mkrs","_mkr","_pos"];
+_mkrs = ["mkrArea"] call ws_fnc_collectMarkers;
+{_x setMarkerAlpha 0;} forEach _mkrs;
+_mkr = _mkrs call ws_fnc_selectRandom;
+
+_pos = [([_mkr,true] call ws_fnc_getPos), 0, 500, 5, 0, 5, 0] call BIS_fnc_findSafePos;
+
+ws_wreckLoc = [_pos select 0,_pos select 1,0]; publicVariable "ws_wreckLoc";
+//UnitZeus setPosATL [_pos select 0,_pos select 1,50];
+
+// Disable Thermal Imaging for vehicles
+// {_x disableTIEquipment true;} forEach [];
 
 // Further tweaking to vehicles
-//{_x removeWeaponGlobal "GMG_40mm"; _x lockTurret [[1],true];} forEach [];
-//{_x removeWeaponGlobal "HMG_127_APC";_x lockTurret [[0],true];} forEach [];
+Wreck animateDoor ["door_back_R",1,true];Wreck animateDoor ["door_back_L",1,true];Wreck setCaptive true;
 
-// Load up vehicles with groups
-// [veh1,group1,group2.....groupN] call ws_fnc_loadVehicle
-[Veh,Grp] call ws_fnc_loadVehicle;
+// Setup grounded team
+{_x unassignItem "ItemGPS"; _x removeItem "ItemGPS"; _x unassignItem "ItemMap"; _x removeItem "ItemMap"; _x unlinkitem "ItemCompass"} forEach ((units GrpNATO_Grnd) + (units GrpNATO_Grnd1) + (units GrpNATO_Grnd2));
 
-ws_initDone = true;
+if (ws_param_compass == 0) then {
+	{_x unlinkitem "ItemCompass"} forEach ((units GrpNATO_Grnd) + (units GrpNATO_Grnd1) + (units GrpNATO_Grnd2));
+};
+
+ws_initDone = true; publicVariable "ws_initDone";

@@ -59,7 +59,6 @@ if (typeName _objects == "SIDE") then {
 		if(!isnil _x) then
 		{
 			_temp = call compile format ["%1",_x];
-			player globalchat format ["%1",typeName _temp];
 			if (typename _temp == "GROUP") then {
 				{
 					if !(_x in _units) then {
@@ -147,5 +146,3 @@ if (_safe > 0) then {
 		[_end,"bis_fnc_spawn",true] call BIS_fnc_MP;
 	};
 };
-
-player GlobalChat format ["DEBUG (f\EandECheck\f_EandECheckLoop.sqf): Ending didn't fire, should either be code or scalar. _end = %1, typeName _end: %2",_end,typeName _end];
