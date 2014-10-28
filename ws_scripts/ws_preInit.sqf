@@ -21,13 +21,4 @@ ws_wreckLoc = [_pos select 0,_pos select 1,0]; publicVariable "ws_wreckLoc";
 // Further tweaking to vehicles
 Wreck animateDoor ["door_back_R",1,true];Wreck animateDoor ["door_back_L",1,true];Wreck setCaptive true;
 
-
-if (ws_param_compass == 0) then {
-	{
-	if (str group _x in ['GrpNATO_Grnd','GrpNATO_Grnd1','GrpNATO_Grnd2','GrpNATO_Grnd3']) then {
-		_x unlinkitem "ItemCompass";
-	};
-	} forEach playableUnits;
-};
-
 ws_initDone = true; publicVariable "ws_initDone";
