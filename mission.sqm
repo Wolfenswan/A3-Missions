@@ -49,7 +49,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_cz30_JollyBlueXL_v2";
+		briefingName="fa3_cz30_JollyBlueXL_v4";
 		overviewText="A botched extraction requires NATO to clean up the evidence and extract the downed team.";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -81,7 +81,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={20133.365,57.080585,8991.4785};
+					position[]={20347.191,35.954952,8818.5098};
 					azimut=3.1136601;
 					id=0;
 					side="WEST";
@@ -91,12 +91,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitNATO_Grnd_SL";
-					init="GrpNATO_Grnd = group this; nul = [""dc"",this] call f_fnc_assignGear; ";
+					init="GrpNATO_Grnd = group this; nul = [""dc"",this] call f_fnc_assignGear;  {_x unassignItem ""ItemGPS""; _x removeItem ""ItemGPS""; _x unassignItem ""ItemMap""; _x removeItem ""ItemMap""; _x unlinkitem ""ItemCompass""} forEach units group this;";
 					description="CTRG - Squad Leader";
 				};
 				class Item1
 				{
-					position[]={20133.555,56.883064,8989.9033};
+					position[]={20347.381,35.894329,8816.9346};
 					azimut=3.1136601;
 					id=1;
 					side="GUER";
@@ -110,7 +110,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={20135.117,56.808582,8991.4697};
+					position[]={20348.943,35.910698,8818.501};
 					azimut=3.1136601;
 					id=2;
 					side="WEST";
@@ -124,7 +124,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={20135.381,56.492706,8988.8906};
+					position[]={20349.207,35.835323,8815.9219};
 					azimut=3.1136601;
 					id=3;
 					side="WEST";
@@ -146,7 +146,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20118.234,59.813717,8996.6797};
+					position[]={20339.43,36.667847,8822.0352};
 					id=4;
 					side="LOGIC";
 					vehicle="Logic";
@@ -164,7 +164,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={20137.59,56.599628,8993.8867};
+					position[]={20351.199,36.00845,8826.1348};
 					azimut=3.11338;
 					id=5;
 					side="WEST";
@@ -177,7 +177,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={20139.52,56.196121,8993.7402};
+					position[]={20353.129,35.942165,8825.9883};
 					azimut=3.11338;
 					id=6;
 					side="WEST";
@@ -197,7 +197,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20735.891,41.521973,9041.1035};
+					position[]={20653.846,38.808754,8979.5029};
 					class args
 					{
 						items=4;
@@ -233,7 +233,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=0.60000002;
 					text="ZeusModule";
-					init="[this] call f_fnc_zeusAISkillSelectorEH";
+					init="this addEventHandler ['CuratorObjectPlaced',{{_x unlinkItem ""ItemMap""; _x unlinkItem ""ItemGPS""} forEach crew (_this select 1);  [[crew (_this select 1),'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false] spawn BIS_fnc_MP;  }];  this addcuratorEditableObjects [playableUnits,true];";
 					syncId=0;
 					synchronizations[]={1,2,4};
 				};
@@ -247,7 +247,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20740.012,41.626488,9041.0195};
+					position[]={20658.512,38.688461,8979.5293};
 					class args
 					{
 						items=7;
@@ -313,7 +313,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20732.213,41.371399,9041.168};
+					position[]={20650.168,38.850368,8979.5674};
 					azimut=3.1136601;
 					id=9;
 					side="LOGIC";
@@ -336,7 +336,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20149.451,54.471001,8987.6943};
+					position[]={20359.805,35.618675,8821.3008};
 					azimut=0.26908201;
 					id=10;
 					side="LOGIC";
@@ -357,7 +357,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20739.689,41.411469,9038.249};
+					position[]={20658.406,38.734905,8977.1904};
 					class args
 					{
 						items=3;
@@ -399,7 +399,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20732.258,41.040642,9037.9619};
+					position[]={20650.213,38.860283,8977.2861};
 					azimut=3.1136601;
 					id=12;
 					side="LOGIC";
@@ -422,7 +422,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20735.891,41.242439,9037.8525};
+					position[]={20653.955,38.831383,8977.1748};
 					class args
 					{
 						items=4;
@@ -458,7 +458,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=0.60000002;
 					text="ZeusModule_1";
-					init="[this] call f_fnc_zeusAISkillSelectorEH";
+					init="this addEventHandler ['CuratorObjectPlaced',{  {_x unlinkItem ""ItemMap""; _x unlinkItem ""ItemGPS""} forEach crew (_this select 1);  [[crew (_this select 1),'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false] spawn BIS_fnc_MP;  }];  this addcuratorEditableObjects [playableUnits,true];";
 					syncId=6;
 					synchronizations[]={5,4,1};
 				};
@@ -472,7 +472,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={20129.527,57.332863,8987.1475};
+					position[]={20343.354,36.074211,8814.1787};
 					azimut=3.1136601;
 					id=14;
 					side="WEST";
@@ -482,12 +482,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitNATO_Grnd_SL_1";
-					init="GrpNATO_Grnd1 = group this; nul = [""ftl"",this] call f_fnc_assignGear; ";
+					init="GrpNATO_Grnd1 = group this; nul = [""ftl"",this] call f_fnc_assignGear;  {_x unassignItem ""ItemGPS""; _x removeItem ""ItemGPS""; _x unassignItem ""ItemMap""; _x removeItem ""ItemMap""; _x unlinkitem ""ItemCompass""} forEach units group this;";
 					description="CTRG - Team Leader";
 				};
 				class Item1
 				{
-					position[]={20129.326,57.235901,8985.4189};
+					position[]={20343.152,35.974514,8812.4502};
 					azimut=3.1136601;
 					id=15;
 					side="WEST";
@@ -501,7 +501,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={20131.48,56.81958,8985.2988};
+					position[]={20345.307,35.868351,8812.3301};
 					azimut=3.1136601;
 					id=16;
 					side="WEST";
@@ -515,7 +515,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={20131.5,56.970455,8987.0527};
+					position[]={20345.326,35.97076,8814.084};
 					azimut=3.1136601;
 					id=17;
 					side="WEST";
@@ -537,7 +537,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={20135.938,56.094608,8985.8389};
+					position[]={20349.764,35.743202,8812.8701};
 					azimut=3.1136601;
 					id=18;
 					side="WEST";
@@ -547,12 +547,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitNATO_Grnd2_TL";
-					init="GrpNATO_Grnd2 = group this; nul = [""ftl"",this] call f_fnc_assignGear; ";
+					init="GrpNATO_Grnd2 = group this; nul = [""ftl"",this] call f_fnc_assignGear;  {_x unassignItem ""ItemGPS""; _x removeItem ""ItemGPS""; _x unassignItem ""ItemMap""; _x removeItem ""ItemMap""; _x unlinkitem ""ItemCompass""} forEach units group this;";
 					description="CTRG - Team Leader";
 				};
 				class Item1
 				{
-					position[]={20135.943,55.91547,8984.1104};
+					position[]={20349.77,35.729134,8811.1416};
 					azimut=3.1136601;
 					id=19;
 					side="WEST";
@@ -566,7 +566,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={20137.969,55.537556,8983.6699};
+					position[]={20351.795,35.703655,8810.7012};
 					azimut=3.1136601;
 					id=20;
 					side="WEST";
@@ -580,7 +580,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={20138.012,55.747364,8985.917};
+					position[]={20351.838,35.720486,8812.9482};
 					azimut=3.1136601;
 					id=21;
 					side="WEST";
@@ -602,7 +602,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={20129.359,56.934628,8983.2256};
+					position[]={20343.186,35.975811,8810.2568};
 					azimut=3.1136601;
 					id=22;
 					side="WEST";
@@ -612,12 +612,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitNATO_Grnd_SL_1_1";
-					init="GrpNATO_Grnd3 = group this; nul = [""ftl"",this] call f_fnc_assignGear; ";
+					init="GrpNATO_Grnd3 = group this; nul = [""ftl"",this] call f_fnc_assignGear;  {_x unassignItem ""ItemGPS""; _x removeItem ""ItemGPS""; _x unassignItem ""ItemMap""; _x removeItem ""ItemMap""; _x unlinkitem ""ItemCompass""} forEach units group this;";
 					description="CTRG - Team Leader";
 				};
 				class Item1
 				{
-					position[]={20129.486,56.627522,8981.4971};
+					position[]={20343.313,35.945499,8808.5283};
 					azimut=3.1136601;
 					id=23;
 					side="WEST";
@@ -631,7 +631,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={20131.396,56.290775,8981.377};
+					position[]={20345.223,35.877735,8808.4082};
 					azimut=3.1136601;
 					id=24;
 					side="WEST";
@@ -645,7 +645,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={20131.332,56.57756,8983.1309};
+					position[]={20345.158,35.878559,8810.1621};
 					azimut=3.1136601;
 					id=25;
 					side="WEST";
@@ -667,7 +667,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={20879.828,26.809826,7299.7036};
+					position[]={20875.656,26.859327,7300.8208};
 					azimut=-33.9935;
 					id=26;
 					side="WEST";
@@ -677,12 +677,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitNATO_TH1_P";
-					init="GrpNATO_TH1 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehNATO_TH1;";
+					init="GrpNATO_TH1 = group this; [""pp"",this] call f_fnc_assignGear; ";
 					description="NATO Transport Helo 1 Pilot - Ghosthawk";
 				};
 				class Item1
 				{
-					position[]={20881.553,26.768452,7300.5371};
+					position[]={20877.381,26.802183,7301.6543};
 					azimut=-33.9935;
 					id=27;
 					side="WEST";
@@ -691,12 +691,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="UnitNATO_TH1_CP";
-					init="GrpNATO_TH1 = group this; [""pp"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH1,[0]];";
+					init="GrpNATO_TH1 = group this; [""pp"",this] call f_fnc_assignGear; ";
 					description="NATO Transport Helo 1 Co-Pilot";
 				};
 				class Item2
 				{
-					position[]={20883.859,26.72822,7301.0605};
+					position[]={20879.688,26.75271,7302.1777};
 					azimut=-33.9935;
 					id=28;
 					side="WEST";
@@ -705,12 +705,12 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="UnitNATO_TH1_G1";
-					init="GrpNATO_TH1 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH1,[1]];";
+					init="GrpNATO_TH1 = group this; [""pcc"",this] call f_fnc_assignGear; ";
 					description="NATO Transport Helo 1 Crew Chief (Repair)";
 				};
 				class Item3
 				{
-					position[]={20885.752,26.690975,7302.3569};
+					position[]={20881.58,26.697933,7303.4741};
 					azimut=-33.9935;
 					id=29;
 					side="WEST";
@@ -719,7 +719,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="UnitNATO_TH1_G2";
-					init="GrpNATO_TH1 = group this; [""pc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH1,[2]];";
+					init="GrpNATO_TH1 = group this; [""pc"",this] call f_fnc_assignGear; ";
 					description="NATO Transport Helo 1 Gunner";
 				};
 			};
@@ -732,7 +732,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={20900.146,26.529482,7310.2134};
+					position[]={20893.746,26.52751,7315.9385};
 					azimut=-37.539101;
 					id=30;
 					side="WEST";
@@ -742,12 +742,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitNATO_TH2_P";
-					init="GrpNATO_TH2 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehNATO_TH2;";
+					init="GrpNATO_TH2 = group this; [""pp"",this] call f_fnc_assignGear; ";
 					description="NATO Transport Helo 2 Pilot - Ghosthawk";
 				};
 				class Item1
 				{
-					position[]={20903.098,26.488968,7310.5361};
+					position[]={20896.697,26.49172,7316.2612};
 					azimut=-37.539101;
 					id=31;
 					side="WEST";
@@ -756,12 +756,12 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="UnitNATO_TH2_CP";
-					init="GrpNATO_TH2 = group this; [""pp"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH2,[0]];";
+					init="GrpNATO_TH2 = group this; [""pp"",this] call f_fnc_assignGear; ";
 					description="NATO Transport Helo 2 Co-Pilot";
 				};
 				class Item2
 				{
-					position[]={20904.381,26.446793,7311.4551};
+					position[]={20897.98,26.464285,7317.1802};
 					azimut=-37.539101;
 					id=32;
 					side="WEST";
@@ -770,12 +770,12 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="UnitNATO_TH2_G1";
-					init="GrpNATO_TH2 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH2,[1]];";
+					init="GrpNATO_TH2 = group this; [""pcc"",this] call f_fnc_assignGear; ";
 					description="NATO Transport Helo 2 Crew Chief (Repair)";
 				};
 				class Item3
 				{
-					position[]={20905.615,26.394978,7312.3799};
+					position[]={20899.215,26.418644,7318.105};
 					azimut=-37.539101;
 					id=33;
 					side="WEST";
@@ -784,7 +784,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="UnitNATO_TH2_G2";
-					init="GrpNATO_TH2 = group this; [""pc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH2,[2]];";
+					init="GrpNATO_TH2 = group this; [""pc"",this] call f_fnc_assignGear; ";
 					description="NATO Transport Helo 2 Gunner";
 				};
 			};
@@ -797,7 +797,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={20858.965,27.398371,7280.1714};
+					position[]={20855.67,27.308912,7285.0986};
 					azimut=-33.9935;
 					id=34;
 					side="WEST";
@@ -807,12 +807,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitNATO_AH1_P";
-					init="GrpNATO_AH1 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehNATO_AH1;";
+					init="GrpNATO_AH1 = group this; [""pp"",this] call f_fnc_assignGear; ";
 					description="NATO Attack Helo 1 Pilot";
 				};
 				class Item1
 				{
-					position[]={20866.047,27.282957,7284.1064};
+					position[]={20862.752,27.262705,7289.0337};
 					azimut=-33.9935;
 					id=35;
 					side="WEST";
@@ -821,7 +821,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="UnitNATO_AH1_CP";
-					init="GrpNATO_AH1 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_AH1,[0]];";
+					init="GrpNATO_AH1 = group this; [""pcc"",this] call f_fnc_assignGear; ";
 					description="NATO Attack Helo 1 Gunner (Repair)";
 				};
 			};
@@ -832,7 +832,7 @@ class Mission
 		items=4;
 		class Item0
 		{
-			position[]={20146.121,54.536858,8987.8232};
+			position[]={20356.475,35.758068,8821.4297};
 			azimut=3.1136601;
 			offsetY=-0.30000001;
 			id=36;
@@ -851,6 +851,7 @@ class Mission
 		{
 			position[]={20885.857,27.028015,7293.2437};
 			azimut=-33.9935;
+			offsetY=0.2;
 			id=37;
 			side="EMPTY";
 			vehicle="B_Heli_Transport_01_F";
@@ -863,6 +864,7 @@ class Mission
 		{
 			position[]={20905.873,26.491934,7305.0532};
 			azimut=-37.539101;
+			offsetY=0.2;
 			id=38;
 			side="EMPTY";
 			vehicle="B_Heli_Transport_01_F";
@@ -875,6 +877,7 @@ class Mission
 		{
 			position[]={20863.094,27.329437,7281.168};
 			azimut=-33.9935;
+			offsetY=0.2;
 			id=39;
 			side="EMPTY";
 			vehicle="B_Heli_Light_01_armed_F";
@@ -898,7 +901,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={20901.688,27.295931,7284.8994};
+			position[]={20901.609,27.459671,7282.4067};
 			name="mkrNATO";
 			type="flag_NATO";
 			angle=179.90518;
@@ -980,7 +983,7 @@ class Mission
 		items=3;
 		class Item0
 		{
-			position[]={20117.68,59.542358,8992.085};
+			position[]={20331.506,37.225918,8819.1162};
 			a=0;
 			b=0;
 			interruptable=1;
@@ -1008,7 +1011,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={20119.979,59.372974,8992.0576};
+			position[]={20333.805,37.097336,8819.0889};
 			a=0;
 			b=0;
 			interruptable=1;

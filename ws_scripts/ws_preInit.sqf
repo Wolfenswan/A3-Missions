@@ -10,7 +10,7 @@ _mkrs = ["mkrArea"] call ws_fnc_collectMarkers;
 {_x setMarkerAlpha 0;} forEach _mkrs;
 _mkr = _mkrs call ws_fnc_selectRandom;
 
-_pos = [([_mkr,true] call ws_fnc_getPos), 0, 500, 5, 0, 5, 0] call BIS_fnc_findSafePos;
+_pos = [([_mkr,true] call ws_fnc_getPos), 0, 500, 5, 0, 2, 0] call BIS_fnc_findSafePos;
 
 ws_wreckLoc = [_pos select 0,_pos select 1,0]; publicVariable "ws_wreckLoc";
 //UnitZeus setPosATL [_pos select 0,_pos select 1,50];
@@ -21,11 +21,13 @@ ws_wreckLoc = [_pos select 0,_pos select 1,0]; publicVariable "ws_wreckLoc";
 // Further tweaking to vehicles
 Wreck animateDoor ["door_back_R",1,true];Wreck animateDoor ["door_back_L",1,true];Wreck setCaptive true;
 
-// Setup grounded team
-{_x unassignItem "ItemGPS"; _x removeItem "ItemGPS"; _x unassignItem "ItemMap"; _x removeItem "ItemMap"; _x unlinkitem "ItemCompass"} forEach ((units GrpNATO_Grnd) + (units GrpNATO_Grnd1) + (units GrpNATO_Grnd2) + (units GrpNATO_Grnd3));
 
 if (ws_param_compass == 0) then {
-	{_x unlinkitem "ItemCompass"} forEach ((units GrpNATO_Grnd) + (units GrpNATO_Grnd1) + (units GrpNATO_Grnd2) + (units GrpNATO_Grnd3));
+	{
+	if (str group _x in ['GrpNATO_Grnd','GrpNATO_Grnd1','GrpNATO_Grnd2','GrpNATO_Grnd3']) then {
+		_x unlinkitem "ItemCompass";
+	};
+	} forEach playableUnits;
 };
 
 ws_initDone = true; publicVariable "ws_initDone";

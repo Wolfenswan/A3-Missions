@@ -15,7 +15,7 @@ _unit = _this select 0;
 _mkrName = Format ["mkr_%1",_unit];
 _mkrborderName = Format ["mkrB_%1",_unit];
 
-if (_unit == UnitZeus || _unit == UnitZeus_1) exitWith {};
+if (str _unit in ["UnitZeus","UnitZeus_1"]) exitWith {};
 
 // ====================================================================================
 

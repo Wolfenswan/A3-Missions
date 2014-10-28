@@ -305,7 +305,7 @@ if (_isMan) then {
 
 	_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
-	_unit linkItem "ItemMap";		// Add and equip the map
+	//_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass
 	_unit linkItem "ItemRadio";		// Add and equip A3's default radio
 	_unit linkItem "ItemWatch";		// Add and equip a watch
@@ -352,7 +352,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_smokegrenadegreen,2];
 		_unit addWeapon "Rangefinder";
-		_unit linkItem "ItemGPS";
+	//	_unit linkItem "ItemGPS";
 		["g"] call _backpack;
 	};
 
@@ -371,7 +371,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_smokegrenadegreen,2];
 		_unit addWeapon "Rangefinder";
-		_unit linkItem "ItemGPS";
+		//_unit linkItem "ItemGPS";
 		["g"] call _backpack;
 	};
 
@@ -382,7 +382,7 @@ switch (_typeofUnit) do
 		_unit addweapon _carbine;
 		_unit addmagazines [_smokegrenade,4];
 		{_unit addItem _firstaid} forEach [1,2,3,4];
-		_unit linkItem "ItemGPS";
+		//_unit linkItem "ItemGPS";
 		["m"] call _backpack;
 	};
 
@@ -399,7 +399,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_smokegrenadegreen,2];
 		_unit addWeapon "Rangefinder";
-		_unit linkItem "ItemGPS";
+		//_unit linkItem "ItemGPS";
 		["g"] call _backpack;
 	};
 

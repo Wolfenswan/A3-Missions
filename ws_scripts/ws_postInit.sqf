@@ -22,18 +22,7 @@ if (isServer) then {
 	};
 };
 
-{
-_x addEventHandler ["CuratorObjectPlaced",{
-	_unit = [];
-	if !((_this select 1) isKindOf "CAManBase") then {
-		_unit = crew (_this select 1);
-	} else {_unit = [(_this select 1)]};
-{_x unlinkItem "ItemMap"; _x unlinkItem "ItemGPS"} forEach _unit;
-_x addcuratorEditableObjects [playableUnits,true];
-}];
-} forEach [ZeusModule, ZeusModule_1];
-
-if (player == UnitZeus || player == UnitZeus_1) then {
+if (str vehicle player in ["UnitZeus","UnitZeus_1"]) then {
 	_mkr = createMarkerLocal  ["mkrZeus", ws_wreckloc];
 	_mkr setMarkerTypeLocal "mil_dot";
 	_mkr setMarkerTextLocal "Crashsite";
