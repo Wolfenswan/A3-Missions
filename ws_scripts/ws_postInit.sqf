@@ -24,10 +24,13 @@ if (isServer) then {
 
 {
 _x addEventHandler ["CuratorObjectPlaced",{
-(_this select 1) unlinkItem "ItemMap"; (_this select 1) unlinkItem "ItemGPS";
-[[[(_this select 1)],'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false]call BIS_fnc_MP;
-}];
+	_unit = [];
+	if !((_this select 1) isKindOf "CAManBase") then {
+		_unit = crew (_this select 1);
+	} else {_unit = [(_this select 1)]};
+{_x unlinkItem "ItemMap"; _x unlinkItem "ItemGPS"} forEach _unit;
 _x addcuratorEditableObjects [playableUnits,true];
+}];
 } forEach [ZeusModule, ZeusModule_1];
 
 if (player == UnitZeus || player == UnitZeus_1) then {

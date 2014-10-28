@@ -18,9 +18,9 @@ if !(isServer) exitWith {};
 // SET KEY VARIABLES
 // Using variables passed to the script instance, we will create some local variables:
 
-_curator = [_this,0,objNull,[objNull]] call bis_fnc_param;
+_curator = [_this,0,objNull] call bis_fnc_param;
 _mode = [_this,1,[],[true,west,objNull,[]]] call bis_fnc_param;
-_groupLeaders = [_this,2,false,[true]] call bis_fnc_param;
+_groupLeaders = [_this,2,false] call bis_fnc_param;
 
 // ====================================================================================
 
@@ -74,3 +74,8 @@ if (_groupLeaders) then {
 
 // Add all selected objects to curator lists
 _curator addCuratorEditableObjects [_objects,true];
+
+// ====================================================================================
+
+// ADD AI SKILL SELECTOR EVENT-HANDLER
+[_curator] call f_fnc_zeusAISkillSelectorEH;

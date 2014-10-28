@@ -18,7 +18,7 @@ if !(isServer) exitWith {};
 // SET KEY VARIABLES
 // Using variables passed to the script instance, we will create some local variables:
 
-_curator = [_this,0,objNull,[objNull]] call bis_fnc_param;
+_curator = [_this,0,objNull] call bis_fnc_param;
 _mode = [_this,1,[],["",true,[]]] call bis_fnc_param;
 
 // ====================================================================================
@@ -48,5 +48,15 @@ switch (typeName _mode) do {
 	};
 };
 
+// Set
+_curator addEventHandler ["CuratorObjectPlaced",{
+	[[[(_this select 1)],'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false]call BIS_fnc_MP;
+}];
+
 // Enable addons to the curator
 _curator addcuratoraddons _addons;
+
+// ====================================================================================
+
+// ADD AI SKILL SELECTOR EVENT-HANDLER
+[_curator] call f_fnc_zeusAISkillSelectorEH;

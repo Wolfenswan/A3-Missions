@@ -49,7 +49,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_cz30_JollyBlueXL_v1";
+		briefingName="fa3_cz30_JollyBlueXL_v2";
 		overviewText="A botched extraction requires NATO to clean up the evidence and extract the downed team.";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -233,6 +233,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=0.60000002;
 					text="ZeusModule";
+					init="[this] call f_fnc_zeusAISkillSelectorEH";
 					syncId=0;
 					synchronizations[]={1,2,4};
 				};
@@ -246,7 +247,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20739.48,41.59478,9040.7754};
+					position[]={20740.012,41.626488,9041.0195};
 					class args
 					{
 						items=7;
@@ -258,7 +259,7 @@ class Mission
 						};
 						class Item1
 						{
-							value="-1000000000";
+							value="0";
 							parentCls="ModuleCuratorSetSideCosts_F";
 							typeName="costSide_West";
 						};
@@ -276,7 +277,7 @@ class Mission
 						};
 						class Item4
 						{
-							value="-1000000000";
+							value="0";
 							parentCls="ModuleCuratorSetSideCosts_F";
 							typeName="costSide_Civ";
 						};
@@ -356,7 +357,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20739.568,41.399105,9038.125};
+					position[]={20739.689,41.411469,9038.249};
 					class args
 					{
 						items=3;
@@ -368,7 +369,7 @@ class Mission
 						};
 						class Item1
 						{
-							value="150";
+							value="100";
 							parentCls="ModuleCuratorAddEditingAreaPlayers_F";
 							typeName="Size";
 						};
@@ -457,6 +458,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=0.60000002;
 					text="ZeusModule_1";
+					init="[this] call f_fnc_zeusAISkillSelectorEH";
 					syncId=6;
 					synchronizations[]={5,4,1};
 				};
