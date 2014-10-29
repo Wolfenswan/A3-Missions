@@ -84,5 +84,5 @@ if (isServer) then {
 	} forEach allUnits;
 
 
-	6000 setFog [0.1,0.01,155];
+	//8000 setFog [0.3,0.025,210];
 };
