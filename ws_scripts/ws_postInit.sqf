@@ -27,12 +27,12 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 
 
 	_gear = [
-		["hgun_PDW2000_F",5],
+		["hgun_PDW2000_F",6],
 		["SMG_01_F",6],
-		["SMG_02_ACO_F",4],
-		["arifle_Mk20C_F",5],
-		["arifle_Katiba_C_F",5],
-		["arifle_TRG20_F",5]
+		["SMG_02_ACO_F",6],
+		["arifle_Mk20C_F",6],
+		["arifle_Katiba_C_F",6],
+		["arifle_TRG20_F",6]
 	];
 
 	{
@@ -59,6 +59,22 @@ if (isServer) then {
 	if (isNil "GrpAAF_AH1") then {
 		deleteVehicle VehAAF_AH1;
 	};
+
+	_gear = [
+		["hgun_PDW2000_F",6],
+		["SMG_01_F",6],
+		["SMG_02_ACO_F",6],
+		["arifle_Mk20C_F",6],
+		["arifle_Katiba_C_F",6],
+		["arifle_TRG20_F",6]
+	];
+
+	{
+		if (side _x == west && {local _x && typeOf _x in ["B_G_Soldier_lite_F","B_G_Soldier_F"]}) then {
+		_wp = _gear call ws_fnc_selectRandom;
+		[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
+	};
+	} forEach allUnits;
 
 	// NVG-removal, add flashlights
 
