@@ -34,7 +34,7 @@ array of created units
 
 // Default classes (Arma 3)
 // BLUFOR
-ws_var_garrisonWest = ["B_Soldier_lite_F","B_Soldier_F"];
+//ws_var_garrisonWest = ["B_Soldier_lite_F","B_Soldier_F"];
 // OPFOR
 ws_var_garrisonEast = ["O_Soldier_lite_F","O_Soldier_F"];
 // INDEPENDENT

@@ -3,6 +3,7 @@ ws_var_garrisonWest = ["B_G_Soldier_lite_F","B_G_Soldier_F"];
 
 // On neither the server nor the HC
 if (!isDedicated && !ws_isHC) then {
+	player addEventHandler ["WeaponAssembled",{(_this select 1) disableTIEquipment true}];
 
 	// Display a short text intro
  	[] spawn {
@@ -19,7 +20,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 	_units = [];
 	_garrison = ([FIA] call ws_fnc_collectObjectsNum);
 	{
-		_units pushBack ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
+		_units = [_units,((_x getVariable "ws_garrison") call ws_fnc_createGarrison)] call BIS_fnc_arrayPushStack;
 		//deleteVehicle _x;
 	} forEach _garrison;
 
@@ -40,7 +41,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 	} forEach _units;
 
 	// If units were spawned set AI skill again
-	[[[_units],'f\setAISKill\f_setAISkill.sqf'],'BIS_fnc_execVM',false] spawn BIS_fnc_MP;
+	[[_units,'f\setAISKill\f_setAISkill.sqf'],'BIS_fnc_execVM',false] spawn BIS_fnc_MP;
 };
 
 // Do more stuff exclusively on the server
