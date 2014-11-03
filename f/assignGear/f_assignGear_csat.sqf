@@ -293,26 +293,22 @@ if (_isMan) then {
 // Handle clothes and helmets and such using the include file called next.
 
 	#include "f_assignGear_clothes.sqf";
-
 	// ====================================================================================
+
 
 	// PREPARE UNIT FOR GEAR ADDITION
 	// The following code removes all existing weapons and backpacks
 
+
 	removeBackpack _unit;
-	removeallweapons _unit;
+	removeAllWeapons _unit;
+	removeAllItemsWithMagazines _unit;
+	removeAllAssignedItems _unit;
 
 	// We add a single first aid kit (FAK)
 
 	_unit addItem _firstaid;
 
-	// The following code removes any pre-added NVGs
-
-		if(_nvg in (assignedItems _unit)) then
-	{
-		_unit unassignItem _nvg;
-		_unit removeItem _nvg;
-	};
 	// uncomment to remove nvgoogles
 	_unit linkItem _nvg;					// add universal NVG for this faction
 	_unit addItem _silencer2;
