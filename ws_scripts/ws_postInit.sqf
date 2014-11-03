@@ -8,7 +8,7 @@ if (isNil "ws_wreck_destroyed") then {ws_wreck_destroyed = false};
 if (!isDedicated) then {
 	// Display a short text intro
  	[] spawn {
-	 waitUntil {time > 15};
+	 waitUntil {time > 10};
 		["Jolly Blue XL","Somewhere on Altis"] call ws_fnc_showIntro;
 	};
 };

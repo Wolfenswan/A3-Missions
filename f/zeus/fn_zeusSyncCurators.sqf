@@ -55,9 +55,3 @@ if (isNull _target || typeOf _target != "ModuleCurator_F") exitWith {
 // Add the _target's objects to the _curator and vice versa
 _curator addCuratorEditableObjects [curatorEditableObjects _target,true];
 _target addCuratorEditableObjects [curatorEditableObjects _curator,true];
-
-// If _persistent is true, add an event-handler to automatically synchronize units from now on
-if (_persistent) then {
-	_target addEventHandler ['CuratorObjectPlaced',{_curator addCuratorEditableObjects [(_this select 1),true];}];
-	_curator addEventHandler ['CuratorObjectPlaced',{_target addCuratorEditableObjects [(_this select 1),true];}];
-};
