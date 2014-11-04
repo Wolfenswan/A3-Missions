@@ -10,6 +10,7 @@ Wreck setdir (random 360);
 Wreck setVectorUp (surfaceNormal ws_wreckLoc);
 Wreck setVelocity [0,0,0];
 clearItemCargoGlobal Wreck; clearBackpackCargoGlobal Wreck; clearWeaponCargoGlobal Wreck;
+Wreck action ["LandGearUp", Wreck];
 
 Wreck addEventHandler [
 "HandleDamage",
