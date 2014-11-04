@@ -33,7 +33,7 @@ if !(_curator in allCurators) then {
 
 // If curator is null or not the correct logic exit with an error message.
 if (isNull _curator || typeOf _curator != "ModuleCurator_F") exitWith {
-	player GlobalChat format ["DEBUG (f\zeus\fn_zeusAddAddons.sqf): Could not resolve curator properly, is either null or not the correct type. IsNull = %1, _curator type : %2 (should be ModuleCurator_F)",isNull _curator,typeOf _curator];
+	diag_log format ["DEBUG (f\zeus\fn_zeusAddAddons.sqf): Could not resolve curator properly, is either null or not the correct type. IsNull = %1, _curator type : %2 (should be ModuleCurator_F)",isNull _curator,typeOf _curator];
 };
 
 // ====================================================================================

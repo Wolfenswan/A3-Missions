@@ -13,6 +13,26 @@ if (!isDedicated && !ws_isHC) then {
 };
 
 if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParamValue;};
+if (isNil "ws_campsecured") then {ws_campsecured = 0};
+
+box1 addAction ["Destroy crates",{
+[[(_this select 3),{{_x setDamage 1}forEach _this; ws_campsecured = ws_campsecured + 1; publicVariable "ws_campsecured"}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
+[[[(_this select 0),(_this select 2)],{(_this select 0) removeAction (_this select 1)}],'BIS_fnc_Spawn',true] call BIS_fnc_MP;
+["ws_taskdone",["FIA storage destroyed"]] call BIS_fnc_showNotification;
+},[box1,box2,box3]];
+
+box4 addAction ["Destroy crates",{
+[[(_this select 3),{{_x setDamage 1}forEach _this; ws_campsecured = ws_campsecured + 1; publicVariable "ws_campsecured"}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
+[[[(_this select 0),(_this select 2)],{(_this select 0) removeAction (_this select 1)}],'BIS_fnc_Spawn',true] call BIS_fnc_MP;
+["ws_taskdone",["FIA storage destroyed"]] call BIS_fnc_showNotification;
+},[box4,box5]];
+
+box6 addAction ["Destroy crates",{
+[[(_this select 3),{{_x setDamage 1}forEach _this; ws_campsecured = ws_campsecured + 1; publicVariable "ws_campsecured"}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
+[[[(_this select 0),(_this select 2)],{(_this select 0) removeAction (_this select 1)}],'BIS_fnc_Spawn',true] call BIS_fnc_MP;
+["ws_taskdone",["FIA storage destroyed"]] call BIS_fnc_showNotification;
+},[box6,box7]];
+
 
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
@@ -41,7 +61,10 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 	} forEach _units;
 
 	// If units were spawned set AI skill again
-	[[_units,'f\setAISKill\f_setAISkill.sqf'],'BIS_fnc_execVM',false] spawn BIS_fnc_MP;
+	_units spawn {
+		sleep 0.1;
+		[[_this,'f\setAISKill\f_setAISkill.sqf'],'BIS_fnc_execVM',false] spawn BIS_fnc_MP;
+	};
 };
 
 // Do more stuff exclusively on the server
