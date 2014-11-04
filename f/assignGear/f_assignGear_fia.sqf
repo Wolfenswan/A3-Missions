@@ -291,6 +291,8 @@ if (_isMan) then {
 	removeAllWeapons _unit;
 	removeAllItemsWithMagazines _unit;
 	removeAllAssignedItems _unit;
+	showGPS false;
+	showMap false;
 
 	// ====================================================================================
 

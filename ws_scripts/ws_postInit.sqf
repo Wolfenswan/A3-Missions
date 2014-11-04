@@ -8,6 +8,13 @@ if (isNil "ws_wreck_destroyed") then {ws_wreck_destroyed = false};
 if (!isDedicated) then {
 	// Display a short text intro
  	[] spawn {
+ 	sleep 0.1;
+
+ 	if (vehicle player == WRECK) then {
+ 		showGPS false;
+		showMap false;
+	};
+
 	 waitUntil {time > 10};
 		["Jolly Blue XL","Somewhere on Altis"] call ws_fnc_showIntro;
 	};
@@ -26,6 +33,7 @@ if (str vehicle player in ["UnitZeus","UnitZeus_1"]) then {
 	_mkr = createMarkerLocal  ["mkrZeus", ws_wreckloc];
 	_mkr setMarkerTypeLocal "mil_dot";
 	_mkr setMarkerTextLocal "Crashsite";
+	_mkr setMarkerColorLocal "ColorRed";
 };
 
 //Show black screen while waiting for wreck to be placed/explosion cleared
