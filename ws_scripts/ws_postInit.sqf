@@ -7,8 +7,8 @@ if (!isDedicated && !ws_isHC) then {
 
 	// Display a short text intro
  	[] spawn {
-	 waitUntil {time > 15};
-		["OPERATION XYZ","CENTRAL ALTIS"] call ws_fnc_showIntro;
+	 waitUntil {time > 10};
+		["HILLSIDE VIEW","NORTH-WESTERN ALTIS"] call ws_fnc_showIntro;
 	};
 };
 

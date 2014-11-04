@@ -71,7 +71,9 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. We are inserted <marker name='mkrInsert'>on the eastern hill</marker>.<br/>
 2. Proceed <marker name='mkrFIA'>into the forest</marker> to locate and clear three FIA storage camps.<br/>
-3. Oreokastro and the castle are not your primarty objective but rebels might stage attacks from there.
+3. Oreokastro and the castle are not your primarty objective but rebels might stage attacks from there.<br/><br/>
+DESTROYING CACHES<br/>
+To destroy the ammo caches you need to execute the 'Destroy cache' action when facing them.
 "]];
 
 // ====================================================================================

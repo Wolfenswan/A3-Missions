@@ -312,7 +312,7 @@ class Params
 		title = "WS fnc debug";
         values[] = {0,1};
         texts[] = {"Off","On"};
-        default = 1;
+        default = 0;
         code = "ws_param_dbg = %1";
 	};
 
@@ -327,9 +327,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "MISSION FAILURE";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "Our platoon took too many losses.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -337,9 +337,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "MISSION SUCCESS";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "We destroyed all FIA caches.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -347,9 +347,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "Ending #3";
+		title = "PARTIAL SUCCESS";
 		subtitle = "";
-		description = "*** Insert debriefing #3 here. ***";
+		description = "We destroyed at least some of the caches and decided to fall back.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
