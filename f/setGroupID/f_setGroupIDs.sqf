@@ -168,6 +168,8 @@ _groups = [
 ["GrpCSAT_TH8","CSAT TH8 -"],
 ["GrpCSAT_AH1","CSAT AH1 -"],
 
+["GrpCSAT_CAS1","CSAT CAS1 -"],
+
 // ====================================================================================
 
 // GROUP IDs: OPFOR > FIA

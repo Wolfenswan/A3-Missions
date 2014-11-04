@@ -194,7 +194,7 @@ case "car":
 	if (f_param_backpacks == 1) then {
 		_unit addBackpack _bagsmall;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag, 4];
+		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_smokegrenade, 2];
@@ -203,7 +203,7 @@ case "car":
 	if (f_param_backpacks == 2) then {
 		_unit addBackpack _bagmedium;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag, 8];
+		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag, 4];
 		(unitBackpack _unit) addMagazineCargoGlobal [_carbinemag_tr, 4];
 		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 4];
 		(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 4];

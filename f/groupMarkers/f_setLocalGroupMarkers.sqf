@@ -158,6 +158,8 @@ switch (_unitfaction) do
 
 		["GrpCSAT_AH1",  9, "AH1", "ColorRed"] spawn f_fnc_localGroupMarker;
 
+		["GrpCSAT_CAS1",  10, "CAS1", "ColorRed"] spawn f_fnc_localGroupMarker;
+
 		["UnitCSAT_CO_M", 0, "COM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
 		["UnitCSAT_DC_M", 0, "DCM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
 		["UnitCSAT_ASL_M", 0, "AM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;

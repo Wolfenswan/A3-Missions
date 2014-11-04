@@ -374,6 +374,19 @@ switch (_typeofUnit) do
 		["g"] call _backpack;
 	};
 
+// LOADOUT: JTAC
+	case "jtac":
+	{
+		_unit addmagazines [_carbinemag,7];
+		_unit addweapon _carbine;
+		_unit addmagazines [_smokegrenade,2];
+		_unit addmagazines ["SmokeShellRed",4];
+		_unit addmagazines ["SmokeShellBlue",4];
+		_unit addWeapon "LaserDesignator";
+		_unit addMagazines ["Laserbatteries",1];
+		["car"] call _backpack;
+	};
+
 // LOADOUT: MEDIC
 	case "m":
 	{
