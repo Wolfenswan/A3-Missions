@@ -13,6 +13,10 @@ if (!isDedicated) then {
  	if (vehicle player == WRECK) then {
  		showGPS false;
 		showMap false;
+
+		if ("ws_param_compass" call bis_fnc_getParamValue > 0) then {
+			player linkItem "ItemCompass";
+		};
 	};
 
 	 waitUntil {time > 10};

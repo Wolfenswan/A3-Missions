@@ -284,7 +284,7 @@ _isMan = _unit isKindOf "CAManBase";	// We check if we're dealing with a soldier
 // This block needs only to be run on an infantry unit
 if (_isMan) then {
 
-		// PREPARE UNIT FOR GEAR ADDITION
+	// PREPARE UNIT FOR GEAR ADDITION
 	// The following code removes all existing weapons, items, magazines and backpacks
 
 	removeBackpack _unit;
@@ -313,11 +313,6 @@ if (_isMan) then {
 	_unit linkItem "ItemRadio";		// Add and equip A3's default radio
 	_unit linkItem "ItemWatch";		// Add and equip a watch
 	//_unit linkItem "ItemGPS"; 	// Add and equip a GPS
-
-	if (ws_param_compass == 1) then {
-		_unit linkItem "ItemCompass";
-	};
-};
 
 // ====================================================================================
 

@@ -304,9 +304,6 @@ if (_isMan) then {
 	_unit linkItem "ItemWatch";		// Add and equip a watch
 	//_unit linkItem "ItemGPS"; 	// Add and equip a GPS
 
-	if (ws_param_compass == 1) then {
-		_unit linkItem "ItemCompass";
-	};
 };
 
 // ====================================================================================
