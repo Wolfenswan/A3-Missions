@@ -44,22 +44,6 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 		//deleteVehicle _x;
 	} forEach _garrison;
 
-
-
-	_gear = [
-		["hgun_PDW2000_F",6],
-		["SMG_01_F",6],
-		["SMG_02_ACO_F",6],
-		["arifle_Mk20C_F",6],
-		["arifle_Katiba_C_F",6],
-		["arifle_TRG20_F",6]
-	];
-
-	{
-		_wp = _gear call ws_fnc_selectRandom;
-	[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
-	} forEach _units;
-
 	// If units were spawned set AI skill again
 	_units spawn {
 		sleep 0.1;
