@@ -849,19 +849,8 @@ switch (_typeofUnit) do
 		clearMagazineCargoGlobal _unit;
 		clearItemCargoGlobal _unit;
 		clearBackpackCargoGlobal _unit;
-		_unit addWeaponCargoGlobal [_carbine, 4];
-		_unit addMagazineCargoGlobal [_riflemag, 20];
-		_unit addMagazineCargoGlobal [_glriflemag, 20];
-		_unit addMagazineCargoGlobal [_carbinemag, 20];
-		_unit addMagazineCargoGlobal [_armag, 8];
-		_unit addMagazineCargoGlobal [_ratmag, 2];
-		_unit addMagazineCargoGlobal [_grenade, 8];
-		_unit addmagazineCargoGlobal [_mgrenade,8];
-		_unit addMagazineCargoGlobal [_smokegrenade, 8];
-		_unit addMagazineCargoGlobal [_smokegrenadegreen, 2];
-		_unit addMagazineCargoGlobal [_glmag, 8];
-		_unit addMagazineCargoGlobal [_glsmokewhite, 4];
-		_unit addItemCargoGlobal [_firstaid,6];
+		_unit addMagazineCargoGlobal [_SAMmag, 10];
+		_unit addItemCargoGlobal ["ItemWatch",100];
 	};
 
 // CRATE: Small, ammo for 1 fireteam
@@ -871,18 +860,8 @@ switch (_typeofUnit) do
 		clearMagazineCargoGlobal _unit;
 		clearItemCargoGlobal _unit;
 		clearBackpackCargoGlobal _unit;
-		_unit addMagazineCargoGlobal [_riflemag, 5];
-		_unit addMagazineCargoGlobal [_glriflemag, 5];
-		_unit addMagazineCargoGlobal [_armag, 5];
-		_unit addMagazineCargoGlobal [_carbinemag, 5];
-		_unit addMagazineCargoGlobal [_glmag, 5];
-		_unit addMagazineCargoGlobal [_glsmokewhite, 4];
-		_unit addMagazineCargoGlobal [_ratmag, 2];
-		_unit addMagazineCargoGlobal [_grenade, 8];
-		_unit addMagazineCargoGlobal [_mgrenade, 8];
-		_unit addMagazineCargoGlobal [_smokegrenade, 8];
-		_unit addMagazineCargoGlobal [_smokegrenadegreen, 2];
-		_unit addItemCargoGlobal [_firstaid, 6];
+		_unit addMagazineCargoGlobal [_SAMmag, 4];
+		_unit addItemCargoGlobal ["ItemWatch",100];
 };
 
 // CRATE: Medium, ammo for 1 squad

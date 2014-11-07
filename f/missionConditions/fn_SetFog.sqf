@@ -37,16 +37,16 @@ switch (_fog) do
 	case 1:
 	{
 		_strength = 0.45;
-		_decay = 0.020;
+		_decay = 0.025;
 		_base = 210;
 	};
 
 	//Heavy
 	case 2:
 	{
-		_strength = 0.4;
-		_decay = 0;
-		_base = 0;
+		_strength = 0.5;
+		_decay = 0.020;
+		_base = 210;
 	};
 };
 

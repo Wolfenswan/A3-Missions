@@ -7,7 +7,7 @@ if !(isServer) exitWith {ws_initDone = true};
 //{_x animateDoor ["door_back_R",1,true];_x animateDoor ["door_back_L",1,true];_x setCaptive true;clearItemCargoGlobal _x; clearWeaponCargoGlobal _x; clearMagazineCargoGlobal _x;} forEach [VehCSAT_TH1,VehAAF_TH2,VehAAF_TH3,VehAAF_TH4];
 
 // Disable Thermal Imaging for these vehicles
-// {_x disableTIEquipment true;} forEach [];
+{_x disableTIEquipment true;_x removeWeaponGlobal "missiles_scalpel"} forEach [VehCSAT_AH1];
 
 // Further tweaking to vehicles
 //{_x removeWeaponGlobal "GMG_40mm"; _x lockTurret [[1],true];} forEach [];

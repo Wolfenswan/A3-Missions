@@ -16,22 +16,19 @@ if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParam
 if (isNil "ws_campsecured") then {ws_campsecured = 0};
 
 box1 addAction ["Destroy crates",{
-[[(_this select 3),{{_x setDamage 1}forEach _this; ws_campsecured = ws_campsecured + 1; publicVariable "ws_campsecured"}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
+[[(_this select 3),{{_x setDamage 1}forEach _this;}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
 [[[(_this select 0),(_this select 2)],{(_this select 0) removeAction (_this select 1)}],'BIS_fnc_Spawn',true] call BIS_fnc_MP;
-["alert",["FIA storage destroyed"]] call BIS_fnc_showNotification;
-},[box1,box2,box3]];
+},[box1,box2,box3],1.5,true,true,"","_target distance _this < 10"];
 
 box4 addAction ["Destroy crates",{
-[[(_this select 3),{{_x setDamage 1}forEach _this; ws_campsecured = ws_campsecured + 1; publicVariable "ws_campsecured"}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
+[[(_this select 3),{{_x setDamage 1}forEach _this;}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
 [[[(_this select 0),(_this select 2)],{(_this select 0) removeAction (_this select 1)}],'BIS_fnc_Spawn',true] call BIS_fnc_MP;
-["alert",["FIA storage destroyed"]] call BIS_fnc_showNotification;
-},[box4,box5]];
+},[box4,box5],1.5,true,true,"","_target distance _this < 10"];
 
 box6 addAction ["Destroy crates",{
-[[(_this select 3),{{_x setDamage 1}forEach _this; ws_campsecured = ws_campsecured + 1; publicVariable "ws_campsecured"}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
+[[(_this select 3),{{_x setDamage 1}forEach _this;}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
 [[[(_this select 0),(_this select 2)],{(_this select 0) removeAction (_this select 1)}],'BIS_fnc_Spawn',true] call BIS_fnc_MP;
-["alert",["FIA storage destroyed"]] call BIS_fnc_showNotification;
-},[box6,box7]];
+},[box6,box7],1.5,true,true,"","_target distance _this < 10"];
 
 
 // Do stuff on either HC or Server (e.g. spawning)
@@ -54,17 +51,12 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 // Do more stuff exclusively on the server
 if (isServer) then {
 
-
-	if ({isNil _x} count ["GrpCSAT_CSL","GrpCSAT_C1","GrpCSAT_C2","GrpCSAT_C3"] == 4) then {
-		deleteVehicle VehCSAT_TH3;
-	};
-
 	if ({isNil _x} count ["GrpCSAT_BSL","GrpCSAT_B1","GrpCSAT_B2","GrpCSAT_B3"] == 4) then {
 		deleteVehicle VehCSAT_TH2;
 	};
 
-	if (isNil "GrpCSAT_CAS1") then {
-		deleteVehicle VehCSAT_CAS1;
+	if (isNil "GrpCSAT_AH1") then {
+		deleteVehicle VehCSAT_AHS1;
 	};
 
 	_gear = [
