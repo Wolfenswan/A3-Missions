@@ -73,8 +73,6 @@ AAF forces are probably on the way to mop up the survivors and transfer data fro
 FRIENDLY FORCES
 <br/>
 Whoever survived the crash will be somewhere around the crash site. Note that they have red chemlights and flares.<br/><br/>
-NOTE<br/>
-It's suggested to have no radio contact between CTRG and NATO until they've met.
 "]];
 
 // ====================================================================================

@@ -74,8 +74,6 @@ AAF forces will be on their way to mop up the survivors and take out the colonel
 FRIENDLY FORCES
 <br/>
 NATO troops will hopefully be on their way to extract us.<br/><br/>
-NOTE<br/>
-It's suggested to have no radio contact between CTRG and NATO until they've met.
 "]];
 
 // ====================================================================================
