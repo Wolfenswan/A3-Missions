@@ -132,17 +132,7 @@ f_var_doNotRemoveBodies = [];
 // f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
 // f_showDistance_Nametags = true;			// Show distance to player
 // f_showVehicle_Nametags = true;			// Show vehicle player is in
-[20] execVM "f\nametag\f_nametags.sqf";
-
-// ====================================================================================
-
-// F3 - Simple Wounding System
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-_sws = if (isNil "ws_param_sws") then {"ws_param_sws" call bis_fnc_getParamValue} else {ws_param_sws};
-if (_sws == 1) then {
-[player] execVM "f\simplewoundingsystem\init.sqf";
-};
+// [20] execVM "f\nametag\f_nametags.sqf";
 
 // ====================================================================================
 
@@ -158,6 +148,13 @@ if (_sws == 1) then {
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [] execVM "f\briefing\f_orbatNotes.sqf";
+
+// ====================================================================================
+
+// F3 - Loadout Notes
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+[] execVM "f\briefing\f_loadoutNotes.sqf";
 
 // ====================================================================================
 
@@ -189,7 +186,7 @@ f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear?
 
 [30] spawn f_fnc_cInit;
 
-// CACHING AGGRESSIVENESS
+// Note: Caching aggressiveness is set using the f_var_cachingAggressiveness variable; possible values:
 // 1 - cache only non-leaders and non-drivers
 // 2 - cache all non-moving units, always exclude vehicle drivers
 // 3 - cache all units, incl. group leaders and vehicle drivers
@@ -197,10 +194,21 @@ f_var_cachingAggressiveness = 3;
 
 // ====================================================================================
 
-// F3 - Radio Framework
+// F3 - Radio Systems Support
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [] execVM "f\radios\radio_init.sqf";
+
+// ====================================================================================
+
+// F3 - Medical Systems Support
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+// SWS Config Settings
+// How many extra FirstAidKits (FAKS) each player should receive when using the F3 Simple Wounding System:
+f_wound_extraFAK = 2;
+
+[] execVM "f\medical\medical_init.sqf";
 
 // ====================================================================================
 

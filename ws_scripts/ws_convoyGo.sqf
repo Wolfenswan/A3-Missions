@@ -9,7 +9,7 @@ waitUntil {sleep 0.1;scriptDone f_script_setLocalVars};
  _x setVectorUp surfaceNormal (getPosATL _x);
  sleep 0.1;
  _x allowDamage true;
-} forEach [c1,c2,c3,c4,c5,c6,c7];
+} forEach [c,c_1,c_2,c_3,c_4,c_5,c_6];
 
 {
  [_x,"f_fnc_gUnCache",true,false] spawn BIS_fnc_MP;
@@ -23,6 +23,7 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
    deleteVehicle _x;
 } forEach f_var_men_res;
 
-private ["_cnvmkrs"];
-_cnvmkrs = ["mkrConv"] call ws_fnc_collectMarkers;
-[_cnvmkrs,[c1,c2,c3,c4,c5,c6,c7],true] execVM "convoyDefend\convoyDefend_init.sqf";
+//_cnvmkrs = ["mkrConv"] call ws_fnc_collectMarkers;
+[c,"mkrConv"] spawn ws_fnc_taskConvoy;
+
+//[_cnvmkrs,[c1,c2,c3,c4,c5,c6,c7],true] execVM "convoyDefend\convoyDefend_init.sqf";
