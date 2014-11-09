@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-2-0 RC2</i>
 
 <b>Mission description</b><br/>
-Template mission.
+Airborn CSAT are deployed east of Oreokastro to sweep the forest for FIA caches. The caches are slightly randomized.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
