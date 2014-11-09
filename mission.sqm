@@ -50,7 +50,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_cz30_JollyBlueXL_v7";
+		briefingName="fa3_cz30_JollyBlueXL_v8";
 		overviewText="A botched extraction requires NATO to clean up the evidence and extract the downed team.";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -236,7 +236,7 @@ class Mission
 					text="ZeusModule";
 					init="this addEventHandler ['CuratorObjectPlaced',{{_x unlinkItem ""ItemMap""; _x unlinkItem ""ItemGPS""} forEach crew (_this select 1);  [[crew (_this select 1),'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false] spawn BIS_fnc_MP;  }];  this addcuratorEditableObjects [playableUnits,true];";
 					syncId=0;
-					synchronizations[]={1,2,3};
+					synchronizations[]={1,2,4};
 				};
 			};
 		};
@@ -302,7 +302,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=0.60000002;
 					syncId=1;
-					synchronizations[]={0,5};
+					synchronizations[]={0,6};
 				};
 			};
 		};
@@ -337,7 +337,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={20366.613,35.479786,8808.7998};
+					position[]={20362.248,35.514877,8820.5996};
 					azimut=0.26908201;
 					id=10;
 					side="LOGIC";
@@ -345,6 +345,8 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					init="[synchronizedObjects this,[""GrpNATO_Grnd"",""GrpNATO_Grnd1"",""GrpNATO_Grnd2"",""GrpNATO_Grnd3""],true,false] call f_fnc_mountGroups;";
+					syncId=3;
+					synchronizations[]={7};
 				};
 			};
 		};
@@ -385,8 +387,8 @@ class Mission
 					leader=1;
 					lock="UNLOCKED";
 					skill=0.60000002;
-					syncId=3;
-					synchronizations[]={0,5};
+					syncId=4;
+					synchronizations[]={0,6};
 				};
 			};
 		};
@@ -408,8 +410,8 @@ class Mission
 					skill=0.60000002;
 					text="UnitZeus_1";
 					init="this allowDamage false;this setCaptive true;";
-					syncId=4;
-					synchronizations[]={4,5};
+					syncId=5;
+					synchronizations[]={5,6};
 				};
 			};
 		};
@@ -458,8 +460,8 @@ class Mission
 					skill=0.60000002;
 					text="ZeusModule_1";
 					init="this addEventHandler ['CuratorObjectPlaced',{  {_x unlinkItem ""ItemMap""; _x unlinkItem ""ItemGPS""} forEach crew (_this select 1);  [[crew (_this select 1),'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false] spawn BIS_fnc_MP;  }];  this addcuratorEditableObjects [playableUnits,true];";
-					syncId=5;
-					synchronizations[]={4,3,1};
+					syncId=6;
+					synchronizations[]={5,4,1};
 				};
 			};
 		};
@@ -843,6 +845,8 @@ class Mission
 			ammo=0.40960929;
 			text="Wreck";
 			init="this lockDriver true; this lockTurret [[0],true]; this disableAI ""move"";";
+			syncId=7;
+			synchronizations[]={3};
 		};
 		class Item1
 		{
