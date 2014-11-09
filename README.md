@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-2-0 RC2</i>
 
 <b>Mission description</b><br/>
-Template mission.
+Slightly silly car-based adversarial on the eastern salt flats, making use of the fire-from-vehicle mechanic.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
