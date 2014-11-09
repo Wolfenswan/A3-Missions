@@ -96,7 +96,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_c38_HillsideView_v2";
+		briefingName="fa3_c38_HillsideView_v3";
 		overviewText="A CSAT platoon drives FIA out of the forest.";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -640,8 +640,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7006.9321,154.62169,21961.156};
-					azimut=-98.956612;
+					position[]={6826.7891,137.64738,22069.033};
+					azimut=-115.61584;
 					id=30;
 					side="LOGIC";
 					vehicle="Logic";
@@ -662,8 +662,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7011.9434,179.39687,21883.529};
-					azimut=-98.956612;
+					position[]={6906.8193,190.196,21928.26};
+					azimut=-115.61584;
 					id=31;
 					side="LOGIC";
 					vehicle="Logic";
@@ -684,8 +684,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7063.3506,160.84462,21904.27};
-					azimut=-98.956596;
+					position[]={7029.207,133.3983,22036.98};
+					azimut=-115.61583;
 					id=32;
 					side="LOGIC";
 					vehicle="Logic";
@@ -820,15 +820,15 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={6977.2861,161.75591,21960.713};
-					azimut=-91.544296;
+					position[]={6798.5151,135.68344,22060.105};
+					azimut=-108.204;
 					special="FLY";
 					id=39;
 					side="EAST";
 					vehicle="O_Heli_Transport_04_covered_F";
 					leader=1;
 					skill=0.60000002;
-					init="this setCaptive true; this allowFleeing 0; this disableAI ""AUTOTARGET"";this disableAI ""TARGET""; [""v_ifv"",this,""opf_f""] call f_fnc_assignGear;";
+					init="this setCaptive true; this allowFleeing 0; this disableAI ""AUTOTARGET"";this disableAI ""TARGET""; [""v_ifv"",this,""opf_f""] call f_fnc_assignGear; this allowDamage false;this setVariable [""asr_ai_exclude"",true];";
 					syncId=3;
 					synchronizations[]={0};
 				};
@@ -838,7 +838,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={6674.5669,149.58566,21969.303};
+					position[]={6604.0396,154.84052,22004.441};
 					speed="LIMITED";
 					combat="SAFE";
 					class Effects
@@ -848,7 +848,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={5995.8867,294.80121,21826.506};
+					position[]={5985.8589,294.63858,21834.863};
 					type="TR UNLOAD";
 					class Effects
 					{
@@ -857,7 +857,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={7160.6831,168.53406,21866.395};
+					position[]={6535.2227,276.70154,21695.721};
 					speed="NORMAL";
 					class Effects
 					{
@@ -866,7 +866,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={8534.8057,32.914394,21897.988};
+					position[]={8497.7705,58.413948,21760.428};
 					expActiv="{deleteVehicle _x} forEach thislist + [vehicle (thislist select 0)] + crew (vehicle (thislist select 0));";
 					class Effects
 					{
@@ -883,8 +883,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={6985.6924,187.84692,21884.551};
-					azimut=-91.544296;
+					position[]={6881.377,196.15202,21921.705};
+					azimut=-108.204;
 					special="FLY";
 					id=40;
 					side="EAST";
@@ -892,7 +892,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					text="VehCSAT_TH2";
-					init="this setCaptive true; this allowFleeing 0; this disableAI ""AUTOTARGET"";this disableAI ""TARGET""; [""v_ifv"",this,""opf_f""] call f_fnc_assignGear;";
+					init="this setCaptive true; this allowFleeing 0; this disableAI ""AUTOTARGET"";this disableAI ""TARGET""; [""v_ifv"",this,""opf_f""] call f_fnc_assignGear; this allowDamage false;this setVariable [""asr_ai_exclude"",true];";
 					syncId=4;
 					synchronizations[]={1};
 				};
@@ -902,7 +902,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={6675.1099,187.32838,21875.801};
+					position[]={6657.5464,193.17415,21862.803};
 					speed="LIMITED";
 					combat="SAFE";
 					class Effects
@@ -912,7 +912,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={6045.4419,287.98541,21751.328};
+					position[]={6085.9727,297.80151,21719.154};
 					type="TR UNLOAD";
 					class Effects
 					{
@@ -921,7 +921,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={7169.916,209.98129,21750.59};
+					position[]={6490.9365,261.35696,21546.014};
 					speed="NORMAL";
 					class Effects
 					{
@@ -930,7 +930,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={8535.2793,64.009972,21727.455};
+					position[]={8494.7178,61.389515,21478.791};
 					expActiv="{deleteVehicle _x} forEach thislist + [vehicle (thislist select 0)] + crew (vehicle (thislist select 0));";
 					class Effects
 					{
@@ -947,15 +947,16 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7025.4795,162.21687,21932.961};
-					azimut=-91.544296;
+					position[]={6984.7021,139.67305,22053.607};
+					azimut=-108.204;
 					special="FLY";
 					id=41;
 					side="EAST";
 					vehicle="O_Heli_Light_02_F";
 					leader=1;
 					skill=0.60000002;
-					init="this setCaptive true; this allowFleeing 0; this disableAI ""AUTOTARGET"";this disableAI ""TARGET""; [""v_car"",this,""opf_f""] call f_fnc_assignGear;";
+					ammo=0;
+					init="this setCaptive true; this allowFleeing 0; driver this disableAI ""AUTOTARGET"";driver this disableAI ""TARGET"";  [""v_ifv"",this,""opf_f""] call f_fnc_assignGear; this allowDamage false; this setVariable [""asr_ai_exclude"",true];";
 					syncId=5;
 					synchronizations[]={2};
 				};
@@ -965,7 +966,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={6674.2915,164.98756,21924.262};
+					position[]={6640.5352,153.24947,21944.236};
 					speed="LIMITED";
 					combat="SAFE";
 					class Effects
@@ -975,7 +976,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={6017.1641,291.16293,21787.408};
+					position[]={6026.3564,290.69055,21777.379};
 					type="TR UNLOAD";
 					class Effects
 					{
@@ -984,7 +985,7 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={7164.7148,185.17119,21807.553};
+					position[]={6532.7192,301.16916,21639.828};
 					speed="NORMAL";
 					class Effects
 					{
@@ -993,7 +994,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={8537.2578,60.007313,21805.924};
+					position[]={8500.2236,88.731888,21640.145};
 					expActiv="{deleteVehicle _x} forEach thislist + [vehicle (thislist select 0)] + crew (vehicle (thislist select 0));";
 					class Effects
 					{
@@ -4510,7 +4511,7 @@ class Mission
 		items=128;
 		class Item0
 		{
-			position[]={6017.8066,291.11963,21787.111};
+			position[]={6026.999,290.67401,21777.082};
 			azimut=3.8271105;
 			id=208;
 			side="EMPTY";
@@ -4519,7 +4520,7 @@ class Mission
 		};
 		class Item1
 		{
-			position[]={5994.6572,294.66467,21826.764};
+			position[]={5984.6294,294.82214,21835.121};
 			azimut=3.8271105;
 			id=209;
 			side="EMPTY";
@@ -4528,7 +4529,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={6045.623,288.07571,21752.115};
+			position[]={6086.1538,297.80032,21719.941};
 			azimut=3.8271105;
 			id=210;
 			side="EMPTY";
@@ -5970,8 +5971,8 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={6679.0493,174.04964,21913.77};
-			angle=29.1731;
+			position[]={6645.1045,163.66757,21925.436};
+			angle=12.513874;
 			activationBy="VEHICLE";
 			interruptable=1;
 			age="UNKNOWN";
