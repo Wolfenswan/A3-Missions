@@ -77,7 +77,7 @@ SPECIAL TASKS
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 Deploy into the <marker name='mkrAAF'>AO</marker>, investigating all possible cache locations.<br/>
-Destroy all caches you come across or kill a hostiles present in the area to succeed.
+Destroy all caches (using explosives) or kill a hostiles present in the area to succeed.
 "]];
 
 // ====================================================================================
