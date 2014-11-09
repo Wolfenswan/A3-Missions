@@ -5,7 +5,7 @@
 
 class Header
 {
-	gameType = Coop;
+	gameType = TDM;
 	minPlayers = 1;
 	maxPlayers = 453;
 };
@@ -15,7 +15,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "Salt Riders";
 onLoadMission = "Made with the F3 Mission Development Framework";
 author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
@@ -162,7 +162,7 @@ class Params
             title = "$STR_f_param_loadouts";
             values[] = {0,1,2};
             texts[] = {"Light","Medium","Heavy"};
-            default = 1;
+            default = 0;
             code = "f_param_backpacks = %1";
     };
 
@@ -190,7 +190,7 @@ class Params
             title = "Medical System";
             values[] = {0,1,2};
             texts[] = {"Arma 3 Default","F3 Simple Wounding System","Authentic Gameplay Mod"};
-            default = 0;
+            default = 1;
             code = "f_var_medical = %1";
     };
 
@@ -240,7 +240,7 @@ class Params
 		title = "$STR_f_param_timeOfDay";
 		values[] = {0,1,2,3,4,5,6,7};
 		texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
-		default = 4;
+		default = 6;
 		function = "f_fnc_setTime";			// This function is called to apply the values
  		isGlobal = 0;						// Execute this only on the server
  		code = "f_param_timeOfDay = %1";
@@ -251,6 +251,7 @@ class Params
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
+/*
 	class f_param_AISkill_BLUFOR
 	{
 		title = "$STR_f_param_AISkill_BLUFOR";
@@ -291,6 +292,7 @@ class Params
 		code = "f_param_caching = %1";
 	};
 
+
 // ============================================================================================
 
 // F3 - End of Params code blocks.
@@ -304,7 +306,7 @@ class Params
         default = 0;
         code = "ws_param_hc = %1";
 	};
-
+*/
 	class ws_param_dbg
 	{
 		title = "WS fnc debug";
@@ -325,9 +327,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "FIA VICTORY";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "All enemies wiped out.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -335,9 +337,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "FAI VICTORY";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "All enemies wiped out.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};

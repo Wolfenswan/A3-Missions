@@ -38,6 +38,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 // NOTES: ADMINISTRATION
 // The code below creates the administration sub-section of notes.
 
+/*
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 *** Insert information on administration and logistics here. ***
@@ -66,6 +67,7 @@ SPECIAL TASKS
 <br/>
 *** Insert instructions for specific units here. ***
 "]];
+*/
 
 // ====================================================================================
 
@@ -74,11 +76,12 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+Enemies straight ahead. Kill them.
 "]];
 
 // ====================================================================================
 
+/*
 // NOTES: SITUATION
 // The code below creates the situation sub-section of notes.
 
@@ -94,5 +97,6 @@ FRIENDLY FORCES
 <br/>
 *** Insert information about friendly forces here.***
 "]];
+*/
 
 // ====================================================================================

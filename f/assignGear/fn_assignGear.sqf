@@ -39,13 +39,6 @@ if !(local _unit) exitWith {};
 
 // ====================================================================================
 
-// Prevent BIS Randomisation System
-// BIS created a system for randomisation unit loadouts, that may overwrite the changes made by this script, this will fix such system.
-
-_unit setVariable ["BIS_enableRandomization", false];
-
-// ====================================================================================
-
 // SET A PUBLIC VARIABLE
 // A public variable is set on the unit, indicating their type. This is mostly relevant for the F3 respawn component
 
@@ -138,7 +131,7 @@ if(_faction == "ind_f") then {
 // The following block of code executes only if the unit is in a FIA slot (any faction); it
 // automatically includes a file which contains the appropriate equipment data.
 
-if (_faction in ["blu_g_f","opf_g_f","ind_g_f"]) then {
+if (_faction in ["blu_g_f","ind_g_f","opf_g_f"]) then {
 	#include "f_assignGear_fia.sqf"
 };
 
