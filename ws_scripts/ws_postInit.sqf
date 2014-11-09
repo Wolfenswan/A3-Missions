@@ -2,7 +2,7 @@ if (isNil "ws_meeting_done") then {ws_meeting_done = false};
 
 0 setFog [0.4,0.025,40];
 
-if (side player == BLUFOR) then {
+if (side player == WEST) then {
 	{_x setMarkerAlphaLocal 0} forEach ["mkrVeh","mkrVeh_1"];
 	waitUntil {!isNil "ws_meetingM"};
 	_mkr = createMarkerLocal ["meeting",getMarkerPos ws_meetingM];

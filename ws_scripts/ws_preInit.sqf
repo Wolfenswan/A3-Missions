@@ -6,13 +6,13 @@ if !(isServer) exitWith {ws_initDone = true};
 
 0 setFog [0.4,0.025,40];
 
-if (!isNil "GrpAAF_R") then {
+if (!isNil "GrpCSAT_R") then {
 	_mkr = (["mkrR"] call ws_fnc_collectMarkers) call ws_fnc_selectRandom;
 	{
 		_x setPos  ([_mkr,5,1] call ws_fnc_getPos);
 		_x setDir ([_x,town] call BIS_fnc_dirTo);
 		_x setUnitPos "middle";
-	} forEach units GrpAAF_R;
+	} forEach units GrpCSAT_R;
 };
 
 _mkrs = ["mkrM"] call ws_fnc_collectMarkers;

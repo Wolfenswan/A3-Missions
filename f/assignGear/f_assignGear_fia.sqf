@@ -222,7 +222,7 @@ _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = [];
+_specOp = ["co","dc"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -261,9 +261,9 @@ _ghillieRig = ["V_Chestrig_rgr"];
 _ghillieGlasses = [];
 
 // Spec Op (CTRG)
-_sfuniform = ["U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3"];
-_sfhelmet = ["H_Cap_khaki_specops_UK","H_HelmetB_light_snakeskin"];
-_sfRig = ["V_PlateCarrierL_CTRG","V_PlateCarrierH_CTRG"];
+_sfuniform = ["U_NikosBody"];
+_sfhelmet = ["H_Beret_blk"];
+_sfRig = [];
 _sfGlasses = [];
 
 
@@ -301,7 +301,7 @@ if (_isMan) then {
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	_unit linkItem _nvg;			// Add and equip the faction's nvg
+	//_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
 	_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass
@@ -338,39 +338,18 @@ switch (_typeofUnit) do
 // LOADOUT: COMMANDER
 	case "co":
 	{
-		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
-		_unit addmagazines [_glmag,3];
-		_unit addmagazines [_glsmokewhite,4];
-		_unit addweapon _glrifle;					//_COrifle
-		_unit addmagazines [_pistolmag,2];
-		_unit addweapon _pistol;
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_smokegrenade,2];
-		_unit addmagazines [_smokegrenadegreen,2];
-		_unit addWeapon "Rangefinder";
+
+		_unit addmagazines ["6Rnd_45ACP_Cylinder",2];
+		_unit addweapon "hgun_Pistol_heavy_02_F";
 		_unit linkItem "ItemGPS";
-		["g"] call _backpack;
 	};
 
 // LOADOUT: DEPUTY COMMANDER AND SQUAD LEADER
 	case "dc":
 	{
-		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
-		_unit addmagazines [_glmag,3];
-		_unit addmagazines [_glsmokewhite,4];
-		_unit addweapon _glrifle;					//_DCrifle
-		_unit addmagazines [_pistolmag,2];
-		_unit addweapon _pistol;
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_smokegrenade,2];
-		_unit addmagazines [_smokegrenadegreen,2];
-		_unit addWeapon "Rangefinder";
+		_unit addmagazines ["6Rnd_45ACP_Cylinder",2];
+		_unit addweapon "hgun_Pistol_heavy_02_F";
 		_unit linkItem "ItemGPS";
-		["g"] call _backpack;
 	};
 
 // LOADOUT: MEDIC

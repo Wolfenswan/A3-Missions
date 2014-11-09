@@ -191,7 +191,7 @@ class Params
             title = "Medical System";
             values[] = {0,1,2};
             texts[] = {"Arma 3 Default","F3 Simple Wounding System","Authentic Gameplay Mod"};
-            default = 0;
+            default = 1;
             code = "f_var_medical = %1";
     };
 
@@ -305,15 +305,6 @@ class Params
 
 // Wolfenswan - Parameters
 
-	class ws_param_sws
-	{
-		title = "F3 Wounding System";
-        values[] = {0,1};
-        texts[] = {"Off","On"};
-        default = 0;
-        code = "ws_param_sws = %1";
-	};
-
 	class ws_param_meeting
 	{
 		title = "Duration of FIA meeting in minutes";
@@ -345,7 +336,7 @@ class CfgDebriefing
 	{
 		title = "FIA victory";
 		subtitle = "";
-		description = "All AAF attackers were killed.";
+		description = "The majority of the CSAT attackers were killed.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -353,7 +344,7 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "AAF victory";
+		title = "CSAT victory";
 		subtitle = "";
 		description = "The entirity of the FIA forces were wiped out.";
 		// pictureBackground = "";
@@ -373,7 +364,7 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "AAF victory";
+		title = "CSAT victory";
 		subtitle = "";
 		description = "Both officers were killed.";
 		// pictureBackground = "";
@@ -393,7 +384,7 @@ class CfgDebriefing
 
 	class End6
 	{
-		title = "AAF victory";
+		title = "CSAT victory";
 		subtitle = "";
 		description = "While one officer escaped, the other was killed before the meeting could take place.";
 		// pictureBackground = "";

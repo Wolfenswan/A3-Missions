@@ -43,8 +43,7 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 Our weapons have inferior range to the AAF guns, so avoid any long-range engagements.<br/>
 All RPG missiles are HE variants.<br/><br/>
 Ground-Transport:<br/>
-2 x Offroads (one for each officer)<br/>
-2 x Offroads (armed - accompanying each officer)<br/>
+2 x Offroads (armed - one for each officer)<br/>
 Drive carefully - we don't have any spare tires<br/><br/>
 Several civilian vehicles can be found in the town.
 "]];
@@ -63,8 +62,8 @@ OFFICER MEETING<br/>
 The starting locations of the officers are randomized and their distance can benefit either of the two sides.<br/>
 The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for %1 consecutive minutes.<br/><br/>
 VICTORY CONDITIONS<br/>
-FIA wins if both officers conduct their meeting and escape the vicinity of the town (leave highlighted area).<br/>
-AAF wins if both officers are taken out or they flee before the meeting has taken place.
+FIA wins if both officers conduct their meeting and at least one escapes the vicinity of the town (leave highlighted area).<br/>
+CSAT wins if both officers are taken out or the officers flee before the meeting has taken place.
 ",ws_param_meeting]]];
 
 // ====================================================================================
@@ -74,15 +73,12 @@ AAF wins if both officers are taken out or they flee before the meeting has take
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-Two of our high-ranking FIA officers are about to hold an important meeting in a <marker name='mkrTown'>nearby town</marker>. While the AAF has been dormant for a while, we are sure the dicator's lapdogs will try and take out our leaders. We must not let this happen.
+Two of our leaders are about to hold an important meeting in a <marker name='mkrTown'>nearby town</marker>. While the CSAT has been dormant for a while, we are sure the imperialist pigs will try and take out our beloved comrades. We must not let this happen.
 <br/><br/>
 ENEMY FORCES
 <br/>
-AAF regulars, both motorized and airborn. They will possibly use UAVs against us.
+CSAT regulars, airborn.
 <br/><br/>
-
-ROE<br/>
-If the Abibala is armed, it is suggested that a 'no explosives in built up areas' ROE is enforced. An expection could be made for the drone, which is allowed to only strike the building where the officers are known to be in (just like in real life).<br/><br/>
 "]];
 
 // ====================================================================================

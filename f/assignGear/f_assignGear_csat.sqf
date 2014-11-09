@@ -218,7 +218,7 @@ _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = [];
+_specOp = ["uav","smg"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -263,8 +263,8 @@ _ghillieGlasses = [];
 
 // Spec Op
 _sfuniform = ["U_O_SpecopsUniform_ocamo"];
-_sfhelmet = ["H_HelmetSpecO_ocamo","H_HelmetSpecO_blk"];
-_sfRig = ["V_PlateCarrier1_blk"];
+_sfhelmet = ["H_Shemag_olive","H_ShemagOpen_tan"];
+_sfRig = ["V_HarnessO_brn"];
 _sfGlasses = [];
 
 
@@ -783,7 +783,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_grenade,3];
 		_unit addmagazines [_mgrenade,3];
 		_unit addmagazines [_smokegrenade,3];
-		["smg"] call _backpack;
+		_unit addWeapon "Rangefinder";
+		//["smg"] call _backpack;
 	};
 
 // LOADOUT: GRENADIER
