@@ -224,7 +224,7 @@ _specOp = [];
 // The outfit-piece is randomly selected from the array for each unit
 
 _baseUniform = ["U_I_CombatUniform","U_I_CombatUniform_shortsleeve","U_I_CombatUniform_tshirt"];
-_baseHelmet = ["H_HelmetIA_net","H_HelmetIA_camo","H_HelmetIA"];
+_baseHelmet = ["H_Bandanna_khk","H_Bandanna_mcamo","H_Watchcap_camo","H_Bandanna_camo","H_Watchcap_blk"];
 _baseGlasses = [];
 
 // Armored vests

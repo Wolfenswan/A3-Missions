@@ -38,6 +38,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 // NOTES: ADMINISTRATION
 // The code below creates the administration sub-section of notes.
 
+/*
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 *** Insert information on administration and logistics here. ***
@@ -66,6 +67,7 @@ SPECIAL TASKS
 <br/>
 *** Insert instructions for specific units here. ***
 "]];
+*/
 
 // ====================================================================================
 
@@ -74,7 +76,8 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+Deploy into the <marker name='mkrAAF'>AO</marker>, investigating all possible cache locations.<br/>
+Destroy all caches you come across or kill a hostiles present in the area to succeed.
 "]];
 
 // ====================================================================================
@@ -84,15 +87,11 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+While most of the AAF have given up their weapons, some hardliners are continuing to fight. We need to destroy their ammo stashes to hurt their operations. Intel has provided us with possible storage locations.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
-<br/><br/>
-FRIENDLY FORCES
-<br/>
-*** Insert information about friendly forces here.***
+Remnants of the AAF, well armed and trained.
 "]];
 
 // ====================================================================================

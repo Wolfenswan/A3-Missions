@@ -107,13 +107,13 @@ f_var_doNotRemoveBodies = [];
 // [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // BLUFOR > NATO
-// [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
 // [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
-// [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[INDEPENDENT,100,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // ====================================================================================
 
@@ -216,4 +216,5 @@ f_wound_extraFAK = 2;
 
 // Show a short text-intro
 waitUntil {time > 10};
-["X-EOLA","CENTRAL ALTIS"] call ws_fnc_showIntro;
+["EOLACASTRO","NORTH-WESTERN ALTIS"] call ws_fnc_showIntro;
+player addEventHandler ["WeaponAssembled",{(_this select 1) disableTIEquipment true}];

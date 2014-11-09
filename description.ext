@@ -5,9 +5,9 @@
 
 class Header
 {
-	gameType = Coop;
+	gameType = Defend;
 	minPlayers = 1;
-	maxPlayers = 453;
+	maxPlayers = 76;
 };
 
 // ============================================================================================
@@ -15,9 +15,9 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "X-EOLA MissionStub";
+onLoadName = "EolaCastro";
 onLoadMission = "Made with the F3 Mission Development Framework";
-author = "YourName";
+author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
 
 // ============================================================================================
@@ -246,7 +246,7 @@ class Params
 		title = "Fog";
 		values[] = {0,1,2};
 		texts[] = {"None","Light","Heavy"};
-		default = 0;
+		default = 1;
 		function = "f_fnc_SetFog";			// This function is called to apply the values
 		isGlobal = 0;						// Execute this only on the server
 		code = "f_param_fog = %1";
@@ -321,18 +321,16 @@ class Params
 	class ws_param_caches_present
 	{
 		title = "Caches present";
-		values[] = {2,4,6,8,10,12};
-		texts[] = {"2","4","6","8","10","12"};
-		default = 6;
+		values[] = {2,3,5};
+		default = 5;
 		code = "ws_eola_caches_present = %1";
 	};
 
 	class ws_param_caches_target
 	{
 		title = "Caches to destroy";
-		values[] = {2,4,6,8,10,12};
-		texts[] = {"2","4","6","8","10","12"};
-		default = 4;
+		values[] = {2,3,5};
+		default = 3;
 		code = "ws_eola_caches_target = %1";
 	};
 
@@ -347,7 +345,7 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "BLUFOR looses!";
+		title = "AAF VICTORY";
 		subtitle = "";
 		description = "All BLUFOR units were killed.";
 		// pictureBackground = "";
@@ -357,7 +355,7 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "AAF looses!";
+		title = "NATO VICTORY";
 		subtitle = "";
 		description = "All AAF units were killed.";
 		// pictureBackground = "";
@@ -377,7 +375,7 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "Attackers win!";
+		title = "NATO VICTORY";
 		subtitle = "";
 		description = "All caches were destroyed!";
 		// pictureBackground = "";
