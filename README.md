@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-2-0 RC2</i>
 
 <b>Mission description</b><br/>
-Two FIA officers are planning to meet in a town in central Altis, AAF attempts to intercept and kill them.
+Two FIA officers are planning to meet in a town in central Altis, airborn CSAT want to intercept and kill them.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
