@@ -5,7 +5,7 @@
 // ADD CUSTOM SECTIONS
 // Add all messages you want only the admin to be able to see here:
 
-_customText = "";
+_customText = "There's no definite end-trigger for this mission. The host should decide whether to call this as a full or partial success, depending on number of destroyed caches.";
 
 // ====================================================================================
 

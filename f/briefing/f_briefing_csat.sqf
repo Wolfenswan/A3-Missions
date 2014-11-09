@@ -53,13 +53,9 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
 FIRE SUPPORT PLAN
 <br/>
-Due to fog CAS-1 should rely on the JTAC for good target designation.
+Due to the fog and the possibility of man-pads AH1 should be used with extreme caution.
 "]];
 
 // ====================================================================================
@@ -70,7 +66,7 @@ Due to fog CAS-1 should rely on the JTAC for good target designation.
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. We are inserted <marker name='mkrInsert'>on the eastern hill</marker>.<br/>
-2. Proceed <marker name='mkrFIA'>into the forest</marker> to locate and clear three FIA storage camps.<br/>
+2. Proceed <marker name='mkrFIA'>into the forest</marker> to locate and destroy the creates at FIA storage camps. Up to five (5) caches are expected to be present.<br/>
 3. Oreokastro and the castle are not your primarty objective but rebels might stage attacks from there.<br/><br/>
 DESTROYING CACHES<br/>
 To destroy the ammo caches you need to execute the 'Destroy cache' action when facing them.
@@ -95,7 +91,7 @@ Motorized groups are blocking the southern approaches.
 <br/><br/>
 RESTRICTIONS
 <br/>
-The castle is a national heritage and Orekastro should stay intact as well - do not target those areas mortars or CAS.
+The castle is a national heritage and Orekastro should stay intact as well - do not target those areas with mortars or CAS.
 "]];
 
 // ====================================================================================

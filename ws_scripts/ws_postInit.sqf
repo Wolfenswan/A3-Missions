@@ -15,20 +15,14 @@ if (!isDedicated && !ws_isHC) then {
 if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParamValue;};
 if (isNil "ws_campsecured") then {ws_campsecured = 0};
 
-box1 addAction ["Destroy crates",{
-[[(_this select 3),{{_x setDamage 1}forEach _this;}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
-[[[(_this select 0),(_this select 2)],{(_this select 0) removeAction (_this select 1)}],'BIS_fnc_Spawn',true] call BIS_fnc_MP;
-},[box1,box2,box3],1.5,true,true,"","_target distance _this < 10"];
+{
+	_x addAction ["Destroy crates",{
+	(_this select 0) setDamage 1;
+	[[[],{ws_campsecured = ws_campsecured + 1; publicVariable "ws_campsecured";}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
+	[[[(_this select 0),(_this select 2)],{(_this select 0) removeAction (_this select 1);["alert",["FIA storage destroyed"]] call BIS_fnc_showNotification;}],'BIS_fnc_Spawn',true] call BIS_fnc_MP;
+	},[],1.5,true,true,"","_target distance _this < 10"];
+} forEach [box,box_1,box_2,box_3,box_4,box_5];
 
-box4 addAction ["Destroy crates",{
-[[(_this select 3),{{_x setDamage 1}forEach _this;}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
-[[[(_this select 0),(_this select 2)],{(_this select 0) removeAction (_this select 1)}],'BIS_fnc_Spawn',true] call BIS_fnc_MP;
-},[box4,box5],1.5,true,true,"","_target distance _this < 10"];
-
-box6 addAction ["Destroy crates",{
-[[(_this select 3),{{_x setDamage 1}forEach _this;}],'BIS_fnc_Spawn',false] call BIS_fnc_MP;
-[[[(_this select 0),(_this select 2)],{(_this select 0) removeAction (_this select 1)}],'BIS_fnc_Spawn',true] call BIS_fnc_MP;
-},[box6,box7],1.5,true,true,"","_target distance _this < 10"];
 
 
 // Do stuff on either HC or Server (e.g. spawning)
