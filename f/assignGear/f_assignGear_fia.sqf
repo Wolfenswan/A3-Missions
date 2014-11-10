@@ -92,9 +92,9 @@ _hg_attachments= []; // The default attachment set for handguns, overwritten in 
 
 
 // Standard Riflemen ( MMG Assistant Gunner, Assistant Automatic Rifleman, MAT Assistant Gunner, MTR Assistant Gunner, Rifleman)
-_rifle = "SMG_01_F";
-_riflemag = "30Rnd_45ACP_Mag_SMG_01";
-_riflemag_tr = "30Rnd_45ACP_Mag_SMG_01";
+_rifle = "hgun_PDW2000_F";
+_riflemag = "30Rnd_9x21_Mag";
+_riflemag_tr = "30Rnd_9x21_Mag";
 
 // Standard Carabineer (Medic, Rifleman (AT), MAT Gunner, MTR Gunner, Carabineer)
 _carbine = "SMG_02_F";
@@ -283,11 +283,6 @@ _isMan = _unit isKindOf "CAManBase";	// We check if we're dealing with a soldier
 if (_isMan) then {
 
 	// ====================================================================================
-
-	// Prevent BIS Randomisation System
-	// BIS created a system for randomisation unit loadouts, that may overwrite the changes made by this script, this will fix such system.
-
-	_unit setVariable ["BIS_enableRandomization", false];
 
 	// PREPARE UNIT FOR GEAR ADDITION
 	// The following code removes all existing weapons, items, magazines and backpacks
@@ -709,13 +704,13 @@ switch (_typeofUnit) do
 // LOADOUT: ENGINEER (DEMO)
 	case "eng":
 	{
-		_unit addmagazines [_carbinemag,7];
+		_unit addmagazines [_carbinemag,4];
 		_unit addweapon _carbine;
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_satchel,2];
-		_unit addItem "MineDetector";
+		//_unit addmagazines [_satchel,2];
+		//_unit addItem "MineDetector";
 		["eng"] call _backpack;
 	};
 

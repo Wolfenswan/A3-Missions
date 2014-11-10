@@ -13,6 +13,6 @@ if !(isServer) exitWith {ws_initDone = true};
 
 // Load up vehicles with groups
 // [veh1,group1,group2.....groupN] call ws_fnc_loadVehicle
-[Veh,Grp] call ws_fnc_loadVehicle;
+//[Veh,Grp] call ws_fnc_loadVehicle;
 
 ws_initDone = true;
