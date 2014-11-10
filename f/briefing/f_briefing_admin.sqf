@@ -5,7 +5,11 @@
 // ADD CUSTOM SECTIONS
 // Add all messages you want only the admin to be able to see here:
 
-_customText = "";
+_customText = "
+Monitor the variable ws_meeting_passed to see how much time of the meeting has passed.<br/>
+ws_meeting_done flips to true once the meeting is over.<br/>
+Other variables: ws_o1_gone, ws_o2_gone,ws_o1_dead, ws_o2_dead
+<br/>";
 
 // ====================================================================================
 
@@ -19,8 +23,7 @@ This briefing section can only be seen by the current admin.
 <br/><br/>
 
 MISSION-MAKER NOTES<br/>
-Monitor the variable ws_meeting_passed to see how much time of the meeting has passed.
-<br/><br/>
+
 ";
 
 // ====================================================================================
@@ -31,7 +34,7 @@ Monitor the variable ws_meeting_passed to see how much time of the meeting has p
 _briefing ="
 <br/>
 MISSION-MAKER NOTES<br/>
-Notes and messages made by the mission-maker.
+Notes and messages made by the mission-maker.<br/>
 ";
 
 _briefing = _briefing + _customText;
