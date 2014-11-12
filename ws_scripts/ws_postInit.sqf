@@ -42,7 +42,7 @@ if (isServer) then {
 		_unit = _x;
 
 		// Only run where the unit is local, it isn't a player and doesn't have a flashlight
-		if (local _unit && !isplayer _unit && !("acc_flashlight" in primaryWeaponItems _unit)) then {
+		if (local _unit && {side _unit == resistance && !isplayer _unit && !("acc_flashlight" in primaryWeaponItems _unit)}) then {
 
 		// Remove laser if equipped
 		if ("acc_pointer_IR" in primaryWeaponItems _unit) then {_x removePrimaryWeaponItem "acc_pointer_IR"};
