@@ -314,11 +314,11 @@ if (_isMan) then {
 	_unit addItem _silencer2;
 
 	//removeAllItems _unit;						// remove default items: map, compass, watch, radio (and GPS for team/squad leaders)
-	//_unit linkItem "ItemGPS"; 					// add gps to this faction
-	//_unit linkItem "ItemMap";
-	//_unit linkItem "ItemCompass";
-	//_unit linkItem "ItemRadio";
-	//_unit linkItem "ItemWatch";
+	//_unit linkItem "ItemGPS"; 				// add gps to this faction
+	_unit linkItem "ItemMap";
+	_unit linkItem "ItemCompass";
+	_unit linkItem "ItemRadio";
+	_unit linkItem "ItemWatch";
 };
 
 // ====================================================================================

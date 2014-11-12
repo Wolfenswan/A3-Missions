@@ -24,30 +24,10 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 		_units = _units + ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
 		//deleteVehicle _x;
 	} forEach _garrison;
-
-
-	/*
-	_gear = [
-		["hgun_PDW2000_F",5],
-		["SMG_01_F",6],
-		["SMG_02_ACO_F",4],
-		["arifle_Mk20C_F",5],
-		["arifle_Katiba_C_F",5],
-		["arifle_TRG20_F",5]
-	];
-
-	{
-		_wp = _gear call ws_fnc_selectRandom;
-	[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
-	} forEach _units;
-	*/
 };
 
 // Do more stuff exclusively on the server
 if (isServer) then {
-
-		// Recalculate F3 variables
-	[0] execVM "f\common\f_setLocalVars.sqf";
 
 	sleep 0.1;
 
@@ -77,6 +57,6 @@ if (isServer) then {
 		// Forces flashlights on
 	    // _unit enablegunlights "forceOn";
 
-	} forEach f_var_men_RES;
+	} forEach allUnits;
 
 };
