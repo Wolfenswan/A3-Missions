@@ -64,9 +64,11 @@ Trg2 setPos (getPos c3);
 Trg2 setTriggerArea [10, 10, 0, true];
 
 //Create markers
-if (isNil "ws_param_jitter") then {ws_param_jitter = "ws_param_jitter" call BIS_fnc_getParamValue;};
+//if (isNil "ws_param_jitter") then {ws_param_jitter = "ws_param_jitter" call BIS_fnc_getParamValue;};
 
-_marker_jitter = [2500,3500];
+_marker_jitter = [1500,2500];
+
+/*
 switch (ws_param_jitter) do {
 	case 0: {_marker_jitter = [0,0];};
 	case 1: {_marker_jitter = [1500,2500];};
@@ -74,6 +76,7 @@ switch (ws_param_jitter) do {
 	case 3: {_marker_jitter = [3500,5000];};
 	default {_marker_jitter = [2500,3500];};
 };
+*/
 
 diag_log "creating markers";
 

@@ -1,10 +1,11 @@
 if (isNil "ws_allCaches_destroyed") then {ws_allCaches_destroyed = false;};
 if (isNil "ws_caches_seized_n") then {ws_caches_seized_n = false;};
 if (isNil "ws_caches_seized_o") then {ws_caches_seized_o = false;};
-if (isNil "ws_param_jitter") then {ws_param_jitter = "ws_param_jitter" call BIS_fnc_getParamValue;};
-if (isNil "ws_param_friendly") then {ws_param_friendly = "ws_param_friendly" call BIS_fnc_getParamValue;};
+//if (isNil "ws_param_jitter") then {ws_param_jitter = "ws_param_jitter" call BIS_fnc_getParamValue;};
+//if (isNil "ws_param_friendly") then {ws_param_friendly = "ws_param_friendly" call BIS_fnc_getParamValue;};
 
 if (faction player == "BLU_F") then{
+	/*
 	if (ws_param_jitter != 9999) then {
 
 		if (ws_param_jitter == 0) then {
@@ -14,7 +15,9 @@ if (faction player == "BLU_F") then{
 			"us_conv1" setMarkerAlphaLocal 1;
 		};
 	};
-
+	*/
+	"us_conv" setMarkerAlphaLocal 1;
+	"us_conv1" setMarkerAlphaLocal 1;
 } else {
 	"fia_conv" setMarkerAlphaLocal 1;
 	"mkrCSATBorder" setMarkerAlphaLocal 1;
