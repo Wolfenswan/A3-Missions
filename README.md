@@ -5,7 +5,7 @@ The missions can be found on GitHub:<br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-2-0 RC2</i>
+<i>3-2-0</i>
 
 <b>Mission description</b><br/>
 Motorized CSAT and Airborn NATO fight for a ZEUS-controlled FIA convoy. Both need to seize and hold the cargo it has been carrying. FIA is friendly to NATO by default, but can be set to be hostile to both via parameter
