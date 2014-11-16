@@ -10,7 +10,7 @@ USAGE
 Minimal:
 [center,radius,side] call ws_fnc_createGarrison
 Full:
-[center,radius,side,integer,integer,array] call ws_fnc_createGarrison
+[center,radius,side,number,number,array] call ws_fnc_createGarrison
 
 NOTE
 Make sure to call this only on the server or headless client. The function itself does not check where it is run.
@@ -19,8 +19,8 @@ PARAMETERS:
 1. Center of town. Can be marker, object or location     | MANDATORY - string (markername) or object name
 2. Radius of area to be considered																				 | MANDATORY - int
 3. Side of units to spawn																						 | MANDATORY - side (east, west, resistance)
-4. Number of units.																								 | OPTIONAL - integer - default is No. of available buildings/4
-5. threshold of building positions that can be occupied in the buildings in the area								 | OPTIONAL - integer between 1 (=100%) and 0, default is set below
+4. Number of units.																								 | OPTIONAL - number - default is No. of available buildings/4
+5. threshold of building positions that can be occupied in the buildings in the area								 | OPTIONAL - number between 1 (=100%) and 0, default is set below
 6. Array of classes to spawn																		           	 | OPTIONAL - array w. strings  - default are classes defined below
 
 EXAMPLE
@@ -34,11 +34,11 @@ array of created units
 
 // Default classes (Arma 3)
 // BLUFOR
-_wclasses = ["B_Soldier_lite_F","B_Soldier_F"];
+ws_var_garrisonWest = ["B_Soldier_lite_F","B_Soldier_F"];
 // OPFOR
-_eclasses = ["O_Soldier_lite_F","O_Soldier_F"];
+ws_var_garrisonEast = ["O_Soldier_lite_F","O_Soldier_F"];
 // INDEPENDENT
-_iclasses = ["I_Soldier_lite_F","I_Soldier_F"];
+ws_var_garrisonIndp = ["I_Soldier_lite_F","I_Soldier_F"];
 
 _threshold = 0.8; // Default percentage of building positions that can be taken in any given building (1=all)
 
@@ -64,12 +64,12 @@ _classes = if (count _this > 5) then {_this select 5} else {[]};
 // If default classes are being used, select the corresponding array
 if (count _classes == 0) then {
 	switch (_side) do {
-		case west: {_classes = _wclasses};
-		case blufor: {_classes = _wclasses};
-		case east: {_classes = _eclasses};
-		case opfor: {_classes = _eclasses};
-		case resistance: {_classes = _iclasses};
-		case independent: {_classes = _iclasses};
+		case west: {_classes = ws_var_garrisonWest};
+		case blufor: {_classes = ws_var_garrisonWest};
+		case east: {_classes = ws_var_garrisonEast};
+		case opfor: {_classes = ws_var_garrisonEast};
+		case resistance: {_classes = ws_var_garrisonIndp};
+		case independent: {_classes = ws_var_garrisonIndp};
 	};
 };
 

@@ -56,7 +56,7 @@ if(_typeOfUnit != "NIL") then {
       };
 
       // Special cases
-      _specialist = ["c", "p", "eng", "engm", "div","uav"];
+      _specialist = ["vc", "pp", "eng", "engm", "div","uav"];
 
       // If unit is leader of group and in the above list, give SR. Else, give them
       // a rifleman's radio.
@@ -86,10 +86,6 @@ if(_typeOfUnit != "NIL") then {
           {player addItemToBackpack _x;} forEach _backpackItems;
         };
       };
-
-  } else {
-
-    // Do not assign any radios
 
   };
 
