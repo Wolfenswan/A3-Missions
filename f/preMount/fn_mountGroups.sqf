@@ -95,8 +95,10 @@ if (count _vehs == 0 || count _grps == 0) exitWith {
 	// Temporary group array
 	_grpsT = _grps;
 	// As long there are spare seats and groups left
+	diag_log format ["F3 MOUNT DBG: main condition: %1 - %2/%3/%4",_veh,_emptyPositions > 0,count _grpsT > 0, locked _veh < 2];
 
-	while {_emptyPositions > 0 && count _grpsT > 0 && locked _veh < 2} do {
+
+	while {_emptyPositions > 0 && count _grpsT > 0} do {
 
 		private ["_grp","_units","_run"];
 
@@ -108,6 +110,7 @@ if (count _vehs == 0 || count _grps == 0) exitWith {
 		if (!_fill && {{isNull assignedVehicle _x} count _units > _emptyPositions}) then {
 
 			_run = false;
+			diag_log "F3 MOUNT DBG: run is false";
 
 			//Remove groups that would need to be split up
 			_grpsT = _grpsT - [_grp];
@@ -120,6 +123,8 @@ if (count _vehs == 0 || count _grps == 0) exitWith {
 			   	_unit = _units select 0;
 			   	_slot = _x select 0;
 			   	_path = _x select 1;
+
+			   	diag_log format ["F3 MOUNT DBG: run is true, %1 into %2",group _unit,_x];
 
 			   	// If the slot is not a cargo slot and crew should be slotted
 				if (_crew && {_slot != "CARGO" && isNull assignedVehicle _unit}) then{

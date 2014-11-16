@@ -47,7 +47,7 @@ if (({!canMove _x || !alive _x || (!isNull (_x findNearestEnemy (getPosATL _x)))
 
 // Setup convoy mode
 {
-	[(group (driver _x)),"SAFE"] call ws_fnc_setAIMode;
+	[(group (driver _x)),"SAFE","LIMITED"] call ws_fnc_setAIMode;
 } forEach _convoy;
 
 // As long as the convoy isn't threatened, keep it moving
@@ -90,10 +90,6 @@ while {_run} do {
 			_vback = _convoy select (_forEachIndex+1);
 		};
 
-
-	player globalchat format ["%1 front:%2, back:%3",_veh,_vfront,_vback];
-
-
 		_dir = getDir _veh;
 		_veh limitSpeed _speedLimit;
 
@@ -120,9 +116,9 @@ while {_run} do {
 		};
 
 		// If the vehicle is way over limit, reset velocity
-		if (speed _veh > _speedLimit *1.5) then {
+		/*if (speed _veh > _speedLimit *1.5) then {
 			_veh setVelocity [(11 * (sin _dir)), (11 * (cos _dir)), velocity _veh select 2];
-		};
+		};*/
 
 		// If for some reason the vehicle is halted, reset speed limit to the original value
 		if (speed _veh < 0.1) then {
