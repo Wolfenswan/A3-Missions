@@ -154,21 +154,6 @@ class Params
 
 // ============================================================================================
 
-<<<<<<< .merge_file_a11184
-// F3 - ACRE Support
-// Credits: Please see the F2 online manual (http://www.ferstaberinde.com/f3/en/)
-// WARNING: DO NOT DISABLE THIS COMPONENT OR CHANGE POSITION IN PARAMS; IT MUST BE REFERENCABLE
-// AS "paramsarray select 2" FOR GEAR SCRIPTS TO WORK CORRECTLY
-
-        class f_param_acre
-        {
-                title = "ACRE";
-                values[] = {0,1};
-                texts[] = {"Off","On"};
-                default = 0;
-                code = "f_var_acre = %1";
-        };
-=======
 // F3 - Folk Assign Gear Script
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
@@ -208,39 +193,19 @@ class Params
             default = 1;
             code = "f_var_medical = %1";
     };
->>>>>>> .merge_file_a09824
+
 
 // ============================================================================================
 
 // F3 - Mission Timer/Safe Start
 // Credits: Please see the F2 online manual (http://www.ferstaberinde.com/f3/en/)
 
-<<<<<<< .merge_file_a11184
-/*
-        class f_param_mission_timer
-        {
-                title = "$STR_f_param_mission_timer";
-                values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
-                texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
-                default = 0;
-                code = "f_var_mission_timer = %1";
-        };
-
-  class f_param_timeOfDay
-        {
-                title = "$STR_f_param_timeOfDay";
-                values[] = {0,1};
-                texts[] = {"Dark","Really dark"};
-                default = 0;
-                code = "f_param_timeOfDay = %1";
-        };
-=======
     class f_param_mission_timer
     {
             title = "$STR_f_param_mission_timer";
             values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
             texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
-            default = 0;
+            default = 1;
             code = "f_param_mission_timer = %1";
     };
 
@@ -254,7 +219,7 @@ class Params
 		title = "$STR_f_param_weather";
 		values[] = {0,1,2,3,4,5,6,7,8};
 		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8};
-		default = 0;
+		default = 8;
 		function = "f_fnc_setWeather";		// This function is called to apply the values
 		isGlobal = 0;						// Execute this only on the server
 		code = "f_param_weather = %1";
@@ -267,7 +232,7 @@ class Params
 		texts[] = {"None","Light","Heavy"};
 		default = 0;
 		function = "f_fnc_SetFog";			// This function is called to apply the values
-		isGlobal = 0;						// Execute this only on the server
+		isGlobal = 1;						// Execute this only on the server
 		code = "f_param_fog = %1";
 	};
 
@@ -278,95 +243,14 @@ class Params
 		texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
 		default = 4;
 		function = "f_fnc_setTime";			// This function is called to apply the values
- 		isGlobal = 0;						// Execute this only on the server
+ 		isGlobal = 6;						// Execute this only on the server
  		code = "f_param_timeOfDay = %1";
-	};
->>>>>>> .merge_file_a09824
-
-// ============================================================================================
-
-// F3 - AI Skill Selector
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-	class f_param_AISkill_BLUFOR
-	{
-		title = "$STR_f_param_AISkill_BLUFOR";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_BLUFOR = %1";
-	};
-
-	class f_param_AISkill_OPFOR
-	{
-		title = "$STR_f_param_AISkill_OPFOR";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_OPFOR = %1";
-	};
-
-<<<<<<< .merge_file_a11184
-
-// ============================================================================================
-
-// F3 - AI Skill Selector (A&D)
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-//	class f_param_AISkill_BLUFOR
-//	{
-//		title = "$STR_f_param_AISkill_BLUFOR";
-//		values[] = {0,1,2,3};
-//		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-//		default = 1;
-//		code = "f_param_AISkill_BLUFOR = %1";
-//	};
-//	class f_param_AISkill_OPFOR
-//	{
-//		title = "$STR_f_param_AISkill_OPFOR";
-//		values[] = {0,1,2,3};
-//		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-//		default = 1;
-//		code = "f_param_AISkill_OPFOR = %1";
-//	};
-=======
-	class f_param_AISkill_INDP
-	{
-		title = "$STR_f_param_AISkill_INDP";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_INDP = %1";
-	};
->>>>>>> .merge_file_a09824
-
-// ============================================================================================
-
-// F3 - Caching
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-	class f_param_caching
-	{
-		title = "Cache AI outside distance (m)";
-		values[] = {0,600,800,1000,1500,2000};
-		default = 0;
-		code = "f_param_caching = %1";
 	};
 
 // ============================================================================================
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
-
-	class ws_param_hc
-	{
-		title = "Headless client";
-        values[] = {0,1};
-        texts[] = {"Off","On"};
-        default = 0;
-        code = "ws_param_hc = %1";
-	};
-
 
 	class ws_param_dbg
 	{
@@ -376,7 +260,6 @@ class Params
         default = 0;
         code = "ws_param_dbg = %1";
 	};
-*/
 
 };
 
