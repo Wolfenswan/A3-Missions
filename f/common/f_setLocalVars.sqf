@@ -2,14 +2,10 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// JIP CHECK
-// Prevents the script executing until the player has synchronised correctly:
-
-#include "f_waitForJIP.sqf"
 waitUntil {!isnil "f_var_debugMode"};
+
 // ====================================================================================
 // DEBUG DEFINES
-
 
 #define SLV_NAME "(f\common\f_setLocalVars.sqf)"
 #define DEBUG_OUTPUT player sidechat
@@ -251,8 +247,7 @@ if (f_var_debugMode == 1) then
 // COMMON VARIABLE: f_var_groups
 // We will create an array containing all groups.
 
-f_var_groups = [];
-f_var_groups = f_var_groups_BLU + f_var_groups_RES + f_var_groups_OPF + f_var_groups_CIV;
+f_var_groups = allGroups;
 
 // DEBUG
 if (f_var_debugMode == 1) then
@@ -263,11 +258,31 @@ if (f_var_debugMode == 1) then
 
 // ====================================================================================
 
+// COMMON VARIABLE: f_var_groups_players
+// We will create an array containing all groups with at least one player.
+
+f_var_groups_players = [];
+{
+	_units = units _x;
+	if ({isPlayer _x} count _units >= 1) then {
+		f_var_groups_players set [count f_var_groups_players,_x];
+	};
+} forEach f_var_groups;
+
+// DEBUG
+if (f_var_debugMode == 1) then
+{
+ 	_str_f_var_groups = str f_var_groups;
+ 	DEBUG_OUTPUT format ["DEBUG %2: f_var_groups = %1",_str_f_var_groups, SLV_NAME];
+};
+
+
+// ====================================================================================
+
 // COMMON VARIABLE: f_var_vehicles
 // We will create an array containing all vehicles.
 
-f_var_vehicles = [];
-{if (_x isKindOf "LandVehicle" || _x isKindOf "Air" || _x isKindOf "Ship") then {f_var_vehicles = f_var_vehicles + [_x]}} forEach f_var_units;
+f_var_vehicles = vehicles;
 
 // DEBUG
 if (f_var_debugMode == 1) then
@@ -336,6 +351,3 @@ if (f_var_debugMode == 1) then
 	DEBUG_OUTPUT format ["DEBUG %2: f_var_vehicles_CIV = %1",_str_f_var_vehicles_CIV, SLV_NAME];
 };
 
-// ====================================================================================
-
-if (true) exitWith {};
