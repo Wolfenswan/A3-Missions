@@ -92,6 +92,8 @@ if (f_var_debugMode == 1) then
 
 // ====================================================================================
 
+f_param_backpacks = 0;
+
 // ====================================================================================
 
 // GEAR: BLUFOR > NATO
@@ -121,17 +123,25 @@ if (_faction == "opf_f") then {
 // automatically includes a file which contains the appropriate equipment data.
 
 if(_faction == "ind_f") then {
-	#include "f_assignGear_aaf.sqf";
+	#include "f_assignGear_cops.sqf";
 };
 
 // ====================================================================================
 
-// GEAR: FIA
+// GEAR: COPS
 // The following block of code executes only if the unit is in a FIA slot (any faction); it
 // automatically includes a file which contains the appropriate equipment data.
 
-if (_faction in ["blu_g_f","opf_g_f","ind_g_f"]) then {
-	#include "f_assignGear_fia.sqf"
+if (_faction == "blu_g_f") then {
+	#include "f_assignGear_cops.sqf"
+};
+
+// GEAR: Gangs
+// The following block of code executes only if the unit is in a FIA slot (any faction); it
+// automatically includes a file which contains the appropriate equipment data.
+
+if (_faction == "ind_g_f") then {
+	#include "f_assignGear_gangs.sqf"
 };
 
 // ====================================================================================

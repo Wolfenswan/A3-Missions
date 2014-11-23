@@ -35,16 +35,6 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 // ====================================================================================
 
-// NOTES: ADMINISTRATION
-// The code below creates the administration sub-section of notes.
-
-_adm = player createDiaryRecord ["diary", ["Administration","
-<br/>
-*** Insert information on administration and logistics here. ***
-"]];
-
-// ====================================================================================
-
 // NOTES: EXECUTION
 // The code below creates the execution sub-section of notes.
 
@@ -52,19 +42,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+We don't have the firepower or protection of the APD, so long range engagements are not an options.
 "]];
 
 // ====================================================================================
@@ -74,7 +52,7 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+Get the boss into the safety of the city, then flee with <marker name='mkrShip'>the boat</marker> towards Neochori.
 "]];
 
 // ====================================================================================
@@ -84,15 +62,13 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+The bastard cops have no decency! They tried to take out or boss while he was paying his respects. Luckily, we were tipped off and got the first wave of pigs. Now we need to make sure their reinforcements don't finish the job.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
-<br/><br/>
-FRIENDLY FORCES
-<br/>
-*** Insert information about friendly forces here.***
+A whole bunch of wankers in blue, probably with SMGs and bulletproof vests. Expect them from all directions.<br/><br/>
+NOTE<br/>
+Although tempting the gang must not equip police vests from dead officers.
 "]];
 
 // ====================================================================================

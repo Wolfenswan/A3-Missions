@@ -13,6 +13,7 @@ if (!isDedicated && !ws_isHC) then {
 if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParamValue;};
 
 // Do stuff on either HC or Server (e.g. spawning)
+/*
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 
 	_units = [];
@@ -23,7 +24,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 	} forEach _garrison;
 
 
-	/*
+
 	_gear = [
 		["hgun_PDW2000_F",5],
 		["SMG_01_F",6],
@@ -37,20 +38,29 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 		_wp = _gear call ws_fnc_selectRandom;
 	[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
 	} forEach _units;
-	*/
+
 };
+*/
+_pcars = [pcar] call ws_fnc_collectObjectsNum;
+{
+	_x addAction ["Beacons On",{(_this select 0) animate ["BeaconsStart",1]},[],50,false,true,"","_target animationPhase 'BeaconsStart' < 0.5 AND Alive(_target) AND driver _target == _this"];
+	_x addAction ["Beacons Off",{(_this select 0) animate ["BeaconsStart",0]},[],51,false,true,"","_target animationPhase 'BeaconsStart' > 0.5 AND Alive(_target) AND driver _target == _this"];
+	_veh = _x; {_veh setObjectTexture [_x,'#(argb,8,8,3)color(0.03,0.03,0.03,0.5)'];} forEach [0,1,2];
+	_x animate["hidePolice",0];
+} forEach _pcars;
+
 
 // Do more stuff exclusively on the server
 if (isServer) then {
 
 	// Recalculate F3 variables
-	[0] execVM "f\common\f_setLocalVars.sqf";
+	//[0] execVM "f\common\f_setLocalVars.sqf";
 
 	// Stuff to happen AFTER mission launch
-	sleep 0.1;
+	//sleep 0.1;
 
 	// If units were spawned set AI skill again
-	[] execVM "f\setAISKill\f_setAISkill.sqf";
+	//[] execVM "f\setAISKill\f_setAISkill.sqf";
 
 	// NVG-removal, add flashlights
 	/*
