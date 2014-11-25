@@ -444,7 +444,7 @@ switch (_unitfaction) do
 
 		["UnitFIA_CO_M", 0, "COM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
 		["UnitFIA_DC_M", 0, "DCM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
-		["UnitFIA_DC_D", 1, "Boat", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
+		["UnitFIA_CO_D", 1, "Boat", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
 		["UnitFIA_ASL_M", 0, "AM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
 		["UnitFIA_BSL_M", 0, "BM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
 		["UnitFIA_CSL_M", 0, "CM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;

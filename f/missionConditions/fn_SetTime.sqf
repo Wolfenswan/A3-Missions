@@ -80,8 +80,8 @@ switch (_timeOfDay) do
 // Night
 	case 7:
 	{
-		_hour = 0;
-		_minute = 0;
+		_hour = 00;
+		_minute = 07;
 	};
 };
 

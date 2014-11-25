@@ -42,7 +42,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
 <br/>
-We have better firepower and protection than the APD, the more we can avoid close quarters the better.
+We have better firepower and protection than the mob, the more we can avoid close quarters the better.
 "]];
 
 // ====================================================================================

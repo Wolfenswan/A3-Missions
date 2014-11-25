@@ -194,13 +194,13 @@ _specOp = ["co"];
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
 
-_baseUniform = ["U_C_Commoner1_1","U_C_Commoner1_2","U_C_Commoner1_3","U_OG_Guerilla3_1","U_OG_Guerilla3_2","U_OG_Guerilla2_3"];
+_baseUniform = ["U_OG_Guerilla3_1","U_OG_Guerilla3_2","U_OG_Guerilla2_3"];
 _baseHelmet = ["H_Booniehat_khk","H_Cap_oli","H_Watchcap_blk"];
 _baseGlasses = [];
 
 // Armored vests
 _lightRig = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
-_mediumRig = []; 	// default for all infantry classes
+_mediumRig = ["V_Rangemaster_belt"]; 	// default for all infantry classes
 _heavyRig = [];
 
 // Diver
@@ -318,13 +318,8 @@ switch (_typeofUnit) do
 // LOADOUT: CO/DC
 	case "co":
 	{
-		_unit addmagazines [_pistol3mag,4];
+		_unit addmagazines [_pistol3mag,6];
 		_unit addweapon _pistol3;
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_smokegrenade,2];
-		_unit addmagazines [_smokegrenadegreen,2];
-		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 	};
 
@@ -333,11 +328,8 @@ switch (_typeofUnit) do
 	{
 		_unit addmagazines [_pistol2mag,6];
 		_unit addweapon _pistol2;
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_smokegrenade,2];
-		_unit addmagazines [_smokegrenadegreen,2];
-		_unit addWeapon "Rangefinder";
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
 		_unit linkItem "ItemGPS";
 	};
 
@@ -347,19 +339,13 @@ switch (_typeofUnit) do
 	{
 		_unit addmagazines [_pistol2mag,6];
 		_unit addweapon _pistol2;
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_smokegrenade,2];
 	};
 
 // LOADOUT: GANGBANGER 2
 	case "gb2":
 	{
-		_unit addmagazines [_smg2mag,4];
+		_unit addmagazines [_smg2mag,6];
 		_unit addweapon _smg2;
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_smokegrenade,2];
 	};
 
 // LOADOUT: GANGBANGER 2
