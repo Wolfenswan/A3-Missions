@@ -5,7 +5,6 @@ class fspectator
 	class OnUnload{};
 	class DrawTags{};
 	class EventHandler{};
-	class GetIcon{};
 	class FreeCam{};
 	class GetPlayers{};
 	class ReloadModes{};
@@ -15,4 +14,5 @@ class fspectator
 	class OnMapClick{};
 	class DrawMarkers{};
 	class ForceExit{};
+	class HandleMenu{};
 };
