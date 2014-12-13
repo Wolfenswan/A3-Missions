@@ -5,7 +5,7 @@ The missions can be found on GitHub:<br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-2-0</i>
+<i>3-2-1</i>
 
 <b>Mission description</b><br/>
 Template mission.
