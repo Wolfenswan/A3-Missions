@@ -5,7 +5,7 @@ The missions can be found on GitHub:<br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-2-0 RC2</i>
+<i>3-2-1</i>
 
 <b>Mission description</b><br/>
 Inspired by Shuko's ARMA2 classic Jolly Green, this survive-and-rescue mission drops a NATO squad in the middle of nowhere. While an extraction helicopter is on the way, the survivors lack maps or GPS and need to identify where they are first. Meanwhile ZEUS-spawned units will do their best to 'entertain' them.
