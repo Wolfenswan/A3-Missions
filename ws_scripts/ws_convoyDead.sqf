@@ -3,8 +3,8 @@
 _hc = [] call ws_fnc_checkHC;
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 
-[CSAT,150,independent,12] call ws_fnc_createGarrison;
-[CSAT_1,15,independent,6] call ws_fnc_createGarrison;
+[CSAT,150,independent,16] call ws_fnc_createGarrison;
+[CSAT_1,15,independent,8] call ws_fnc_createGarrison;
 
 };
 

@@ -62,6 +62,11 @@ switch (_x) do {
 	case "FILE": {_grp setFormation _x;};
 	case "DIAMOND": {_grp setFormation _x;};
 
+	//Speed
+	case "LIMITED": {_grp setSpeedMode _x;};
+	case "NORMAL": {_grp setSpeedMode _x;};
+	case "FULL": {_grp setSpeedMode _x;};
+
 	default {["ws_fnc_setAIMode DBG:",_x,"is not a valid combatmode, behaviour or formation!"] call ws_fnc_debugText};
 };
 

@@ -40,8 +40,6 @@ _convoy = _leadv call ws_fnc_collectObjectsNum;
 _waypoints = _marker call ws_fnc_collectMarkers;
 _run = true;
 
-player globalchat format ["%1",_convoy];
-
 // Check if the convoy is in a condition to move at all
 if (({!canMove _x || !alive _x || (!isNull (_x findNearestEnemy (getPosATL _x)))} count _convoy) > 0) then {_run = false;};
 
