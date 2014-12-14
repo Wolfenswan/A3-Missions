@@ -128,7 +128,7 @@ f_var_doNotRemoveBodies = [];
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
+f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
 // f_showDistance_Nametags = true;			// Show distance to player
 // f_showVehicle_Nametags = true;			// Show vehicle player is in
 [20] execVM "f\nametag\f_nametags.sqf";
@@ -147,6 +147,13 @@ f_var_doNotRemoveBodies = [];
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [] execVM "f\briefing\f_orbatNotes.sqf";
+
+// ====================================================================================
+
+// F3 - Loadout Notes
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+[] execVM "f\briefing\f_loadoutNotes.sqf";
 
 // ====================================================================================
 
