@@ -8,11 +8,11 @@ RETURNS
 group
 
 USAGE
-[group,behaviour,combatmode,formation] call ws_fnc_setAIMode
+[group,behaviour,combatmode,formation,speed] call ws_fnc_setAIMode
 
 PARAMETERS
 1. Group to be set
-2. Combat mode, Behaviour and/or formation to be set (all strings, order does not matter)
+2. Combat mode, Behaviour, speed and/or formation to be set (all strings, order does not matter)
 
 EXAMPLES
 [Group1,"LINE"] call ws_fnc_setAIMode;
@@ -24,6 +24,8 @@ Accepted Strings:
 "CARELESS" "SAFE" "AWARE" "COMBAT" "STEALTH".
 
 "BLUE"  "GREEN"  "WHITE"  "YELLOW" "RED"
+
+"FULL" "NORMAL" "LIMITED"
 */
 
 private ["_grp","_modes"];
