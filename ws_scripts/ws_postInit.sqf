@@ -15,12 +15,14 @@ if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParam
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 
+	/*
 	_units = [];
 	_garrison = ([AAF] call ws_fnc_collectObjectsNum) + ([NATO] call ws_fnc_collectObjectsNum);
 	{
 		_units = _units + ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
 		//deleteVehicle _x;
 	} forEach _garrison;
+	*/
 
 
 	/*
