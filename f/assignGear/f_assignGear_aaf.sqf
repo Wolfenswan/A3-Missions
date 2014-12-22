@@ -184,7 +184,7 @@ _MMGmag_tr = "150Rnd_762x51_Box_Tracer";
 
 // Rifleman AT
 _RAT = "launch_RPG32_F";
-_RATmag = "RPG32_F";
+_RATmag = "RPG32_HE_F";
 
 // Medium AT
 _MAT = "launch_NLAW_F";
@@ -296,7 +296,7 @@ if (_isMan) then {
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	_unit linkItem _nvg;			// Add and equip the faction's nvg
+	//_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
 	_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass

@@ -40,7 +40,6 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-Team leaders and attachment assistens are equipped with Rangefinders.<br/>
 All Rifleman AT carry HE rockets.
 "]];
 
@@ -57,10 +56,12 @@ FIRE SUPPORT
 <br/>
 CO can call in mortar strikes via the radio support menu (0-8).<br/>
 Two mortars are available and both carry 32 HE shells as well as 18 smoke and flare shells each.<br/><br/>
+REINFORCEMENTS
+<br/>
+If necessary squad Juliet and an attached HMG strider can reinforce our assault from the east. However, FIA will most likely have prepared heavy defenses against any advance from that direction.
 PRIORITY TARGETS
 <br/>
 Any manpads and static AA in the area need to be destroyed.<br/>
-If present disable or - if necessary - destroy the Mora IFV.<br/>
 "]];
 
 // ====================================================================================
@@ -70,7 +71,7 @@ If present disable or - if necessary - destroy the Mora IFV.<br/>
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-1. We are inserted <marker name='mkrInsert'>here</marker>. Markers indicating the drops for each squad, attachments are with CO.<br/>
+1. We are inserted <marker name='mkrInsert'>here</marker>. Markers indicating the drops for each squad, WEP1 is with CO.<br/>
 2. Proceed into the indicated AO, towards <marker name='mkrFIA'>Agios Konstantinos</marker>.<br/>
 3. Eliminate the majority of the FIA forces and all high priority targets (see TASKS).<br/><br/>
 "]];
@@ -82,16 +83,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-FIA rebels have had a firm grip on the western part of Altis for too long. From <marker name='mkrFIA'>Agios Konstantinos</marker> they are easily able to conduct raids into our territory and use it as a base for their smuggling operations. Dislodging them will be a crucial blow to them and the first step to regain control of our island. Our platoon is inserted via heli to the West, while mechanized elements are blocking the roads leading away to the east and north-east.
+FIA rebels have had a firm grip on the western part of Altis for too long. From <marker name='mkrFIA'>Agios Konstantinos</marker> they are able to conduct raids into our territory and use it as a base for their smuggling operations. Dislodging them will be a crucial blow to their operations and the first step towards regaining control of our island.
 <br/><br/>
 ENEMY FORCES
 <br/>
-The FIA are mostly irregulars with assault rifles, smgs and technicals. In a recent raid the FIA managed to obtain a working Mora IFV as well as an assortment of static weapons, including mortars. It's very likely that they will be used in defence of the outpost.
+The FIA are mostly irregulars with assault rifles, smgs and technicals. In a recent raid the FIA managed to obtain an assortment of static weapons, including mortars. It's very likely that they will be used in defence of the outpost.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-<marker name='mkrAAF'>Mechanized elements</marker> are preventing the FIA from fleeing towards Kavala.<br/><br/>
-A mortar battery is on standby. See EXECUTION for details.
+<marker name='mkrAAF'>Motorized elements</marker> are preventing the FIA from fleeing towards Kavala.<br/>
+A mortar battery is on standby and squad Juliet is preparing to reinforce our assault from the east. See EXECUTION for details.
 "]];
 
 // ====================================================================================
