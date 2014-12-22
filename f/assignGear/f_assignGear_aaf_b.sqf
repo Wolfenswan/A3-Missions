@@ -274,10 +274,7 @@ case "mmgag":
 		(unitBackpack _unit) addMagazineCargoGlobal [_riflemag, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_riflemag_tr, 1];
 		(unitBackpack _unit) addMagazineCargoGlobal [_MMGmag, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_MMGmag_tr, 1];
-		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 1];
-		(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 1];
-		(unitBackpack _unit) addMagazineCargoGlobal [_smokegrenade, 1];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 1];
 	};
 	// LOADOUT: HEAVY
 	if (f_param_backpacks == 2) then {
@@ -286,10 +283,7 @@ case "mmgag":
 		(unitBackpack _unit) addMagazineCargoGlobal [_riflemag, 4];
 		(unitBackpack _unit) addMagazineCargoGlobal [_riflemag_tr, 2];
 		(unitBackpack _unit) addMagazineCargoGlobal [_MMGmag, 3];
-		(unitBackpack _unit) addMagazineCargoGlobal [_MMGmag_tr, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 2];
-		(unitBackpack _unit) addMagazineCargoGlobal [_smokegrenade, 2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_MATmag1, 2];
 	};
 };
 

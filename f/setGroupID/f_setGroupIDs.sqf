@@ -271,6 +271,7 @@ _groups = [
 ["GrpAAF_J3","AAF J3 -"],
 
 ["GrpAAF_MMG1","AAF MMG1 -"],
+["GrpAAF_WEP1","AAF WEP1 -"],
 ["GrpAAF_HMG1","AAF HMG1 -"],
 ["GrpAAF_MAT1","AAF MAT1 -"],
 ["GrpAAF_HAT1","AAF HAT1 -"],
@@ -281,7 +282,7 @@ _groups = [
 ["GrpAAF_DT1","AAF DT1 -"],
 ["GrpAAF_ENG1","AAF ENG1 -"],
 
-["GrpAAF_IFV1","AAF IFV1 -"],
+["GrpAAF_IFV1","AAF STR1 -"],
 ["GrpAAF_IFV2","AAF IFV2 -"],
 ["GrpAAF_IFV3","AAF IFV3 -"],
 ["GrpAAF_IFV4","AAF IFV4 -"],
