@@ -34,7 +34,7 @@ array of created units
 
 // Default classes (Arma 3)
 // BLUFOR
-ws_var_garrisonWest = ["B_Soldier_lite_F","B_Soldier_F"];
+ws_var_garrisonWest = ["B_G_Soldier_lite_F","B_G_Soldier_F"];
 // OPFOR
 ws_var_garrisonEast = ["O_Soldier_lite_F","O_Soldier_F"];
 // INDEPENDENT
@@ -64,12 +64,12 @@ _classes = if (count _this > 5) then {_this select 5} else {[]};
 // If default classes are being used, select the corresponding array
 if (count _classes == 0) then {
 	switch (_side) do {
-		case west: {_classes = _wclasses};
-		case blufor: {_classes = _wclasses};
-		case east: {_classes = _eclasses};
-		case opfor: {_classes = _eclasses};
-		case resistance: {_classes = _iclasses};
-		case independent: {_classes = _iclasses};
+		case west: {_classes = ws_var_garrisonWest};
+		case blufor: {_classes = ws_var_garrisonWest};
+		case east: {_classes = ws_var_garrisonEast};
+		case opfor: {_classes = ws_var_garrisonEast};
+		case resistance: {_classes = ws_var_garrisonIndp};
+		case independent: {_classes = ws_var_garrisonIndp};
 	};
 };
 
