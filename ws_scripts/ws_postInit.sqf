@@ -16,7 +16,7 @@ if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParam
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 
 	_units = [];
-	_garrison = ([] call ws_fnc_collectObjectsNum);
+	_garrison = ([AAF] call ws_fnc_collectObjectsNum);
 	{
 		_units = _units + ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
 		//deleteVehicle _x;
@@ -38,28 +38,30 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 	[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
 	} forEach _units;
 	*/
+
+	_units execVM "f\setAISKill\f_setAISkill.sqf";
 };
 
 // Do more stuff exclusively on the server
 if (isServer) then {
 
 	// Recalculate F3 variables
-	[0] execVM "f\common\f_setLocalVars.sqf";
+	//[0] execVM "f\common\f_setLocalVars.sqf";
 
 	// Stuff to happen AFTER mission launch
-	sleep 0.1;
+	//sleep 0.1;
 
 	// If units were spawned set AI skill again
-	[] execVM "f\setAISKill\f_setAISkill.sqf";
+
 
 	// NVG-removal, add flashlights
-	/*
+
 	{
    private ["_unit"];
       _unit = _x;
 
       // Only run where the unit is local, it isn't a player and doesn't have a flashlight
-      if (local _unit && !isplayer _unit && !("acc_flashlight" in primaryWeaponItems _unit)) then {
+      if (local _unit && !isplayer _unit && side _unit == resistance &&!("acc_flashlight" in primaryWeaponItems _unit)) then {
 
       // Remove laser if equipped
       if ("acc_pointer_IR" in primaryWeaponItems _unit) then {_x removePrimaryWeaponItem "acc_pointer_IR"};
@@ -72,7 +74,7 @@ if (isServer) then {
       };
 
       // Forces flashlights on
-       // _unit enablegunlights "forceOn";
-} forEach allUnits;
-	*/
+      // _unit enablegunlights "forceOn";
+	} forEach allUnits;
+
 };

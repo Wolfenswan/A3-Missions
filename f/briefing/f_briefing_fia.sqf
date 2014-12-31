@@ -35,6 +35,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 // ====================================================================================
 
+/*
 // NOTES: ADMINISTRATION
 // The code below creates the administration sub-section of notes.
 
@@ -66,7 +67,7 @@ SPECIAL TASKS
 <br/>
 *** Insert instructions for specific units here. ***
 "]];
-
+*/
 // ====================================================================================
 
 // NOTES: MISSION
@@ -84,15 +85,11 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+Our brothers managed to hit a Mi-48 which has been terrorizing our operations in the north-west for ages. It landed at the military post near Styrga to refuel and repair. As we're the closest cell, it's on us to take it out for good.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
-<br/><br/>
-FRIENDLY FORCES
-<br/>
-*** Insert information about friendly forces here.***
+Mostly infantry. Be aware of <marker name='mkrOutpost'>forward outposts</marker>.
 "]];
 
 // ====================================================================================

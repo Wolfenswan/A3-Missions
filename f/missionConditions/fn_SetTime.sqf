@@ -39,13 +39,13 @@ switch (_timeOfDay) do
 	case 0:
 	{
 		_hour = 4;
-		_minute = 50;
+		_minute = 10;
 	};
 // Early Morning
 	case 1:
 	{
-		_hour = 5;
-		_minute = 20;
+		_hour = 4;
+		_minute = 50;
 	};
 // Morning
 	case 2:
