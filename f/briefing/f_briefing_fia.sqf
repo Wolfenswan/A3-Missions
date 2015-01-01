@@ -75,7 +75,8 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+Proceed to Styrga and take out the helicopter by any means necessary.<br/>
+
 "]];
 
 // ====================================================================================
@@ -85,11 +86,13 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-Our brothers managed to hit a Mi-48 which has been terrorizing our operations in the north-west for ages. It landed at the military post near Styrga to refuel and repair. As we're the closest cell, it's on us to take it out for good.
+Our brothers managed to hit a Kaiman which has been terrorizing our operations in the north-west for ages. It landed at the military post near <marker name='mkrHeli'>Styrga</marker> to refuel and repair. As we're the closest cell, it's on us to take it out for good.
 <br/><br/>
 ENEMY FORCES
 <br/>
-Mostly infantry. Be aware of <marker name='mkrOutpost'>forward outposts</marker>.
+The usual assortment of boot-licking, foul-smelling army peons. In the recent weeks they've built <marker name='mkrOutpost'>forward outposts</marker> from which they send patrols into the woods. They'll probably be extra careful while the helicopter is present.<br/>
+CSAT might have sent reinforcements to protect their precious little toy. If so, they'll come in from the east.<br/>
+If we take too long the helicopter will most likely be used against us once it is in working condition.
 "]];
 
 // ====================================================================================

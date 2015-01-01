@@ -6,7 +6,7 @@ if (!isDedicated && !ws_isHC) then {
 	// Display a short text intro
  	[] spawn {
 	 waitUntil {time > 15};
-		["OPERATION XYZ","CENTRAL ALTIS"] call ws_fnc_showIntro;
+		["GATOR RAID","NORTH OF STYRGA"] call ws_fnc_showIntro;
 	};
 };
 
@@ -40,6 +40,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 	*/
 
 	_units execVM "f\setAISKill\f_setAISkill.sqf";
+	_units execVM "f\assignGear\f_assignGear_AI.sqf";
 };
 
 // Do more stuff exclusively on the server
@@ -50,31 +51,5 @@ if (isServer) then {
 
 	// Stuff to happen AFTER mission launch
 	//sleep 0.1;
-
-	// If units were spawned set AI skill again
-
-
-	// NVG-removal, add flashlights
-
-	{
-   private ["_unit"];
-      _unit = _x;
-
-      // Only run where the unit is local, it isn't a player and doesn't have a flashlight
-      if (local _unit && !isplayer _unit && side _unit == resistance &&!("acc_flashlight" in primaryWeaponItems _unit)) then {
-
-      // Remove laser if equipped
-      if ("acc_pointer_IR" in primaryWeaponItems _unit) then {_x removePrimaryWeaponItem "acc_pointer_IR"};
-      _unit addPrimaryWeaponItem "acc_flashlight";   // Add flashlight
-
-         // Removes NVGs from unit
-         {
-            if (_x in assigneditems _unit) exitWith {_unit unlinkItem _x};
-         } forEach ["NVGoggles_OPFOR","NVGoggles_INDEP","NVGoggles"];
-      };
-
-      // Forces flashlights on
-      // _unit enablegunlights "forceOn";
-	} forEach allUnits;
 
 };
