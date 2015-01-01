@@ -13,3 +13,5 @@ if (!isDedicated && !_hc) then {
 		] spawn BIS_fnc_typeText;
 	};
 };
+
+#include "ws_copcars.sqf";
