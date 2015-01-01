@@ -238,7 +238,7 @@ switch (_typeofUnit) do
 
 // ====================================================================================
 
-// LOADOUT: CO/DC
+// LOADOUT: CO
 case "co":
 	{
 		_unit addmagazines [_pistolmag,6];
@@ -246,7 +246,20 @@ case "co":
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];
-		_unit addmagazines [_smokegrenadegreen,2];
+		removeHeadgear _unit;
+		_unit addHeadgear "H_Beret_blk_POLICE";
+		_unit addWeapon "Rangefinder";
+		_unit linkItem "ItemGPS";
+	};
+
+// LOADOUT: DC
+case "dc":
+	{
+		_unit addmagazines [_smgmag,7];
+		_unit addweapon _smg;
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
+		_unit addmagazines [_smokegrenade,2];
 		removeHeadgear _unit;
 		_unit addHeadgear "H_Beret_blk_POLICE";
 		_unit addWeapon "Rangefinder";
@@ -263,8 +276,6 @@ case "co":
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];
-		_unit addmagazines [_smokegrenadegreen,2];
-		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 	};
 
@@ -458,8 +469,6 @@ case "co":
 // LOADOUT: DEFAULT/UNDEFINED (use RIFLEMAN)
    default
    {
-		_unit addmagazines [_riflemag,7];
-		_unit addweapon _rifle;
 
 		_unit selectweapon primaryweapon _unit;
 

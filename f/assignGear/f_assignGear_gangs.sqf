@@ -281,11 +281,21 @@ switch (_typeofUnit) do
 		_unit linkItem "ItemGPS";
 	};
 
+// LOADOUT: CO/DC
+	case "dc":
+	{
+		// Randomly select a weapon
+		[_unit,[_smg2,_smg3,_pistol2,_pistol] call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
+		_unit linkItem "ItemGPS";
+	};
+
 // LOADOUT: FIRE TEAM LEADER
 	case "ftl":
 	{
 		// Randomly select a weapon
-		[_unit,[_smg2,_smg3,_pistol2,_pistol3] call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
+		[_unit,[_smg2,_smg3,_pistol2,_pistol] call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
 		_unit addmagazines [_grenade,2];
 		_unit addmagazines [_mgrenade,2];
 		_unit linkItem "ItemGPS";
@@ -296,7 +306,7 @@ switch (_typeofUnit) do
 	case "gb":
 	{
 		// Randomly select a weapon
-		[_unit,[_smg2,_smg3,_pistol2,_pistol3] call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
+		[_unit,[_smg2,_smg3,_pistol2,_pistol] call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
 	};
 
 // LOADOUT: VEHICLE DRIVER
@@ -441,9 +451,6 @@ case "vd":
 // LOADOUT: DEFAULT/UNDEFINED (use RIFLEMAN)
    default
    {
-		_unit addmagazines [_riflemag,7];
-		_unit addweapon _rifle;
-
 		_unit selectweapon primaryweapon _unit;
 
 		if (true) exitwith {player globalchat format ["DEBUG (f\assignGear\folk_assignGear.sqf): Unit = %1. Gear template %2 does not exist, used Rifleman instead.",_unit,_typeofunit]};

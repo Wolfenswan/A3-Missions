@@ -107,10 +107,10 @@ f_var_doNotRemoveBodies = [];
 // [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // BLUFOR > NATO
-[BLUFOR,100,1] execVM "f\server\f_endOnCasualtiesCap.sqf";
+[BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-[OPFOR,100,2] execVM "f\server\f_endOnCasualtiesCap.sqf";
+[OPFOR,100,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
 // [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
@@ -181,13 +181,9 @@ f_showDistance_Nametags = true;			// Show distance to player
 // F3 - JIP setup
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-<<<<<<< HEAD
-//[] execVM "f\common\f_safeStart.sqf";
-=======
 f_var_JIP_FirstMenu = false;		// Do players connecting for the first time get the JIP menu? - This only works in missions with respawn.
 f_var_JIP_RemoveCorpse = false;		// Remove the old corpse of respawning players?
 f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear? False will use gear assigned by F3 Gear Component if possible
->>>>>>> 7b608235100eda94232924c45c4b516d98be17ca
 
 // ====================================================================================
 

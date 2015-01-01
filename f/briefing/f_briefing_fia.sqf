@@ -2,7 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// FACTION: FIA
+// FACTION: AAF
 
 // ====================================================================================
 
@@ -40,9 +40,8 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-We all have SMGs or pistols as well as a few grenades.
+Each fireteam has their own vehicle.
 "]];
-
 
 // ====================================================================================
 
@@ -51,7 +50,7 @@ We all have SMGs or pistols as well as a few grenades.
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-Take the old hotel and kill every single one of the FAI dickheads.<br/>
+Proceed to the hotel and kick some ass.
 "]];
 
 // ====================================================================================
@@ -61,15 +60,12 @@ Take the old hotel and kill every single one of the FAI dickheads.<br/>
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-The FAI bastards think they are oh-so-clever, using the old hotel as a hideout. Let's teach them a lesson!
+The Mafia has recently moved a big stash to the <marker name='mkrHotel'>old hotel</marker>. We're taking it out tonight.
 <br/><br/>
 ENEMY FORCES
 <br/>
-They are without any fashion sense and thus wear hats.
+Lowlife scumbags and dirty thugs. Nobody Altis will miss.
 <br/><br/>
-FRIENDLY FORCES
-<br/>
-We are superior in taste and have bandanas.<br/><br/>
 "]];
 
 // ====================================================================================
