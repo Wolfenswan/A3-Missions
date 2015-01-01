@@ -228,7 +228,7 @@ _specOp = [];
 // The outfit-piece is randomly selected from the array for each unit
 
 _baseUniform = ["U_BG_leader","U_BG_Guerilla1_1","U_BG_Guerilla2_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_Guerilla3_1","U_BG_Guerilla3_2","U_BG_Guerrilla_6_1"];
-_baseHelmet = ["H_Bandanna_khk"];
+_baseHelmet = ["H_Booniehat_khk"];
 _baseGlasses = ["G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli"];
 
 // Armored vests
@@ -929,6 +929,7 @@ switch (_typeofUnit) do
 		_unit addItemCargoGlobal [_firstaid, 75];
 };
 
+
 // LOADOUT: DEFAULT/UNDEFINED (use RIFLEMAN)
    default
    {
@@ -949,7 +950,7 @@ switch (_typeofUnit) do
 removeAllWeapons _unit;
 removeAllItemsWithMagazines _unit;
 
-_weapons = ["SMG_01_F","SMG_02_F","hgun_Pistol_heavy_01_F","hgun_Pistol_heavy_02_F","hgun_PDW2000_F","hgun_ACPC2_F","hgun_PDW2000_F","SMG_02_F","hgun_Pistol_heavy_01_F","hgun_Rook40_F"];
+_weapons = ["SMG_01_F","SMG_02_F","hgun_Pistol_heavy_01_F","hgun_Pistol_heavy_02_F","hgun_PDW2000_F","hgun_ACPC2_F","hgun_PDW2000_F","SMG_02_F","hgun_Pistol_heavy_01_F"];
 [_unit,_weapons call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
 
 // ====================================================================================

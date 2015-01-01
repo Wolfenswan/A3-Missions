@@ -2,7 +2,7 @@ _hc = [] call ws_fnc_checkHC;
 
 // Display a short text intro
 if (!isDedicated && !_hc) then {
- ["ROOMSERVICE","NORTHERN ALTIS"] spawn {
+ ["ROOM-SERVICE","NORTHERN ALTIS"] spawn {
 	 waitUntil {time > 15};
 		[
 			[
