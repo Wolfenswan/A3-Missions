@@ -40,7 +40,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-We all have SMGs with flashlights and a few grenades.
+We all have SMGs or pistols as well as a few grenades.
 "]];
 
 
@@ -65,11 +65,11 @@ The FAI bastards think they are oh-so-clever, using the old hotel as a hideout. 
 <br/><br/>
 ENEMY FORCES
 <br/>
-They are without any fashion sense and thus wear bandanas.
+They are without any fashion sense and thus wear hats.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-We are superior in taste and have hats.<br/><br/>
+We are superior in taste and have bandanas.<br/><br/>
 "]];
 
 // ====================================================================================

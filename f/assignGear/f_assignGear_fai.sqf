@@ -316,7 +316,6 @@ if (_isMan) then {
 // SETUP BACKPACKS
 // Include the correct backpack file for the faction
 
-/*
 _backpack = {
 	_typeofBackPack = _this select 0;
 	switch (_typeofBackPack) do
@@ -324,7 +323,10 @@ _backpack = {
 		#include "f_assignGear_fia_b.sqf";
 	};
 };
-*/
+
+
+_weapons = ["SMG_01_F","SMG_02_F","hgun_Pistol_heavy_01_F","hgun_Pistol_heavy_02_F","hgun_PDW2000_F","hgun_ACPC2_F","hgun_PDW2000_F","SMG_02_F","hgun_Pistol_heavy_01_F","hgun_Rook40_F"];
+[_unit,_weapons call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
 
 // ====================================================================================
 
@@ -340,46 +342,26 @@ switch (_typeofUnit) do
 // LOADOUT: COMMANDER
 	case "co":
 	{
-		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
-		_unit addmagazines [_glmag,3];
-		_unit addmagazines [_glsmokewhite,4];
-		_unit addweapon _glrifle;					//_COrifle
-		_unit addmagazines [_pistolmag,2];
-		_unit addweapon _pistol;
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_smokegrenadegreen,2];
-		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
-		["g"] call _backpack;
 	};
 
 // LOADOUT: DEPUTY COMMANDER AND SQUAD LEADER
 	case "dc":
 	{
-		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
-		_unit addmagazines [_glmag,3];
-		_unit addmagazines [_glsmokewhite,4];
-		_unit addweapon _glrifle;					//_DCrifle
-		_unit addmagazines [_pistolmag,2];
-		_unit addweapon _pistol;
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_smokegrenadegreen,2];
-		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
-		["g"] call _backpack;
 	};
 
 // LOADOUT: MEDIC
 	case "m":
 	{
-		_unit addmagazines [_carbinemag,7];
-		_unit addweapon _carbine;
 		_unit addmagazines [_smokegrenade,4];
 		{_unit addItem _firstaid} forEach [1,2,3,4];
 		_unit linkItem "ItemGPS";
@@ -389,18 +371,13 @@ switch (_typeofUnit) do
 // LOADOUT: FIRE TEAM LEADER
 	case "ftl":
 	{
-		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
-		_unit addmagazines [_glmag,5];
-		_unit addmagazines [_glsmokewhite,4];
-		_unit addweapon _glrifle;					//_FTLrifle
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
 		_unit addmagazines [_smokegrenade,2];
-		_unit addmagazines [_smokegrenadegreen,2];
-		_unit addWeapon "Rangefinder";
+		//_unit addmagazines [_smokegrenadegreen,2];
+		//_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
-		["g"] call _backpack;
+		//["g"] call _backpack;
 	};
 
 
@@ -755,13 +732,10 @@ switch (_typeofUnit) do
 // LOADOUT: RIFLEMAN
 	case "r":
 	{
-		_unit addmagazines [_riflemag,7];
-		_unit addmagazines [_riflemag_tr,2];
-		_unit addweapon _rifle;
-		_unit addmagazines [_grenade,3];
-		_unit addmagazines [_mgrenade,3];
-		_unit addmagazines [_smokegrenade,3];
-		["r"] call _backpack;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
+		_unit addmagazines [_smokegrenade,2];
+		//["r"] call _backpack;
 	};
 
 // LOADOUT: CARABINEER
@@ -929,7 +903,6 @@ switch (_typeofUnit) do
 		_unit addItemCargoGlobal [_firstaid, 75];
 };
 
-
 // LOADOUT: DEFAULT/UNDEFINED (use RIFLEMAN)
    default
    {
@@ -946,12 +919,6 @@ switch (_typeofUnit) do
 
 // END SWITCH FOR DEFINE UNIT TYPE LOADOUTS
 };
-
-removeAllWeapons _unit;
-removeAllItemsWithMagazines _unit;
-
-_weapons = ["SMG_01_F","SMG_02_F","hgun_Pistol_heavy_01_F","hgun_Pistol_heavy_02_F","hgun_PDW2000_F","hgun_ACPC2_F","hgun_PDW2000_F","SMG_02_F","hgun_Pistol_heavy_01_F"];
-[_unit,_weapons call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
 
 // ====================================================================================
 // If this is an ammobox, check medical component settings and if needed run converter script.
