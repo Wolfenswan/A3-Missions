@@ -44,7 +44,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 if (isServer) then {
 
 	// Recalculate F3 variables
-	[0] execVM "f\common\f_setLocalVars.sqf";
+	//[0] execVM "f\common\f_setLocalVars.sqf";
 
 	// Stuff to happen AFTER mission launch
 	sleep 0.1;
@@ -73,6 +73,6 @@ if (isServer) then {
 
       // Forces flashlights on
        // _unit enablegunlights "forceOn";
-} forEach allUnits;
+	} forEach allUnits;
 	*/
 };
