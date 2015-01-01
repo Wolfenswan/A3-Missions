@@ -123,7 +123,7 @@ if (_faction == "opf_f") then {
 // automatically includes a file which contains the appropriate equipment data.
 
 if(_faction == "ind_f") then {
-	#include "f_assignGear_aaf.sqf";
+	#include "f_assignGear_cops.sqf";
 };
 
 // ====================================================================================
@@ -137,7 +137,7 @@ if (_faction in ["blu_g_f"]) then {
 };
 
 if (_faction in ["opf_g_f"]) then {
-	#include "f_assignGear_fai.sqf"
+	#include "f_assignGear_gangs.sqf"
 };
 
 // ====================================================================================

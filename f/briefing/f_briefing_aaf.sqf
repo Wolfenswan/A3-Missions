@@ -40,31 +40,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
-"]];
-
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-COMMANDER'S INTENT
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-MOVEMENT PLAN
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-FIRE SUPPORT PLAN
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-SPECIAL TASKS
-<br/>
-*** Insert instructions for specific units here. ***
+Each fireteam has their own vehicle.
 "]];
 
 // ====================================================================================
@@ -74,7 +50,7 @@ SPECIAL TASKS
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+Proceed to the hotel and kick some ass.
 "]];
 
 // ====================================================================================
@@ -84,15 +60,12 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+There's a notorious gang holed up at the <marker name='mkrHotel'>old hotel</marker>. We're taking them out tonight.
 <br/><br/>
 ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
+Lowlife scumbags and dirty thugs. Nobody Altis will miss.
 <br/><br/>
-FRIENDLY FORCES
-<br/>
-*** Insert information about friendly forces here.***
 "]];
 
 // ====================================================================================
