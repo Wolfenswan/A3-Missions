@@ -29,26 +29,36 @@ class Mission
 		"A3_Modules_F",
 		"a3_characters_f",
 		"A3_Soft_F_Gamma_Offroad",
-		"a3_soft_f_offroad_01"
+		"a3_soft_f_offroad_01",
+		"A3_Structures_F_Mil_Helipads",
+		"A3_Soft_F_MRAP_02",
+		"A3_Soft_F_Car",
+		"A3_Modules_F_Multiplayer",
+		"A3_Modules_F_Kart"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_Civil",
 		"a3_characters_f",
 		"A3_Characters_F_Gamma",
-		"A3_Modules_F_Curator_Effects",
 		"A3_Modules_F",
 		"A3_Modules_F_Curator_Misc",
+		"A3_Modules_F_Kart",
+		"A3_Modules_F_Multiplayer",
 		"A3_Soft_F_Truck",
+		"A3_Soft_F_MRAP_02",
 		"A3_Soft_F_Gamma_Offroad",
 		"a3_soft_f_offroad_01",
+		"A3_Soft_F_Car",
+		"A3_Air_F_EPB_Heli_Light_03",
+		"A3_Structures_F_Mil_Helipads",
 		"a3_map_altis"
 	};
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_a60_Roomservice_v1";
-		overviewText="Drugs are at stashed the derelict Hotel. Can the FIA steal them from the Altis Mafia? Slot FIA:Altis Mafia about 2:1.";
+		briefingName="fa3_a62_Roomservice_v1";
+		overviewText="The notorious Altis Mafia is using the derelict Hotel as hideout and stash. Can Altis Finest but an end to their operations?";
 		startWeather=0.84999996;
 		startWind=0;
 		forecastWeather=1;
@@ -68,7 +78,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=28;
+		items=34;
 		class Item0
 		{
 			side="CIV";
@@ -117,7 +127,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={23073.248,53.369152,21127.223};
+					position[]={23123.139,55.023281,21169.842};
 					azimut=-130.05901;
 					id=2;
 					side="WEST";
@@ -132,7 +142,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={23073.396,53.322498,21130.428};
+					position[]={23123.287,55.191853,21173.047};
 					azimut=-130.05901;
 					id=3;
 					side="WEST";
@@ -154,7 +164,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={23057.41,52.63718,21137.559};
+					position[]={23058.691,52.102417,21144.918};
 					azimut=-130.05901;
 					id=4;
 					side="WEST";
@@ -169,7 +179,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={23057,52.535332,21140.506};
+					position[]={23058.281,51.57711,21147.865};
 					azimut=-130.05901;
 					id=5;
 					side="WEST";
@@ -207,27 +217,27 @@ class Mission
 				class Item1
 				{
 					position[]={23116.303,54.103268,21135.799};
-					azimut=-130.05946;
+					azimut=-130.05901;
 					id=7;
 					side="WEST";
-					vehicle="B_G_soldier_AR_F";
+					vehicle="B_G_Soldier_AR_F";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A1_AR";
-					init="GrpFIA_A1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_A1 = group this; nul = [""cop2"",this] call f_fnc_assignGear ;";
 					description="APD Alpha 1 Policeman";
 				};
 				class Item2
 				{
 					position[]={23114.381,54.091599,21138.223};
-					azimut=-130.05946;
+					azimut=-130.05901;
 					id=8;
 					side="WEST";
 					vehicle="B_G_Soldier_F";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A1_AAR";
-					init="GrpFIA_A1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_A1 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Alpha 1 Policeman";
 				};
 				class Item3
@@ -240,7 +250,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A1_AT";
-					init="GrpFIA_A1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_A1 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Alpha 1 Policeman";
 				};
 			};
@@ -269,14 +279,14 @@ class Mission
 				class Item1
 				{
 					position[]={23128.738,54.672096,21145.791};
-					azimut=-130.05946;
+					azimut=-130.05901;
 					id=11;
 					side="WEST";
-					vehicle="B_G_soldier_AR_F";
+					vehicle="B_G_Soldier_AR_F";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A2_AR";
-					init="GrpFIA_A2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_A2 = group this; nul = [""cop2"",this] call f_fnc_assignGear ;";
 					description="APD Alpha 2 Policeman";
 				};
 				class Item2
@@ -289,7 +299,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A2_AAR";
-					init="GrpFIA_A2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_A2 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Alpha 2 Policeman";
 				};
 				class Item3
@@ -302,7 +312,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A2_AT";
-					init="GrpFIA_A2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_A2 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Alpha 2 Policeman";
 				};
 			};
@@ -331,14 +341,14 @@ class Mission
 				class Item1
 				{
 					position[]={23141.85,55.746906,21156.938};
-					azimut=-130.05946;
+					azimut=-130.05901;
 					id=15;
 					side="WEST";
-					vehicle="B_G_soldier_AR_F";
+					vehicle="B_G_Soldier_AR_F";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A3_AR";
-					init="GrpFIA_A3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_A3 = group this; nul = [""cop2"",this] call f_fnc_assignGear ;";
 					description="APD Alpha 3 Policeman";
 				};
 				class Item2
@@ -351,7 +361,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A3_AAR";
-					init="GrpFIA_A3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_A3 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Alpha 3 Policeman";
 				};
 				class Item3
@@ -364,7 +374,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A3_AT";
-					init="GrpFIA_A3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_A3 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Alpha 3 Policeman";
 				};
 			};
@@ -430,14 +440,14 @@ class Mission
 				class Item1
 				{
 					position[]={23149.281,55.057499,21114.836};
-					azimut=-127.13468;
+					azimut=-127.135;
 					id=21;
 					side="WEST";
-					vehicle="B_G_soldier_AR_F";
+					vehicle="B_G_Soldier_AR_F";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_B1_AR";
-					init="GrpFIA_B1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_B1 = group this; nul = [""cop2"",this] call f_fnc_assignGear ;";
 					description="APD Bravo 1 Policeman";
 				};
 				class Item2
@@ -450,7 +460,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_B1_AAR";
-					init="GrpFIA_B1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_B1 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Bravo 1 Policeman";
 				};
 				class Item3
@@ -463,7 +473,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_B1_AT";
-					init="GrpFIA_B1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_B1 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Bravo 1 Policeman";
 				};
 			};
@@ -492,14 +502,14 @@ class Mission
 				class Item1
 				{
 					position[]={23166.137,56.343224,21114.656};
-					azimut=-149.65367;
+					azimut=-149.65401;
 					id=25;
 					side="WEST";
-					vehicle="B_G_soldier_AR_F";
+					vehicle="B_G_Soldier_AR_F";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_B2_AR";
-					init="GrpFIA_B2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_B2 = group this; nul = [""cop2"",this] call f_fnc_assignGear ;";
 					description="APD Bravo 2 Policeman";
 				};
 				class Item2
@@ -512,7 +522,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_B2_AAR";
-					init="GrpFIA_B2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_B2 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Bravo 2 Policeman";
 				};
 				class Item3
@@ -525,7 +535,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_B2_AT";
-					init="GrpFIA_B2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_B2 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Bravo 2 Policeman";
 				};
 			};
@@ -554,14 +564,14 @@ class Mission
 				class Item1
 				{
 					position[]={23174.473,59.39949,21129.398};
-					azimut=-149.65367;
+					azimut=-149.65401;
 					id=29;
 					side="WEST";
-					vehicle="B_G_soldier_AR_F";
+					vehicle="B_G_Soldier_AR_F";
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_B3_AR";
-					init="GrpFIA_B3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_B3 = group this; nul = [""cop2"",this] call f_fnc_assignGear ;";
 					description="APD Bravo 3 Policeman";
 				};
 				class Item2
@@ -574,7 +584,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_B3_AAR";
-					init="GrpFIA_B3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_B3 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Bravo 3 Policeman";
 				};
 				class Item3
@@ -587,7 +597,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_B3_AT";
-					init="GrpFIA_B3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpFIA_B3 = group this; nul = [""cop"",this] call f_fnc_assignGear ;";
 					description="APD Bravo 3 Policeman";
 				};
 			};
@@ -600,7 +610,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={22016.418,41.476181,20897.885};
+					position[]={21804.783,7.7212892,20899.949};
 					azimut=39.641201;
 					id=32;
 					side="EAST";
@@ -615,7 +625,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={22016.842,42.837307,20894.686};
+					position[]={21805.207,7.5779004,20896.75};
 					azimut=39.641201;
 					id=33;
 					side="EAST";
@@ -637,7 +647,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={21962.205,23.398769,20938.154};
+					position[]={21769.279,19.093071,20935.73};
 					azimut=32.857101;
 					id=34;
 					side="EAST";
@@ -652,7 +662,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={21963.465,23.804062,20935.453};
+					position[]={21770.539,18.120186,20933.029};
 					azimut=32.857101;
 					id=35;
 					side="EAST";
@@ -674,7 +684,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={21953.889,23.454754,20925.295};
+					position[]={21770.525,14.583613,20925.938};
 					azimut=32.857147;
 					id=36;
 					side="EAST";
@@ -689,7 +699,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={21955.367,24.340561,20922.289};
+					position[]={21772.004,13.535466,20922.932};
 					azimut=32.857224;
 					id=37;
 					side="EAST";
@@ -697,12 +707,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_A1_AR";
-					init="GrpOFIA_A1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_A1 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Alpha 1 Gang Member";
 				};
 				class Item2
 				{
-					position[]={21957.918,25.218863,20920.514};
+					position[]={21774.555,12.958856,20921.156};
 					azimut=32.857224;
 					id=38;
 					side="EAST";
@@ -710,12 +720,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_A1_AAR";
-					init="GrpOFIA_A1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_A1 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Alpha 1 Gang Member";
 				};
 				class Item3
 				{
-					position[]={21960.584,26.134869,20918.777};
+					position[]={21777.221,12.362029,20919.42};
 					azimut=32.857224;
 					id=39;
 					side="EAST";
@@ -723,7 +733,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_A1_AT";
-					init="GrpOFIA_A1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_A1 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Alpha 1 Gang Member";
 				};
 			};
@@ -736,7 +746,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={21945.158,23.617491,20912.168};
+					position[]={21761.795,12.302041,20912.811};
 					azimut=32.857224;
 					id=40;
 					side="EAST";
@@ -751,7 +761,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={21946.416,24.910711,20909.084};
+					position[]={21763.053,10.949198,20909.727};
 					azimut=32.857224;
 					id=41;
 					side="EAST";
@@ -759,12 +769,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_A2_AR";
-					init="GrpOFIA_A2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_A2 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Alpha 2 Gang Member";
 				};
 				class Item2
 				{
-					position[]={21948.941,26.485098,20907.355};
+					position[]={21765.578,9.6628551,20907.998};
 					azimut=32.857224;
 					id=42;
 					side="EAST";
@@ -772,12 +782,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_A2_AAR";
-					init="GrpOFIA_A2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_A2 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Alpha 2 Gang Member";
 				};
 				class Item3
 				{
-					position[]={21951.734,28.182375,20905.547};
+					position[]={21768.371,8.6968508,20906.189};
 					azimut=32.857224;
 					id=43;
 					side="EAST";
@@ -785,7 +795,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_A2_AT";
-					init="GrpOFIA_A2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_A2 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Alpha 2 Gang Member";
 				};
 			};
@@ -798,7 +808,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={21935.77,25.891914,20897.77};
+					position[]={21752.406,6.5011234,20898.412};
 					azimut=32.857224;
 					id=44;
 					side="EAST";
@@ -813,7 +823,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={21937.162,27.760803,20894.584};
+					position[]={21753.799,4.189209,20895.227};
 					azimut=32.857224;
 					id=45;
 					side="EAST";
@@ -821,12 +831,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_A3_AR";
-					init="GrpOFIA_A3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_A3 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Alpha 3 Gang Member";
 				};
 				class Item2
 				{
-					position[]={21939.73,29.595821,20892.658};
+					position[]={21756.367,3.7262964,20893.301};
 					azimut=32.857224;
 					id=46;
 					side="EAST";
@@ -834,12 +844,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_A3_AAR";
-					init="GrpOFIA_A3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_A3 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Alpha 3 Gang Member";
 				};
 				class Item3
 				{
-					position[]={21942.426,31.449158,20890.818};
+					position[]={21759.063,3.4816213,20891.461};
 					azimut=32.857224;
 					id=47;
 					side="EAST";
@@ -847,7 +857,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_A3_AT";
-					init="GrpOFIA_A3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_A3 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Alpha 3 Gang Member";
 				};
 			};
@@ -860,7 +870,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={21982.104,28.996292,20924.818};
+					position[]={21798.74,11.696775,20925.461};
 					azimut=32.857101;
 					id=48;
 					side="EAST";
@@ -875,7 +885,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={21983.525,29.965729,20922.057};
+					position[]={21800.162,10.881084,20922.699};
 					azimut=32.857101;
 					special="NONE";
 					id=49;
@@ -898,7 +908,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={21973.826,31.614733,20911.709};
+					position[]={21790.463,9.0262203,20912.352};
 					azimut=32.857224;
 					id=50;
 					side="EAST";
@@ -913,7 +923,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={21975.381,33.095261,20908.787};
+					position[]={21792.018,8.0486164,20909.43};
 					azimut=32.857224;
 					id=51;
 					side="EAST";
@@ -921,12 +931,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_B1_AR";
-					init="GrpOFIA_B1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_B1 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Bravo 1 Gang Member";
 				};
 				class Item2
 				{
-					position[]={21977.824,34.232521,20907.064};
+					position[]={21794.461,7.4971828,20907.707};
 					azimut=32.857224;
 					id=52;
 					side="EAST";
@@ -934,12 +944,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_B1_AAR";
-					init="GrpOFIA_B1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_B1 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Bravo 1 Gang Member";
 				};
 				class Item3
 				{
-					position[]={21980.57,35.451897,20905.279};
+					position[]={21797.207,7.4698415,20905.922};
 					azimut=32.857224;
 					id=53;
 					side="EAST";
@@ -947,7 +957,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_B1_AT";
-					init="GrpOFIA_B1 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_B1 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Bravo 1 Gang Member";
 				};
 			};
@@ -960,7 +970,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={21964.787,35.273495,20898.793};
+					position[]={21781.424,5.9610353,20899.436};
 					azimut=32.857224;
 					id=54;
 					side="EAST";
@@ -975,7 +985,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={21966.49,37.372005,20895.576};
+					position[]={21783.127,5.375586,20896.219};
 					azimut=32.857224;
 					id=55;
 					side="EAST";
@@ -983,12 +993,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_B2_AR";
-					init="GrpOFIA_B2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_B2 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Bravo 2 Gang Member";
 				};
 				class Item2
 				{
-					position[]={21969.031,38.793793,20893.77};
+					position[]={21785.668,5.3937502,20894.412};
 					azimut=32.857224;
 					id=56;
 					side="EAST";
@@ -996,12 +1006,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_B2_AAR";
-					init="GrpOFIA_B2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_B2 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Bravo 2 Gang Member";
 				};
 				class Item3
 				{
-					position[]={21971.908,40.210625,20891.863};
+					position[]={21788.545,5.6214571,20892.506};
 					azimut=32.857224;
 					id=57;
 					side="EAST";
@@ -1009,7 +1019,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_B2_AT";
-					init="GrpOFIA_B2 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_B2 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Bravo 2 Gang Member";
 				};
 			};
@@ -1022,7 +1032,7 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={21955.734,38.586166,20884.291};
+					position[]={21772.371,3.3508568,20884.934};
 					azimut=32.857224;
 					id=58;
 					side="EAST";
@@ -1037,7 +1047,7 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={21957.533,40.084724,20881.186};
+					position[]={21774.17,3.2618604,20881.828};
 					azimut=32.857224;
 					id=59;
 					side="EAST";
@@ -1045,12 +1055,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_B3_AR";
-					init="GrpOFIA_B3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_B3 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Bravo 3 Gang Member";
 				};
 				class Item2
 				{
-					position[]={21960.16,41.320904,20879.377};
+					position[]={21776.797,3.3265722,20880.02};
 					azimut=32.857224;
 					id=60;
 					side="EAST";
@@ -1058,12 +1068,12 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_B3_AAR";
-					init="GrpOFIA_B3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_B3 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Bravo 3 Gang Member";
 				};
 				class Item3
 				{
-					position[]={21962.824,42.370403,20877.514};
+					position[]={21779.461,3.3436863,20878.156};
 					azimut=32.857224;
 					id=61;
 					side="EAST";
@@ -1071,7 +1081,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitOFIA_B3_AT";
-					init="GrpOFIA_B3 = group this; nul = [""r"",this] call f_fnc_assignGear ;";
+					init="GrpOFIA_B3 = group this; nul = [""gb"",this] call f_fnc_assignGear ;";
 					description="Altis Mafia Bravo 3 Gang Member";
 				};
 			};
@@ -1084,30 +1094,14 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23066.414,24.934996,20603.363};
-					azimut=-10.580216;
-					class args
-					{
-						items=2;
-						class Item0
-						{
-							value="Mediterranean";
-							parentCls="ModulePostprocess_F";
-							typeName="Template";
-						};
-						class Item1
-						{
-							value="0";
-							parentCls="ModulePostprocess_F";
-							typeName="CommitTime";
-						};
-					};
+					position[]={21846.602,28.170858,21000.855};
 					id=62;
 					side="LOGIC";
-					vehicle="ModulePostprocess_F";
+					vehicle="LocationArea_F";
 					leader=1;
-					lock="UNLOCKED";
 					skill=0.60000002;
+					syncId=0;
+					synchronizations[]={1,20};
 				};
 			};
 		};
@@ -1119,14 +1113,15 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={21846.602,28.170858,21000.855};
+					position[]={21865.248,27.092554,21008.596};
 					id=63;
 					side="LOGIC";
-					vehicle="LocationArea_F";
+					vehicle="ModuleCoverMap_F";
 					leader=1;
+					lock="UNLOCKED";
 					skill=0.60000002;
-					syncId=0;
-					synchronizations[]={1,16};
+					syncId=1;
+					synchronizations[]={0};
 				};
 			};
 		};
@@ -1138,15 +1133,16 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={21876.529,25.589342,21014.027};
+					position[]={23083.168,50.8899,21160.387};
 					id=64;
 					side="LOGIC";
-					vehicle="ModuleCoverMap_F";
+					vehicle="Logic";
 					leader=1;
-					lock="UNLOCKED";
 					skill=0.60000002;
-					syncId=1;
-					synchronizations[]={0};
+					text="F3_preMount_FIA";
+					init="[synchronizedObjects this,[""GrpFIA_A1"",""GrpFIA_A2"",""GrpFIA_A3""],true,false] call f_fnc_mountGroups;";
+					syncId=2;
+					synchronizations[]={11,12,15};
 				};
 			};
 		};
@@ -1158,16 +1154,16 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23083.168,50.8899,21160.387};
+					position[]={23134.861,57.011852,21187.479};
 					id=65;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					text="F3_preMount_FIA";
-					init="[synchronizedObjects this,[""GrpFIA_A1"",""GrpFIA_A2"",""GrpFIA_A3""],true,false] call f_fnc_mountGroups;";
-					syncId=2;
-					synchronizations[]={7,8,11};
+					text="F3_preMount_FIA_1";
+					init="[synchronizedObjects this,[""GrpFIA_B1"",""GrpFIA_B2"",""GrpFIA_B3""],true,false] call f_fnc_mountGroups;";
+					syncId=3;
+					synchronizations[]={13,14,16};
 				};
 			};
 		};
@@ -1179,16 +1175,16 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23134.861,57.011852,21187.479};
+					position[]={23064.156,51.587814,21151.41};
 					id=66;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					text="F3_preMount_FIA_1";
-					init="[synchronizedObjects this,[""GrpFIA_B1"",""GrpFIA_B2"",""GrpFIA_B3""],true,false] call f_fnc_mountGroups;";
-					syncId=3;
-					synchronizations[]={9,10,12};
+					text="F3_preMount_FIA_2";
+					init="[synchronizedObjects this,[""GrpFIA_ASL""],true,false] call f_fnc_mountGroups;";
+					syncId=4;
+					synchronizations[]={17};
 				};
 			};
 		};
@@ -1200,16 +1196,16 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23062.875,52.510967,21144.051};
+					position[]={23115.838,54.516216,21177.02};
 					id=67;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					text="F3_preMount_FIA_2";
-					init="[synchronizedObjects this,[""GrpFIA_ASL""],true,false] call f_fnc_mountGroups;";
-					syncId=4;
-					synchronizations[]={13};
+					text="F3_preMount_FIA_2_1";
+					init="[synchronizedObjects this,[""GrpFIA_BSL""],true,false] call f_fnc_mountGroups;";
+					syncId=5;
+					synchronizations[]={18};
 				};
 			};
 		};
@@ -1221,20 +1217,52 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23117.816,54.639561,21171.375};
+					position[]={23120.385,54.524944,21160.137};
 					id=68;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
-					text="F3_preMount_FIA_2_1";
-					init="[synchronizedObjects this,[""GrpFIA_BSL""],true,false] call f_fnc_mountGroups;";
-					syncId=5;
-					synchronizations[]={14};
+					init="[synchronizedObjects this,[""GrpFIA_CO""],true,false] call f_fnc_mountGroups;";
+					syncId=6;
+					synchronizations[]={19};
 				};
 			};
 		};
 		class Item27
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={23552.242,13.324724,19934.947};
+					azimut=-43.168201;
+					id=69;
+					side="WEST";
+					vehicle="B_G_Soldier_lite_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					init="GrpFia_TH1 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehAAF_TH1;";
+					description="APD Surveillance Helo 1 Pilot (Hellcat w. thermals)";
+				};
+				class Item1
+				{
+					position[]={23552.559,13.325376,19937.182};
+					azimut=-159.32401;
+					id=70;
+					side="WEST";
+					vehicle="B_G_engineer_F";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="GrpFia_TH1 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehAAF_TH1,[0]];";
+					description="APD Surveillance Helo 1 Spotter (Repair)";
+				};
+			};
+		};
+		class Item28
 		{
 			side="LOGIC";
 			class Vehicles
@@ -1242,26 +1270,213 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={23068.516,53.421185,21123.162};
-					id=69;
+					position[]={21930.762,24.457483,21054.975};
+					id=71;
 					side="LOGIC";
-					vehicle="Logic";
+					vehicle="LocationArea_F";
 					leader=1;
 					skill=0.60000002;
-					init="[synchronizedObjects this,[""GrpFIA_CO""],true,false] call f_fnc_mountGroups;";
-					syncId=6;
-					synchronizations[]={15};
+					syncId=7;
+					synchronizations[]={21,10};
+				};
+			};
+		};
+		class Item29
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21931.16,25.068964,21064.178};
+					id=72;
+					side="LOGIC";
+					vehicle="ModuleObjectiveRaceStart_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item30
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21940.041,25.969248,21071.732};
+					id=73;
+					side="LOGIC";
+					vehicle="ModuleObjectiveRaceCP_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item31
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21915.121,26.168379,21059.35};
+					id=74;
+					side="LOGIC";
+					vehicle="SideBLUFOR_F";
+					leader=1;
+					skill=0.60000002;
+					syncId=8;
+					synchronizations[]={10};
+				};
+			};
+		};
+		class Item32
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21918.156,25.629688,21056.469};
+					id=75;
+					side="LOGIC";
+					vehicle="SideOPFOR_F";
+					leader=1;
+					skill=0.60000002;
+					syncId=9;
+					synchronizations[]={10};
+				};
+			};
+		};
+		class Item33
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21922.006,25.160954,21058.033};
+					class args
+					{
+						items=15;
+						class Item0
+						{
+							value="Hotel";
+							parentCls="ModuleSector_F";
+							typeName="Name";
+						};
+						class Item1
+						{
+							value="H";
+							parentCls="ModuleSector_F";
+							typeName="Designation";
+						};
+						class Item2
+						{
+							value="0";
+							parentCls="ModuleSector_F";
+							typeName="ScoreReward";
+						};
+						class Item3
+						{
+							value="if (_this select 1 == west) then {ws_hotelseized = true;publicVariable ""ws_hotelseized""} else {ws_hotelseized = false;publicVariable ""ws_hotelseized""};";
+							parentCls="ModuleSector_F";
+							typeName="OnOwnerChange";
+						};
+						class Item4
+						{
+							value="1";
+							parentCls="ModuleSector_F";
+							typeName="OwnerLimit";
+						};
+						class Item5
+						{
+							value="0";
+							parentCls="ModuleSector_F";
+							typeName="DefaultOwner";
+						};
+						class Item6
+						{
+							value="0";
+							parentCls="ModuleSector_F";
+							typeName="TaskOwner";
+						};
+						class Item7
+						{
+							value="";
+							parentCls="ModuleSector_F";
+							typeName="TaskTitle";
+						};
+						class Item8
+						{
+							value="";
+							parentCls="ModuleSector_F";
+							typeName="TaskDescription";
+						};
+						class Item9
+						{
+							value="0.5";
+							parentCls="ModuleSector_F";
+							typeName="CostInfantry";
+						};
+						class Item10
+						{
+							value="0.5";
+							parentCls="ModuleSector_F";
+							typeName="CostWheeled";
+						};
+						class Item11
+						{
+							value="0.5";
+							parentCls="ModuleSector_F";
+							typeName="CostTracked";
+						};
+						class Item12
+						{
+							value="0.5";
+							parentCls="ModuleSector_F";
+							typeName="CostWater";
+						};
+						class Item13
+						{
+							value="0.5";
+							parentCls="ModuleSector_F";
+							typeName="CostAir";
+						};
+						class Item14
+						{
+							value="0.5";
+							parentCls="ModuleSector_F";
+							typeName="CostPlayers";
+						};
+					};
+					id=76;
+					side="LOGIC";
+					vehicle="ModuleSector_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=10;
+					synchronizations[]={9,8,7};
 				};
 			};
 		};
 	};
 	class Vehicles
 	{
-		items=12;
+		items=14;
 		class Item0
 		{
 			position[]={21606.354,19.602818,21291.16};
-			id=70;
+			id=77;
 			side="EMPTY";
 			vehicle="C_Van_01_transport_F";
 			lock="LOCKED";
@@ -1270,7 +1485,7 @@ class Mission
 		class Item1
 		{
 			position[]={22088.98,3.3048048,20361.572};
-			id=71;
+			id=78;
 			side="EMPTY";
 			vehicle="C_Van_01_transport_F";
 			lock="LOCKED";
@@ -1280,7 +1495,7 @@ class Mission
 		{
 			position[]={22391.861,58.690205,20675.74};
 			azimut=-73.744873;
-			id=72;
+			id=79;
 			side="EMPTY";
 			vehicle="C_Van_01_transport_F";
 			lock="LOCKED";
@@ -1289,115 +1504,139 @@ class Mission
 		class Item3
 		{
 			position[]={23076.23,52.839367,21140.988};
-			azimut=-119.80171;
-			id=73;
+			azimut=-119.802;
+			id=80;
 			side="EMPTY";
-			vehicle="B_G_Offroad_01_F";
+			vehicle="O_MRAP_02_F";
 			skill=0.60000002;
 			text="pcar";
-			syncId=7;
+			init="[""car"",this] call f_fnc_assignGear;";
+			syncId=11;
 			synchronizations[]={2};
 		};
 		class Item4
 		{
 			position[]={23088.258,52.910973,21147.213};
 			azimut=-119.80171;
-			id=74;
+			id=81;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
 			text="pcar_1";
-			syncId=8;
+			syncId=12;
 			synchronizations[]={2};
 		};
 		class Item5
 		{
 			position[]={23136.238,56.014542,21171.609};
 			azimut=-126.283;
-			id=75;
+			id=82;
 			side="EMPTY";
-			vehicle="B_G_Offroad_01_F";
+			vehicle="O_MRAP_02_F";
 			skill=0.60000002;
 			text="pcar_2";
-			syncId=9;
+			init="[""car"",this] call f_fnc_assignGear;";
+			syncId=13;
 			synchronizations[]={3};
 		};
 		class Item6
 		{
 			position[]={23149.076,57.57148,21179.088};
 			azimut=-126.283;
-			id=76;
+			id=83;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
 			text="pcar_3";
-			syncId=10;
+			syncId=14;
 			synchronizations[]={3};
 		};
 		class Item7
 		{
 			position[]={23101.115,53.245693,21154.066};
 			azimut=-119.80171;
-			id=77;
+			id=84;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
 			text="pcar_4";
-			syncId=11;
+			syncId=15;
 			synchronizations[]={2};
 		};
 		class Item8
 		{
 			position[]={23162.359,59.012058,21186.566};
 			azimut=-126.283;
-			id=78;
+			id=85;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
 			text="pcar_5";
-			syncId=12;
+			syncId=16;
 			synchronizations[]={3};
 		};
 		class Item9
 		{
-			position[]={23060.76,52.773064,21134.033};
-			azimut=-119.80171;
-			id=79;
+			position[]={23062.041,52.710896,21141.393};
+			azimut=-119.802;
+			id=86;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
 			text="pcar_6";
-			syncId=13;
+			syncId=17;
 			synchronizations[]={4};
 		};
 		class Item10
 		{
-			position[]={23123.156,54.756535,21165.738};
-			azimut=-119.80171;
-			id=80;
+			position[]={23121.178,54.953808,21171.383};
+			azimut=-119.802;
+			id=87;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			skill=0.60000002;
 			text="pcar_7";
-			syncId=14;
+			init="[""car"",this] call f_fnc_assignGear;";
+			syncId=18;
 			synchronizations[]={5};
 		};
 		class Item11
 		{
-			position[]={23059.6,52.916477,21122.182};
-			azimut=-119.80171;
-			id=81;
+			position[]={23111.469,53.784523,21159.156};
+			azimut=-119.802;
+			id=88;
 			side="EMPTY";
-			vehicle="B_G_Offroad_01_F";
+			vehicle="C_Hatchback_01_F";
 			skill=0.60000002;
 			text="pcar_8";
-			syncId=15;
+			syncId=19;
 			synchronizations[]={6};
+		};
+		class Item12
+		{
+			position[]={23545.736,13.227339,19930.975};
+			azimut=-73.65274;
+			id=89;
+			side="EMPTY";
+			vehicle="I_Heli_light_03_unarmed_F";
+			skill=0.60000002;
+			text="VehAAF_TH1";
+			init="{this setObjectTexture [_x,'#(argb,8,8,3)color(0.03,0.03,0.03,0.5)'];} forEach [0,1,2]; clearItemCargoGlobal this; clearWeaponCargoGlobal this; clearMagazineCargoGlobal this;";
+		};
+		class Item13
+		{
+			position[]={23544.4,13.204451,19930.963};
+			azimut=161.53137;
+			id=90;
+			side="EMPTY";
+			vehicle="Land_HelipadSquare_F";
+			skill=0.60000002;
+			description="APD Surveillance Helo 1 Spotter (Repair)";
 		};
 	};
 	class Markers
 	{
-		items=18;
+		items=20;
 		class Item0
 		{
 			position[]={21112.885,20.674784,7398.3081};
@@ -1421,7 +1660,7 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={21408.32,15.561934,21071.922};
+			position[]={21354.363,23.643208,19898.213};
 			name="mkrL_1";
 			type="Empty";
 			angle=-10.5802;
@@ -1435,7 +1674,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={22343.693,63.069271,20778.086};
+			position[]={22792.209,21.705492,20599.117};
 			name="mkrL_3";
 			type="Empty";
 			angle=-10.5802;
@@ -1470,7 +1709,7 @@ class Mission
 		};
 		class Item10
 		{
-			position[]={21386.813,-0.0061062276,21265.592};
+			position[]={21344.953,13.727763,21077.988};
 			name="mkrL_8";
 			type="Empty";
 			angle=-10.5802;
@@ -1524,21 +1763,39 @@ class Mission
 			type="Empty";
 			angle=-10.5802;
 		};
+		class Item18
+		{
+			position[]={21969.27,18.585032,21023.266};
+			name="mkrHotel";
+			type="Empty";
+		};
+		class Item19
+		{
+			position[]={21968.865,18.556862,21023.211};
+			name="mkrHotelArea";
+			markerType="RECTANGLE";
+			type="Empty";
+			colorName="ColorEAST";
+			fillName="Border";
+			a=40;
+			b=22;
+			angle=222.743;
+			drawBorder=1;
+		};
 	};
 	class Sensors
 	{
-		items=2;
+		items=4;
 		class Item0
 		{
-			position[]={21975.479,33.1665,21105.211};
+			position[]={22630.029,26.58185,21057.766};
 			a=450;
 			b=320;
-			angle=-165.60416;
+			angle=-134.778;
 			activationBy="WEST";
 			timeoutMin=5;
 			timeoutMid=5;
 			timeoutMax=5;
-			interruptable=1;
 			age="UNKNOWN";
 			expCond="this && {isPlayer _x} count thisList > 0";
 			expActiv="nul = ""mkrL"" execVM ""ws_scripts\ws_lightning.sqf"";";
@@ -1559,7 +1816,40 @@ class Mission
 			{
 			};
 			synchronizations[]={0};
-			syncId=16;
+			syncId=20;
+		};
+		class Item2
+		{
+			position[]={21969.248,18.595963,21023.564};
+			a=42;
+			b=22;
+			angle=42.969799;
+			rectangular=1;
+			activationBy="ANY";
+			interruptable=1;
+			age="UNKNOWN";
+			name="TrgSeize";
+			class Effects
+			{
+			};
+			synchronizations[]={7};
+			syncId=21;
+		};
+		class Item3
+		{
+			position[]={22006.98,29.17828,21075.119};
+			a=0;
+			b=0;
+			timeoutMin=15;
+			timeoutMid=15;
+			timeoutMax=15;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="ws_hotelseized";
+			expActiv="[2] call f_fnc_mpEnd";
+			class Effects
+			{
+			};
 		};
 	};
 };

@@ -40,7 +40,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-Each fireteam has their own vehicle.
+Each fireteam has their own vehicle. Alpha 1 and Bravo 1 are mounted into an armored car while the rest are in offroads.
 "]];
 
 // ====================================================================================
@@ -50,7 +50,7 @@ Each fireteam has their own vehicle.
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-Proceed to the hotel and kick some ass.
+Proceed to the hotel and kick some ass. If we manage to seize the main hotel building, the Mafia will be forced to fall back.
 "]];
 
 // ====================================================================================

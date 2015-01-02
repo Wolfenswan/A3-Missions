@@ -345,17 +345,8 @@ case "dc":
 		clearMagazineCargoGlobal _unit;
 		clearItemCargoGlobal _unit;
 		clearBackpackCargoGlobal _unit;
-		_unit addWeaponCargoGlobal [_carbine, 2];
-		_unit addMagazineCargoGlobal [_riflemag, 8];
-		_unit addMagazineCargoGlobal [_glriflemag, 8];
-		_unit addMagazineCargoGlobal [_carbinemag, 10];
-		_unit addMagazineCargoGlobal [_armag, 5];
-		_unit addMagazineCargoGlobal [_ratmag, 1];
-		_unit addMagazineCargoGlobal [_grenade, 4];
 		_unit addMagazineCargoGlobal [_smokegrenade, 4];
 		_unit addMagazineCargoGlobal [_smokegrenadegreen, 2];
-		_unit addMagazineCargoGlobal [_glmag, 4];
-		_unit addMagazineCargoGlobal [_glsmokewhite, 4];
 		_unit addItemCargoGlobal [_firstaid,4];
 	};
 

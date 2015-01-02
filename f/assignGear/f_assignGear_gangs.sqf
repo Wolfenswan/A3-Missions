@@ -285,7 +285,8 @@ switch (_typeofUnit) do
 	case "dc":
 	{
 		// Randomly select a weapon
-		[_unit,[_smg2,_smg3,_pistol2,_pistol] call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
+		_weapon = [_smg2,_smg3,_pistol2,_pistol] call BIS_fnc_selectRandom;
+		[_unit,_weapon,8] call BIS_fnc_addWeapon;
 		_unit addmagazines [_grenade,2];
 		_unit addmagazines [_mgrenade,2];
 		_unit linkItem "ItemGPS";
@@ -295,7 +296,8 @@ switch (_typeofUnit) do
 	case "ftl":
 	{
 		// Randomly select a weapon
-		[_unit,[_smg2,_smg3,_pistol2,_pistol] call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
+		_weapon = [_smg2,_smg3,_pistol2,_pistol] call BIS_fnc_selectRandom;
+		[_unit,_weapon,8] call BIS_fnc_addWeapon;
 		_unit addmagazines [_grenade,2];
 		_unit addmagazines [_mgrenade,2];
 		_unit linkItem "ItemGPS";
@@ -306,7 +308,10 @@ switch (_typeofUnit) do
 	case "gb":
 	{
 		// Randomly select a weapon
-		[_unit,[_smg2,_smg3,_pistol2,_pistol] call BIS_fnc_selectRandom,8] call BIS_fnc_addWeapon;
+		_weapon = [_smg2,_smg3,_pistol2,_pistol] call BIS_fnc_selectRandom;
+		[_unit,_weapon,8] call BIS_fnc_addWeapon;
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
 	};
 
 // LOADOUT: VEHICLE DRIVER

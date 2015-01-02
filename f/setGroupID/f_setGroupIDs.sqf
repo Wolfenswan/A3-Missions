@@ -114,7 +114,7 @@ _groups = [
 ["GrpFIA_IFV8","FIA IFV8 -"],
 ["GrpFIA_TNK1","FIA TNK1 -"],
 
-["GrpFIA_TH1","FIA TH1 -"],
+["GrpFIA_TH1","FIA SKYEYE -"],
 ["GrpFIA_TH2","FIA TH2 -"],
 ["GrpFIA_TH3","FIA TH3 -"],
 ["GrpFIA_TH4","FIA TH4 -"],

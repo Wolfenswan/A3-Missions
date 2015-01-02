@@ -44,7 +44,7 @@ We all have SMGs or pistols as well as a few grenades.
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-Kill ever FIA bastard that tries to take the hotel.<br/>
+Kill ever APD bastard that tries to take the hotel. Don't let them achieve dominance over the main building, as it controls the entire area.<br/>
 "]];
 
 // ====================================================================================
@@ -54,15 +54,11 @@ Kill ever FIA bastard that tries to take the hotel.<br/>
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-The FIA bastards are trying to steal our drugs and take the hotel from us. We were here first!
+The blue bastards are trying to steal our drugs and take the hotel from us. We were here first!
 <br/><br/>
 ENEMY FORCES
 <br/>
-They are without any fashion sense and thus wear bandanas.
-<br/><br/>
-FRIENDLY FORCES
-<br/>
-We are superior in taste and have boonie hats.<br/><br/>
+Pigs, pigs to the slaughter.
 "]];
 
 // ====================================================================================
