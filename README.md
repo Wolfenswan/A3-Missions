@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-2-1</i>
 
 <b>Mission description</b><br/>
-The Altis Mafia is using the derilict hotel in the North-East as their hideout. The Altis Police Department wants to end this. They'll either have to seize the main hotel building or kill all gang members.
+The Altis Mafia is using the derelict hotel in the North-East as their hideout. The Altis Police Department wants to end this. They'll either have to seize the main hotel building or kill all gang members.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
