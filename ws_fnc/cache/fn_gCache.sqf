@@ -9,31 +9,34 @@ Disables Simulation and AI behaviour on all units but the group leader (or vehic
 */
 
 // LOOP THROUGH THE PASSED UNITS
-// We loop through the units of the passed group and disable Simulation for all of them but the leaders (to make sure that e.g. patrols still work)
+// We loop through the units of the passed group and disable Simulation for those that are not vehicle drivers and are standing still
 {
-        if(_x != leader _this && !("Driver" in assignedVehicleRole _x)) then {
-                _x disableAI "TARGET";
-                _x disableAI "AUTOTARGET";
-                _x disableAI "MOVE";
-                _x disableAI "ANIM";
-                _x disableAI "FSM";
 
-                _x enableSimulation false;
-                _x allowDamage false;
-        } else {
-                _x allowDamage true;
-                _x enableSimulation true;
-
-                _x enableAI "TARGET";
-                _x enableAI "AUTOTARGET";
-                _x enableAI "MOVE";
-                _x enableAI "ANIM";
-                _x enableAI "FSM";
+        // Disable simulation based on aggressiveness
+        switch (ws_var_cachingAggressiveness) do {
+                case 1: {
+                        if (!("Driver" == (assignedVehicleRole _x) select 0) && (_x != leader _this)) then {
+                _x enableSimulationGlobal false;
+                };
+                };
+                case 2: {
+                        if !("Driver" == (assignedVehicleRole _x) select 0) then {
+                            if ((_x != leader _this) || (_x == leader _this && speed _x == 0)) then {
+                                _x enableSimulationGlobal false;
+                            };
+                };
+                };
+                case 3: {_x enableSimulationGlobal false;};
         };
 
-                // All unit's are hidden, and if the unit is inside a vehicle, the vehicle is hidden as well
+        // All unit's are hidden
+        _x hideObjectGlobal true;
 
-                _x hideObject true;
-                if (vehicle _x != _x) then {(vehicle _x) hideObject true};
+        if (ws_var_cachingAggressiveness == 3) then {
+          if (vehicle _x != _x) then {(vehicle _x) hideObjectGlobal true};
+        };
 
+sleep 0.1;
 } forEach units _this;
+
+true

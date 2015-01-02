@@ -16,7 +16,7 @@ positional array
 
 private ["_i","_distance","_increment","_roads","_done"];
 
-_pos = _this select 0;
+_pos = (_this select 0) call ws_fnc_getEPos;
 
 _i = 0;
 _distance = 10;
@@ -28,7 +28,7 @@ _done = false;
 while {!_done && _i <= 20} do {
 	_roads = _pos nearroads _distance;
 	if (count _roads > 0) then {
-		_pos = getPos (_roads call ws_fnc_selectRandom);
+		_pos = getPosATL (_roads call ws_fnc_selectRandom);
 		_done = true;
 	} else {
 	_distance = _distance + _increment;
@@ -37,4 +37,4 @@ while {!_done && _i <= 20} do {
 	};
 };
 
-_pos
+[_pos select 0,_pos select 1,0]
