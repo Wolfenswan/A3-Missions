@@ -35,20 +35,20 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 // ====================================================================================
 
-/*
+
 // NOTES: ADMINISTRATION
 // The code below creates the administration sub-section of notes.
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
+Both RAT and MAT carry a mix of HE and AT rockets.
 "]];
 
 // ====================================================================================
 
 // NOTES: EXECUTION
 // The code below creates the execution sub-section of notes.
-
+/*
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 COMMANDER'S INTENT
@@ -76,6 +76,8 @@ SPECIAL TASKS
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 Proceed to Styrga and take out the helicopter by any means necessary.<br/>
+While you're at it, blow the <marker name='mkrDepot'>AAF supply depot</marker> to smithereens.<br/>
+Once both tasks are complete, fall back to the north to complete your mission.
 
 "]];
 

@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-2-1</i>
 
 <b>Mission description</b><br/>
-Template mission.
+A Mi-48 Kaiman has landed in Styrga for emergency repairs and refuelling. The nearest FIA cell tries to seize the moment and take out both the airborn threat as well as the nearby supply depot in one swift strike.
 
 <b>Contact</b><br/>
 folkarps.com<br/>

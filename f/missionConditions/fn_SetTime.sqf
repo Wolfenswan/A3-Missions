@@ -23,7 +23,7 @@ _timeOfDay = _this select 0;
 // The default values that together form the in-game date are set.
 
 _year = 2030;
-_month = 6;
+_month = 8;
 _day = 16;
 _hour = 0;
 _minute = 0;
@@ -45,7 +45,7 @@ switch (_timeOfDay) do
 	case 1:
 	{
 		_hour = 4;
-		_minute = 50;
+		_minute = 57;
 	};
 // Morning
 	case 2:
