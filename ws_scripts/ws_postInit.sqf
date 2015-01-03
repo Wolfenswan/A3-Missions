@@ -14,8 +14,8 @@ if (!isDedicated) then {
  		showGPS false;
 		showMap false;
 
-		if ("ws_param_compass" call bis_fnc_getParamValue > 0) then {
-			player linkItem "ItemCompass";
+		if ("ws_param_compass" call bis_fnc_getParamValue == 0) then {
+			player unlinkItem "ItemCompass";
 		};
 	};
 

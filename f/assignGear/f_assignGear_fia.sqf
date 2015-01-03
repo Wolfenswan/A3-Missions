@@ -309,7 +309,7 @@ if (_isMan) then {
 	_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
 	//_unit linkItem "ItemMap";		// Add and equip the map
-	//_unit linkItem "ItemCompass";	// Add and equip a compass
+	_unit linkItem "ItemCompass";	// Add and equip a compass
 	_unit linkItem "ItemRadio";		// Add and equip A3's default radio
 	_unit linkItem "ItemWatch";		// Add and equip a watch
 	//_unit linkItem "ItemGPS"; 	// Add and equip a GPS
