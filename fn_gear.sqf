@@ -10,7 +10,7 @@ _magazines = if (count _this > 3) then {_this select 3};
 
 //Setup gear
 if !(isNil backpack _unit) then {
-clearAllItemsFromBackpack _unit
+	clearAllItemsFromBackpack _unit
 };
 
 removeallweapons _unit;
