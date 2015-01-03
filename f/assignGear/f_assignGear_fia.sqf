@@ -314,6 +314,8 @@ if (_isMan) then {
 	_unit linkItem "ItemWatch";		// Add and equip a watch
 	//_unit linkItem "ItemGPS"; 	// Add and equip a GPS
 
+};
+
 // ====================================================================================
 
 // SETUP BACKPACKS
@@ -325,7 +327,7 @@ _backpack = {
 	if (count _this > 1) then {_loadout = _this select 1};
 	switch (_typeofBackPack) do
 	{
-		#include "f_assignGear_fia_b.sqf";
+		//#include "f_assignGear_fia_b.sqf";
 	};
 };
 

@@ -62,7 +62,7 @@ case "g":
 case "ar":
 {
 	// LOADOUT: LIGHT
-	if (f_param_backpacks == 0) then {
+	if (_loadout == 0) then {
 		_unit addmagazines [_ARmag_Tr,2];
 	};
 	// LOADOUT: MEDIUM
