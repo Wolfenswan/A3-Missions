@@ -4,11 +4,8 @@ The missions can be found on GitHub:<br/>
 <i>https://github.com/Wolfenswan/A3-Missions</i><br/>
 Each branch is a different mission, some are WIP.<br/>
 
-<b>Current F3 Version:</b><br/>
-<i>3-2-1</i>
-
 <b>Mission description</b><br/>
-Port of celery's ARMA2 mission to ARMA3.
+Port of celery's ARMA2 mission to ARMA3. A group of survivors has to fend off a group of intelligent and highly agile zombies. For every dead survivor a new zombie arises.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
