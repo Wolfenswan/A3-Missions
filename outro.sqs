@@ -1,0 +1,39 @@
+cutText ["","BLACK OUT",2]
+2 fadeSound 0
+CLY_cutscene=true
+
+_winners=if ({isPlayer _x and isNil {_x getVariable "zombie"}} count allUnits==0) then {"zombies"} else {"survivors"}
+_left={isPlayer _x and isNil {_x getVariable "zombie"}} count allUnits
+_left=if (_left==0) then {""} else {format [" (%1 left)",_left]}
+_last=""
+?CLY_lastsurvivor!="":_last=format ["\nLast survivor: %1",CLY_lastsurvivor]
+_elapsed=floor time
+?_winners=="survivors":_elapsed=CLY_timelimit
+_zero=if (_elapsed mod 60<10) then {0} else {""}
+_elapsed=format ["%1:%2%3",abs (floor (_elapsed*0.01666666667)),_zero,_elapsed mod 60]
+
+?_winners=="zombies":[0,["Track09_Movement_To_Contact",14,60,0.5]] execVM "cly_jukebox.sqf"
+?_winners=="survivors":[0,["Track07_Last_Men_Standing",0,60,0.5]] execVM "cly_jukebox.sqf"
+
+~2
+cutText ["","BLACK FADED",100]
+player enableSimulation false
+removeAllWeapons player
+hintSilent ""
+
+titleText [format ["The %1 won!\n\nSurvivors killed: %2%3\nZombies killed: %4%5\nTime elapsed: %6",_winners,CLY_survivordeaths,_left,CLY_zombiedeaths,_last,_elapsed],"PLAIN",1.45]
+
+?_winners=="survivors" and isNil {player getVariable "zombie"}:obj1 setTaskState "Succeeded"
+?_winners=="zombies" and !isNil "obj2":obj2 setTaskState "Succeeded"
+
+
+~10
+4.5 fadeMusic 0
+~5
+
+skipTime -CLY_timeofday
+?_winners=="zombies" and isNil "obj2":"end2" call BIS_fnc_endMission;;exit
+?_winners=="survivors" and isNil {player getVariable "zombie"}:"end3" call BIS_fnc_endMission;;exit
+?_winners=="survivors" and !isNil {player getVariable "zombie"}:"end4" call BIS_fnc_endMission;;exit
+"end1" call BIS_fnc_endMission;
+exit

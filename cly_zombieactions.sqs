@@ -1,0 +1,5 @@
+_arg=_this select 3
+?typeName _arg=="SCALAR":jumpmode=_this select 3;exit
+nv=_arg
+setAperture (if (nv) then {0.2} else {-1})
+exit

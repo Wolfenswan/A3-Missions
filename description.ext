@@ -1,327 +1,91 @@
-// ============================================================================================
-
-// F3 - Mission Header
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-class Header
-{
-	gameType = Coop;
-	minPlayers = 1;
-	maxPlayers = 457;
-};
-
-// ============================================================================================
-
-// F3 - Loading Screen
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-onLoadName = "*** Insert mission name here. ***";
-onLoadMission = "Made with the F3 Mission Development Framework";
-author = "Wolfenswan [FA]";
-loadScreen = "logo.paa";
-
-// ============================================================================================
-
-// F3 - Debug Console
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+onLoadName = "Infection: Altis";
+onLoadMission = "Can you survive?";
+author = "Celery (A2 Original), Wolfenswan (A3 Port)";
 
 enableDebugConsole = 1;
 
-// ============================================================================================
+respawn="BASE";
+respawnDelay=5;
+disabledAI=1;
+respawnDialog=0;
 
-// F3 - Respawn Settings
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-respawn = 1;
-respawndelay = 3;
-respawnOnStart = 0;
-respawnTemplates[] = {"Seagull","f_spectator","f_JIP"};
-
-// ============================================================================================
-
-
-// F3 - Start of Notifications block.
-
-class cfgNotifications
+class Header
 {
-	// Notification Template
-	class Template
-	{
-		title = ""; // Tile displayed as text on black background. Filled by arguments.
-		iconPicture = ""; // Small icon displayed in left part. Colored by "color", filled by arguments.
-		iconText = ""; // Short text displayed over the icon. Colored by "color", filled by arguments.
-		description = ""; // Brief description displayed as structured text. Colored by "color", filled by arguments.
-		color[] = {1,1,1,1}; // Icon and text color
-		duration = 5; // How many seconds will the notification be displayed
-		priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
-		difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
-	};
-
-	// A generic warning notification
-	class Alert
-	{
-		title = "ALERT";
-		description = "%1";
-		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
-		duration = 3;
-		priority = 9;
-	};
-
-	// Notifications for the F3 Safe Start Component
-	class SafeStart
-	{
-		title = "SAFE START";
-		description = "%1";
-		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
-		duration = 10;
-		priority = 0;
-	};
-	class SafeStartMissionStarting
-	{
-		title = "SAFE START";
-		description = "%1";
-		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
-		duration = 3;
-		priority = 1;
-	};
-
-	// Notification for the F3 Authorised Crew Component
-	class UnauthorisedCrew {
-		title= "NON-AUTHORISED CREW!";
-		description= "%1";
-		iconPicture = "\A3\ui_f\data\map\markers\military\warning_ca.paa";
-		duration = 3;
-		priority = 5;
-	};
-
-	// Notification for the F3 Mapclick Teleport component
-	class MapClickTeleport {
-		title= "NOTE";
-		description= "%1";
-		iconPicture = "\A3\ui_f\data\map\markers\military\start_ca.paa";
-		duration = 3;
-		priority = 5;
-	};
-
-	// Notification for the F3 JIP Component
-	class JIP {
-		title= "REINFORCEMENTS";
-		description= "%1";
-		iconPicture = "\A3\ui_f\data\map\markers\military\flag_ca.paa";
-		duration = 3;
-		priority = 5;
-	};
-
-	class ws_taskdone
-	{
-		title = "TASK COMPLETED";
-		description = "%1";
-		iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
-		duration = 3;
-	};
+	gameType=DM;
+	minPlayers=2;
+	maxPlayers=30;
 };
 
-// ============================================================================================
+onPauseScript="cly_jukebox.sqf";
 
-// F3 - Start of Params code blocks.
-// WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
+class CfgNotifications
+{
+	class TaskAssigned
+	{
+		title = "Your objective:";
+		iconPicture = "\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
+		description = "%1";
+		priority = 7;
+	};
+};
 
 class Params
 {
-
-// ============================================================================================
-
-// F3 - Debug Mode
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-// WARNING: DO NOT DISABLE THIS COMPONENT
-
-    class f_param_debugMode
-    {
-            title = "$STR_f_param_debugMode";
-            values[] = {0,1};
-            texts[] = {"Off","On"};
-            default = 0;
-            code = "f_var_debugMode = %1";
-    };
-
-// ============================================================================================
-
-// F3 - Folk Assign Gear Script
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-    class f_param_backpacks
-    {
-            title = "$STR_f_param_loadouts";
-            values[] = {0,1,2};
-            texts[] = {"Light","Medium","Heavy"};
-            default = 1;
-            code = "f_param_backpacks = %1";
-    };
-
-// ============================================================================================
-
-// F3 - Radio Systems Support
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-    class f_param_radios
-    {
-            title = "Radio System";
-            values[] = {0,1,2,3};
-            texts[] = {"Off","ACRE","TFR","ACRE2"};
-            default = 0;
-            code = "f_var_radios = %1";
-    };
-
-// ============================================================================================
-
-// F3 - Medical Systems Support
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-    class f_param_medical
-    {
-            title = "Medical System";
-            values[] = {0,1,2};
-            texts[] = {"Arma 3 Default","F3 Simple Wounding System","Authentic Gameplay Mod"};
-            default = 1;
-            code = "f_var_medical = %1";
-    };
-
-// ============================================================================================
-
-// F3 - Mission Timer/Safe Start
-// Credits: Please see the F2 online manual (http://www.ferstaberinde.com/f3/en/)
-
-    class f_param_mission_timer
-    {
-            title = "$STR_f_param_mission_timer";
-            values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
-            texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
-            default = 1;
-            code = "f_param_mission_timer = %1";
-    };
-
-// ============================================================================================
-
-// F3 - Mission Conditions Selector
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-	class f_param_weather
+	class CLY_timeofday
 	{
-		title = "$STR_f_param_weather";
-		values[] = {0,1,2,3,4,5,6,7,8};
-		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8};
-		default = 0;
-		function = "f_fnc_setWeather";		// This function is called to apply the values
-		isGlobal = 0;						// Execute this only on the server
-		code = "f_param_weather = %1";
+		title="Time of day:";
+		values[]={0,1,2,3};
+		texts[]={"Random","Dusk","Midnight","Dawn"};
+		default=1;
 	};
-
-	class f_param_fog
+	class CLY_weather
 	{
-		title = "Fog";
-		values[] = {0,1,2};
-		texts[] = {"None","Light","Heavy"};
-		default = 0;
-		function = "f_fnc_SetFog";			// This function is called to apply the values
-		isGlobal = 0;						// Execute this only on the server
-		code = "f_param_fog = %1";
+		title="Weather:";
+		values[]={0,1,2,3};
+		texts[]={"Random","Cloudy","Rainy","Stormy"};
+		default=3;
 	};
-
-    class f_param_timeOfDay
+	class CLY_fog
 	{
-		title = "$STR_f_param_timeOfDay";
-		values[] = {0,1,2,3,4,5,6,7};
-		texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
-		default = 4;
-		function = "f_fnc_setTime";			// This function is called to apply the values
- 		isGlobal = 0;						// Execute this only on the server
- 		code = "f_param_timeOfDay = %1";
+		title="Fog:";
+		values[]={0,30,60};
+		texts[]={"Random","Moderate","Heavy"};
+		default=30;
 	};
-
-// ============================================================================================
-
-// F3 - AI Skill Selector
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-	class f_param_AISkill_BLUFOR
+	class CLY_location
 	{
-		title = "$STR_f_param_AISkill_BLUFOR";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_BLUFOR = %1";
+		title="Location:";
+		// 0 - 14 - tiny
+		// 15 - 29 - small
+		// 29 - 44 - medium
+		// 44 - 59 big
+		values[]={-1,-2,0,1,-3,15,16,17,-4,29,30,31,-5,44};
+		texts[]={"Random","Random Tiny - ","Mil. Inst.","Oreokastro", "Random Small - ", "Lakka","Tetos w. Mil. Inst","Hotel","Random Middle - ","Panochori","Neochori","Limni (Swamp)","Random Large - ","Zaros"};
+		default=-1;
 	};
-
-	class f_param_AISkill_OPFOR
+	class CLY_timelimit
 	{
-		title = "$STR_f_param_AISkill_OPFOR";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_OPFOR = %1";
+		title="Time limit:";
+		values[]={0,300,600,900,1200,1500,1800,2100,2400,2700,3000,3300,3600,5400,7200};
+		texts[]={"Unlimited","5 minutes","10 minutes","15 minutes","20 minutes","25 minutes","30 minutes","35 minutes","40 minutes","45 minutes","50 minutes","55 minutes","1 hour","1.5 hours","2 hours"};
+		default=1200;
 	};
-
-	class f_param_AISkill_INDP
+	class ws_townlights
 	{
-		title = "$STR_f_param_AISkill_INDP";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_INDP = %1";
+		title="Townlights";
+		values[]={0,1};
+		texts[]={"Off","On"};
+		default=1;
 	};
-
-// ============================================================================================
-
-// F3 - Caching
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-	class f_param_caching
-	{
-		title = "Cache AI outside distance (m)";
-		values[] = {0,600,800,1000,1500,2000};
-		default = 0;
-		code = "f_param_caching = %1";
-	};
-
-// ============================================================================================
-
-// F3 - End of Params code blocks.
-// WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
-
-// Wolfenswan - Params
-
-	class ws_param_hc
-	{
-		title = "Headless client";
-        values[] = {0,1};
-        texts[] = {"Off","On"};
-        default = 0;
-        code = "ws_param_hc = %1";
-	};
-
-	class ws_param_dbg
-	{
-		title = "WS fnc debug";
-        values[] = {0,1};
-        texts[] = {"Off","On"};
-        default = 1;
-        code = "ws_param_dbg = %1";
-	};
-
 };
-
-// ============================================================================================
-
-// F3 - Briefing Template
-// Credits: BIS - Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 class CfgDebriefing
 {
 	class End1
 	{
-		title = "MISSION SUCCESS";
+		title = "Nom Nom Nom.";
 		subtitle = "";
-		description = "We fulfilled all objectives to satisfication.";
+		description = "You successfully cleansed the area of the living. Long live the undead!";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -329,9 +93,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "MISSION FAILURE";
+		title = "You perished.";
 		subtitle = "";
-		description = "The platoon was unable to fulfill it's objectives";
+		description = "You were the last survivor but in the end you succumbed to the apocalypse.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -339,9 +103,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "PLATOON WIPED OUT";
+		title = "Survived!";
 		subtitle = "";
-		description = "Our entire platoon was eliminated.";
+		description = "You fended off the undead. Perhaps there's still hope for you!";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -349,203 +113,378 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "Ending #4";
+		title = "Seriously?";
 		subtitle = "";
-		description = "*** Insert debriefing #4 here. ***";
+		description = "You were humiliated by some punks with a pulse. You are the laughing stock of zombies everywhere.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
 	};
-
-	class End5
-	{
-		title = "MISSION SUCCESS";
-		subtitle = "";
-		description = "We fulfilled all objectives to satisfication.";
-		// pictureBackground = "";
-		// picture = "";
-		// pictureColor[] = {0.0,0.3,0.6,1};
-	};
-
-	class End6
-	{
-		title = "MISSION FAILURE";
-		subtitle = "";
-		description = "The platoon was unable to fulfill it's objectives";
-		// pictureBackground = "";
-		// picture = "";
-		// pictureColor[] = {0.0,0.3,0.6,1};
-	};
-
 };
 
-// ============================================================================================
-
-// F3 - Respawn Templates
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-class CfgRespawnTemplates
+class CfgSounds
 {
-	// F3 Spectator Script
-	class f_Spectator
+	class attack1
 	{
-		onPlayerRespawn = "f_fnc_CamInit";
+		name="attack1";
+		sound[]={\sound\attack1.ogg,0.1,1};
+		titles[]={};
 	};
-  	//Overwrite Vanilla Seagull
-    class Seagull
-    {
-        onPlayerRespawn = "";
-    };
-	// F3 JIP Menu
-	class f_JIP
+	class attack2
 	{
-		onPlayerRespawn = "f\JIP\f_JIP_playerRespawn.sqf";
+		name="attack2";
+		sound[]={\sound\attack2.ogg,0.1,1};
+		titles[]={};
+	};
+	class attack3
+	{
+		name="attack3";
+		sound[]={\sound\attack3.ogg,0.1,1};
+		titles[]={};
+	};
+	class attack4
+	{
+		name="attack4";
+		sound[]={\sound\attack4.ogg,0.1,1};
+		titles[]={};
+	};
+	class chase1
+	{
+		name="chase1";
+		sound[]={\sound\chase1.ogg,0.1,1};
+		titles[]={};
+	};
+	class chase2
+	{
+		name="chase2";
+		sound[]={\sound\chase2.ogg,0.1,1};
+		titles[]={};
+	};
+	class chase3
+	{
+		name="chase3";
+		sound[]={\sound\chase3.ogg,0.1,1};
+		titles[]={};
+	};
+	class chase4
+	{
+		name="chase4";
+		sound[]={\sound\chase4.ogg,0.1,1};
+		titles[]={};
+	};
+	class chase5
+	{
+		name="chase5";
+		sound[]={\sound\chase5.ogg,0.1,1};
+		titles[]={};
+	};
+	class chase6
+	{
+		name="chase6";
+		sound[]={\sound\chase6.ogg,0.1,1};
+		titles[]={};
+	};
+	class chase7
+	{
+		name="chase7";
+		sound[]={\sound\chase7.ogg,0.1,1};
+		titles[]={};
+	};
+	class chase8
+	{
+		name="chase8";
+		sound[]={\sound\chase8.ogg,0.1,1};
+		titles[]={};
+	};
+	class die1
+	{
+		name="die1";
+		sound[]={\sound\die1.ogg,0.1,1};
+		titles[]={};
+	};
+	class die2
+	{
+		name="die2";
+		sound[]={\sound\die2.ogg,0.1,1};
+		titles[]={};
+	};
+	class die3
+	{
+		name="die3";
+		sound[]={\sound\die3.ogg,0.1,1};
+		titles[]={};
+	};
+	class idle1
+	{
+		name="idle1";
+		sound[]={\sound\idle1.ogg,0.1,1};
+		titles[]={};
+	};
+	class idle2
+	{
+		name="idle2";
+		sound[]={\sound\idle2.ogg,0.1,1};
+		titles[]={};
+	};
+	class idle3
+	{
+		name="idle3";
+		sound[]={\sound\idle3.ogg,0.1,1};
+		titles[]={};
+	};
+	class idle4
+	{
+		name="idle4";
+		sound[]={\sound\idle4.ogg,0.1,1};
+		titles[]={};
+	};
+	class idle5
+	{
+		name="idle5";
+		sound[]={\sound\idle5.ogg,0.1,1};
+		titles[]={};
+	};
+	class idle6
+	{
+		name="idle6";
+		sound[]={\sound\idle6.ogg,0.1,1};
+		titles[]={};
+	};
+	class idle7
+	{
+		name="idle7";
+		sound[]={\sound\idle7.ogg,0.1,1};
+		titles[]={};
+	};
+	class idle8
+	{
+		name="idle8";
+		sound[]={\sound\idle8.ogg,0.1,1};
+		titles[]={};
+	};
+	class scream1
+	{
+		name="scream1";
+		sound[]={\sound\scream1.ogg,0.1,1};
+		titles[]={};
+	};
+	class scream2
+	{
+		name="scream2";
+		sound[]={\sound\scream2.ogg,0.1,1};
+		titles[]={};
+	};
+	class scream3
+	{
+		name="scream3";
+		sound[]={\sound\scream3.ogg,0.1,1};
+		titles[]={};
 	};
 };
 
-// ============================================================================================
+class RscTitles
+{
+	titles[]={};
+	class claw1
+	{
+	  	idd=-1;
+	  	movingEnable=0;
+	  	duration=0;
+	  	fadein=0.25;
+	  	fadeout=0.75;
+	  	name="claw1";
+	  	controls[]={"title1"};
 
-// F3 - Menu components
-// DO NOT REMOVE OR DISABLE THIS BLOCK OF CODE
+	  	class title1
+		{
+			type=0;
+			idc=-1;
+			size=1;
+			colorBackground[]={0,0,0,0};
+			colorText[]={1,1,1,1};
+			font = "";
+	  	  	text="claw1.paa";
+			style=48;
+	  	  	sizeEx=0.15;
+			x=0.275;
+	  	  	y=0.2;
+	  	  	w=0.45;
+	  	  	h=0.6;
+		};
+	};
+	class claw2
+	{
+	  	idd=-1;
+	  	movingEnable=0;
+	  	duration=0;
+	  	fadein=0.25;
+	  	fadeout=0.75;
+	  	name="claw2";
+	  	controls[]={"title1"};
 
-// Menu components for the JIP Menu
-#include "f\JIP\f_JIP_kitpicker.h"
-#include "f\JIP\f_JIP_grppicker.h"
+	  	class title1
+		{
+			type=0;
+			idc=-1;
+			size=1;
+			colorBackground[]={0,0,0,0};
+			colorText[]={1,1,1,1};
+			font = "";
+	  	  	text="claw2.paa";
+			style=48;
+	  	  	sizeEx=0.15;
+			x=0.275;
+	  	  	y=0.2;
+	  	  	w=0.45;
+	  	  	h=0.6;
+		};
+	};
+	class claw3
+	{
+	  	idd=-1;
+	  	movingEnable=0;
+	  	duration=0;
+	  	fadein=0;
+	  	fadeout=0.2;
+	  	name="claw3";
+	  	controls[]={"title1"};
 
-// Menu components for the Spectator Script
-#include "f\spect\config.hpp"
-
-// ============================================================================================
-
-// F3 - Functions
-// DO NOT REMOVE OR DISABLE THIS BLOCK OF CODE
+	  	class title1
+		{
+			type=0;
+			idc=-1;
+			size=1;
+			colorBackground[]={0,0,0,0};
+			colorText[]={1,1,1,1};
+			font = "";
+	  	  	text="claw3.paa";
+			style=48;
+	  	  	sizeEx=0.15;
+			x=0.275;
+	  	  	y=0.2;
+	  	  	w=0.45;
+	  	  	h=0.6;
+		};
+	};
+	class hud
+   	{
+		idd=-1;
+		movingEnable=0;
+	  	fadein=0;
+		duration=0.3;
+	  	fadeout=0.5;
+		name="hud";
+		onLoad="uiNamespace setVariable [""hud"",_this select 0]";
+		controlsBackground[]={};
+		objects[]={};
+		class controls
+		{
+			class hud1
+			{
+				type=0;
+				idc=23501;
+				size=1;
+				colorBackground[]={0,0,0,0};
+				colorText[]={1,1,1,1};
+				font = "";
+				style=48;
+	  	  		sizeEx=0.15;
+				x=0;
+	  	  		y=0;
+				w=0.06;
+				h=0.08;
+				text="";
+			};
+		};
+ 	};
+};
 
 class CfgFunctions
 {
-	#include "ws_fnc\config.hpp"
-	class F // Defines the "owner"
+	class WS
 	{
-		class common // category
+		class mission
 		{
-			file = "f\common";
-			// Defines the function to preInit (the paramArray dosent seem to be constructed at preInit stage).
-			class processParamsArray
-			{
-				preInit = 1;
-				postInit = 1;
-			};
-
-			class nearPlayer{};
+			class gear {file = "fn_gear.sqf"};
 		};
-		class mpEnd
+		class debug
 		{
-			file = "f\mpEnd";
-			class mpEnd{};
-			class mpEndReceiver{};
+			file = "ws_fnc\dbg";
+			class debugText {};
+			class typeCheck {};
+			class clipboardCode {};
+			class copyPos {};
+			class countUnits {};
+			class debugTriggers {postInit = 1;};
 		};
-		class assignGear
+		class tools
 		{
-			// Defines the functions to preInit the compling of the assignGear function used by units.
-			file = "f\assignGear";
-			class assignGear{};
+			file = "ws_fnc\tools";
+			class selectRandom {};
+			class gameCheck {preInit=1;};
+			class collectMarkers {};
+			class collectBuildings {};
+			class loadVehicle {};
+			class checkHC {};
+			class showFPS {};
+			class nearPlayer {};
+			class listPlayers {};
 		};
-		class setGroupID
+		class effects
 		{
-			file = "f\setGroupID";
-			class setGroupID{};
+			file = "ws_fnc\effects";
+			class createTripflare {};
+			class createLightning {};
+			class createCAS {};
+			class createOrdnance {};
 		};
-		class missionConditions
+		class misc
 		{
-			file = "f\missionConditions";
-			class SetTime{};
-			class SetFog{};
-			class SetWeather{};
+			file = "ws_fnc\misc";
+			class switchLights {};
+			class attachLight {};
+			class attachChem {};
+			class attachIR {};
+			class broadcast {};
+			class showIntro {};
+		};
+		class getPos
+		{
+			file = "ws_fnc\getPos";
+			class getPos {};
+			class getBPos {};
+			class getEPos {};
+			class nearestRoadPos {};
+			class nearestLandPos {};
+			class getPosInArea {};
+		};
+		class AI
+		{
+			file = "ws_fnc\AI";
+			class createGroup {};
+			class createVehicle {};
+			class createGarrison {};
+			class betterVehicle {};
+			class enterBuilding {};
+			class taskDefend {};
+			class taskCrew {};
+			class taskAmbush {};
+			class taskLand {};
+			class addWaypoint {};
+			class setAIMode {};
 		};
 		class cache
 		{
-			file = "f\cache";
+			file = "ws_fnc\cache";
 			class cInit {};
-			class cTracker {};
 			class gCache {};
 			class gUncache {};
+			class cTracker {};
 		};
-		class groupMarkers {
-			file = "f\groupMarkers";
-			class localGroupMarker{};
-			class localSpecialistMarker{};
+
+		class init {
+			class init {file = "ws_fnc\ws_fnc_init.sqf";preInit = 1;};
 		};
-		class authorisedCrew
-		{
-			file = "f\authorisedCrew";
-			class authorisedCrewCheck {};
-		};
-		class FTMemberMarkers
-		{
-			file = "f\FTMemberMarkers";
-			class SetLocalFTMemberMarkers{};
-			class GetMarkerColor{};
-			class LocalFTMarkerSync{};
-		};
-		class bodyRemoval
-		{
-			file = "f\removeBody";
-			class removeBody{};
-		};
-		class setAISkill
-		{
-			file = "f\setAISKill";
-			class setAISKill{};
-		};
-		class mapClickTeleport
-		{
-			file = "f\mapClickTeleport";
-			class mapClickTeleportUnit{};
-			class mapClickTeleportGroup{};
-		};
-		class nametag
-		{
-			file = "f\nametag";
-			class drawNameTag{};
-		};
-		class preMount
-		{
-			file = "f\preMount";
-			class mountGroups{};
-		};
-		class zeus
-		{
-			file = "f\zeus";
-			class zeusInit{};
-			class zeusAddAddons{};
-			class zeusAddObjects{};
-		};
-		class acre
-		{
-			file = "f\radios\acre";
-			class acre_removeRadios{};
-			class acre_addRadios{};
-			class acre_setRadioFrequencies{};
-			class acre_configureSpectatorChat{};
-		};
-		class tfr
-		{
-			file = "f\radios\tfr";
-			class tfr_removeRadios{};
-			class tfr_addRadios{};
-			class tfr_setRadioFrequencies{};
-			class tfr_configureSpectatorChat{};
-		};
-		#include "f\simplewoundingsystem\config.hpp"
-		#include "f\spect\functions.hpp"
 
 	};
-};
-
-
-// ============================================================================================
-
-// F3 - Custom Insignia
-
-class CfgUnitInsignia {
-	#include "f\assignGear\insignia\define.hpp"
 };

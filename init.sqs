@@ -1,0 +1,20 @@
+;Init variables
+?isNil "CLY_cutscene":CLY_cutscene=false
+?isNil "CLY_end":CLY_end=false
+?isNil "CLY_lastsurvivor":CLY_lastsurvivor=objNull
+?isNil "CLY_survivordeaths":CLY_survivordeaths=0
+?isNil "CLY_zombiedeaths":CLY_zombiedeaths=0
+?isServer:{publicVariable _x} forEach ["CLY_survivordeaths","CLY_zombiedeaths"]
+
+@(isDedicated or !isNull player)
+player setPos [(getPos CLY_location select 0)+random 5,(getPos CLY_location select 1)+random 5,4000+random 5000]
+
+;Fade sound
+[] spawn {0 fadeSound 0;sleep 2.5;5 fadeSound 1}
+
+;Sound arrays
+CLY_noises_idle=["idle1","idle2","idle3","idle4","idle5","idle6","idle7","idle8"]
+CLY_noises_chase=["chase1","chase2","chase3","chase4","chase5","chase6","chase7","chase8"]
+CLY_noises_attack=["attack1","attack2","attack3","attack4"]
+CLY_noises_die=["die1","die2"]
+CLY_noises_scream=["scream1","scream2","scream3"]

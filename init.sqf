@@ -1,222 +1,310 @@
-// ====================================================================================
-
-// F3 - Disable Saving and Auto Saving
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-enableSaving [false, false];
-
-// ====================================================================================
-
-// F3 - Mute Orders and Reports
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-enableSentences false;
-
-// ====================================================================================
-
-// F3 - MapClick Teleport
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-// f_var_mapClickTeleport_Uses = 0;					// How often the teleport action can be used. 0 = infinite usage.
-// f_var_mapClickTeleport_TimeLimit = 0; 			// If higher than 0 the action will be removed after the given time.
-// f_var_mapClickTeleport_GroupTeleport = false; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
-// f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
-// f_var_mapClickTeleport_Height = 0;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
-// [] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
-
-// ====================================================================================
-
-// F3 - Briefing
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_script_briefing = [] execVM "briefing.sqf";
-
-// ====================================================================================
-
-// F3 - F3 Folk ARPS Group IDs
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_script_setGroupIDs = [] execVM "f\setGroupID\f_setGroupIDs.sqf";
-
-// ====================================================================================
-
-// F3 - Buddy Team Colours
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_script_setTeamColours = [] execVM "f\setTeamColours\f_setTeamColours.sqf";
-
-// ====================================================================================
-
-// F3 - Fireteam Member Markers
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[] spawn f_fnc_SetLocalFTMemberMarkers;
-
-// ====================================================================================
-
-// F3 - F3 Folk ARPS Group Markers
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_script_setGroupMarkers = [] execVM "f\groupMarkers\f_setLocalGroupMarkers.sqf";
-
-// ====================================================================================
-
-// F3 - F3 Common Local Variables
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-// WARNING: DO NOT DISABLE THIS COMPONENT
-
-f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
-
-// ====================================================================================
-
-// F3 - Automatic Body Removal
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_var_removeBodyDelay = 180;
-f_var_removeBodyDistance = 500;
-f_var_doNotRemoveBodies = [];
-[] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
-
-// ====================================================================================
-
-// F3 - Dynamic View Distance
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-// f_var_viewDistance_default = 1250;
-// f_var_viewDistance_tank = 2000;
-// f_var_viewDistance_car = 2000;
-// f_var_viewDistance_rotaryWing = 2500;
-// f_var_viewDistance_fixedWing = 5000;
-// f_var_viewDistance_crewOnly = true;
-// [] execVM "f\dynamicViewDistance\f_setViewDistanceLoop.sqf";
-
-// ====================================================================================
-
-// F3 - Authorised Crew Check
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-// VehicleName addEventhandler ["GetIn", {[_this,[UnitName1,UnitName2],false] call f_fnc_authorisedCrewCheck}];
-// VehicleName addEventhandler ["GetIn", {[_this,["UnitClass1","UnitClass2"],false] call f_fnc_authorisedCrewCheck}];
-
-// ====================================================================================
-
-// F3 - Casualties Cap
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-// [[GroupName or SIDE],100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
-// [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
-
-// BLUFOR > NATO
-// [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
-
-// OPFOR > CSAT
-// [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
-
-// INDEPENDENT > AAF
-// [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
-
-// ====================================================================================
-
-// F3 - AI Skill Selector
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[] execVM "f\setAISKill\f_setAISkill.sqf";
-// f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
-
-// ====================================================================================
-
-// F3 - Assign Gear AI
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-// [] execVM "f\assignGear\f_assignGear_AI.sqf";
-
-// ====================================================================================
-
-// F3 - Name Tags
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
-f_showDistance_Nametags = true;			// Show distance to player
-// f_showVehicle_Nametags = true;			// Show vehicle player is in
-[20] execVM "f\nametag\f_nametags.sqf";
-
-// ====================================================================================
-
-// F3 - Group E&E Check
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-// [side,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
-// [["Grp1","Grp2"],ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
-
-// ====================================================================================
-
-// F3 - ORBAT Notes
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[] execVM "f\briefing\f_orbatNotes.sqf";
-
-// ====================================================================================
-
-// F3 - Loadout Notes
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[] execVM "f\briefing\f_loadoutNotes.sqf";
-
-// ====================================================================================
-
-// F3 - Join Group Action
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[false] execVM "f\groupJoin\f_groupJoinAction.sqf";
-
-// ====================================================================================
-
-// F3 - Mission Timer/Safe Start
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[] execVM "f\safeStart\f_safeStart.sqf";
-
-// ====================================================================================
-
-// F3 - JIP setup
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_var_JIP_FirstMenu = false;		// Do players connecting for the first time get the JIP menu? - This only works in missions with respawn.
-f_var_JIP_RemoveCorpse = false;		// Remove the old corpse of respawning players?
-f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear? False will use gear assigned by F3 Gear Component if possible
-
-// ====================================================================================
-
-// F3 - AI Unit Caching
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[30] spawn f_fnc_cInit;
-
-// Note: Caching aggressiveness is set using the f_var_cachingAggressiveness variable; possible values:
-// 1 - cache only non-leaders and non-drivers
-// 2 - cache all non-moving units, always exclude vehicle drivers
-// 3 - cache all units, incl. group leaders and vehicle drivers
-f_var_cachingAggressiveness = 2;
-
-// ====================================================================================
-
-// F3 - Radio Systems Support
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[] execVM "f\radios\radio_init.sqf";
-
-// ====================================================================================
-
-// F3 - Medical Systems Support
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-// SWS Config Settings
-// How many extra FirstAidKits (FAKS) each player should receive when using the F3 Simple Wounding System:
-f_wound_extraFAK = 2;
-
-[] execVM "f\medical\medical_init.sqf";
-
-// ====================================================================================
-
-// Wolfenswan - post Init
-[] execVM "ws_init\ws_postInit.sqf";
+//Zombie mission init script by Celery
+
+cutText ["","BLACK FADED",1];
+
+//Time and weather
+switch CLY_timeofday do {
+case 1:
+	{
+		setDate [2030, 6,7, 19,15];
+	};
+case 2:
+	{
+		setDate [2030, 6,7, 0, 0];
+	};
+case 3:
+{
+	setDate [2030, 6,7, 4, 15];
+};
+};
+
+switch CLY_Weather do {
+	case 1:
+	{
+		0 setOvercast 0.3;
+		0 setRain 0;
+		0 setRainbow 0;
+		0 setWindStr  0.3;
+		0 setWindForce 0.3;
+		0 setWaves 0.3;
+	};
+	case 2:
+	{
+		0 setOvercast 0.5;
+		0 setRain 0.1;
+		0 setRainbow 0;
+		0 setWindStr  0.3;
+		0 setWindForce 0.3;
+		0 setWaves 0.3;
+	};
+	case 3:
+	{
+		0 setOvercast 1;
+		0 setRain 0.7;
+		0 setRainbow 0;
+		0 setWindStr  1;
+		0 setWindForce 1;
+		0 setWaves 0.3;
+		if (isServer) then {[] execVM "ws_storm.sqf";};
+	};
+};
+
+/*
+switch CLY_FOG do {
+	case 1:
+	{
+	};
+	case 2:
+	{
+		0 setFog CLY_fog;
+	};
+	case 3:
+	{
+		0 setFog CLY_fog;
+	};
+};*/
+
+0 setFog CLY_fog;
+
+forceWeatherChange;
+setViewDistance 500;
+
+//Disable saving
+enableSaving [false,false];
+
+//Disable radio
+enableRadio false;
+
+//CLY Remove Dead
+[45,0] execVM "cly_removedead.sqf";
+player setVariable ["CLY_removedead",false,true];
+
+// Set default view mode
+setAperture -1;
+
+//Zombie damage handling
+CLY_zombiehandledamage={
+	_this addEventHandler [
+		"HandleDamage",
+		{
+			_unit=_this select 0;
+			_damage=_this select 2;
+			_gethit=[0,0,0,0];
+			if (!isNil {_unit getVariable "gethit"}) then {_gethit=_unit getVariable "gethit"} else {_unit setVariable ["gethit",[0,0,0,0]]};
+			_multiplier=if (typeOf player in WS_zombieclasses) then {0.5} else {1};
+			if (_this select 3!=_unit) then {
+				switch (_this select 1) do {
+					case "":{_damage=damage _unit+_damage*0.1};
+					case "head_hit":{_damage=(_gethit select 0)+(_damage-(_gethit select 0))*(2*_multiplier);_gethit set [0,_damage];_unit setVariable ["gethit",_gethit]};
+					case "body":{_damage=(_gethit select 1)+(_damage-(_gethit select 1))*(0.25*_multiplier);_gethit set [1,_damage];_unit setVariable ["gethit",_gethit]};
+					case "legs":{_damage=(_gethit select 3)+(_damage-(_gethit select 3))*(0.45*_multiplier);_gethit set [3,_damage];_unit setVariable ["gethit",_gethit]};
+				};
+			};
+		_damage
+		}
+	];
+};
+
+/////No dedicated after this/////
+if (isDedicated) exitWith {};
+/////No dedicated after this/////
+
+/*
+CLY_locationarea=createTrigger ["EmptyDetector",getPos CLY_location];
+CLY_locationarea setTriggerArea (triggerArea CLY_Location);
+CLY_locationarea setTriggerActivation ["ANY","PRESENT",true];
+CLY_locationarea setTriggerStatements ["this","",""];
+*/
+
+//GPS
+//Ugly code alert (could/should prob. rewrite this into something slicker but can't be arsed ~ws)
+if !(player getVariable ["scientist",false]) then {
+	[] spawn {
+		_markers=[];
+		for "_x" from 1 to 30 do {
+			_marker=createMarkerLocal [format ["marker%1",_x],getPos player];
+			_marker setMarkerColorLocal "ColorBlue";
+			_marker setMarkerTypeLocal "mil_triangle";
+			_marker setMarkerSizeLocal [0.3,0.6];
+			_marker setMarkerAlphaLocal 0;
+			_markers set [count _markers,_marker];
+		};
+		sleep 0.1;
+		while {true} do {
+			if (isNil {player getVariable "zombie"} && "ItemGPS" in assigneditems player) then {
+				_units=[];
+				{if (isNil {_x getVariable "zombie"}) then {_units set [count _units,_x]}} forEach allUnits;
+				_i=0;
+				{
+					if (count _units>_i) then {
+						_unit=_units select _i;
+						_x setMarkerColorLocal "ColorBlue";
+						_x setMarkerTextLocal name _unit;
+						_x setMarkerPosLocal getPos _unit;
+						_x setMarkerDirLocal getDir _unit;
+						_x setMarkerAlphaLocal 1;
+					} else {
+						_x setMarkerAlphaLocal 0;
+					};
+					_i=_i+1;
+				} forEach _markers;
+			};
+
+			if (!isNil {player getVariable "zombie"}) then {
+				_units=[];
+				{if (!isNil {_x getVariable "zombie"}) then {_units set [count _units,_x]}} forEach allUnits;
+				_i=0;
+				{
+					if (count _units>_i) then {
+						_unit=_units select _i;
+						_x setMarkerColorLocal "ColorRed";
+						_x setMarkerTextLocal name _unit;
+						_x setMarkerPosLocal getPos _unit;
+						_x setMarkerDirLocal getDir _unit;
+						_x setMarkerAlphaLocal 1;
+					} else {
+						_x setMarkerAlphaLocal 0;
+					};
+					_i=_i+1;
+				} forEach _markers;
+			};
+
+			sleep 0.2;
+
+			if (!("ItemGPS" in assigneditems player) && isNil {player getVariable "zombie"}) exitWith {};
+		};
+	};
+} else {
+	[] spawn {
+		_markers=[];
+		for "_x" from 1 to 30 do {
+			_marker=createMarkerLocal [format ["marker%1",_x],getPos player];
+			_marker setMarkerColorLocal "ColorBlue";
+			_marker setMarkerTypeLocal "mil_triangle";
+			_marker setMarkerSizeLocal [0.3,0.6];
+			_marker setMarkerAlphaLocal 0;
+			_markers set [count _markers,_marker];
+		};
+
+		sleep 0.1;
+		while {true} do {
+			if ("ItemGPS" in assigneditems player) then {
+				_units=[];
+				{if !(isNil {_x getVariable "zombie"}) then {_units set [count _units,_x]}} forEach allUnits;
+				_i=0;
+				{
+					if (count _units>_i) then {
+						_unit=_units select _i;
+						_x setMarkerColorLocal "ColorRed";
+						_x setMarkerTextLocal name _unit;
+						_x setMarkerPosLocal getPos _unit;
+						_x setMarkerDirLocal getDir _unit;
+						_x setMarkerAlphaLocal 1;
+					} else {
+						_x setMarkerAlphaLocal 0;
+					};
+					_i=_i+1;
+				} forEach _markers;
+			};
+
+			sleep 0.2;
+
+			if (!("ItemGPS" in assigneditems player) && isNil {player getVariable "zombie"}) exitWith {};
+		};
+	};
+};
+
+
+//Claw mark HUD
+execVM "cly_hud.sqf";
+
+//Briefing
+player createDiaryRecord ["Diary",["Briefing","<br/>Infection: Chernarus<br/><br/>A zombie apocalypse is about to sweep over Chernarus. All it takes is one little zombie that gets through the quarantine and starts infecting people. This is the story of one such occurrence.<br/><br/>The mission starts with one zombie against everyone else. Every dead survivor will respawn as a zombie, and their new task is to kill their former comrades. The mission ends when time is up or everyone has turned into a zombie. The original zombie always kills on the first hit, the others need two."]];
+
+player createDiaryRecord ["Diary",["Zombie instructions","<br/>Attacking: Press the primary mouse button when a survivor is in front of you to attack him. If you're the original zombie, you need only one hit to kill him, otherwise you need to hit him twice.<br/><br/>Moaning: Press the primary mouse button when not in attacking range of a survivor. In addition to scaring your enemies, moaning will help you find them and mark them on the map for a brief period of time.<br/><br/>Jumping: Lie down and hold and release the primary mouse button to jump in the direction you're looking. You can cancel your jump by pressing the secondary mouse button. You will automatically attack survivors that cross your path during your jump."]];
+
+player createDiaryRecord ["Diary",["Credits","<br/>Mission and scripts:<br/>Celery<br/><br/>Noises and screams:<br/>Thief II: The Metal Age and freesound.org<br/><br/>Ported to Arma3 by Wolfenswan for Folk ARPS"]];
+
+if (isNil {player getVariable "zombie"})  then {
+	obj1=player createSimpleTask [""];
+	obj1 setSimpleTaskDescription ["<br/>Your only goal is to stay alive. A horrible fate worse than death awaits you should you die.","Survive",""];
+	player setCurrentTask obj1;
+	[] spawn {
+		sleep 4;
+		["TaskAssigned",["Survive!"]] call bis_fnc_showNotification;
+	};
+};
+
+if (!isNil {player getVariable "zombie"}) then {
+	obj2=player createSimpleTask [""];
+	obj2 setSimpleTaskDescription ["<br/>You are a zombie. You must kill everyone.","Kill all the survivors",""];
+	player setCurrentTask obj2;
+	["TaskAssigned",["Kill!"]] call bis_fnc_showNotification;
+
+	[] spawn {
+		sleep 4;
+		["TaskAssigned",["Kill all the Survivors!!"]] call bis_fnc_showNotification;
+	};
+};
+
+//CLY Jukebox
+[
+	1,
+	["Fallout",0,207,0.35],
+	["Wasteland",0,195,0.35],
+	["MAD",0,196,0.35]
+] execVM "cly_jukebox.sqf";
+
+//Color filter
+"colorCorrections" ppEffectEnable true;
+"colorCorrections" ppEffectAdjust [1,1,0,[0,0,0,0],[0.3,0.3,0.3,1.3],[1,1,1,0]];
+"colorCorrections" ppEffectCommit 0;
+
+//Claw script
+CLY_z_claw={
+	_victim=_this select 0;
+	_claw=_this select 1;
+	if (player==_victim) then {
+		titleRsc [format ["claw%1",_claw],"PLAIN"]
+	} else {
+		if (!isNil {player getVariable "spectating"}) then {
+			if (player getVariable "spectating"==_victim) then {
+				titleRsc [format ["claw%1",_claw],"PLAIN"];
+			};
+		};
+	};
+	true;
+};
+
+
+//Public variable event handlers
+"CLY_z_noisepv" addPublicVariableEventHandler {
+	_var=_this select 1;
+	_zombie=_var select 0;
+	_zombie say3D (_var select 1);
+};
+"CLY_z_attackpv" addPublicVariableEventHandler {
+	_var=_this select 1;
+	_zombie=_var select 0;
+	_sound=_var select 1;
+	_anim=if (count _var>2) then {_var select 2} else {""};
+	_object="HeliHEmpty" createVehicleLocal [0,0,0];
+	_object attachTo [_zombie,[0,0,1.5]];
+	_object say3D _sound;
+	if (_anim!="") then {_zombie switchMove _anim};
+	[_object] spawn {sleep 10;deleteVehicle (_this select 0)};
+};
+"CLY_z_victimpv" addPublicVariableEventHandler {
+	_var=_this select 1;
+	_victim=_var select 0;
+	_sound=_var select 1;
+	_claw=_var select 2;
+	_object="HeliHEmpty" createVehicleLocal [0,0,0];
+	_object attachTo [_victim,[0,0,1.5]];
+	if (_sound!="") then {_object say3D _sound};
+	_object spawn {sleep 5;deleteVehicle _this};
+	if (_claw>0) then {[_victim,_claw] call CLY_z_claw};
+};
+
+// Setup Zombie
+[] execVM "cly_playerzombie.sqf";
