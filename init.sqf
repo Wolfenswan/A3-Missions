@@ -125,6 +125,13 @@ f_var_civAI = independent; // Optional: The civilian AI will use this side's set
 
 // ====================================================================================
 
+// F3 - Assign Gear AI
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+// [] execVM "f\assignGear\f_assignGear_AI.sqf";
+
+// ====================================================================================
+
 // F3 - Name Tags
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
@@ -220,4 +227,4 @@ f_wound_extraFAK = 2;
 // ====================================================================================
 
 // Wolfenswan - post Init
-[] execVM "ws_scripts\ws_postInit.sqf";
+[] execVM "ws_init\ws_postInit.sqf";
