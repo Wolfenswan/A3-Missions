@@ -32,8 +32,8 @@ titleText [format ["The %1 won!\n\nSurvivors killed: %2%3\nZombies killed: %4%5\
 ~5
 
 skipTime -CLY_timeofday
-?_winners=="zombies" and isNil "obj2":"end2" call BIS_fnc_endMission;;exit
-?_winners=="survivors" and isNil {player getVariable "zombie"}:"end3" call BIS_fnc_endMission;;exit
-?_winners=="survivors" and !isNil {player getVariable "zombie"}:"end4" call BIS_fnc_endMission;;exit
+?_winners=="zombies" and isNil "obj2":"end2" call BIS_fnc_endMission;exit
+?_winners=="survivors" and isNil {player getVariable "zombie"}:"end3" call BIS_fnc_endMission;exit
+?_winners=="survivors" and !isNil {player getVariable "zombie"}:"end4" call BIS_fnc_endMission;exit
 "end1" call BIS_fnc_endMission;
 exit

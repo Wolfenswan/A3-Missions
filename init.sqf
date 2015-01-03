@@ -40,6 +40,7 @@ switch CLY_Weather do {
 	case 3:
 	{
 		0 setOvercast 1;
+		0 setLightnings 1;
 		0 setRain 0.7;
 		0 setRainbow 0;
 		0 setWindStr  1;
