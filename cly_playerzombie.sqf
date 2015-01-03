@@ -7,12 +7,12 @@ if (isNil {player getVariable "zombie"}) then {
 	_relocate=true;
 
 	while {_relocate} do {
-		_pos=[(getPos CLY_location select 0)-_radius+random _radius*2,(getPos CLY_location select 1)-_radius+random _radius*2,0];
+		_pos=[(getPos CLY_location select 0)-_radius+random _radius*2,(getPos CLY_location select 1)-_radius+random _radius*2,0.4];
 		_altobject setPos [_pos select 0,_pos select 1,1000];
 		if ([CLY_location,_pos] call BIS_fnc_inTrigger and !surfaceIsWater _pos and (getPos _altobject select 2)==(getPosATL _altobject select 2)) then {_relocate=false};
 	};
-	player setVelocity [0,0,0];
-	player setPos _pos;
+	//player setVelocity [0,0,0];
+	player setPosATL _pos;
 	player setDir random 360;
 	cutText ["","BLACK IN",1];
 } else {
@@ -75,7 +75,7 @@ while {true} do {
 			};
 			_startpos=_pos
 		};
-		waitUntil {alive player};
+
 		player setVariable ["CLY_removedead",nil,true];
 		CLY_markercolor="ColorRed";
 		"colorCorrections" ppEffectAdjust [1,1,0,[0,0,0,0],[0.3,0.3,0.3,1.3],[1,1,1,0]];
@@ -118,6 +118,7 @@ while {true} do {
 				sleep 0.05;
 			};
 		};
+
 		while {alive player} do {
 			waitUntil {!CLY_cutscene};
 			if (CLY_mouse1down) then {
