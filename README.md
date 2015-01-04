@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-2-1</i>
 
 <b>Mission description</b><br/>
-Template mission.
+An FIA platoon has gone ashore in northern Altis and sets out to take the nearby airfield from it's CSAT occupiers. Made in collaboration with Fer.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
