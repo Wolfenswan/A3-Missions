@@ -8,7 +8,15 @@ _dragger setVariable ["f_wound_dragging",_unit,true];
 // the dragger gets a release option.
 if(local _dragger) then
 {
-	_dragger addAction [format["Release %1",name _unit],{(_this select 1) setVariable ["f_wound_dragging",nil];(_this select 1) removeAction (_this select 2);}, nil, 6, false, true, "", "true"];
+	_dragger addAction [format["Release %1",name _unit],{
+		(_this select 1) setVariable ["f_wound_dragging",nil];
+		(_this select 1) removeAction (_this select 2);
+		{
+			if (_x in playableUnits) then {
+			  detach _x;
+			};
+		} forEach attachedObjects (_this select 1);
+	}, nil, 6, false, true, "", "true"];
 
 
 	switch (currentWeapon _dragger) do {
