@@ -1,10 +1,10 @@
-// F3 - Automatic Body Removal
+// F3 - Garbage Collector Scraper
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
 // DECLARE VARIABLES AND FUNCTIONS
 
-private ["_body","_wait","_group","_distance","_pos","_nearPlayers","_nearUnits","_check"];
+private ["_body","_wait","_group","_distance","_pos","_nearPlayers","_nearUnits"];
 
 // ====================================================================================
 
@@ -14,11 +14,11 @@ private ["_body","_wait","_group","_distance","_pos","_nearPlayers","_nearUnits"
 _body = _this;
 _group = group _this;
 
-if (isNil "f_var_removeBodyDelay") then {f_var_removeBodyDelay = 60};
-if (isNil "f_var_removeBodyDistance") then {f_var_removeBodyDistance = 100};
+if (isNil "f_var_garbageCollectorDelay") then {f_var_garbageCollectorDelay = 60};
+if (isNil "f_var_garbageCollectorDistance") then {f_var_garbageCollectorDistance = 100};
 
-_wait = f_var_removeBodyDelay;
-_distance = f_var_removeBodyDistance;
+_wait = f_var_garbageCollectorDelay;
+_distance = f_var_garbageCollectorDistance;
 
 _pos = getPos _body;
 _nearPlayers = [objNull];
@@ -48,9 +48,8 @@ deleteVehicle _body;
 
 // REMOVE BODY'S GROUP IF EMPTY
 // We wait a while to make sure the body has been removed from the group. Then we count the living units in it and remove the group if it is empty
-sleep 30;
-_check = count (units (_group));
-if (_check == 0) then {deleteGroup _group};
+sleep 0.5;
+if (count (units (_group)) == 0) then {deleteGroup _group};
 
 
 
