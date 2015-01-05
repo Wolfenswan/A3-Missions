@@ -73,8 +73,7 @@ if(isServer) then {
 // F3 - Garbage Collector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_var_garbageCollectorDelay = 60;
-f_var_garbageCollectorDistance = 250;
+f_var_garbageCollectorDistance = 50;
 [] execVM "f\garbageCollector\f_garbageCollectorLoop.sqf";
 
 // ====================================================================================
