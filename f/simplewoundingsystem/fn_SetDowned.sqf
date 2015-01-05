@@ -32,6 +32,8 @@ if(_bool && alive _unit) then
 	// Just a safety switch to ensure that the unit is wounded enough to have the firstaid option
 	if(damage _unit < 0.251) then { _unit setDamage 0.251};
 
+
+
 	// if _unit is not in a vehicle, play this animation otherwise fetch the dead animations from the vehicles.
 	if(vehicle _unit == _unit) then
 	{
