@@ -14,13 +14,11 @@ private ["_body","_wait","_group","_distance","_pos","_nearPlayers","_nearUnits"
 _body = _this;
 _group = group _this;
 
-if (isNil "f_var_removeBodyDelay") then {f_var_removeBodyDelay = 20};
-if (isNil "f_var_removeBodyDistance") then {f_var_removeBodyDistance = 50};
+if (isNil "f_var_removeBodyDelay") then {f_var_removeBodyDelay = 60};
+if (isNil "f_var_removeBodyDistance") then {f_var_removeBodyDistance = 100};
 
 _wait = f_var_removeBodyDelay;
 _distance = f_var_removeBodyDistance;
-
-waitUntil  {!isNull _body};
 
 _pos = getPos _body;
 _nearPlayers = [objNull];

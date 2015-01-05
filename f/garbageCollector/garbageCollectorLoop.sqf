@@ -2,9 +2,9 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// RUN THE SCRIPT ONLY SERVER SIDE AND ON HEADLESS CLIENT
+// RUN THE SCRIPT ONLY SERVER SIDE
 
-if (!isServer && hasInterface) exitWith {};
+if (!isServer) exitWith {};
 
 // ====================================================================================
 
