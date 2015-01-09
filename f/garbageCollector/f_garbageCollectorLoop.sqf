@@ -28,8 +28,7 @@ if (isNil "f_var_garbageCollectorDistance") then {f_var_garbageCollectorDistance
 
 f_var_garbageCollectorRun = true;
 
-_conveyor = [];
-
+/*
 while {f_var_garbageCollectorRun} do {
 	sleep f_var_garbageCollectorSleep;
 	_check = if (_onlyMen) then [{allDeadMen},{allDead}];
@@ -41,7 +40,7 @@ while {f_var_garbageCollectorRun} do {
 		};
 	} forEach _check;
 
-	/*
+	// Method 1
 	_i = 0;
 	while (count _conveyor > f_var_garbageCollectorMaxBodies) do {
 		_unit = _conveyor select _i;
@@ -64,8 +63,8 @@ while {f_var_garbageCollectorRun} do {
 		} else {_i = _i + 1};
 		sleep 0.1;
 	};
-	*/
 
+	// Method 2
 	if (count _conveyor > f_var_garbageCollectorMaxBodies) then {
 		{
 			_nearPlayer = [_unit,f_var_garbageCollectorDistance] call f_fnc_nearPlayer;
@@ -86,4 +85,46 @@ while {f_var_garbageCollectorRun} do {
 			};
 		} forEach _conveyor;
 	};
+};
+*/
+
+while {f_var_garbageCollectorRun} do {
+	sleep f_var_garbageCollectorSleep;
+
+	private ["_check","_c"];
+
+	// Create a local copy of the global arrays containing all dead/destroyed units
+	_check = if (_onlyMen) then [{allDeadMen},{allDead}];
+
+	if (count _check > f_var_garbageCollectorMaxBodies) then {
+
+		// Reduce the array to only the last elements, exceeding the max. body limit
+		_check deleteRange [0,f_var_garbageCollectorMaxBodies];
+
+		{
+			private ["_unit","_nearPlayer"];
+			_unit = _x;
+
+			if !(_unit getVariable ["f_var_garbageCollectorIgnore",false] && {!([_unit,f_var_garbageCollectorDistance] call f_fnc_nearPlayer)}) then {
+				_unit spawn {
+						_c = _c + 1;
+						_unit spawn {
+							private ["_group"];
+							// If it's an infantry unit hide the body smoothly first
+							if (_this isKindOf "CAManBase") then {
+								hideBody _this;
+								sleep 2.5;
+							};
+							_group = group _this;
+							deleteVehicle _this;
+							sleep 0.1;
+							if (count (units (_group)) == 0) then {deleteGroup _group};
+						};
+					};
+				};
+			sleep 0.1;
+		} forEach _check
+
+	};
+
 };
