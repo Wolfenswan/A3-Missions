@@ -54,6 +54,8 @@ while {f_var_garbageCollectorRun} do {
 							_group = group _this;
 							deleteVehicle _this;
 							sleep 0.1;
+
+							// Remove the unit's group if it is now empty
 							if (count (units (_group)) == 0) then {deleteGroup _group};
 						};
 					};
