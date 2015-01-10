@@ -1,4 +1,4 @@
-// F3 - Automatic Garbage Collector
+// F3 - Garbage Collector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
@@ -9,18 +9,16 @@ if (!isServer) exitWith {};
 // ====================================================================================
 
 // DECLARE VARIABLES AND FUNCTIONS
-private ["_onlyMen","_checkSleep","_distance","_check"];
+private ["_onlyMen","_checkSleep","_check"];
 
 // ====================================================================================
 
 // SET KEY VARIABLES
-// Using a common variable, we will create an array containing all men, minus playable units.
 
-if (isNil "f_var_garbageCollectorDistance") then {f_var_garbageCollectorDistance = 100};
-
-_onlyMen = false; // If true, the GC will only remove infantry bodies but not wrecks
-_checkSleep = 300; // How often the garbage collector checks for bodies to remove
-_distance = f_var_garbageCollectorDistance;
+_onlyMen = true;   // If true, the GC will only remove infantry bodies but not wrecks
+if (isNil "f_var_garbageCollectorMaxBodies") then {f_var_garbageCollectorMaxBodies = 25};	// The maximum amount of bodies which can be present in the mission
+if (isNil "f_var_garbageCollectorSleep") then {f_var_garbageCollectorDistance_Sleep = 120}; // How often the GC will check for new bodies to deleted
+if (isNil "f_var_garbageCollectorDistance") then {f_var_garbageCollectorDistance = 450};	// The minimal distance to a player for the GC to remove a body
 
 // ====================================================================================
 
@@ -30,28 +28,42 @@ _distance = f_var_garbageCollectorDistance;
 f_var_garbageCollectorRun = true;
 
 while {f_var_garbageCollectorRun} do {
-	sleep _checkSleep;
+	sleep f_var_garbageCollectorSleep;
+
+	private ["_check"];
+
+	// Create a local copy of the global arrays containing all dead/destroyed units
 	_check = if (_onlyMen) then [{allDeadMen},{allDead}];
 
-	{
-		if !(_x getVariable ["f_var_garbageCollectorIgnore",false]) then {
-			_nearPlayer = [_x,_distance] call f_fnc_nearPlayer;
-			if !(_nearPlayer ) then {
-				_x spawn {
-					_group = group _this;
+	if (count _check > f_var_garbageCollectorMaxBodies) then {
 
-					// If it's an infantry unit hide the body smoothly first
-					if (_this isKindOf "CAManBase") then {
-						hideBody _this;
-						sleep 2.5;
+		// Reduce the array to only the first elements
+		//_check deleteRange [f_var_garbageCollectorMaxBodies,count _check -1];
+
+		{
+			private ["_unit"];
+			_unit = _x;
+
+			// Only delete the unit if it's not set to be ignored and no player is in the given distance
+			if !(_unit getVariable ["f_var_garbageCollectorIgnore",false] && {!([_unit,f_var_garbageCollectorDistance] call f_fnc_nearPlayer)}) then {
+				_unit spawn {
+						_unit spawn {
+							private ["_group"];
+							// If it's an infantry unit hide the body smoothly first
+							if (_this isKindOf "CAManBase") then {
+								hideBody _this;
+								sleep 2.5;
+							};
+							_group = group _this;
+							deleteVehicle _this;
+							sleep 0.1;
+							if (count (units (_group)) == 0) then {deleteGroup _group};
+						};
 					};
-					deleteVehicle _this;
-					sleep 0.5;
-					if (count (units (_group)) == 0) then {deleteGroup _group};
 				};
-			};
+			sleep 0.1;
+		} forEach _check
 
-		};
-		sleep 0.1; // Very short sleep to lessen impact on network
-	} forEach _check;
+	};
+
 };
