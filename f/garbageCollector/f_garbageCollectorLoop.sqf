@@ -14,7 +14,6 @@ private ["_onlyMen","_checkSleep","_check"];
 // ====================================================================================
 
 // SET KEY VARIABLES
-// Using a common variable, we will create an array containing all men, minus playable units.
 
 _onlyMen = true;   // If true, the GC will only remove infantry bodies but not wrecks
 if (isNil "f_var_garbageCollectorMaxBodies") then {f_var_garbageCollectorMaxBodies = 25};	// The maximum amount of bodies which can be present in the mission
@@ -28,86 +27,26 @@ if (isNil "f_var_garbageCollectorDistance") then {f_var_garbageCollectorDistance
 
 f_var_garbageCollectorRun = true;
 
-/*
-while {f_var_garbageCollectorRun} do {
-	sleep f_var_garbageCollectorSleep;
-	_check = if (_onlyMen) then [{allDeadMen},{allDead}];
-
-	{
-		if !(_x getVariable ["f_var_garbageCollectorIgnore",false]) then {
-			_conveyor pushBack _x;
-			_x setVariable ["f_var_garbageCollectorIgnore",true];
-		};
-	} forEach _check;
-
-	// Method 1
-	_i = 0;
-	while (count _conveyor > f_var_garbageCollectorMaxBodies) do {
-		_unit = _conveyor select _i;
-		_nearPlayer = [_unit,f_var_garbageCollectorDistance] call f_fnc_nearPlayer;
-		if !(_nearPlayer ) then {
-			_conveyor deleteAt _i;
-			_unit spawn {
-				private ["_group"];
-				_this
-				// If it's an infantry unit hide the body smoothly first
-				if (_this isKindOf "CAManBase") then {
-					hideBody _this;
-					sleep 2.5;
-				};
-				_group = group _this;
-				deleteVehicle _this;
-				sleep 0.1;
-				if (count (units (_group)) == 0) then {deleteGroup _group};
-			};
-		} else {_i = _i + 1};
-		sleep 0.1;
-	};
-
-	// Method 2
-	if (count _conveyor > f_var_garbageCollectorMaxBodies) then {
-		{
-			_nearPlayer = [_unit,f_var_garbageCollectorDistance] call f_fnc_nearPlayer;
-			if !(_nearPlayer ) then {
-				_x spawn {
-					private ["_group"];
-					_this
-					// If it's an infantry unit hide the body smoothly first
-					if (_this isKindOf "CAManBase") then {
-						hideBody _this;
-						sleep 2.5;
-					};
-					_group = group _this;
-					deleteVehicle _this;
-					sleep 0.1;
-					if (count (units (_group)) == 0) then {deleteGroup _group};
-				};
-			};
-		} forEach _conveyor;
-	};
-};
-*/
-
 while {f_var_garbageCollectorRun} do {
 	sleep f_var_garbageCollectorSleep;
 
-	private ["_check","_c"];
+	private ["_check"];
 
 	// Create a local copy of the global arrays containing all dead/destroyed units
 	_check = if (_onlyMen) then [{allDeadMen},{allDead}];
 
 	if (count _check > f_var_garbageCollectorMaxBodies) then {
 
-		// Reduce the array to only the last elements, exceeding the max. body limit
-		_check deleteRange [0,f_var_garbageCollectorMaxBodies];
+		// Reduce the array to only the first elements
+		//_check deleteRange [f_var_garbageCollectorMaxBodies,count _check -1];
 
 		{
-			private ["_unit","_nearPlayer"];
+			private ["_unit"];
 			_unit = _x;
 
+			// Only delete the unit if it's not set to be ignored and no player is in the given distance
 			if !(_unit getVariable ["f_var_garbageCollectorIgnore",false] && {!([_unit,f_var_garbageCollectorDistance] call f_fnc_nearPlayer)}) then {
 				_unit spawn {
-						_c = _c + 1;
 						_unit spawn {
 							private ["_group"];
 							// If it's an infantry unit hide the body smoothly first
