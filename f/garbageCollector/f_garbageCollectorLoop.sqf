@@ -49,7 +49,7 @@ while {f_var_garbageCollectorRun} do {
 				_unit spawn {
 						_unit spawn {
 							private ["_group"];
-							// If it's an infantry unit hide the body smoothly first
+							// If it's an infantry unit hide the body first
 							if (_this isKindOf "CAManBase") then {
 								hideBody _this;
 								sleep 2.5;
