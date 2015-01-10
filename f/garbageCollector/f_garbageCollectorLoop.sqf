@@ -37,9 +37,6 @@ while {f_var_garbageCollectorRun} do {
 
 	if (count _check > f_var_garbageCollectorMaxBodies) then {
 
-		// Reduce the array to only the first elements
-		//_check deleteRange [f_var_garbageCollectorMaxBodies,count _check -1];
-
 		{
 			private ["_unit"];
 			_unit = _x;
@@ -49,7 +46,7 @@ while {f_var_garbageCollectorRun} do {
 				_unit spawn {
 						_unit spawn {
 							private ["_group"];
-							// If it's an infantry unit hide the body smoothly first
+							// If it's an infantry unit hide the body first
 							if (_this isKindOf "CAManBase") then {
 								hideBody _this;
 								sleep 2.5;
@@ -57,12 +54,14 @@ while {f_var_garbageCollectorRun} do {
 							_group = group _this;
 							deleteVehicle _this;
 							sleep 0.1;
+
+							// Remove the unit's group if it is now empty
 							if (count (units (_group)) == 0) then {deleteGroup _group};
 						};
 					};
 				};
 			sleep 0.1;
-		} forEach _check
+		} count _check;
 
 	};
 
