@@ -19,7 +19,7 @@ private ["_onlyMen","_checkSleep","_distance","_check"];
 if (isNil "f_var_garbageCollectorDistance") then {f_var_garbageCollectorDistance = 100};
 
 _onlyMen = false; // If true, the GC will only remove infantry bodies but not wrecks
-_checkSleep = 30; // How often the garbage collector checks for bodies to remove
+_checkSleep = 300; // How often the garbage collector checks for bodies to remove
 _distance = f_var_garbageCollectorDistance;
 
 // ====================================================================================
