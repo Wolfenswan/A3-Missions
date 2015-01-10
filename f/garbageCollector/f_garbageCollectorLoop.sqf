@@ -37,9 +37,6 @@ while {f_var_garbageCollectorRun} do {
 
 	if (count _check > f_var_garbageCollectorMaxBodies) then {
 
-		// Reduce the array to only the first elements
-		//_check deleteRange [f_var_garbageCollectorMaxBodies,count _check -1];
-
 		{
 			private ["_unit"];
 			_unit = _x;
