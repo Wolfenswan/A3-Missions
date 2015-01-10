@@ -59,7 +59,7 @@ while {f_var_garbageCollectorRun} do {
 					};
 				};
 			sleep 0.1;
-		} forEach _check
+		} count _check;
 
 	};
 
