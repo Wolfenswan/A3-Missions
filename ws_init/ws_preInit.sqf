@@ -14,9 +14,5 @@ if !(isServer) exitWith {ws_initDone = true};
 
 // Load up vehicles with groups
 // [veh1,group1,group2.....groupN] call ws_fnc_loadVehicle
-<<<<<<< HEAD:ws_scripts/ws_preInit.sqf
-// [Veh,Grp] call ws_fnc_loadVehicle;
-=======
->>>>>>> 51408dc0d8506319f7caabf74f98bc3d543e8aba:ws_init/ws_preInit.sqf
 
 ws_initDone = true;

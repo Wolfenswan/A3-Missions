@@ -15,11 +15,9 @@ if (!isDedicated && !_hc) then {
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 
+	_garrison = [];
+	_units = [];
 	{
-<<<<<<< HEAD:ws_scripts/ws_postInit.sqf
-		([_x] + (_x getVariable ["ws_garrison",[]])) call ws_fnc_createGarrison;
-	} forEach [AAF,AAF_1,AAF_2,AAF_3,AAF_4,AAF_5,AAF_6,AAF_7];
-=======
 		_units = _units + ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
 		//deleteVehicle _x;
 	} forEach _garrison;
@@ -46,27 +44,23 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 	[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
 	} forEach _units;
 	*/
->>>>>>> 51408dc0d8506319f7caabf74f98bc3d543e8aba:ws_init/ws_postInit.sqf
 };
 
-
-<<<<<<< HEAD:ws_scripts/ws_postInit.sqf
 // Do more stuff on the server
 if (isServer) then {
 
-	// Cache the convoy to prevent it from being spotted/coing active
-	sleep 0.1;
-=======
+
 	// Recalculate F3 variables
 	// [] execVM "f\common\f_setLocalVars.sqf";
 
 	// Stuff to happen AFTER mission launch
 	// sleep 0.1;
->>>>>>> 51408dc0d8506319f7caabf74f98bc3d543e8aba:ws_init/ws_postInit.sqf
-
 	// If units were spawned set AI skill again
 	//
 
+
+	// Cache the convoy to prevent it from being spotted/coing active
+	sleep 0.1;
 	{
 	 [_x,"f_fnc_gCache",true,false] spawn BIS_fnc_MP;
 	 (group _x) setVariable ["f_cacheExcl", true, true];
