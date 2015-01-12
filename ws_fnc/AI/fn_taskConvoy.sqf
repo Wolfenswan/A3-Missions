@@ -139,7 +139,7 @@ doStop _veh;
 			(group _x) leaveVehicle _veh;
 		} else {
 			// If the vehicle is a "soft" one and can't shoot, let the crew dismount too
-			if (_veh isKindOf "Car" && canFire _veh) then {
+			if (_veh isKindOf "Car" && !canFire _veh) then {
 				(group driver _veh) leaveVehicle _veh;
 			};
 		};
