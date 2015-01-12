@@ -217,18 +217,18 @@ _APmine2 = "APERSMine_Range_Mag";
 // "medium" vests are used for all classes if they are not assigned a specific uniform
 
 _light = [];
-_heavy =  ["eng","engm"];
+_heavy =  [];
 _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = [];
+_specOp = ["co","dc","eng"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
 
 _baseUniform = ["U_BG_leader","U_BG_Guerilla1_1","U_BG_Guerilla2_1","U_BG_Guerilla2_2","U_BG_Guerilla2_3","U_BG_Guerilla3_1","U_BG_Guerilla3_2","U_BG_Guerrilla_6_1"];
-_baseHelmet = ["H_Shemag_olive","H_ShemagOpen_tan","H_Bandanna_khk","H_Booniehat_khk","H_Cap_oli","H_Watchcap_blk"];
+_baseHelmet = ["H_Shemag_olive","H_ShemagOpen_tan","H_Bandanna_khk","H_Booniehat_khk","H_Cap_oli"];
 _baseGlasses = ["G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli"];
 
 // Armored vests
@@ -262,7 +262,7 @@ _ghillieGlasses = [];
 
 // Spec Op (CTRG)
 _sfuniform = ["U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3"];
-_sfhelmet = ["H_Cap_khaki_specops_UK","H_HelmetB_light_snakeskin"];
+_sfhelmet = ["H_Cap_khaki_specops_UK","H_Watchcap_blk"];
 _sfRig = ["V_PlateCarrierL_CTRG","V_PlateCarrierH_CTRG"];
 _sfGlasses = [];
 
@@ -340,11 +340,13 @@ switch (_typeofUnit) do
 // LOADOUT: COMMANDER
 	case "co":
 	{
+		_glriflemag = "30Rnd_65x39_caseless_mag";
+		_glriflemag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 		_unit addmagazines [_glriflemag,7];
 		_unit addmagazines [_glriflemag_tr,2];
 		_unit addmagazines [_glmag,3];
 		_unit addmagazines [_glsmokewhite,4];
-		_unit addweapon _glrifle;					//_COrifle
+		_unit addweapon "arifle_MX_GL_Black_F";
 		_unit addmagazines [_pistolmag,2];
 		_unit addweapon _pistol;
 		_unit addmagazines [_grenade,1];
@@ -359,11 +361,13 @@ switch (_typeofUnit) do
 // LOADOUT: DEPUTY COMMANDER AND SQUAD LEADER
 	case "dc":
 	{
+		_glriflemag = "30Rnd_65x39_caseless_mag";
+		_glriflemag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 		_unit addmagazines [_glriflemag,7];
 		_unit addmagazines [_glriflemag_tr,2];
 		_unit addmagazines [_glmag,3];
 		_unit addmagazines [_glsmokewhite,4];
-		_unit addweapon _glrifle;					//_DCrifle
+		_unit addweapon "arifle_MX_GL_Black_F";				//_DCrifle
 		_unit addmagazines [_pistolmag,2];
 		_unit addweapon _pistol;
 		_unit addmagazines [_grenade,1];
@@ -497,7 +501,7 @@ switch (_typeofUnit) do
 // LOADOUT: MEDIUM AT GUNNER
 	case "matg":
 	{
-		["matg"] call _backpack;
+		["matg",2] call _backpack;
 		_unit addmagazines [_carbinemag,7];
 		_unit addmagazines [_carbinemag_tr,2];
 		_unit addmagazines [_smokegrenade,2];
@@ -515,7 +519,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];
-		["matag"] call _backpack;
+		["matag",2] call _backpack;
 	};
 
 // LOADOUT: HEAVY AT GUNNER
@@ -703,13 +707,14 @@ switch (_typeofUnit) do
 // LOADOUT: ENGINEER (DEMO)
 	case "eng":
 	{
+		_carbinemag = "30Rnd_65x39_caseless_mag";
 		_unit addmagazines [_carbinemag,7];
-		_unit addweapon _carbine;
+		_unit addweapon "arifle_MXC_Black_F";
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_satchel,2];
-		_unit addItem "MineDetector";
+		//_unit addItem "MineDetector";
 		["eng"] call _backpack;
 	};
 

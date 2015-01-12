@@ -138,8 +138,8 @@ doStop _veh;
 		if (_veh getCargoIndex _x != -1 && _x == leader group _x) then {
 			(group _x) leaveVehicle _veh;
 		} else {
-			// If the vehicle is a "soft" one and doesn't have a gunner, let the crew dismount too
-			if (_veh isKindOf "Car" && !("Gunner" in ((typeOf _veh) call bis_fnc_vehicleRoles))) then {
+			// If the vehicle is a "soft" one and can't shoot, let the crew dismount too
+			if (_veh isKindOf "Car" && canFire _veh) then {
 				(group driver _veh) leaveVehicle _veh;
 			};
 		};
