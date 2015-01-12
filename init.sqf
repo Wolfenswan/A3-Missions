@@ -72,10 +72,10 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // F3 - Automatic Body Removal
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_var_removeBodyDelay = 180;
-f_var_removeBodyDistance = 500;
-f_var_doNotRemoveBodies = [];
-[] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
+// f_var_removeBodyDelay = 120;
+// f_var_removeBodyDistance = 350;
+// f_var_doNotRemoveBodies = [];
+// [] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
 
 // ====================================================================================
 
@@ -120,7 +120,7 @@ f_var_doNotRemoveBodies = [];
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// [] execVM "f\setAISKill\f_setAISkill.sqf";
+[] execVM "f\setAISKill\f_setAISkill.sqf";
 // f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
 
 // ====================================================================================
