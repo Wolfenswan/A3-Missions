@@ -16,19 +16,56 @@ if (!isDedicated && !_hc) then {
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 
 	{
+<<<<<<< HEAD:ws_scripts/ws_postInit.sqf
 		([_x] + (_x getVariable ["ws_garrison",[]])) call ws_fnc_createGarrison;
 	} forEach [AAF,AAF_1,AAF_2,AAF_3,AAF_4,AAF_5,AAF_6,AAF_7];
+=======
+		_units = _units + ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
+		//deleteVehicle _x;
+	} forEach _garrison;
+
+
+	_units execVM "f\setAISKill\f_setAISkill.sqf";
+
+	// Equip garrisoned units
+
+	//_units execVM "f\assignGear\f_assignGear_AI.sqf";
+
+	/*
+	_gear = [
+		["hgun_PDW2000_F",5],
+		["SMG_01_F",6],
+		["SMG_02_ACO_F",4],
+		["arifle_Mk20C_F",5],
+		["arifle_Katiba_C_F",5],
+		["arifle_TRG20_F",5]
+	];
+
+	{
+		_wp = _gear call ws_fnc_selectRandom;
+	[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
+	} forEach _units;
+	*/
+>>>>>>> 51408dc0d8506319f7caabf74f98bc3d543e8aba:ws_init/ws_postInit.sqf
 };
 
 
+<<<<<<< HEAD:ws_scripts/ws_postInit.sqf
 // Do more stuff on the server
 if (isServer) then {
 
 	// Cache the convoy to prevent it from being spotted/coing active
 	sleep 0.1;
+=======
+	// Recalculate F3 variables
+	// [] execVM "f\common\f_setLocalVars.sqf";
+
+	// Stuff to happen AFTER mission launch
+	// sleep 0.1;
+>>>>>>> 51408dc0d8506319f7caabf74f98bc3d543e8aba:ws_init/ws_postInit.sqf
 
 	// If units were spawned set AI skill again
-	[] execVM "f\setAISKill\f_setAISkill.sqf";
+	//
 
 	{
 	 [_x,"f_fnc_gCache",true,false] spawn BIS_fnc_MP;
@@ -60,7 +97,7 @@ if (isServer) then {
 
       // Forces flashlights on
        // _unit enablegunlights "forceOn";
-} forEach allUnits;
+	} forEach allUnits;
 	*/
 };
 
