@@ -57,7 +57,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_a62_Roomservice_v1";
+		briefingName="fa3_a62_Roomservice_v2";
 		overviewText="The notorious Altis Mafia is using the derelict Hotel as hideout and stash. Can Altis Finest but an end to their operations?";
 		startWeather=0.84999996;
 		startWind=0;
@@ -1270,7 +1270,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={21930.762,24.457483,21054.975};
+					position[]={21971.352,18.889557,21026.859};
 					id=71;
 					side="LOGIC";
 					vehicle="LocationArea_F";
@@ -1325,7 +1325,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={21915.121,26.168379,21059.35};
+					position[]={21963.631,18.723665,21028.363};
 					id=74;
 					side="LOGIC";
 					vehicle="SideBLUFOR_F";
@@ -1344,7 +1344,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={21918.156,25.629688,21056.469};
+					position[]={21966.666,18.572176,21025.482};
 					id=75;
 					side="LOGIC";
 					vehicle="SideOPFOR_F";
@@ -1363,7 +1363,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={21922.006,25.160954,21058.033};
+					position[]={21968.117,18.687664,21027.533};
 					class args
 					{
 						items=15;
@@ -1387,7 +1387,7 @@ class Mission
 						};
 						class Item3
 						{
-							value="if (_this select 1 == west) then {ws_hotelseized = true;publicVariable ""ws_hotelseized""} else {ws_hotelseized = false;publicVariable ""ws_hotelseized""};";
+							value="";
 							parentCls="ModuleSector_F";
 							typeName="OnOwnerChange";
 						};
@@ -1423,7 +1423,7 @@ class Mission
 						};
 						class Item9
 						{
-							value="0.5";
+							value="0.3";
 							parentCls="ModuleSector_F";
 							typeName="CostInfantry";
 						};
@@ -1453,7 +1453,7 @@ class Mission
 						};
 						class Item14
 						{
-							value="0.5";
+							value="0.3";
 							parentCls="ModuleSector_F";
 							typeName="CostPlayers";
 						};
@@ -1464,6 +1464,7 @@ class Mission
 					leader=1;
 					lock="UNLOCKED";
 					skill=0.60000002;
+					text="HotelModule";
 					syncId=10;
 					synchronizations[]={9,8,7};
 				};
@@ -1765,7 +1766,7 @@ class Mission
 		};
 		class Item18
 		{
-			position[]={21969.27,18.585032,21023.266};
+			position[]={21968.742,18.685545,21026.514};
 			name="mkrHotel";
 			type="Empty";
 		};
@@ -1840,12 +1841,12 @@ class Mission
 			position[]={22006.98,29.17828,21075.119};
 			a=0;
 			b=0;
-			timeoutMin=15;
-			timeoutMid=15;
-			timeoutMax=15;
+			timeoutMin=120;
+			timeoutMid=120;
+			timeoutMax=120;
 			interruptable=1;
 			age="UNKNOWN";
-			expCond="ws_hotelseized";
+			expCond="hotelModule getVariable ""owner"" == WEST";
 			expActiv="[2] call f_fnc_mpEnd";
 			class Effects
 			{

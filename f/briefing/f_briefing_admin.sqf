@@ -27,7 +27,7 @@ This briefing section can only be seen by the current admin.
 _briefing ="
 <br/>
 MISSION-MAKER NOTES<br/>
-Notes and messages made by the mission-maker.
+The mission will end if the hotel is uncontestedly held by BLUFOR for 2 minutes or either all BLUFOR or OPFOR are dead.
 ";
 
 _briefing = _briefing + _customText;
