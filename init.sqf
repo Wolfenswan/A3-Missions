@@ -73,7 +73,7 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 f_var_garbageCollectorSleep = 120;
-f_var_garbageCollectorDistance = 450;
+f_var_garbageCollectorDistance = 350;
 [] execVM "f\garbageCollector\f_garbageCollectorLoop.sqf";
 
 // ====================================================================================

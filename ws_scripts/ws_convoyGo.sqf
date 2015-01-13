@@ -2,7 +2,7 @@ if !(isServer) exitWith {};
 
 [0] spawn f_fnc_setTime;
 
-waitUntil {sleep 0.1;scriptDone f_script_setLocalVars};
+//waitUntil {sleep 0.1;scriptDone f_script_setLocalVars};
 
 
 {
@@ -19,11 +19,13 @@ waitUntil {sleep 0.1;scriptDone f_script_setLocalVars};
  _x allowDamage true;
 } forEach [VehCSAT_MH1,VehCSAT_MH2];
 
+
 {
    if (side _x == resistance && {!([_x,100] call f_fnc_nearPlayer)}) then {
    		deleteVehicle _x;
 	};
 } forEach allUnits;
+
 
 //_cnvmkrs = ["mkrConv"] call ws_fnc_collectMarkers;
 [c,"mkrConv"] spawn ws_fnc_taskConvoy;

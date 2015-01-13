@@ -40,5 +40,5 @@ if (!isNil _var && !_force) exitWith {
 call compile Format ["%1 = %2",_var,_val];
 
 if (_pub) then {
-	call compile format ["publicVariable %1",_var];
+	call compile format ["publicVariable '%1'",_var];
 };
