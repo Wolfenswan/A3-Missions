@@ -426,14 +426,14 @@ case "eng":
 		_unit addBackpack _bagmedium;
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-		(unitBackpack _unit) addMagazineCargoGlobal [_satchel,2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_satchel2,1];
 	};
 	// LOADOUT: HEAVY
 	if (_loadout == 2) then {
 		_unit addBackpack _baglarge;
 		clearMagazineCargoGlobal (unitBackpack _unit);
 		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
-		(unitBackpack _unit) addMagazineCargoGlobal [_satchel,4];
+		(unitBackpack _unit) addMagazineCargoGlobal [_satchel2,2];
 	};
 };
 

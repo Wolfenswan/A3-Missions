@@ -206,6 +206,7 @@ _SNrifleMag = "5Rnd_127x108_Mag";
 // Engineer items
 _ATmine = "ATMine_Range_Mag";
 _satchel = "DemoCharge_Remote_Mag";
+_satchel2 = "SatchelCharge_Remote_Mag";
 _APmine1 = "APERSBoundingMine_Range_Mag";
 _APmine2 = "APERSMine_Range_Mag";
 
@@ -222,7 +223,7 @@ _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = ["co","dc","eng"];
+_specOp = ["co","dc"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -707,9 +708,8 @@ switch (_typeofUnit) do
 // LOADOUT: ENGINEER (DEMO)
 	case "eng":
 	{
-		_carbinemag = "30Rnd_65x39_caseless_mag";
 		_unit addmagazines [_carbinemag,7];
-		_unit addweapon "arifle_MXC_Black_F";
+		_unit addweapon _carbine;
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];

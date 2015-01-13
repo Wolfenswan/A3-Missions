@@ -27,7 +27,7 @@ This briefing section can only be seen by the current admin.
 _briefing ="
 <br/>
 MISSION-MAKER NOTES<br/>
-JULIET and MAT should not move out before the main platoon is engaging the town as otherwise you risk loosing them prematurely.<br/><br/>
+JULIET and MAT should not move out before the main platoon is engaging the town as otherwise you risk loosing them prematurely. If they are slotted from the start consider teleporting them to the main platoon.<br/><br/>
 Should the Radio Action to lay low fail, do the following:<br/>
 1. Check if ws_killzone_Secure is true. If it is false set it to true (global execution) and have CO/SLs try again.<br/>
 2. If 1. does not work, set ws_convoy_go to true (server execution).

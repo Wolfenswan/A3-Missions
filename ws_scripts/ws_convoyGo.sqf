@@ -22,7 +22,7 @@ if !(isServer) exitWith {};
 
 {
    if (side _x == resistance && {!([_x,100] call f_fnc_nearPlayer)}) then {
-   		deleteVehicle _x;
+   		_x setDamage 1;
 	};
 } forEach allUnits;
 
