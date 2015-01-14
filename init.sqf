@@ -69,13 +69,12 @@ f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
 
 // ====================================================================================
 
-// F3 - Automatic Body Removal
+// F3 - Garbage Collector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_var_removeBodyDelay = 180;
-f_var_removeBodyDistance = 500;
-f_var_doNotRemoveBodies = [];
-[] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
+f_var_garbageCollectorSleep = 120;
+f_var_garbageCollectorDistance = 450;
+[] execVM "f\garbageCollector\f_garbageCollectorLoop.sqf";
 
 // ====================================================================================
 
