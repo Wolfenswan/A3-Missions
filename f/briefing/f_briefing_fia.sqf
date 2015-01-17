@@ -35,23 +35,6 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 // ====================================================================================
 
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-MOVEMENT PLAN
-<br/>
-Stay within the indicated AO (highlighted area) while on approach to the killzone.
-<br/><br/>
-LAYING LOW
-<br/>
-After you have been notified about the clear killzone, the leading elements (CO and SLs) can use their radio to wait for the ambush (0-0-1).<br/>
-Time will skip forward to about 3:10 at night.
-"]];
-
-// ====================================================================================
-
 // NOTES: MISSION
 // The code below creates the mission sub-section of notes.
 
@@ -73,12 +56,12 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 We've gotten word that CSAT are planning to transport an important device of unknown purpose into Kavala during the cover of the night. Embedded CTRG units and FIA guerillas are planning to intercept and destroy it. Unfortunately it seems that the AAF is worried about about exactly that happening and has taken position near our <marker name='mkrKillzone'>designated killzone</marker>.
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
 A AAF platoon has taken position at the killzone. We won't need to worry about them alarming CSAT - lower-level communication between the two sides has been lackluster at best.<br/><br/>
 Composition of the CSAT convoy is unknown but expect armored vehicles. They tend to do helicopter passes before moving a convoy in, so be careful.
 <br/><br/>
-FRIENDLY FORCES
+<font size='18'>FRIENDLY FORCES</font>
 <br/>
 The original ambush forces are <marker name='mkrFIA_2'>located closer</marker> to the killzone and currently cut off.<br/>
 They should wait for the main force to engage or destroy the AAF opposition before moving out.
