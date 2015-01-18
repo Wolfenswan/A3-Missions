@@ -1,15 +1,18 @@
-<b>Introduction</b><br/>
-This is one of my missions created for ArmA3 with Folk ARPS. They are based on a pre-configured version of the F3 Mission Making Framework. You are free to use and modify them for your own group if credits is still given and this readme included. If you find them useful or have any feedback please do get in touch, either per mail or via github.<br/><br/>
-The missions can be found on GitHub:<br/>
-<i>https://github.com/Wolfenswan/A3-Missions</i><br/>
-Each branch is a different mission, some are WIP.<br/>
+# F3-Folk ARPS Mission-making Template #
 
-<b>Current F3 Version:</b><br/>
-<i>3-2-1</i>
 
-<b>Mission description</b><br/>
-Template mission.
+## Changes from default F3 ##
 
-<b>Contact</b><br/>
-folkarps.com<br/>
-wolfenswanarps@gmail.com<br/>
+* Wolfenswan's function library (ws_fnc) integrated
+* Folk ARPS logo.paa file included
+* F3 features pre-enabled:
+  * Name Tags
+  * Automatic Body Removal
+  * Safe Start default set to 1 minute
+  * Set AI Skill for all factions - Missionmakers can remove the cases they do not need
+* Other changes:
+  * Pre-placed a ZEUS player configured to support F3 AI Skill Selector
+
+## Versions ##
+* F3 3-2-1
+* ws_fnc 10/01/2014

@@ -21,7 +21,8 @@ if (typename _skillarray == 'SCALAR') then {
 	_skillArray = [];
 	for '_x' from 0 to 9 do {
 		_skilllevel = (f_var_skillSet select _x) * _skill;
-		_skillArray pushBack (_skilllevel + random f_var_skillRandom - random f_var_skillRandom);
+		_random =  random f_randomUp - random f_randomDown;
+		_skillArray set [_x, (_skilllevel + _random)];
 	};
 };
 
@@ -29,7 +30,7 @@ if (typename _skillarray == 'SCALAR') then {
 
 // We loop through all skilltypes and set them for the individual unit
 {
-	_unit setSkill [_x,_skillarray select _forEachIndex];
+_unit setSkill [_x,_skillarray select _forEachIndex];
 } forEach ['aimingAccuracy','aimingShake','aimingSpeed','endurance','spotDistance','spotTime','courage','reloadSpeed','commanding','general'];
 
 _unit setVariable ["f_setAISkill",true];

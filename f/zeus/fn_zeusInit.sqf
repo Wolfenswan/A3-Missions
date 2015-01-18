@@ -1,4 +1,4 @@
-// F3 Zeus Support  - Initialization
+// // F3 Zeus Support  - Initialization
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
@@ -63,14 +63,6 @@ _unit assignCurator _curator;
 // Reduce costs for all actions
 _curator setCuratorWaypointCost 0;
 {_curator setCuratorCoef [_x,0];} forEach ["place","edit","delete","destroy","group","synchronize"];
-
-// Add F3 AI Skill Selector if activated
-if({!isNil _x} count ["f_param_AISkill_BLUFOR","f_param_AISkill_INDP","f_param_AISkill_OPFOR"] > 0) then
-{
-	[[[_curator],{(_this select 0) addEventHandler ['CuratorObjectPlaced',{[[crew (_this select 1),'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false] spawn BIS_fnc_MP;}];}],
-	"BIS_fnc_Spawn",
-	_curator] spawn BIS_fnc_MP;
-};
 
 // If announce is set to true, the new curator will be announced to all players
 if (_announce) then {

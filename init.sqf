@@ -64,19 +64,19 @@ f_script_setGroupMarkers = [] execVM "f\groupMarkers\f_setLocalGroupMarkers.sqf"
 // F3 - F3 Common Local Variables
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // WARNING: DO NOT DISABLE THIS COMPONENT
-
 if(isServer) then {
 	f_script_setLocalVars = [] execVM "f\common\f_setLocalVars.sqf";
 };
 
 // ====================================================================================
 
-// F3 - Garbage Collector
+// F3 - Automatic Body Removal
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_var_garbageCollectorSleep = 120;
-f_var_garbageCollectorDistance = 450;
-[] execVM "f\garbageCollector\f_garbageCollectorLoop.sqf";
+f_var_removeBodyDelay = 120;
+f_var_removeBodyDistance = 400;
+f_var_doNotRemoveBodies = [];
+[] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
 
 // ====================================================================================
 
@@ -122,14 +122,7 @@ f_var_garbageCollectorDistance = 450;
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 [] execVM "f\setAISKill\f_setAISkill.sqf";
-// f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
-
-// ====================================================================================
-
-// F3 - Assign Gear AI
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-// [] execVM "f\assignGear\f_assignGear_AI.sqf";
+f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
 
 // ====================================================================================
 
@@ -138,7 +131,7 @@ f_var_garbageCollectorDistance = 450;
 
 f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
 f_showDistance_Nametags = true;			// Show distance to player
-// f_showVehicle_Nametags = true;			// Show vehicle player is in
+f_showVehicle_Nametags = false;			// Show vehicle player is in
 [20] execVM "f\nametag\f_nametags.sqf";
 
 // ====================================================================================
@@ -218,6 +211,3 @@ f_wound_extraFAK = 2;
 [] execVM "f\medical\medical_init.sqf";
 
 // ====================================================================================
-
-// Wolfenswan - post Init
-[] execVM "ws_init\ws_postInit.sqf";

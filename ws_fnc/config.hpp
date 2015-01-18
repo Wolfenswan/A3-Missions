@@ -25,7 +25,6 @@ class WS
 			class showFPS {};
 			class nearPlayer {};
 			class listPlayers {};
-			class setGVar {};
 		};
 		class effects
 		{
