@@ -36,19 +36,24 @@ ws_transferData_objAction =
 	[_this, {
 			if (isServer) then {
 				["ws_transferData_transferStarting",true,true,true] call ws_fnc_setGVar;
-				ws_transferLaptop = "Land_Laptop_unfolded_F" createVehicle (getPosATL (_this select 1));
 
-				ws_transferData_carrierMarker = createMarker ["ws_transferData_carrierMarker",getPosATL (_this select 1)];
+				ws_transferLaptop = createVehicle ["Land_Laptop_unfolded_F", (getPosATL (_this select 0)), [], 0, "CAN_COLLIDE"];
+				ws_transferLaptop setDir (getDir (_this select 1) -180);
+				(_this select 0) hideObjectGlobal true;
+
+				ws_transferData_carrierMarker = createMarker ["ws_transferData_carrierMarker",(getPosATL ws_transferLaptop)];
 				ws_transferData_carrierMarker setMarkerType "mil_dot";
 				ws_transferData_carrierMarker setMarkerColor "ColorOrange";
 				ws_transferData_carrierMarker setMarkerText "DATA";
+
+				publicVariable "ws_transferLaptop";
 			};
 
 			if !(isDedicated) then {
 				(_this select 0) removeAction (_this select 2);
 
 				_tick = 0;
-				while {_tick != (_this select 0) getVariable ["ws_transferData_runtime",120];} do {
+				while {_tick != (_this select 0) getVariable ["ws_transferData_runtime",300];} do {
 							_dots = "";
 							for "_i" from 0 to 5 do {
 								hintsilent format ["Transfering%1",_dots];
@@ -68,7 +73,7 @@ ws_transferData_objAction =
 
 				hintsilent "";
 				cutText [format ["Transfer finished, the data can now be collected."],"PLAIN",1];
-
+				sleep 1;
 				ws_transferLaptop addAction ["Collect Data",ws_transferData_collectDataAction,"",5,true,true,"","group _this == GrpNATO_ENG1"];
 			};
 		}],"BIS_fnc_spawn",true] spawn BIS_fnc_MP;};

@@ -45,11 +45,11 @@ N/A
 _exe = player createDiaryRecord ["diary", ["Execution","
 COMMANDER'S INTENT
 <br/>
-Proceed to <marker name='mkrInsertion'>crash site</marker> and the transfer the data from the C-130. Collect the data from the laptop and return to base with the crucial information.
+Proceed to <marker name='mkrInsertion'>crash site</marker> and then transfer the data from the C-130. Collect the data from the laptop and return to base with the crucial information.
 <br/><br/><br/>
 MOVEMENT PLAN
 <br/>
-Movement is via appropriated AAF black ops helos provided at FOB. MH-9s available for special tasking if required.
+Movement is via Hurons provided at FOB. MH-9s available for special tasking if required.
 <br/><br/><br/>
 FIRE SUPPORT PLAN
 <br/>
@@ -57,7 +57,7 @@ None available at this time.
 <br/><br/><br/>
 SPECIAL TASKS
 <br/>
-To initiate the data transfer an NSA engineer has to use the appropriate action when close to it. This will create a Laptop at his feet from which the data can be collected once the transfer is done.
+To initiate the data transfer an NSA engineer has to use the appropriate action when close to the Laptop. The data needs to be collected from the laptop once the transfer is done. Should the unit carrying the data die, another engineer needs to collect it from his corpse.
 "]];
 
 // ====================================================================================
