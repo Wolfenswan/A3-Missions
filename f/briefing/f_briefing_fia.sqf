@@ -35,6 +35,23 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 // ====================================================================================
 
+// NOTES: EXECUTION
+// The code below creates the execution sub-section of notes.
+
+_exe = player createDiaryRecord ["diary", ["Execution","
+<br/>
+MOVEMENT PLAN
+<br/>
+Stay within the indicated AO (highlighted area) while on approach to the killzone.
+<br/><br/>
+LAYING LOW
+<br/>
+After you have been notified about the clear killzone, the leading elements (CO and SLs) can use their radio to wait for the ambush (0-0-1).<br/>
+Time will skip forward to about 3:10 at night.
+"]];
+
+// ====================================================================================
+
 // NOTES: MISSION
 // The code below creates the mission sub-section of notes.
 
