@@ -55,7 +55,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_a72_Manhunt_v3";
+		briefingName="fa3_a72_Manhunt_v4";
 		overviewText="CSAT attempts to intercept and kill two FIA officers meeting in Agios. CSAT should take either the Recon team or Juliet. FIA does not have NVGs and mostly SMGs. Slot with a slight advtange to CSAT.";
 		resistanceWest=0;
 		startWeather=0.84999996;
@@ -550,7 +550,7 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 					syncId=1;
-					synchronizations[]={0,6};
+					synchronizations[]={0,2};
 				};
 			};
 		};
@@ -1206,7 +1206,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={12837.859,86.223747,16725.711};
+					position[]={12832.321,86.379105,16722.314};
 					azimut=-147.983;
 					id=67;
 					side="EAST";
@@ -1216,12 +1216,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitCSAT_TH1_P";
-					init="GrpCSAT_TH1 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehCSAT_TH1;";
+					init="GrpCSAT_TH1 = group this; [""pp"",this] call f_fnc_assignGear;";
 					description="CSAT Transport Helo 1 Pilot - Taru";
 				};
 				class Item1
 				{
-					position[]={12837.238,86.221039,16728.367};
+					position[]={12831.7,86.355309,16724.971};
 					azimut=-147.983;
 					id=68;
 					side="EAST";
@@ -1230,7 +1230,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="UnitCSAT_TH1_CP";
-					init="GrpCSAT_TH1 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehCSAT_TH1,[0]];";
+					init="GrpCSAT_TH1 = group this; [""pcc"",this] call f_fnc_assignGear; ";
 					description="CSAT Transport Helo 1 Co-Pilot (Repair)";
 				};
 			};
@@ -1243,7 +1243,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={12868.075,86.911819,16707.996};
+					position[]={12868.454,87.240089,16704.221};
 					azimut=-147.983;
 					id=69;
 					side="EAST";
@@ -1253,12 +1253,12 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitCSAT_TH2_P";
-					init="GrpCSAT_TH2 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehCSAT_TH2;";
+					init="GrpCSAT_TH2 = group this; [""pp"",this] call f_fnc_assignGear;";
 					description="CSAT Transport Helo 2 Pilot- Taru";
 				};
 				class Item1
 				{
-					position[]={12867.426,86.676636,16710.676};
+					position[]={12867.805,86.99588,16706.9};
 					azimut=-147.983;
 					id=70;
 					side="EAST";
@@ -1267,7 +1267,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="UnitCSAT_TH2_CP";
-					init="GrpCSAT_TH2 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehCSAT_TH2,[0]];";
+					init="GrpCSAT_TH2 = group this; [""pcc"",this] call f_fnc_assignGear; ";
 					description="CSAT Transport Helo 2 Co-Pilot (Repair)";
 				};
 			};
@@ -1290,7 +1290,7 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitCSAT_TH3_P";
-					init="GrpCSAT_TH3 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehCSAT_TH3;";
+					init="GrpCSAT_TH3 = group this; [""pp"",this] call f_fnc_assignGear; ";
 					description="CSAT Transport Helo 3 Pilot - Taru (Bench)";
 				};
 				class Item1
@@ -1304,7 +1304,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="UnitCSAT_TH3_CP";
-					init="GrpCSAT_TH3 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehCSAT_TH3,[0]];";
+					init="GrpCSAT_TH3 = group this; [""pcc"",this] call f_fnc_assignGear; ";
 					description="CSAT Transport Helo 3 Co-Pilot (Repair)";
 				};
 			};
@@ -1317,43 +1317,19 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12819.267,86.916618,16739.809};
-					azimut=-8.6644897;
-					id=73;
-					side="LOGIC";
-					vehicle="Logic";
-					leader=1;
-					skill=0.60000002;
-					text="F3_preMount_CSAT";
-					init="[synchronizedObjects this,[""GrpCSAT_ASL"",""GrpCSAT_A1"",""GrpCSAT_A2"",""GrpCSAT_A3""],false,false] call f_fnc_mountGroups;";
-					syncId=2;
-					synchronizations[]={4};
-				};
-			};
-		};
-		class Item26
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={12852.916,85.973923,16722.637};
+					position[]={12852.536,85.89064,16726.664};
 					azimut=-80.843201;
-					id=74;
+					id=73;
 					side="LOGIC";
 					vehicle="Logic";
 					leader=1;
 					skill=0.60000002;
 					text="F3_preMount_CSAT_1";
 					init="[synchronizedObjects this,[""GrpCSAT_BSL"",""GrpCSAT_B1"",""GrpCSAT_B2"",""GrpCSAT_B3""],false,false] call f_fnc_mountGroups;";
-					syncId=3;
-					synchronizations[]={5};
 				};
 			};
 		};
-		class Item27
+		class Item26
 		{
 			side="EAST";
 			class Vehicles
@@ -1363,7 +1339,7 @@ class Mission
 				{
 					position[]={12864.804,85.179329,16743.828};
 					azimut=-144.272;
-					id=75;
+					id=74;
 					side="EAST";
 					vehicle="O_spotter_F";
 					player="PLAY CDG";
@@ -1378,7 +1354,7 @@ class Mission
 				{
 					position[]={12863.392,85.179214,16746.531};
 					azimut=-144.272;
-					id=76;
+					id=75;
 					side="EAST";
 					vehicle="O_sniper_F";
 					player="PLAY CDG";
@@ -1386,6 +1362,26 @@ class Mission
 					text="UnitCSAT_R1_UAV";
 					init="GrpCSAT_R = group this; [""uav"",this] call f_fnc_assignGear;";
 					description="CSAT Recon 1 Team UAV Operator";
+				};
+			};
+		};
+		class Item27
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={12822.033,86.919426,16742.701};
+					azimut=-8.6644897;
+					id=76;
+					side="LOGIC";
+					vehicle="Logic";
+					leader=1;
+					skill=0.60000002;
+					text="F3_preMount_CSAT";
+					init="[synchronizedObjects this,[""GrpCSAT_ASL"",""GrpCSAT_A1"",""GrpCSAT_A2"",""GrpCSAT_A3""],false,false] call f_fnc_mountGroups;";
 				};
 			};
 		};
@@ -1762,35 +1758,28 @@ class Mission
 		};
 		class Item38
 		{
-			position[]={12833.306,86.28759,16733.764};
+			position[]={12827.768,86.344612,16730.367};
 			azimut=-147.983;
-			offsetY=0.30000001;
 			id=115;
 			side="EMPTY";
 			vehicle="O_Heli_Transport_04_covered_F";
 			skill=0.60000002;
 			text="VehCSAT_TH1";
-			syncId=4;
-			synchronizations[]={2};
 		};
 		class Item39
 		{
-			position[]={12861.417,86.00061,16719.072};
+			position[]={12861.796,86.209412,16715.297};
 			azimut=-147.983;
-			offsetY=0.30000001;
 			id=116;
 			side="EMPTY";
 			vehicle="O_Heli_Transport_04_covered_F";
 			skill=0.60000002;
 			text="VehCSAT_TH2";
-			syncId=5;
-			synchronizations[]={3};
 		};
 		class Item40
 		{
 			position[]={12912.652,80.60527,16752.477};
 			azimut=210.987;
-			offsetY=0.30000001;
 			id=117;
 			side="EMPTY";
 			vehicle="O_Heli_Transport_04_bench_F";
@@ -2020,7 +2009,7 @@ class Mission
 				title="One of the officers escaped!";
 			};
 			synchronizations[]={1};
-			syncId=6;
+			syncId=2;
 		};
 		class Item1
 		{
