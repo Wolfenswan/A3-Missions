@@ -45,7 +45,7 @@ N/A
 _exe = player createDiaryRecord ["diary", ["Execution","
 COMMANDER'S INTENT
 <br/>
-Proceed to <marker name='mkrInsertion'>crash site</marker> and locate the laptop in and around the vicinity of the C-130. Download the data from the laptop and return to base with the crucial information.
+Proceed to <marker name='mkrInsertion'>crash site</marker> and the transfer the data from the C-130. Collect the data from the laptop and return to base with the crucial information.
 <br/><br/><br/>
 MOVEMENT PLAN
 <br/>
@@ -57,7 +57,7 @@ None available at this time.
 <br/><br/><br/>
 SPECIAL TASKS
 <br/>
-Once the laptop is located you can initiate the data transfer by using the Action Menu when close to it.
+To initiate the data transfer an NSA engineer has to use the appropriate action when close to it. This will create a Laptop at his feet from which the data can be collected once the transfer is done.
 "]];
 
 // ====================================================================================
@@ -67,11 +67,11 @@ Once the laptop is located you can initiate the data transfer by using the Actio
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-Our orders are simple. Insert via helo at the <marker name='mkrInsertion'>crash site</marker>. Secure the data by locating the laptop and downloading it to a portable device that Military Intelligence has given us.  Bring the device back to the <marker name='IntelShack'>Intelligence HQ</marker> on base.
+Our orders are simple. Insert via helo at the <marker name='mkrInsertion'>crash site</marker>. Secure the data by transfering it from the Wreck and downloading it to a portable device that Military Intelligence has given us.  Bring the device back to the <marker name='IntelShack'>Intelligence HQ</marker> on base.
 <br/><br/>
-We must move quickly as CSAT forces are en route and they cannot get to the laptop before we have a chance to secure the data.
+We must move quickly as CSAT forces are en route and they cannot get to the wreck before we have a chance to secure the data.
 <br/><br/>
-If the CSAT get to the laptop before we do the mission WILL BE A FAILURE.
+If the CSAT get to the wreck before we do the mission WILL BE A FAILURE.
 "]];
 
 // ====================================================================================

@@ -267,7 +267,7 @@ class f_param_AISkill_INDP
 
 // F3 - Caching
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
+/*
 	class f_param_caching
 	{
 		title = "Cache AI outside distance (m)";
@@ -275,12 +275,20 @@ class f_param_AISkill_INDP
 		default = 0;
 		code = "f_param_caching = %1";
 	};
+*/
 
 // ============================================================================================
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
 
+	class f_param_downloadTime
+	{
+		title = "Time for transfering data in s";
+		values[] = {0,120,300,450,600,900,1200};
+		default = 300;
+		code = "f_param_downloadTime = %1";
+	};
 };
 
 // ============================================================================================
