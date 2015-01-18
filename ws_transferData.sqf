@@ -69,7 +69,7 @@ ws_transferData_objAction =
 				hintsilent "";
 				cutText [format ["Transfer finished, the data can now be collected."],"PLAIN",1];
 
-				ws_transferLaptop addAction ["Collect Data",ws_transferData_collectDataAction,"",5,true,true,"group _this == GrpNATO_ENG1"];
+				ws_transferLaptop addAction ["Collect Data",ws_transferData_collectDataAction,"",5,true,true,"","group _this == GrpNATO_ENG1"];
 			};
 		}],"BIS_fnc_spawn",true] spawn BIS_fnc_MP;};
 
@@ -102,8 +102,8 @@ ws_transferData_dataCarrier = {
 	cutText [format ["%1 has died!",name _carrier],"PLAIN",1];
 	["ws_transferData_transferCollected",false,true,true] call ws_fnc_setGVar;
 
-	[[[_carrier],{(_this select 0) addAction ["Collect Data",ws_transferData_collectDataAction,"",5,true,true,"group _this == GrpNATO_ENG1"]}],"BIS_fnc_spawn",true] spawn BIS_fnc_MP;
+	[[[_carrier],{(_this select 0) addAction ["Collect Data",ws_transferData_collectDataAction,"",5,true,true,"","group _this == GrpNATO_ENG1"]}],"BIS_fnc_spawn",true] spawn BIS_fnc_MP;
 
 };
 
-_obj addAction ["Begin Transfer",ws_transferData_objAction,"",5,true,true,"_target distance _this <= 2 && group _this == GrpNATO_ENG1"];
+_obj addAction ["Begin Transfer",ws_transferData_objAction,"",5,true,true,"","group _this == GrpNATO_ENG1"];

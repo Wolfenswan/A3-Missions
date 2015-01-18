@@ -42,7 +42,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_cz60_mailman_v4";
+		briefingName="fa3_cz60_mailman_v5";
 		overviewText="NATO forces scramble to recover valuable Intel from a downed aircraft. NSA engineers & ZEUS required.";
 		resistanceWest=0;
 		startWeather=0;
@@ -2340,12 +2340,10 @@ class Mission
 			a=10;
 			b=10;
 			activationBy="MEMBER";
-			repeating=1;
 			interruptable=1;
-			type="END2";
 			age="UNKNOWN";
 			idVehicle=52;
-			expCond="this && (({(_x getVariable [""ws_transferData_dataCarrier"",false])} count thisList) > 1)";
+			expCond="this && ({_x getVariable [""ws_transferData_dataCarrier"",false]} count thisList > 0)";
 			expActiv="[2] call f_fnc_mpEnd";
 			class Effects
 			{
