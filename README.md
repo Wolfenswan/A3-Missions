@@ -1,18 +1,15 @@
-# F3-Folk ARPS Mission-making Template #
+<b>Introduction</b><br/>
+This is a mission created by Tigershark for ArmA3 with Folk ARPS. I'm just hosting it and have applied some fixes.<br/><br/>
+The missions can be found on GitHub:<br/>
+<i>https://github.com/Wolfenswan/A3-Missions</i><br/>
+Each branch is a different mission, some are WIP.<br/>
 
+<b>Current F3 Version:</b><br/>
+<i>3-2-2</i>
 
-## Changes from default F3 ##
+<b>Mission description</b><br/>
+Airborne NATO forces have to extract data from a C-130 wreck. OPFOR is controlled by ZEUS.
 
-* Wolfenswan's function library (ws_fnc) integrated
-* Folk ARPS logo.paa file included
-* F3 features pre-enabled:
-  * Name Tags
-  * Automatic Body Removal
-  * Safe Start default set to 1 minute
-  * Set AI Skill for all factions - Missionmakers can remove the cases they do not need
-* Other changes:
-  * Pre-placed a ZEUS player configured to support F3 AI Skill Selector
-
-## Versions ##
-* F3 3-2-2
-* ws_fnc 17/01/2014
+<b>Contact</b><br/>
+folkarps.com<br/>
+wolfenswanarps@gmail.com<br/>
