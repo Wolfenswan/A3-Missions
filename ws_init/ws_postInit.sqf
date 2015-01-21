@@ -1,5 +1,6 @@
 ws_ishc = [] call ws_fnc_checkHC;
 
+/*
 // Display a short text intro
 if (!isDedicated && !ws_ishc) then {
  ["MORNING SORTIE","CENTRAL ALTIS"] spawn {
@@ -13,11 +14,14 @@ if (!isDedicated && !ws_ishc) then {
 		] spawn BIS_fnc_typeText;
 	};
 };
+*/
 
 // Do stuff on either HC or Server (e.g. spawning)
+/*
 waitUntil {!isNil "ws_param_hc"};
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_ishc)) then {
 	// ws_fnc_createGarrison;
+
 
 	[galati,200,west,8 + round (count playableUnits/5)] spawn ws_fnc_createGarrison;
 	[abdera,200,west,6 + round (count playableUnits/4)] spawn ws_fnc_createGarrison;
@@ -25,6 +29,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_ishc)) then {
 	[outpost,300,west,8] spawn ws_fnc_createGarrison;
 	[outpost_1,100,west,5 + round random 3] spawn ws_fnc_createGarrison;
 	[outpost_2,100,west,5 + round random 3] spawn ws_fnc_createGarrison;
+	*/
 
 	/*
 	_units = [];
@@ -49,7 +54,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_ishc)) then {
 		_wp = _gear call ws_fnc_selectRandom;
 	[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
 	} forEach _units;
-	*/
+
 };
 
 // Do more stuff on the server
@@ -57,3 +62,4 @@ if (isServer) then {
 	// If units were spawned, AI skill is set again
 	[] execVM "f\setAISkill\f_setAISkill.sqf";
 };
+*/
