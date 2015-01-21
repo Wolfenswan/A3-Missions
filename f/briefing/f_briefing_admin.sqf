@@ -5,11 +5,7 @@
 // ADD CUSTOM SECTIONS
 // Add all messages you want only the admin to be able to see here:
 
-_customText = "
-Monitor the variable ws_meeting_passed to see how much time of the meeting has passed.<br/>
-ws_meeting_done flips to true once the meeting is over.<br/>
-Other variables: ws_o1_gone, ws_o2_gone,ws_o1_dead, ws_o2_dead
-<br/>";
+_customText = "";
 
 // ====================================================================================
 
@@ -18,12 +14,9 @@ Other variables: ws_o1_gone, ws_o2_gone,ws_o1_dead, ws_o2_dead
 
 _briefing ="
 <br/>
-ADMIN SECTION<br/>
+<font size='18'>ADMIN SECTION</font><br/>
 This briefing section can only be seen by the current admin.
 <br/><br/>
-
-MISSION-MAKER NOTES<br/>
-
 ";
 
 // ====================================================================================
@@ -33,8 +26,8 @@ MISSION-MAKER NOTES<br/>
 
 _briefing ="
 <br/>
-MISSION-MAKER NOTES<br/>
-Notes and messages made by the mission-maker.<br/>
+<font size='18'>MISSION-MAKER NOTES</font><br/>
+Notes and messages made by the mission-maker.
 ";
 
 _briefing = _briefing + _customText;
@@ -82,15 +75,8 @@ _briefing = _briefing + "
 ZEUS SUPPORT<br/>
 <execute expression=""
 if !(isNull (getAssignedCuratorLogic player)) then {hintsilent 'ZEUS already assigned!'} else {
-	[[player],'f_fnc_zeusInit',false] spawn BIS_fnc_MP; hintsilent 'Curator assigned.';
+	[[player,true],'f_fnc_zeusInit',false] spawn BIS_fnc_MP; hintsilent 'Curator assigned.';
 };"">Assign ZEUS to host</execute>.<br/>
-
-|- <execute expression=""
-if (isNull (getAssignedCuratorLogic player)) then {hintsilent 'Assign ZEUS first!'} else {(getAssignedCuratorLogic player) addEventHandler ['CuratorObjectPlaced',{[[crew (_this select 1),'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false] spawn BIS_fnc_MP;}];
-	hintsilent 'Enabled F3 AI Skill Support for ZEUS'};"">Enable F3 AI Skill Support for created units</execute>.<br/>
-
-|- <execute expression=""
-if (isNull (getAssignedCuratorLogic player)) then {hintsilent 'Assign ZEUS first!'} else {[[player,true],'f_fnc_zeusAddAddons',false] spawn BIS_fnc_MP; hintsilent 'Given access to all addons.'};"">Give ZEUS access to all addons</execute>.<br/>
 
 |- <execute expression=""
 if (isNull (getAssignedCuratorLogic player)) then {hintsilent 'Assign ZEUS first!'} else {[[player,playableUnits],'f_fnc_zeusAddObjects',false] spawn BIS_fnc_MP; hintsilent 'Added playable units.'};"">Add players and playable units to ZEUS object list</execute>.<br/>
