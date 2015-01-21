@@ -65,7 +65,9 @@ f_script_setGroupMarkers = [] execVM "f\groupMarkers\f_setLocalGroupMarkers.sqf"
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // WARNING: DO NOT DISABLE THIS COMPONENT
 
-f_script_setLocalVars = [0] execVM "f\common\f_setLocalVars.sqf";
+if(isServer) then {
+	f_script_setLocalVars = [] execVM "f\common\f_setLocalVars.sqf";
+};
 
 // ====================================================================================
 
@@ -119,8 +121,8 @@ f_var_garbageCollectorDistance = 450;
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
+f_var_civAI = independent;         // Optional: The civilian AI will use this side's settings
 [] execVM "f\setAISKill\f_setAISkill.sqf";
-// f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
 
 // ====================================================================================
 

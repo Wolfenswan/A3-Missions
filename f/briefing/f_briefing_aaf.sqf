@@ -51,15 +51,15 @@ Up to 2 x 'Strider' MRAP (no thermals)
 
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
-COMMANDER'S INTENT
+<font size='18'>COMMANDER'S INTENT</font>
 <br/>
 Dislodge any FIA presence from the villages and mountaintop. Use Alpha squad to ambush any reinforcements coming from Abdera.
 <br/><br/>
-MOVEMENT PLAN
+<font size='18'>MOVEMENT PLAN</font>
 <br/>
 Alpha is <marker name='f_insert'>in the north</marker> and move to an ambush location. HQ suggests <marker name='mkrAmbush'>these</marker> <marker name='mkrAmbush_1'>two</marker> locations. Do not move too close to Abdera, as it might alert the FIA to what we are up to. The rest of the platoon assaults Galati head on, in order to lure out enemy reinforcements. HQ suggests either of the <marker name='mkrApproach'>two routes</marker> though advises against an attack from the direct south-west.
 <br/><br/>
-FIRE SUPPORT PLAN
+<font size='18'>FIRE SUPPORT PLAN</font>
 <br/>
 Two mortars are on standby and can be requested by the Alpha Squad Leader, using the support radio menu (0-8).
 "]];
@@ -87,11 +87,11 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 FIA rebels have been plagueing north-west Altis for a long time now, repeatedly disrupting our supply lines and raiding villages. Our platoon is moving in in the early morning hours to clear house in two FIA strongholds and to weaken their local presence.
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
 Lightly armed irregular forces with vehicle support.
 <br/><br/>
-FRIENDLY FORCES
+<font size='18'>FRIENDLY FORCES</font>
 <br/>
 A recon team is in place west of Abdera to monitor FIA movement.
 <br/><br/>
