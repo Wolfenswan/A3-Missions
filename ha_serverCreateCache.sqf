@@ -17,7 +17,7 @@ if (count _pos == 0) then { _pos = _tentativePos };
 //diag_log format["Creating cache, id: %1, pos: %2", _id, _pos];
 _markerName = format["ha_cache_%1", _id];
 // Create checkpoint objects
-_crate = "Box_NATO_AmmoVeh_F" createVehicle _pos;
+_crate = "Box_FIA_Wps_F" createVehicle _pos;
 clearMagazineCargoGlobal _crate;
 clearWeaponCargoGlobal _crate;
 clearItemCargoGlobal _crate;
@@ -41,9 +41,10 @@ _crate addEventHandler [
 	 };
 	}];
 
-_camonet = "CamoNet_INDP_open_F" createVehicle _pos;
-_grp = [_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F", "B_G_Soldier_F", "B_G_Soldier_lite_F"],[], [], [0.2,0.2], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
+//_camonet = "CamoNet_INDP_open_F" createVehicle _pos;
+_grp = [_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F", "B_G_Soldier_F"],[], [], [0.2,0.2], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
 [_grp,_grp,["hold"]] call ws_fnc_addWaypoint;
+[_grp,"SAFE","WHITE"] call ws_fnc_setAIMode;
 
 f_param_AISkill_BLUFOR = 3;
 (units _grp) execVm "f\setAISkill\f_setAISkill.sqf";
