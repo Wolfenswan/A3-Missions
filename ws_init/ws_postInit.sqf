@@ -41,7 +41,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 	[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
 	} forEach _units;
 	*/
-	asr_ai3_sysdanger_radiorange = 0; // To make sure the AAF isn't too competent
+	asr_ai3_main_radiorange = 150; // To make sure the AAF isn't too competent
 };
 
 // Do more stuff on the server
