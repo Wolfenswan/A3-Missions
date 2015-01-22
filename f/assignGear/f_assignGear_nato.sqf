@@ -91,12 +91,12 @@ _hg_attachments= []; // The default attachment set for handguns, overwritten in 
 // WEAPON SELECTION
 
 // Standard Riflemen ( MMG Assistant Gunner, Assistant Automatic Rifleman, MAT Assistant Gunner, MTR Assistant Gunner, Rifleman)
-_rifle = "arifle_MX_pointer_F";
+_rifle = "arifle_MX_black_pointer_F";
 _riflemag = "30Rnd_65x39_caseless_mag";
 _riflemag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 
 // Standard Carabineer (Medic, Rifleman (AT), MAT Gunner, MTR Gunner, Carabineer)
-_carbine = "arifle_MXC_F";
+_carbine = "arifle_MXC_black_F";
 _carbinemag = "30Rnd_65x39_caseless_mag";
 _carbinemag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 
@@ -111,7 +111,7 @@ _diverMag1 = "30Rnd_556x45_Stanag";
 _diverMag2 = "20Rnd_556x45_UW_mag";
 
 // Rifle with GL and HE grenades (CO, DC, FTLs)
-_glrifle = "arifle_MX_GL_F";
+_glrifle = "arifle_MX_GL_black_F";
 _glriflemag = "30Rnd_65x39_caseless_mag";
 _glriflemag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 _glmag = "1Rnd_HE_Grenade_shell";
@@ -218,13 +218,13 @@ _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = ["ftl","gren","ar","aar","co","m"];
+_specOp = [];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
-_baseUniform = ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest"];
-_baseHelmet = ["H_HelmetB","H_HelmetB_plain_mcamo"];
-_baseGlasses = [];
+_baseUniform = ["U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest","U_B_SpecopsUniform_sgg"];
+_baseHelmet = ["H_MilCap_mcamo","H_Booniehat_mcamo","H_Cap_tan_specops_US"];
+_baseGlasses = ["G_Balaclava_oli","G_bandanna_blk","G_bandanna_oli","G_bandanna_tan"];
 
 // Armored vests
 _lightRig = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];

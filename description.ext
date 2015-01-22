@@ -119,6 +119,14 @@ class cfgNotifications
 		iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
 		duration = 3;
 	};
+
+	class ws_alert
+	{
+		title = "SECURING TARGET";
+		description = "%1";
+		iconPicture = "\A3\ui_f\data\map\markers\military\warning_ca.paa";
+		duration = 3;
+	};
 };
 
 // ============================================================================================
@@ -295,7 +303,7 @@ class Params
     {
             title = "Time in minutes for CSAT to secure the CARGO";
             values[] = {2,3,4,5,6,8,10,12};
-            default = 3;
+            default = 2;
             code = "ws_param_time_o = %1";
     };
 
@@ -303,7 +311,7 @@ class Params
     {
             title = "Time in minutes for NATO to rig the CARGO";
             values[] = {2,3,4,5,6,8,10,12};
-            default = 3;
+            default = 6;
             code = "ws_param_time_n = %1";
     };
 

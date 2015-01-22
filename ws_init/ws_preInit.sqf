@@ -22,7 +22,7 @@ ZEUS_Camera setPosATL [ws_convoy select 0,ws_convoy select 1,10];
 
 //if (isNil "ws_param_placement") then {ws_param_placement = "" call BIS_fnc_getParamValue;};
 
-ws_param_placement = 2;
+ws_param_placement = 1;
 switch (ws_param_placement) do {
 	case 0: {_placement_jitter = [2000,2000];};
 	case 1: {_placement_jitter = [2500,2500];};

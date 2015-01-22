@@ -36,7 +36,7 @@ if (faction player == "ind_g_f") then {{_x setMarkerAlphaLocal 1;};}forEach ["a1
 if (!isDedicated) then {
  [c3,"oil","large"] execVM "ws_scripts\smokecolumn.sqf";
  [c7,"oil","small"] execVM "ws_scripts\smokecolumn.sqf";
- ["A FRIEND IN NEED","ALTIS"] spawn {
+ ["Delivery Denied","ALTIS"] spawn {
 	 waitUntil {time > 15};
 		[
 			[
