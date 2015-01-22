@@ -93,7 +93,6 @@ while {_run} do {
 
 		// If the vehicle in front is going under the speed limit and it's a bit too close, limit the vehicle's speed as well
 		if (!isNull _vfront && {_veh distance _vfront < 25}) then {
-
 				if (speed _vfront < _speedLimit) then {
 					_veh limitSpeed (speed _vfront);
 				};
@@ -103,8 +102,7 @@ while {_run} do {
 		};
 
 		if (!isNull _vback && {_veh distance _vback > 50}) then {
-
-				if (_veh distance _vback <= 100) then {
+				if (_veh distance _vback <= 150) then {
 					if (((sin _dir) * (velocity _veh select 0)) > 3) then {_veh setVelocity [(velocity _veh select 0) - (1 * (sin _dir)), (velocity _veh select 1), velocity _veh select 2]};
 					if (((cos _dir) * (velocity _veh select 1)) > 3) then {_veh setVelocity [(velocity _veh select 0), (velocity _veh select 1) - (1 * (cos _dir)), velocity _veh select 2]};
 				} else {
@@ -121,22 +119,29 @@ while {_run} do {
 		// If for some reason the vehicle is halted, reset speed limit to the original value
 		if (speed _veh < 0.1) then {
 			_veh limitSpeed _speedLimit;
+			_veh doMove (getMarkerPos _wp);
 		};
 
 	} forEach _convoy;
 
-	if (({!canMove _x || !alive _x || (!isNull (_x findNearestEnemy (getPosATL _x)))} count _convoy) > 0) then {_run = false;};
+	// If convoy was engaged exit the loop and set the convoy to combat mode
+	if (({!canMove _x || !alive _x || (!isNull (_x findNearestEnemy (getPosATL _x)))} count _convoy) > 0) then {
+		_run = false;
+		{[(group (driver _x)),"COMBAT","NORMAL"] call ws_fnc_setAIMode;} forEach _convoy;
+	};
+
 	uisleep 0.5;
 };
 
 // Once the convoy has reached the destination have all groups which aren't crew disembark
 {
 _veh = _x;
-doStop _veh;
+_veh doMove (getPosATL _veh);
 
 	{
+		// If the unit's in a cargo index and a group leader, order the whole group out
 		if (_veh getCargoIndex _x != -1 && _x == leader group _x) then {
-			(group _x) leaveVehicle _veh;
+				(group _x) leaveVehicle _veh;
 		} else {
 			// If the vehicle is a "soft" one and can't shoot, let the crew dismount too
 			if (_veh isKindOf "Car" && !canFire _veh) then {
@@ -146,11 +151,17 @@ doStop _veh;
 
 		// Give the dismounted groups a new waypoint nearby and set them into a combat-ready mode
 		if (isNull (assignedVehicle _x) && _x == leader group _x) then {
-			[group _x,[_veh,50,10] call ws_fnc_getPos,["SENTRY"]] call ws_fnc_addWaypoint;
+			[group _x,_veh,["SENTRY",5]] call ws_fnc_addWaypoint;
 			[(group _x),"AWARE","DIAMOND","YELLOW"] call ws_fnc_setAIMode;
 		};
 
+		// If the unit is the vehicle driver, give it a sentry WP
+		if (_x == driver _veh) then {
+			[(group (driver _x)),_veh,["SENTRY",5]] call ws_fnc_addWaypoint;
+		};
+
 	} forEach crew _veh;
+
 } forEach _convoy;
 
 true
