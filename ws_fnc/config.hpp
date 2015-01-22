@@ -25,6 +25,7 @@ class WS
 			class showFPS {};
 			class nearPlayer {};
 			class listPlayers {};
+			class setGVar {};
 		};
 		class effects
 		{
@@ -65,6 +66,7 @@ class WS
 			class taskDefend {};
 			class taskCrew {};
 			class taskAmbush {};
+			class taskArtilleryFire {};
 			class taskLand {};
 			class taskConvoy {};
 			class addWaypoint {};

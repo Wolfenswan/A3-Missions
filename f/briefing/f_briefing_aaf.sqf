@@ -60,7 +60,7 @@ TRANSPORT
 
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
-COMMANDER'S INTENT
+<font size='18'>COMMANDER'S INTENT</font>
 <br/>
 Destroy the marked FIA equipment caches by using satchels, with minimum casualties to your squad.<br/><br/>
 HALO<br/>
@@ -88,11 +88,11 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 AAF intel has indicated locations of several FIA guerrilla equipment caches.
 However FIA is about to relocate the caches, and we must move in swiftly to intercept them and destroy the caches.
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
 FIA guerrillas, number unknown. No armed vehicles or armor. The caches are very likely to be guarded. The enemy can communicate your location amongst themselves if you are spotted.
 <br/><br/>
-FRIENDLY FORCES
+<font size='18'>FRIENDLY FORCES</font>
 <br/>
 None.
 "]];

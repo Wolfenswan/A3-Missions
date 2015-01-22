@@ -112,13 +112,12 @@ class cfgNotifications
 		priority = 5;
 	};
 
-
 	class CacheDestroyed {
 		description="Attackers have detonated one of the caches!";
 		title="Cache destroyed";
 		iconPicture="\A3\ui_f\data\map\mapcontrol\taskIcon_ca.paa";
 		//iconPicture="\A3\ui_f\data\map\mapcontrol\taskIconCreates_ca.paa";
-};
+	};
 	class ws_alert
 	{
 		title = "ALERT";
@@ -131,6 +130,13 @@ class cfgNotifications
 		description="Half of mission time remaining!";
 		title="Mission time reminder";
 		iconPicture="\A3\UI_F\data\IGUI\Cfg\Actions\settimer_ca.paa";
+
+	class ws_taskdone
+	{
+		title = "TASK COMPLETED";
+		description = "%1";
+		iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
+		duration = 3;
 	};
 
 	class EnemiesSpotted {
@@ -187,8 +193,8 @@ class Params
     class f_param_radios
     {
             title = "Radio System";
-            values[] = {0,1,2};
-            texts[] = {"Off","ACRE","TFR"};
+            values[] = {0,1,2,3};
+            texts[] = {"Off","ACRE","TFR","ACRE2"};
             default = 0;
             code = "f_var_radios = %1";
     };
@@ -336,8 +342,6 @@ class Params
 				default = 4;
 				code = "ha_param_cacheVictoryNum = %1";
 		};
-
-
 		class ws_param_cacheDis
 		{
 				title = "Minimal distance between caches";
@@ -432,9 +436,9 @@ class CfgDebriefing
 
 	class End6
 	{
-		title = "Ending #6";
+		title = "MISSION FAILURE";
 		subtitle = "";
-		description = "*** Insert debriefing #6 here. ***";
+		description = "The platoon was unable to fulfill it's objectives";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -454,7 +458,11 @@ class CfgRespawnTemplates
 	{
 		onPlayerRespawn = "f_fnc_CamInit";
 	};
-
+  	//Overwrite Vanilla Seagull
+    class Seagull
+    {
+        onPlayerRespawn = "";
+    };
 	// F3 JIP Menu
 	class f_JIP
 	{
@@ -482,8 +490,7 @@ class CfgRespawnTemplates
 class CfgFunctions
 {
 	#include "ws_fnc\config.hpp"
-
-    class F // Defines the "owner"
+	class F // Defines the "owner"
 	{
 		class common // category
 		{
@@ -545,11 +552,6 @@ class CfgFunctions
 			class GetMarkerColor{};
 			class LocalFTMarkerSync{};
 		};
-		class bodyRemoval
-		{
-			file = "f\removeBody";
-			class removeBody{};
-		};
 		class setAISkill
 		{
 			file = "f\setAISKill";
@@ -577,6 +579,7 @@ class CfgFunctions
 			class zeusInit{};
 			class zeusAddAddons{};
 			class zeusAddObjects{};
+			class zeusSyncCurators{};
 		};
 		class acre
 		{
@@ -602,13 +605,6 @@ class CfgFunctions
 
 
 // ============================================================================================
-
-// Disable ASR_AI3 radionet to make sure they stay at their caches.
-class asr_ai3 {
-	class sysdanger {
-		radionet = 0;                  // AI groups share known enemy locations over radio
-	};
-};
 
 // F3 - Custom Insignia
 

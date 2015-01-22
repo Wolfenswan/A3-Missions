@@ -60,7 +60,7 @@ For each squad 1 x Offroad and 1 x Truck.<br/>
 
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
-COMMANDER'S INTENT
+<font size='18'>COMMANDER'S INTENT</font>
 <br/>
 Assist our comrades in protecting the equipment caches, and eliminate any AAF soldiers sent to destroy them.
 "]];
@@ -85,11 +85,11 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 An ex-comrade has leaked information to AAF about the location of our equipment caches, and AAF is on their way to destroy them. This valuable equipment is vital in our strife to keep our country free and has been acquired at great expense. The caches must be protected with any available means until we can relocate them. Our boys are already standing guard at each cache. Your job is to help safeguard the caches, and hunt down the AAF soldiers sent to destroy them.
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
 AAF force of unknown size, no armed vehicles or armor.
 <br/><br/>
-FRIENDLY FORCES
+<font size='18'>FRIENDLY FORCES</font>
 <br/>
 Every cache is manned by a few comrades. Konstantinos is ill and couldn't come today, so Vasilis is filling out for him. If you see him, don't joke about the amateurishly wrapped shemagh, he tries really hard.
 "]];

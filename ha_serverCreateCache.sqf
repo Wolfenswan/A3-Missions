@@ -17,7 +17,7 @@ if (count _pos == 0) then { _pos = _tentativePos };
 //diag_log format["Creating cache, id: %1, pos: %2", _id, _pos];
 _markerName = format["ha_cache_%1", _id];
 // Create checkpoint objects
-_crate = "Box_IND_Wps_F" createVehicle _pos;
+_crate = "Box_NATO_AmmoVeh_F" createVehicle _pos;
 clearMagazineCargoGlobal _crate;
 clearWeaponCargoGlobal _crate;
 clearItemCargoGlobal _crate;

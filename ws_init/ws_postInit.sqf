@@ -1,5 +1,7 @@
 [] execVM "ha_spottingMarkers.sqf";
 
+asr_ai3_main_radionet = 0; // Disable ASR AI3 radionet to prevent FIA AI guards to move
+
 // Display a short text intro
 if (!isDedicated) then {
 	if (side player == resistance) then {
