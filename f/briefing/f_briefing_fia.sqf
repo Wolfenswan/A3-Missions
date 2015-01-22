@@ -33,12 +33,36 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-STARTING POSITIONS<br/>
+<font size='18'>STARTING POSITIONS</font><br/>
 Whilst coming ashore our squads have become dispersed.
 <br/><br/>
-EMBEDDED REPORTERS<br/>
+<font size='18'>EMBEDDED REPORTERS</font><br/>
 Up to 2 reporters may have landed with us.
 "]];
+
+// ====================================================================================
+
+// NOTES: EXECUTION
+// The code below creates the execution sub-section of notes.
+/*
+_exe = player createDiaryRecord ["diary", ["Execution","
+<br/>
+<font size='18'>COMMANDER'S INTENT</font>
+<br/>
+*** Insert very short summary of plan here. ***
+<br/><br/>
+<font size='18'>MOVEMENT PLAN</font>
+<br/>
+*** Insert movement instructions here. ***
+<br/><br/>
+<font size='18'>FIRE SUPPORT PLAN</font>
+<br/>
+*** Insert fire support instructions here. ***
+<br/><br/>
+<font size='18'>SPECIAL TASKS</font>
+<br/>
+*** Insert instructions for specific units here. ***
+"]];*/
 
 
 // ====================================================================================
@@ -60,9 +84,10 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 Our landing against Ammolofi Bay is in disarray, but we can still seize our objectives before the enemy reserve arrives.
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
 A company of enemy infantry holds <marker name = 'mkrObj3'>Krya Nera</marker> and the nearby <marker name = 'mkrObj4'>airstrip</marker>, but small detachments will be billeted nearby. Reserve units are expected from the direction of <marker name = 'mkrReserve'>Abdera</marker>.
+<br/><br/>
 "]];
 
 // ====================================================================================

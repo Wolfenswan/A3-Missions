@@ -1,4 +1,4 @@
-// F3 - Folk Assign Gear Script - CSAT
+// F3 - Folk ARPS Assign Gear Script - CSAT
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
@@ -69,7 +69,7 @@ _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
 _scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
 
 // Default setup
-_attachments = []; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_attach1,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -224,8 +224,8 @@ _specOp = [];
 // The outfit-piece is randomly selected from the array for each unit
 
 // Woodland-Hex
-_baseUniform = ["U_O_CombatUniform_oucamo"];
-_baseHelmet = ["H_Booniehat_dgtl","H_Booniehat_khk","H_Cap_blk"];
+_baseUniform = ["U_O_CombatUniform_ocamo"];
+_baseHelmet = ["H_HelmetO_ocamo"];
 _baseGlasses = [];
 
 // Urban
@@ -302,7 +302,7 @@ if (_isMan) then {
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	//_unit linkItem _nvg;			// Add and equip the faction's nvg
+	_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
 	_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass
@@ -317,13 +317,10 @@ if (_isMan) then {
 // SETUP BACKPACKS
 // Include the correct backpack file for the faction
 
-if (isDedicated) then {
-
-};
-
 _backpack = {
 	_typeofBackPack = _this select 0;
-	_param_backpacks = 0;
+	_loadout = 0;
+	if (count _this > 1) then {_loadout = _this select 1};
 	switch (_typeofBackPack) do
 	{
 		#include "f_assignGear_csat_b.sqf";
@@ -941,7 +938,7 @@ switch (_typeofUnit) do
 
 		_unit selectweapon primaryweapon _unit;
 
-		if (true) exitwith {player globalchat format ["DEBUG (f\assignGear\folk_assignGear.sqf): Unit = %1. Gear template %2 does not exist, used Rifleman instead.",_unit,_typeofunit]};
+		if (true) exitwith {player globalchat format ["DEBUG (f\assignGear\f_assignGear_csat.sqf): Unit = %1. Gear template %2 does not exist, used Rifleman instead.",_unit,_typeofunit]};
    };
 
 
