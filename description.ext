@@ -15,7 +15,7 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "Morning Sortie";
+onLoadName = "WAKE-UP SERVICE";
 onLoadMission = "Made with the F3 Mission Development Framework";
 author = "Wolfenswan [FA]";
 loadScreen = "logo.paa";
@@ -305,7 +305,7 @@ class Params
 		title = "WS fnc debug";
         values[] = {0,1};
         texts[] = {"Off","On"};
-        default = 1;
+        default = 0;
         code = "ws_param_dbg = %1";
 	};
 
@@ -330,9 +330,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "VICTORY";
+		title = "MISSION SUCCESS";
 		subtitle = "";
-		description = "FIA took significant losses and has to fall back from their strongholds.";
+		description = "FIA took significant losses and had to fall back to their positions further north-west.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -340,12 +340,12 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "PLATOON WIPED OUT";
+		title = "MISSION SUCCESS";
 		subtitle = "";
-		description = "Our entire platoon was eliminated.";
+		description = "The platoon took not only Galati but also seized the mountain top as a forward base of operations.";
 		// pictureBackground = "";
 		// picture = "";
-		// pictureColor[] = {0.0,0.3,0.6,1};
+		// pictureColor[] = {0.0,0.3,0.6,1}
 	};
 
 	class End4
