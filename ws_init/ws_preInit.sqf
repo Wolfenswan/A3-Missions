@@ -39,22 +39,28 @@ if (isnil "ws_caches_destroyed") then {ws_caches_destroyed = false};publicvariab
 _fia = [];
 
 {if (side leader _x == independent && !(leader _x in playableUnits)) then {
-	_fia set [count _fia,_x];
+	_fia pushback (_x);
 };} forEach allGroups;
 
 //Place FIA next to convoy
 {
-	_pos = [ws_convoy,100,10] call ws_fnc_getPos;
-	{
-		_x setPos ([_pos,5] call ws_fnc_getPos);
-	} forEach units _x;
+	if (count units _x > 1) then {
+		_pos = [ws_convoy,250,30] call ws_fnc_getPos;
+		{
+			_x setPos ([_pos,5] call ws_fnc_getPos);
+		} forEach units _x;
+	};
 } forEach _fia;
 
 {
-	[_x,getPosATL leader _x, 150] call BIS_fnc_taskPatrol;
+	if (count units _x > 1) then {
+		[_x,getPosATL leader _x, 150] call BIS_fnc_taskPatrol;
+	};
 } forEach _fia;
 
-FIA_ZEUS addCuratorEditableObjects [allUnits - playableUnits,true];
+if !(isNil "FIA_ZEUS") then {
+	FIA_ZEUS addCuratorEditableObjects [allUnits - playableUnits,true];
+};
 
 //Delete unused CSAT vehicles
 if (isNil "GrpCSAT_A1" && isNil "GrpCSAT_A2" && isNil "GrpCSAT_A3" && isNil "GrpCSAT_ASL") then {deleteVehicle CSAT_Tr1;};
