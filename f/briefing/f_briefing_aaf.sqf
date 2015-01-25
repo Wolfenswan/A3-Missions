@@ -96,6 +96,10 @@ Lightly armed irregular forces with vehicle support.
 <br/>
 A recon team is in place west of Abdera to monitor FIA movement.
 <br/><br/>
+<font size='18'>WEATHER</font>
+<br/>
+Morning fog is covering the lower areas but should dissipates rapidly with altitude.
+<br/><br/>
 "]];
 
 // ====================================================================================
