@@ -27,7 +27,7 @@ _unitClasses = [
 	["_colonel_"	,	"co"	],
 	["_sl_"			,	"dc"	],
 	["_tl_"			,	"ftl"	],
-	["_lite_"		,	"car"	],
+	["_lite_"		,	"smg"	],
 	["_ar_"			,	"ar"	],
 	["_aar_"		,	"aar"	],
 	["_a_"			,	"aar"	],
@@ -85,7 +85,7 @@ _units = if (count _this == 0) then [{waitUntil {scriptDone f_script_setLocalVar
 
 				// If the class is not in the _unitClasses array
 				if (!_known) then {
-					// [["r", _unit], "f_fnc_assignGear", _unit,false,true] call BIS_fnc_MP;
+					[["r", _unit], "f_fnc_assignGear", _unit,false,true] call BIS_fnc_MP;
 				};
 
 			} else {

@@ -35,17 +35,27 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 // ====================================================================================
 
+// NOTES: EXECUTION
+// The code below creates the execution sub-section of notes.
+
+_exe = player createDiaryRecord ["diary", ["Execution","
+<br/>
+<font size='18'>MOVEMENT PLAN</font>
+<br/>
+Use our protection details as either a force multiplier for the local cell or to out-manoveur CSAT while they try to enter the town.
+"]];
+
+// ====================================================================================
+
 // NOTES: ADMINISTRATION
 // The code below creates the administration sub-section of notes.
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-Our weapons have inferior range to the AAF guns, so avoid any long-range engagements.<br/>
-All RPG missiles are HE variants.<br/><br/>
-Ground-Transport:<br/>
-2 x Offroads (armed - one for each officer)<br/>
+<font size='18'>Ground-Transport:<br/>
+2 x Offroads (one for each officer)<br/>
 Drive carefully - we don't have any spare tires<br/><br/>
-Several civilian vehicles can be found in the town.
+Civilian vehicles can be found in town.
 "]];
 
 // ====================================================================================
@@ -55,9 +65,9 @@ Several civilian vehicles can be found in the town.
 
 _mis = player createDiaryRecord ["diary", ["Mission",format["
 <br/>
-1. We begin <marker name='mkrTown'>here</marker>.<br/>
+1. Move to <marker name='mkrTown'>Agios Dionysios</marker>.<br/>
 2. Protect the officers while they conduct their <marker name='meeting'>meeting</marker>.<br/>
-3. Repell any assaults by the <marker name='mkrAAF'>AAF</marker> and provide safe escort for the officers away from the AO.<br/><br/>
+3. Repell any assaults by the <marker name='mkrAAF'>CSAT</marker> and provide safe escort for the officers away from the AO.<br/><br/>
 OFFICER MEETING<br/>
 The starting locations of the officers are randomized and their distance can benefit either of the two sides.<br/>
 The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for %1 consecutive minutes.<br/><br/>
@@ -75,9 +85,13 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 Two of our leaders are about to hold an important meeting in a <marker name='mkrTown'>nearby town</marker>. While the CSAT has been dormant for a while, we are sure the imperialist pigs will try and take out our beloved comrades. We must not let this happen.
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
-CSAT regulars, airborn.
+CSAT airborne.
+<br/><br/>
+<font size='18'>FRIENDLY FORCES</font>
+<br/>
+The local cell will have taken positions in the vicinity of the meeting site. Don't expect too much from them: They are under-equipped and ill trained.
 <br/><br/>
 "]];
 

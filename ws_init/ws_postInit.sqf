@@ -29,3 +29,15 @@ if (!isDedicated) then {
 		] spawn BIS_fnc_typeText;
 	};
 };
+
+
+if (isServer) then {
+	if (isNil "GrpFIA_Tech1") then {deleteVehicle VehFIA_T1};
+	if (isNil "GrpFIA_Tech2") then {deleteVehicle VehFIA_T2};
+
+	_units = ([ws_meetingM,10,west,4] call ws_fnc_createGarrison);
+	_units = _units + ([ws_meetingM,80,west,round (({side _x == east}count playableUnits)/3) + round random 4] call ws_fnc_createGarrison);
+
+	_units execVM "f\setAISKill\f_setAISkill.sqf";
+	_units execVM "f\assignGear\f_assignGear_AI.sqf";
+};

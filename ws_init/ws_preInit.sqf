@@ -20,6 +20,8 @@ ws_meetingM = _mkrs call ws_fnc_selectRandom;
 {_x setPos (getMarkerPos ws_meetingM)} forEach [TrgM,TrgM_1,TrgM_2];
 publicVariable "ws_meetingM";
 
+VehCSAT_AH1 removeWeaponGlobal "missiles_DAGR";
+
 VehFIA_Tech1 setDir ([VehFIA_Tech1,TrgM] call BIS_fnc_dirTo);
 VehFIA_Tech1 setVectorUp(surfaceNormal(getPos VehFIA_Tech1));
 

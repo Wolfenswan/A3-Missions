@@ -35,20 +35,16 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 // ====================================================================================
 
-/*
+
 // NOTES: ADMINISTRATION
 // The code below creates the administration sub-section of notes.
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-<marker name='mkrVeh'>Ground-Transport:</marker><br/>
-2 x Zamak<br/>
-1 x Strider (unarmed)<br/>
-1 x Strider (HMG)<br/><br/>
-<marker name='mkrVeh_1'>Helicopters:</marker><br/>
-2 x Hellcat (w. HMG - carries 6)<br/>
+2 x Taru - open bench (takes 10 with Co-Pilot & Loadmaster)<br/>
+1 x Orca - Gatling (takes 8)<br/><br/>
 "]];
-*/
+
 // ====================================================================================
 
 // NOTES: MISSION
@@ -77,7 +73,6 @@ Two high-ranking FIA officers are about to meet in a town nearby. Our own office
 <br/><br/>
 ENEMY FORCES
 <br/>
-Lightly armed infantry and technicals.<br/>
-They might be equipped with RPG32-HE, so avoid clustering.<br/><br/>"]];
+The usual rabble. The protection details of the officers are most likely better equipped and trained than the local cell.<br/>"]];
 
 // ====================================================================================

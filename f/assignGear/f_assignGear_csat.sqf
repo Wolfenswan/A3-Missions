@@ -154,9 +154,9 @@ _chemyellow =  "Chemlight_yellow";
 _chemblue = "Chemlight_blue";
 
 // Backpacks
-_bagsmall = "B_AssaultPack_ocamo";			// carries 120, weighs 20
-_bagmedium = "B_FieldPack_ocamo";			// carries 200, weighs 30
-_baglarge =  "B_Carryall_ocamo"; 			// carries 320, weighs 40
+_bagsmall = "B_AssaultPack_blk";			// carries 120, weighs 20
+_bagmedium = "B_FieldPack_oucamo";			// carries 200, weighs 30
+_baglarge =  "B_Carryall_oucamo"; 			// carries 320, weighs 40
 _bagmediumdiver =  "B_AssaultPack_blk";		// used by divers
 _baguav = "O_UAV_01_backpack_F";			// used by UAV operator
 _baghmgg = "O_HMG_01_weapon_F";				// used by Heavy MG gunner
@@ -224,9 +224,9 @@ _specOp = ["uav","smg"];
 // The outfit-piece is randomly selected from the array for each unit
 
 // Woodland-Hex
-_baseUniform = ["U_O_CombatUniform_ocamo"];
-_baseHelmet = ["H_HelmetO_ocamo"];
-_baseGlasses = [];
+_baseUniform = ["U_O_CombatUniform_oucamo"];
+_baseHelmet = ["H_Watchcap_blk",""];
+_baseGlasses = ["G_Balaclava_blk","G_bandanna_blk"];
 
 // Urban
 //_baseUniform = ["U_O_CombatUniform_oucamo"];

@@ -129,7 +129,7 @@ f_var_civAI = independent;         // Optional: The civilian AI will use this si
 // F3 - Assign Gear AI
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// [] execVM "f\assignGear\f_assignGear_AI.sqf";
+[] execVM "f\assignGear\f_assignGear_AI.sqf";
 
 // ====================================================================================
 
@@ -137,9 +137,9 @@ f_var_civAI = independent;         // Optional: The civilian AI will use this si
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
-// f_showDistance_Nametags = true;			// Show distance to player
+f_showDistance_Nametags = true;			// Show distance to player
 // f_showVehicle_Nametags = true;			// Show vehicle player is in
-// [20] execVM "f\nametag\f_nametags.sqf";
+[20] execVM "f\nametag\f_nametags.sqf";
 
 // ====================================================================================
 
