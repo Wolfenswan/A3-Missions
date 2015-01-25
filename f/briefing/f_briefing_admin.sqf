@@ -27,7 +27,7 @@ This briefing section can only be seen by the current admin.
 _briefing ="
 <br/>
 <font size='18'>MISSION-MAKER NOTES</font><br/>
-Notes and messages made by the mission-maker.
+Variables to monitor:<br/>
 ";
 
 _briefing = _briefing + _customText;

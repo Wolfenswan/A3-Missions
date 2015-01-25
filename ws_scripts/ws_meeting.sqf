@@ -32,7 +32,7 @@ while {alive UnitFIA_CO && alive UnitFIA_DC} do {
 
 	if (ws_meeting_done) exitWith {
 		//Notification about successful meeting
-		[["ws_alert",["The meeting is over!"]],"bis_fnc_showNotification",true] spawn BIS_fnc_MP;
+		[["ws_alert",["The meeting is over!"]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;
 		publicVariable "ws_meeting_done;"
 	};
 
