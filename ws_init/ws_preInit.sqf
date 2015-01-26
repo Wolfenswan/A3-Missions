@@ -1,4 +1,5 @@
 if (isNil "ws_initDone") then {ws_initDone = false};
+if (isNil "ws_convoy_ready") then {ws_convoy_ready = false};
 if (isNil "ws_convoy_go") then {ws_convoy_go = false};
 if (isNil "ws_spotted") then {ws_spotted = false};
 if (isNil "ws_obj_cnt ") then {ws_obj_cnt  = 0};

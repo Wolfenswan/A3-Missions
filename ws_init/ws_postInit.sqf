@@ -27,11 +27,11 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_ishc)) then {
 	} forEach _garrisons;
 
 	_units execVM "f\setAISkill\f_setAISkill.sqf";
-	_units execVM "f\assignGear\f_assignGear_AI.sqf";
-
 };
 
 // Do more stuff on the server
 if (isServer) then {
-	["fia_reinf",true] execVM "ws_scripts\ws_cacheStoreRestore.sqf"
+	["fia_reinf",true] execVM "ws_scripts\ws_cacheStoreRestore.sqf";
+
+	[] execVM "f\assignGear\f_assignGear_AI.sqf";
 };
