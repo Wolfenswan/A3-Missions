@@ -84,7 +84,7 @@ _hg_silencer1 = "muzzle_snds_acp";	// .45 suppressor
 _hg_scope1 = "optic_MRD";			// MRD
 
 // Default setup
-_hg_attachments= []; // The default attachment set for handguns, overwritten in the individual unitType
+_hg_attachments= [_hg_scope1]; // The default attachment set for handguns, overwritten in the individual unitType
 
 // ====================================================================================
 
@@ -128,14 +128,14 @@ _glflareyellow = "3Rnd_UGL_FlareYellow_F";
 _glflaregreen = "3Rnd_UGL_FlareGreen_F";
 
 // Pistols (CO, DC, Automatic Rifleman, Medium MG Gunner)
-_pistol = "hgun_Pistol_heavy_01_F";
-_pistolmag = "11Rnd_45ACP_Mag";
+_pistol = "hgun_ACPC2_F";
+_pistolmag = "9Rnd_45ACP_Mag";
 
 // Grenades
 _grenade = "HandGrenade";
 _Mgrenade = "MiniGrenade";
 _smokegrenade = "SmokeShell";
-_smokegrenadegreen = "SmokeShellGreen";
+_smokegrenadegreen = "SmokeShellBlue";
 
 // misc medical items.
 _firstaid = "FirstAidKit";
@@ -222,13 +222,13 @@ _specOp = [];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
-_baseUniform = ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest"];
-_baseHelmet = ["H_HelmetB","H_HelmetB_plain_mcamo"];
-_baseGlasses = [];
+_baseUniform = [];
+_baseHelmet = [];
+_baseGlasses = ["G_Goggles_VR"];
 
 // Armored vests
 _lightRig = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
-_mediumRig = ["V_PlateCarrier1_rgr","V_PlateCarrier2_rgr"]; 	// default for all infantry classes
+_mediumRig = ["V_BandollierB_blk"]; 	// default for all infantry classes
 _heavyRig = ["V_PlateCarrier3_rgr"];
 
 // Diver
@@ -295,7 +295,7 @@ if (_isMan) then {
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	_unit linkItem _nvg;			// Add and equip the faction's nvg
+	//_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
 	_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass
@@ -313,7 +313,7 @@ if (_isMan) then {
 
 _backpack = {
 	_typeofBackPack = _this select 0;
-	_loadout = f_param_backpacks;
+	_loadout = 0;
 	if (count _this > 1) then {_loadout = _this select 1};
 	switch (_typeofBackPack) do
 	{
@@ -750,13 +750,10 @@ switch (_typeofUnit) do
 // LOADOUT: RIFLEMAN
 	case "r":
 	{
-		_unit addmagazines [_riflemag,7];
-		_unit addmagazines [_riflemag_tr,2];
-		_unit addweapon _rifle;
-		_unit addmagazines [_grenade,3];
-		_unit addmagazines [_mgrenade,3];
-		_unit addmagazines [_smokegrenade,3];
-		["r"] call _backpack;
+		_unit addmagazines [_smokegrenadegreen,2];
+		_unit addmagazines [_pistolmag,9];
+		_unit addweapon _pistol;
+		//["r"] call _backpack;
 	};
 
 // LOADOUT: CARABINEER

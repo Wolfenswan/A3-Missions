@@ -84,7 +84,7 @@ _hg_silencer1 = "muzzle_snds_L";	// 9mm suppressor
 _hg_scope1 = "optic_MRD";			// MRD
 
 // Default setup
-_hg_attachments= []; // The default attachment set for handguns, overwritten in the individual unitType
+_hg_attachments= [_hg_scope1]; // The default attachment set for handguns, overwritten in the individual unitType
 
 // ====================================================================================
 
@@ -128,14 +128,14 @@ _glflareyellow = "UGL_FlareYellow_F";
 _glflaregreen = "UGL_FlareGreen_F";
 
 // Pistols (CO, DC, Automatic Rifleman, Medium MG Gunner)
-_pistol = "hgun_Rook40_F";
-_pistolmag = "16Rnd_9x21_Mag";
+_pistol = "hgun_ACPC2_F";
+_pistolmag = "9Rnd_45ACP_Mag";
 
 // Grenades
 _grenade = "HandGrenade";
 _Mgrenade = "MiniGrenade";
 _smokegrenade = "SmokeShell";
-_smokegrenadegreen = "SmokeShellGreen";
+_smokegrenadegreen = "SmokeShellRed";
 
 // misc medical items.
 _firstaid = "FirstAidKit";
@@ -224,9 +224,9 @@ _specOp = [];
 // The outfit-piece is randomly selected from the array for each unit
 
 // Woodland-Hex
-_baseUniform = ["U_O_CombatUniform_ocamo"];
-_baseHelmet = ["H_HelmetO_ocamo"];
-_baseGlasses = [];
+_baseUniform = [];
+_baseHelmet = [];
+_baseGlasses = ["G_Goggles_VR"];
 
 // Urban
 //_baseUniform = ["U_O_CombatUniform_oucamo"];
@@ -234,7 +234,7 @@ _baseGlasses = [];
 
 // Armored vests
 _lightRig = ["V_HarnessO_brn"];
-_mediumRig = ["V_HarnessOGL_brn"]; 	// default for all infantry classes
+_mediumRig = ["V_BandollierB_blk"]; 	// default for all infantry classes
 _heavyRig = ["V_HarnessOGL_brn"];
 
 // Diver
@@ -302,7 +302,7 @@ if (_isMan) then {
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	_unit linkItem _nvg;			// Add and equip the faction's nvg
+	//_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
 	_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass
@@ -319,7 +319,7 @@ if (_isMan) then {
 
 _backpack = {
 	_typeofBackPack = _this select 0;
-	_loadout = f_param_backpacks;
+	_loadout = 0;
 	if (count _this > 1) then {_loadout = _this select 1};
 	switch (_typeofBackPack) do
 	{
@@ -379,10 +379,8 @@ switch (_typeofUnit) do
 // LOADOUT: MEDIC
 	case "m":
 	{
-		_unit addmagazines [_carbinemag,7];
-		_unit addweapon _carbine;
-		_unit addmagazines [_smokegrenade,4];
-		{_unit addItem _firstaid} forEach [1,2,3,4];
+		_unit addmagazines [_pistolmag,5];
+		_unit addweapon _pistol;
 		_unit linkItem "ItemGPS";
 		["m"] call _backpack;
 	};
@@ -756,13 +754,10 @@ switch (_typeofUnit) do
 // LOADOUT: RIFLEMAN
 	case "r":
 	{
-		_unit addmagazines [_riflemag,7];
-		_unit addmagazines [_riflemag_tr,2];
-		_unit addweapon _rifle;
-		_unit addmagazines [_grenade,3];
-		_unit addmagazines [_mgrenade,3];
-		_unit addmagazines [_smokegrenade,3];
-		["r"] call _backpack;
+		_unit addmagazines [_smokegrenadegreen,2];
+		_unit addmagazines [_pistolmag,9];
+		_unit addweapon _pistol;
+		//["r"] call _backpack;
 	};
 
 // LOADOUT: CARABINEER

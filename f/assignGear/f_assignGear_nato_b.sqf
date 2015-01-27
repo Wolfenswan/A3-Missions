@@ -150,11 +150,13 @@ case "rat":
 // BACKPACK: RIFLEMAN (R)
 case "r":
 {
-	// LOADOUT: LIGHT
+	// NO BACKPACK
 	if (_loadout == 0) then {
-		_unit addmagazines [_riflemag,2];
-		_unit addmagazines [_grenade,1];_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_smokegrenade,2];
+		_unit addBackpack _bagsmall;
+		clearMagazineCargoGlobal (unitBackpack _unit);
+		(unitBackpack _unit) addMagazineCargoGlobal [_pistolmag, 4];
+		(unitBackpack _unit) addMagazineCargoGlobal [_grenade, 2];
+		(unitBackpack _unit) addMagazineCargoGlobal [_mgrenade, 2];
 	};
 	// LOADOUT: MEDIUM
 	if (_loadout == 1) then {
