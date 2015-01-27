@@ -1,4 +1,8 @@
 if (isNil "ws_meeting_done") then {ws_meeting_done = false};
+["ws_o1_dead",false] call ws_fnc_setGVar;
+["ws_o2_dead",false] call ws_fnc_setGVar;
+["ws_o1_gone",false] call ws_fnc_setGVar;
+["ws_o2_gone",false] call ws_fnc_setGVar;
 
 0 setFog [0.4,0.025,40];
 
@@ -28,6 +32,13 @@ if (!isDedicated) then {
 			] , 0, 0.7
 		] spawn BIS_fnc_typeText;
 	};
+	sleep 105;
+	if (side player == EAST) then {
+		while {true} do {
+			cutText [format ["%1 minutes since operation start.",round (time/60)],"PLAIN DOWN",2];
+			sleep 120;
+		};
+	};
 };
 
 
@@ -35,8 +46,8 @@ if (isServer) then {
 	if (isNil "GrpFIA_Tech1") then {deleteVehicle VehFIA_T1};
 	if (isNil "GrpFIA_Tech2") then {deleteVehicle VehFIA_T2};
 
-	_units = ([ws_meetingM,10,west,4] call ws_fnc_createGarrison);
-	_units = _units + ([ws_meetingM,80,west,round (({side _x == east}count playableUnits)/3) + round random 4] call ws_fnc_createGarrison);
+	_units = ([ws_meetingM,10,west,3 + round random 3] call ws_fnc_createGarrison);
+	_units = _units + ([ws_meetingM,80,west,4 + round (({side _x == east}count playableUnits)/3) + round random 5] call ws_fnc_createGarrison);
 
 	_units execVM "f\setAISKill\f_setAISkill.sqf";
 	_units execVM "f\assignGear\f_assignGear_AI.sqf";

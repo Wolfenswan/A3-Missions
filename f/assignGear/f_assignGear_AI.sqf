@@ -27,7 +27,7 @@ _unitClasses = [
 	["_colonel_"	,	"co"	],
 	["_sl_"			,	"dc"	],
 	["_tl_"			,	"ftl"	],
-	["_lite_"		,	"smg"	],
+	["_lite_"		,	"car"	],
 	["_ar_"			,	"ar"	],
 	["_aar_"		,	"aar"	],
 	["_a_"			,	"aar"	],

@@ -41,7 +41,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-2 x Taru - open bench (takes 10 with Co-Pilot & Loadmaster)<br/>
+2 x Taru - open bench (takes 10 with Co-Pilot and Loadmaster)<br/>
 1 x Orca - Gatling (takes 8)<br/><br/>
 "]];
 
@@ -56,7 +56,7 @@ _mis = player createDiaryRecord ["diary", ["Mission",format["
 2. Proceed towards the <marker name='mkrTown'>target town</marker> and locate the meeting place of the officers. Strike swiftly to take them out.<br/><br/>
 OFFICER MEETING<br/>
 The starting locations of the officers are randomized and their distance to the town can benefit either of the two sides.<br/>
-The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for %1 consecutive minutes.<br/><br/>
+The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for %1 consecutive minutes.<br/> We will receive sporadic updates how much time has passed since we launched the operation, but won't know when the meeting has begun or will end.<br/>
 VICTORY CONDITIONS<br/>
 FIA wins if both officers conduct their meeting and at least one escapes the vicinity of the town (leave highlighted area).<br/>
 CSAT wins if both officers are taken out or the officers flee before the meeting has taken place.
