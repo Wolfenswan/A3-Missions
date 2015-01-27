@@ -5,7 +5,7 @@ The missions can be found on GitHub:<br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-2-1</i>
+<i>3-2-2</i>
 
 <b>Mission description</b><br/>
 Slightly silly car-based adversarial on the eastern salt flats, making use of the fire-from-vehicle mechanic.
