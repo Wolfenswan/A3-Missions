@@ -92,9 +92,9 @@ _hg_attachments= []; // The default attachment set for handguns, overwritten in 
 
 
 // Standard Riflemen ( MMG Assistant Gunner, Assistant Automatic Rifleman, MAT Assistant Gunner, MTR Assistant Gunner, Rifleman)
-_rifle = "hgun_PDW2000_F";
-_riflemag = "30Rnd_9x21_Mag";
-_riflemag_tr = "30Rnd_9x21_Mag";
+_rifle = "SMG_01_F";
+_riflemag = "30Rnd_45ACP_Mag_SMG_01";
+_riflemag_tr = "30Rnd_45ACP_Mag_SMG_01";
 
 // Standard Carabineer (Medic, Rifleman (AT), MAT Gunner, MTR Gunner, Carabineer)
 _carbine = "SMG_02_F";
