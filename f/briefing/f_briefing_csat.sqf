@@ -60,6 +60,10 @@ Wintermute (RED) and Case (BLU) unleash attack programs to gain control of Frees
 Enemy Forces
 <br/>
 Freeside's intrusion countermeasures “ICE” (INDEP) are patrolling the node but will not attack unless they or the nodes utility programs (CIV) are threatened. ICE's attack programs (i.e. weapons) are usable if recovered.
+<br/><br/>
+Optimized Friend-Foe Aquistion Routine
+<br/>
+Set HDR to low in your video settings to make target distinction easier.
 <br/>
 "]];
 
