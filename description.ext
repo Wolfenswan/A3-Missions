@@ -174,8 +174,8 @@ class Params
     class f_param_radios
     {
             title = "Radio System";
-            values[] = {0,1,2};
-            texts[] = {"Off","ACRE", "TFR"};
+            values[] = {0,1,2,3};
+            texts[] = {"Off","ACRE","TFR","ACRE2"};
             default = 0;
             code = "f_var_radios = %1";
     };
@@ -204,7 +204,7 @@ class Params
             title = "$STR_f_param_mission_timer";
             values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
             texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
-            default = 0;
+            default = 1;
             code = "f_param_mission_timer = %1";
     };
 
@@ -251,12 +251,13 @@ class Params
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
 
+// Wolfenswan - Params
 	class ws_param_dbg
 	{
 		title = "WS fnc debug";
         values[] = {0,1};
         texts[] = {"Off","On"};
-        default = 0;
+        default = 1;
         code = "ws_param_dbg = %1";
 	};
 
@@ -311,9 +312,9 @@ class CfgDebriefing
 
 	class End5
 	{
-		title = "Ending #5";
+		title = "MISSION SUCCESS";
 		subtitle = "";
-		description = "*** Insert debriefing #5 here. ***";
+		description = "We fulfilled all objectives to satisfication.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -321,9 +322,9 @@ class CfgDebriefing
 
 	class End6
 	{
-		title = "Ending #6";
+		title = "MISSION FAILURE";
 		subtitle = "";
-		description = "*** Insert debriefing #6 here. ***";
+		description = "The platoon was unable to fulfill it's objectives";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -343,7 +344,11 @@ class CfgRespawnTemplates
 	{
 		onPlayerRespawn = "f_fnc_CamInit";
 	};
-
+  	//Overwrite Vanilla Seagull
+    class Seagull
+    {
+        onPlayerRespawn = "";
+    };
 	// F3 JIP Menu
 	class f_JIP
 	{
@@ -371,8 +376,7 @@ class CfgRespawnTemplates
 class CfgFunctions
 {
 	#include "ws_fnc\config.hpp"
-
-    class F // Defines the "owner"
+	class F // Defines the "owner"
 	{
 		class common // category
 		{
@@ -435,11 +439,6 @@ class CfgFunctions
 			class GetMarkerColor{};
 			class LocalFTMarkerSync{};
 		};
-		class bodyRemoval
-		{
-			file = "f\removeBody";
-			class removeBody{};
-		};
 		class setAISkill
 		{
 			file = "f\setAISKill";
@@ -467,6 +466,7 @@ class CfgFunctions
 			class zeusInit{};
 			class zeusAddAddons{};
 			class zeusAddObjects{};
+			class zeusSyncCurators{};
 		};
 		class acre
 		{

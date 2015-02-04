@@ -5,7 +5,7 @@ The missions can be found on GitHub:<br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-2-1</i>
+<i>3-2-2</i>
 
 <b>Mission description</b><br/>
 A straightforward seize & hold adversarial, where CSAT have to attack a AAF held storage compound. The surrounding terrain is varied and allows for a number of approaches and defensive positions.

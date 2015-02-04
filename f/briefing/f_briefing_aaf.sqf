@@ -54,11 +54,11 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 Advancing CSAT forces are threatening one of our <marker name='mkrAO'>storage facilities</marker>. We need to repell them.
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
 Not more than a platoon worth of infantry, possibly support by a light vehicle.
 <br/><br/>
-FRIENDLY FORCES
+<font size='18'>FRIENDLY FORCES</font>
 <br/>
 None.
 "]];

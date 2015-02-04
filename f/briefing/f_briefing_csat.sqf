@@ -65,11 +65,11 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 We are tasked to seize one of the AAF's <marker name='mkrAO'>storage facilities</marker>.
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
 Not more than a platoon worth of infantry.
 <br/><br/>
-FRIENDLY FORCES
+<font size='18'>FRIENDLY FORCES</font>
 <br/>
 None.
 "]];
