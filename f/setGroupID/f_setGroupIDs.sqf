@@ -104,7 +104,7 @@ _groups = [
 ["GrpFIA_DT1","FIA DT1 -"],
 ["GrpFIA_ENG1","FIA ENG1 -"],
 
-["GrpFIA_IFV1","FIA IFV1 -"],
+["GrpFIA_TECH1","FIA TECH1 -"],
 ["GrpFIA_IFV2","FIA IFV2 -"],
 ["GrpFIA_IFV3","FIA IFV3 -"],
 ["GrpFIA_IFV4","FIA IFV4 -"],

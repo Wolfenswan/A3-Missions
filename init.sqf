@@ -108,10 +108,10 @@ if(isServer) then {
 // [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // BLUFOR > NATO
-// [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[BLUFOR,100,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-[OPFOR,100,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+//[OPFOR,100,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
 [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
@@ -217,4 +217,4 @@ f_var_cachingAggressiveness = 2;
 // ====================================================================================
 
 // Wolfenswan - post Init
-["SELF SERVICE","CENTRAL ALTIS"] call ws_fnc_showIntro;
+[] execVM "ws_init\ws_postInit.sqf";

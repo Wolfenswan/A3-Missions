@@ -41,8 +41,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-1. Hold the <marker name='mkrAO'>facility</marker>. If for 120 seconds the number of CSAT units outweight the numbers of present AAF, CSAT will have seized it.<br/>
-2. We can use the <marker name='mkrTown'>town</marker> to our advantage.
+Hold the <marker name='mkrAO'>facility</marker> by keeping FIA out of the highlighted areas.<br/>
 "]];
 
 // ====================================================================================
@@ -52,11 +51,11 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-Advancing CSAT forces are threatening one of our <marker name='mkrAO'>storage facilities</marker>. We need to repell them.
+FIA raiders are threatening one of our <marker name='mkrAO'>storage facilities</marker>. We need to repell them.
 <br/><br/>
 <font size='18'>ENEMY FORCES</font>
 <br/>
-Not more than a platoon worth of infantry, possibly support by a light vehicle.
+Not more than a platoon worth of infantry.
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>

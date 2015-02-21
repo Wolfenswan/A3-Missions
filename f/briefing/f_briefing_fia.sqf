@@ -38,6 +38,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 // NOTES: ADMINISTRATION
 // The code below creates the administration sub-section of notes.
 
+/*
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 *** Insert information on administration and logistics here. ***
@@ -65,7 +66,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <font size='18'>SPECIAL TASKS</font>
 <br/>
 *** Insert instructions for specific units here. ***
-"]];
+"]];*/
 
 // ====================================================================================
 
@@ -74,7 +75,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+Seize the <marker name='mkrAO'>facility</marker> by pushing AAF out of all the highlighted areas.<br/>
 "]];
 
 // ====================================================================================
@@ -84,15 +85,15 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+Our goal is to take one of the AAF's <marker name='mkrAO'>storage facilities</marker for ourselves.
 <br/><br/>
 <font size='18'>ENEMY FORCES</font>
 <br/>
-*** Insert information about enemy forces here.***
+Not more than a platoon worth of infantry.
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>
-*** Insert information about friendly forces here.***
+None.
 "]];
 
 // ====================================================================================
