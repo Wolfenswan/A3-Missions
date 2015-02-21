@@ -56,7 +56,7 @@ _groups = [
 ["GrpNATO_TNK1","NATO TNK1 -"],
 
 ["GrpNATO_TH1","NATO TH1 -"],
-["GrpNATO_TH2","NATO TH2 -"],
+["GrpNATO_TH2","NATO SCOUT1 -"],
 ["GrpNATO_TH3","NATO TH3 -"],
 ["GrpNATO_TH4","NATO TH4 -"],
 ["GrpNATO_TH5","NATO TH5 -"],

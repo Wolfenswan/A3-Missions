@@ -35,15 +35,15 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 // ====================================================================================
 
-/*
+
 // NOTES: ADMINISTRATION
 // The code below creates the administration sub-section of notes.
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-All FTLs and AARs carry one demo-charge each.
+As transport helicopters we have either a Huron or a Ghosthawk available. The scout helicopter can carry four people.
 "]];
-*/
+
 
 // ====================================================================================
 

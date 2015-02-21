@@ -32,7 +32,8 @@ class Mission
 		"A3_Soft_F_EPC_Truck_03",
 		"A3_Data_F_Curator_Virtual",
 		"a3_soft_f_offroad_01",
-		"A3_Air_F_Heli_Heli_Transport_03"
+		"A3_Air_F_Heli_Heli_Transport_03",
+		"A3_Air_F_Beta_Heli_Transport_01"
 	};
 	addOnsAuto[]=
 	{
@@ -53,12 +54,13 @@ class Mission
 		"A3_Soft_F_EPC_Truck_03",
 		"A3_Air_F_Heli_Light_01",
 		"A3_Air_F_Heli_Heli_Transport_03",
+		"A3_Air_F_Beta_Heli_Transport_01",
 		"a3_map_altis"
 	};
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_az55_DeliveryDenied_v5";
+		briefingName="fa3_az57_DeliveryDenied_v5";
 		overviewText="CSAT attempts to seize NATO weapons smuggled by a FIA convoy. NATO heliborn forces are deployed to destroy the evidence. Suggested NATO:CSAT ratio is 1:2, depending on vehicles. Equal ratio if FIA are set as hostile to NATO. ZEUS is optional but recommended.";
 		resistanceWest=0;
 		startWeather=0.84999996;
@@ -80,7 +82,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=44;
+		items=45;
 		class Item0
 		{
 			side="EAST";
@@ -1579,7 +1581,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14664.064,17.91,16724.156};
+					position[]={14662.079,17.91,16703.865};
 					azimut=2.9218199;
 					id=61;
 					side="LOGIC";
@@ -1748,8 +1750,8 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={14686.039,17.91,16743.646};
-					azimut=123244;
+					position[]={14679.603,17.91,16764.832};
+					azimut=123428;
 					id=70;
 					side="WEST";
 					vehicle="B_soldier_repair_F";
@@ -1757,12 +1759,13 @@ class Mission
 					rank="SERGEANT";
 					skill=1;
 					text="UnitNATO_AH1_1";
-					init="GroupNATO_AH1 = group this; nul = [""pcc"",this] call f_fnc_assignGear ; this moveInDriver VehBLU_AH1;";
-					description="NATO Attack Helo 1 Pilot (can repair)";
+					init="GroupNATO_AH1 = group this; nul = [""pcc"",this] call f_fnc_assignGear ;";
+					description="NATO Attack Helo 1 Pilot (AH-9 - minigun only)";
 				};
 				class Item1
 				{
-					position[]={14688.354,17.91,16748.58};
+					position[]={14685.259,17.91,16769.174};
+					azimut=-61.224567;
 					id=71;
 					side="WEST";
 					vehicle="B_Helipilot_F";
@@ -1771,7 +1774,7 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="UnitNATO_AH1_CP";
-					init="GrpNATO_AH1 = group this; [""pp"",this] call f_fnc_assignGear; this moveInTurret [VehBlu_AH1,[0]];";
+					init="GrpNATO_AH1 = group this; [""pp"",this] call f_fnc_assignGear;";
 					description="NATO Attack Helo 1 Co-Pilot";
 				};
 			};
@@ -1784,8 +1787,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={14668.631,17.91,16711.809};
-					azimut=136.116;
+					position[]={14641.126,17.91,16702.883};
+					azimut=322.46899;
 					id=72;
 					side="WEST";
 					vehicle="B_Helipilot_F";
@@ -1794,13 +1797,13 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="UnitNATO_TH1_P";
-					init="GrpNATO_TH1 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehNATO_TH1;";
-					description="NATO Transport Helo 1 Pilot";
+					init="GrpNATO_TH1 = group this; [""pp"",this] call f_fnc_assignGear; ";
+					description="NATO Transport Helo 1 Pilot (Huron or Ghosthawk)";
 				};
 				class Item1
 				{
-					position[]={14665.735,17.91,16711.152};
-					azimut=136.116;
+					position[]={14644.065,17.91,16703.197};
+					azimut=322.46899;
 					id=73;
 					side="WEST";
 					vehicle="B_Helipilot_F";
@@ -1808,13 +1811,13 @@ class Mission
 					rank="LIEUTENANT";
 					skill=0.60000002;
 					text="UnitNATO_TH1_CP";
-					init="GrpNATO_TH1 = group this; [""pp"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH1,[0]];";
+					init="GrpNATO_TH1 = group this; [""pp"",this] call f_fnc_assignGear;";
 					description="NATO Transport Helo 1 Co-Pilot";
 				};
 				class Item2
 				{
-					position[]={14664.546,17.91,16710.078};
-					azimut=136.116;
+					position[]={14645.372,17.91,16704.145};
+					azimut=322.46899;
 					id=74;
 					side="WEST";
 					vehicle="B_soldier_repair_F";
@@ -1822,13 +1825,13 @@ class Mission
 					rank="SERGEANT";
 					skill=0.60000002;
 					text="UnitNATO_TH1_G1";
-					init="GrpNATO_TH1 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH1,[1]];";
+					init="GrpNATO_TH1 = group this; [""pcc"",this] call f_fnc_assignGear; ";
 					description="NATO Transport Helo 1 Crew Chief (Repair)";
 				};
 				class Item3
 				{
-					position[]={14663.424,17.91,16709.041};
-					azimut=136.116;
+					position[]={14646.601,17.91,16705.07};
+					azimut=322.46899;
 					id=75;
 					side="WEST";
 					vehicle="B_helicrew_F";
@@ -1836,7 +1839,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					text="UnitNATO_TH1_G2";
-					init="GrpNATO_TH1 = group this; [""pc"",this] call f_fnc_assignGear; this moveInTurret [VehNATO_TH1,[2]];";
+					init="GrpNATO_TH1 = group this; [""pc"",this] call f_fnc_assignGear; ";
 					description="NATO Transport Helo 1 Gunner";
 				};
 			};
@@ -2070,15 +2073,52 @@ class Mission
 				};
 			};
 		};
+		class Item44
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={14661.168,17.91,16754.287};
+					azimut=322.46899;
+					id=93;
+					side="WEST";
+					vehicle="B_Helipilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.60000002;
+					text="UnitNATO_TH1_P_1";
+					init="GrpNATO_TH2 = group this; [""pp"",this] call f_fnc_assignGear; ";
+					description="NATO Scout Helo 1 Pilot (MH-9)";
+				};
+				class Item1
+				{
+					position[]={14663.921,17.91,16756.252};
+					azimut=322.46899;
+					id=94;
+					side="WEST";
+					vehicle="B_soldier_repair_F";
+					player="PLAY CDG";
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="UnitNATO_TH1_G1_1";
+					init="GrpNATO_TH2 = group this; [""pcc"",this] call f_fnc_assignGear; ";
+					description="NATO Scout Helo 1 Spotter (Repair)";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=15;
+		items=17;
 		class Item0
 		{
 			position[]={11468.371,23.573431,11581.591};
 			azimut=32553800;
-			id=93;
+			id=95;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			leader=1;
@@ -2091,7 +2131,7 @@ class Mission
 		{
 			position[]={11450.193,23.750992,11559.143};
 			azimut=38930600;
-			id=94;
+			id=96;
 			side="EMPTY";
 			vehicle="B_G_Van_01_transport_F";
 			leader=1;
@@ -2102,7 +2142,7 @@ class Mission
 		{
 			position[]={11439.347,23.84,11550.055};
 			azimut=339641;
-			id=95;
+			id=97;
 			side="EMPTY";
 			vehicle="B_Truck_01_box_F";
 			leader=1;
@@ -2116,7 +2156,7 @@ class Mission
 		{
 			position[]={11461.265,23.634171,11569.038};
 			azimut=33689000;
-			id=96;
+			id=98;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_armed_F";
 			leader=1;
@@ -2130,7 +2170,7 @@ class Mission
 		{
 			position[]={11435.415,23.870377,11533.472};
 			azimut=368717;
-			id=97;
+			id=99;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			leader=1;
@@ -2142,7 +2182,7 @@ class Mission
 		{
 			position[]={11424.715,23.868891,11521.483};
 			azimut=37738700;
-			id=98;
+			id=100;
 			side="EMPTY";
 			vehicle="B_G_Van_01_fuel_F";
 			leader=1;
@@ -2155,7 +2195,7 @@ class Mission
 		{
 			position[]={11417.425,23.766693,11511.484};
 			azimut=33689000;
-			id=99;
+			id=101;
 			side="EMPTY";
 			vehicle="Land_Wreck_Van_F";
 			leader=1;
@@ -2166,7 +2206,7 @@ class Mission
 		{
 			position[]={11408.116,23.609102,11499.476};
 			azimut=368717;
-			id=100;
+			id=102;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_armed_F";
 			leader=1;
@@ -2179,7 +2219,7 @@ class Mission
 		{
 			position[]={11628.1,22.811285,11835.98};
 			azimut=29446234;
-			id=101;
+			id=103;
 			side="EMPTY";
 			vehicle="O_MRAP_02_hmg_F";
 			skill=60000000;
@@ -2190,7 +2230,7 @@ class Mission
 		{
 			position[]={11611.668,23.313797,11869.26};
 			azimut=30691480;
-			id=102;
+			id=104;
 			side="EMPTY";
 			vehicle="O_Truck_03_transport_F";
 			skill=1;
@@ -2202,7 +2242,7 @@ class Mission
 		{
 			position[]={11619.636,23.132996,11884.032};
 			azimut=297395.03;
-			id=103;
+			id=105;
 			side="EMPTY";
 			vehicle="O_Truck_03_transport_F";
 			skill=1;
@@ -2214,7 +2254,7 @@ class Mission
 		{
 			position[]={11629.568,23.192814,11897.458};
 			azimut=29446232;
-			id=104;
+			id=106;
 			side="EMPTY";
 			vehicle="O_MRAP_02_F";
 			skill=60000000;
@@ -2227,7 +2267,7 @@ class Mission
 		{
 			position[]={11613.586,22.94001,11845.306};
 			azimut=29446232;
-			id=105;
+			id=107;
 			side="EMPTY";
 			vehicle="O_MRAP_02_hmg_F";
 			skill=60000000;
@@ -2236,10 +2276,9 @@ class Mission
 		};
 		class Item13
 		{
-			position[]={14679.36,17.91,16748.484};
-			azimut=123244;
-			offsetY=0.5;
-			id=106;
+			position[]={14672.619,17.91,16773.666};
+			azimut=123248;
+			id=108;
 			side="EMPTY";
 			vehicle="B_Heli_Light_01_armed_F";
 			leader=1;
@@ -2249,14 +2288,36 @@ class Mission
 		};
 		class Item14
 		{
-			position[]={14662.375,17.91,16716.295};
-			azimut=136.11571;
-			id=107;
+			position[]={14643.105,17.91,16730.234};
+			azimut=136.116;
+			id=109;
 			side="EMPTY";
 			vehicle="B_Heli_Transport_03_F";
 			leader=1;
 			skill=0.60000002;
 			text="VehNATO_TH1";
+		};
+		class Item15
+		{
+			position[]={14626.882,17.91,16716.168};
+			azimut=136.116;
+			offsetY=0.5;
+			id=110;
+			side="EMPTY";
+			vehicle="B_Heli_Transport_01_camo_F";
+			leader=1;
+			skill=0.60000002;
+		};
+		class Item16
+		{
+			position[]={14654.692,17.91,16759.852};
+			azimut=123248;
+			offsetY=0.5;
+			id=111;
+			side="EMPTY";
+			vehicle="B_Heli_Light_01_F";
+			leader=1;
+			skill=1;
 		};
 	};
 	class Markers
@@ -2453,7 +2514,6 @@ class Mission
 			position[]={14716.12,17.91,16688.83};
 			name="mkrNATO";
 			type="flag_NATO";
-			angle=-396.39349;
 		};
 		class Item32
 		{
