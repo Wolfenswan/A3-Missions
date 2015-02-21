@@ -5,6 +5,8 @@
 // LOOP THROUGH THE PASSED UNITS
 // We loop through the units of the passed group and disable Simulation for those that are not vehicle drivers and are standing still
 
+private ["_group","_aggressiveness"];
+
 _group = [_this,0,grpNull] call BIS_fnc_param;
 _aggressiveness = [_this,1,f_var_cachingAggressiveness] call BIS_fnc_param;
 
