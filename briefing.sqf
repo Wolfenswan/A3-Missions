@@ -59,7 +59,7 @@ if (serverCommandAvailable "#kick") then {
 
 if (_unitfaction == "blu_f") exitwith {
 
-#include "f\briefing\f_briefing_nato.sqf"
+#include "f\briefing\f_briefing_fia.sqf"
 
 // DEBUG
 	if (f_var_debugMode == 1) then

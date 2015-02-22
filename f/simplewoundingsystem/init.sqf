@@ -38,7 +38,7 @@ for [{_i=1},{_i<=f_wound_extraFAK},{_i=_i+1}] do {
 };
 
 /// lets wait a bit.
-sleep 60;
+sleep 30;
 hintsilent "SWS initialized";
 
 // default variables.

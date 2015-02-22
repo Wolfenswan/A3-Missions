@@ -102,7 +102,7 @@ f_param_backpacks = 0;
 
 
 if (_faction == "blu_f") then {
-#include "f_assignGear_nato.sqf"
+#include "f_assignGear_cops.sqf"
 };
 
 

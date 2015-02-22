@@ -291,7 +291,7 @@ _groups = [
 ["GrpAAF_IFV8","APD IFV8 -"],
 ["GrpAAF_TNK1","APD TNK1 -"],
 
-["GrpAAF_TH1","APD TH1 -"],
+["GrpAAF_TH1","APD SKYEYE -"],
 ["GrpAAF_TH2","APD TH2 -"],
 ["GrpAAF_TH3","APD TH3 -"],
 ["GrpAAF_TH4","APD TH4 -"],

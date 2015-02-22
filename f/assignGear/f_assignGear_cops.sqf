@@ -118,7 +118,7 @@ _medkit = "Medikit";
 _nvg = "NVGoggles_INDEP";
 
 // UAV Terminal
-_uavterminal = "I_UavTerminal";
+_uavterminal = "B_UavTerminal";
 
 // Chemlights
 _chemgreen =  "Chemlight_green";
@@ -281,7 +281,7 @@ switch (_typeofUnit) do
 
 // ====================================================================================
 
-// LOADOUT: CO/DC
+// LOADOUT: CO
 case "co":
 	{
 		_unit addmagazines [_pistolmag,6];
@@ -295,6 +295,22 @@ case "co":
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 	};
+
+// LOADOUT: DC
+case "dc":
+	{
+		_unit addmagazines [_smgmag,7];
+		_unit addweapon _smg;
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
+		_unit addmagazines [_smokegrenade,2];
+		_unit addmagazines [_smokegrenadegreen,2];
+		removeHeadgear _unit;
+		_unit addHeadgear "H_Beret_blk_POLICE";
+		_unit addWeapon "Rangefinder";
+		_unit linkItem "ItemGPS";
+	};
+
 
 // FTL
 	case "ftl":
@@ -330,11 +346,24 @@ case "co":
 
 	};
 
+// LOADOUT: UAV Operator
+	case "uav":
+	{
+		_unit addmagazines [_pistolmag,8];
+		_unit addweapon _pistol;
+		_unit addmagazines [_smokegrenade,2];
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
+		_unit linkItem _uavterminal;
+		//["uav"] call _backpack;
+		//_unit addMagazines ["Laserbatteries",4];	// Batteries added for the F3 UAV Recharging component
+	};
+
 // LOADOUT: Medic
 	case "m":
 	{
-		_unit addmagazines [_pistolmag,4];
-		_unit addweapon _pistol;
+		_unit addmagazines [_smgmag,5];
+		_unit addweapon _smg;
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];

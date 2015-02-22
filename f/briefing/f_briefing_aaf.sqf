@@ -40,9 +40,9 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
-COMMANDER'S INTENT
+<font size='18'>COMMANDER'S INTENT</font>
 <br/>
-We don't have the firepower or protection of the APD, so long range engagements are not an options.
+Our firepower and body protection doesn't match the APD's so long range engagements are ill-advised.
 "]];
 
 // ====================================================================================
@@ -62,12 +62,13 @@ Get the boss into the safety of the city, then flee with <marker name='mkrShip'>
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-The bastard cops have no decency! They tried to take out or boss while he was paying his respects. Luckily, we were tipped off and got the first wave of pigs. Now we need to make sure their reinforcements don't finish the job.
+The bastard pigs have no decency! They tried to take out our boss while he was paying respects to his dead gran. Luckily, we were tipped off and got the first wave of pigs. Now we need to make sure their reinforcements won't finish the job.
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
-A whole bunch of wankers in blue, probably with SMGs and bulletproof vests. Expect them from all directions.<br/><br/>
-NOTE<br/>
+A whole bunch of wankers in blue, probably with SMGs and bulletproof vests. <marker name='mkrAPD_1'>Northern</marker> and <marker name='mkrAPD_2'>southern</marker> exits are blocked off.
+<br/><br/>
+<font size='18'>HOUSE RULE</font><br/>
 Although tempting the gang must not equip police vests from dead officers.
 "]];
 
