@@ -194,8 +194,8 @@ _specOp = ["co"];
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
 
-_baseUniform = ["U_OG_Guerilla3_1","U_OG_Guerilla3_2","U_OG_Guerilla2_3"];
-_baseHelmet = ["H_Booniehat_khk","H_Cap_oli","H_Watchcap_blk"];
+_baseUniform = ["U_OG_Guerilla2_1","U_OG_Guerilla2_2","U_OG_Guerilla2_3","U_OG_Guerilla3_1"];
+_baseHelmet = ["H_Booniehat_khk","H_Cap_oli","H_StrawHat_dark"];
 _baseGlasses = [];
 
 // Armored vests
