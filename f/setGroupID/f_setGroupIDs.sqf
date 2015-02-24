@@ -153,7 +153,7 @@ _groups = [
 ["GrpCSAT_J3","CSAT J3 -"],
 
 ["GrpCSAT_MMG1","CSAT MMG1 -"],
-["GrpCSAT_HMG1","CSAT HMG1 -"],
+["GrpCSAT_HMG1","CSAT GMG1 -"],
 ["GrpCSAT_MAT1","CSAT MAT1 -"],
 ["GrpCSAT_HAT1","CSAT HAT1 -"],
 ["GrpCSAT_MTR1","CSAT MTR1 -"],

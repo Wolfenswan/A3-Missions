@@ -55,7 +55,10 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 FIRE SUPPORT PLAN
 <br/>
-Due to the fog and the possibility of man-pads AH1 should be used with extreme caution.
+CO has access to a battery of two mortars via the support menu (0-8).<br/>
+Due to the fog and the possibility of man-pads AH1 should be used with extreme caution.<br/><br/>
+EXTRACTION<br/>
+CO and both SLs can request helicopter transport using the support menu (0-8), while indicating a position on the map with your cursor. From inside the extraction helicopter you can order the return to base using the 'Unload Position' radio command (1).
 "]];
 
 // ====================================================================================
@@ -67,7 +70,8 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. We are inserted <marker name='mkrInsert'>on the eastern hill</marker>.<br/>
 2. Proceed <marker name='mkrFIA'>into the forest</marker> to locate and destroy the creates at FIA storage camps. Up to five (5) caches are expected to be present.<br/>
-3. Oreokastro and the castle are not your primarty objective but rebels might stage attacks from there.<br/><br/>
+3. Request extraction (see EXECUTION for details) once you consider the mission complete and return to <marker name='mkrBase'>our eastern base</marker>.
+4. Oreokastro and the castle are not your primarty objective but rebels might stage attacks from there.<br/><br/>
 DESTROYING CACHES<br/>
 To destroy the ammo caches you need to execute the 'Destroy cache' action when facing them.
 "]];
@@ -87,7 +91,7 @@ The usual rag-tag bunch of FIA forces, probably several squads strong.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-Motorized groups are blocking the southern approaches.
+Motorized AAF groups are blocking the southern approaches.
 <br/><br/>
 RESTRICTIONS
 <br/>
