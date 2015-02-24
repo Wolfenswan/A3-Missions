@@ -35,16 +35,42 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 		//deleteVehicle _x;
 	} forEach _garrison;
 
+<<<<<<< HEAD:ws_scripts/ws_postInit.sqf
 	// If units were spawned set AI skill again
 	_units spawn {
 		sleep 0.1;
 		[[_this,'f\setAISKill\f_setAISkill.sqf'],'BIS_fnc_execVM',false] spawn BIS_fnc_MP;
 	};
+=======
+
+	_units execVM "f\setAISKill\f_setAISkill.sqf";
+
+	// Equip garrisoned units
+
+	//_units execVM "f\assignGear\f_assignGear_AI.sqf";
+
+	/*
+	_gear = [
+		["hgun_PDW2000_F",5],
+		["SMG_01_F",6],
+		["SMG_02_ACO_F",4],
+		["arifle_Mk20C_F",5],
+		["arifle_Katiba_C_F",5],
+		["arifle_TRG20_F",5]
+	];
+
+	{
+		_wp = _gear call ws_fnc_selectRandom;
+	[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
+	} forEach _units;
+	*/
+>>>>>>> b86e437f6f2bac3eb53cfe1d4406fb68cd9ed3a6:ws_init/ws_postInit.sqf
 };
 
 // Do more stuff exclusively on the server
 if (isServer) then {
 
+<<<<<<< HEAD:ws_scripts/ws_postInit.sqf
 	if ({isNil _x} count ["GrpCSAT_BSL","GrpCSAT_B1","GrpCSAT_B2","GrpCSAT_B3"] == 4) then {
 		deleteVehicle VehCSAT_TH2;
 	};
@@ -68,6 +94,16 @@ if (isServer) then {
 		[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
 	};
 	} forEach allUnits;
+=======
+	// Recalculate F3 variables
+	// [] execVM "f\common\f_setLocalVars.sqf";
+
+	// Stuff to happen AFTER mission launch
+	// sleep 0.1;
+
+	// If units were spawned set AI skill again
+	//
+>>>>>>> b86e437f6f2bac3eb53cfe1d4406fb68cd9ed3a6:ws_init/ws_postInit.sqf
 
 	// NVG-removal, add flashlights
 
@@ -88,10 +124,17 @@ if (isServer) then {
          } forEach ["NVGoggles_OPFOR","NVGoggles_INDEP","NVGoggles"];
       };
 
+<<<<<<< HEAD:ws_scripts/ws_postInit.sqf
 		      // Forces flashlights on
 		       // _unit enablegunlights "forceOn";
 	} forEach allUnits;
 
 
 	//8000 setFog [0.3,0.025,210];
+=======
+      // Forces flashlights on
+       // _unit enablegunlights "forceOn";
+	} forEach allUnits;
+	*/
+>>>>>>> b86e437f6f2bac3eb53cfe1d4406fb68cd9ed3a6:ws_init/ws_postInit.sqf
 };

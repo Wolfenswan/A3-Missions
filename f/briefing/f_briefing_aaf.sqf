@@ -53,19 +53,19 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 /*
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
-COMMANDER'S INTENT
+<font size='18'>COMMANDER'S INTENT</font>
 <br/>
 *** Insert very short summary of plan here. ***
 <br/><br/>
-MOVEMENT PLAN
+<font size='18'>MOVEMENT PLAN</font>
 <br/>
 *** Insert movement instructions here. ***
 <br/><br/>
-FIRE SUPPORT PLAN
+<font size='18'>FIRE SUPPORT PLAN</font>
 <br/>
 *** Insert fire support instructions here. ***
 <br/><br/>
-SPECIAL TASKS
+<font size='18'>SPECIAL TASKS</font>
 <br/>
 *** Insert instructions for specific units here. ***
 "]];
@@ -92,11 +92,11 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 FIA is using the hills in north-western Altis to move and store equipment. Your platoon is tasked to descend into the forests to drive out the rebels.
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
 The usual rag-tag bunch of FIA forces, probably several squads strong.
 <br/><br/>
-FRIENDLY FORCES
+<font size='18'>FRIENDLY FORCES</font>
 <br/>
 Motorized groups are blocking the southern approaches.
 "]];
