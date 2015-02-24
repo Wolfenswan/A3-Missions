@@ -36,11 +36,11 @@ if(isNil "f_cam_VirtualCreated") then
 {
   createCenter sideLogic;
   _newGrp = createGroup sideLogic;
-  _newUnit = _newGrp createUnit ["VirtualCurator_F", [0,0,0], [], 0, "FORM"];
+  _newUnit = _newGrp createUnit ["VirtualCurator_F", [0,0,5], [], 0, "FORM"];
   _newUnit allowDamage false;
   _newUnit hideObject true;
   _newUnit enableSimulation false;
-
+  _newUnit setpos [0,0,5];
   selectPlayer _newUnit;
   waituntil{player == _newUnit};
   deleteVehicle _unit;
@@ -59,7 +59,7 @@ switch (f_var_radios) do {
   };
   // TFR
   case 2: {
-    [_newUnit, true] call TFAR_fnc_forceSpectator;
+    [player, true] call TFAR_fnc_forceSpectator;
   };
   case 3: {
     [true] call acre_api_fnc_setSpectator;
