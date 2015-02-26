@@ -71,7 +71,7 @@ if (isServer) then {
 	};
 
 	if (isNil "GrpCSAT_AH1") then {
-		deleteVehicle VehCSAT_AHS1;
+		deleteVehicle VehCSAT_AH1;
 	};
 
 	_gear = [
