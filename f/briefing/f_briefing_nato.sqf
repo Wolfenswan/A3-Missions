@@ -40,7 +40,25 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-All AARs and Lead Elements (CO,SLs,FTLs) have MRCO scopes.
+A 'Stomper' UGV has landed with Alpha and can be controlled by the UV operator.<br/>
+A greyhawk drone equipped with six (6) 'Scalpel'-ATGM is heading towards Altis from the south-east.
+"]];
+
+// ====================================================================================
+
+// NOTES: EXECUTION
+// The code below creates the execution sub-section of notes.
+
+_exe = player createDiaryRecord ["diary", ["Execution","
+<br/>
+<br/><br/>
+<font size='18'>MOVEMENT PLAN</font>
+<br/>
+<marker name='mkrAAF_2'>Selakano</marker> has been abandoned by the civilian population but the outskirts might be occupied by AAF forces.
+<br/><br/>
+<font size='18'>FIRE SUPPORT PLAN</font>
+<br/>
+The greyhawk drone should be kept in reserve to take out any armored vehicles the platoon can't take out easily.
 "]];
 
 
@@ -52,9 +70,8 @@ All AARs and Lead Elements (CO,SLs,FTLs) have MRCO scopes.
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. We begin <marker name='mkrStart'>here</marker>.<br/>
-2. Move into the <marker name='mkrAO'>AO</marker>, towards the <marker name='mkrAAF'>airfield</marker>.<br/>
-3. Clear the <marker name='mkrAAF_2'>occupied town</marker> of any enemy presence.<br/>
-4. Destroy any forces defending the barracks on and around the airfield.
+2. Move through the indicated AO, towards the <marker name='mkrAAF'>south-west</marker>.<br/>
+3. Dislodge the enemy from the <marker name='mkrAAF'>base</marker> and prepare defensive positions.<br/>
 "]];
 
 // ====================================================================================
@@ -64,16 +81,17 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-With the tensions between CSAT and NATO having reached a new high, our position towards the Altis Armed Forces (AAF) and their self-proclaimed neutrality has shifted. Recent intelligence reports suggest that they have been negotiating with CSAT to open Altis as a RnR area to them. <br/><br/>As a pre-emptive measure, NATO is launching an attack to seize and hold a beachhead. Your platoon has reached the south-eastern tip of the island by boats during the night and is now preparing to move out at early morning.
+With the tensions between CSAT and NATO having reached a new high, our position towards the Altis Armed Forces (AAF) and their self-proclaimed neutrality has shifted. Recent intelligence reports suggest that they have been negotiating with CSAT to allow the usage of Altis as a RnR area. <br/><br/>As a pre-emptive measure, NATO is launching an attack to seize and hold a beachhead. Your platoon has reached the south-eastern tip of the island by boats during the night and is now preparing to move out at early morning.
 <br/><br/>
 <font size='18'>ENEMY FORCES</font>
 <br/>
-Mostly AAF regulars, possibly supported by a few MRAP vehicles.<br/>
+Mostly AAF regulars, supported by vehicles.<br/>
 Few patrols in the countryside, but expect built-up areas to be more heavily defended.
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>
-None.
+Another platoon is moving in from the north-east to take the airfield near Feres.<br/>
+Juliet squad can act as reinforcements if needed and will HALO into the AO.
 "]];
 
 // ====================================================================================

@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-2-2</i>
 
 <b>Mission description</b><br/>
-Template mission.
+A NATO platoon assaults AAF positions in south-east Altis. Makes use of the UGV Stomper and a ATGM greyhawk. Juliet squad can HALO into the AO as reinforcements.
 
 <b>Contact</b><br/>
 folkarps.com<br/>

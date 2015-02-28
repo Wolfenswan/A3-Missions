@@ -442,6 +442,7 @@ case "engm":
 	if (_loadout == 0) then {
 		_unit addBackpack _bagsmall;
 		clearMagazineCargoGlobal (unitBackpack _unit);
+		(unitBackpack _unit) addMagazineCargoGlobal [_smgmag, 4];
 		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
 	};
 	// LOADOUT: MEDIUM

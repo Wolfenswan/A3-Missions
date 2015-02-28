@@ -349,7 +349,7 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
-		_attachments = [_attach1,_scope2];
+
 	};
 
 // LOADOUT: DEPUTY COMMANDER AND SQUAD LEADER
@@ -369,7 +369,7 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
-		_attachments = [_attach1,_scope2];
+
 	};
 
 // LOADOUT: MEDIC
@@ -398,7 +398,7 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
-		_attachments = [_attach1,_scope2];
+
 	};
 
 
@@ -426,7 +426,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit addWeapon "Binocular";
 		["aar"] call _backpack;
-		_attachments = [_attach1,_scope2];
+
 	};
 
 // LOADOUT: RIFLEMAN (AT)
@@ -441,7 +441,7 @@ switch (_typeofUnit) do
 		["rat"] call _backpack;
 		(unitBackpack _unit) addMagazineCargoGlobal [_RATmag,1];
 		_unit addweapon _RAT;
-		_attachments = [_attach1,_scope2];
+
 	};
 
 // LOADOUT: MEDIUM MG GUNNER
@@ -735,8 +735,9 @@ switch (_typeofUnit) do
 		_unit addmagazines [_grenade,1];
 		_unit addmagazines [_mgrenade,1];
 		_unit linkItem _uavterminal;
-		["uav"] call _backpack;
-		_unit addMagazines ["Laserbatteries",4];	// Batteries added for the F3 UAV Recharging component
+		_unit addWeapon "Rangefinder";
+		["eng",0] call _backpack;
+		//_unit addMagazines ["Laserbatteries",4];	// Batteries added for the F3 UAV Recharging component
 	};
 
 // LOADOUT: Diver
@@ -799,7 +800,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,3];
 		_unit addmagazines [_smokegrenade,2];
 		["g"] call _backpack;
-		_attachments = [_attach1,_scope2];
+
 	};
 
 // CARGO: CAR - room for 10 weapons and 50 cargo items

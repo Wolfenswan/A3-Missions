@@ -45,7 +45,7 @@ f_var_skillSet = [
 ];
 
 // The final skill will be +/- this range
-f_var_skillRandom = 0.15;
+f_var_skillRandom = 0.10;
 
 // ====================================================================================
 
