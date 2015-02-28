@@ -82,6 +82,7 @@ player setVariable ["CLY_removedead",false,true];
 
 // Set default view mode
 setAperture -1;
+player removeEventHandler ["HandleDamage", 0];
 
 //Zombie damage handling
 CLY_zombiehandledamage={
@@ -101,6 +102,10 @@ CLY_zombiehandledamage={
 					case "legs":{_damage=(_gethit select 3)+(_damage-(_gethit select 3))*(0.45*_multiplier);_gethit set [3,_damage];_unit setVariable ["gethit",_gethit]};
 				};
 			};
+			_unit setHitPointDamage ["hitHead", 0.99];
+			_unit setHitPointDamage ["hitBody", 0.99];
+			_unit setHitPointDamage ["hitHands", 0.99];
+			_unit setHitPointDamage ["hitLegs", 0.4];
 		_damage
 		}
 	];
