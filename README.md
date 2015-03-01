@@ -1,22 +1,17 @@
-ws_fnc for ArmA2:CO and ArmA3
-==
-Wolfenswan [FA]: wolfenswanarps@gmail.com | folkarps.com  
-Last update: 03.02.15
+<b>Introduction</b><br/>
+This is one of my missions created or adapted for ArmA3 with Folk ARPS. They are based on a pre-configured version of the F3 Mission Making Framework. You are free to use and modify them for your own group if credits is still given and this readme included. If you find them useful or have any feedback please do get in touch, either per mail or via github.<br/><br/>
+The missions can be found on GitHub:<br/>
+<i>https://github.com/Wolfenswan/A3-Missions</i><br/>
+Each branch is a different mission, some are WIP.<br/>
 
-**INTRODUCTION**
+<b>Current F3 Version:</b><br/>
+<i>NA</i>
 
-This is a collection of various functions I have written and am writing for my Arma 3 missions.
-None of them are revolutionary but all of them have been designed with efficiency and performance in mind.
-The idea is to reduce the need for repetitive scripting as much as possible while avoiding the need for third-party scripts and the problems that come with that. 
-I've also tried and comment everything as best as possible to make understanding the code easier.
+<b>Mission description</b><br/>
+This is based on the Shacktac quarry gamemode which was inspired by the game called 'The ship', their version is called 'The game' and was made by Kevb0.<br/><br/>
+Rifling Matters (Austrialian Arma group) made a version called 'Quarry', and it is this name we use. <br/><br/><br/>
+This version was made by Snippers with several ideas from the Team One Tactical Community and adapted for Folk ARPS by Wolfenswan.
 
-
-**SETUP & DOCUMENTANTION**
-
-Installation-guides and further documentation can be found on the wiki:  
-https://github.com/Wolfenswan/ws_fnc/wiki
-
-* All major functions are documented in themselves. To see how they work open their .sqf with a text editor or their pages on github. 
-
-* If you're running ArmA 3 then you can also seem them all in the editor when opening the function viewer (CTRL+F). Make sure to select "missionConfigFile" in the top-left drop-down menu.
-
+<b>Contact</b><br/>
+folkarps.com<br/>
+wolfenswanarps@gmail.com<br/>
