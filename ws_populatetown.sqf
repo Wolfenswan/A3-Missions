@@ -126,7 +126,7 @@ for "_x" from 1 to _cars do {
 	_civ setSpeedMode "NORMAL";
 	_center setVariable ["ws_civilians",_civilians +[_civ]];
 	_civilians = _center getVariable "ws_civilians";
-	doStop _civ;
+	//doStop _civ;
 	_grp enableAttack false;
 	_civ disableAI "Autotarget"; _civ disableAI "target";
 	_civ setDir (random 360);

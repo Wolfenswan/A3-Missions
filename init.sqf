@@ -103,7 +103,7 @@ if (hasInterface) then {
 		You will start with an armoured vest, a smg, some basic medical supplies and a radio. There are also have several police vehicles available at the police HQ.
 		<br/>
 		<br/>
-		To aid you keep the peace; On your map you will see all the players marked, blue for cops, red for civilians, black for dead players. But when roleplaying you should pretend to have no knowledge of this map.
+		To aid you keep the peace; On your map you will see all the players marked, blue for cops, red for contestants, black for dead players. But when roleplaying you should pretend to have no knowledge of this map.
 		"]];
 	} else {
 		_sit = player createDiaryRecord ["diary", ["Civilian","
@@ -113,7 +113,7 @@ if (hasInterface) then {
 		He explained that when I next wake-up I would be forced to play his game. He said he put a GPS tracker in me and an explosive charge in my brain and he has done this to several others and that we're having a competition. When I wake up I'll have a watch, GPS device and a weapon. The watch will tell me how long if I have left till the charge in my brain blows, I can earn more time by killing people that show up on the GPS device. He discouraged me from killing people who are not marked as my target. He also said if I try to escape from his game I'll be killed.
 		<br/>
 		<br/>
-		He also mentioned that there will be cops around. Their duty is to patrol the streets and prevent any deaths. They have only been authorized to use deadly force if they see a suspect with a weapon in their hands.
+		He also mentioned that there will be cops and harmless civilians around. Their duty is to patrol the streets and prevent any deaths. They have only been authorized to use deadly force if they see a suspect with a weapon in their hands.
 		"]];
 	};
 
@@ -201,7 +201,7 @@ if (hasInterface) then {
 
 
 	// MCC FIX - remove the HQs
-	unitArray = allUnits;
+	unitArray = playableUnits;
 	{
 		if (typeof _x == "SideOPFOR_F") then {
 		  unitArray = unitArray - [_x];
