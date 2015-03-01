@@ -1,6 +1,3 @@
-execVM "R3F_LOG\init.sqf";
-
-
 enableSaving [false, false];
 
 MISSION_ROOT = call {
@@ -136,7 +133,6 @@ if (hasInterface) then {
 	This version was made by Snippers with several ideas from the Team One Tactical Community and adapted for Folk ARPS by Wolfenswan.<br/></br><br/><br/>
 	Various code from the F3 framework has helped (Primarly the marker system served as a great example). Thanks to Headswe for the awesome spectator script (also F3). For full F3 credits please see <br/> https://github.com/ferstaberinde/F3<br/><br/>
 	Sound effects courtesey of freesounds.com<br/><br/>
-    Thanks to R3F for their awesome logistics system!
 	"]];
 
 	fn_marker = compile preprocessFileLineNumbers "markerSystem.sqf";

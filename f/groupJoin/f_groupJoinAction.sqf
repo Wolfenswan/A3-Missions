@@ -30,7 +30,7 @@ _allowDifferentSide = [_this,0,false] call bis_fnc_param;
 
 // If nearest unit is leader of a different group with playable units in it, add option to join that group
 while {true} do {
-	if (isPlayer cursorTarget && {cursorTarget isKindOf "CAManBase"}) then {
+	if (isPlayer cursorTarget && {player distance cursorTarget < 10 && cursorTarget isKindOf "CAManBase"}) then {
 		_nearUnit = cursorTarget;
 		_nearGroup = group cursorTarget;
 

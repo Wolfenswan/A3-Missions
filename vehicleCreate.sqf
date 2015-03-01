@@ -4,7 +4,7 @@
 
 vehicle_classes = ["C_Hatchback_01_sport_F","C_Hatchback_01_F","C_SUV_01_F","C_Van_01_box_F","C_Quadbike_01_F"];
 //vehicle_classes = vehicle_classes + ["RDS_Golf4_Civ_01","LandRover_TK_CIV_EP1"]; // mods
-num_of_vehicles_toSpawn = 40; // 36
+num_of_vehicles_toSpawn = 10; // 36
 vehicle_spawner_debug = false;
 vehicle_min_roadSegement_spacing = 3; //8
 

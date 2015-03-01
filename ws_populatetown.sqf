@@ -131,6 +131,7 @@ for "_x" from 1 to _cars do {
 	_civ disableAI "Autotarget"; _civ disableAI "target";
 	_civ setDir (random 360);
 	if (getPosATL _civ select 2 != _x select 2) then {_civ setPos [_x select 0,_x select 1,1];_civ setposatl  _x};
+	_civ addMPEventHandler ["mpkilled","_this call qry_fnc_AIcivKilled;"];
 } forEach _posarray;
 
 
