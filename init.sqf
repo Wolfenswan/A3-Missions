@@ -1,223 +1,218 @@
-// ====================================================================================
+execVM "R3F_LOG\init.sqf";
 
-// F3 - Disable Saving and Auto Saving
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 enableSaving [false, false];
 
-// ====================================================================================
-
-// F3 - Mute Orders and Reports
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-enableSentences false;
-
-// ====================================================================================
-
-// F3 - MapClick Teleport
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-// f_var_mapClickTeleport_Uses = 0;					// How often the teleport action can be used. 0 = infinite usage.
-// f_var_mapClickTeleport_TimeLimit = 0; 			// If higher than 0 the action will be removed after the given time.
-// f_var_mapClickTeleport_GroupTeleport = false; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
-// f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
-// f_var_mapClickTeleport_Height = 0;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
-// [] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
-
-// ====================================================================================
-
-// F3 - Briefing
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_script_briefing = [] execVM "briefing.sqf";
-
-// ====================================================================================
-
-// F3 - F3 Folk ARPS Group IDs
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_script_setGroupIDs = [] execVM "f\setGroupID\f_setGroupIDs.sqf";
-
-// ====================================================================================
-
-// F3 - Buddy Team Colours
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_script_setTeamColours = [] execVM "f\setTeamColours\f_setTeamColours.sqf";
-
-// ====================================================================================
-
-// F3 - Fireteam Member Markers
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[] spawn f_fnc_SetLocalFTMemberMarkers;
-
-// ====================================================================================
-
-// F3 - F3 Folk ARPS Group Markers
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_script_setGroupMarkers = [] execVM "f\groupMarkers\f_setLocalGroupMarkers.sqf";
-
-// ====================================================================================
-
-// F3 - F3 Common Local Variables
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-// WARNING: DO NOT DISABLE THIS COMPONENT
-
-if(isServer) then {
-	f_script_setLocalVars = [] execVM "f\common\f_setLocalVars.sqf";
+MISSION_ROOT = call {
+    private "_arr";
+    _arr = toArray __FILE__;
+    _arr resize (count _arr - 8);
+    toString _arr
 };
 
-// ====================================================================================
 
-// F3 - Garbage Collector
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+quarry_player_life_time_start = 16*60; // 10*60
+quarry_player_kill_time_reward = 60*3;
+quarry_speed_limit = 80; // km/h
+//FIX:
+// Civi Vest not big enough to hold explosives
+// Paramters; Time of day, ambient civilans?
+// Score?
 
-// f_var_garbageCollectorSleep = 120;
-// f_var_garbageCollectorDistance = 450;
-// [] execVM "f\garbageCollector\f_garbageCollectorLoop.sqf";
+// TO DO:
+// Track kills
 
-// ====================================================================================
 
-// F3 - Dynamic View Distance
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+////////////////
+/// POST 1.2 FEEDBACK.
 
-// f_var_viewDistance_default = 1250;
-// f_var_viewDistance_tank = 2000;
-// f_var_viewDistance_car = 2000;
-// f_var_viewDistance_rotaryWing = 2500;
-// f_var_viewDistance_fixedWing = 5000;
-// f_var_viewDistance_crewOnly = true;
-// [] execVM "f\dynamicViewDistance\f_setViewDistanceLoop.sqf";
+// Admining/Perfecting
+// Score for killing marks?
+// Balancing the target selection....
 
-// ====================================================================================
+//OPTION: have a random player chosen as the game master (black suit), spawn at least say 4km from the police HQ, if he dies all live players win and cops lose. Cops must keep him alive (no map marker for him).
 
-// F3 - Authorised Crew Check
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+"spawnArea" setMarkerAlphaLocal 0;
+// Event handler for death.
+playerList = [];// civ1, civ2, civ3, civ4, civ5, civ6, civ7, civ8, civ9, civ10, civ11, civ12, civ13];
+// now populated from the init.
+// Construct playerList
+alivePlayerList = [];
+Target = objNull;
+myTargetList = [];
 
-// VehicleName addEventhandler ["GetIn", {[_this,[UnitName1,UnitName2],false] call f_fnc_authorisedCrewCheck}];
-// VehicleName addEventhandler ["GetIn", {[_this,["UnitClass1","UnitClass2"],false] call f_fnc_authorisedCrewCheck}];
+attackerTargetList = [];
 
-// ====================================================================================
+ "winner" addPublicVariableEventHandler {
+	if (!isNull player) then {
+		if (winner == player) then {
+			["End1",true,5] spawn BIS_fnc_endMission;
+		} else {
+			["End2",false,5] spawn BIS_fnc_endMission;
+		};
+	} else {
+		["End2",false,5] spawn BIS_fnc_endMission;
+	};
+ };
 
-// F3 - Casualties Cap
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+call compile preprocessfile "shk_pos\shk_pos_init.sqf";
 
-// [[GroupName or SIDE],100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
-// [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+if (isServer) then {
+    0 = [] execVM "vehicleCreate.sqf";
+	0 = [] execVM "server.sqf";
+};
 
-// BLUFOR > NATO
-// [BLUFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
-// OPFOR > CSAT
-// [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+// Start forever loop?
 
-// INDEPENDENT > AAF
-// [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+if (hasInterface) then {
 
-// ====================================================================================
+	// ====================================================================================
 
-// F3 - AI Skill Selector
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+	// F3 Simple wounding system
+	f_wound_extraFAK = 2;
+	[player] execVM "f\simplewoundingsystem\init.sqf";
 
-f_var_civAI = independent;         // Optional: The civilian AI will use this side's settings
-[] execVM "f\setAISKill\f_setAISkill.sqf";
+	// ====================================================================================
 
-// ====================================================================================
+	// F3 - Join Group Action
+	// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// F3 - Assign Gear AI
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+	[false] execVM "f\groupJoin\f_groupJoinAction.sqf";
 
-// [] execVM "f\assignGear\f_assignGear_AI.sqf";
+	// ====================================================================================
 
-// ====================================================================================
+	// Prevent any scoring oddities
+	player addRating 10000;
 
-// F3 - Name Tags
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+	// ====================================================================================
 
-f_showGroup_Nametags = true;				// Display unit's group (uses GroupID)
-f_showDistance_Nametags = true;			// Show distance to player
-// f_showVehicle_Nametags = true;			// Show vehicle player is in
-[20] execVM "f\nametag\f_nametags.sqf";
+	if (side player != west) then {
+		player setPos (["spawnArea",0,"not_useful",player] call SHK_pos);
 
-// ====================================================================================
+		holstered = 0;
+		player addAction ["Holster sidearm","arc_holster.sqf",nil,2.5,false,true,"",""];
+	};
 
-// F3 - Group E&E Check
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+	//Briefing: Instructions
+	if (side player == west) then {
+		_sit = player createDiaryRecord ["diary", ["Cop Briefing","
+		As a cop you are expected to keep law and order. You are only authorized to use deadly force if a suspect has a weapon in their hands or is attempting to kill you or a fellow officer or citizen. Feel free to conversate with the citizens and harass them but in this country confiscating property other than vehicles is not authorized by the law.
+		<br/>
+		<br/>
+		You will start with an armoured vest, a smg, some basic medical supplies and a radio. There are also have several police vehicles available at the police HQ.
+		<br/>
+		<br/>
+		To aid you keep the peace; On your map you will see all the players marked, blue for cops, red for civilians, black for dead players. But when roleplaying you should pretend to have no knowledge of this map.
+		"]];
+	} else {
+		_sit = player createDiaryRecord ["diary", ["Civilian","
+		You were ambushed and captured by men in masks on your journey to work, they knocked me out and next thing I recall was waking up in a dark cell. A mysterious man I could not see, explained to me that I would be partaking in a game of his making.
+		<br/>
+		<br/>
+		He explained that when I next wake-up I would be forced to play his game. He said he put a GPS tracker in me and an explosive charge in my brain and he has done this to several others and that we're having a competition. When I wake up I'll have a watch, GPS device and a weapon. The watch will tell me how long if I have left till the charge in my brain blows, I can earn more time by killing people that show up on the GPS device. He discouraged me from killing people who are not marked as my target. He also said if I try to escape from his game I'll be killed.
+		<br/>
+		<br/>
+		He also mentioned that there will be cops around. Their duty is to patrol the streets and prevent any deaths. They have only been authorized to use deadly force if they see a suspect with a weapon in their hands.
+		"]];
+	};
 
-// [side,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
-// [["Grp1","Grp2"],ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
+	//Briefing: Rules
+	_sit = player createDiaryRecord ["diary", ["Short Rules","
+	CIVILIANS:<br/>
+	Kill your quarries to extended your lifetime, do not kill unless threatened.<br/><br/>
+	COPS:<br/>
+	Keep the peace. Only kill civilians if they are a threat (holding a weapon).<br/><br/>
+	GENERAL:<br/>
+	Use only DIRECT, GROUP or VEHICLE VON to communicate.
+		<br/>
+	You can join other players of your side by facing him and selecting the 'Join Group' action. When in a group you can leave it using the 'Leave Group' action.<br/><br/>
+	"]];
 
-// ====================================================================================
+	//Briefing: Credits
+	_sit = player createDiaryRecord ["diary", ["Credits","
+	Sources of Inspiration: This is based on the Shacktac quarry gamemode which was inspired by the game called 'The ship', their version is called 'The game' and was made by Kevb0.<br/><br/>
+	Rifling Matters (Austrialian Arma group) made a version called 'Quarry', and it is this name we use. <br/><br/><br/>
+	This version was made by Snippers with several ideas from the Team One Tactical Community and adapted for Folk ARPS by Wolfenswan.<br/></br><br/><br/>
+	Various code from the F3 framework has helped (Primarly the marker system served as a great example). Thanks to Headswe for the awesome spectator script (also F3). For full F3 credits please see <br/> https://github.com/ferstaberinde/F3<br/><br/>
+	Sound effects courtesey of freesounds.com<br/><br/>
+    Thanks to R3F for their awesome logistics system!
+	"]];
 
-// F3 - ORBAT Notes
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+	fn_marker = compile preprocessFileLineNumbers "markerSystem.sqf";
 
-[] execVM "f\briefing\f_orbatNotes.sqf";
+	qry_hp = quarry_player_life_time_start;
+	if (side player == civilian) then {
+		0 = [] spawn {
+			waitUntil{time > 0};
+			//player setVariable["qry_hp",60*10];
+			while {qry_hp > 0} do {
+				newTarget = player getVariable["qry_target",objNull];
+				if (Target != newTarget) then {
+					Target = newTarget;
+					if (!isNull Target) then {
+						if (alive Target) then {
+							hint format["Your target: %1",name Target];
+						};
+						myTargetList pushBack Target;
+					};
+				};
+				uiSleep 1;
+				//player setVariable["qry_hp",(player getVariable["qry_hp",60*10])-1]; // hopefully atomic.
+				qry_hp = qry_hp - 1;
+				if ((qry_hp mod 60) == 0) then { //((player getVariable["qry_hp",60*10]) mod 60 == 0) then {
+					systemChat format["The timer on your watch decreases, it reads %1 minutes left of life.",round (qry_hp/60)];
+                    player setVariable["qry_hp",qry_hp,true];
+				};
+                if (vehicle player != player) then {
+                    if (speed player >= quarry_speed_limit) then {
+                        if (((player getVariable["qry_lastSpeeding",(-30)]) + 6) > time ) then {
+                            player setVariable["qry_lastSpeeding",time,true];
+                        };
+                    };
+                };
+				if (qry_hp < 11) then {
+					switch (qry_hp) do {
+						case 10: {playSound3D [MISSION_ROOT + "beep.wav", player,false,getPosASL player,1,1,10];};
+						case 5: {playSound3D [MISSION_ROOT + "beep.wav", player,false,getPosASL player,1,1.1,10];};
+						case 4: {playSound3D [MISSION_ROOT + "beep.wav", player,false,getPosASL player,1,1.3,10];};
+						case 3: {playSound3D [MISSION_ROOT + "beep.wav", player,false,getPosASL player,1,1.6,10];};
+						case 2: {playSound3D [MISSION_ROOT + "beep.wav", player,false,getPosASL player,1,2,10];};
+						case 1: {playSound3D [MISSION_ROOT + "beep.wav", player,false,getPosASL player,3,10,20];};
+						default {};
+					};
+				};
+			};
+			//Time up
+			if ((alive player)) then {
+			//https://community.bistudio.com/wiki/playSound3D
+                if (faction player != "") then {
+                    playSound3D [MISSION_ROOT + "beep.wav", player,false,[0,0,0],1,1,10];
+                    player setDamage 1; //explode.
+                };
+			};
+		};
+	};
 
-// ====================================================================================
+	//waitUntil{time > 1};
 
-// F3 - Loadout Notes
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-[] execVM "f\briefing\f_loadoutNotes.sqf";
+	// Map Markers, should also give spectators markers too?
 
-// ====================================================================================
 
-// F3 - Join Group Action
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+	// MCC FIX - remove the HQs
+	unitArray = allUnits;
+	{
+		if (typeof _x == "SideOPFOR_F") then {
+		  unitArray = unitArray - [_x];
+		};
+		if (typeof _x == "SideBLUFOR_F") then {
+		  unitArray = unitArray - [_x];
+		};
+		if (typeof _x == "SideResistance_F") then {
+		  unitArray = unitArray - [_x];
+		};
+	} forEach unitArray;
+	{[_x] spawn {[_this select 0] call fn_marker};} forEach unitArray;
 
-[false] execVM "f\groupJoin\f_groupJoinAction.sqf";
-
-// ====================================================================================
-
-// F3 - Mission Timer/Safe Start
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[] execVM "f\safeStart\f_safeStart.sqf";
-
-// ====================================================================================
-
-// F3 - JIP setup
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-f_var_JIP_FirstMenu = false;		// Do players connecting for the first time get the JIP menu? - This only works in missions with respawn.
-f_var_JIP_RemoveCorpse = false;		// Remove the old corpse of respawning players?
-f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear? False will use gear assigned by F3 Gear Component if possible
-
-// ====================================================================================
-
-// F3 - AI Unit Caching
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[30] spawn f_fnc_cInit;
-
-// Note: Caching aggressiveness is set using the f_var_cachingAggressiveness variable; possible values:
-// 1 - cache only non-leaders and non-drivers
-// 2 - cache all non-moving units, always exclude vehicle drivers
-// 3 - cache all units, incl. group leaders and vehicle drivers
-f_var_cachingAggressiveness = 2;
-
-// ====================================================================================
-
-// F3 - Radio Systems Support
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-[] execVM "f\radios\radio_init.sqf";
-
-// ====================================================================================
-
-// F3 - Medical Systems Support
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-// SWS Config Settings
-// How many extra FirstAidKits (FAKS) each player should receive when using the F3 Simple Wounding System:
-f_wound_extraFAK = 2;
-
-[] execVM "f\medical\medical_init.sqf";
-
-// ====================================================================================
-
-// Wolfenswan - post Init
-[] execVM "ws_init\ws_postInit.sqf";
+};

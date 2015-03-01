@@ -15,7 +15,7 @@ if(f_wound_briefing) then
 {
 	[] spawn
 	{
-		waitUntil {scriptDone f_script_briefing};
+		//waitUntil {scriptDone f_script_briefing};
 		_bstr = format ["<br/>OVERVIEW<br/>
 When a player is wounded to the point of being 'incapacitated' they become a casualty. Casualties are prone and unable to move.
 <br/><br/>
@@ -38,15 +38,13 @@ for [{_i=1},{_i<=f_wound_extraFAK},{_i=_i+1}] do {
 };
 
 /// lets wait a bit.
-sleep 60;
-hintsilent "SWS initialized";
+sleep 5;
 
 // default variables.
 _unit setVariable ["f_wound_down",false];
 _unit setVariable ["f_wound_bleeding",false];
 _unit setVariable ["f_wound_blood",100]; // other player dont need know this
 _unit setVariable ["f_wound_dragging",nil];
-
 f_wound_healAnimations = ["ainvpknlmstpslaywpstdnon_medic","ainvpknlmstpslaywrfldnon_medic","ainvpknlmstpslaywnondnon_medic","ainvppnemstpslaywnondnon_medic","AinvPpneMstpSlayWnonDnon_medic","AinvPpneMstpSlayWpstDnon_medic","AinvPpneMstpSlayWrflDnon_medic",""];
 
 /// Lifeticker, manages bleeding and blood values.

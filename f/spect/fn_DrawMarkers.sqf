@@ -17,8 +17,15 @@ _fullmapWindow drawIcon ["\A3\ui_f\data\GUI\Rsc\RscDisplayMissionEditor\iconCame
 		    case civilian: {f_cam_civ_color};
 		    default {f_cam_empty_color};
 		};
+        /*
 		if(isPlayer _x) then {_name = name _x};
 		if(leader _x == _x && {isPlayer _x} count units _x > 0) then {_name = format["%1 - %2",toString(toArray(groupID (group _x)) - [45]),_name]};
+        */
+        if (side _x == civilian) then {
+            _name = format["(%1) their target (%2), Life left: %3 Mins",name _x,name (_x getVariable["qry_target",objNull]),ceil((_x getVariable["qry_hp",quarry_player_life_time_start])/60)];   
+        } else {
+            _name = name _x;
+        };
 		if(vehicle _x != _x && crew (vehicle _x) select 0 == _x || vehicle _x == _x) then
 		{
 			_icon = (vehicle _x getVariable ["f_cam_icon",""]);
@@ -27,7 +34,7 @@ _fullmapWindow drawIcon ["\A3\ui_f\data\GUI\Rsc\RscDisplayMissionEditor\iconCame
 		};
 	};
 
-} foreach allunits;
+} foreach allUnits;
 f_cam_fired = f_cam_fired - [objNull];
 if(f_cam_tracerOn) then
 {

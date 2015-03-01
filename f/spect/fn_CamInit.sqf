@@ -51,24 +51,6 @@ if(isNull _oldUnit ) then {if(count playableUnits > 0) then {_oldUnit = (playabl
 
 // ====================================================================================
 
-// Set spectator mode for whichever radio system is in use
-switch (f_var_radios) do {
-  // ACRE
-  case 1: {
-    [true] call acre_api_fnc_setSpectator;
-  };
-  // TFR
-  case 2: {
-    [player, true] call TFAR_fnc_forceSpectator;
-  };
-  case 3: {
-    [true] call acre_api_fnc_setSpectator;
-  };
-
-};
-
-// ====================================================================================
-
 
 // enable all factions but your owns groupMarkers. // DISABLED.
 /*
