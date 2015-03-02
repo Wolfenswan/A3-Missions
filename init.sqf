@@ -225,7 +225,10 @@ if !(player getVariable ["scientist",false]) then {
 execVM "cly_hud.sqf";
 
 //Briefing
-player createDiaryRecord ["Diary",["Briefing","<br/>Infection: Altis<br/><br/>A zombie apocalypse is about to sweep over Altis. All it takes is one little zombie that gets through the quarantine and starts infecting people. This is the story of one such occurrence.<br/><br/>The mission starts with one zombie against everyone else. Every dead survivor will respawn as a zombie, and their new task is to kill their former comrades. The mission ends when time is up or everyone has turned into a zombie. The original zombie always kills on the first hit, the others need two."]];
+player createDiaryRecord ["Diary",["Briefing","<br/>Infection: Altis<br/><br/>A zombie apocalypse is about to sweep over Altis. All it takes is one little zombie that gets through the quarantine and starts infecting people. This is the story of one such occurrence.<br/><br/>The mission starts with one zombie against everyone else. Every dead survivor will respawn as a zombie, and their new task is to kill their former comrades. The mission ends when time is up or everyone has turned into a zombie. The original zombie always kills on the first hit, the others need two.<br/><br/>
+Use only DIRECT, GROUP or VEHICLE VON to communicate.
+		<br/><br/>
+	Survivors can join other players by facing them and selecting the 'Join Group' action. When in a group you can leave it using the 'Leave Group' action.<br/><br/>"]];
 
 player createDiaryRecord ["Diary",["Zombie instructions","<br/>Attacking: Press the primary mouse button when a survivor is in front of you to attack him. If you're the original zombie, you need only one hit to kill him, otherwise you need to hit him twice.<br/><br/>Moaning: Press the primary mouse button when not in attacking range of a survivor. In addition to scaring your enemies, moaning will help you find them and mark them on the map for a brief period of time.<br/><br/>Jumping: Lie down and hold and release the primary mouse button to jump in the direction you're looking. You can cancel your jump by pressing the secondary mouse button. You will automatically attack survivors that cross your path during your jump."]];
 
@@ -239,6 +242,11 @@ if (isNil {player getVariable "zombie"})  then {
 		sleep 4;
 		["TaskAssigned",["Survive!"]] call bis_fnc_showNotification;
 	};
+
+	// F3 - Join Group Action
+	// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+	[false] execVM "f\groupJoin\f_groupJoinAction.sqf";
 };
 
 if (!isNil {player getVariable "zombie"}) then {

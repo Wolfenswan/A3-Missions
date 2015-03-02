@@ -39,6 +39,9 @@ nv=false;
 while {true} do {
 	if (!isNil {player getVariable "zombie"}) then {
 		if (!isNil "obj1") then {obj1 setTaskState "Failed"};
+		[player] joinSilent grpNull;
+		if !(isNil "f_groupJoinAction") then {player removeAction f_groupJoinAction};
+		if !(isNil "f_groupLeaveAction") then {{player removeAction f_groupLeaveAction};
 		sleep 3;
 		if (isNil "obj2" and {isPlayer _x and isNil {_x getVariable "zombie"}} count allUnits>0) then {
 			obj2=player createSimpleTask [""];
@@ -87,19 +90,19 @@ while {true} do {
 		removeBackpack player;
 		{player addItem _x; player assignItem _x} forEach ["ItemMap","ItemCompass"];
 		//player switchMove "amovpercmstpsnonwnondnon";
-		
-		
+
+
 		//SNIPPERS CODE INSERT TO MAKE BLOODY
 		removeHeadgear player; removeGoggles player;
 		player setFace "GreekHead_A3_04";
 		player removeEventHandler ["HandleDamage", 0];
-		
+
 		player setHitPointDamage ["hitHead", 0.99];
 		player setHitPointDamage ["hitBody", 0.99];
 		player setHitPointDamage ["hitHands", 0.99];
 		player setHitPointDamage ["hitLegs", 0.4];
-		
-		
+
+
 		player addRating -10000;
 		player setVelocity [0,0,0];
 		player setPos _startpos;
