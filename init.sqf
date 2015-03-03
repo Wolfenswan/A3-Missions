@@ -67,8 +67,8 @@ if (hasInterface) then {
 	// ====================================================================================
 
 	// F3 Simple wounding system
-	f_wound_extraFAK = 2;
-	[player] execVM "f\simplewoundingsystem\init.sqf";
+	//f_wound_extraFAK = 2;
+	//[player] execVM "f\simplewoundingsystem\init.sqf";
 
 	// ====================================================================================
 
@@ -97,10 +97,14 @@ if (hasInterface) then {
 		As a cop you are expected to keep law and order. You are only authorized to use deadly force if a suspect has a weapon in their hands or is attempting to kill you or a fellow officer or citizen. Feel free to conversate with the citizens and harass them but in this country confiscating property other than vehicles is not authorized by the law.
 		<br/>
 		<br/>
-		You will start with an armoured vest, a smg, some basic medical supplies and a radio. There are also have several police vehicles available at the police HQ.
+		You will start with an armoured vest, a smg, some basic medical supplies and a radio. There are also police vehicles available at the police HQ.
 		<br/>
 		<br/>
-		To aid you keep the peace; On your map you will see all the players marked, blue for cops, red for contestants, black for dead players. But when roleplaying you should pretend to have no knowledge of this map.
+		To aid you keep the peace; On your map you will see all the players marked, blue for cops, red for contestants, black for dead players.
+		<br/>
+		<br/>
+		PAPER WORK:<br/>
+		Should you be a bit too trigger-happy then your primary weapon will be taken away. Return to the police HQ to do your paperwork to get it back.
 		"]];
 	} else {
 		_sit = player createDiaryRecord ["diary", ["Civilian","
@@ -129,7 +133,7 @@ if (hasInterface) then {
 	//Briefing: Credits
 	_sit = player createDiaryRecord ["diary", ["Credits","
 	Sources of Inspiration: This is based on the Shacktac quarry gamemode which was inspired by the game called 'The ship', their version is called 'The game' and was made by Kevb0.<br/><br/>
-	Rifling Matters (Austrialian Arma group) made a version called 'Quarry', and it is this name we use. <br/><br/><br/>
+	Rifling Matters (Austrialian Arma group) made a version called 'Quarry'. <br/><br/><br/>
 	This version was made by Snippers with several ideas from the Team One Tactical Community and adapted for Folk ARPS by Wolfenswan.<br/></br><br/><br/>
 	Various code from the F3 framework has helped (Primarly the marker system served as a great example). Thanks to Headswe for the awesome spectator script (also F3). For full F3 credits please see <br/> https://github.com/ferstaberinde/F3<br/><br/>
 	Sound effects courtesey of freesounds.com<br/><br/>
