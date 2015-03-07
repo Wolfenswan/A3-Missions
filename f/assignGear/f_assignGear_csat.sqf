@@ -225,7 +225,7 @@ _specOp = [];
 
 // Woodland-Hex
 _baseUniform = ["U_O_CombatUniform_ocamo"];
-_baseHelmet = ["H_HelmetO_ocamo"];
+_baseHelmet = ["H_MilCap_ocamo","H_Booniehat_khk"];
 _baseGlasses = [];
 
 // Urban
@@ -382,8 +382,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_carbinemag,7];
 		_unit addweapon _carbine;
 		_unit addmagazines [_smokegrenade,2];
-		_unit addmagazines ["SmokeShellRed",4];
-		_unit addmagazines ["SmokeShellBlue",4];
+		_unit addmagazines ["SmokeShellRed",5];
+		_unit addmagazines ["SmokeShellBlue",5];
 		_unit addWeapon "LaserDesignator";
 		_unit addMagazines ["Laserbatteries",1];
 		["car"] call _backpack;
@@ -415,6 +415,7 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
+		_attachments = [_attach1,_scope2];
 	};
 
 
