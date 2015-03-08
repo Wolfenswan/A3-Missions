@@ -8,8 +8,8 @@ MISSION_ROOT = call {
 };
 
 
-quarry_player_life_time_start = 16*60; // 10*60
-quarry_player_kill_time_reward = 60*3;
+quarry_player_life_time_start = 11*60; // 10*60
+quarry_player_kill_time_reward = 60*2;
 quarry_speed_limit = 80; // km/h
 //FIX:
 // Civi Vest not big enough to hold explosives
