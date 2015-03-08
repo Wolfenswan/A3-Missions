@@ -231,7 +231,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=0.60000002;
 					text="ZeusModule";
-					init="this addEventHandler ['CuratorObjectPlaced',{{_x unlinkItem ""ItemMap""; _x unlinkItem ""ItemGPS""} forEach crew (_this select 1);  [[crew (_this select 1),'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false] spawn BIS_fnc_MP;  }];  this addcuratorEditableObjects [playableUnits,true];";
+					init="this addEventHandler ['CuratorObjectPlaced',{{_x unlinkItem ""ItemMap""; _x unlinkItem ""ItemGPS"";[_x] call f_fnc_setAISkill} forEach crew (_this select 1);}];  this addcuratorEditableObjects [playableUnits,true];";
 					syncId=0;
 					synchronizations[]={1,2,4};
 				};
@@ -456,7 +456,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=0.60000002;
 					text="ZeusModule_1";
-					init="this addEventHandler ['CuratorObjectPlaced',{  {_x unlinkItem ""ItemMap""; _x unlinkItem ""ItemGPS""} forEach crew (_this select 1);  [[crew (_this select 1),'f\setAISKill\f_setAISkill.sqf'],'Bis_fnc_ExecVM',false] spawn BIS_fnc_MP;  }];  this addcuratorEditableObjects [playableUnits,true];";
+					init="this addEventHandler ['CuratorObjectPlaced',{{_x unlinkItem ""ItemMap""; _x unlinkItem ""ItemGPS"";[_x] call f_fnc_setAISkill} forEach crew (_this select 1);}];  this addcuratorEditableObjects [playableUnits,true];";
 					syncId=6;
 					synchronizations[]={5,4,1};
 				};
