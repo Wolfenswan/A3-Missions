@@ -106,6 +106,4 @@ _skillArray = [];
 		[_x,_skillArray] call f_fnc_setAISkill;
      };
 
-sleep 0.1; // Very short sleep to avoid lag when modifiyng a lot of AI
-
 } forEach _units;
