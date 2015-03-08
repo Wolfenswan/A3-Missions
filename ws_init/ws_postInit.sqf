@@ -15,12 +15,11 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 	_garrison = [AAF] call ws_fnc_collectObjectsNum;
 	_units = [];
 	{
-		_units = _units + ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
+		_units append ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
 		//deleteVehicle _x;
 	} forEach _garrison;
 
-
-	_units execVM "f\setAISKill\f_setAISkill.sqf";
+	_units execVM "f\setAISKill\f_setAISkill.sqf"; //TODO: Call BIS_fnc_MP to exec on server
 
 	// Equip garrisoned units
 
@@ -52,14 +51,10 @@ if (isServer) then {
 	["ws_convoy_dead",false,true] call ws_fnc_setGVar;
 	["ws_killzone_secure",false,true] call ws_fnc_setGVar;
 
-
-	// Recalculate F3 variables
-	// [] execVM "f\common\f_setLocalVars.sqf";
-
 	// Stuff to happen AFTER mission launch
 	// sleep 0.1;
 	// If units were spawned set AI skill again
-	//
+	// [] execVM "f\setAISKill\f_setAISkill.sqf";
 
 
 	// Cache the convoy to prevent it from being spotted/coing active

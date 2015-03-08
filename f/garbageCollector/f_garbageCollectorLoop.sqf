@@ -52,6 +52,7 @@ while {f_var_garbageCollectorRun} do {
 							hideBody _this;
 							sleep 2.5;
 						};
+
 						_group = group _this;
 						deleteVehicle _this;
 						sleep 0.1;
