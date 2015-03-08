@@ -18,21 +18,21 @@ removeAllAssignedItems _unit;
 
 if (count _wp != 0) then {[_unit, _wp select 0, _wp select 1] call BIS_fnc_addWeapon;};
 
-
 removeAllPrimaryWeaponItems _unit;
 _unit addPrimaryWeaponItem "acc_flashlight";
+_unit addSecondaryWeaponItem "acc_flashlight";
 
 {
-_unit linkItem _x;
-if !(_x in assignedItems _unit) then {_unit addItemToVest _x; };
+	_unit linkItem _x;
+	if !(_x in assignedItems _unit) then {_unit addItemToVest _x; };
 } forEach _items;
 
 {
-_unit addMagazines [_x select 0,_x select 1];
+	_unit addMagazines [_x select 0,_x select 1];
 } forEach _magazines;
 
 if (count backpackCargo _unit == 0) then {
-removeBackpack _unit;
+	removeBackpack _unit;
 };
 
 {_unit addItem "FirstAidKit";} forEach [1,2,3,4];

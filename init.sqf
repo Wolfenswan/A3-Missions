@@ -246,7 +246,7 @@ if (isNil {player getVariable "zombie"})  then {
 	// F3 - Join Group Action
 	// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-	[false] execVM "f\groupJoin\f_groupJoinAction.sqf";
+	[false] execVM "f\f_groupJoinAction.sqf";
 };
 
 if (!isNil {player getVariable "zombie"}) then {
@@ -287,7 +287,7 @@ CLY_z_claw={
 			};
 		};
 	};
-	true;
+	true
 };
 
 
