@@ -24,18 +24,17 @@ private ["_units","_superSkill","_highSkill","_mediumSkill","_lowSkill"];
 // These values define the total skill level as set by the parameter
 
 _superSkill = 1.00;
-_highSkill = 0.75;
+_highSkill = 0.7;
 _mediumSkill = 0.55;
-_lowSkill = 0.35;
+_lowSkill = 0.4;
 
 // This are the minimal skills a soldier set to _superSkill would have. For all other skill levels the values are rounded using the numbers above.
 // These are recommended levels to avoid "laser" AI snipers. Change them accordingly if you are finding the AI to be too inaccurate or are using AI mods.
 
 f_var_skillSet = [
-	0.55,		// aimingAccuracy
-	0.65,		// aimingShake
-	0.65,		// aimingSpeed
-	2,			// endurance
+	0.5,		// aimingAccuracy
+	0.5,		// aimingShake
+	0.6,		// aimingSpeed
 	0.65,		// spotDistance
 	0.65,		// spotTime
 	1.2,		// courage
@@ -45,7 +44,7 @@ f_var_skillSet = [
 ];
 
 // The final skill will be +/- this range
-f_var_skillRandom = 0.15;
+f_var_skillRandom = 0.12;
 
 // ====================================================================================
 
@@ -97,7 +96,7 @@ _skillArray = [];
 			_x setVariable ["f_setAISkill",true];
 		};
 
-		for "_i" from 0 to 9 do {
+		for "_i" from 0 to 8 do {
 			_skilllevel = (f_var_skillSet select _i) * _skill;
 			_skillArray pushBack (_skilllevel + random f_var_skillRandom - random f_var_skillRandom);
 		};
