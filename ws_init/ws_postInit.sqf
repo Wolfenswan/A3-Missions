@@ -8,7 +8,6 @@ if (!isDedicated && !_hc) then {
 	};
 };
 
-
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 
@@ -18,8 +17,6 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && _hc)) then {
 		_units append ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
 		//deleteVehicle _x;
 	} forEach _garrison;
-
-	_units execVM "f\setAISKill\f_setAISkill.sqf"; //TODO: Call BIS_fnc_MP to exec on server
 
 	// Equip garrisoned units
 
@@ -60,7 +57,7 @@ if (isServer) then {
 	// Cache the convoy to prevent it from being spotted/coing active
 	sleep 0.1;
 	{
-	 [_x,"f_fnc_gCache",true,false] spawn BIS_fnc_MP;
+	 [_x,3] call f_fnc_gCache;
 	 (group _x) setVariable ["f_cacheExcl", true, true];
 	 _x allowDamage false;
 	} forEach [c,c_1,c_2,c_3,c_4,c_5,c_6,VehCSAT_MH1,VehCSAT_MH2];

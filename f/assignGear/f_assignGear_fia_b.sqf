@@ -417,22 +417,21 @@ case "eng":
 {
 	// LOADOUT: LIGHT
 	if (_loadout == 0) then {
-		_unit addBackpack _bagsmall;
+		_unit addBackpack _bagmedium;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
+		(unitBackpack _unit) addMagazineCargoGlobal [_satchel2,1];
 	};
 	// LOADOUT: MEDIUM
 	if (_loadout == 1) then {
 		_unit addBackpack _bagmedium;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
+		//(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
 		(unitBackpack _unit) addMagazineCargoGlobal [_satchel2,1];
 	};
 	// LOADOUT: HEAVY
 	if (_loadout == 2) then {
 		_unit addBackpack _baglarge;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
 		(unitBackpack _unit) addMagazineCargoGlobal [_satchel2,2];
 	};
 };
@@ -444,20 +443,20 @@ case "engm":
 	if (_loadout == 0) then {
 		_unit addBackpack _bagsmall;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
+		(unitBackpack _unit) addMagazineCargoGlobal [_ATmine,1];
 	};
 	// LOADOUT: MEDIUM
 	if (_loadout == 1) then {
 		_unit addBackpack _baglarge;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
+		//(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
 		(unitBackpack _unit) addMagazineCargoGlobal [_ATmine,2];
 	};
 	// LOADOUT: HEAVY
 	if (_loadout == 2) then {
 		_unit addBackpack _baglarge;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
+		//(unitBackpack _unit) addItemCargoGlobal ["ToolKit",1];
 		(unitBackpack _unit) addMagazineCargoGlobal [_ATmine,3];
 	};
 };

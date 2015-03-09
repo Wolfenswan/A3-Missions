@@ -35,6 +35,16 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 // ====================================================================================
 
+// NOTES: ADMINISTRATION
+// The code below creates the administration sub-section of notes.
+
+_adm = player createDiaryRecord ["diary", ["Administration","
+<br/>
+Study the section on the expanded mine modules carefully!
+"]];
+
+// ====================================================================================
+
 // NOTES: EXECUTION
 // The code below creates the execution sub-section of notes.
 
@@ -42,7 +52,10 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 MOVEMENT PLAN
 <br/>
-Stay within the indicated AO (highlighted area) while on approach to the killzone.
+Stay within the indicated AO (highlighted area) while on approach to the killzone.<br/><br/>
+SETTING UP
+<br/>
+Once the killzone is safe, group leaders will have access to a one time teleport action to set up their elements. Demolition experts need to consult the 'voipers modules' section on how to use the Simple Mine System.
 <br/><br/>
 LAYING LOW
 <br/>
@@ -61,7 +74,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 2. Clear the area around the <marker name='mkrKillzone'>killzone</marker> of enemy presence.<br/>
 3. Wait for the night and the incoming convoy (See: EXECUTION for details).<br/>
 4. Ambush the convoy and destroy 3/4 of it.<br/>
-5. Fall back to our <marker name='mkrFIA_1'>parked vehicles</marker> and make your way towards <marker name='mkrExtract'>Gori</marker>.
+5. Make your way towards <marker name='mkrExtract'>Gori</marker> by using the <marker name='mkrFIA_1'>parked vehicles</marker>. Be aware of CSAT reinforcements when falling back.
 "]];
 
 // ====================================================================================
@@ -76,7 +89,7 @@ We've gotten word that CSAT are planning to transport an important device of unk
 <font size='18'>ENEMY FORCES</font>
 <br/>
 A AAF platoon has taken position at the killzone. We won't need to worry about them alarming CSAT - lower-level communication between the two sides has been lackluster at best.<br/><br/>
-Composition of the CSAT convoy is unknown but expect armored vehicles. They tend to do helicopter passes before moving a convoy in, so be careful.
+Composition of the CSAT convoy is unknown but expect armored vehicles. They tend to do helicopter passes before moving a convoy in, so be careful. They probably wont take kindly to us blowing up the helicopters either.
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>
