@@ -196,8 +196,8 @@ _SAM = "launch_O_Titan_F";
 _SAMmag = "Titan_AA";
 
 // Sniper
-_SNrifle = "srifle_GM6_F";
-_SNrifleMag = "5Rnd_127x108_Mag";
+_SNrifle = "srifle_DMR_01_F";
+_SNrifleMag = "10Rnd_762x51_Mag";
 
 // Engineer items
 _ATmine = "ATMine_Range_Mag";
@@ -217,8 +217,8 @@ _heavy =  ["eng","engm"];
 _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
-_ghillie = ["sn","sp"];
-_specOp = ["uav","smg"];
+_ghillie = [];
+_specOp = ["uav","smg","sn","sp"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -621,23 +621,23 @@ switch (_typeofUnit) do
 // LOADOUT: SNIPER
 	case "sn":
 	{
-		_unit addmagazines [_SNrifleMag,9];
+		_unit addmagazines [_SNrifleMag,4];
 		_unit addweapon _SNrifle;
 		_unit addmagazines [_pistolmag,4];
 		_unit addweapon _pistol;
 		_unit addmagazines [_smokegrenade,2];
-		_attachments = [_scope3];
+		_attachments = ["muzzle_snds_B","optic_Hamr"];
 	};
 
 // LOADOUT: SPOTTER
 	case "sp":
 	{
-		_unit addmagazines [_glriflemag,7];
-		_unit addmagazines [_glriflemag_tr,2];
-		_unit addmagazines [_glmag,2];
-		_unit addmagazines [_glsmokewhite,2];
-		_unit addweapon _glrifle;					//_COrifle
-		_unit addmagazines [_smokegrenade,2];
+		_unit addmagazines [_smgmag,7];
+		_unit addweapon _smg;
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
+		_unit addmagazines [_smokegrenade,3];
+		_attachments = ["muzzle_snds_L"];
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 	};
@@ -737,6 +737,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_mgrenade,1];
 		_unit linkItem _uavterminal;
 		["uav"] call _backpack;
+		_attachments = ["muzzle_snds_L"];
 		_unit addMagazines ["Laserbatteries",4];	// Batteries added for the F3 UAV Recharging component
 	};
 
@@ -782,10 +783,11 @@ switch (_typeofUnit) do
 	{
 		_unit addmagazines [_smgmag,7];
 		_unit addweapon _smg;
-		_unit addmagazines [_grenade,3];
-		_unit addmagazines [_mgrenade,3];
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,3];
 		_unit addWeapon "Rangefinder";
+		_attachments = ["muzzle_snds_L"];
 		//["smg"] call _backpack;
 	};
 

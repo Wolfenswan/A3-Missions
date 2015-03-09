@@ -21,14 +21,14 @@ private ["_unit","_isFireteam","_white","_red","_blue","_yellow","_green"];
 // These variables govern the behaviour of the script
 
 // Colors will be set for groups of leaders with these suffixes
-_leaders = ["_FTL"];
+_leaders = ["_SQL","_SNL","_FTL"];
 
 // Set suffixes for each color
 _white = [];
-_red = ["_AR","_AAR"];
-_blue = ["_AT","_FTL"];
+_red = ["_SQL","_SNL","_AR1","_AT1","_AR","_AAR"];
+_blue = ["_SR","_SNL","_AR2","_AT2","_M","_AT","_FTL"];
 _yellow = [];
-_green = [];
+_green = ["_G","_D"];
 
 // ====================================================================================
 
