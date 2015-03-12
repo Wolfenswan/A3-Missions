@@ -69,7 +69,7 @@ _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
 _scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
 
 // Default setup
-_attachments = []; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_hg_scope1]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -128,8 +128,8 @@ _glflareyellow = "UGL_FlareYellow_F";
 _glflaregreen = "UGL_FlareGreen_F";
 
 // Pistols (CO, DC, Automatic Rifleman, Medium MG Gunner)
-_pistol = "hgun_ACPC2_F";
-_pistolmag = "9Rnd_45ACP_Mag";
+_pistol = "hgun_PDW2000_F";
+_pistolmag = "30Rnd_9x21_Mag";
 
 // Grenades
 _grenade = "HandGrenade";
@@ -229,7 +229,7 @@ _baseGlasses = ["G_Goggles_VR"];
 
 // Armored vests
 _lightRig = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
-_mediumRig = ["V_TacVest_blk"]; 	// default for all infantry classes
+_mediumRig = ["V_BandollierB_blk"];  	// default for all infantry classes
 _heavyRig = ["V_PlateCarrierIAGL_dgtl"];
 
 // Diver
@@ -750,8 +750,10 @@ switch (_typeofUnit) do
 // LOADOUT: RIFLEMAN
 	case "r":
 	{
-		_unit addmagazines [_riflemag,5];
-		_unit addweapon _rifle;
+		_unit addmagazines [_smokegrenadegreen,2];
+		_unit addmagazines [_pistolmag,9];
+		_unit addweapon _pistol;
+		//["r"] call _backpack;
 	};
 
 // LOADOUT: CARABINEER

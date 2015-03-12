@@ -69,7 +69,7 @@ _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
 _scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
 
 // Default setup
-_attachments = [_attach1,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = []; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -102,7 +102,7 @@ _carbinemag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 
 // Standard Submachine Gun/Personal Defence Weapon (Aircraft Pilot, Submachinegunner)
 _smg = "SMG_01_F";
-_smgmag = "30Rnd_45ACP_Mag_SMG_01";
+_smgmag = "30Rnd_45ACP_Mag_SMG_01_tracer_green";
 _smgmag_tr = "30Rnd_45ACP_Mag_SMG_01_tracer_green";
 
 // Diver
@@ -228,7 +228,8 @@ _baseGlasses = ["G_Goggles_VR"];
 
 // Armored vests
 _lightRig = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
-_mediumRig = ["V_BandollierB_blk"]; 	// default for all infantry classes
+	// default for all infantry classes
+_mediumRig = ["V_TacVest_blk"];
 _heavyRig = ["V_PlateCarrier3_rgr"];
 
 // Diver
@@ -751,8 +752,8 @@ switch (_typeofUnit) do
 	case "r":
 	{
 		_unit addmagazines [_smokegrenadegreen,2];
-		_unit addmagazines [_pistolmag,9];
-		_unit addweapon _pistol;
+		_unit addmagazines [_smgmag,6];
+		_unit addweapon _smg;
 		//["r"] call _backpack;
 	};
 

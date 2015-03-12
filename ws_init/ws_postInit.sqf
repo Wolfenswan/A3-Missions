@@ -6,7 +6,7 @@ if (!isDedicated && !ws_isHC) then {
 	// Display a short text intro
  	[] spawn {
 	 waitUntil {time > 15};
-		["NEUROMANCER","VIRTUAL REALITY"] call ws_fnc_showIntro;
+		["NEUROMANCER",""] call ws_fnc_showIntro;
 		playMusic "Neuromancer";
 	};
 };
@@ -14,11 +14,12 @@ if (!isDedicated && !ws_isHC) then {
 // Do more stuff exclusively on the server
 if (isServer) then {
 	["vrareamarker", 25, 6] execVM "scripts\Zen_GenerateVRArea.sqf";
-	resistance setFriend [east,1];
-	resistance setFriend [west,1];
-	east setFriend [resistance,1];
+	west setFriend [east,1];
 	west setFriend [resistance,1];
+	east setFriend [west,1];
+	resistance setFriend [west,1];
 
+	/*
 	[] spawn {
 		_civs = {side _x == civilian || side _x == resistance} count allUnits;
 
@@ -31,5 +32,16 @@ if (isServer) then {
 			};
 			sleep 1;
 		};
-	};
+	};*/
+
+	{
+		if (side _x == WEST || side _x == civilian) then {
+			_x addMPEventhandler ["MPKilled",{
+				switch (side (_this select 1)) do {
+					case resistance: {west setFriend [resistance,0];resistance setFriend [west,0];};
+					case east: {east setFriend [west,0];west setFriend [east,0];};
+				};
+			}];
+		};
+	} forEach allUnits;
 };

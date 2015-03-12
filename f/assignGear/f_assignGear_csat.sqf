@@ -128,8 +128,8 @@ _glflareyellow = "UGL_FlareYellow_F";
 _glflaregreen = "UGL_FlareGreen_F";
 
 // Pistols (CO, DC, Automatic Rifleman, Medium MG Gunner)
-_pistol = "hgun_ACPC2_F";
-_pistolmag = "9Rnd_45ACP_Mag";
+_pistol = "hgun_PDW2000_F";
+_pistolmag = "30Rnd_9x21_Mag";
 
 // Grenades
 _grenade = "HandGrenade";

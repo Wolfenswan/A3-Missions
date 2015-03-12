@@ -2,23 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// FACTION: AAF
-
-// ====================================================================================
-
-// TASKS
-// The code below creates tasks. Two (commented-out) sample tasks are included.
-// Note: tasks should be entered into this file in reverse order.
-
-// _task2 = player createSimpleTask ["OBJ_2"];
-// _task2 setSimpleTaskDescription ["IN DEPTH OBJECTIVE DESCRIPTION", "SHORT OBJECTIVE DESCRIPTION", "WAYPOINT TEXT"];
-// _task2 setSimpleTaskDestination WAYPOINTLOCATION;
-// _task2 setTaskState "Created";
-
-// _task1 = player createSimpleTask ["OBJ_1"];
-// _task1 setSimpleTaskDescription ["IN DEPTH OBJECTIVE DESCRIPTION", "SHORT OBJECTIVE DESCRIPTION", "WAYPOINT TEXT"];
-// _task1 setSimpleTaskDestination WAYPOINTLOCATION;
-// _task1 setTaskState "Created";
+// FACTION: NATO
 
 // ====================================================================================
 
@@ -27,8 +11,9 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS (folkarps.com)<br/>
-Contact: wolfenswanarps@gmail.com
+by SagJangi<br/>
+Ported for Folk ARPS by Wolfenswan.<br/>
+Music: Morphogenetic - The time is now
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -38,33 +23,18 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 // NOTES: ADMINISTRATION
 // The code below creates the administration sub-section of notes.
 
-_adm = player createDiaryRecord ["diary", ["Administration","
+_adm = player createDiaryRecord ["diary", ["Execution","
 <br/>
-*** Insert information on administration and logistics here. ***
-"]];
-
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-<font size='18'>COMMANDER'S INTENT</font>
-<br/>
-*** Insert very short summary of plan here. ***
+The blue marker represents the operational area.
 <br/><br/>
-<font size='18'>MOVEMENT PLAN</font>
-<br/>
-*** Insert movement instructions here. ***
+There is only one entrance to each side’s marker area.
 <br/><br/>
-<font size='18'>FIRE SUPPORT PLAN</font>
-<br/>
-*** Insert fire support instructions here. ***
+ICE spawns a random number of entities every match.
 <br/><br/>
-<font size='18'>SPECIAL TASKS</font>
+VR structures spawn randomly ever match.
+<br/><br/>
+If this briefing makes no sense to you then you need to pull your life together and read Neuromancer... Seriously. Read it.
 <br/>
-*** Insert instructions for specific units here. ***
 "]];
 
 // ====================================================================================
@@ -74,7 +44,8 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+Reach the opposing side’s marker (green or red) to capture and take over Freeside's control node.
+<br/>
 "]];
 
 // ====================================================================================
@@ -84,15 +55,12 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+Wintermute (RED) and Case (INDEP) unleash attack programs to gain control of Freeside's control node.
 <br/><br/>
-<font size='18'>ENEMY FORCES</font>
+Enemy Forces
 <br/>
-*** Insert information about enemy forces here.***
+Freeside's intrusion countermeasures “ICE” (BLU) are patrolling the node but will not attack unless they or the nodes utility programs (CIV) are threatened. ICE's attack programs (i.e. weapons) are useable if recovered.
 <br/><br/>
-<font size='18'>FRIENDLY FORCES</font>
-<br/>
-*** Insert information about friendly forces here.***
 "]];
 
 // ====================================================================================
