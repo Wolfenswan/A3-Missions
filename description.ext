@@ -97,15 +97,15 @@ class cfgNotifications
 
 class Params
 {
-
-    class param_timeOfDay
+	class param_lifetimer
     {
-                title = "Time of day";
-                values[] = {0};
-                texts[] = {"not implemented yet"};
-                default = 0;
-                code = "param_timeOfDay = %1";
+                title = "Life time for contestants in minutes";
+                values[] = {3,4,5,6,8,10,12,15};
+                default = 10;
     };
+
+    #include "\a3\functions_f\Params\paramDaytimeHour.hpp"
+    #include "\a3\functions_f\Params\paramWeather.hpp"
 };
 
 // Menu components for the Spectator Script

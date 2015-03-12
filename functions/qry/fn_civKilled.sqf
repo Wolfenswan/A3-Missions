@@ -10,7 +10,7 @@ if (hasInterface) then {
 		if (_killed in myTargetList) then {
 			qry_hp = qry_hp + quarry_player_kill_time_reward; //player setVariable["qry_hp",(player getVariable["qry_hp",60*10])+(3*60)];
             player setVariable["qry_hp",qry_hp,true];
-			systemChat "You killed your quarry. You have received an extra 3 minutes on your clock.";
+			systemChat "You killed your quarry. You have received extra time on your clock.";
 		} else {
           //killed someone that wasn't my _killed.
             _hasWeapon = (currentWeapon _killed != "");
