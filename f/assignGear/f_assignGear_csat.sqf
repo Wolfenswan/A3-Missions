@@ -263,7 +263,7 @@ _ghillieGlasses = [];
 
 // Spec Op
 _sfuniform = ["U_O_SpecopsUniform_ocamo"];
-_sfhelmet = ["H_Shemag_olive","H_ShemagOpen_tan"];
+_sfhelmet = ["H_ShemagOpen_tan"];
 _sfRig = ["V_HarnessO_brn"];
 _sfGlasses = [];
 
@@ -621,12 +621,12 @@ switch (_typeofUnit) do
 // LOADOUT: SNIPER
 	case "sn":
 	{
-		_unit addmagazines [_SNrifleMag,4];
+		_unit addmagazines [_SNrifleMag,5];
 		_unit addweapon _SNrifle;
 		_unit addmagazines [_pistolmag,4];
 		_unit addweapon _pistol;
 		_unit addmagazines [_smokegrenade,2];
-		_attachments = ["muzzle_snds_B","optic_Hamr"];
+		_attachments = ["muzzle_snds_B","optic_Arco"];
 	};
 
 // LOADOUT: SPOTTER

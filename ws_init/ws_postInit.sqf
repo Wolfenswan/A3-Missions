@@ -32,12 +32,16 @@ if (!isDedicated) then {
 			] , 0, 0.7
 		] spawn BIS_fnc_typeText;
 	};
-	sleep 105;
+
 	if (side player == EAST) then {
-		while {true} do {
-			cutText [format ["%1 minutes since operation start.",round (time/60)],"PLAIN DOWN",2];
-			sleep 120;
-		};
+		[] spawn {
+			uisleep 105;
+
+				while {true} do {
+					cutText [format ["%1 minutes since operation start.",round (time/60)],"PLAIN DOWN",2];
+					uisleep 120;
+				};
+			};
 	};
 };
 
@@ -45,8 +49,8 @@ if (isServer) then {
 	if (isNil "GrpFIA_Tech1") then {deleteVehicle VehFIA_T1};
 	if (isNil "GrpFIA_Tech2") then {deleteVehicle VehFIA_T2};
 
-	_units = ([ws_meetingM,10,west,3 + round random 3] call ws_fnc_createGarrison);
-	_units = _units + ([ws_meetingM,80,west,4 + round (({side _x == east}count playableUnits)/3) + round random 5] call ws_fnc_createGarrison);
+	_units = ([ws_meetingM,10,west,6] call ws_fnc_createGarrison);
+	_units append ([ws_meetingM,100,west,10 + round (({side _x == east}count playableUnits)/3)] call ws_fnc_createGarrison);
 	// Stuff to happen AFTER mission launch
 	// sleep 0.1;
 

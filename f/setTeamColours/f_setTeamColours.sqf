@@ -26,7 +26,7 @@ _leaders = ["_SQL","_SNL","_FTL"];
 // Set suffixes for each color
 _white = [];
 _red = ["_SQL","_SNL","_AR1","_AT1","_AR","_AAR"];
-_blue = ["_SR","_SNL","_AR2","_AT2","_M","_AT","_FTL"];
+_blue = ["_SR","_SNL","_AR2","_AT2","_M","_FTL","_RAT"];
 _yellow = [];
 _green = ["_G","_D"];
 

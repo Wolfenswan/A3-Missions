@@ -60,7 +60,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_a42_Manhunt_v8";
+		briefingName="fa3_a42_Manhunt_v9";
 		overviewText="CSAT (FAXORBATI) attempts to intercept and kill two FIA officers meeting in Agios Dionysios. The town itself is held by about a squad of AI FIA. Take the technicals if AH1 is slotted.";
 		resistanceWest=0;
 		startWeather=0.84999996;
@@ -185,7 +185,7 @@ class Mission
 					vehicle="B_G_medic_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					text="UnitFIA_A1_AT";
+					text="UnitFIA_A1_RAT";
 					init="GrpFIA_A1 = group this; [""m"",this] call f_fnc_assignGear ;";
 					description="FIA Protection Detail 1 - Medic";
 				};
@@ -199,8 +199,8 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A2_AAR_1_1";
-					init="GrpFIA_A1 = group this; [""r"",this] call f_fnc_assignGear ;";
-					description="FIA Protection Detail 1 - Rifleman";
+					init="GrpFIA_A1 = group this; [""gren"",this] call f_fnc_assignGear ;";
+					description="FIA Protection Detail 1 - Grenadier";
 				};
 			};
 		};
@@ -260,7 +260,7 @@ class Mission
 					vehicle="B_G_medic_F";
 					player="PLAY CDG";
 					skill=0.60000002;
-					text="UnitFIA_A2_AT";
+					text="UnitFIA_A2_RAT";
 					init="GrpFIA_A2 = group this; [""m"",this] call f_fnc_assignGear ;";
 					description="FIA Protection Detail 2 - Medic";
 				};
@@ -274,8 +274,8 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="UnitFIA_A2_AAR_1";
-					init="GrpFIA_A2 = group this; [""r"",this] call f_fnc_assignGear ;";
-					description="FIA Protection Detail 2 - Rifleman";
+					init="GrpFIA_A2 = group this; [""gren"",this] call f_fnc_assignGear ;";
+					description="FIA Protection Detail 2 - Grenadier";
 				};
 			};
 		};
@@ -810,7 +810,7 @@ class Mission
 					skill=0.60000002;
 					text="UnitCSAT_A1_AT2";
 					init="GrpCSAT_A1 = group this; [""gren"",this] call f_fnc_assignGear;";
-					description="CSAT Alpha 1 Grenadier (AT)";
+					description="CSAT Alpha 1 Grenadier";
 				};
 				class Item6
 				{
@@ -934,7 +934,7 @@ class Mission
 					skill=0.60000002;
 					text="UnitCSAT_B1_AT2";
 					init="GrpCSAT_B1 = group this; [""gren"",this] call f_fnc_assignGear;";
-					description="CSAT Bravo 1 Grenadier (AT)";
+					description="CSAT Bravo 1 Grenadier";
 				};
 				class Item6
 				{
@@ -1731,7 +1731,7 @@ class Mission
 		};
 		class Item11
 		{
-			position[]={8840.6943,138.46507,15300.993};
+			position[]={8776.541,78.201019,15031.417};
 			name="mkrR";
 			type="Empty";
 		};
