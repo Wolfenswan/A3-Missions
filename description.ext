@@ -5,7 +5,7 @@
 
 class Header
 {
-	gameType = Coop;
+	gameType = Defend;
 	minPlayers = 1;
 	maxPlayers = 453;
 };
@@ -114,37 +114,38 @@ class cfgNotifications
 	};
 
 	// XEola-specific notifications
-	class CacheDestroyed
-	{
-		title = "CACHE DESTROYED!";
-		description = "%1";
-		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
-		duration = 5;
-	};
+    class CacheDestroyed
+    {
+        title = "CACHE DESTROYED!";
+        description = "%1";
+        iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+        duration = 5;
+    };
 
-	class MissionEnd
-	{
-		title = "MISSION FINISHED!";
-		description = "All caches were destroyed!";
-		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
-		duration = 5;
-	};
+    class MissionEnd
+    {
+        title = "MISSION FINISHED!";
+        description = "All caches were destroyed!";
+        iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+        duration = 5;
+    };
 
-	class ws_alert
-	{
-		title = "ALERT";
-		description = "%1";
-		iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
-		duration = 3;
-	};
+    class ws_alert
+    {
+        title = "ALERT";
+        description = "%1";
+        iconPicture="\A3\ui_f\data\map\markers\military\warning_ca.paa";
+        duration = 3;
+    };
 
-	class ws_taskdone
-	{
-		title = "TASK COMPLETED";
-		description = "%1";
-		iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
-		duration = 3;
-	};
+    class ws_taskdone
+    {
+        title = "TASK COMPLETED";
+        description = "%1";
+        iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
+        duration = 3;
+    };
+
 };
 
 // ============================================================================================
@@ -192,8 +193,8 @@ class Params
     class f_param_radios
     {
             title = "Radio System";
-            values[] = {0,1,2};
-            texts[] = {"Off","ACRE","TFR"};
+            values[] = {0,1,2,3};
+            texts[] = {"Off","ACRE","TFR","ACRE2"};
             default = 0;
             code = "f_var_radios = %1";
     };
@@ -222,7 +223,7 @@ class Params
             title = "$STR_f_param_mission_timer";
             values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
             texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
-            default = 0;
+            default = 1;
             code = "f_param_mission_timer = %1";
     };
 
@@ -269,32 +270,32 @@ class Params
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-	class f_param_AISkill_BLUFOR
-	{
-		title = "$STR_f_param_AISkill_BLUFOR";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_BLUFOR = %1";
-	};
+class f_param_AISkill_BLUFOR
+{
+	title = "$STR_f_param_AISkill_BLUFOR";
+	values[] = {0,1,2,3};
+	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+	default = 1;
+	code = "f_param_AISkill_BLUFOR = %1";
+};
 
-	class f_param_AISkill_OPFOR
-	{
-		title = "$STR_f_param_AISkill_OPFOR";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_OPFOR = %1";
-	};
+class f_param_AISkill_OPFOR
+{
+	title = "$STR_f_param_AISkill_OPFOR";
+	values[] = {0,1,2,3};
+	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+	default = 1;
+	code = "f_param_AISkill_OPFOR = %1";
+};
 
-	class f_param_AISkill_INDP
-	{
-		title = "$STR_f_param_AISkill_INDP";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_INDP = %1";
-	};
+class f_param_AISkill_INDP
+{
+	title = "$STR_f_param_AISkill_INDP";
+	values[] = {0,1,2,3};
+	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+	default = 1;
+	code = "f_param_AISkill_INDP = %1";
+};
 
 // ============================================================================================
 
@@ -317,23 +318,24 @@ class Params
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
 
 // X-Eola-specific parameters
-	class ws_param_caches_present
-	{
-		title = "Caches present";
-		values[] = {2,4,6,8,10,12};
-		texts[] = {"2","4","6","8","10","12"};
-		default = 6;
-		code = "ws_eola_caches_present = %1";
-	};
+    class ws_param_caches_present
+    {
+        title = "Caches present";
+        values[] = {2,4,6,8,10,12};
+        texts[] = {"2","4","6","8","10","12"};
+        default = 6;
+        code = "ws_eola_caches_present = %1";
+    };
 
-	class ws_param_caches_target
-	{
-		title = "Caches to destroy";
-		values[] = {2,4,6,8,10,12};
-		texts[] = {"2","4","6","8","10","12"};
-		default = 4;
-		code = "ws_eola_caches_target = %1";
-	};
+    class ws_param_caches_target
+    {
+        title = "Caches to destroy";
+        values[] = {2,4,6,8,10,12};
+        texts[] = {"2","4","6","8","10","12"};
+        default = 4;
+        code = "ws_eola_caches_target = %1";
+    };
+
 
 };
 
@@ -418,17 +420,16 @@ class CfgRespawnTemplates
 	{
 		onPlayerRespawn = "f_fnc_CamInit";
 	};
-
+  	//Overwrite Vanilla Seagull
+    class Seagull
+    {
+        onPlayerRespawn = "";
+    };
 	// F3 JIP Menu
 	class f_JIP
 	{
 		onPlayerRespawn = "f\JIP\f_JIP_playerRespawn.sqf";
 	};
-	//Overwrite Vanilla Seagull
-    class Seagull
-    {
-        onPlayerRespawn = "";
-    };
 };
 
 // ============================================================================================
@@ -450,9 +451,10 @@ class CfgRespawnTemplates
 
 class CfgFunctions
 {
+	//ws_fnc
 	#include "ws_fnc\config.hpp"
 
-    class F // Defines the "owner"
+	class F // Defines the "owner"
 	{
 		class common // category
 		{
@@ -570,7 +572,6 @@ class CfgFunctions
 	};
 };
 
-
 // ============================================================================================
 
 // F3 - Custom Insignia
@@ -578,3 +579,5 @@ class CfgFunctions
 class CfgUnitInsignia {
 	#include "f\assignGear\insignia\define.hpp"
 };
+
+// ============================================================================================
