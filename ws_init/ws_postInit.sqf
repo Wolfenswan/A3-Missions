@@ -18,10 +18,15 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 	_units = [];
 	_garrison = ([FIA] call ws_fnc_collectObjectsNum);
 	{
-		_units = _units + ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
+		_units append ((_x getVariable "ws_garrison") call ws_fnc_createGarrison);
 		//deleteVehicle _x;
 	} forEach _garrison;
 
+	//_units execVM "f\setAISKill\f_setAISkill.sqf"; //TODO: Call BIS_fnc_MP to exec on server
+
+	// Equip garrisoned units
+
+	//_units execVM "f\assignGear\f_assignGear_AI.sqf";
 	_gear = [
 		["hgun_PDW2000_F",5],
 		["SMG_01_F",6],
@@ -41,14 +46,11 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 // Do more stuff exclusively on the server
 if (isServer) then {
 
-	// Recalculate F3 variables
-	[0] execVM "f\common\f_setLocalVars.sqf";
-
 	// Stuff to happen AFTER mission launch
-	sleep 0.1;
+	// sleep 0.1;
 
 	// If units were spawned set AI skill again
-	[] execVM "f\setAISKill\f_setAISkill.sqf";
+	// [] execVM "f\setAISKill\f_setAISkill.sqf";
 
 	// NVG-removal, add flashlights
 	/*
@@ -71,6 +73,6 @@ if (isServer) then {
 
       // Forces flashlights on
        // _unit enablegunlights "forceOn";
-} forEach allUnits;
+	} forEach allUnits;
 	*/
 };
