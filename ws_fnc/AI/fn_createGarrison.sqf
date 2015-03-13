@@ -69,8 +69,8 @@ _classes = if (count _this > 5) then {_this select 5} else {[]};
 // If default classes are being used, select the corresponding array
 if (count _classes == 0) then {
 	switch (_side) do {
-		case west: {_classes = _garrisonNATO};
-		case blufor: {_classes = _garrisonNATO};
+		case west: {_classes = _garrisonFIA};
+		case blufor: {_classes = _garrisonFIA};
 		case east: {_classes = _garrisonCSAT};
 		case opfor: {_classes = _garrisonCSAT};
 		case resistance: {_classes = _garrisonAAF};

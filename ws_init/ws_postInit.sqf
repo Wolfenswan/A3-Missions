@@ -50,7 +50,7 @@ if (isServer) then {
 	// sleep 0.1;
 
 	// If units were spawned set AI skill again
-	// [] execVM "f\setAISKill\f_setAISkill.sqf";
+	[] execVM "f\setAISKill\f_setAISkill.sqf";
 
 	// NVG-removal, add flashlights
 	/*
