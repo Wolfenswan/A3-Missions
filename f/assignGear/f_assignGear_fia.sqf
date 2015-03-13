@@ -69,7 +69,7 @@ _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
 _scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
 
 // Default setup
-_attachments = [_attach1,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_attach2]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -233,7 +233,7 @@ _baseGlasses = ["G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli"];
 
 // Armored vests
 _lightRig = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
-_mediumRig = ["V_PlateCarrier1_blk"]; 	// default for all infantry classes
+_mediumRig = _lightRig; 	// default for all infantry classes
 _heavyRig = ["V_PlateCarrier1_blk"];
 
 // Diver
