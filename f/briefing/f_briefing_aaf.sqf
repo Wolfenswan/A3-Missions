@@ -94,7 +94,7 @@ Lightly armed irregular forces with vehicle support.
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>
-A recon team is in place west of Abdera to monitor FIA movement.
+A recon team is in place west of Abdera to monitor FIA movement. We estimate that they can mobilize reinforcements in roughly 10 minutes.
 <br/><br/>
 <font size='18'>WEATHER</font>
 <br/>

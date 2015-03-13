@@ -32,9 +32,26 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_ishc)) then {
 if (isServer) then {
 	["fia_reinf",true] execVM "ws_scripts\ws_cacheStoreRestore.sqf";
 
-	[] execVM "f\assignGear\f_assignGear_AI.sqf";
-	// Stuff to happen AFTER mission launch
-	// sleep 0.1;
+	//[] execVM "f\assignGear\f_assignGear_AI.sqf";
+
+	// Wait until in the mission so HC etc. can do their thing
+	sleep 0.1;
+	_gear = [
+		["hgun_PDW2000_F",8],
+		["SMG_01_F",8],
+		["SMG_02_ACO_F",8],
+		["arifle_Mk20C_F",8],
+		["arifle_Katiba_C_F",8],
+		["arifle_TRG20_F",8]
+	];
+
+	{
+		if (side _x == west && {local _x && typeOf _x in ["B_G_Soldier_lite_F","B_G_Soldier_LAT_F","B_G_Soldier_F"]}) then {
+			_wp = _gear call ws_fnc_selectRandom;
+			[_x,_wp select 0,_wp select 1] call BIS_fnc_addWeapon;
+		};
+	} forEach allUnits;
+
 
 	// If units were spawned set AI skill again
 	// [] execVM "f\setAISKill\f_setAISkill.sqf";
