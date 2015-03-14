@@ -178,10 +178,6 @@ _AR = "arifle_MX_SW_F";
 _ARmag = "100Rnd_65x39_caseless_mag";
 _ARmag_tr = "100Rnd_65x39_caseless_mag_Tracer";
 
-// Marksman rifle
-_DMrifle = "srifle_EBR_F";
-_DMriflemag = "20Rnd_762x51_Mag";
-
 // Medium MG
 _MMG = "LMG_Zafir_F";
 _MMGmag = "150Rnd_762x51_Box";
