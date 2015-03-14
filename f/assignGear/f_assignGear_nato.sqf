@@ -209,6 +209,7 @@ _SAMmag = "Titan_AA";
 _HAT = "launch_B_Titan_short_F";
 _HATmag1 = "Titan_AT";
 _HATmag2 = "Titan_AP";
+
 // Sniper
 _SNrifle = "srifle_LRR_F";
 _SNrifleMag = "7Rnd_408_Mag";
@@ -240,8 +241,8 @@ _baseUniform = ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_vest"];
 _baseHelmet = ["H_HelmetB","H_HelmetB_plain_mcamo"];
 _baseGlasses = [];
 
-// Armored vests
-_lightRig = ["V_TacVest_blk","V_TacVest_brn","V_TacVest_camo","V_TacVest_oli"];
+// Vests
+_lightRig = ["V_BandollierB_cbr","V_BandollierB_khk"];
 _mediumRig = ["V_PlateCarrier1_rgr","V_PlateCarrier2_rgr"]; 	// default for all infantry classes
 _heavyRig = ["V_PlateCarrier3_rgr"];
 
