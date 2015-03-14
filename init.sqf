@@ -73,10 +73,9 @@ if(isServer) then {
 // F3 - Automatic Body Removal
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_var_removeBodyDelay = 120;
-f_var_removeBodyDistance = 400;
-f_var_doNotRemoveBodies = [];
-[] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
+// f_var_garbageCollectorSleep = 120;
+// f_var_garbageCollectorDistance = 450;
+// [] execVM "f\garbageCollector\f_garbageCollectorLoop.sqf";
 
 // ====================================================================================
 
@@ -121,9 +120,8 @@ f_var_doNotRemoveBodies = [];
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
+f_var_civAI = independent;         // Optional: The civilian AI will use this side's settings
 [] execVM "f\setAISKill\f_setAISkill.sqf";
-f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
-
 
 // ====================================================================================
 
@@ -219,3 +217,6 @@ f_wound_extraFAK = 2;
 [] execVM "f\medical\medical_init.sqf";
 
 // ====================================================================================
+
+// Wolfenswan - post Init
+[] execVM "ws_init\ws_postInit.sqf";
