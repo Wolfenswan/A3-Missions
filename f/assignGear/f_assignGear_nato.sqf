@@ -13,6 +13,7 @@
 //		ar 			- automatic rifleman
 //		aar			- assistant automatic rifleman
 //		rat			- rifleman (AT)
+//		dm			- designated marksman
 //		mmgg		- medium mg gunner
 //		mmgag		- medium mg assistant
 //		matg		- medium AT gunner
@@ -177,10 +178,23 @@ _AR = "arifle_MX_SW_F";
 _ARmag = "100Rnd_65x39_caseless_mag";
 _ARmag_tr = "100Rnd_65x39_caseless_mag_Tracer";
 
+// Marksman rifle
+_DMrifle = "srifle_EBR_F";
+_DMriflemag = "20Rnd_762x51_Mag";
+
 // Medium MG
 _MMG = "LMG_Zafir_F";
 _MMGmag = "150Rnd_762x51_Box";
 _MMGmag_tr = "150Rnd_762x51_Box_Tracer";
+
+// NON-DLC ALTERNATIVE:
+// _MMG = "LMG_Zafir_F";
+// _MMGmag = "150Rnd_762x51_Box";
+// _MMGmag_tr = "150Rnd_762x51_Box_Tracer";
+
+// Marksman rifle
+_DMrifle = "srifle_EBR_F"; //TODO: EMR-1
+_DMriflemag = "20Rnd_762x51_Mag";
 
 // Rifleman AT
 _RAT = "launch_NLAW_F";
@@ -195,6 +209,10 @@ _MATmag2 = "NLAW_F";
 _SAM = "launch_B_Titan_F";
 _SAMmag = "Titan_AA";
 
+// Heavy AT
+_HAT = "launch_B_Titan_short_F";
+_HATmag1 = "Titan_AT";
+_HATmag2 = "Titan_AP";
 // Sniper
 _SNrifle = "srifle_LRR_F";
 _SNrifleMag = "7Rnd_408_Mag";
@@ -222,7 +240,7 @@ _specOp = [];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
-_baseUniform = ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_tshirt","U_B_CombatUniform_mcam_vest"];
+_baseUniform = ["U_B_CombatUniform_mcam","U_B_CombatUniform_mcam_vest"];
 _baseHelmet = ["H_HelmetB","H_HelmetB_plain_mcamo"];
 _baseGlasses = [];
 
@@ -258,7 +276,7 @@ _ghillieGlasses = [];
 // Spec Op
 _sfuniform = ["U_B_SpecopsUniform_sgg"];
 _sfhelmet = ["H_HelmetSpecB","H_HelmetSpecB_paint1","H_HelmetSpecB_paint2","H_HelmetSpecB_blk"];
-_sfRig = _mediumRig;
+_sfRig = ["V_PlateCarrierSpec_rgr"];
 _sfGlasses = [];
 
 // ====================================================================================
@@ -439,6 +457,20 @@ switch (_typeofUnit) do
 		_unit addweapon _RAT;
 	};
 
+// LOADOUT: DESIGNATED MARKSMAN
+	case "dm":
+	{
+		_unit addmagazines [_DMriflemag,7];
+		_unit addweapon _DMrifle;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
+		_unit addmagazines [_smokegrenade,2];
+		_unit addmagazines [_pistolmag,3];
+		_unit addweapon _pistol;
+		["dm"] call _backpack;
+		_attachments = [_attach1,_scope2];
+	};
+
 // LOADOUT: MEDIUM MG GUNNER
 	case "mmgg":
 	{
@@ -517,12 +549,9 @@ switch (_typeofUnit) do
 	case "hatg":
 	{
 		_unit addmagazines [_carbinemag,7];
-		_unit addmagazines [_carbinemag_tr,2];
 		_unit addweapon _carbine;
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_smokegrenade,1];
 		["hatg"] call _backpack;
+		_unit addWeapon _HAT;
 	};
 
 // LOADOUT: HEAVY AT ASSISTANT GUNNER
