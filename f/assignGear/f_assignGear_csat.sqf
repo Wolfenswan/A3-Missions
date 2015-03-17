@@ -13,6 +13,7 @@
 //		ar 			- automatic rifleman
 //		aar			- assistant automatic rifleman
 //		rat			- rifleman (AT)
+//		dm			- designated marksman
 //		mmgg		- medium mg gunner
 //		mmgag		- medium mg assistant
 //		matg		- medium AT gunner
@@ -173,14 +174,23 @@ _baghsamag = "O_HMG_01_support_F";			// used by Heavy SAM assistant gunner
 // UNIQUE, ROLE-SPECIFIC EQUIPMENT
 
 // Automatic Rifleman
-_AR = "LMG_Mk200_F";
-_ARmag = "200Rnd_65x39_cased_Box";
-_ARmag_tr = "200Rnd_65x39_cased_Box_Tracer";
+_AR = "LMG_Zafir_F";
+_ARmag = "150Rnd_762x51_Box";
+_ARmag_tr = "150Rnd_762x51_Box_Tracer";
 
 // Medium MG
 _MMG = "LMG_Zafir_F";
 _MMGmag = "150Rnd_762x51_Box";
 _MMGmag_tr = "150Rnd_762x51_Box_Tracer";
+
+// NON-DLC ALTERNATIVE:
+//_MMG = "LMG_Zafir_F";
+//_MMGmag = "150Rnd_762x51_Box";
+//_MMGmag_tr = "150Rnd_762x51_Box_Tracer";
+
+// Marksman rifle
+_DMrifle = "srifle_EBR_F"; //TODO: Cyrus
+_DMriflemag = "20Rnd_762x51_Mag";
 
 // Rifleman AT
 _RAT = "launch_RPG32_F";
@@ -194,6 +204,11 @@ _MATmag2 = "RPG32_HE_F";
 // Surface Air
 _SAM = "launch_O_Titan_F";
 _SAMmag = "Titan_AA";
+
+// Heavy AT
+_HAT = "launch_O_Titan_short_F";
+_HATmag1 = "Titan_AT";
+_HATmag2 = "Titan_AP";
 
 // Sniper
 _SNrifle = "srifle_GM6_F";
@@ -232,10 +247,10 @@ _baseGlasses = [];
 //_baseUniform = ["U_O_CombatUniform_oucamo"];
 //_baseHelmet = ["H_HelmetO_oucamo"];
 
-// Armored vests
+// Vests
 _lightRig = ["V_HarnessO_brn"];
-_mediumRig = ["V_HarnessOGL_brn"]; 	// default for all infantry classes
-_heavyRig = ["V_HarnessOGL_brn"];
+_mediumRig = ["V_TacVest_khk"]; 	// default for all infantry classes
+_heavyRig = _mediumRig;
 
 // Diver
 _diverUniform =  ["U_O_Wetsuit"];
@@ -443,6 +458,20 @@ switch (_typeofUnit) do
 		_unit addweapon _RAT;
 	};
 
+// LOADOUT: DESIGNATED MARKSMAN
+	case "dm":
+	{
+		_unit addmagazines [_DMriflemag,7];
+		_unit addweapon _DMrifle;
+		_unit addmagazines [_grenade,2];
+		_unit addmagazines [_mgrenade,2];
+		_unit addmagazines [_smokegrenade,2];
+		_unit addmagazines [_pistolmag,3];
+		_unit addweapon _pistol;
+		["dm"] call _backpack;
+		_attachments = [_attach1,_scope2];
+	};
+
 // LOADOUT: MEDIUM MG GUNNER
 	case "mmgg":
 	{
@@ -521,12 +550,9 @@ switch (_typeofUnit) do
 	case "hatg":
 	{
 		_unit addmagazines [_carbinemag,7];
-		_unit addmagazines [_carbinemag_tr,2];
 		_unit addweapon _carbine;
-		_unit addmagazines [_grenade,1];
-		_unit addmagazines [_mgrenade,1];
-		_unit addmagazines [_smokegrenade,1];
 		["hatg"] call _backpack;
+		_unit addWeapon _HAT;
 	};
 
 // LOADOUT: HEAVY AT ASSISTANT GUNNER
@@ -615,6 +641,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,1];
 		["hsamag"] call _backpack;
 	};
+
 
 // LOADOUT: SNIPER
 	case "sn":

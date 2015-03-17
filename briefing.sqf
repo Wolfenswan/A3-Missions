@@ -135,7 +135,17 @@ if (_unitfaction == "civ_f") exitwith {
 	};
 };
 
+// ====================================================================================
 
+// BRIEFING: ZEUS
+// The following block of code executes only if the player is in a CIVILIAN
+// slot; it automatically includes a file which contains the appropriate briefing data.
+
+if (_unitfaction == "") exitwith {
+
+#include "f\briefing\f_briefing_civ.sqf"
+
+};
 
 // ====================================================================================
 

@@ -46,7 +46,7 @@ class Mission
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="fa3_cz66_mailman_v6";
+		briefingName="fa3_cz66_mailman_v7";
 		overviewText="NATO forces scramble to recover valuable Intel from a downed aircraft. NSA engineers and ZEUS required.";
 		resistanceWest=0;
 		startWeather=0;
@@ -1226,7 +1226,7 @@ class Mission
 					skill=0.60000002;
 					init="this addEventHandler ['CuratorObjectPlaced',{{[_x] call f_fnc_setAISKill} forEach crew(_this select 1)}];this addCuratorEditableObjects [playableUnits,true];";
 					syncId=0;
-					synchronizations[]={2};
+					synchronizations[]={3};
 				};
 			};
 		};
@@ -1294,7 +1294,7 @@ class Mission
 					skill=0.60000002;
 					init="this addEventHandler ['CuratorObjectPlaced',{{[_x] call f_fnc_setAISKill} forEach crew(_this select 1)}];this addCuratorEditableObjects [playableUnits,true];";
 					syncId=1;
-					synchronizations[]={3};
+					synchronizations[]={2};
 				};
 			};
 		};
@@ -1406,72 +1406,6 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={17254.086,43.760624,16463.068};
-					class args
-					{
-						items=7;
-						class Item0
-						{
-							value="";
-							parentCls="ModuleCuratorSetSideCosts_F";
-							typeName="Curator";
-						};
-						class Item1
-						{
-							value="1e111";
-							parentCls="ModuleCuratorSetSideCosts_F";
-							typeName="costSide_West";
-						};
-						class Item2
-						{
-							value="1";
-							parentCls="ModuleCuratorSetSideCosts_F";
-							typeName="costSide_East";
-						};
-						class Item3
-						{
-							value="1";
-							parentCls="ModuleCuratorSetSideCosts_F";
-							typeName="costSide_Guer";
-						};
-						class Item4
-						{
-							value="1e111";
-							parentCls="ModuleCuratorSetSideCosts_F";
-							typeName="costSide_Civ";
-						};
-						class Item5
-						{
-							value="1";
-							parentCls="ModuleCuratorSetSideCosts_F";
-							typeName="costSide_Empty";
-						};
-						class Item6
-						{
-							value="1";
-							parentCls="ModuleCuratorSetSideCosts_F";
-							typeName="costSide_Logic";
-						};
-					};
-					id=72;
-					side="LOGIC";
-					vehicle="ModuleCuratorSetSideCosts_F";
-					leader=1;
-					lock="UNLOCKED";
-					skill=0.60000002;
-					syncId=2;
-					synchronizations[]={0};
-				};
-			};
-		};
-		class Item27
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
 					position[]={17256.367,45.314407,16447.879};
 					class args
 					{
@@ -1490,13 +1424,13 @@ class Mission
 						};
 						class Item2
 						{
-							value="1";
+							value="0";
 							parentCls="ModuleCuratorSetSideCosts_F";
 							typeName="costSide_East";
 						};
 						class Item3
 						{
-							value="1";
+							value="0";
 							parentCls="ModuleCuratorSetSideCosts_F";
 							typeName="costSide_Guer";
 						};
@@ -1508,13 +1442,79 @@ class Mission
 						};
 						class Item5
 						{
-							value="1";
+							value="0";
 							parentCls="ModuleCuratorSetSideCosts_F";
 							typeName="costSide_Empty";
 						};
 						class Item6
 						{
-							value="1";
+							value="0";
+							parentCls="ModuleCuratorSetSideCosts_F";
+							typeName="costSide_Logic";
+						};
+					};
+					id=72;
+					side="LOGIC";
+					vehicle="ModuleCuratorSetSideCosts_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					syncId=2;
+					synchronizations[]={1};
+				};
+			};
+		};
+		class Item27
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={17254.084,43.772491,16462.543};
+					class args
+					{
+						items=7;
+						class Item0
+						{
+							value="";
+							parentCls="ModuleCuratorSetSideCosts_F";
+							typeName="Curator";
+						};
+						class Item1
+						{
+							value="1e111";
+							parentCls="ModuleCuratorSetSideCosts_F";
+							typeName="costSide_West";
+						};
+						class Item2
+						{
+							value="0";
+							parentCls="ModuleCuratorSetSideCosts_F";
+							typeName="costSide_East";
+						};
+						class Item3
+						{
+							value="0";
+							parentCls="ModuleCuratorSetSideCosts_F";
+							typeName="costSide_Guer";
+						};
+						class Item4
+						{
+							value="1e111";
+							parentCls="ModuleCuratorSetSideCosts_F";
+							typeName="costSide_Civ";
+						};
+						class Item5
+						{
+							value="0";
+							parentCls="ModuleCuratorSetSideCosts_F";
+							typeName="costSide_Empty";
+						};
+						class Item6
+						{
+							value="0";
 							parentCls="ModuleCuratorSetSideCosts_F";
 							typeName="costSide_Logic";
 						};
@@ -1526,7 +1526,7 @@ class Mission
 					lock="UNLOCKED";
 					skill=0.60000002;
 					syncId=3;
-					synchronizations[]={1};
+					synchronizations[]={0};
 				};
 			};
 		};
