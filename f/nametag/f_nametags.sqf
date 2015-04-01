@@ -14,31 +14,35 @@ if (!isDedicated && (isNull player)) then
 // SET GLOBAL VARIABLES
 
 // MODIFYABLE
-f_size_Nametags = 0.04; // The size the names are displayed in
-f_height_standing_Nametags = 2;
-f_height_crouch_Nametags = 1.5;
-f_height_prone_Nametags = 0.9;
+
+// Default values (can be modified by players in the briefing entry)
+f_showGroup_Nametags = true;	 // Show unit's group next to unit name (except for player's own group)
+f_showDistance_Nametags = false; // Show distance to unit under name
+f_showVehicle_Nametags = false;  // Show type of vehicle under driver's name
+f_cursortarget_Nametags = false;  // True shows only name for units aimed, false displays tags for all unit in radius
+
+// Other values
+f_dist_Nametags = 15;	// Distance for the nametags to be displayed in
+F_KEY_NAMETAGS =  "TeamSwitch"; // The action key to toggle the name tags. See possible keys here: http://community.bistudio.com/wiki/Category:Key_Actions
+
+// Display values
+f_size_Nametags = 0.032; // The size the names are displayed in
+f_height_standing_Nametags = 2; // Height above standing infantry unit
+f_height_crouch_Nametags = 1.5; // Height above crouching infantry unit
+f_height_prone_Nametags = 0.9;  // Height above prone infantry unit
 f_vheight_Nametags = 0; // The height of the name tags for units in vehicles (0 = hovering over vehicle)
 F_SHADOW_NAMETAGS = 2; // The shadow for the name tags (0 - 2)
-
 f_color_Nametags =  [1,1,1,0.9]; // The color for infantry and units in vehicle cargo (in [red,green, blue, opacity])
 f_color2_Nametags = [0.5,0.1,0.2,0.9]; // The color for units in driver, gunner and other vehicle positions positions
 f_groupColor_Nametags = [0,1,0.7,0.9]; // The color for units of the same group
-
 F_FONT_NAMETAGS = "EtelkaMonospaceProBold"; // Font for the names
-F_KEY_NAMETAGS =  "TeamSwitch"; // The action key that will be used to toggle the name tags. See possible keys here: http://community.bistudio.com/wiki/Category:Key_Actions
 
 // SCRIPTSIDE
-F_DIST_NAMETAGS = _this select 0;
-
-if (isNil "f_showGroup_Nametags") then {f_showGroup_Nametags = false};
-if (isNil "f_showDistance_Nametags") then {f_showDistance_Nametags = false};
-if (isNil "f_showVehicle_Nametags") then {f_showVehicle_Nametags = false};
 
 F_DRAW_NAMETAGS = false;
 F_ACTIONKEY_NAMETAGS = (actionKeys F_KEY_NAMETAGS) select 0;
 F_KEYNAME_NAMETAGS = actionKeysNames F_KEY_NAMETAGS;
-if (isNil "F_ACTIONKEY_NAMETAGS") then {F_ACTIONKEY_NAMETAGS = 20; F_KEYNAME_NAMETAGS = 'T';}; // If the user has not bound 'TeamSwitch' to a key we default to 'T' to toggle the tags
+if (isNil "F_ACTIONKEY_NAMETAGS") then {F_ACTIONKEY_NAMETAGS = 20; F_KEYNAME_NAMETAGS = 'U';}; // If the user has not bound 'TeamSwitch' to a key we default to 'U' to toggle the tags
 
 F_KEYUP_NAMETAG = {
 	_key = _this select 1;
@@ -67,42 +71,33 @@ F_KEYDOWN_NAMETAG = {
 // A section is added to the player's briefing to inform them about name tags being available.
 
 [] spawn {
-waitUntil {scriptDone f_script_briefing};
+	waitUntil {scriptDone f_script_briefing};
 
-_bstr = format ["<br/>Toggle nametags for friendly units by pressing %1. This displays nametags for units within %3 m.<br/><br/>
+	//TODO add color section
+	_bstr = format ["<br/><font size='18'>F3 NAMETAGS</font><br/>Toggle nametags for friendly units by pressing %1. This displays nametags for units within %3 m.
+	",F_KEYNAME_NAMETAGS, F_KEY_NAMETAGS,F_DIST_NAMETAGS];
 
-If you do not have an key bound for %2 this will be 'T' by default. To bind the toggle to a different key bind your %2 key and click
-<execute expression=""
-F_ACTIONKEY_NAMETAGS = (actionKeys F_KEY_NAMETAGS) select 0;
-F_KEYNAME_NAMETAGS = actionKeysNames F_KEY_NAMETAGS;
-if (isNil 'F_ACTIONKEY_NAMETAGS') then {F_ACTIONKEY_NAMETAGS = 20; F_KEYNAME_NAMETAGS = 'T';};
-hintsilent 'Team switch key rebound!';
-"">here</execute>.
-",F_KEYNAME_NAMETAGS, F_KEY_NAMETAGS,F_DIST_NAMETAGS];
+	_bstr = _bstr + "<br/><br/><font size='18'>DISPLAY RADIUS</font><br/>Nametags can be displayed for only the targeted unit or in a 360° radius. To toggle this feature <execute expression=""
+		if (f_cursortarget_nametags) then [{hintsilent 'Full radius display activated!';f_cursortarget_nametags= false},{f_cursortarget_nametags = true;hintsilent 'Cursor display activated!'}];""
+		>click here</execute>.";
 
-if (F_SHOWGROUP_NAMETAGS) then {
-_bstr = _bstr + "<br/><br/>GROUP NAMES<br/>Nametags display the unit's group name. To toggle this feature click <execute expression=""
-if (F_SHOWGROUP_NAMETAGS) then {hintsilent 'Group display deactivated!';F_SHOWGROUP_NAMETAGS= false} else {F_SHOWGROUP_NAMETAGS = true;hintsilent 'Group display activated!'};""
->here</execute>."
-};
+	_bstr = _bstr + "<br/><br/><font size='18'>GROUP NAMES</font><br/>Nametags can show group name's next to friendly units who are not in your own group. To toggle this feature <execute expression=""
+	if (F_SHOWGROUP_NAMETAGS) then [{hintsilent 'Group display deactivated!';F_SHOWGROUP_NAMETAGS= false},{F_SHOWGROUP_NAMETAGS = true;hintsilent 'Group display activated!'}];""
+	>click here</execute>.";
 
-if (F_SHOWDISTANCE_NAMETAGS) then {
-_bstr = _bstr + "<br/><br/>DISTANCE<br/>Nametags display the unit's relative distance to you. To toggle this feature click <execute expression=""
-if (F_SHOWDISTANCE_NAMETAGS) then {hintsilent 'Distance display deactivated!';F_SHOWDISTANCE_NAMETAGS= false} else {F_SHOWDISTANCE_NAMETAGS = true;hintsilent 'Distance display activated!'};""
->here</execute>."
-};
+	_bstr = _bstr + "<br/><br/><font size='18'>DISTANCE</font><br/>Nametags can display the unit's relative distance to yourself. To toggle this feature <execute expression=""
+	if (F_SHOWDISTANCE_NAMETAGS) then [{hintsilent 'Distance display deactivated!';F_SHOWDISTANCE_NAMETAGS= false},{F_SHOWDISTANCE_NAMETAGS = true;hintsilent 'Distance display activated!'}];""
+	>click here</execute>.";
 
-if (F_SHOWVEHICLE_NAMETAGS) then {
-_bstr = _bstr + "<br/><br/>VEHICLE TYPES<br/>Nametags display the vehicle type of any mounted units. To toggle this feature click <execute expression=""
-if (F_SHOWVEHICLE_NAMETAGS) then {hintsilent 'Vehicle type display deactivated!';F_SHOWVEHICLE_NAMETAGS= false} else {F_SHOWVEHICLE_NAMETAGS = true;hintsilent 'Vehicle type display activated!'};""
->here</execute>."
-};
+	_bstr = _bstr + "<br/><br/><font size='18'>VEHICLE TYPES</font><br/>Nametags can display the vehicle type under the driver's name. To toggle this feature <execute expression=""
+	if (F_SHOWVEHICLE_NAMETAGS) then [{hintsilent 'Vehicle type display deactivated!';F_SHOWVEHICLE_NAMETAGS= false},{F_SHOWVEHICLE_NAMETAGS = true;hintsilent 'Vehicle type display activated!'}];""
+	>click here</execute>.";
 
-player createDiaryRecord ["Diary", ["NameTags",_bstr]];
+	player createDiaryRecord ["Diary", ["F3 NameTags",_bstr]];
 
-// NOTIFY PLAYER ABOUT NAMETAGS VIA HINT
-sleep 5;
-hintsilent format ["Press %1 to toggle name tags", F_KEYNAME_NAMETAGS ];
+	// NOTIFY PLAYER ABOUT NAMETAGS VIA HINT
+	sleep 5;
+	hintsilent format ["Press %1 to toggle name tags", F_KEYNAME_NAMETAGS];
 };
 
 // ====================================================================================
@@ -113,6 +108,8 @@ hintsilent format ["Press %1 to toggle name tags", F_KEYNAME_NAMETAGS ];
 sleep 0.1;
 
 waitUntil {!isNull (findDisplay 46)}; // Make sure the display we need is initialized
+
+F_DRAW_NAMETAGS = true; // Enable nametags from the start
 
 (findDisplay 46) displayAddEventHandler   ["keyup", "_this call F_KEYUP_NAMETAG"];
 (findDisplay 46) displayAddEventHandler   ["keydown", "_this call F_KEYDOWN_NAMETAG"];
@@ -128,19 +125,32 @@ addMissionEventHandler ["Draw3D", {
 	private ["_ents","_veh","_color","_inc","_suffix","_pos","_angle"];
 
 	// Collect all entities in the relevant distance
-	_ents = (position player) nearEntities [["CAManBase","LandVehicle","Helicopter","Plane","Ship_F"], F_DIST_NAMETAGS];
+
+	_ents =[];
+
+		if (f_cursortarget_nametags) then {
+			if ((player distance cursorTarget) <= F_DIST_NAMETAGS) then {_ents = [cursortarget]};
+		} else {
+			_ents = (position player) nearEntities [["CAManBase","LandVehicle","Helicopter","Plane","Ship_F"], F_DIST_NAMETAGS];
+		};
 
 		// Start looping through all entities
 		{
-			// Only display units of players side
-			if(side _x == side player && _x != player && !(player iskindof "VirtualMan_F")) then
+			// Filter entities
+			if (
+				// Only for the player's side
+				side _x == side player &&
+				// Only other players & no virtual units
+				{_x != player && !(player iskindof "VirtualMan_F")}
+				)
+			then
 			{
 
 				// If the entity is Infantry
-				if(typeof _x iskindof "Man") then
+				if((typeof _x) iskindof "Man") then
 				{
-						_pos = visiblePosition _x;
-						[_x,_pos] call f_fnc_drawNameTag;
+					_pos = visiblePosition _x;
+					[_x,_pos] call f_fnc_drawNameTag;
 				}
 
 				// Else (if it's a vehicle)
@@ -198,7 +208,9 @@ addMissionEventHandler ["Draw3D", {
 							}
 							else
 							{
-								[_x,_pos,_suffix] call f_fnc_drawNameTag;
+								if (group _x == group player) then {
+									[_x,_pos,_suffix] call f_fnc_drawNameTag;
+								};
 							};
 						}
 						else
