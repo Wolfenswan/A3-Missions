@@ -61,7 +61,7 @@ _debug = false; if !(isNil "ws_debug") then {_debug = ws_debug};
 _count = count _this;
 
 _group = _this select 0;
-_pos = (_this select 1) call ws_fnc_getEPos;;
+_pos = (_this select 1) call ws_fnc_getEPos;
 _radius = _this select 2;
 _guns = true;				//Man statics?
 _garrison = true;			//Garrison military structures? - defined in _milarray
