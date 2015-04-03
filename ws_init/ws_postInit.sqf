@@ -42,7 +42,7 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 		private ["_ran","_grp"];
 		_ran = 2 + round random 2;
 		_grp = [_x,west,_ran,[["B_G_Soldier_lite_F","B_G_Soldier_F"],["B_G_Soldier_lite_F","B_G_Soldier_F","B_G_Soldier_F"]]] call ws_fnc_createGroup;
-		[_grp select 0,"SAFE","YELLOW"] call ws_fnc_setAIMode;
+		[_grp select 0,"SAFE","YELLOW","DIAMOND"] call ws_fnc_setAIMode;
 		[_grp select 0,_x,["hold",5]] call ws_fnc_addWaypoint;
 	} forEach [box,box_1,box_2,box_3,box_4,box_5];
 };
