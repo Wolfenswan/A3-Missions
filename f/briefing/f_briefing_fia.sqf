@@ -71,7 +71,7 @@ An ex-comrade has leaked information to AAF about the location of our equipment 
 <br/><br/>
 <font size='18'>ENEMY FORCES</font>
 <br/>
-AAF force of unknown size, no armed vehicles or armor.
+AAF and/or CSAT force of unknown size, no armed vehicles or armor.
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>

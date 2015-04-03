@@ -34,7 +34,7 @@ Satchel charges must be used to destroy caches. Fireteam leaders, assistant auto
 TRANSPORT
 <br/>
 3x Taru (bech) 		- carries 8 + 2 spare crew seats</br>
-3x Taru (transport) - carries 14 + 1 spare crew seat</br>
+3x Taru (transport) - carries 16 + 1 spare crew seat</br>
 "]];
 
 // ====================================================================================
