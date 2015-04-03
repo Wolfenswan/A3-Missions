@@ -31,23 +31,28 @@ if(f_cam_isJIP) then
   ["F_ScreenSetup"] call BIS_fnc_blackIn;
 };
 
-// Create a Virtual Agent to act as our player to make sure we get to keep Draw3D
+// Create a Virtual Unit to act as our player to make sure we get to keep Draw3D
 if(isNil "f_cam_VirtualCreated") then
 {
+  // Get a position in which to create the virtual unit
+  _pos = if !(isNull _oldUnit) then [{getPos _oldUnit},{getPos allUnits select 0}];
+
   createCenter sideLogic;
   _newGrp = createGroup sideLogic;
-  _newUnit = _newGrp createUnit ["VirtualCurator_F", [0,0,5], [], 0, "FORM"];
+  _newGrp setvariable ["f_cacheExcl", true,true];
+  _newUnit = _newGrp createUnit ["VirtualCurator_F", [_pos select 0,_pos select 1,5], [], 0, "NONE"];
   _newUnit allowDamage false;
-  _newUnit hideObject true;
-  _newUnit enableSimulation false;
-  _newUnit setpos [0,0,5];
+  _newUnit hideObjectGlobal true;
+  _newUnit enableSimulationGlobal false;
+  _newUnit setpos [_pos select 0,_pos select 1,5];
   selectPlayer _newUnit;
   waituntil{player == _newUnit};
   deleteVehicle _unit;
   f_cam_VirtualCreated = true;
 };
 
-if(isNull _oldUnit ) then {if(count playableUnits > 0) then {_oldUnit = (playableUnits select 0)} else {_oldUnit = (allUnits select 0)};};
+// If player is JIP select a playable unit to spectate, if no players a left get a random unit
+if(isNull _oldUnit ) then {if(count playableUnits > 0) then [{_oldUnit = (playableUnits select 0)},{_oldUnit = (allUnits select 0)}];};
 
 // ====================================================================================
 
