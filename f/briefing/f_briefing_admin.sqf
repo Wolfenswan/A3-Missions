@@ -17,9 +17,7 @@ _briefing ="
 <font size='18'>ADMIN SECTION</font><br/>
 This briefing section can only be seen by the current admin.
 <br/><br/>
-HALO:<br/>
-Click <execute expression=""[[],'ws_fnc_HALO',true] spawn BIS_fnc_MP;"">here</execute> to enable HALO option for AAF.<br/>
-<br/>
+
 ";
 
 // ====================================================================================
@@ -32,6 +30,11 @@ if (_customText != "") then {
 	<br/>
 	<font size='18'>MISSION-MAKER NOTES</font><br/>
 	Notes and messages from the mission-maker:<br/>
+	CSAT-AAF COMMUNICATION:<br/>
+	How CSAT and AAF communicate can be dictated by the host. Suggested is a short coordination phase during briefing but no contact otherwise.
+	ENABLE HALO:<br/>
+Click <execute expression=""[[],'ws_fnc_HALO',true] spawn BIS_fnc_MP;"">here</execute> to enable HALO option for AAF.<br/>
+<br/>
 	";
 
 	_briefing = _briefing + _customText + "<br/><br/>";
@@ -136,6 +139,6 @@ if (isNull (getAssignedCuratorLogic player)) then {hintsilent 'Assign ZEUS first
 
 // CREATE DIARY ENTRY
 
-player createDiaryRecord ["diary", ["Admin",_briefing]];
+player createDiaryRecord ["diary", ["F3 Admin Menu",_briefing]];
 
 // ====================================================================================
