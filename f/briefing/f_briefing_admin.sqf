@@ -5,7 +5,11 @@
 // ADD MISSION MAKER NOTES SECTIONS
 // All text added below will only be visible to the current admin
 
-_customText = "";
+_customText = "CSAT-AAF COMMUNICATION:<br/>
+	How CSAT and AAF communicate can be dictated by the host. Suggested is a short coordination phase during briefing but no contact otherwise.
+	ENABLE HALO:<br/>
+Click <execute expression=""[[],'ws_fnc_HALO',true] spawn BIS_fnc_MP;"">here</execute> to enable HALO option for AAF.<br/>
+<br/>";
 
 // ====================================================================================
 
@@ -17,7 +21,6 @@ _briefing ="
 <font size='18'>ADMIN SECTION</font><br/>
 This briefing section can only be seen by the current admin.
 <br/><br/>
-
 ";
 
 // ====================================================================================
@@ -26,19 +29,15 @@ This briefing section can only be seen by the current admin.
 // This section displays notes made by the mission-maker for the ADMIN
 
 if (_customText != "") then {
-	_briefing ="
+	_briefing = _briefing + "
 	<br/>
 	<font size='18'>MISSION-MAKER NOTES</font><br/>
 	Notes and messages from the mission-maker:<br/>
-	CSAT-AAF COMMUNICATION:<br/>
-	How CSAT and AAF communicate can be dictated by the host. Suggested is a short coordination phase during briefing but no contact otherwise.
-	ENABLE HALO:<br/>
-Click <execute expression=""[[],'ws_fnc_HALO',true] spawn BIS_fnc_MP;"">here</execute> to enable HALO option for AAF.<br/>
-<br/>
 	";
 
 	_briefing = _briefing + _customText + "<br/><br/>";
 };
+
 
 // ====================================================================================
 

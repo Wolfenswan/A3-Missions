@@ -117,7 +117,8 @@ f_var_garbageCollectorDistance = 450; // The minimal distance to a player for th
 [BLUFOR,100,3] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
-// [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+_csatCas = "ws_param__csatCas" call bis_fnc_getParamValue;
+[OPFOR,_csatCas,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > AAF
 _affCas = "ws_param_aafCas" call bis_fnc_getParamValue;
