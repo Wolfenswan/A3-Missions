@@ -8,7 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-2-2</i>
 
 <b>Mission description</b><br/>
-Cache-hunt adversarial, FIA defend against AAF. Location is fully randomized, using most of Altis. Parameters govern number of caches and number of caches to destroy. A2 original & concept by harakka.
+Cache-hunt adversarial, FIA defend against AAF (motorized) and/or CSAT (airborne). Location is fully randomized, using most of Altis. Parameters govern number of caches and number of caches to destroy. A2 original & concept by harakka.
 
 <b>Contact</b><br/>
 folkarps.com<br/>
