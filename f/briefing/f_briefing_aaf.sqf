@@ -46,9 +46,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 <font size='18'>COMMANDER'S INTENT</font>
 <br/>
-Destroy the marked FIA equipment caches by using satchels, with minimum casualties to your squad.<br/><br/>
-HALO<br/>
-Command might be creative and try for something different today. If the HALO option is available, all group leaders can deploy themselves and their fireteam by using the 'HALO'-action and select their destination on the map. They will spawn in about 600m height and have to manually open their parachute or become green pancakes otherwise. It is only available for 90 seconds.
+Destroy the marked FIA equipment caches by using satchels, with minimum casualties to your squad.
 "]];
 
 // ====================================================================================
@@ -78,7 +76,7 @@ FIA guerrillas, number unknown. No armed vehicles or armor. The caches are very 
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>
-None.
+CSAT might be deploying airborne units in support.
 "]];
 
 // ====================================================================================

@@ -21,7 +21,7 @@ _halo = if (isNil "ws_param_halo") then {"ws_param_halo" call bis_fnc_getParamVa
 if (_halo == 1 && side player == east) then {
 
 f_var_mapClickTeleport_Uses = 1;					// How often the teleport action can be used. 0 = infinite usage.
-f_var_mapClickTeleport_TimeLimit = 90; 			// If higher than 0 the action will be removed after the given time.
+f_var_mapClickTeleport_TimeLimit = 0; 			// If higher than 0 the action will be removed after the given time.
 f_var_mapClickTeleport_GroupTeleport = true; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
 f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
 f_var_mapClickTeleport_Height = 600;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units

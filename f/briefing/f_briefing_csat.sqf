@@ -11,8 +11,11 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS (folkarps.com)<br/>
-Contact: wolfenswanarps@gmail.com
+Made by harakka and wolfenswan with love for Folk ARPS. Special thanks to Head for scripting help. Thanks to all FA session players for suggestions and bugreports.
+<br/>
+<br/>
+Uses SHK_POS by Shuko<br/>
+Uses Wolfenswan's function library: http://www.folkarps.com/forum/viewtopic.php?f=48&t=785
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -24,7 +27,13 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
+DESTROYING CACHES
+<br/>
+Satchel charges must be used to destroy caches. Fireteam leaders, assistant automatic riflemen and riflemen carry a satchel each.
+<br/><br/>
+TRANSPORT
+<br/>
+3x Taru (bech) - carries 8 + 2 spare crew seats</br>
 "]];
 
 // ====================================================================================
@@ -36,19 +45,9 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 <font size='18'>COMMANDER'S INTENT</font>
 <br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-<font size='18'>MOVEMENT PLAN</font>
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-<font size='18'>FIRE SUPPORT PLAN</font>
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-<font size='18'>SPECIAL TASKS</font>
-<br/>
-*** Insert instructions for specific units here. ***
+Destroy the marked FIA equipment caches by using satchels, with minimum casualties to your squad.<br/><br/>
+HALO<br/>
+Command might be creative and try for something different today. If the HALO option is available, all group leaders can deploy themselves and their fireteam by using the 'HALO'-action and select their destination on the map. They will spawn in about 600m height and have to manually open their parachute or become green pancakes otherwise. It is only available for 90 seconds.
 "]];
 
 // ====================================================================================
@@ -56,10 +55,11 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 // NOTES: MISSION
 // The code below creates the mission sub-section of notes.
 
-_mis = player createDiaryRecord ["diary", ["Mission","
-<br/>
-*** Insert the mission here. ***
-"]];
+_mis = player createDiaryRecord ["diary", ["Mission",format["
+OBJECTIVES<br/>
+Destroy FIA weapon caches. Mission is successful once either %1 out of %2 caches are destroyed, or all FIA units have been eliminated.<br/>
+If AAF take %3 percent casualties, the mission will be considered a failure.
+",ha_param_cacheVictoryNum,ha_param_cacheNum,ws_param_aafCas]]];
 
 // ====================================================================================
 
@@ -68,15 +68,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+We are supporting AAF in counter-insurgency operations around Altis. Intel has indicated locations of several FIA guerrilla equipment caches.
+However FIA is about to relocate the caches, and we must move in swiftly to intercept them and destroy them.
 <br/><br/>
 <font size='18'>ENEMY FORCES</font>
 <br/>
-*** Insert information about enemy forces here.***
+FIA guerrillas, number unknown. No armed vehicles or armor. The caches are very likely to be guarded. The enemy can communicate your location amongst themselves if you are spotted.
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>
-*** Insert information about friendly forces here.***
+AAF might deploy their own motorized troops.
 "]];
 
 // ====================================================================================
