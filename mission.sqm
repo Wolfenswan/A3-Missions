@@ -5,26 +5,21 @@ class Mission
 	{
 		"a3_characters_f_beta",
 		"A3_Characters_F_INDEP",
-		"A3_Air_F_Beta_Heli_Transport_01",
 		"A3_Characters_F_Civil",
-		"A3_Characters_F_BLUFOR",
-		"A3_Air_F_Beta_Heli_Attack_01",
-		"A3_Armor_F_AMV",
 		"A3_Boat_F_Boat_Transport_01",
 		"a3_characters_f_gamma",
-		"A3_Armor_F_Slammer",
 		"a3_map_altis",
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_MRAP_03",
-		"A3_Soft_F_HEMTT",
-		"A3_Soft_F_MRAP_01",
 		"a3_soft_f_gamma_offroad",
 		"A3_Soft_F_Truck",
 		"a3_characters_f",
 		"a3_uav_f_characters_f_gamma",
 		"A3_Characters_F_Bootcamp",
 		"A3_Modules_F",
-		"a3_soft_f_offroad_01"
+		"a3_soft_f_offroad_01",
+		"A3_Characters_F_OPFOR",
+		"A3_Air_F_Heli_Heli_Transport_04"
 	};
 	addOnsAuto[]=
 	{
@@ -33,18 +28,20 @@ class Mission
 		"A3_Characters_F_Gamma",
 		"A3_Characters_F_Civil",
 		"A3_Modules_F",
+		"A3_Characters_F_OPFOR",
 		"A3_Soft_F_TruckHeavy",
 		"A3_Soft_F_MRAP_03",
 		"A3_Soft_F_Truck",
 		"A3_Soft_F_Gamma_Offroad",
 		"a3_soft_f_offroad_01",
+		"A3_Air_F_Heli_Heli_Transport_04",
 		"a3_map_altis"
 	};
 	randomSeed=11823142;
 	class Intel
 	{
 		briefingName="fa3_a96_cratesistance_v29";
-		overviewText="AAF seeks and destroys FIA-defended caches. Fully randomized.";
+		overviewText="AAF/CSAT seek and destroy FIA-defended caches. Fully randomized. AAF are motorized, CSAT are airborne.";
 		resistanceWest=0;
 		startWeather=0.84999996;
 		startWind=0;
@@ -65,7 +62,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=29;
+		items=42;
 		class Item0
 		{
 			side="GUER";
@@ -1489,25 +1486,687 @@ class Mission
 				};
 			};
 		};
+		class Item29
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={14760.641,17.91,16706.367};
+					azimut=-227.713;
+					id=95;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					lock="UNLOCKED";
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="UnitCSAT_ASL_SL";
+					init="GrpCSAT_ASL = group this; [""dc"",this] call f_fnc_assignGear;";
+					description="CSAT Alpha Squad Leader";
+				};
+				class Item1
+				{
+					position[]={14757.679,17.91,16705.572};
+					azimut=-227.713;
+					id=96;
+					side="EAST";
+					vehicle="O_medic_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitCSAT_ASL_M";
+					init="GrpCSAT_ASL = group this; [""m"",this] call f_fnc_assignGear;";
+					description="CSAT Alpha Medic";
+				};
+			};
+		};
+		class Item30
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={14748.504,17.91,16717.453};
+					azimut=-227.713;
+					id=97;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					lock="UNLOCKED";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitCSAT_A1_FTL";
+					init="GrpCSAT_A1 = group this; [""ftl"",this] call f_fnc_assignGear;";
+					description="CSAT Alpha 1 Fireteam Leader";
+				};
+				class Item1
+				{
+					position[]={14745.059,17.91,16716.383};
+					azimut=-227.713;
+					id=98;
+					side="EAST";
+					vehicle="O_Soldier_AR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_A1_AR";
+					init="GrpCSAT_A1 = group this; [""ar"",this] call f_fnc_assignGear;";
+					description="CSAT Alpha 1 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={14742.785,17.91,16713.994};
+					azimut=-227.713;
+					id=99;
+					side="EAST";
+					vehicle="O_Soldier_AAR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_A1_AAR";
+					init="GrpCSAT_A1 = group this; [""aar"",this] call f_fnc_assignGear;";
+					description="CSAT Alpha 1 Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={14740.429,17.91,16711.418};
+					azimut=-227.713;
+					id=100;
+					side="EAST";
+					vehicle="O_Soldier_LAT_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_A1_AT";
+					init="GrpCSAT_A1 = group this; [""r"",this] call f_fnc_assignGear;";
+					description="CSAT Alpha 1 Rifleman (AT)";
+				};
+			};
+		};
+		class Item31
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={14736.67,17.91,16727.547};
+					azimut=-227.713;
+					id=101;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					lock="UNLOCKED";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitCSAT_A2_FTL";
+					init="GrpCSAT_A2 = group this; [""ftl"",this] call f_fnc_assignGear;";
+					description="CSAT Alpha 2 Fireteam Leader";
+				};
+				class Item1
+				{
+					position[]={14733.14,17.91,16726.814};
+					azimut=-227.713;
+					id=102;
+					side="EAST";
+					vehicle="O_Soldier_AR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_A2_AR";
+					init="GrpCSAT_A2 = group this; [""ar"",this] call f_fnc_assignGear;";
+					description="CSAT Alpha 2 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={14730.884,17.91,16724.549};
+					azimut=-227.713;
+					id=103;
+					side="EAST";
+					vehicle="O_Soldier_AAR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_A2_AAR";
+					init="GrpCSAT_A2 = group this; [""aar"",this] call f_fnc_assignGear;";
+					description="CSAT Alpha 2 Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={14728.469,17.91,16721.928};
+					azimut=-227.713;
+					id=104;
+					side="EAST";
+					vehicle="O_Soldier_LAT_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_A2_AT";
+					init="GrpCSAT_A2 = group this; [""r"",this] call f_fnc_assignGear;";
+					description="CSAT Alpha 2 Rifleman (AT)";
+				};
+			};
+		};
+		class Item32
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={14742.933,17.91,16686.393};
+					azimut=-227.713;
+					id=105;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					lock="UNLOCKED";
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="UnitCSAT_BSL_SL";
+					init="GrpCSAT_BSL = group this; [""dc"",this] call f_fnc_assignGear;";
+					description="CSAT Bravo Squad Leader";
+				};
+				class Item1
+				{
+					position[]={14739.672,17.91,16685.586};
+					azimut=-227.713;
+					id=106;
+					side="EAST";
+					vehicle="O_medic_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitCSAT_BSL_M";
+					init="GrpCSAT_BSL = group this; [""m"",this] call f_fnc_assignGear;";
+					description="CSAT Bravo Medic";
+				};
+			};
+		};
+		class Item33
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={14730.283,17.91,16697.752};
+					azimut=-227.713;
+					id=107;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					lock="UNLOCKED";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitCSAT_B1_FTL";
+					init="GrpCSAT_B1 = group this; [""ftl"",this] call f_fnc_assignGear;";
+					description="CSAT Bravo 1 Fireteam Leader";
+				};
+				class Item1
+				{
+					position[]={14726.98,17.91,16696.363};
+					azimut=-227.713;
+					id=108;
+					side="EAST";
+					vehicle="O_Soldier_AR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_B1_AR";
+					init="GrpCSAT_B1 = group this; [""ar"",this] call f_fnc_assignGear;";
+					description="CSAT Bravo 1 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={14724.709,17.91,16693.891};
+					azimut=-227.713;
+					id=109;
+					side="EAST";
+					vehicle="O_Soldier_AAR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_B1_AAR";
+					init="GrpCSAT_B1 = group this; [""aar"",this] call f_fnc_assignGear;";
+					description="CSAT Bravo 1 Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={14722.38,17.91,16691.305};
+					azimut=-227.713;
+					id=110;
+					side="EAST";
+					vehicle="O_Soldier_LAT_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_B1_AT";
+					init="GrpCSAT_B1 = group this; [""r"",this] call f_fnc_assignGear;";
+					description="CSAT Bravo 1 Rifleman (AT)";
+				};
+			};
+		};
+		class Item34
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={14718.904,17.91,16708.387};
+					azimut=-227.713;
+					id=111;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					lock="UNLOCKED";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitCSAT_B2_FTL";
+					init="GrpCSAT_B2 = group this; [""ftl"",this] call f_fnc_assignGear;";
+					description="CSAT Bravo 2 Fireteam Leader";
+				};
+				class Item1
+				{
+					position[]={14715.601,17.91,16707.127};
+					azimut=-227.713;
+					id=112;
+					side="EAST";
+					vehicle="O_Soldier_AR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_B2_AR";
+					init="GrpCSAT_B2 = group this; [""ar"",this] call f_fnc_assignGear;";
+					description="CSAT Bravo 2 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={14713.299,17.91,16704.641};
+					azimut=-227.713;
+					id=113;
+					side="EAST";
+					vehicle="O_Soldier_AAR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_B2_AAR";
+					init="GrpCSAT_B2 = group this; [""aar"",this] call f_fnc_assignGear;";
+					description="CSAT Bravo 2 Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={14710.862,17.91,16701.818};
+					azimut=-227.713;
+					id=114;
+					side="EAST";
+					vehicle="O_Soldier_LAT_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_B2_AT";
+					init="GrpCSAT_B2 = group this; [""r"",this] call f_fnc_assignGear;";
+					description="CSAT Bravo 2 Rifleman (AT)";
+				};
+			};
+		};
+		class Item35
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={14725.712,17.91,16667.744};
+					azimut=-227.713;
+					id=115;
+					side="EAST";
+					vehicle="O_Soldier_SL_F";
+					player="PLAY CDG";
+					leader=1;
+					lock="UNLOCKED";
+					rank="SERGEANT";
+					skill=0.60000002;
+					text="UnitCSAT_CSL_SL";
+					init="GrpCSAT_CSL = group this; [""dc"",this] call f_fnc_assignGear;";
+					description="CSAT Charlie Squad Leader";
+				};
+				class Item1
+				{
+					position[]={14722.864,17.91,16666.99};
+					azimut=-227.713;
+					id=116;
+					side="EAST";
+					vehicle="O_medic_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitCSAT_CSL_M";
+					init="GrpCSAT_CSL = group this; [""m"",this] call f_fnc_assignGear;";
+					description="CSAT Charlie Medic";
+				};
+			};
+		};
+		class Item36
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={14713.4,17.91,16679.379};
+					azimut=-227.713;
+					id=117;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					lock="UNLOCKED";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitCSAT_C1_FTL";
+					init="GrpCSAT_C1 = group this; [""ftl"",this] call f_fnc_assignGear;";
+					description="CSAT Charlie 1 Fireteam Leader";
+				};
+				class Item1
+				{
+					position[]={14710.246,17.91,16678.309};
+					azimut=-227.713;
+					id=118;
+					side="EAST";
+					vehicle="O_Soldier_AR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_C1_AR";
+					init="GrpCSAT_C1 = group this; [""ar"",this] call f_fnc_assignGear;";
+					description="CSAT Charlie 1 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={14707.913,17.91,16675.762};
+					azimut=-227.713;
+					id=119;
+					side="EAST";
+					vehicle="O_Soldier_AAR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_C1_AAR";
+					init="GrpCSAT_C1 = group this; [""aar"",this] call f_fnc_assignGear;";
+					description="CSAT Charlie 1 Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={14705.465,17.91,16673.289};
+					azimut=-227.713;
+					id=120;
+					side="EAST";
+					vehicle="O_Soldier_LAT_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_C1_AT";
+					init="GrpCSAT_C1 = group this; [""r"",this] call f_fnc_assignGear;";
+					description="CSAT Charlie 1 Rifleman (AT)";
+				};
+			};
+		};
+		class Item37
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=4;
+				class Item0
+				{
+					position[]={14702.31,17.91,16689.594};
+					azimut=-227.713;
+					id=121;
+					side="EAST";
+					vehicle="O_Soldier_TL_F";
+					player="PLAY CDG";
+					leader=1;
+					lock="UNLOCKED";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitCSAT_C2_FTL";
+					init="GrpCSAT_C2 = group this; [""ftl"",this] call f_fnc_assignGear;";
+					description="CSAT Charlie 2 Fireteam Leader";
+				};
+				class Item1
+				{
+					position[]={14699.152,17.91,16688.539};
+					azimut=-227.713;
+					id=122;
+					side="EAST";
+					vehicle="O_Soldier_AR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_C2_AR";
+					init="GrpCSAT_C2 = group this; [""ar"",this] call f_fnc_assignGear;";
+					description="CSAT Charlie 2 Automatic Rifleman";
+				};
+				class Item2
+				{
+					position[]={14696.813,17.91,16686.121};
+					azimut=-227.713;
+					id=123;
+					side="EAST";
+					vehicle="O_Soldier_AAR_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_C2_AAR";
+					init="GrpCSAT_C2 = group this; [""aar"",this] call f_fnc_assignGear;";
+					description="CSAT Charlie 2 Assistant Automatic Rifleman";
+				};
+				class Item3
+				{
+					position[]={14694.277,17.91,16683.6};
+					azimut=-227.713;
+					id=124;
+					side="EAST";
+					vehicle="O_Soldier_LAT_F";
+					player="PLAY CDG";
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="UnitCSAT_C2_AT";
+					init="GrpCSAT_C2 = group this; [""r"",this] call f_fnc_assignGear;";
+					description="CSAT Charlie 2 Rifleman (AT)";
+				};
+			};
+		};
+		class Item38
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={14711.789,17.91,16750.146};
+					azimut=-227.713;
+					id=125;
+					side="EAST";
+					vehicle="O_helipilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.60000002;
+					text="UnitCSAT_TH1_P";
+					init="GrpCSAT_TH1 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehCSAT_TH1;";
+					description="CSAT Transport Helo 1 Pilot";
+				};
+				class Item1
+				{
+					position[]={14709.07,17.91,16750.008};
+					azimut=-227.713;
+					id=126;
+					side="EAST";
+					vehicle="O_soldier_repair_F";
+					player="PLAY CDG";
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					text="UnitCSAT_TH1_CP";
+					init="GrpCSAT_TH1 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehCSAT_TH1,[0]];";
+					description="CSAT Transport Helo 1 Co-Pilot (Repair)";
+				};
+			};
+		};
+		class Item39
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={14691.92,17.91,16723.252};
+					azimut=-227.713;
+					id=127;
+					side="EAST";
+					vehicle="O_helipilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.60000002;
+					text="UnitCSAT_TH2_P";
+					init="GrpCSAT_TH2 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehCSAT_TH2;";
+					description="CSAT Transport Helo 2 Pilot";
+				};
+				class Item1
+				{
+					position[]={14689.211,17.91,16723.1};
+					azimut=-227.713;
+					id=128;
+					side="EAST";
+					vehicle="O_soldier_repair_F";
+					player="PLAY CDG";
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					text="UnitCSAT_TH2_CP";
+					init="GrpCSAT_TH2 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehCSAT_TH2,[0]];";
+					description="CSAT Transport Helo 2 Co-Pilot (Repair)";
+				};
+			};
+		};
+		class Item40
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={14671.577,17.91,16713.715};
+					azimut=129.58501;
+					id=129;
+					side="EAST";
+					vehicle="O_helipilot_F";
+					player="PLAY CDG";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.60000002;
+					text="UnitCSAT_TH3_P";
+					init="GrpCSAT_TH3 = group this; [""pp"",this] call f_fnc_assignGear; this moveInDriver VehCSAT_TH3;";
+					description="CSAT Transport Helo 3 Pilot";
+				};
+				class Item1
+				{
+					position[]={14668.806,17.91,16713.199};
+					azimut=129.58501;
+					id=130;
+					side="EAST";
+					vehicle="O_soldier_repair_F";
+					player="PLAY CDG";
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					text="UnitCSAT_TH3_CP";
+					init="GrpCSAT_TH3 = group this; [""pcc"",this] call f_fnc_assignGear; this moveInTurret [VehCSAT_TH3,[0]];";
+					description="CSAT Transport Helo 3 Co-Pilot (Repair)";
+				};
+			};
+		};
+		class Item41
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					position[]={14755.522,17.91,16675.873};
+					azimut=-53.8941;
+					id=131;
+					side="EAST";
+					vehicle="O_officer_F";
+					player="PLAY CDG";
+					leader=1;
+					lock="UNLOCKED";
+					rank="LIEUTENANT";
+					skill=0.60000002;
+					text="UnitCSAT_CO";
+					init="GrpCSAT_CO = group this; [""co"",this] call f_fnc_assignGear;";
+					description="CSAT Commander";
+				};
+				class Item1
+				{
+					position[]={14758.88,17.91,16676.674};
+					azimut=-53.8941;
+					id=132;
+					side="EAST";
+					vehicle="O_medic_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="UnitCSAT_CO_M";
+					init="GrpCSAT_CO = group this; [""m"",this] call f_fnc_assignGear;";
+					description="CSAT Medic";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=11;
+		items=14;
 		class Item0
 		{
-			position[]={18417.848,17.104507,8512.6621};
-			id=95;
+			position[]={18419.543,17.242584,8513.6904};
+			id=133;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
 			leader=1;
 			skill=0.60000002;
 			text="VehAAF_Truck1";
-			init="clearItemCargoGlobal this;clearWeaponCargoGlobal this;clearMagazineCargoGlobal this;";
+			init="clearItemCargoGlobal this;clearWeaponCargoGlobal this;clearMagazineCargoGlobal this; this animate [""HideTurret"",1];";
 		};
 		class Item1
 		{
 			position[]={18429.232,17.218687,8512.9424};
-			id=96;
+			id=134;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
 			leader=1;
@@ -1518,7 +2177,7 @@ class Mission
 		class Item2
 		{
 			position[]={18440.391,18.193905,8513.123};
-			id=97;
+			id=135;
 			side="EMPTY";
 			vehicle="I_Truck_02_transport_F";
 			leader=1;
@@ -1529,7 +2188,7 @@ class Mission
 		class Item3
 		{
 			position[]={18424.447,17.788248,8527.4893};
-			id=98;
+			id=136;
 			side="EMPTY";
 			vehicle="I_MRAP_03_F";
 			leader=1;
@@ -1540,7 +2199,7 @@ class Mission
 		class Item4
 		{
 			position[]={21241.035,43.67001,9026.7803};
-			id=99;
+			id=137;
 			side="EMPTY";
 			vehicle="B_G_Van_01_transport_F";
 			leader=1;
@@ -1550,7 +2209,7 @@ class Mission
 		class Item5
 		{
 			position[]={21262.01,41.26067,9025.2275};
-			id=100;
+			id=138;
 			side="EMPTY";
 			vehicle="B_G_Van_01_transport_F";
 			leader=1;
@@ -1560,7 +2219,7 @@ class Mission
 		class Item6
 		{
 			position[]={21277.693,39.459156,9024.4102};
-			id=101;
+			id=139;
 			side="EMPTY";
 			vehicle="B_G_Van_01_transport_F";
 			leader=1;
@@ -1570,7 +2229,7 @@ class Mission
 		class Item7
 		{
 			position[]={21229.537,44.457344,9038.1787};
-			id=102;
+			id=140;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			leader=1;
@@ -1580,7 +2239,7 @@ class Mission
 		class Item8
 		{
 			position[]={21242.059,42.759705,9040.4707};
-			id=103;
+			id=141;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			leader=1;
@@ -1590,7 +2249,7 @@ class Mission
 		class Item9
 		{
 			position[]={21262.795,38.506325,9040.002};
-			id=104;
+			id=142;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			leader=1;
@@ -1600,17 +2259,50 @@ class Mission
 		class Item10
 		{
 			position[]={21278.539,37.119278,9036.2275};
-			id=105;
+			id=143;
 			side="EMPTY";
 			vehicle="B_G_Offroad_01_F";
 			leader=1;
 			skill=0.60000002;
 			text="VehFIA_Car4";
 		};
+		class Item11
+		{
+			position[]={14699.907,17.91,16744.088};
+			azimut=-227.713;
+			offsetY=0.5;
+			id=144;
+			side="EMPTY";
+			vehicle="O_Heli_Transport_04_bench_F";
+			skill=0.60000002;
+			text="VehCSAT_TH1";
+		};
+		class Item12
+		{
+			position[]={14683.796,17.91,16730.732};
+			azimut=-227.713;
+			offsetY=0.5;
+			id=145;
+			side="EMPTY";
+			vehicle="O_Heli_Transport_04_bench_F";
+			skill=0.60000002;
+			text="VehCSAT_TH2";
+		};
+		class Item13
+		{
+			position[]={14663.006,17.91,16710.252};
+			azimut=129.58501;
+			offsetY=0.5;
+			id=146;
+			side="EMPTY";
+			vehicle="O_Heli_Transport_04_bench_F";
+			skill=0.60000002;
+			text="VehCSAT_TH3";
+		};
 	};
 	class Markers
 	{
-		items=51;
+		items=17;
 		class Item0
 		{
 			position[]={21261.066,40.375328,9032.0146};
@@ -1637,415 +2329,8 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={6196.3184,43,16211.491};
-			name="mkr_blacklist";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=100;
-			b=200;
-			angle=-90.086098;
-			drawBorder=1;
-		};
-		class Item4
-		{
-			position[]={4023.5449,41.802219,11750.9};
-			name="mkr_blacklist_1";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=500;
-			angle=-120.901;
-			drawBorder=1;
-		};
-		class Item5
-		{
-			position[]={3341.364,0.015283944,13303.396};
-			name="mkr_blacklist_2";
-			markerType="RECTANGLE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=1000;
-			b=700;
-			angle=295.91199;
-			drawBorder=1;
-		};
-		class Item6
-		{
-			position[]={5081.0498,51.713985,11285.053};
-			name="mkr_blacklist_3";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=200;
-			b=300;
-			angle=145.54755;
-			drawBorder=1;
-		};
-		class Item7
-		{
-			position[]={3597.1572,15.547272,10247.714};
-			name="mkr_blacklist_4";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item8
-		{
-			position[]={9157.4795,19.676878,11842.509};
-			name="mkr_blacklist_5";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=500;
-			b=500;
-			drawBorder=1;
-		};
-		class Item9
-		{
-			position[]={10775.762,15.461267,12456.662};
-			name="mkr_blacklist_6";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=500;
-			b=300;
-			angle=-42.891685;
-			drawBorder=1;
-		};
-		class Item10
-		{
-			position[]={11011.858,27.418091,13472.472};
-			name="mkr_blacklist_7";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item11
-		{
-			position[]={11777.686,13.395081,13734.364};
-			name="mkr_blacklist_8";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item12
-		{
-			position[]={12525.655,12.251463,14329.568};
-			name="mkr_blacklist_9";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item13
-		{
-			position[]={12978.481,26.919474,15069.366};
-			name="mkr_blacklist_10";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item14
-		{
-			position[]={12392.399,22.848921,15684.527};
-			name="mkr_blacklist_11";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item15
-		{
-			position[]={11121.81,43.104965,14579.471};
-			name="mkr_blacklist_12";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item16
-		{
-			position[]={9350.1406,118.46451,15905.993};
-			name="mkr_blacklist_13";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=600;
-			b=300;
-			drawBorder=1;
-		};
-		class Item17
-		{
-			position[]={11530.153,22.990721,11674.305};
-			name="mkr_blacklist_14";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=500;
-			b=300;
-			angle=-51.408924;
-			drawBorder=1;
-		};
-		class Item18
-		{
-			position[]={13474.615,12.196255,12014.748};
-			name="mkr_blacklist_15";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=500;
-			b=300;
-			angle=126.63112;
-			drawBorder=1;
-		};
-		class Item19
-		{
-			position[]={14087.504,10.144499,11570.847};
-			name="mkr_blacklist_16";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item20
-		{
-			position[]={7863.5552,1.4557209,7650.7451};
-			name="mkr_blacklist_17";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item21
-		{
-			position[]={14483.549,-0.0068546184,6039.7798};
-			name="mkr_blacklist_18";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item22
-		{
-			position[]={7188.9346,124.47038,16481.113};
-			name="mkr_blacklist_19";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=200;
-			b=200;
-			drawBorder=1;
-		};
-		class Item23
-		{
-			position[]={4928.0972,68.708572,16190.154};
-			name="mkr_blacklist_20";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item24
-		{
-			position[]={14635.3,46.037243,20761.523};
-			name="mkr_blacklist_21";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=100;
-			b=150;
-			angle=89.557396;
-			drawBorder=1;
-		};
-		class Item25
-		{
-			position[]={4593.063,299.7775,21437.141};
-			name="mkr_blacklist_22";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item26
-		{
-			position[]={9792.6084,-0.063781694,23040.865};
-			name="mkr_blacklist_23";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item27
-		{
-			position[]={16823.285,22.292376,12716.26};
-			name="mkr_blacklist_24";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=500;
-			b=500;
-			drawBorder=1;
-		};
-		class Item28
-		{
-			position[]={20796.387,35.950081,6761.2222};
-			name="mkr_blacklist_25";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=150;
-			b=150;
-			drawBorder=1;
-		};
-		class Item29
-		{
-			position[]={21681.51,14.804609,7608.147};
-			name="mkr_blacklist_26";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=150;
-			b=250;
-			angle=-33.125156;
-			drawBorder=1;
-		};
-		class Item30
-		{
-			position[]={20273.201,52.331928,11681.93};
-			name="mkr_blacklist_27";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item31
-		{
-			position[]={19361.863,38.281963,13247.077};
-			name="mkr_blacklist_28";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=200;
-			b=150;
-			angle=-31.2999;
-			drawBorder=1;
-		};
-		class Item32
-		{
-			position[]={18129.375,24.826122,15248.272};
-			name="mkr_blacklist_29";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item33
-		{
-			position[]={14478.159,19.338291,17722.072};
-			name="mkr_blacklist_30";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item34
-		{
-			position[]={14066.56,27.45019,18686.201};
-			name="mkr_blacklist_31";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item35
-		{
-			position[]={16278.915,18.668852,17147.178};
-			name="mkr_blacklist_32";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=500;
-			b=300;
-			angle=-42.394329;
-			drawBorder=1;
-		};
-		class Item36
-		{
 			position[]={14725.645,17.91,16550.061};
-			name="mkr_blacklist_33";
+			name="mkr_blacklist";
 			markerType="RECTANGLE";
 			type="Empty";
 			colorName="ColorRed";
@@ -2055,158 +2340,35 @@ class Mission
 			angle=-48.752399;
 			drawBorder=1;
 		};
-		class Item37
-		{
-			position[]={21404.121,20.326239,16379.656};
-			name="mkr_blacklist_34";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item38
-		{
-			position[]={20977.395,41.015652,16955.307};
-			name="mkr_blacklist_35";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item39
-		{
-			position[]={23695.59,3.1900001,18197.752};
-			name="mkr_blacklist_36";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=1300;
-			b=1200;
-			angle=-57.871498;
-			drawBorder=1;
-		};
-		class Item40
-		{
-			position[]={25632.178,20.264458,21330.316};
-			name="mkr_blacklist_37";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item41
-		{
-			position[]={27025.115,21.082697,23254.766};
-			name="mkr_blacklist_38";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item42
-		{
-			position[]={18825.566,31.213375,16628.465};
-			name="mkr_blacklist_39";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item43
-		{
-			position[]={8422.9756,109.37395,25086.279};
-			name="mkr_blacklist_40";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=500;
-			b=700;
-			angle=-102.8133;
-			drawBorder=1;
-		};
-		class Item44
-		{
-			position[]={2314.3193,0.0039203227,9186.7354};
-			name="mkr_blacklist_41";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item45
-		{
-			position[]={2238.6067,-0.0049797231,11517.604};
-			name="mkr_blacklist_42";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=300;
-			b=300;
-			drawBorder=1;
-		};
-		class Item46
+		class Item4
 		{
 			position[]={18476.99,19.118904,8551.8457};
 			name="ws_attack_start";
 			type="flag_AAF";
 		};
-		class Item47
+		class Item5
 		{
 			position[]={21263.471,41.05621,9077.0898};
 			name="ws_defend_start";
 			type="flag_FIA";
 		};
-		class Item48
+		class Item6
 		{
-			position[]={27641.064,43.715019,25160.99};
-			name="mkr_blacklist_43";
-			markerType="ELLIPSE";
-			type="Empty";
-			colorName="ColorRed";
-			fillName="SolidBorder";
-			a=800;
-			b=1000;
-			angle=-124.483;
-			drawBorder=1;
-		};
-		class Item49
-		{
-			position[]={28174.189,0,23825.297};
-			name="mkr_blacklist_44";
+			position[]={28007.09,1.8173218,23738.533};
+			name="mkr_blacklist_1";
 			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorRed";
 			fillName="SolidBorder";
 			a=100;
-			b=200;
-			angle=-122.91415;
+			b=500;
+			angle=-122.914;
 			drawBorder=1;
 		};
-		class Item50
+		class Item7
 		{
 			position[]={2333.6392,73.478943,22258.594};
-			name="mkr_blacklist_45";
+			name="mkr_blacklist_6";
 			markerType="ELLIPSE";
 			type="Empty";
 			colorName="ColorRed";
@@ -2214,6 +2376,116 @@ class Mission
 			a=600;
 			b=600;
 			angle=-141.495;
+			drawBorder=1;
+		};
+		class Item8
+		{
+			position[]={14504.281,0,6051.2158};
+			name="mkr_blacklist_2";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="SolidBorder";
+			a=450;
+			b=450;
+			drawBorder=1;
+		};
+		class Item9
+		{
+			position[]={2487.0068,1.4221995,9399.041};
+			name="mkr_blacklist_3";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="SolidBorder";
+			a=250;
+			b=450;
+			angle=-152.30244;
+			drawBorder=1;
+		};
+		class Item10
+		{
+			position[]={2480.8486,0,11414.937};
+			name="mkr_blacklist_4";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="SolidBorder";
+			a=450;
+			b=450;
+			drawBorder=1;
+		};
+		class Item11
+		{
+			position[]={3015.3784,46.956928,13172.781};
+			name="mkr_blacklist_5";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="SolidBorder";
+			a=250;
+			b=250;
+			drawBorder=1;
+		};
+		class Item12
+		{
+			position[]={8429.2891,110.45617,25106.982};
+			name="mkr_blacklist_8";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="SolidBorder";
+			a=650;
+			b=650;
+			drawBorder=1;
+		};
+		class Item13
+		{
+			position[]={17101.473,5.3065138,22050.105};
+			name="mkr_blacklist_9";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="SolidBorder";
+			a=450;
+			b=450;
+			drawBorder=1;
+		};
+		class Item14
+		{
+			position[]={13450.314,11.273807,12004.531};
+			name="mkr_blacklist_10";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="SolidBorder";
+			a=450;
+			b=550;
+			angle=-136.6209;
+			drawBorder=1;
+		};
+		class Item15
+		{
+			position[]={16688.959,13.994372,13611.998};
+			name="mkr_blacklist_11";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="SolidBorder";
+			a=250;
+			b=250;
+			drawBorder=1;
+		};
+		class Item16
+		{
+			position[]={14126.447,0,13605.894};
+			name="mkr_blacklist_12";
+			markerType="ELLIPSE";
+			type="Empty";
+			colorName="ColorRed";
+			fillName="SolidBorder";
+			a=450;
+			b=450;
 			drawBorder=1;
 		};
 	};

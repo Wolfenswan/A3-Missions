@@ -11,7 +11,7 @@ _id = _this select 0;
 _tentativePos = _this select 1;
 
 // Try to find an empty position for a camo net
-_pos = _tentativePos findEmptyPosition [0, 300, "CamoNet_INDP_open_F"];
+_pos = _tentativePos findEmptyPosition [0, 300, "Box_FIA_Wps_F"];
 if (count _pos == 0) then { _pos = _tentativePos };
 
 //diag_log format["Creating cache, id: %1, pos: %2", _id, _pos];
@@ -43,7 +43,7 @@ _crate addEventHandler [
 
 //_camonet = "CamoNet_INDP_open_F" createVehicle _pos;
 _grp = [_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F", "B_G_Soldier_F"],[], [], [0.2,0.2], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
-[_grp,_grp,["hold"]] call ws_fnc_addWaypoint;
+[_grp,_pos,["hold"]] call ws_fnc_addWaypoint;
 [_grp,"SAFE","WHITE"] call ws_fnc_setAIMode;
 
 f_param_AISkill_BLUFOR = 3;
