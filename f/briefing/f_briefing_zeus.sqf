@@ -2,7 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// FACTION: CSAT
+// FACTION: ZEUS
 
 // ====================================================================================
 
@@ -11,8 +11,7 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS (folkarps.com)<br/>
-Contact: wolfenswanarps@gmail.com
+*** Insert mission credits here. ***
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -24,10 +23,32 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-CO + MMG1 are mounted in an unarmed Ifrit.<br/>
-Each squad starts in his own truck.<br/>
+*** Insert information on administration and logistics here. ***
 "]];
 
+// ====================================================================================
+
+// NOTES: EXECUTION
+// The code below creates the execution sub-section of notes.
+
+_exe = player createDiaryRecord ["diary", ["Execution","
+<br/>
+<font size='18'>COMMANDER'S INTENT</font>
+<br/>
+*** Insert very short summary of plan here. ***
+<br/><br/>
+<font size='18'>MOVEMENT PLAN</font>
+<br/>
+*** Insert movement instructions here. ***
+<br/><br/>
+<font size='18'>FIRE SUPPORT PLAN</font>
+<br/>
+*** Insert fire support instructions here. ***
+<br/><br/>
+<font size='18'>SPECIAL TASKS</font>
+<br/>
+*** Insert instructions for specific units here. ***
+"]];
 
 // ====================================================================================
 
@@ -36,8 +57,7 @@ Each squad starts in his own truck.<br/>
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-1. Seize the <marker name='mkrAO'>facility</marker>. If for 120 seconds the number of CSAT units outweight the numbers of present AAF, CSAT will have taken it.<br/>
-2. We can use the <marker name='mkrTown'>town</marker> to our advantage, but AAF might try the same.
+*** Insert the mission here. ***
 "]];
 
 // ====================================================================================
@@ -47,14 +67,15 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-We are tasked to seize one of the AAF's <marker name='mkrAO'>storage facilities</marker>.
+*** Insert general information about the situation here.***
 <br/><br/>
 <font size='18'>ENEMY FORCES</font>
 <br/>
-Not more than a platoon worth of infantry.
+*** Insert information about enemy forces here.***
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>
-None.
+*** Insert information about friendly forces here.***
 "]];
 
+// ====================================================================================
