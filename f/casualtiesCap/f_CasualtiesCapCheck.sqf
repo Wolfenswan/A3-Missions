@@ -101,6 +101,7 @@ else
 sleep 10;
 
 if (count _grps == 0) exitWith {
+	ws_var_sideDead = ws_var_sideDead + 1;
 	player GlobalChat format ["DEBUG (f\casualtiesCap\f_CasualtiesCapCheck.sqf): No groups found, _grpstemp = %1, _grps = %2",_grpstemp,_grps];
 };
 
