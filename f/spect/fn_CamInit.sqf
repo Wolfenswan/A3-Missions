@@ -31,6 +31,9 @@ if(f_cam_isJIP) then
   ["F_ScreenSetup"] call BIS_fnc_blackIn;
 };
 
+// If player is JIP select a playable unit to spectate, if no players a left get a random unit
+if(isNull _oldUnit) then {if(count playableUnits > 0) then [{_oldUnit = (playableUnits select 0)},{_oldUnit = (allUnits select 0)}];};
+
 // Create a Virtual Unit to act as our player to make sure we get to keep Draw3D
 if(isNil "f_cam_VirtualCreated") then
 {
@@ -50,9 +53,6 @@ if(isNil "f_cam_VirtualCreated") then
   deleteVehicle _unit;
   f_cam_VirtualCreated = true;
 };
-
-// If player is JIP select a playable unit to spectate, if no players a left get a random unit
-if(isNull _oldUnit ) then {if(count playableUnits > 0) then [{_oldUnit = (playableUnits select 0)},{_oldUnit = (allUnits select 0)}];};
 
 // ====================================================================================
 
