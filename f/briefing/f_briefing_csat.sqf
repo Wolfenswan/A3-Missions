@@ -59,7 +59,7 @@ Command might be creative and try for something different today. If the HALO opt
 _mis = player createDiaryRecord ["diary", ["Mission",format["
 OBJECTIVES<br/>
 Destroy FIA weapon caches. Mission is successful once either %1 out of %2 caches are destroyed, or all FIA units have been eliminated.<br/>
-If AAF take %3 percent casualties, the mission will be considered a failure.
+If the attackers take %3 percent casualties, the mission will be considered a failure.
 ",ha_param_cacheVictoryNum,ha_param_cacheNum,ws_param_aafCas]]];
 
 // ====================================================================================
