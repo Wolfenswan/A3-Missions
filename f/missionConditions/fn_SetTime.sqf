@@ -75,7 +75,7 @@ switch (_timeOfDay) do
 	case 6:
 	{
 		_hour = 19;
-		_minute = 10;
+		_minute = 30;
 	};
 // Night
 	case 7:
