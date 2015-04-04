@@ -1,6 +1,5 @@
 //Player is a zombie
 waitUntil {!isNil "BIS_fnc_inTrigger"};
-_altobject="HeliHEmpty" createVehicleLocal [0,0,0];
 if (isNil {player getVariable "zombie"}) then {
 	_pos=[0,0,0];
 	_radius=(triggerArea CLY_location select 0) max (triggerArea CLY_location select 1);
@@ -8,9 +7,9 @@ if (isNil {player getVariable "zombie"}) then {
 
 	while {_relocate} do {
 		_pos=[(getPos CLY_location select 0)-_radius+random _radius*2,(getPos CLY_location select 1)-_radius+random _radius*2,0];
-		_altobject setPos [_pos select 0,_pos select 1,1000];
-		if ([CLY_location,_pos] call BIS_fnc_inTrigger and !surfaceIsWater _pos and (getPos _altobject select 2)==(getPosATL _altobject select 2)) then {_relocate=false};
+		if ([CLY_location,_pos] call BIS_fnc_inTrigger and !surfaceIsWater _pos) then {_relocate=false};
 	};
+
 	player setVelocity [0,0,0];
 	player setPos _pos;
 	player setDir random 360;
