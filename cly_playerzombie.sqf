@@ -150,7 +150,7 @@ while {true} do {
 				if ({isNil {_x getVariable "zombie"} and !(_x isKindOf "Animal")} count (getPosATL player nearEntities [["Man"],60])>0) then {_sound=CLY_noises_chase select floor random count CLY_noises_chase};
 				_victim=objNull;
 				_victims=[];
-				{if (alive _x and _x!=player and isNil {_x getVariable "zombie"}) then {_victims set [count _victims,_x]}} forEach (player modelToWorld [0,1,0] nearEntities [["Man"],1.25]);
+				{if (alive (driver _x) and (driver _x)!=player and isNil {(driver _x) getVariable "zombie"}) then {_victims set [count _victims,(driver _x)]}} forEach (player modelToWorld [0,1,0] nearEntities 1.25);
 
 				if (count _victims>0) then {
 					_anim=if (_prone) then {"awopppnemstpsgthwnondnon_end"} else {"awoppercmstpsgthwnondnon_end"};
