@@ -7,7 +7,7 @@
 ?isServer:{publicVariable _x} forEach ["CLY_survivordeaths","CLY_zombiedeaths"]
 
 @(isDedicated or !isNull player)
-player setPos [(getPos CLY_location select 0)+random 5,(getPos CLY_location select 1)+random 5,4000+random 5000]
+(vehicle player) setPos [(getPos CLY_location select 0)+random 5,(getPos CLY_location select 1)+random 5,5000];
 
 ;Fade sound
 [] spawn {0 fadeSound 0;sleep 2.5;5 fadeSound 1}

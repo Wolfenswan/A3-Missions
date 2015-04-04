@@ -4,9 +4,9 @@ WS_zombieclasses = ["C_man_p_beggar_F","C_man_p_shorts_1_F_asia","C_man_p_fugiti
 ws_playerMarkers = [];
 
 //Locations
-CLY_tinylocations=[MilTetos,Oreokastro];
-CLY_smalllocations=[Lakka,MilTetos_1,Hotel];
-CLY_mediumlocations=[Panochori,Neochori,Limni];
+CLY_tinylocations=[MilTetos,Oreokastro,KastroHospital,Hotel_1,Factory];
+CLY_smalllocations=[Lakka,MilTetos_1,Hotel,Edessa,Island,Frini];
+CLY_mediumlocations=[Panochori,Neochori,Limni,Panagia];
 CLY_largelocations=[Zaros];
 
 CLY_locations = [];

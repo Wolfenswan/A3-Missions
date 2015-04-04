@@ -26,7 +26,9 @@ class Mission
 		"A3_Modules_F_Curator_Misc",
 		"A3_Modules_F",
 		"A3_Characters_F_EPC",
-		"a3_characters_f"
+		"a3_characters_f",
+		"A3_Characters_F_Kart",
+		"A3_Soft_F_Kart_Kart_01"
 	};
 	addOnsAuto[]=
 	{
@@ -39,13 +41,15 @@ class Mission
 		"A3_Characters_F_INDEP",
 		"A3_Characters_F_BLUFOR",
 		"A3_Characters_F_EPC",
+		"A3_Characters_F_Kart",
+		"A3_Soft_F_Kart_Kart_01",
 		"a3_map_altis"
 	};
 	randomSeed=11823142;
 	class Intel
 	{
-		briefingName="zz_a18_Infection_v4";
-		overviewText="Who will survive the outbreak? - All rifles/smgs have flashlights.";
+		briefingName="zz_a20_Infection_v5";
+		overviewText="Who will survive the outbreak?";
 		startWeather=0.84999996;
 		startWind=0;
 		forecastWeather=1;
@@ -65,7 +69,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=21;
+		items=23;
 		class Item0
 		{
 			side="EAST";
@@ -74,7 +78,7 @@ class Mission
 				items=2;
 				class Item0
 				{
-					position[]={12181.081,22.804625,15711.926};
+					position[]={12181.081,22.809361,15712.104};
 					azimut=74.315598;
 					id=0;
 					side="CIV";
@@ -115,7 +119,7 @@ class Mission
 					rank="COLONEL";
 					skill=0.60000002;
 					text="Colonel";
-					init="nul = [this,[""hgun_Pistol_heavy_02_F"", 4],[""NVGoggles_INDEP""]] call ws_fnc_gear;";
+					init="nul = [this,[""hgun_Pistol_heavy_02_F"", 3],[""NVGoggles_INDEP""]] call ws_fnc_gear;";
 					description="A Colonel - Zubr .45 & NVGs";
 				};
 			};
@@ -526,7 +530,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="if (local this) then {  removeheadgear this;removeUniform this;  removeheadgear this;  removevest this;  };";
+					init="if (local this) then {this setVariable [""BIS_enableRandomization"", false];removeheadgear this;removeUniform this; removevest this; removeGoggles this; ""G_Shades_Black"";};";
 					description="A Naked Lunatic - Sunglasses";
 				};
 			};
@@ -547,7 +551,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="[this,[],[""ToolKit""],[[""ClaymoreDirectionalMine_Remote_Mag"",4],[""APERSTripMine_Wire_Mag"",4],[""APERSBoundingMine_Range_Mag"",4]]] call ws_fnc_gear;";
+					init="[this,[],[""ToolKit"",""ItemMap""],[[""ClaymoreDirectionalMine_Remote_Mag"",4],[""APERSTripMine_Wire_Mag"",4],[""APERSBoundingMine_Range_Mag"",4]]] call ws_fnc_gear;";
 					description="An Explosives Specialist - no gun but claymores & AP mines";
 				};
 				class Item1
@@ -583,7 +587,7 @@ class Mission
 					rank="CORPORAL";
 					skill=0.60000002;
 					init="[this,[""hgun_ACPC2_F"", 6]] call ws_fnc_gear;";
-					description="Pistolman ACP";
+					description="A Pistoleer - ACP";
 				};
 			};
 		};
@@ -616,7 +620,7 @@ class Mission
 					player="PLAY CDG";
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="[this,[""srifle_DMR_01_F"", 4],[]] call ws_fnc_gear;";
+					init="[this,[""srifle_DMR_01_F"", 3],[]] call ws_fnc_gear;";
 					description="A Hunter - Rahim DMR";
 				};
 			};
@@ -663,7 +667,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={12317.02,24.207228,15683.058};
+					position[]={12317.104,24.203747,15683.058};
 					azimut=-61.235901;
 					id=34;
 					side="GUER";
@@ -672,10 +676,93 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.60000002;
-					init="[this,[""arifle_TRG20_ACO_F"", 5],[]] call ws_fnc_gear;";
-					description="A Rifleman";
+					init="[this,[""arifle_TRG20_ACO_F"", 4],[]] call ws_fnc_gear;";
+					description="A Rifleman - TRG 20";
 				};
 			};
+		};
+		class Item21
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					presence=0;
+					position[]={12317.309,24.202679,15687.708};
+					azimut=-61.235901;
+					id=35;
+					side="GUER";
+					vehicle="I_helicrew_F";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.60000002;
+					description="A Helicopterpilot - Vemin";
+				};
+				class Item1
+				{
+					position[]={12318.73,24.169111,15686.701};
+					azimut=-61.235901;
+					id=36;
+					side="CIV";
+					vehicle="C_Marshal_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					init="[this,[""hgun_Pistol_Signal_F"", 5],[]] call ws_fnc_gear;";
+					description="A Race Marshal - Flare Pistol";
+				};
+			};
+		};
+		class Item22
+		{
+			side="GUER";
+			class Vehicles
+			{
+				items=2;
+				class Item0
+				{
+					presence=0;
+					position[]={12308.402,24.290054,15685.134};
+					azimut=-61.235901;
+					id=37;
+					side="GUER";
+					vehicle="I_helicrew_F";
+					leader=1;
+					rank="CAPTAIN";
+					skill=0.60000002;
+					description="A Helicopterpilot - Vemin";
+				};
+				class Item1
+				{
+					position[]={12309.294,24.312325,15683.106};
+					azimut=-61.235901;
+					id=38;
+					side="CIV";
+					vehicle="C_Driver_2_F";
+					player="PLAY CDG";
+					rank="CORPORAL";
+					skill=0.60000002;
+					text="KartDriver";
+					init="if (local this) then {this forceAddUniform ""U_C_Driver_2"";  this addHeadgear ""H_RacingHelmet_2_F""; this moveInDriver kart};";
+					description="A Race Driver - Kart";
+				};
+			};
+		};
+	};
+	class Vehicles
+	{
+		items=1;
+		class Item0
+		{
+			position[]={12307.11,24.309019,15682.039};
+			azimut=-61.235901;
+			id=39;
+			side="EMPTY";
+			vehicle="C_Kart_01_Blu_F";
+			skill=0.60000002;
+			text="kart";
 		};
 	};
 	class Markers
@@ -708,7 +795,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=13;
+		items=20;
 		class Item0
 		{
 			position[]={12420.535,20.638678,15746.914};
@@ -731,8 +818,8 @@ class Mission
 		class Item1
 		{
 			position[]={16067.413,14.606685,16988.074};
-			a=170;
-			b=170;
+			a=175;
+			b=175;
 			angle=102.031;
 			rectangular=1;
 			activationBy="ANY";
@@ -787,9 +874,9 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={21074.76,1.8311621,14755.075};
-			a=350;
-			b=390;
+			position[]={21086.697,0,14699.45};
+			a=250;
+			b=290;
 			angle=-90.3144;
 			rectangular=1;
 			activationBy="ANY";
@@ -933,6 +1020,139 @@ class Mission
 			interruptable=1;
 			age="UNKNOWN";
 			name="Hotel";
+			class Effects
+			{
+			};
+		};
+		class Item13
+		{
+			position[]={3735.2595,17.854202,13036.356};
+			a=120;
+			b=100;
+			angle=178.91;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="KastroHospital";
+			class Effects
+			{
+			};
+		};
+		class Item14
+		{
+			position[]={20311.426,38.630295,8841.7031};
+			a=450;
+			b=250;
+			angle=178.91;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Panagia";
+			class Effects
+			{
+			};
+		};
+		class Item15
+		{
+			position[]={21852.898,13.424005,20948.936};
+			a=200;
+			b=200;
+			angle=-71.594398;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Hotel_1";
+			class Effects
+			{
+			};
+		};
+		class Item16
+		{
+			position[]={6219.2842,43,16195.392};
+			a=150;
+			b=250;
+			angle=88.871498;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Factory";
+			class Effects
+			{
+			};
+		};
+		class Item17
+		{
+			position[]={7323.2847,6.5406785,11055.817};
+			a=200;
+			b=520;
+			angle=93.1903;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Edessa";
+			class Effects
+			{
+			};
+		};
+		class Item18
+		{
+			position[]={13482.462,11.72344,12038.558};
+			a=150;
+			b=480;
+			angle=-148.09599;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Island";
+			class Effects
+			{
+			};
+		};
+		class Item19
+		{
+			position[]={14750.821,48.333965,20768.479};
+			a=180;
+			b=300;
+			angle=94.441101;
+			rectangular=1;
+			activationBy="ANY";
+			repeating=1;
+			timeoutMin=1;
+			timeoutMid=1;
+			timeoutMax=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Frini";
 			class Effects
 			{
 			};

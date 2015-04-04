@@ -13,8 +13,13 @@ if !(isNil backpack _unit) then {
 	clearAllItemsFromBackpack _unit
 };
 
-removeallweapons _unit;
+removeAllWeapons _unit;
+_unit removeWeapon primaryWeapon _unit;
+_unit removeWeapon secondaryWeapon _unit;
+_unit removeWeapon handgunWeapon _unit;
 removeAllAssignedItems _unit;
+
+if (faction _unit == "civ_f") then {_unit addVest "V_Rangemaster_belt"};
 
 if (count _wp != 0) then {[_unit, _wp select 0, _wp select 1] call BIS_fnc_addWeapon;};
 

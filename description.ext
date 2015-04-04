@@ -6,7 +6,7 @@ enableDebugConsole = 1;
 
 respawn="BASE";
 respawnDelay=5;
-disabledAI=1;
+disabledAI=0;
 respawnDialog=0;
 
 class Header
@@ -68,8 +68,8 @@ class Params
 		// 15 - 29 - small
 		// 29 - 44 - medium
 		// 44 - 59 big
-		values[]={-1,-2,0,1,-3,15,16,17,-4,29,30,31,-5,44};
-		texts[]={"Random","Random Tiny - ","Mil. Inst.","Oreokastro", "Random Small - ", "Lakka","Tetos w. Mil. Inst","Hotel","Random Middle - ","Panochori","Neochori","Limni (Swamp)","Random Large - ","Zaros"};
+		values[]={-1,-2,0,1,2,3,4,-3,15,16,17,18,19,20,-4,29,30,31,32,-5,44};
+		texts[]={"Random","- Random Tiny - ","Mil. Inst.","Oreokastro","Hospital (Kavala)","Hotel","Factory"," - Random Small - ", "Lakka","Tetos w. Mil. Inst","Hotel (incl. Surroundings)","Edessa","Black Island","Frini"," - Random Middle - ","Panochori","Neochori","Limni (Swamp)","Panagia"," - Random Large - ","Zaros"};
 		default=-1;
 	};
 	class CLY_timelimit
@@ -312,6 +312,7 @@ class RscTitles
 			colorBackground[]={0,0,0,0};
 			colorText[]={1,1,1,1};
 	  	  	text="claw1.paa";
+	  	  	font="EtelkaMonospaceProBold";
 			style=48;
 	  	  	sizeEx=0.15;
 			x=0.275;
@@ -338,6 +339,7 @@ class RscTitles
 			colorBackground[]={0,0,0,0};
 			colorText[]={1,1,1,1};
 	  	  	text="claw2.paa";
+	  	  	font="EtelkaMonospaceProBold";
 			style=48;
 	  	  	sizeEx=0.15;
 			x=0.275;
@@ -364,6 +366,7 @@ class RscTitles
 			colorBackground[]={0,0,0,0};
 			colorText[]={1,1,1,1};
 	  	  	text="claw3.paa";
+	  	  	font="EtelkaMonospaceProBold";
 			style=48;
 	  	  	sizeEx=0.15;
 			x=0.275;
@@ -399,6 +402,7 @@ class RscTitles
 				w=0.06;
 				h=0.08;
 				text="";
+				font="EtelkaMonospaceProBold";
 			};
 		};
  	};

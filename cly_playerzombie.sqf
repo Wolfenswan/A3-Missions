@@ -1,5 +1,6 @@
 //Player is a zombie
 waitUntil {!isNil "BIS_fnc_inTrigger"};
+_altobject="HeliHEmpty" createVehicleLocal [0,0,0];
 if (isNil {player getVariable "zombie"}) then {
 	_pos=[0,0,0];
 	_radius=(triggerArea CLY_location select 0) max (triggerArea CLY_location select 1);
@@ -7,11 +8,14 @@ if (isNil {player getVariable "zombie"}) then {
 
 	while {_relocate} do {
 		_pos=[(getPos CLY_location select 0)-_radius+random _radius*2,(getPos CLY_location select 1)-_radius+random _radius*2,0];
-		if ([CLY_location,_pos] call BIS_fnc_inTrigger and !surfaceIsWater _pos) then {_relocate=false};
+		if ([CLY_location,_pos] call BIS_fnc_inTrigger and !surfaceIsWater _pos) then {
+			_relocate=false;
+			_pos = _pos findEmptyPosition [0,50,typeOf player];
+		};
 	};
 
 	player setVelocity [0,0,0];
-	player setPos _pos;
+	(vehicle player) setPos _pos;
 	player setDir random 360;
 	cutText ["","BLACK IN",1];
 } else {
@@ -40,7 +44,7 @@ while {true} do {
 		if (!isNil "obj1") then {obj1 setTaskState "Failed"};
 		[player] joinSilent grpNull;
 		if !(isNil "f_groupJoinAction") then {player removeAction f_groupJoinAction};
-		if !(isNil "f_groupLeaveAction") then {{player removeAction f_groupLeaveAction};
+		if !(isNil "f_groupLeaveAction") then {player removeAction f_groupLeaveAction};
 		sleep 3;
 		if (isNil "obj2" and {isPlayer _x and isNil {_x getVariable "zombie"}} count allUnits>0) then {
 			obj2=player createSimpleTask [""];
@@ -48,10 +52,11 @@ while {true} do {
 			player setCurrentTask obj2;
 			["TaskAssigned",["Kill all the survivors!"]] call bis_fnc_showNotification;
 		};
-		_startpos=[0,0,0];
+		_startpos= [0,0,0];
 		_allsurvivors=[];
 		{if (_x isKindOf "Man" and !(_x isKindOf "Animal") and isNil {_x getVariable "zombie"} and _x distance CLY_location<1500) then {_allsurvivors set [count _allsurvivors,_x]}} forEach allUnits;
 		_survivors=_allsurvivors;
+
 		while {_startpos select 0==0 and count _survivors>0} do {
 			_survivor=_survivors select floor random count _survivors;
 			_survivors=_survivors-[_survivor];
@@ -62,7 +67,7 @@ while {true} do {
 					_y=if (random 1>0.5) then {120+random 130} else {-120-random 130};
 					_pos=[(_survivorpos select 0)+_x,(_survivorpos select 1)+_y,0];
 					_altobject setPos [_pos select 0,_pos select 1,1000];
-					if (!surfaceIsWater _pos and (getPos _altobject select 2)==(getPosATL _altobject select 2) and _pos distance _survivorpos<250 and {_pos distance _x<150} count _allsurvivors==0) then {_startpos=_pos};
+					if (!surfaceIsWater _pos and (getPos _altobject select 2)==(getPosATL _altobject select 2) and _pos distance _survivorpos<250 and {_pos distance _x<150} count _allsurvivors==0) then {_pos = _pos findEmptyPosition [0,50,typeOf player];_startpos=_pos};
 				};
 			};
 		};
@@ -73,7 +78,10 @@ while {true} do {
 			while {_relocate} do {
 				_pos=[(getPos CLY_location select 0)-_radius+random _radius*2,(getPos CLY_location select 1)-_radius+random _radius*2,0];
 				_altobject setPos [_pos select 0,_pos select 1,1000];
-				if ([CLY_location,_pos] call BIS_fnc_inTrigger and !surfaceIsWater _pos and (getPos _altobject select 2)==(getPosATL _altobject select 2)) then {_relocate=false};
+				if ([CLY_location,_pos] call BIS_fnc_inTrigger and !surfaceIsWater _pos and (getPos _altobject select 2)==(getPosATL _altobject select 2)) then {
+					_relocate=false;
+					_pos = _pos findEmptyPosition [0,50,typeOf player];
+				};
 			};
 			_startpos=_pos
 		};
@@ -87,7 +95,7 @@ while {true} do {
 		removeAllItemsWithMagazines player;
 		removeAllAssignedItems player;
 		removeBackpack player;
-		{player addItem _x; player assignItem _x} forEach ["ItemMap","ItemCompass"];
+		{player linkItem _x} forEach ["ItemMap"];
 		//player switchMove "amovpercmstpsnonwnondnon";
 
 
@@ -105,6 +113,7 @@ while {true} do {
 		player addRating -10000;
 		player setVelocity [0,0,0];
 		player setPos _startpos;
+
 		_nearest=objNull;
 		_dist=1000;
 		{if (isNil {_x getVariable "zombie"} and !(_x isKindOf "Animal") and player distance _x<_dist) then {_nearest=_x;_dist=player distance _x}} forEach allUnits;

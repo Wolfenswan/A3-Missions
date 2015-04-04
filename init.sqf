@@ -222,7 +222,7 @@ if !(player getVariable ["scientist",false]) then {
 
 
 //Claw mark HUD
-execVM "cly_hud.sqf";
+[] execVM "cly_hud.sqf";
 
 //Briefing
 player createDiaryRecord ["Diary",["Briefing","<br/>Infection: Altis<br/><br/>A zombie apocalypse is about to sweep over Altis. All it takes is one little zombie that gets through the quarantine and starts infecting people. This is the story of one such occurrence.<br/><br/>The mission starts with one zombie against everyone else. Every dead survivor will respawn as a zombie, and their new task is to kill their former comrades. The mission ends when time is up or everyone has turned into a zombie. The original zombie always kills on the first hit, the others need two.<br/><br/>
