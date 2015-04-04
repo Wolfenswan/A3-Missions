@@ -305,7 +305,7 @@ while {true} do {
 		};
 	} else {
 		if (alive player) then {
-			if !(player in list CLY_location) then {
+			if !(vehicle player in list CLY_location) then {
 				if (_doom>=10) then {
 					player setDamage 1;
 					_victimsound=CLY_noises_scream select floor random count CLY_noises_scream;

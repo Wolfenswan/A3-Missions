@@ -950,7 +950,7 @@ class Mission
 		};
 		class Item8
 		{
-			position[]={13292.461,60.824711,6928.8169};
+			position[]={13619.93,4.663393,7145.2681};
 			a=0;
 			b=0;
 			repeating=1;
@@ -961,7 +961,7 @@ class Mission
 			age="UNKNOWN";
 			text="Player dies";
 			expCond="!alive player";
-			expActiv="if (isNil {player getVariable ""zombie""}) then {CLY_survivordeaths=CLY_survivordeaths+1;publicVariable ""CLY_survivordeaths"";player    setVariable [""zombie"",true,true]} else {CLY_zombiedeaths=CLY_zombiedeaths+1;publicVariable ""CLY_zombiedeaths""};";
+			expActiv="if (isNil {player getVariable ""zombie""}) then {CLY_survivordeaths=CLY_survivordeaths+1;publicVariable ""CLY_survivordeaths"";player    setVariable [""zombie"",true,true]} else {CLY_zombiedeaths=CLY_zombiedeaths+1;publicVariable ""CLY_zombiedeaths""}; setAperture -1";
 			class Effects
 			{
 			};
