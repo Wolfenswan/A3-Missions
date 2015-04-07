@@ -25,12 +25,7 @@ This briefing section can only be seen by the current admin.
 // This section displays notes made by the mission-maker for the ADMIN
 
 if (_customText != "") then {
-	_briefing ="
-	<br/>
-	<font size='18'>MISSION-MAKER NOTES</font><br/>
-	Notes and messages from the mission-maker:<br/>
-	";
-
+	_briefing = _briefing + "<br/><font size='18'>MISSION-MAKER NOTES</font><br/>";
 	_briefing = _briefing + _customText + "<br/><br/>";
 };
 
@@ -133,6 +128,6 @@ if (isNull (getAssignedCuratorLogic player)) then {hintsilent 'Assign ZEUS first
 
 // CREATE DIARY ENTRY
 
-player createDiaryRecord ["diary", ["Admin",_briefing]];
+player createDiaryRecord ["diary", ["F3 Admin Menu",_briefing]];
 
 // ====================================================================================

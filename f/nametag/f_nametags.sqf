@@ -181,7 +181,6 @@ addMissionEventHandler ["Draw3D", {
 					{
 						// Get the various crew slots
 						_suffix = switch (true) do {
-							case (name _x == "Wolfenswan"):{" - OG"};
 							case (driver _veh == _x && !((_veh isKindOf "helicopter") || (_veh isKindOf "plane"))):{" - D"};
 							case (driver _veh == _x && ((_veh isKindOf "helicopter") || (_veh isKindOf "plane"))):{" - P"};
 							case (commander _veh == _x);

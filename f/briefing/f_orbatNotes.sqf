@@ -69,8 +69,6 @@ _orbatText = _orbatText + "<br />VEHICLE CREWS + PASSENGERS<br />";
 
 		_orbatText = _orbatText + "<br />" + format["%1 ",_vehName];
 
-		count allTurrets [_x, true] - count allTurrets _x;
-
 		// Workaround for http://feedback.arma3.com/view.php?id=21602
 		_maxSlots = getNumber(configfile >> "CfgVehicles" >> typeof _x >> "transportSoldier") + (count allTurrets [_x, true] - count allTurrets _x);
 		_freeSlots = _x emptyPositions "cargo";
@@ -86,10 +84,9 @@ _orbatText = _orbatText + "<br />VEHICLE CREWS + PASSENGERS<br />";
 
 				_veh = vehicle _x;
 				_crewrole = switch (true) do {
-					case (driver _veh == _x && !((_veh isKindOf "helicopter") || (_veh isKindOf "plane"))):{" [D]"};
-					case (driver _veh == _x && ((_veh isKindOf "helicopter") || (_veh isKindOf "plane"))):{" [P]"};
-					case (commander _veh == _x);
-					case (effectiveCommander _veh == _x):{" [CO]"};
+					case (driver _veh == _x && !((vehicle _x isKindOf "helicopter") || (vehicle _x isKindOf "plane"))):{" [D]"};
+					case (driver _veh == _x && ((vehicle _x isKindOf "helicopter") || (vehicle _x isKindOf "plane"))):{" [P]"};
+					case (commander _veh == _x):{" [CO]"};
 					case (gunner _veh == _x):{" [G]"};
 					case (assignedVehicleRole _x select 0 == "Turret" && commander _veh != _x && gunner _veh != _x && driver _veh != _x):{" [C]"};
 					default {" [C]"};
@@ -109,7 +106,7 @@ _orbatText = _orbatText + "<br />VEHICLE CREWS + PASSENGERS<br />";
 
 		if (count _groupList > 0) then {
 			{
-				_orbatText =_orbatText + format["|- %1", _x] + " Passengers <br />";
+				_orbatText =_orbatText + format["|- %1", _x] + " [CARGO] <br />";
 			} forEach _groupList;
 		};
 
