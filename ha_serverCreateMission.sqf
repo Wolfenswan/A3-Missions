@@ -101,32 +101,21 @@ while {count _posAttackerStart == 0} do {
 [[VehAAF_Truck2],["GrpAAF_BSL","GrpAAF_B1","GrpAAF_B2","GrpAAF_B3"]] call f_fnc_mountGroups;
 [[VehAAF_Truck3],["GrpAAF_CSL","GrpAAF_C1","GrpAAF_C2","GrpAAF_C3"]] call f_fnc_mountGroups;
 
-_posTemp = _posDefenderStart;
+_posTemp = [_posDefenderStart, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
 {
-	_pos = [_posTemp, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
-	_x setPos _pos;
-	_posTemp = _pos;
-	if (count crew _x == 0) then {deleteVehicle _x};
+	if (count crew _x == 0) then {deleteVehicle _x} else {
+		_pos = _posTemp findEmptyPosition [0,50,typeOf _x];
+		_x setPos _pos;
+		_posTemp = _pos;
+	};
 } forEach [VehFIA_Car1,VehFIA_Car2,VehFIA_Car3,VehFIA_Car4,VehFIA_Truck1,VehFIA_Truck2,VehFIA_Truck3];
 
-_posTemp = _posAttackerStart;
+_posTemp = [_posAttackerStart, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
 {
-	_pos = [_posTemp, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
+	if (count crew _x == 0) then {deleteVehicle _x} else {
+	_pos = _posTemp findEmptyPosition [0,50,typeOf _x];
+	//_pos = [_posTemp, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
 	_x setPos _pos;
 	_posTemp = _pos;
-	if (count crew _x == 0) then {deleteVehicle _x};
-} forEach [VehAAF_Car1,VehAAF_Truck1,VehAAF_Truck2,VehAAF_Truck3];
-
-// Emergency function for admin to enable HALO in mission
-ws_fnc_HALO = {
-	if (side player == resistance) then {
-
-		f_var_mapClickTeleport_Uses = 1;					// How often the teleport action can be used. 0 = infinite usage.
-		f_var_mapClickTeleport_TimeLimit = 90; 			// If higher than 0 the action will be removed after the given time.
-		f_var_mapClickTeleport_GroupTeleport = true; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
-		f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
-		f_var_mapClickTeleport_Height = 600;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
-		[] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
-
 	};
-};
+} forEach [VehAAF_Car1,VehAAF_Truck1,VehAAF_Truck2,VehAAF_Truck3];
