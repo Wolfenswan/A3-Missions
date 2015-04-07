@@ -247,7 +247,7 @@ _specOp = [];
 
 // Woodland-Hex
 _baseUniform = ["U_O_CombatUniform_ocamo"];
-_baseHelmet = ["H_MilCap_ocamo","H_Booniehat_khk"];
+_baseHelmet = ["H_Booniehat_khk"];
 _baseGlasses = [];
 
 // Urban
