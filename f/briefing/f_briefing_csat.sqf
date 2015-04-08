@@ -11,8 +11,7 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS (folkarps.com)<br/>
-Contact: wolfenswanarps@gmail.com
+*** Insert mission credits here. ***
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];

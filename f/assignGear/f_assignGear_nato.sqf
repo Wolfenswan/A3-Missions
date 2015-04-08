@@ -199,15 +199,6 @@ _DMriflemag = "20Rnd_762x51_Mag";
 //_DMrifle = "srifle_DMR_02_F";
 //_DMriflemag = "10Rnd_338_Mag";
 
-// NON-DLC ALTERNATIVE:
-// _MMG = "LMG_Zafir_F";
-// _MMGmag = "150Rnd_762x51_Box";
-// _MMGmag_tr = "150Rnd_762x51_Box_Tracer";
-
-// Marksman rifle
-_DMrifle = "srifle_EBR_F"; //TODO: EMR-1
-_DMriflemag = "20Rnd_762x51_Mag";
-
 // Rifleman AT
 _RAT = "launch_NLAW_F";
 _RATmag = "NLAW_F";
@@ -249,7 +240,7 @@ _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = [];
+_specOp = ["gren","dc","ar","r","m"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -287,9 +278,9 @@ _ghillieRig = ["V_Chestrig_rgr"];
 _ghillieGlasses = [];
 
 // Spec Op
-_sfuniform = ["U_B_SpecopsUniform_sgg"];
-_sfhelmet = ["H_HelmetSpecB","H_HelmetSpecB_paint1","H_HelmetSpecB_paint2","H_HelmetSpecB_blk"];
-_sfRig = ["V_PlateCarrierSpec_rgr"];
+_sfuniform = ["U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3"];
+_sfhelmet = ["H_Cap_khaki_specops_UK","H_HelmetB_light_snakeskin"];
+_sfRig = ["V_PlateCarrierL_CTRG","V_PlateCarrierH_CTRG"];
 _sfGlasses = [];
 
 // ====================================================================================

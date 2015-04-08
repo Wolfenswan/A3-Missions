@@ -11,8 +11,8 @@ _groups = [
 // GROUP IDs: BLUFOR > NATO
 // Automatically assigns intelligible names to groups
 
-["GrpNATO_CO","NATO CO -"],
-["GrpNATO_DC","NATO DC -"],
+["GrpNATO_CO","NATO Inst -"],
+["GrpNATO_DC","NATO CTRG -"],
 
 ["GrpNATO_ASL","NATO ASL -"],
 ["GrpNATO_A1","NATO A1 -"],

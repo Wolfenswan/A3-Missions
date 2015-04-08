@@ -17,12 +17,12 @@ enableSentences false;
 // F3 - MapClick Teleport
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-// f_var_mapClickTeleport_Uses = 0;					// How often the teleport action can be used. 0 = infinite usage.
-// f_var_mapClickTeleport_TimeLimit = 0; 			// If higher than 0 the action will be removed after the given time.
-// f_var_mapClickTeleport_GroupTeleport = false; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
-// f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
-// f_var_mapClickTeleport_Height = 0;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
-// [] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
+f_var_mapClickTeleport_Uses = 0;					// How often the teleport action can be used. 0 = infinite usage.
+f_var_mapClickTeleport_TimeLimit = 0; 			// If higher than 0 the action will be removed after the given time.
+f_var_mapClickTeleport_GroupTeleport = false; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
+f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
+f_var_mapClickTeleport_Height = 0;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
+[] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
 
 // ====================================================================================
 
@@ -64,20 +64,19 @@ f_script_setGroupMarkers = [] execVM "f\groupMarkers\f_setLocalGroupMarkers.sqf"
 // F3 - F3 Common Local Variables
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // WARNING: DO NOT DISABLE THIS COMPONENT
-
 if(isServer) then {
 	f_script_setLocalVars = [] execVM "f\common\f_setLocalVars.sqf";
 };
 
 // ====================================================================================
 
-// F3 - Garbage Collector
+// F3 - Automatic Body Removal
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_var_garbageCollectorMaxBodies = 40; // The maximum amount of dead objects which can be present in the mission
-f_var_garbageCollectorSleep = 300;	 // How often to check for clean up
-f_var_garbageCollectorDistance = 450; // The minimal distance to a player for the GC to remove a body
-[] execVM "f\garbageCollector\f_garbageCollectorLoop.sqf";
+f_var_removeBodyDelay = 120;
+f_var_removeBodyDistance = 360;
+f_var_doNotRemoveBodies = [];
+[] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
 
 // ====================================================================================
 
@@ -122,7 +121,8 @@ f_var_garbageCollectorDistance = 450; // The minimal distance to a player for th
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_var_civAI = independent;         // Optional: The civilian AI will use this side's settings
+
+f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
 [] execVM "f\setAISKill\f_setAISkill.sqf";
 
 // ====================================================================================
@@ -181,7 +181,7 @@ f_var_civAI = independent;         // Optional: The civilian AI will use this si
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 f_var_JIP_FirstMenu = false;		// Do players connecting for the first time get the JIP menu? - This only works in missions with respawn.
-f_var_JIP_RemoveCorpse = false;		// Remove the old corpse of respawning players?
+f_var_JIP_RemoveCorpse = true;		// Remove the old corpse of respawning players?
 f_var_JIP_GearMenu = true;			// Can JIP/respawned players select their own gear? False will use gear assigned by F3 Gear Component if possible
 
 // ====================================================================================
@@ -217,5 +217,19 @@ f_wound_extraFAK = 2;
 
 // ====================================================================================
 
-// Wolfenswan - post Init
-[] execVM "ws_init\ws_postInit.sqf";
+player addAction ["Start Camera","[] call bis_fnc_camera;",[],2,false,true,"","driver _target == _this"];
+player addEventhandler ["HandleDamage",{
+	systemchat format ["Hit in %1 for %2 damage",(_this select 1),(_this select 2)];
+	player setDamage 0;
+	0
+ }];
+
+if (isServer) then {
+	["AmmoboxInit",[ammobox,true,{_this distance _target <= 8}]] spawn BIS_fnc_arsenal;
+};
+
+// Add player to all curators
+sleep 0.1;
+{
+	[[[_x],{(_this select 0) addCuratorEditableObjects [playableUnits,true]}],"BIS_fnc_Spawn",true] call BIS_fnc_MP;
+} forEach allCurators;

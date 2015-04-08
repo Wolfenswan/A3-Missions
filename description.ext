@@ -15,10 +15,10 @@ class Header
 // F3 - Loading Screen
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-onLoadName = "*** Insert mission name here. ***";
+onLoadName = "FA Workshop";
 onLoadMission = "Made with the F3 Mission Development Framework";
-author = "Wolfenswan [FA]";
-loadScreen = "logo.paa";
+author = "Glorious Comrade Carson";
+loadScreen = "loadLogo.jpg";
 
 // ============================================================================================
 
@@ -32,10 +32,11 @@ enableDebugConsole = 1;
 // F3 - Respawn Settings
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-respawn = 1;
+respawn = 2;
 respawndelay = 3;
 respawnOnStart = 0;
-respawnTemplates[] = {"Seagull","f_spectator","f_JIP"};
+disabledAI = 1;
+respawnTemplates[] = {"f_JIP"};
 
 // ============================================================================================
 
@@ -111,14 +112,6 @@ class cfgNotifications
 		duration = 3;
 		priority = 5;
 	};
-
-	class ws_taskdone
-	{
-		title = "TASK COMPLETED";
-		description = "%1";
-		iconPicture="\A3\UI_F\data\map\Diary\Icons\tasksucceeded_ca.paa";
-		duration = 3;
-	};
 };
 
 // ============================================================================================
@@ -182,7 +175,7 @@ class Params
             title = "Medical System";
             values[] = {0,1,2};
             texts[] = {"Arma 3 Default","F3 Simple Wounding System","Authentic Gameplay Mod"};
-            default = 1;
+            default = 0;
             code = "f_var_medical = %1";
     };
 
@@ -196,7 +189,7 @@ class Params
             title = "$STR_f_param_mission_timer";
             values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
             texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
-            default = 1;
+            default = 0;
             code = "f_param_mission_timer = %1";
     };
 
@@ -243,70 +236,37 @@ class Params
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-	class f_param_AISkill_BLUFOR
-	{
-		title = "$STR_f_param_AISkill_BLUFOR";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_BLUFOR = %1";
-	};
+class f_param_AISkill_BLUFOR
+{
+	title = "$STR_f_param_AISkill_BLUFOR";
+	values[] = {0,1,2,3};
+	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+	default = 2;
+	code = "f_param_AISkill_BLUFOR = %1";
+};
 
-	class f_param_AISkill_OPFOR
-	{
-		title = "$STR_f_param_AISkill_OPFOR";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_OPFOR = %1";
-	};
+class f_param_AISkill_OPFOR
+{
+	title = "$STR_f_param_AISkill_OPFOR";
+	values[] = {0,1,2,3};
+	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+	default = 2;
+	code = "f_param_AISkill_OPFOR = %1";
+};
 
-	class f_param_AISkill_INDP
-	{
-		title = "$STR_f_param_AISkill_INDP";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_INDP = %1";
-	};
-
-// ============================================================================================
-
-// F3 - Caching
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-	class f_param_caching
-	{
-		title = "Cache AI outside distance (m)";
-		values[] = {0,600,800,1000,1500,2000};
-		default = 0;
-		code = "f_param_caching = %1";
-	};
+class f_param_AISkill_INDP
+{
+	title = "$STR_f_param_AISkill_INDP";
+	values[] = {0,1,2,3};
+	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+	default = 2;
+	code = "f_param_AISkill_INDP = %1";
+};
 
 // ============================================================================================
 
 // F3 - End of Params code blocks.
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
-
-// Wolfenswan - Params
-
-	class ws_param_hc
-	{
-		title = "Headless client";
-        values[] = {0,1};
-        texts[] = {"Off","On"};
-        default = 0;
-        code = "ws_param_hc = %1";
-	};
-
-	class ws_param_dbg
-	{
-		title = "WS fnc debug";
-        values[] = {0,1};
-        texts[] = {"Off","On"};
-        default = 1;
-        code = "ws_param_dbg = %1";
-	};
 
 };
 
@@ -319,9 +279,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "MISSION SUCCESS";
+		title = "WORKSHOP COMPLETE";
 		subtitle = "";
-		description = "We fulfilled all objectives to satisfication.";
+		description = "Competence raised by 4%";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -331,7 +291,7 @@ class CfgDebriefing
 	{
 		title = "MISSION FAILURE";
 		subtitle = "";
-		description = "The platoon was unable to fulfill it's objectives";
+		description = "The platoon failed at fulfilling it's obejctives.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -339,9 +299,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "PLATOON WIPED OUT";
+		title = "MISSION INCONCLUSIVE";
 		subtitle = "";
-		description = "Our entire platoon was eliminated.";
+		description = "The platoon either did not fulfill it's objectives to satisfication or had the mission ended in a stalemate.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -359,9 +319,9 @@ class CfgDebriefing
 
 	class End5
 	{
-		title = "MISSION SUCCESS";
+		title = "Ending #5";
 		subtitle = "";
-		description = "We fulfilled all objectives to satisfication.";
+		description = "*** Insert debriefing #5 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -369,9 +329,9 @@ class CfgDebriefing
 
 	class End6
 	{
-		title = "MISSION FAILURE";
+		title = "Ending #6";
 		subtitle = "";
-		description = "The platoon was unable to fulfill it's objectives";
+		description = "*** Insert debriefing #6 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -422,7 +382,9 @@ class CfgRespawnTemplates
 
 class CfgFunctions
 {
+	//ws_fnc
 	#include "ws_fnc\config.hpp"
+
 	class F // Defines the "owner"
 	{
 		class common // category
@@ -486,6 +448,11 @@ class CfgFunctions
 			class GetMarkerColor{};
 			class LocalFTMarkerSync{};
 		};
+		class bodyRemoval
+		{
+			file = "f\removeBody";
+			class removeBody{};
+		};
 		class setAISkill
 		{
 			file = "f\setAISKill";
@@ -542,7 +509,6 @@ class CfgFunctions
 	};
 };
 
-
 // ============================================================================================
 
 // F3 - Custom Insignia
@@ -550,3 +516,5 @@ class CfgFunctions
 class CfgUnitInsignia {
 	#include "f\assignGear\insignia\define.hpp"
 };
+
+// ============================================================================================
