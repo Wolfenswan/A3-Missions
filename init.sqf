@@ -220,7 +220,6 @@ f_wound_extraFAK = 2;
 player addAction ["Start Camera","[] call bis_fnc_camera;",[],2,false,true,"","driver _target == _this"];
 player addEventhandler ["HandleDamage",{
 	systemchat format ["Hit in %1 for %2 damage",(_this select 1),(_this select 2)];
-	player setDamage 0;
 	0
  }];
 
