@@ -240,14 +240,14 @@ _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = [];
+_specOp = ["smg","uav","dm"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
 
 // Woodland-Hex
 _baseUniform = ["U_O_CombatUniform_ocamo"];
-_baseHelmet = ["H_HelmetO_ocamo"];
+_baseHelmet = ["H_Booniehat_khk"];
 _baseGlasses = [];
 
 // Urban
@@ -285,8 +285,8 @@ _ghillieGlasses = [];
 
 // Spec Op
 _sfuniform = ["U_O_SpecopsUniform_ocamo"];
-_sfhelmet = ["H_HelmetSpecO_ocamo","H_HelmetSpecO_blk"];
-_sfRig = ["V_PlateCarrier1_blk"];
+_sfhelmet = ["H_ShemagOpen_tan"];
+_sfRig = ["V_HarnessO_brn"];
 _sfGlasses = [];
 
 
@@ -477,8 +477,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_pistolmag,3];
 		_unit addweapon _pistol;
-		["dm"] call _backpack;
-		_attachments = [_attach1,_scope2];
+		//["dm"] call _backpack;
+		_attachments = [_attach1,"optic_ARCO",_bipod1];
 	};
 
 // LOADOUT: MEDIUM MG GUNNER
@@ -765,7 +765,7 @@ switch (_typeofUnit) do
 // LOADOUT: UAV OPERATOR
 	case "uav":
 	{
-		_unit addmagazines [_smgmag,5];
+		_unit addmagazines [_smgmag,7];
 		_unit addweapon _smg;
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];
@@ -773,6 +773,7 @@ switch (_typeofUnit) do
 		_unit linkItem _uavterminal;
 		["uav"] call _backpack;
 		_unit addMagazines ["Laserbatteries",4];	// Batteries added for the F3 UAV Recharging component
+		_attachments pushback ("muzzle_snds_L");
 	};
 
 // LOADOUT: Diver
@@ -815,12 +816,12 @@ switch (_typeofUnit) do
 // LOADOUT: SUBMACHINEGUNNER
 	case "smg":
 	{
-		_unit addmagazines [_smgmag,7];
-		_unit addweapon _smg;
+		_unit addmagazines ["10Rnd_127x54_Mag",7];
+		_unit addweapon "srifle_DMR_04_Tan_F";
 		_unit addmagazines [_grenade,3];
 		_unit addmagazines [_mgrenade,3];
 		_unit addmagazines [_smokegrenade,3];
-		["smg"] call _backpack;
+		//"["smg"] call _backpack;
 	};
 
 // LOADOUT: GRENADIER
