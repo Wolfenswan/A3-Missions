@@ -2,7 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// FACTION: FIA
+// FACTION: ZEUS
 
 // ====================================================================================
 
@@ -11,8 +11,7 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS (folkarps.com)<br/>
-Contact: wolfenswanarps@gmail.com
+*** Insert mission credits here. ***
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -22,7 +21,6 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 // NOTES: ADMINISTRATION
 // The code below creates the administration sub-section of notes.
 
-/*
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 *** Insert information on administration and logistics here. ***
@@ -51,7 +49,6 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 *** Insert instructions for specific units here. ***
 "]];
-*/
 
 // ====================================================================================
 
@@ -60,12 +57,11 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-Enemies straight ahead. Kill them.
+*** Insert the mission here. ***
 "]];
 
 // ====================================================================================
 
-/*
 // NOTES: SITUATION
 // The code below creates the situation sub-section of notes.
 
@@ -81,6 +77,5 @@ _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
 *** Insert information about friendly forces here.***
 "]];
-*/
 
 // ====================================================================================

@@ -40,7 +40,8 @@ f_cInit = true;
 
 // Define parameters
 _range = f_param_caching;	// The range outside of which to cache units
-f_var_cacheSleep = 6; 				// The time to sleep between checking
+f_var_cacheSleep = 6; 		// The time to sleep between checking
+f_var_cacheRun = true;
 
 [_range] spawn f_fnc_cTracker;
 
@@ -53,7 +54,7 @@ if (f_var_debugMode == 1) then {
 	// Giving the tracker a head start
 	sleep (f_var_cacheSleep * 1.1);
 
-		while {true} do {
+		while {f_var_cacheRun} do {
 			_str1 = "f_fnc_cache DBG:<br/>";
 			_str2 = format["Total groups: %1<br/>",count allGroups];
 			_str3 = format ["Cached groups:%1<br/>",{_x getvariable "f_cached"} count allGroups];
@@ -63,10 +64,7 @@ if (f_var_debugMode == 1) then {
 			hintsilent parseText (_str1+_str2+_str3+_str4+_str5);
 			diag_log (_str1+_str2+_str3+_str4+_str5);
 
-			sleep (_this select 0);
+			sleep f_var_cacheSleep;
 		};
 	};
 };
-
-
-true
