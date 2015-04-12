@@ -69,7 +69,7 @@ _scope1 = "optic_ACO_grn";		// ACO
 _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
 _scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
 
-_bipod1 = "bipod_01_F_mtp";		// Default bipod
+_bipod1 = "bipod_03_F_oli";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
@@ -100,7 +100,7 @@ _riflemag = "30Rnd_556x45_Stanag";
 _riflemag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 
 // Standard Carabineer (Medic, Rifleman (AT), MAT Gunner, MTR Gunner, Carabineer)
-_carbine = "arifle_TRG20_F";
+_carbine = "arifle_Mk20C_plain_F";
 _carbinemag = "30Rnd_556x45_Stanag";
 _carbinemag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 
@@ -372,7 +372,6 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
-		_attachments = [_attach2,_scope2];
 	};
 
 // LOADOUT: DEPUTY COMMANDER AND SQUAD LEADER
@@ -392,7 +391,6 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
-		_attachments = [_attach2,_scope2];
 	};
 
 // LOADOUT: MEDIC
@@ -421,7 +419,6 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
-		_attachments = [_attach2,_scope2];
 	};
 
 
@@ -450,7 +447,6 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit addWeapon "Binocular";
 		["aar"] call _backpack;
-		_attachments = [_attach2,_scope2];
 	};
 
 // LOADOUT: RIFLEMAN (AT)
@@ -472,13 +468,13 @@ switch (_typeofUnit) do
 	{
 		_unit addmagazines [_DMriflemag,7];
 		_unit addweapon _DMrifle;
-		_unit addmagazines [_grenade,2];
-		_unit addmagazines [_mgrenade,2];
+		_unit addmagazines [_grenade,1];
+		_unit addmagazines [_mgrenade,1];
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_pistolmag,3];
 		_unit addweapon _pistol;
 		["dm"] call _backpack;
-		_attachments = [_attach1,_scope2];
+		_attachments = [_scope2];
 	};
 
 // LOADOUT: MEDIUM MG GUNNER

@@ -36,9 +36,9 @@ switch (_fog) do
 	//Light
 	case 1:
 	{
-		_strength = 0.2;
-		_decay = 0;
-		_base = 0;
+		_strength = 0.3;
+		_decay = 0.03;
+		_base = 92;
 	};
 
 	//Heavy

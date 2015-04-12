@@ -62,7 +62,6 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 Proceed to Styrga and take out the helicopter by any means necessary.<br/>
 While you're at it, blow the <marker name='mkrDepot'>AAF supply depot</marker> to smithereens.<br/>
 Once both tasks are complete, fall back to the north to complete your mission.
-
 "]];
 
 // ====================================================================================
