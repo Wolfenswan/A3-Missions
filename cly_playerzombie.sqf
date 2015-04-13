@@ -45,6 +45,7 @@ while {true} do {
 		[player] joinSilent grpNull;
 		if !(isNil "f_groupJoinAction") then {player removeAction f_groupJoinAction};
 		if !(isNil "f_groupLeaveAction") then {player removeAction f_groupLeaveAction};
+		player linkItem "ItemGPS"; player linkItem "ItemCompass";
 		sleep 3;
 		if (isNil "obj2" and {isPlayer _x and isNil {_x getVariable "zombie"}} count allUnits>0) then {
 			obj2=player createSimpleTask [""];
