@@ -20,6 +20,10 @@ private ["_units","_unit","_faction","_known","_unitFactions","_unitClasses"];
 // The factions of all units which should be affected
 _unitFactions = ["blu_f", "opf_f", "ind_f","blu_g_f","opf_g_f","ind_g_f"];
 
+// The default gear type picked when no corresponding entry is found in the _unitClasses array
+// Set _defaultclass to "" to let these units keep their default gear
+_defaultclass = "r";
+
 // The unit classes and their corresponding F3 Assign Gear Component type
 _unitClasses = [
 
@@ -43,7 +47,7 @@ _unitClasses = [
 	["_aa_"			,	"msamg"	],
 	["_aaa_"		,	"msamag"],
 	["_uav_"		,	"uav"	],
-	["_m_"			,	"sn"	],
+	["_m_"			,	"dm"	],
 	["_sniper_"		,	"sn"	],
 	["_spotter_"	,	"sp"	],
 	["_diver_"		,	"div"	],
@@ -85,7 +89,9 @@ _units = if (count _this == 0) then [{waitUntil {scriptDone f_script_setLocalVar
 
 				// If the class is not in the _unitClasses array
 				if (!_known) then {
-					// [["r", _unit], "f_fnc_assignGear", _unit,false,true] call BIS_fnc_MP;
+					if (_defaultclass != "") then {
+						[[_defaultclass, _unit], "f_fnc_assignGear", _unit,false,true] call BIS_fnc_MP;
+					};
 				};
 
 			} else {

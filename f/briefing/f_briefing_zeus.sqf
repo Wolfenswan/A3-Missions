@@ -2,7 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// FACTION: NATO
+// FACTION: ZEUS
 
 // ====================================================================================
 
@@ -11,9 +11,7 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by Wolfenswan for Folk ARPS.<br/>
-Thanks to {C9}Jester for his smoke column script.<br/>
-Credits to Shuko for his ARMA2 mission Jolly Green.
+*** Insert mission credits here. ***
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -25,7 +23,31 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-Helicopters:<br/>
+*** Insert information on administration and logistics here. ***
+"]];
+
+// ====================================================================================
+
+// NOTES: EXECUTION
+// The code below creates the execution sub-section of notes.
+
+_exe = player createDiaryRecord ["diary", ["Execution","
+<br/>
+<font size='18'>COMMANDER'S INTENT</font>
+<br/>
+*** Insert very short summary of plan here. ***
+<br/><br/>
+<font size='18'>MOVEMENT PLAN</font>
+<br/>
+*** Insert movement instructions here. ***
+<br/><br/>
+<font size='18'>FIRE SUPPORT PLAN</font>
+<br/>
+*** Insert fire support instructions here. ***
+<br/><br/>
+<font size='18'>SPECIAL TASKS</font>
+<br/>
+*** Insert instructions for specific units here. ***
 "]];
 
 // ====================================================================================
@@ -35,10 +57,7 @@ Helicopters:<br/>
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-1. We begin <marker name='mkrNATO'>here</marker>.<br/>
-2. Move towards the estimated location of the crash site.<br/>
-3. Locate the crash site, destroy the helicopter.<br/>
-4. Extract with any survivors (focus on the colonel).<br/>
+*** Insert the mission here. ***
 "]];
 
 // ====================================================================================
@@ -48,15 +67,15 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-A CTRG team embedded with FIA rebels has botched their extraction. They managed to capture their mark - a high ranking AAF colonel - but got into a heavy firefight and had their helicopter was shot down shortly after take off. They are probably low on ammo and we do not have been able to establish any contact yes. This operation is clandestine and AAF must not be allowed to get any data from the helicopter.
+*** Insert general information about the situation here.***
 <br/><br/>
-ENEMY FORCES
+<font size='18'>ENEMY FORCES</font>
 <br/>
-AAF forces are probably on the way to mop up the survivors and transfer data from the helicopter's flight computer.
+*** Insert information about enemy forces here.***
 <br/><br/>
-FRIENDLY FORCES
+<font size='18'>FRIENDLY FORCES</font>
 <br/>
-Whoever survived the crash will be somewhere around the crash site. Note that they have red chemlights and flares.<br/><br/>
+*** Insert information about friendly forces here.***
 "]];
 
 // ====================================================================================
