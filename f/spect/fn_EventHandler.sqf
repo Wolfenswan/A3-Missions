@@ -191,7 +191,7 @@ case "LBListSelChanged_modes":
 case "KeyDown":
 {
     _key = _args select 1;
-    _handled = true;
+    _handled = false;
     if(!isNull (findDisplay 49)) exitWith {if(_key == 1) then {true}};
     switch (_key) do
     {
@@ -346,6 +346,24 @@ case "KeyDown":
             [] spawn f_fnc_HandleCamera;
              _handled = true;
         };
+        case 25:
+		{
+            f_cam_muteSpectators = !f_cam_muteSpectators;
+            switch (f_var_radios) do {
+              // ACRE
+              case 1: {
+                [f_cam_muteSpectators] call acre_api_fnc_setSpectator;
+              };
+              // TFR
+              case 2: {
+                [player, f_cam_muteSpectators] call TFAR_fnc_forceSpectator;
+              };
+              case 3: {
+                [f_cam_muteSpectators] call acre_api_fnc_setSpectator;
+              };
+
+            };
+        };
         case 29: // CTRL
         {
             f_cam_ctrl_down = true;
@@ -403,7 +421,7 @@ case "KeyUp":
 {
     if(!isNull (findDisplay 49)) exitWith {};
     _key = _args select 1;
-    _handled = true;
+    _handled = false;
     switch (_key) do
     {
         case 42:
