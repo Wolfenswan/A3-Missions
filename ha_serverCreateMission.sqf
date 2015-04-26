@@ -104,7 +104,7 @@ while {count _posAttackerStart == 0} do {
 _posTemp = [_posDefenderStart, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
 {
 	if (count crew _x == 0) then {deleteVehicle _x} else {
-		_pos = _posTemp findEmptyPosition [0,50,typeOf _x];
+		_pos = _posTemp findEmptyPosition [5,50,typeOf _x];
 		_x setPos _pos;
 		_posTemp = _pos;
 	};
@@ -113,9 +113,9 @@ _posTemp = [_posDefenderStart, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
 _posTemp = [_posAttackerStart, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
 {
 	if (count crew _x == 0) then {deleteVehicle _x} else {
-	_pos = _posTemp findEmptyPosition [0,50,typeOf _x];
-	//_pos = [_posTemp, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
-	_x setPos _pos;
-	_posTemp = _pos;
+		_pos = _posTemp findEmptyPosition [5,50,typeOf _x];
+		//_pos = [_posTemp, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
+		_x setPos _pos;
+		_posTemp = _pos;
 	};
 } forEach [VehAAF_Car1,VehAAF_Truck1,VehAAF_Truck2,VehAAF_Truck3];
