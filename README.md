@@ -5,7 +5,7 @@ The missions can be found on GitHub:<br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-3-0 RC2</i>
+<i>3-3-0</i>
 
 <b>Mission description</b><br/>
 A Mi-48 Kaiman has landed in Styrga for emergency repairs and refuelling. The nearest FIA cell tries to seize the moment and take out both the airborn threat as well as the nearby supply depot in one swift strike.
