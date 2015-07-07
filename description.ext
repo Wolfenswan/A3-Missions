@@ -1,4 +1,3 @@
-// ============================================================================================
 
 // F3 - Mission Header
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
@@ -7,7 +6,7 @@ class Header
 {
 	gameType = Coop;
 	minPlayers = 1;
-	maxPlayers = 457;
+	maxPlayers = 463;
 };
 
 // ============================================================================================
@@ -18,7 +17,8 @@ class Header
 onLoadName = "*** Insert mission name here. ***";
 onLoadMission = "Made with the F3 Mission Development Framework";
 author = "Wolfenswan [FA]";
-loadScreen = "logo.paa";
+loadScreen = "loadLogo.jpg";
+overviewPicture = "overviewLogo.jpg";
 
 // ============================================================================================
 
@@ -243,32 +243,32 @@ class Params
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-	class f_param_AISkill_BLUFOR
-	{
-		title = "$STR_f_param_AISkill_BLUFOR";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_BLUFOR = %1";
-	};
+class f_param_AISkill_BLUFOR
+{
+	title = "$STR_f_param_AISkill_BLUFOR";
+	values[] = {0,1,2,3};
+	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+	default = 1;
+	code = "f_param_AISkill_BLUFOR = %1";
+};
 
-	class f_param_AISkill_OPFOR
-	{
-		title = "$STR_f_param_AISkill_OPFOR";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_OPFOR = %1";
-	};
+class f_param_AISkill_OPFOR
+{
+	title = "$STR_f_param_AISkill_OPFOR";
+	values[] = {0,1,2,3};
+	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+	default = 1;
+	code = "f_param_AISkill_OPFOR = %1";
+};
 
-	class f_param_AISkill_INDP
-	{
-		title = "$STR_f_param_AISkill_INDP";
-		values[] = {0,1,2,3};
-		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-		default = 1;
-		code = "f_param_AISkill_INDP = %1";
-	};
+class f_param_AISkill_INDP
+{
+	title = "$STR_f_param_AISkill_INDP";
+	values[] = {0,1,2,3};
+	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+	default = 1;
+	code = "f_param_AISkill_INDP = %1";
+};
 
 // ============================================================================================
 
@@ -321,7 +321,7 @@ class CfgDebriefing
 	{
 		title = "MISSION SUCCESS";
 		subtitle = "";
-		description = "We fulfilled all objectives to satisfication.";
+		description = "The platoon managed to fulfill all objectives according to plan.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -331,7 +331,7 @@ class CfgDebriefing
 	{
 		title = "MISSION FAILURE";
 		subtitle = "";
-		description = "The platoon was unable to fulfill it's objectives";
+		description = "The platoon failed at fulfilling it's obejctives.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -339,9 +339,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "PLATOON WIPED OUT";
+		title = "MISSION INCONCLUSIVE";
 		subtitle = "";
-		description = "Our entire platoon was eliminated.";
+		description = "The platoon either did not fulfill it's objectives to satisfication or had the mission ended in a stalemate.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -359,9 +359,9 @@ class CfgDebriefing
 
 	class End5
 	{
-		title = "MISSION SUCCESS";
+		title = "Ending #5";
 		subtitle = "";
-		description = "We fulfilled all objectives to satisfication.";
+		description = "*** Insert debriefing #5 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -369,9 +369,9 @@ class CfgDebriefing
 
 	class End6
 	{
-		title = "MISSION FAILURE";
+		title = "Ending #6";
 		subtitle = "";
-		description = "The platoon was unable to fulfill it's objectives";
+		description = "*** Insert debriefing #6 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -422,7 +422,9 @@ class CfgRespawnTemplates
 
 class CfgFunctions
 {
+	//ws_fnc
 	#include "ws_fnc\config.hpp"
+
 	class F // Defines the "owner"
 	{
 		class common // category
@@ -541,7 +543,6 @@ class CfgFunctions
 	};
 };
 
-
 // ============================================================================================
 
 // F3 - Custom Insignia
@@ -549,3 +550,5 @@ class CfgFunctions
 class CfgUnitInsignia {
 	#include "f\assignGear\insignia\define.hpp"
 };
+
+// ============================================================================================
