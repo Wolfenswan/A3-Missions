@@ -28,3 +28,8 @@ sleep 10;
  ["CRATESISTANCE","SOMEWHERE IN ALTIS"] call ws_fnc_showIntro;
 
 };
+
+if (isServer) then {
+	sleep 10;
+{_x allowDamage true} forEach vehicles;
+};
