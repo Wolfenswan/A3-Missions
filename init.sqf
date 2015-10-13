@@ -11,6 +11,7 @@ enableSaving [false, false];
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
 enableSentences false;
+player setSpeaker "NoVoice";
 
 // ====================================================================================
 
@@ -122,7 +123,8 @@ f_var_garbageCollectorDistance = 450; // The minimal distance to a player for th
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_var_civAI = independent;         // Optional: The civilian AI will use this side's settings
+
+f_var_civAI = independent; // Optional: The civilian AI will use this side's settings
 [] execVM "f\setAISKill\f_setAISkill.sqf";
 
 // ====================================================================================

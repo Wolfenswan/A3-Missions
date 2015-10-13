@@ -48,15 +48,15 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-A CTRG team embedded with FIA rebels has botched their extraction. They managed to capture their mark - a high ranking AAF colonel - but got into a heavy firefight and had their helicopter was shot down shortly after take off. They are probably low on ammo and we do not have been able to establish any contact yes. This operation is clandestine and AAF must not be allowed to get any data from the helicopter.
+A CTRG team embedded with FIA rebels has botched their extraction. They managed to capture their mark - a high ranking AAF colonel - but got into a heavy firefight and their helicopter was shot down shortly after take off. They are probably low on supplies and we do not have been able to establish any contact yes. This operation is clandestine and AAF must not be allowed to get any data from the helicopter.
 <br/><br/>
 ENEMY FORCES
 <br/>
-AAF forces are probably on the way to mop up the survivors and transfer data from the helicopter's flight computer.
+AAF forces are probably on the way to deal with the survivors and collect all data from the helicopter's flight computer.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-Whoever survived the crash will be somewhere around the crash site. Note that they have red chemlights and flares.<br/><br/>
+Whoever survived the crash will be somewhere around the crash site.<br/><br/>
 "]];
 
 // ====================================================================================

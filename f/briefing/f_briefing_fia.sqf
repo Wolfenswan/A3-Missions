@@ -25,7 +25,8 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-We are very low on ammo and lost most of our gear in the crash. We've taken the emergency flares from the helicopter.
+It looks like our electronics got scrambled in the crash and there isn't a single good old paper map on this piece of shit future-tech.<br/>
+We are also low on ammo and lost most of our gear in the crash. We've grabbed emergency flares from the helicopter.
 "]];
 
 // ====================================================================================
@@ -50,7 +51,7 @@ OPTIONAL:<br/>
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-As part of a CTRG troop embedded with the FIA resistance, we were tasked to free a sympathizing AAF colonel. The whole thing went to shit and we had to shoot our way out. Although we reached the helicopter, it was shot down shortly after and we lost most of our gear in the crash.
+As part of a CTRG troop embedded with the FIA resistance, we were tasked to exfill a sympathizing AAF colonel. The whole thing went to shit and we had to shoot our way out. Although we reached the helicopter, it was shot down shortly afterwards and we went down somewhere in western Altis.
 <br/><br/>
 ENEMY FORCES
 <br/>
