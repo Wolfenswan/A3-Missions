@@ -33,8 +33,8 @@ Each cache is guarded by a few friendly AI units. AAF must use satchel charges t
 <br/><br/>
 TRANSPORT
 <br/>
-1x Offroad with CO and DC premounted<br/>
-For each squad 1 x Offroad and 1 x Truck.<br/>
+1x Offroad with CO premounted<br/>
+Each squad is premounted in 2 x Trucks.<br/>
 "]];
 
 // ====================================================================================
@@ -46,7 +46,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 <font size='18'>COMMANDER'S INTENT</font>
 <br/>
-Assist our comrades in protecting the equipment caches, and eliminate any AAF soldiers sent to destroy them.
+Assist our comrades in protecting the equipment caches, and eliminate any hostile forces sent to destroy them.
 "]];
 
 // ====================================================================================
@@ -71,7 +71,7 @@ An ex-comrade has leaked information to AAF about the location of our equipment 
 <br/><br/>
 <font size='18'>ENEMY FORCES</font>
 <br/>
-AAF and/or CSAT force of unknown size, no armed vehicles or armor.
+AAF and/or CSAT force of unknown size, no armed vehicles or armor. They are approaching from outside the red circle.
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>

@@ -182,7 +182,7 @@ class Params
             title = "$STR_f_param_loadouts";
             values[] = {0,1,2};
             texts[] = {"Light","Medium","Heavy"};
-            default = 1;
+            default = 0;
             code = "f_param_backpacks = %1";
     };
 
@@ -340,7 +340,7 @@ class Params
 		{
 				title = "Number of destroyed caches for attacker victory";
 				values[] = {1,2,3,4,5,6,7,8};
-				default = 4;
+				default = 5;
 				code = "ha_param_cacheVictoryNum = %1";
 		};
 		class ws_param_cacheDis
@@ -362,17 +362,17 @@ class Params
 		{
 				title = "NVGs";
 				values[] = {0,1,2};
-				texts[] = {"All","FIA none","Disabled"};
+				texts[] = {"All","FIA none","FIA & AAF None"};
 				default = 2;
 				code = "ws_param_nvg = %1";
 		};
 
 		class ws_param_halo
 		{
-				title = "CSAT HALO insertion";
+				title = "CSAT HALO insertion (Best for small AO & no helicopters)";
 				values[] = {0,1};
 				texts[] = {"Off","On"};
-				default = 1;
+				default = 0;
 				code = "ws_param_halo = %1";
 		};
 };

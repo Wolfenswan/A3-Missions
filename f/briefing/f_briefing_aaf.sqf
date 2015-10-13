@@ -33,7 +33,7 @@ Satchel charges must be used to destroy caches. Fireteam leaders, assistant auto
 <br/><br/>
 TRANSPORT
 <br/>
-1x Strider<br/>
+1x Strider (CO)<br/>
 3x Transport truck with one squad pre-mounted per truck</br>
 "]];
 
@@ -46,7 +46,10 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 <font size='18'>COMMANDER'S INTENT</font>
 <br/>
-Destroy the marked FIA equipment caches by using satchels, with minimum casualties to your squad.
+Destroy the marked FIA equipment caches by using satchels, with minimum casualties to your squad.<br/><br/>
+<font size='18'>DEPLOYMENT</font>
+<br/>
+CO and all SL have a teleport option, which they can use to move their vehicle (including passengers) to the desired location. Deplyoment is restricted to outside the red circle. <br/> IMPORTANT: All units need to be in the vehicles for this to work as intended.
 "]];
 
 // ====================================================================================
@@ -67,7 +70,7 @@ If the attackers take %3 percent casualties, the mission will be considered a fa
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-AAF intel has indicated locations of several FIA guerrilla equipment caches.
+AAF intel has indicated <marker name='mkrBorder'>locations of several FIA guerrilla equipment caches</marker>.
 However FIA is about to relocate the caches, and we must move in swiftly to intercept them and destroy the caches.
 <br/><br/>
 <font size='18'>ENEMY FORCES</font>
@@ -76,7 +79,11 @@ FIA guerrillas, number unknown. No armed vehicles or armor. The caches are very 
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>
-CSAT might be deploying airborne units in support.
+CSAT are high on kat most of the time. Don't expect any help.
+<br/><br/>
+<font size='18'>DEPLOYMENT</font>
+<br/>
+Special rules apply to troop deployment via group teleport. See EXECUTION for details.
 "]];
 
 // ====================================================================================

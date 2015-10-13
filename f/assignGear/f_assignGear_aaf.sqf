@@ -441,6 +441,7 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
+		_unit addmagazines [_satchel,1];
 	};
 
 
@@ -469,6 +470,7 @@ switch (_typeofUnit) do
 		//_unit addmagazines [_mgrenade,5];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,1];
 		_unit addmagazines [_smokegrenadegreen,1];
+		_unit addmagazines [_satchel,1];
 		["aar"] call _backpack;
 	};
 

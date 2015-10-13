@@ -42,7 +42,7 @@ _crate addEventHandler [
 	}];
 
 //_camonet = "CamoNet_INDP_open_F" createVehicle _pos;
-_grp = [_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F", "B_G_Soldier_F"],[], [], [0.2,0.2], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
+_grp = [_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F"],[], [], [0.2,0.2], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
 [_grp,_pos,["hold"]] call ws_fnc_addWaypoint;
 [_grp,"SAFE","WHITE"] call ws_fnc_setAIMode;
 
@@ -54,4 +54,5 @@ _marker = createMarker [_markerName, _pos];
 _marker setMarkerShape "ICON";
 _marker setMarkerType "mil_circle";
 _marker setMarkerText format[" %1", (_marker_names select _id)];
+
 //ha_gen_marker_count = ha_gen_marker_count + 1;

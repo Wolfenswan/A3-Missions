@@ -11,7 +11,7 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-Made by harakka and wolfenswan with love for Folk ARPS. Special thanks to Head for scripting help. Thanks to all FA session players for suggestions and bugreports.
+Made by harakka and Wolfenswan with love for Folk ARPS. Special thanks to Head for scripting help. Thanks to all FA session players for suggestions and bugreports.
 <br/>
 <br/>
 Uses SHK_POS by Shuko<br/>
@@ -29,12 +29,11 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 DESTROYING CACHES
 <br/>
-Satchel charges must be used to destroy caches. Fireteam leaders, assistant automatic riflemen and riflemen carry a satchel each.
+Satchel charges must be used to destroy caches. All regular units carry a satchel each.
 <br/><br/>
 TRANSPORT
 <br/>
-3x Taru (bech) 		- carries 8 + 2 spare crew seats</br>
-3x Taru (transport) - carries 16 + 1 spare crew seat</br>
+4x Taru (bech) - carries 8 + 1 spare crew seat</br>
 "]];
 
 // ====================================================================================
@@ -48,7 +47,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 Destroy the marked FIA equipment caches by using satchels, with minimum casualties to your squad.<br/><br/>
 HALO<br/>
-Command might be creative and try for something different today. If the HALO option is available, all group leaders can deploy themselves and their fireteam by using the 'HALO'-action and select their destination on the map. They will spawn in about 600m height and have to manually open their parachute or become green pancakes otherwise. It is only available for 90 seconds.
+Command might be creative and try for something different today. If the HALO option is available, all group leaders can deploy themselves and their fireteam by using the 'HALO'-action and select their destination on the map. They will spawn in about 600m height and have to manually open their parachute or become green pancakes otherwise. It is only available for 120 seconds.
 "]];
 
 // ====================================================================================
@@ -78,7 +77,7 @@ FIA guerrillas, number unknown. No armed vehicles or armor. The caches are very 
 <br/><br/>
 <font size='18'>FRIENDLY FORCES</font>
 <br/>
-AAF might deploy their own motorized troops.
+The local AAF are probably just drunk on moonshine. Worthless.
 "]];
 
 // ====================================================================================

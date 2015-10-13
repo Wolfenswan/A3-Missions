@@ -73,7 +73,7 @@ _bipod1 = "bipod_02_F_hex";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
-_attachments = [_attach2,_silencer2]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_attach2,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -324,13 +324,14 @@ if (_isMan) then {
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	if (ws_param_nvg <= 2) then {_unit linkItem _nvg};			// Add and equip the faction's nvg
+	_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
 	_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass
 	_unit linkItem "ItemRadio";		// Add and equip A3's default radio
 	_unit linkItem "ItemWatch";		// Add and equip a watch
 	_unit linkItem "ItemGPS"; 	// Add and equip a GPS
+	_unit addItem _silencer2;
 
 };
 
@@ -445,6 +446,7 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
+		_unit addmagazines [_satchel,1];
 	};
 
 
@@ -821,6 +823,7 @@ switch (_typeofUnit) do
 		//_unit addmagazines [_mgrenade,5];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,3];
 		["r"] call _backpack;
+		_unit addmagazines [_satchel,1];
 	};
 
 // LOADOUT: CARABINEER
