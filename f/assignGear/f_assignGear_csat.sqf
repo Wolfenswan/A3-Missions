@@ -192,12 +192,12 @@ _MMGmag_tr = "150Rnd_93x64_Mag";
 //_MMGmag_tr = "150Rnd_762x54_Box_Tracer";
 
 // Marksman rifle
-_DMrifle = "srifle_DMR_05_hex_F";
-_DMriflemag = "10Rnd_93x64_DMR_05_Mag";
+// _DMrifle = ""srifle_DMR_05_hex_F";
+// _DMriflemag = "10Rnd_93x64_DMR_05_Mag";"
 
 // ASP1-KIR
-// _DMrifle = "srifle_DMR_04_F";
-// _DMriflemag = "10Rnd_127x54_Mag";
+_DMrifle = "srifle_DMR_04_F";
+_DMriflemag = "10Rnd_127x54_Mag";
 
 // Rifleman AT
 _RAT = "launch_RPG32_F";
@@ -240,14 +240,14 @@ _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = [];
+_specOp = ["smg","uav","dm"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
 
 // Woodland-Hex
-_baseUniform = ["U_O_CombatUniform_ocamo"];
-_baseHelmet = ["H_HelmetO_ocamo"];
+_baseUniform = ["U_O_PilotCoveralls"];
+_baseHelmet = ["H_Booniehat_khk_hs"];
 _baseGlasses = [];
 
 // Urban
@@ -285,10 +285,9 @@ _ghillieGlasses = [];
 
 // Spec Op
 _sfuniform = ["U_O_SpecopsUniform_ocamo"];
-_sfhelmet = ["H_HelmetSpecO_ocamo","H_HelmetSpecO_blk"];
-_sfRig = ["V_PlateCarrier1_blk"];
+_sfhelmet = ["H_Shemag_olive_hs"];
+_sfRig = ["V_Chestrig_khk"];
 _sfGlasses = [];
-
 
 // ====================================================================================
 
@@ -492,15 +491,15 @@ switch (_typeofUnit) do
 // LOADOUT: DESIGNATED MARKSMAN
 	case "dm":
 	{
-		_unit addmagazines [_DMriflemag,7];
-		_unit addweapon _DMrifle;
+		_unit addmagazines ["10Rnd_93x64_DMR_05_Mag",5];
+		_unit addweapon "srifle_DMR_05_hex_F";
 		_unit addmagazines [_grenade,2];		// Do not use with mgrenades
 		//_unit addmagazines [_mgrenade,3];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_pistolmag,3];
 		_unit addweapon _pistol;
 		["dm"] call _backpack;
-		_attachments = [_attach1,_scope2];
+		_attachments = [_attach1,"optic_Arco","muzzle_snds_93mmg_tan"];
 	};
 
 // LOADOUT: MEDIUM MG GUNNER
@@ -788,8 +787,8 @@ switch (_typeofUnit) do
 // LOADOUT: UAV OPERATOR
 	case "uav":
 	{
-		_unit addmagazines [_carbinemag,5];
-		_unit addweapon _carbine;
+		_unit addmagazines [_DMriflemag,5];
+		_unit addweapon _DMrifle;
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];		// Do not use with mgrenades
 		//_unit addmagazines [_mgrenade,2];		// Do not use with grenades
@@ -838,12 +837,13 @@ switch (_typeofUnit) do
 // LOADOUT: SUBMACHINEGUNNER
 	case "smg":
 	{
-		_unit addmagazines [_smgmag,7];
-		_unit addweapon _smg;
+		_unit addmagazines [_DMriflemag,5];
+		_unit addweapon _DMrifle;
 		_unit addmagazines [_grenade,3];		// Do not use with mgrenades
 		//_unit addmagazines [_mgrenade,5];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,3];
 		["smg"] call _backpack;
+		_unit addWeapon "Rangefinder";
 	};
 
 // LOADOUT: GRENADIER

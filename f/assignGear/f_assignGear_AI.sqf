@@ -22,7 +22,7 @@ _unitFactions = ["blu_f", "opf_f", "ind_f","blu_g_f","opf_g_f","ind_g_f"];
 
 // The default gear type picked when no corresponding entry is found in the _unitClasses array
 // Set _defaultclass to "" to let these units keep their default gear
-_defaultclass = "r";
+_defaultclass = "smg";
 
 // The unit classes and their corresponding F3 Assign Gear Component type
 _unitClasses = [
@@ -31,7 +31,7 @@ _unitClasses = [
 	["_colonel_"	,	"co"	],
 	["_sl_"			,	"dc"	],
 	["_tl_"			,	"ftl"	],
-	["_lite_"		,	"car"	],
+	["_lite_"		,	"smg"	],
 	["_ar_"			,	"ar"	],
 	["_aar_"		,	"aar"	],
 	["_a_"			,	"aar"	],

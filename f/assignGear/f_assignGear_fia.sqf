@@ -73,7 +73,7 @@ _bipod1 = "bipod_01_F_mtp";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
-_attachments = [_attach1,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_attach2]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -105,8 +105,8 @@ _carbinemag = "30Rnd_556x45_Stanag";
 _carbinemag_tr = "30Rnd_556x45_Stanag_Tracer_Red";
 
 // Standard Submachine Gun/Personal Defence Weapon (Aircraft Pilot, Submachinegunner)
-_smg = "SMG_01_F";
-_smgmag = "30Rnd_45ACP_Mag_SMG_01";
+_smg = ["SMG_01_F","hgun_PDW2000_F"];
+_smgmag = "30Rnd_9x21_Mag";
 _smgmag_tr = "30Rnd_45ACP_Mag_SMG_01_tracer_green";
 
 // Diver
@@ -132,8 +132,8 @@ _glflareyellow = "UGL_FlareYellow_F";
 _glflaregreen = "UGL_FlareGreen_F";
 
 // Pistols (CO, DC, Automatic Rifleman, Medium MG Gunner)
-_pistol = "hgun_ACPC2_F";
-_pistolmag = "9Rnd_45ACP_Mag";
+_pistol = "hgun_Pistol_heavy_02_F";
+_pistolmag = "6Rnd_45ACP_Cylinder";
 
 // Grenades
 _grenade = "HandGrenade";
@@ -240,7 +240,7 @@ _diver = ["div"];
 _pilot = ["pp","pcc","pc"];
 _crew = ["vc","vg","vd"];
 _ghillie = ["sn","sp"];
-_specOp = [];
+_specOp = ["co"];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
@@ -279,11 +279,10 @@ _ghillieRig = ["V_Chestrig_rgr"];
 _ghillieGlasses = [];
 
 // Spec Op (CTRG)
-_sfuniform = ["U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3"];
-_sfhelmet = _baseHelmet;
-_sfRig = ["V_PlateCarrierL_CTRG","V_PlateCarrierH_CTRG"];
+_sfuniform = ["U_BG_leader"];
+_sfhelmet = ["H_Beret_blk"];
+_sfRig = ["V_BandollierB_cbr"];
 _sfGlasses = [];
-
 
 // ====================================================================================
 
@@ -319,7 +318,7 @@ if (_isMan) then {
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	_unit linkItem _nvg;			// Add and equip the faction's nvg
+	//_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
 	_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass
@@ -358,21 +357,9 @@ switch (_typeofUnit) do
 // LOADOUT: COMMANDER
 	case "co":
 	{
-		_unit addmagazines [_glriflemag,4];
-		_unit addmagazines [_glriflemag_tr,4];
-		_unit addmagazines [_glsmokewhite,4];
-		_unit addmagazines [_glsmokered,4];
-		_unit addmagazines [_glflaregreen,6];
-		_unit addweapon (_glrifle call BIS_fnc_selectRandom);					//_COrifle
 		_unit addmagazines [_pistolmag,5];
 		_unit addweapon _pistol;
-		_unit addmagazines [_grenade,1];		// Do not use with mgrenades
-		//_unit addmagazines [_mgrenade,1];		// Do not use with grenades
-		_unit addmagazines [_smokegrenade,1];
-		_unit addmagazines [_smokegrenadegreen,1];
-		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
-		["g"] call _backpack;
 	};
 
 // LOADOUT: DEPUTY COMMANDER AND SQUAD LEADER
@@ -835,11 +822,8 @@ switch (_typeofUnit) do
 	case "smg":
 	{
 		_unit addmagazines [_smgmag,7];
-		_unit addweapon _smg;
-		_unit addmagazines [_grenade,3];		// Do not use with mgrenades
-		//_unit addmagazines [_mgrenade,5];		// Do not use with grenades
-		_unit addmagazines [_smokegrenade,3];
-		["smg"] call _backpack;
+		_unit addweapon (_smg call BIS_fnc_selectRandom);
+
 	};
 
 // LOADOUT: GRENADIER

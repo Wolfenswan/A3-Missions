@@ -394,7 +394,7 @@ switch (_typeofUnit) do
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
 	};
-	
+
 // LOADOUT: JTAC
 	case "jtac":
 	{
