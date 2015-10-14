@@ -916,7 +916,7 @@ switch (_typeofUnit) do
 		clearMagazineCargoGlobal _unit;
 		clearItemCargoGlobal _unit;
 		clearBackpackCargoGlobal _unit;
-		_unit addWeaponCargoGlobal [_carbine, 4];
+		_unit addMagazineCargoGlobal [_satchel, 4];
 		_unit addMagazineCargoGlobal [_riflemag, 20];
 		_unit addMagazineCargoGlobal [_glriflemag, 20];
 		_unit addMagazineCargoGlobal [_carbinemag, 20];

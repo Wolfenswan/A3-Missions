@@ -71,9 +71,9 @@ _groups = [
 ["GrpFIA_DC","FIA DC -"],
 ["GrpFIA_COV","FIA COV -"],
 
-["GrpFIA_ASL","FIA ASL -"],
-["GrpFIA_A1","FIA A1 -"],
-["GrpFIA_A2","FIA A2 -"],
+["GrpNATO_Grnd","CTRG SL -"],
+["GrpNATO_Grnd1","CTRG J1 -"],
+["GrpNATO_Grnd2","CTRG J2 -"],
 ["GrpFIA_AV","FIA AV -"],
 
 ["GrpFIA_BSL","FIA BSL -"],

@@ -25,7 +25,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-The players have crash-landed at the indicated location. They have neither maps nor GPS and need to coordinate with a transport helicopter to extract. Your task is to provide a challenge and to keep the players on the move.
+The players have crash-landed at the indicated location. They have neither maps nor GPS and need to coordinate with a transport helicopter to extract. Your task is to provide a challenge and to keep the players on the move. Units placed by you won't come equipped with maps or GPS by default.
 <br/><br/>
 AVAILABLE ADDONS
 <br/>
@@ -33,7 +33,7 @@ You can place units from both BLUFOR and INDEPENDENT side. INDEPENDENT is hostil
 Several useful tools can be found in the 'modules'-category. Use Zeus>Remote Control to steer AI.<br/><br/>
 CONDUCT
 <br/>
-An initial period of around 5 minutes is suggested to let players get an idea of where they might be and what the surroundings look like.<br/>Place units logically - it should make sense how they got there and why they are attacking from that angle.<br/>Do not constantly but pressure on the players, give them some time to breath and focus while you are preparing AI elsewhere.
+An initial period of around 5 minutes is suggested to let players get an idea of where they might be and what the surroundings look like.<br/>Place units logically - it should make sense how they got there and why they are attacking from that angle.<br/>Do not constantly but pressure on the players, give them some time to breathe while you are preparing AI elsewhere.
 "]];
 
 // ====================================================================================

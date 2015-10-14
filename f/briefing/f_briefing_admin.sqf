@@ -5,7 +5,7 @@
 // ADD MISSION MAKER NOTES SECTIONS
 // All text added below will only be visible to the current admin
 
-_customText = "";
+_customText = "You decide whether the survivors have radio contact to the helicopter from the beginning or only after a certain time. You can for example let the helicopter know the rough direction of the crash but only establish radio contact once visual confirmation took place. If transport helicopters were not slotted it is suggested that ZEUS designates a clear target (e.g. get to own XY where a radio can be found) as a precondition before spawning extraction.";
 
 // ====================================================================================
 

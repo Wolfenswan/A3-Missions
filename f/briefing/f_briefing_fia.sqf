@@ -26,7 +26,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 It looks like our electronics got scrambled in the crash and there isn't a single good old paper map on this piece of shit future-tech.<br/>
-We are also low on ammo and lost most of our gear in the crash. We've grabbed emergency flares from the helicopter.
+We are also low on ammo and lost most of our gear in the crash. We have grabbed emergency flares from the helicopter.
 "]];
 
 // ====================================================================================
@@ -38,7 +38,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
 1. We are at the crash location, somewhere in western Altis.<br/>
 2. Get your bearings and establish contact to NATO troops (flares, chemlights etc.).<br/>
-3. Bring all surviving troops back to base.<br/>
+3. Bring all surviving troops back to base.<br/><br/>
 OPTIONAL:<br/>
 1. Ensure the colonels survival.<br/>
 2. Use the demo charges transported by the extraction helicopter to destroy the wreck.<br/>
@@ -59,6 +59,8 @@ AAF forces will be on their way to mop up the survivors and take out the colonel
 FRIENDLY FORCES
 <br/>
 NATO troops will hopefully be on their way to extract us.<br/><br/>
+RADIO CONTACT<br/>
+Host decides whether the survivors have radio contact to the NATO helicopter right from the beginning or only after a certain time. It is suggested to let the helicopter know the rough direction of the crash but only establish radio contact once visual confirmation took place.
 "]];
 
 // ====================================================================================

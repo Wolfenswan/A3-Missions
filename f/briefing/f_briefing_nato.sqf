@@ -25,7 +25,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-Helicopters:<br/>
+All transport helicopters are carrying satchel charges.
 "]];
 
 // ====================================================================================
@@ -57,6 +57,8 @@ AAF forces are probably on the way to deal with the survivors and collect all da
 FRIENDLY FORCES
 <br/>
 Whoever survived the crash will be somewhere around the crash site.<br/><br/>
+RADIO CONTACT<br/>
+Host decides whether the survivors have radio contact to the NATO helicopter right from the beginning or only after a certain time. It is suggested to let the helicopter know the rough direction of the crash but only establish radio contact once visual confirmation took place.
 "]];
 
 // ====================================================================================

@@ -193,12 +193,12 @@ _MMGmag_tr = "130Rnd_338_Mag";
 // _MMGmag_tr = ""150Rnd_762x54_Box"_Tracer";
 
 // Marksman rifle
-_DMrifle = "srifle_DMR_03_tan_F";
-_DMriflemag = "20Rnd_762x51_Mag";
+// _DMrifle = "srifle_DMR_03_tan_F";
+// _DMriflemag = "20Rnd_762x51_Mag";
 
 // MAR-10
-//_DMrifle = "srifle_DMR_02_F";
-//_DMriflemag = "10Rnd_338_Mag";
+_DMrifle = "srifle_DMR_02_F";
+_DMriflemag = "10Rnd_338_Mag";
 
 // Rifleman AT
 _RAT = "launch_NLAW_F";
@@ -246,7 +246,7 @@ _specOp = [];
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
 _baseUniform = ["U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3"];
-_baseHelmet = ["H_Watchcap_blk","H_Beret_brn_SF","H_Cap_khaki_specops_UK","H_Booniehat_khk_hs"];
+_baseHelmet = ["H_Watchcap_blk","H_Cap_khaki_specops_UK","H_Booniehat_khk_hs"];
 _baseGlasses = [];
 
 // Armored vests
@@ -320,11 +320,11 @@ if (_isMan) then {
 
 	_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
-	_unit linkItem "ItemMap";		// Add and equip the map
+	//_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass
 	_unit linkItem "ItemRadio";		// Add and equip A3's default radio
 	_unit linkItem "ItemWatch";		// Add and equip a watch
-	_unit linkItem "ItemGPS"; 	// Add and equip a GPS
+	// 	// Add and equip a GPS
 
 };
 
@@ -360,8 +360,8 @@ switch (_typeofUnit) do
 	{
 		_unit addmagazines [_glriflemag,1];
 		_unit addmagazines [_glriflemag_tr,3];
-		_unit addmagazines [_glsmokered,1];
-		_unit addmagazines [_glflareyellow,2];
+		_unit addmagazines [_glsmokegreen,1];
+		_unit addmagazines [_glflarered,2];
 		_unit addweapon _glrifle;				//_COrifle
 		_unit addmagazines [_pistolmag,4];
 		_unit addweapon _pistol;
@@ -370,7 +370,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,1];
 		_unit addmagazines [_smokegrenadegreen,1];
 		_unit addWeapon "Rangefinder";
-		_unit linkItem "ItemGPS";
+		//
 		["g"] call _backpack;
 	};
 
@@ -381,8 +381,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glriflemag_tr,3];
 		//_unit addmagazines [_glmag,1];			// Use with 3 Rnd. UGL mags
 		_unit addmagazines [_glmag,3];			// Use with 1 Rnd. UGL mags
-		_unit addmagazines [_glsmokered,1];
-		_unit addmagazines [_glflareyellow,1];
+		_unit addmagazines [_glsmokegreen,1];
+		_unit addmagazines [_glflarered,2];
 		_unit addweapon _glrifle;				//_DC & _SLrifle
 		_unit addmagazines [_pistolmag,4];
 		_unit addweapon _pistol;
@@ -391,7 +391,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,1];
 		_unit addmagazines [_smokegrenadegreen,1];
 		_unit addWeapon "Rangefinder";
-		_unit linkItem "ItemGPS";
+		//
 		["g"] call _backpack;
 	};
 
@@ -408,7 +408,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenadegreen,1];
 		_unit addMagazines ["Laserbatteries",1];
 		_unit addWeapon "Laserdesignator";
-		_unit linkItem "ItemGPS";
+
 		["g"] call _backpack;
 	};
 
@@ -419,7 +419,7 @@ switch (_typeofUnit) do
 		_unit addweapon _carbine;
 		_unit addmagazines [_smokegrenade,4];
 		{_unit addItem _firstaid} forEach [1,2,3,4];
-		_unit linkItem "ItemGPS";
+
 		["m"] call _backpack;
 	};
 
@@ -437,7 +437,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_smokegrenadegreen,2];
 		_unit addWeapon "Rangefinder";
-		_unit linkItem "ItemGPS";
+
 		["g"] call _backpack;
 	};
 
@@ -690,7 +690,7 @@ switch (_typeofUnit) do
 		_unit addweapon _glrifle;					//_COrifle
 		_unit addmagazines [_smokegrenade,2];
 		_unit addWeapon "Rangefinder";
-		_unit linkItem "ItemGPS";
+
 	};
 
 // LOADOUT: VEHICLE COMMANDER
@@ -846,14 +846,15 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glriflemag_tr,3];
 		//_unit addmagazines [_glmag,2];			// Use with 3 Rnd. UGL mags
 		_unit addmagazines [_glmag,6];			// Use with 1 Rnd. UGL mags
-		_unit addmagazines [_glsmokewhite,1];
+		_unit addmagazines [_glsmokegreen,1];
+		_unit addmagazines [_glflarered,2];
 		_unit addweapon _glrifle;				//_grenrifle
 		_unit addmagazines [_grenade,1];		// Do not use with mgrenades
 		//_unit addmagazines [_mgrenade,2];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_smokegrenadegreen,2];
 		_unit addWeapon "Rangefinder";
-		_unit linkItem "ItemGPS";
+
 		["g"] call _backpack;
 	};
 
@@ -998,6 +999,8 @@ switch (_typeofUnit) do
 
 
 // ====================================================================================
+
+_unit addMagazines [_chemred,4];
 
 // END SWITCH FOR DEFINE UNIT TYPE LOADOUTS
 };
