@@ -132,7 +132,7 @@ case "rat":
 	if (_loadout == 0) then {
 		_unit addBackpack _bagsmall;
 		clearMagazineCargoGlobal (unitBackpack _unit);
-		(unitBackpack _unit) addMagazineCargoGlobal [_RATmag, 1];
+		(unitBackpack _unit) addMagazineCargoGlobal [_RATmag, 2];
 	};
 	// LOADOUT: MEDIUM
 	if (_loadout == 1) then {

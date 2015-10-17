@@ -201,8 +201,8 @@ _DMrifle = "srifle_DMR_02_F";
 _DMriflemag = "10Rnd_338_Mag";
 
 // Rifleman AT
-_RAT = "launch_NLAW_F";
-_RATmag = "NLAW_F";
+_RAT = "launch_RPG32_F";
+_RATmag = "RPG32_F";
 
 // Medium AT
 _MAT = "launch_NLAW_F";
