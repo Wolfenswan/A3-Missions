@@ -491,14 +491,14 @@ switch (_typeofUnit) do
 // LOADOUT: DESIGNATED MARKSMAN
 	case "dm":
 	{
-		_unit addmagazines ["10Rnd_93x64_DMR_05_Mag",5];
+		_unit addmagazines ["10Rnd_93x64_DMR_05_Mag",3];
 		_unit addweapon "srifle_DMR_05_hex_F";
-		_unit addmagazines [_grenade,2];		// Do not use with mgrenades
+		_unit addmagazines [_grenade,1];		// Do not use with mgrenades
 		//_unit addmagazines [_mgrenade,3];		// Do not use with grenades
-		_unit addmagazines [_smokegrenade,2];
+		_unit addmagazines [_smokegrenade,1];
 		_unit addmagazines [_pistolmag,3];
 		_unit addweapon _pistol;
-		["dm"] call _backpack;
+		//["dm"] call _backpack;
 		_attachments = [_attach1,"optic_Arco","muzzle_snds_93mmg_tan"];
 	};
 
@@ -787,7 +787,7 @@ switch (_typeofUnit) do
 // LOADOUT: UAV OPERATOR
 	case "uav":
 	{
-		_unit addmagazines [_DMriflemag,5];
+		_unit addmagazines [_DMriflemag,3];
 		_unit addweapon _DMrifle;
 		_unit addmagazines [_smokegrenade,2];
 		_unit addmagazines [_grenade,1];		// Do not use with mgrenades
@@ -837,12 +837,12 @@ switch (_typeofUnit) do
 // LOADOUT: SUBMACHINEGUNNER
 	case "smg":
 	{
-		_unit addmagazines [_DMriflemag,5];
+		_unit addmagazines [_DMriflemag,3];
 		_unit addweapon _DMrifle;
-		_unit addmagazines [_grenade,3];		// Do not use with mgrenades
+		_unit addmagazines [_grenade,1];		// Do not use with mgrenades
 		//_unit addmagazines [_mgrenade,5];		// Do not use with grenades
-		_unit addmagazines [_smokegrenade,3];
-		["smg"] call _backpack;
+		_unit addmagazines [_smokegrenade,2];
+		//["smg"] call _backpack;
 		_unit addWeapon "Rangefinder";
 	};
 
