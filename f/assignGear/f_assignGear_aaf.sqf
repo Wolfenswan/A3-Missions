@@ -428,6 +428,7 @@ switch (_typeofUnit) do
 // LOADOUT: FIRETEAM LEADER
 	case "ftl":
 	{
+		_unit addmagazines [_satchel,1];
 		_unit addmagazines [_glriflemag,4];
 		_unit addmagazines [_glriflemag_tr,4];
 		_unit addmagazines [_glmag,6];
@@ -441,7 +442,6 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
-		_unit addmagazines [_satchel,1];
 	};
 
 
@@ -463,6 +463,7 @@ switch (_typeofUnit) do
 // LOADOUT: ASSISTANT AUTOMATIC RIFLEMAN
 	case "aar":
 	{
+		_unit addmagazines [_satchel,1];
 		_unit addmagazines [_riflemag,5];
 		_unit addmagazines [_riflemag_tr,4];
 		_unit addweapon _rifle;
@@ -470,7 +471,6 @@ switch (_typeofUnit) do
 		//_unit addmagazines [_mgrenade,5];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,1];
 		_unit addmagazines [_smokegrenadegreen,1];
-		_unit addmagazines [_satchel,1];
 		["aar"] call _backpack;
 	};
 
@@ -812,13 +812,13 @@ switch (_typeofUnit) do
 // LOADOUT: RIFLEMAN
 	case "r":
 	{
+		_unit addmagazines [_satchel,1];
 		_unit addmagazines [_riflemag,7];
 		_unit addmagazines [_riflemag_tr,2];
 		_unit addweapon _rifle;
 		_unit addmagazines [_grenade,3];		// Do not use with mgrenades
 		//_unit addmagazines [_mgrenade,5];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,3];
-		_unit addmagazines [_satchel,1];
 		["r"] call _backpack;
 	};
 
