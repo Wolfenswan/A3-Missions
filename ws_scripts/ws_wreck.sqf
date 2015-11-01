@@ -11,6 +11,7 @@ Wreck setVectorUp (surfaceNormal ws_wreckLoc);
 Wreck setVelocity [0,0,0];
 clearItemCargoGlobal Wreck; clearBackpackCargoGlobal Wreck; clearWeaponCargoGlobal Wreck;
 Wreck action ["LandGearUp", Wreck];
+Wreck allowDamage false;
 
 
  // {if ((_x select 0) == "Turret") then {WRECK enablePersonTurret [(_x select 1),false]  }; } forEach ((typeOf Wreck) call bis_fnc_vehicleRoles);

@@ -33,7 +33,7 @@ You can place units from both BLUFOR and INDEPENDENT side. INDEPENDENT is hostil
 Several useful tools can be found in the 'modules'-category. Use Zeus>Remote Control to steer AI.<br/><br/>
 CONDUCT
 <br/>
-An initial period of around 5 minutes is suggested to let players get an idea of where they might be and what the surroundings look like.<br/>Place units logically - it should make sense how they got there and why they are attacking from that angle.<br/>Do not constantly but pressure on the players, give them some time to breathe while you are preparing AI elsewhere.
+An initial period of around 5 minutes is suggested to let players get an idea of where they might be and what the surroundings look like.<br/>Place units logically - it should make sense how they got there and why they are attacking from that angle.<br/>Do not constantly but pressure on the players, give them some time to breathe while you are preparing AI elsewhere. Also keep in mind that heavier vehicles will target and often shred the transport heli.
 "]];
 
 // ====================================================================================

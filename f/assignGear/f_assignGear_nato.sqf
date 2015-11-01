@@ -206,7 +206,7 @@ _DMriflemag = "20Rnd_762x51_Mag";
 // _MMGmag_tr = "150Rnd_762x51_Box_Tracer";
 
 // Marksman rifle
-_DMrifle = "srifle_EBR_F"; //TODO: EMR-1
+_DMrifle = "srifle_EBR_F";
 _DMriflemag = "20Rnd_762x51_Mag";
 
 // Rifleman AT
@@ -916,7 +916,6 @@ switch (_typeofUnit) do
 		clearMagazineCargoGlobal _unit;
 		clearItemCargoGlobal _unit;
 		clearBackpackCargoGlobal _unit;
-		_unit addMagazineCargoGlobal [_satchel, 4];
 		_unit addMagazineCargoGlobal [_riflemag, 20];
 		_unit addMagazineCargoGlobal [_glriflemag, 20];
 		_unit addMagazineCargoGlobal [_carbinemag, 20];

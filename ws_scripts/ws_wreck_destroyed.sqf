@@ -1,6 +1,7 @@
 if !(isServer) exitWith {};
 
 _box = _this select 0;
+_box allowDamage true;
 _box setDamage 1;
 
 [["WreckDestroyed",["The helicopter has been destroyed!"]],"bis_fnc_showNotification",true] spawn BIS_fnc_MP;
