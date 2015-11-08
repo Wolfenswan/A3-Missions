@@ -31,6 +31,25 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 
 // ====================================================================================
 
+// NOTES: EXECUTION
+// The code below creates the execution sub-section of notes.
+
+_exe = player createDiaryRecord ["diary", ["Execution",format["
+<br/>
+<font size='18'>COMMANDER'S INTENT</font>
+<br/>
+Do not assault the town head on. The FIA are poorly equipped but numerous. We need to utilize our mobility, recon and better firepower accordingly.
+<br/><br/>
+<font size='18'>OFFICER MEETING</font><br/>
+The starting locations of the officers are randomized and their distance to the town can benefit either of the two sides.<br/>
+The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for %1 consecutive minutes.<br/> We will receive sporadic updates how much time has passed since we launched the operation, but won't know when the meeting has begun or will end.<br/>
+<font size='18'>VICTORY CONDITIONS</font><br/>
+FIA wins if both officers conduct their meeting and at least one escapes the vicinity of the town (leave highlighted area).<br/>
+CSAT wins if both officers are taken out or the officers flee before the meeting has taken place.
+",ws_param_meeting]]];
+
+// ====================================================================================
+
 // NOTES: MISSION
 // The code below creates the mission sub-section of notes.
 
@@ -38,12 +57,6 @@ _mis = player createDiaryRecord ["diary", ["Mission",format["
 <br/>
 1. We begin <marker name='mkrAAF'>here</marker>.<br/>
 2. Proceed towards the <marker name='mkrTown'>target town</marker> and locate the meeting place of the officers. Strike swiftly to take them out.<br/><br/>
-OFFICER MEETING<br/>
-The starting locations of the officers are randomized and their distance to the town can benefit either of the two sides.<br/>
-The meeting takes place at a randomized location. For the meeting to conduct, the two officers have to stay within the indicated circle for %1 consecutive minutes.<br/> We will receive sporadic updates how much time has passed since we launched the operation, but won't know when the meeting has begun or will end.<br/>
-VICTORY CONDITIONS<br/>
-FIA wins if both officers conduct their meeting and at least one escapes the vicinity of the town (leave highlighted area).<br/>
-CSAT wins if both officers are taken out or the officers flee before the meeting has taken place.
 ",ws_param_meeting]]];
 
 // ====================================================================================
@@ -53,7 +66,7 @@ CSAT wins if both officers are taken out or the officers flee before the meeting
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-Two high-ranking FIA officers are about to meet in a town nearby. Our own officers are growing weary of being insulted as useless sons of dogs and are sending us out to deal with this insolence. We are tasked to intercept the meeting and take out the FIA leaders before they can escape. Time is of the essence!
+Two high-ranking FIA officers are about to meet in a town nearby. Our own officers are growing weary of being insulted as useless sons of dogs and are sending us out to deal with this insolence. We are tasked to intercept the meeting and take out the FIA leaders before they can escape. See EXECUTION for important details.
 <br/><br/>
 ENEMY FORCES
 <br/>

@@ -49,8 +49,8 @@ if (isServer) then {
 	if (isNil "GrpFIA_Tech1") then {deleteVehicle VehFIA_T1};
 	if (isNil "GrpFIA_Tech2") then {deleteVehicle VehFIA_T2};
 
-	_units = ([ws_meetingM,10,west,10] call ws_fnc_createGarrison);
-	_units append ([ws_meetingM,100,west,15 + round (({side _x == east}count playableUnits)/3)] call ws_fnc_createGarrison);
+	_units = ([ws_meetingM,10,west,8] call ws_fnc_createGarrison);
+	_units append ([ws_meetingM,200,west,12 + round (({side _x == east}count playableUnits)/3)] call ws_fnc_createGarrison);
 	// Stuff to happen AFTER mission launch
 	// sleep 0.1;
 
