@@ -10,6 +10,10 @@ while {alive UnitFIA_CO && alive UnitFIA_DC} do {
 	while {(UnitFIA_CO distance TrgM <= 15) && (UnitFIA_DC distance TrgM <= 15)} do {
 		sleep 5;
 		ws_meeting_passed = ws_meeting_passed + 5;
+			if (ws_meeting_passed == _time / 6) then {
+				[["ws_alert",["A sixth meeting time has passed."]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;
+			};
+
 			if (ws_meeting_passed == _time / 4) then {
 				[["ws_alert",["A quarter of the meeting time has passed."]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;
 			};
@@ -41,5 +45,5 @@ while {alive UnitFIA_CO && alive UnitFIA_DC} do {
 };
 
 if ({!alive _x} count [UnitFIA_DC,UnitFIA_CO] > 0) exitWith {
-		[["ws_alert",["An officer was killed. Let's bail!"]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;
+		[["ws_alert",["An officer was killed before the meeting could end. Let's bail!"]],"bis_fnc_showNotification",blufor] spawn BIS_fnc_MP;
 };
