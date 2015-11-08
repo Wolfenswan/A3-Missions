@@ -286,7 +286,7 @@ _ghillieGlasses = [];
 // Spec Op
 _sfuniform = ["U_O_SpecopsUniform_ocamo"];
 _sfhelmet = ["H_Shemag_olive_hs"];
-_sfRig = ["V_Chestrig_khk"];
+_sfRig = ["V_HarnessO_brn"];
 _sfGlasses = [];
 
 // ====================================================================================
