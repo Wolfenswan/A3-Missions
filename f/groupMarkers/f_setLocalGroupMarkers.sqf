@@ -236,13 +236,13 @@ switch (_unitfaction) do
 
 	case "blu_g_f":
 	{
-		["GrpFIA_CO", 0, "CO", "ColorYellow"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_DC", 0, "DC", "ColorYellow"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_CO", 0, "O1", "ColorYellow"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_DC", 0, "O2", "ColorYellow"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_COV", 7, "COV", "ColorYellow"] spawn f_fnc_localGroupMarker;
 
 		["GrpFIA_ASL", 0, "ASL", "ColorRed"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_A1", 1, "A1", "ColorRed"] spawn f_fnc_localGroupMarker;
-		["GrpFIA_A2", 1, "A2", "ColorRed"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_A1", 1, "DTL1", "ColorRed"] spawn f_fnc_localGroupMarker;
+		["GrpFIA_A2", 1, "DTL2", "ColorRed"] spawn f_fnc_localGroupMarker;
 		["GrpFIA_AV", 7, "AV", "ColorRed"] spawn f_fnc_localGroupMarker;
 
 		["GrpFIA_BSL", 0, "BSL", "ColorBlue"] spawn f_fnc_localGroupMarker;

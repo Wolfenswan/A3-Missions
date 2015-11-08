@@ -416,12 +416,15 @@ switch (_typeofUnit) do
 // LOADOUT: FIRETEAM LEADER
 	case "ftl":
 	{
-		_unit addmagazines [_glriflemag,4];
-		_unit addmagazines [_glriflemag_tr,4];
-		_unit addmagazines [_glmag,6];
-		_unit addmagazines [_glsmokewhite,2];
-		_unit addmagazines [_glsmokered,2];
-		_unit addweapon (_glrifle call BIS_fnc_selectRandom);					//_FTLrifle
+		_unit addmagazines [_riflemag,5];
+		_unit addmagazines [_riflemag_tr,4];
+		_unit addweapon (_rifle call BIS_fnc_selectRandom);
+		//_unit addmagazines [_glriflemag,4];
+		//_unit addmagazines [_glriflemag_tr,4];
+		//_unit addmagazines [_glmag,6];
+		//_unit addmagazines [_glsmokewhite,2];
+		//_unit addmagazines [_glsmokered,2];
+		//_unit addweapon (_glrifle call BIS_fnc_selectRandom);					//_FTLrifle
 		_unit addmagazines [_grenade,1];		// Do not use with mgrenades
 		//_unit addmagazines [_mgrenade,2];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,2];
