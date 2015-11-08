@@ -332,6 +332,7 @@ if (_isMan) then {
 	_unit linkItem "ItemWatch";		// Add and equip a watch
 	_unit linkItem "ItemGPS"; 	// Add and equip a GPS
 	_unit addItem _silencer2;
+	_unit addMagazine _satchel;
 
 };
 
@@ -446,7 +447,7 @@ switch (_typeofUnit) do
 		_unit addWeapon "Rangefinder";
 		_unit linkItem "ItemGPS";
 		["g"] call _backpack;
-		_unit addmagazines [_satchel,1];
+		//_unit addmagazines [_satchel,1];
 	};
 
 
@@ -823,7 +824,7 @@ switch (_typeofUnit) do
 		//_unit addmagazines [_mgrenade,5];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,3];
 		["r"] call _backpack;
-		_unit addmagazines [_satchel,1];
+		//_unit addmagazines [_satchel,1];
 	};
 
 // LOADOUT: CARABINEER
