@@ -7,10 +7,9 @@ enableSaving [false, false];
 
 // ====================================================================================
 
-// F3 - Mute Orders and Reports
+// F3 - Mute Player
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-enableSentences false;
 player setSpeaker "NoVoice";
 
 // ====================================================================================
@@ -65,20 +64,19 @@ f_script_setGroupMarkers = [] execVM "f\groupMarkers\f_setLocalGroupMarkers.sqf"
 // F3 - F3 Common Local Variables
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // WARNING: DO NOT DISABLE THIS COMPONENT
-
 if(isServer) then {
 	f_script_setLocalVars = [] execVM "f\common\f_setLocalVars.sqf";
 };
 
 // ====================================================================================
 
-// F3 - Garbage Collector
+// F3 - Automatic Body Removal
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-f_var_garbageCollectorMaxBodies = 40; // The maximum amount of dead objects which can be present in the mission
-f_var_garbageCollectorSleep = 300;	 // How often to check for clean up
-f_var_garbageCollectorDistance = 450; // The minimal distance to a player for the GC to remove a body
-[] execVM "f\garbageCollector\f_garbageCollectorLoop.sqf";
+f_var_removeBodyDelay = 120;
+f_var_removeBodyDistance = 360;
+f_var_doNotRemoveBodies = [];
+[] execVM "f\removeBody\f_addRemoveBodyEH.sqf";
 
 // ====================================================================================
 
@@ -218,6 +216,3 @@ f_wound_extraFAK = 2;
 [] execVM "f\medical\medical_init.sqf";
 
 // ====================================================================================
-
-// Wolfenswan - post Init
-[] execVM "ws_init\ws_postInit.sqf";
