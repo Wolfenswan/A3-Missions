@@ -384,8 +384,6 @@ class CfgRespawnTemplates
 
 class CfgFunctions
 {
-	//ws_fnc
-	#include "ws_fnc\config.hpp"
 
 	class F // Defines the "owner"
 	{
@@ -501,6 +499,22 @@ class CfgFunctions
 		#include "f\simplewoundingsystem\config.hpp"
 		#include "f\spect\functions.hpp"
 
+	};
+
+
+	//ws_fnc
+	#include "ws_fnc\config.hpp"
+
+	class ws_init {
+		class mission_init {
+			file = "ws_init";
+			class preInit {
+				preInit =1;
+			};
+			class postInit {
+				postInit =1;
+			};
+		};
 	};
 };
 

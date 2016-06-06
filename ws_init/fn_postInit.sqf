@@ -1,6 +1,8 @@
 ws_isHC = [] call ws_fnc_checkHC;
 
-// On neither the server nor the HC
+if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParamValue;};
+
+// Only for players
 if (!isDedicated && !ws_isHC) then {
 
 	// Display a short text intro
@@ -9,8 +11,6 @@ if (!isDedicated && !ws_isHC) then {
 		["OPERATION XYZ","CENTRAL ALTIS"] call ws_fnc_showIntro;
 	};
 };
-
-if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParamValue;};
 
 // Do stuff on either HC or Server (e.g. spawning)
 if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
@@ -22,12 +22,14 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 		//deleteVehicle _x;
 	} forEach _garrison;
 
-	_units execVM "f\setAISKill\f_setAISkill.sqf"; //TODO: Call BIS_fnc_MP to exec on server
+	// Set unit AI skill
+	_units execVM "f\setAISKill\f_setAISkill.sqf";
 
 	// Equip garrisoned units
 
 	//_units execVM "f\assignGear\f_assignGear_AI.sqf";
 
+	//Light equipment
 	/*
 	_gear = [
 		["hgun_PDW2000_F",5],
@@ -45,19 +47,21 @@ if ((ws_param_hc == 0 && isServer) || (ws_param_hc == 1 && ws_isHC)) then {
 	*/
 };
 
-// Do more stuff exclusively on the server
+// Do more stuff exclusively on the server (commands with global effect)
 if (isServer) then {
 
-	// Stuff to happen AFTER mission launch
-	// sleep 0.1;
+	// Common vehicle tweaks
+	//{_x disableTIEquipment true;} forEach [];
+	//{_x removeWeaponGlobal "GMG_40mm"; _x lockTurret [[1],true];} forEach [];
+	//{_x removeWeaponGlobal "HMG_127_APC";_x lockTurret [[0],true];} forEach [];
 
-	// If units were spawned set AI skill again
-	// [] execVM "f\setAISKill\f_setAISkill.sqf";
+	// Load up vehicles with groups
+	// [veh1,group1,group2.....groupN] call ws_fnc_loadVehicle;
 
 	// NVG-removal, add flashlights
 	/*
 	{
-   private ["_unit"];
+   	private ["_unit"];
       _unit = _x;
 
       // Only run where the unit is local, it isn't a player and doesn't have a flashlight
@@ -77,4 +81,12 @@ if (isServer) then {
        // _unit enablegunlights "forceOn";
 	} forEach allUnits;
 	*/
+
+	// Stuff to happen AFTER mission launch
+	sleep 0.1;
+
+	// If units were spawned set AI skill again
+	[] execVM "f\setAISKill\f_setAISkill.sqf";
 };
+
+ws_postInitDone = true;
