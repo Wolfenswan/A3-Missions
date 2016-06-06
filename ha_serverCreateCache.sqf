@@ -11,7 +11,7 @@ _id = _this select 0;
 _tentativePos = _this select 1;
 
 // Try to find an empty position for a camo net
-_pos = _tentativePos findEmptyPosition [0, 300, "Box_FIA_Wps_F"];
+_pos = [_tentativePos, 0, 50, 5, 0, 0, 0] call BIS_fnc_findSafePos;
 if (count _pos == 0) then { _pos = _tentativePos };
 
 //diag_log format["Creating cache, id: %1, pos: %2", _id, _pos];
