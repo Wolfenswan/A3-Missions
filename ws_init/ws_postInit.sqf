@@ -13,7 +13,6 @@ ws_fnc_HALO = {
 		f_var_mapClickTeleport_Height = 600;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
 		[] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
 	};
-
 };
 
 // Display a short text intro
@@ -23,6 +22,7 @@ if (!isDedicated) then {
  };
  if (side player == blufor) then {
  	"ws_defend_start" setMarkerAlphaLocal 1;
+ 	"ws_defend_start_area" setMarkerAlphaLocal 1;
  };
 sleep 10;
  ["CRATESISTANCE","SOMEWHERE IN ALTIS"] call ws_fnc_showIntro;

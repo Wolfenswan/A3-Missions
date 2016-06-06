@@ -29,7 +29,7 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
 DESTROYING CACHES
 <br/>
-Satchel charges must be used to destroy caches. Fireteam leaders, assistant automatic riflemen and riflemen carry a satchel each.
+Satchel charges must be used to destroy caches. Fireteam leaders, assistant automatic riflemen and riflemen carry one satchel each.
 <br/><br/>
 TRANSPORT
 <br/>

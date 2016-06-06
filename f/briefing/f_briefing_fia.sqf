@@ -34,7 +34,7 @@ Each cache is guarded by a few friendly AI units. AAF must use satchel charges t
 TRANSPORT
 <br/>
 1x Offroad with CO premounted<br/>
-Each squad is premounted in 2 x Trucks.<br/>
+Each squad is premounted in 1 x Truck (SL + FT1) and 1 x Offroad (FT2).<br/>
 "]];
 
 // ====================================================================================
@@ -46,7 +46,10 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 <font size='18'>COMMANDER'S INTENT</font>
 <br/>
-Assist our comrades in protecting the equipment caches, and eliminate any hostile forces sent to destroy them.
+Assist our comrades in protecting the equipment caches, and eliminate any hostile forces sent to destroy them.<br/><br/>
+<font size='18'>DEPLOYMENT</font>
+<br/>
+All vehicle drivers have a teleport option, which they can use to move their vehicle (including passengers) to the desired location. Deplyoment is restricted to roughly <marker name='ws_defend_start'>100m around the indicated location</marker>. <br/> IMPORTANT: All units need to be in the vehicles for this to work as intended.
 "]];
 
 // ====================================================================================
