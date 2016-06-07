@@ -1,7 +1,7 @@
 private ["_b"];
 
 // Clear the area
-//_b = "Bo_GBU12_LGB" createVehicle [ws_wreckLoc select 0,ws_wreckLoc select 1,2];
+//_b = "Bomb_04_F" createVehicle [ws_wreckLoc select 0,ws_wreckLoc select 1,2];
 
 // Place the wreck after a sleep
 sleep 2;

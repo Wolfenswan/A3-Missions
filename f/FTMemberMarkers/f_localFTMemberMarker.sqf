@@ -16,6 +16,7 @@ _mkrName = Format ["mkr_%1",_unit];
 _mkrborderName = Format ["mkrB_%1",_unit];
 
 if (str _unit in ["UnitZeus","UnitZeus_1"]) exitWith {};
+if (faction _unit == "") exitwith {};
 
 // ====================================================================================
 

@@ -10,7 +10,7 @@ _mkrs = ["mkrArea"] call ws_fnc_collectMarkers;
 {_x setMarkerAlpha 0;} forEach _mkrs;
 _mkr = _mkrs call ws_fnc_selectRandom;
 
-_pos = [([_mkr,true] call ws_fnc_getPos), 0, 200, 5] call BIS_fnc_findSafePos;
+_pos = [([_mkr,true] call ws_fnc_getPos), 0, 500, 0.5,0,0.5,0] call BIS_fnc_findSafePos;
 
 ws_wreckLoc = [_pos select 0,_pos select 1,0]; publicVariable "ws_wreckLoc";
 //UnitZeus setPosATL [_pos select 0,_pos select 1,50];

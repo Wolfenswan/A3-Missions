@@ -4,6 +4,14 @@ if (isNil "ws_colonel_extracted") then {ws_colonel_extracted = false};
 if (isNil "ws_colonel_killed") then {ws_colonel_killed = false};
 if (isNil "ws_wreck_destroyed") then {ws_wreck_destroyed = false};
 
+if (str vehicle player in ["UnitZeus","UnitZeus_1"]) then {
+	player setPos ws_wreckloc;
+	_mkr = createMarkerLocal  ["mkrZeus", ws_wreckloc];
+	_mkr setMarkerTypeLocal "mil_dot";
+	_mkr setMarkerTextLocal "Crashsite";
+	_mkr setMarkerColorLocal "ColorRed";
+};
+
 // Display a short text intro
 if (!isDedicated) then {
 	// Display a short text intro
@@ -20,7 +28,7 @@ if (!isDedicated) then {
 	};
 
 	 waitUntil {time > 10};
-		["Jolly Blue XL","Somewhere on Altis"] call ws_fnc_showIntro;
+		["Jolly Green Hell","Somewhere on Tanoa"] call ws_fnc_showIntro;
 	};
 };
 
@@ -31,14 +39,6 @@ if (isServer) then {
 	if (isNil "UnitNATO_VIP") then {
 		ws_colonel_extracted = true; publicVariable "ws_colonel_extracted";
 	};
-};
-
-if (str vehicle player in ["UnitZeus","UnitZeus_1"]) then {
-	player setPos ws_wreckloc;
-	_mkr = createMarkerLocal  ["mkrZeus", ws_wreckloc];
-	_mkr setMarkerTypeLocal "mil_dot";
-	_mkr setMarkerTextLocal "Crashsite";
-	_mkr setMarkerColorLocal "ColorRed";
 };
 
 //Show black screen while waiting for wreck to be placed/explosion cleared
