@@ -34,6 +34,7 @@ if (isServer) then {
 };
 
 if (str vehicle player in ["UnitZeus","UnitZeus_1"]) then {
+	player setPos ws_wreckloc;
 	_mkr = createMarkerLocal  ["mkrZeus", ws_wreckloc];
 	_mkr setMarkerTypeLocal "mil_dot";
 	_mkr setMarkerTextLocal "Crashsite";

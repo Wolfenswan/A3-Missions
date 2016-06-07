@@ -50,7 +50,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-During the night unknown forces managed to free one of our colonels, who was under lockdown for assumed FIA-sympathies. They made it to their extraction helicopter but went down shortly after. We need to mop up any surviving forces and recover the helicopters flight computer, to get proof on who was behind this.
+During the night unknown forces managed to free one of our colonels, who was under lockdown for assumed FIA-sympathies. They made it to their extraction helicopter but it went down shortly after. We need to locate and eliminate any surviving forces and recover the helicopters flight computer, to get proof on who was behind this.
 <br/><br/>
 ENEMY FORCES
 <br/>
