@@ -52,11 +52,11 @@ A CTRG team embedded with FIA rebels has botched their extraction. They managed 
 <br/><br/>
 ENEMY FORCES
 <br/>
-AAF forces are probably on the way to deal with the survivors and collect all data from the helicopter's flight computer.
+AAF forces are probably on the way to deal with the survivors and gather intel from the helicopter's flight computer.
 <br/><br/>
 FRIENDLY FORCES
 <br/>
-Whoever survived the crash will be somewhere around the crash site.<br/><br/>
+Whoever survived the crash will be try to establish contact once we get near to the crash site.<br/><br/>
 RADIO CONTACT<br/>
 Host decides whether the survivors have radio contact to the NATO helicopter right from the beginning or only after a certain time. It is suggested to let the helicopter know the rough direction of the crash but only establish radio contact once visual confirmation took place.
 "]];

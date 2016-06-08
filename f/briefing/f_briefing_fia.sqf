@@ -39,7 +39,7 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 1. We are at the crash location, somewhere in western Altis.<br/>
 2. Get your bearings and establish contact to NATO troops (flares, chemlights etc.).<br/>
 3. Bring all surviving troops back to base.<br/><br/>
-OPTIONAL:<br/>
+<b>OPTIONAL:</b><br/>
 1. Ensure the colonels survival.<br/>
 2. Use the demo charges transported by the extraction helicopter to destroy the wreck.<br/>
 "]];
@@ -51,7 +51,7 @@ OPTIONAL:<br/>
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-As part of a CTRG troop embedded with the FIA resistance, we were tasked to exfill a sympathizing AAF colonel. The whole thing went to shit and we had to shoot our way out. Although we reached the helicopter, it was shot down shortly afterwards and we went down somewhere in western Altis.
+As part of a CTRG troop embedded with the FIA resistance, we were tasked to exfill a sympathizing AAF colonel. The whole thing went to shit and we had to shoot our way out. Although we reached the helicopter, it was shot down shortly afterwards and we went down somewhere in Tanoa.
 <br/><br/>
 ENEMY FORCES
 <br/>
