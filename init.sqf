@@ -109,7 +109,7 @@ f_var_garbageCollectorDistance = 450; // The minimal distance to a player for th
 // [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // BLUFOR > NATO
-[["GrpNATO_Grnd","GrpNATO_Grnd1","GrpNATO_Grnd2"],100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[["GrpNATO_Grnd","GrpNATO_Grnd1"],100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // OPFOR > CSAT
 // [OPFOR,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
@@ -147,7 +147,7 @@ f_var_civAI = independent; // Optional: The civilian AI will use this side's set
 
 // [side,ObjectName or "MarkerName",100,1] execVM "f\EandEcheck\f_EandECheckLoop.sqf";
 
-[["GrpNATO_Grnd","GrpNATO_Grnd1","GrpNATO_Grnd2"],"MkrNATO",500,{
+[["GrpNATO_Grnd","GrpNATO_Grnd1"],"MkrNATO",500,{
 if (ws_colonel_extracted && ws_wreck_destroyed) then {
 	[2] call f_fnc_MPend;
 } else {
