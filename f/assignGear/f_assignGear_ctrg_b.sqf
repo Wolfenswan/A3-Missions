@@ -161,8 +161,8 @@ case "dm":
 {
 	// LOADOUT: LIGHT
 	if (_loadout == 0) then {
-		_unit addBackpack _bagsmall;
-		clearMagazineCargoGlobal (unitBackpack _unit);
+		//_unit addBackpack _bagsmall;
+		//clearMagazineCargoGlobal (unitBackpack _unit);
 	};
 
 	// LOADOUT: MEDIUM
