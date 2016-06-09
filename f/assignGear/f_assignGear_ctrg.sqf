@@ -69,7 +69,7 @@ _scope1 = "optic_ACO";	// Basic Scope
 _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
 _scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
 
-_bipod1 = "bipod_01_F_snd";		// Default bipod
+_bipod2 = "bipod_01_F_snd";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
@@ -197,8 +197,8 @@ _MMGmag_tr = "130Rnd_338_Mag";
 // _DMriflemag = "20Rnd_762x51_Mag";
 
 // MAR-10
-_DMrifle = "srifle_DMR_02_F";
-_DMriflemag = "10Rnd_338_Mag";
+_DMrifle = "srifle_DMR_05_blk_F";
+_DMriflemag = "10Rnd_93x64_DMR_05_Mag";
 
 // Rifleman AT
 _RAT = "launch_RPG32_F";
@@ -454,7 +454,7 @@ switch (_typeofUnit) do
 		_unit addweapon _pistol;
 		_unit addWeapon "Rangefinder";
 		["ar"] call _backpack;
-		_attachments pushback (_bipod1);
+		_attachments pushback (_bipod2);
 	};
 
 // LOADOUT: ASSISTANT AUTOMATIC RIFLEMAN
@@ -473,9 +473,9 @@ switch (_typeofUnit) do
 // LOADOUT: RIFLEMAN (AT)
 	case "rat":
 	{
-		_unit addmagazines [_carbinemag,4];
-		_unit addmagazines [_carbinemag_tr,3];
-		_unit addweapon _carbine;
+		_unit addmagazines [_riflemag,4];
+		_unit addmagazines [_riflemag_tr,3];
+		_unit addweapon _rifle;
 		_unit addmagazines [_grenade,1];		// Do not use with mgrenades
 		//_unit addmagazines [_mgrenade,1];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,1];
@@ -508,7 +508,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_pistolmag,4];
 		_unit addweapon _pistol;
 		["mmg"] call _backpack;
-		_attachments pushback (_bipod1);
+		_attachments pushback (_bipod2);
 	};
 
 // LOADOUT: MEDIUM MG ASSISTANT GUNNER

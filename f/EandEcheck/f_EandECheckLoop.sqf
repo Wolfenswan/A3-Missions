@@ -52,22 +52,23 @@ if (typeName _objects == "SIDE") then {
 		if !(_x in playableUnits) then {_units = _units - [_x]};
 		} forEach _units;
 	};
+
 // Otherwise populate the units array using the passed strings, checking if it's either a group or a unit
 } else {
 	{
-
-		if(!isnil _x) then
+		_temp = _x;
+		if !(isnil _temp) then
 		{
 			_temp = call compile format ["%1",_x];
 			if (typename _temp == "GROUP") then {
 				{
 					if !(_x in _units) then {
-						_units set [count _units,_x];
+						_units pushback _x;
 					};
 				} forEach units _temp;
 			} else {
-				if !(_x in _units) then {
-					_units set [count _units,_temp];
+				if !(_temp in _units) then {
+					_units pushback _temp;
 				};
 			};
 		};

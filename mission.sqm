@@ -8,7 +8,7 @@ class EditorData
 	toggles=1537;
 	class ItemIDProvider
 	{
-		nextID=231;
+		nextID=233;
 	};
 	class MarkerIDProvider
 	{
@@ -19,7 +19,7 @@ class EditorData
 		pos[]={1801.7118,38.450001,12921.919};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -130,6 +130,7 @@ class ScenarioData
 {
 	author="Wolfenswan";
 	overviewText="Randomized CSAR mission. Up to 10 players can be crash survivors., rest are crew for the helicopters. 2 ZEUS slots are available.";
+	overViewPicture="pic.jpg";
 };
 class CustomAttributes
 {
@@ -151,7 +152,7 @@ class CustomAttributes
 							"SCALAR"
 						};
 					};
-					value=0;
+					value=1;
 				};
 			};
 		};
@@ -185,7 +186,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=110;
+		items=109;
 		class Item0
 		{
 			dataType="Marker";
@@ -2055,7 +2056,7 @@ class Mission
 		class Item84
 		{
 			dataType="Marker";
-			position[]={8187.8027,298.46201,11707.415};
+			position[]={7854.9507,210.44565,11743.788};
 			name="mkrArea";
 			markerType="RECTANGLE";
 			type="rectangle";
@@ -2114,14 +2115,14 @@ class Mission
 		class Item89
 		{
 			dataType="Marker";
-			position[]={9986.7988,2.6743175e+019,10292.994};
+			position[]={10034.725,2.1507233e+027,10125.489};
 			name="mkrArea_8";
 			markerType="RECTANGLE";
 			type="rectangle";
-			a=700;
-			b=700;
+			a=800;
+			b=800;
 			id=145;
-			atlOffset=2.6743175e+019;
+			atlOffset=2.1507233e+027;
 		};
 		class Item90
 		{
@@ -2196,19 +2197,6 @@ class Mission
 			atlOffset=-5.6206818;
 		};
 		class Item96
-		{
-			dataType="Marker";
-			position[]={6087.6201,4.2442298e+015,8836.2617};
-			name="mkrArea_12";
-			markerType="RECTANGLE";
-			type="rectangle";
-			a=400;
-			b=600;
-			angle=311.92389;
-			id=161;
-			atlOffset=4.2442298e+015;
-		};
-		class Item97
 		{
 			dataType="Group";
 			side="West";
@@ -2295,7 +2283,7 @@ class Mission
 			};
 			id=98;
 		};
-		class Item98
+		class Item97
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2341,7 +2329,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item99
+		class Item98
 		{
 			dataType="Group";
 			side="West";
@@ -2502,7 +2490,7 @@ class Mission
 			};
 			id=92;
 		};
-		class Item100
+		class Item99
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2520,7 +2508,7 @@ class Mission
 			type="Land_Cargo_Tower_V1_No2_F";
 			atlOffset=-9.5367432e-007;
 		};
-		class Item101
+		class Item100
 		{
 			dataType="Group";
 			side="West";
@@ -2639,20 +2627,43 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1764.3719,13.431439,12923.84};
-						angles[]={0,0.70221573,0};
+						angles[]={0,0.70221579,0};
 					};
 					side="West";
 					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
-						init="GrpNATO_Grnd1 = group this; [""aar"",this,""ctrg""] call f_fnc_assignGear;";
+						init="GrpNATO_Grnd1 = group this; [""rat"",this,""ctrg""] call f_fnc_assignGear;";
 						name="UnitFIA_A1_R2";
-						description="CTRG Juliet 1 Rifleman";
+						description="CTRG Juliet 1 Assaultman (AT)";
 						isPlayable=1;
 					};
 					id=211;
 					type="B_G_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			class Attributes
@@ -2737,7 +2748,7 @@ class Mission
 			};
 			id=205;
 		};
-		class Item102
+		class Item101
 		{
 			dataType="Group";
 			side="West";
@@ -2915,7 +2926,7 @@ class Mission
 			};
 			id=212;
 		};
-		class Item103
+		class Item102
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2934,7 +2945,7 @@ class Mission
 			id=217;
 			type="B_Heli_Transport_01_camo_F";
 		};
-		class Item104
+		class Item103
 		{
 			dataType="Group";
 			side="West";
@@ -3089,7 +3100,7 @@ class Mission
 			};
 			id=218;
 		};
-		class Item105
+		class Item104
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3108,7 +3119,7 @@ class Mission
 			id=223;
 			type="B_Heli_Transport_01_camo_F";
 		};
-		class Item106
+		class Item105
 		{
 			dataType="Group";
 			side="West";
@@ -3164,7 +3175,7 @@ class Mission
 			};
 			id=224;
 		};
-		class Item107
+		class Item106
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3182,7 +3193,7 @@ class Mission
 			id=226;
 			type="B_Heli_Light_01_armed_F";
 		};
-		class Item108
+		class Item107
 		{
 			dataType="Group";
 			side="West";
@@ -3274,7 +3285,7 @@ class Mission
 			id=227;
 			atlOffset=0.0079078674;
 		};
-		class Item109
+		class Item108
 		{
 			dataType="Object";
 			class PositionInfo

@@ -18,18 +18,17 @@ sleep 0.1;
 
 // DECLARE PRIVATE VARIABLES
 
-private ["_grps","_pc","_end","_started","_remaining","_grpstemp","_alive","_faction","_temp_grp","_temp_grp2","_type","_onlyPlayers","_grpsno","_counter"];
+private ["_grps","_pc","_end","_started","_remaining","_targets","_alive","_faction","_temp_grp","_temp_grp2","_type","_onlyPlayers","_grpsno","_counter"];
 
 // ====================================================================================
 
 // SET KEY VARIABLES
 // Using variables passed to the script instance, we will create some local variables.
-// Up to 5 variables are passed to the script:
 // 0: = Side (e.g. BLUFOR), or group name(s) as string array (e.g. ["mrGroup1","myGroup2"])
 // 1: = What % of units must be dead before the ending is triggered
 // 2: = What ending will be executed. Can also be code.
 
-_grpstemp = _this select 0; // either SIDE or array with group strings
+_targets = _this select 0; // either single group/side or array with group strings or sides
 _pc = _this select 1;
 _end = _this select 2;
 
@@ -48,60 +47,62 @@ _faction = if (count _this > 4) then {_this select 4} else {[]};
 
 _grps = [];
 
-if(typeName _grpstemp == "SIDE") then // if the variable is any of the side variables use it to consturct a list of groups in that faction.
+// If only a single side or group was passed put it into an array for further processing
+if(typeName _targets != typename []) then {
+	_targets = [_targets];
+};
+
+// Loop through the array of _targets
 {
+	// If it's a side, loop through all groups and add the side's groups to the array
+	if (typeName _x == typeName west) then {
+		_side = _x;
+		{
+			if (side _x == _side) then {
+				_grps pushBack _x;
+			};
+		} forEach allGroups;
 
-	{
-		if(_onlyPlayers) then
+	// If group names were passed we need to turn them from strings into objects
+	} else {
+		if(!isnil _x) then
 		{
-			if((side _x == _grpstemp) && (leader _x in playableUnits)) then
-			{
-				_grps set [count _grps,_x]; // Add group to array
-			};
-		}
-		else
-		{
-			if (side _x == _grpstemp) then
-			{
-				_grps set [count _grps,_x]; // Add group to array
-			};
+			_grps pushBack (call compile format ["%1",_x]);
 		};
-
-	} forEach allGroups;
-
-	// Filter the created group array for the factions
-
-	if(count _faction > 0) then
-	{
-		{
-			if !(faction (leader _x) in _faction) then
-			{
-				_grps = _grps - [_x];
-			};
-		} forEach _grps;
 	};
-}
-else
-{
-	sleep 1;
+} forEach _targets;
+
+// Filter all non-player groups
+if (_onlyPlayers) then {
 	{
-		_Tgrp = call compile format ["%1",_x];
-		if(!isnil "_Tgrp") then
+		_grp = _x;
+		if ({_x in playableUnits} count units _grp == 0) then
 		{
-			_grps set [count _grps,_Tgrp];
+			_grps = _grps - [_x];
 		};
-	} foreach _grpstemp;
+	} forEach _grps;
+};
+
+// Filter the created group array for the factions
+if(count _faction > 0) then
+{
+	{
+		if !(faction (leader _x) in _faction) then
+		{
+			_grps = _grps - [_x];
+		};
+	} forEach _grps;
 };
 
 // ====================================================================================
 
 // FAULT CHECK
-// 10 seconds into the mission we check if any groups were found. If not, exit with an error message
+// 5 seconds into the mission we check if any groups were found. If not, exit with an error message
 
-sleep 10;
+sleep 5;
 
 if (count _grps == 0) exitWith {
-	player GlobalChat format ["DEBUG (f\casualtiesCap\f_CasualtiesCapCheck.sqf): No groups found, _grpstemp = %1, _grps = %2",_grpstemp,_grps];
+	player GlobalChat format ["DEBUG (f\casualtiesCap\f_CasualtiesCapCheck.sqf): No groups found, _targets = %1, _grps = %2",_targets,_grps];
 };
 
 // ====================================================================================

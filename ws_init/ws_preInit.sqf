@@ -11,6 +11,12 @@ _mkrs = ["mkrArea"] call ws_fnc_collectMarkers;
 _mkr = _mkrs call ws_fnc_selectRandom;
 
 _pos = [([_mkr,true] call ws_fnc_getPos), 0, 500, 0.5,0,0.5,0] call BIS_fnc_findSafePos;
+_mkrZ = createMarkerLocal  ["mkrZeus", _pos];
+_mkrZ setMarkerTypeLocal "mil_dot";
+_mkrZ setMarkerTextLocal "Crashsite";
+_mkrZ setMarkerColorLocal "ColorRed";
+_mkrZ setMarkerAlpha 0;
+
 
 ws_wreckLoc = [_pos select 0,_pos select 1,0]; publicVariable "ws_wreckLoc";
 //UnitZeus setPosATL [_pos select 0,_pos select 1,50];

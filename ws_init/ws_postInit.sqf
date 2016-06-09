@@ -6,10 +6,7 @@ if (isNil "ws_wreck_destroyed") then {ws_wreck_destroyed = false};
 
 if (str vehicle player in ["UnitZeus","UnitZeus_1"]) then {
 	player setPos ws_wreckloc;
-	_mkr = createMarkerLocal  ["mkrZeus", ws_wreckloc];
-	_mkr setMarkerTypeLocal "mil_dot";
-	_mkr setMarkerTextLocal "Crashsite";
-	_mkr setMarkerColorLocal "ColorRed";
+	"MkrZeus" setMarkerAlphaLocal 1;
 };
 
 // Display a short text intro
