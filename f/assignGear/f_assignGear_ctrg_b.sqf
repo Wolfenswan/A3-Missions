@@ -30,9 +30,8 @@ case "g":
 	if (_loadout == 0) then {
 		_unit addmagazines [_glriflemag,2];
 		//_unit addmagazines [_glmag,1];		// Use with 3 Rnd. UGL mags
-		_unit addmagazines [_glmag,3];		// Use with 1 Rnd. UGL mags
-		_unit addmagazines [_glsmokewhite,1];
-		_unit addmagazines [_grenade,1];		// Do not use with mgrenades
+		_unit addmagazines [_glmag,2];		// Use with 1 Rnd. UGL mags
+		_unit addmagazines [_grenade,2];		// Do not use with mgrenades
 		//_unit addmagazines [_mgrenade,1];		// Do not use with grenades
 		_unit addmagazines [_smokegrenade,1];
 	};

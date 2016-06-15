@@ -92,7 +92,7 @@ if (_unitfaction == "blu_f") exitwith {
 // The following block of code executes only if the player is in a FIA slot; it
 // automatically includes a file which contains the appropriate briefing data.
 
-if (_unitfaction in ["blu_g_f","ind_g_f","opf_g_f"]) exitwith {
+if (_unitfaction in ["blu_g_f","ind_g_f","opf_g_f","blu_ctrg_f"]) exitwith {
 
 #include "f\briefing\f_briefing_fia.sqf"
 

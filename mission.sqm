@@ -8,7 +8,7 @@ class EditorData
 	toggles=1537;
 	class ItemIDProvider
 	{
-		nextID=233;
+		nextID=253;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1801.7118,38.450001,12921.919};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={1735.0569,46.788887,12955.836};
+		dir[]={0.32230374,-0.6814422,-0.65714872};
+		up[]={0.30009323,0.73182476,-0.61186105};
+		aside[]={-0.89786792,2.104789e-007,-0.44036576};
 	};
 };
 binarizationWanted=0;
@@ -38,6 +38,7 @@ addons[]=
 	"A3_Modules_F",
 	"A3_Characters_F",
 	"A3_Air_F_Beta_Heli_Transport_01",
+	"A3_Characters_F_Exp",
 	"A3_Air_F_Heli_Light_01",
 	"A3_Air_F_Beta_Heli_Attack_01"
 };
@@ -45,7 +46,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=11;
+		items=12;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -117,6 +118,13 @@ class AddonsMetaData
 			url="http://www.arma3.com";
 		};
 		class Item10
+		{
+			className="A3_Characters_F_Exp";
+			name="Arma 3 Apex - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item11
 		{
 			className="A3_Air_F";
 			name="Arma 3 Alpha - Aircrafts";
@@ -1530,14 +1538,14 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={1800.4484,44.964119,12941.036};
-				angles[]={0,6.1989717,0};
+				position[]={1800.448,44.964001,12941.036};
+				angles[]={0,6.1989727,0};
 			};
 			name="ZeusModule";
 			init="this addEventHandler ['CuratorObjectPlaced',{{_x unlinkItem ""ItemMap""; _x unlinkItem ""ItemGPS"";[_x] call f_fnc_setAISkill} forEach crew (_this select 1);}];  this addcuratorEditableObjects [playableUnits,true];";
 			id=101;
 			type="ModuleCurator_F";
-			atlOffset=31.514118;
+			atlOffset=31.514;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1933,14 +1941,14 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={1800.7472,44.833752,12938.714};
-				angles[]={0,6.1989717,0};
+				position[]={1800.7469,44.834,12938.714};
+				angles[]={0,6.1989727,0};
 			};
 			name="ZeusModule_1";
 			init="this addEventHandler ['CuratorObjectPlaced',{{_x unlinkItem ""ItemMap""; _x unlinkItem ""ItemGPS"";[_x] call f_fnc_setAISkill} forEach crew (_this select 1);}];  this addcuratorEditableObjects [playableUnits,true];";
 			id=107;
 			type="ModuleCurator_F";
-			atlOffset=31.383751;
+			atlOffset=31.383999;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2209,8 +2217,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1765.9597,13.439057,12928.512};
-						angles[]={0,0.70221573,0};
+						position[]={1764.3719,13.431439,12923.84};
+						angles[]={0,0.70221579,0};
 					};
 					side="West";
 					flags=6;
@@ -2223,15 +2231,14 @@ class Mission
 					};
 					id=99;
 					type="B_Pilot_F";
-					atlOffset=0.0076179504;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1768.7653,13.439057,12926.138};
-						angles[]={0,0.70221573,0};
+						position[]={1764.3719,13.431439,12923.84};
+						angles[]={0,0.70221579,0};
 					};
 					side="West";
 					flags=4;
@@ -2244,7 +2251,6 @@ class Mission
 					};
 					id=100;
 					type="B_Pilot_F";
-					atlOffset=0.0076179504;
 				};
 			};
 			class Attributes
@@ -2290,7 +2296,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1764.3719,15.569248,12923.79};
-				angles[]={0,0.70221573,0};
+				angles[]={0,0.70221579,0};
 			};
 			side="West";
 			flags=6;
@@ -2302,7 +2308,7 @@ class Mission
 				fuel=0;
 				init="this lockDriver true; this lockTurret [[0],true]; this disableAI ""move""; this engineOn false;";
 				name="Wreck";
-				textures="Green";
+				textures="Olive";
 			};
 			id=162;
 			type="B_Heli_Transport_01_camo_F";
@@ -2342,8 +2348,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1763.4296,13.439057,12926.773};
-						angles[]={0,0.70221573,0};
+						position[]={1764.3719,13.431439,12923.84};
+						angles[]={0,0.70221579,0};
 					};
 					side="West";
 					flags=6;
@@ -2357,40 +2363,39 @@ class Mission
 						isPlayer=1;
 						isPlayable=1;
 					};
-					id=93;
-					type="B_G_Soldier_SL_F";
-					atlOffset=0.0076179504;
+					id=233;
+					type="B_CTRG_Soldier_TL_tna_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1767.4707,13.439057,12923.354};
-						angles[]={0,0.70221573,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						rank="CORPORAL";
-						init="GrpNATO_Grnd = group this; nul = [""o"",this,""ind_f""] call f_fnc_assignGear;";
-						name="UnitNATO_VIP";
-						description="CTRG - AAF Colonel (VIP)";
-						isPlayable=1;
-					};
-					id=94;
-					type="I_Story_Colonel_F";
-					atlOffset=0.0076179504;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1767.4707,13.439057,12923.354};
-						angles[]={0,0.70221573,0};
+						position[]={1764.3719,13.431439,12923.84};
+						angles[]={0,0.70221579,0};
 					};
 					side="West";
 					flags=4;
@@ -2403,17 +2408,39 @@ class Mission
 						description="CTRG - Combat Medic";
 						isPlayable=1;
 					};
-					id=95;
-					type="B_G_medic_F";
-					atlOffset=0.0076179504;
+					id=234;
+					type="B_CTRG_Soldier_Medic_tna_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
-				class Item3
+				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1767.4707,13.439057,12923.354};
-						angles[]={0,0.70221573,0};
+						position[]={1764.3719,13.431439,12923.84};
+						angles[]={0,0.70221579,0};
 					};
 					side="West";
 					flags=4;
@@ -2426,9 +2453,74 @@ class Mission
 						description="CTRG - Marksman";
 						isPlayable=1;
 					};
-					id=96;
-					type="B_G_Soldier_M_F";
-					atlOffset=0.0076179504;
+					id=235;
+					type="B_CTRG_Soldier_M_tna_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1764.3719,13.431439,12923.84};
+						angles[]={0,0.70221579,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						init="GrpNATO_Grnd = group this; nul = [""o"",this,""ind_f""] call f_fnc_assignGear;";
+						name="UnitNATO_VIP";
+						description="CTRG - Syndikat Colonel (VIP)";
+						isPlayable=1;
+					};
+					id=243;
+					type="I_C_Soldier_Camo_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 			};
 			class Attributes
@@ -2446,29 +2538,29 @@ class Mission
 					class Item0
 					{
 						linkID=0;
-						item0=93;
+						item0=233;
 						item1=162;
 						class CustomData
 						{
-							role=3;
-							cargoIndex=7;
+							role=2;
+							turretPath[]={1};
 						};
 					};
 					class Item1
 					{
 						linkID=1;
-						item0=94;
+						item0=234;
 						item1=162;
 						class CustomData
 						{
-							role=3;
-							cargoIndex=6;
+							role=2;
+							turretPath[]={2};
 						};
 					};
 					class Item2
 					{
 						linkID=2;
-						item0=95;
+						item0=235;
 						item1=162;
 						class CustomData
 						{
@@ -2479,7 +2571,7 @@ class Mission
 					class Item3
 					{
 						linkID=3;
-						item0=96;
+						item0=243;
 						item1=162;
 						class CustomData
 						{
@@ -2522,7 +2614,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1764.3719,13.431439,12923.84};
-						angles[]={0,0.70221573,0};
+						angles[]={0,0.70221579,0};
 					};
 					side="West";
 					flags=6;
@@ -2535,8 +2627,31 @@ class Mission
 						description="CTRG Juliet 1 Fire Team Leader";
 						isPlayable=1;
 					};
-					id=206;
-					type="B_G_Soldier_TL_F";
+					id=241;
+					type="B_CTRG_Soldier_TL_tna_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
@@ -2544,70 +2659,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1764.3719,13.431439,12923.84};
-						angles[]={0,0.70221573,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						init="GrpNATO_Grnd1 = group this; [""ar"",this,""ctrg""] call f_fnc_assignGear;";
-						name="UnitFIA_A1_AR1";
-						description="CTRG Juliet 1 Automatic Rifleman";
-						isPlayable=1;
-					};
-					id=207;
-					type="B_G_Soldier_AR_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1764.3719,13.431439,12923.84};
-						angles[]={0,0.70221573,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						init="GrpNATO_Grnd1 = group this; [""ar"",this,""ctrg""] call f_fnc_assignGear;";
-						name="UnitFIA_A1_AR2";
-						description="CTRG Juliet 1 Automatic Rifleman";
-						isPlayable=1;
-					};
-					id=208;
-					type="B_G_Soldier_AR_F";
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1764.3719,13.431439,12923.84};
-						angles[]={0,0.70221573,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						skill=0.60000002;
-						init="GrpNATO_Grnd1 = group this; [""rat"",this,""ctrg""] call f_fnc_assignGear;";
-						name="UnitFIA_A1_AT";
-						description="CTRG Juliet 1 Assaultman (AT)";
-						isPlayable=1;
-					};
-					id=209;
-					type="B_G_Soldier_LAT_F";
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1764.3719,13.431439,12923.84};
-						angles[]={0,0.70221573,0};
+						angles[]={0,0.70221579,0};
 					};
 					side="West";
 					flags=4;
@@ -2619,10 +2671,33 @@ class Mission
 						description="CTRG Juliet 1 Grenadier";
 						isPlayable=1;
 					};
-					id=210;
-					type="B_G_Soldier_F";
+					id=250;
+					type="B_CTRG_Soldier_tna_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
-				class Item5
+				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
@@ -2640,8 +2715,8 @@ class Mission
 						description="CTRG Juliet 1 Assaultman (AT)";
 						isPlayable=1;
 					};
-					id=211;
-					type="B_G_Soldier_F";
+					id=251;
+					type="B_CTRG_Soldier_LAT_tna_F";
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2666,6 +2741,138 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1764.3719,13.431439,12923.84};
+						angles[]={0,0.70221579,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="GrpNATO_Grnd1 = group this; [""ar"",this,""ctrg""] call f_fnc_assignGear;";
+						name="UnitFIA_A1_AR1";
+						description="CTRG Juliet 1 Automatic Rifleman";
+						isPlayable=1;
+					};
+					id=247;
+					type="B_CTRG_Soldier_AR_tna_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1764.3719,13.431439,12923.84};
+						angles[]={6.2751918,0.70221579,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="GrpNATO_Grnd1 = group this; [""ar"",this,""ctrg""] call f_fnc_assignGear;";
+						name="UnitFIA_A1_AR2";
+						description="CTRG Juliet 1 Automatic Rifleman";
+						isPlayable=1;
+					};
+					id=248;
+					type="B_CTRG_Soldier_AR_tna_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.95999998;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1764.3719,13.431439,12923.84};
+						angles[]={0,0.70221579,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						skill=0.60000002;
+						init="GrpNATO_Grnd1 = group this; [""rat"",this,""ctrg""] call f_fnc_assignGear;";
+						name="UnitFIA_A1_AT";
+						description="CTRG Juliet 1 Assaultman (AT)";
+						isPlayable=1;
+					};
+					id=249;
+					type="B_CTRG_Soldier_LAT_tna_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			class Attributes
 			{
@@ -2682,29 +2889,7 @@ class Mission
 					class Item0
 					{
 						linkID=0;
-						item0=206;
-						item1=162;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={1};
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=207;
-						item1=162;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={2};
-						};
-					};
-					class Item2
-					{
-						linkID=2;
-						item0=208;
+						item0=241;
 						item1=162;
 						class CustomData
 						{
@@ -2712,10 +2897,10 @@ class Mission
 							cargoIndex=2;
 						};
 					};
-					class Item3
+					class Item1
 					{
-						linkID=3;
-						item0=209;
+						linkID=1;
+						item0=250;
 						item1=162;
 						class CustomData
 						{
@@ -2723,10 +2908,10 @@ class Mission
 							cargoIndex=3;
 						};
 					};
-					class Item4
+					class Item2
 					{
-						linkID=4;
-						item0=210;
+						linkID=2;
+						item0=251;
 						item1=162;
 						class CustomData
 						{
@@ -2734,15 +2919,37 @@ class Mission
 							cargoIndex=4;
 						};
 					};
-					class Item5
+					class Item3
 					{
-						linkID=5;
-						item0=211;
+						linkID=3;
+						item0=247;
 						item1=162;
 						class CustomData
 						{
 							role=3;
 							cargoIndex=5;
+						};
+					};
+					class Item4
+					{
+						linkID=4;
+						item0=248;
+						item1=162;
+						class CustomData
+						{
+							role=3;
+							cargoIndex=6;
+						};
+					};
+					class Item5
+					{
+						linkID=5;
+						item0=249;
+						item1=162;
+						class CustomData
+						{
+							role=3;
+							cargoIndex=7;
 						};
 					};
 				};
@@ -2761,8 +2968,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2356.6997,13.451439,13335.55};
-						angles[]={0,4.0643206,0};
+						position[]={2357.7463,13.451439,13335.574};
+						angles[]={0,4.0643134,0};
 					};
 					side="West";
 					flags=6;
@@ -2806,8 +3013,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2356.6997,13.451439,13335.55};
-						angles[]={0,4.0643206,0};
+						position[]={2357.7463,13.451439,13335.574};
+						angles[]={0,4.0643134,0};
 					};
 					side="West";
 					flags=4;
@@ -2828,8 +3035,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2356.6997,13.451439,13335.55};
-						angles[]={0,4.0643206,0};
+						position[]={2357.7463,13.451439,13335.574};
+						angles[]={0,4.0643134,0};
 					};
 					side="West";
 					flags=4;
@@ -2850,8 +3057,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2356.6997,13.451439,13335.55};
-						angles[]={0,4.0643206,0};
+						position[]={2357.7463,13.451439,13335.574};
+						angles[]={0,4.0643134,0};
 					};
 					side="West";
 					flags=4;
@@ -2932,8 +3139,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2356.6997,15.589248,13335.5};
-				angles[]={0,4.0643206,0};
+				position[]={2357.7463,15.589248,13335.524};
+				angles[]={0,4.0643134,0};
 			};
 			side="West";
 			flags=6;
@@ -2942,6 +3149,7 @@ class Mission
 				skill=0.60000002;
 				init="[""v_ifv"",this] call f_fnc_assignGear;";
 				name="VehNATO_TH1";
+				textures="Olive";
 			};
 			id=217;
 			type="B_Heli_Transport_01_camo_F";
@@ -2958,8 +3166,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2364.1064,13.451439,13369.487};
-						angles[]={0,4.0024309,0};
+						position[]={2364.106,13.451439,13369.488};
+						angles[]={0,4.0024242,0};
 					};
 					side="West";
 					flags=6;
@@ -2980,8 +3188,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2364.1064,13.451439,13369.487};
-						angles[]={0,4.0024309,0};
+						position[]={2364.106,13.451439,13369.488};
+						angles[]={0,4.0024242,0};
 					};
 					side="West";
 					flags=4;
@@ -3002,8 +3210,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2364.1064,13.451439,13369.487};
-						angles[]={0,4.0024309,0};
+						position[]={2364.106,13.451439,13369.488};
+						angles[]={0,4.0024242,0};
 					};
 					side="West";
 					flags=4;
@@ -3024,8 +3232,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2364.1064,13.451439,13369.487};
-						angles[]={0,4.0024309,0};
+						position[]={2364.106,13.451439,13369.488};
+						angles[]={0,4.0024242,0};
 					};
 					side="West";
 					flags=4;
@@ -3106,8 +3314,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2364.1064,15.589248,13369.438};
-				angles[]={0,4.0024309,0};
+				position[]={2364.106,15.589248,13369.438};
+				angles[]={0,4.0024242,0};
 			};
 			side="West";
 			flags=6;
@@ -3116,6 +3324,7 @@ class Mission
 				skill=0.60000002;
 				init="[""v_ifv"",this] call f_fnc_assignGear;";
 				name="VehNATO_TH2";
+				textures="Olive";
 			};
 			id=223;
 			type="B_Heli_Transport_01_camo_F";
@@ -3206,8 +3415,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2419.8743,12.851027,13337.513};
-						angles[]={6.2192731,6.2489753,6.2778587};
+						position[]={2419.874,12.851121,13337.513};
+						angles[]={6.2192717,6.2489772,6.2778621};
 					};
 					side="West";
 					flags=6;
@@ -3222,15 +3431,15 @@ class Mission
 					};
 					id=228;
 					type="B_Helipilot_F";
-					atlOffset=0.0079078674;
+					atlOffset=0.0080003738;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2419.8743,12.851027,13337.513};
-						angles[]={6.2192731,6.2489753,6.2778587};
+						position[]={2419.874,12.851121,13337.513};
+						angles[]={6.2192717,6.2489772,6.2778621};
 					};
 					side="West";
 					flags=4;
@@ -3245,7 +3454,7 @@ class Mission
 					};
 					id=229;
 					type="B_soldier_repair_F";
-					atlOffset=0.0079078674;
+					atlOffset=0.0080003738;
 				};
 			};
 			class Attributes
@@ -3284,15 +3493,15 @@ class Mission
 				};
 			};
 			id=227;
-			atlOffset=0.0079078674;
+			atlOffset=0.0080003738;
 		};
 		class Item108
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2419.8845,14.777566,13337.34};
-				angles[]={6.2192731,6.2489753,6.2778587};
+				position[]={2419.8843,14.77766,13337.34};
+				angles[]={6.2192717,6.2489772,6.2778621};
 			};
 			side="West";
 			flags=6;
@@ -3304,7 +3513,7 @@ class Mission
 			};
 			id=230;
 			type="B_Heli_Attack_01_F";
-			atlOffset=0.0079078674;
+			atlOffset=0.0080003738;
 		};
 	};
 	class Connections
@@ -3319,17 +3528,17 @@ class Mission
 			class Item0
 			{
 				linkID=0;
-				item0=94;
-				item1=10;
+				item0=102;
+				item1=101;
 				class CustomData
 				{
-					type="TriggerOwner";
+					type="Sync";
 				};
 			};
 			class Item1
 			{
 				linkID=1;
-				item0=102;
+				item0=103;
 				item1=101;
 				class CustomData
 				{
@@ -3339,7 +3548,7 @@ class Mission
 			class Item2
 			{
 				linkID=2;
-				item0=103;
+				item0=105;
 				item1=101;
 				class CustomData
 				{
@@ -3349,8 +3558,8 @@ class Mission
 			class Item3
 			{
 				linkID=3;
-				item0=105;
-				item1=101;
+				item0=107;
+				item1=102;
 				class CustomData
 				{
 					type="Sync";
@@ -3360,7 +3569,7 @@ class Mission
 			{
 				linkID=4;
 				item0=107;
-				item1=102;
+				item1=105;
 				class CustomData
 				{
 					type="Sync";
@@ -3369,8 +3578,8 @@ class Mission
 			class Item5
 			{
 				linkID=5;
-				item0=107;
-				item1=105;
+				item0=243;
+				item1=10;
 				class CustomData
 				{
 					type="Sync";
