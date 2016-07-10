@@ -8,7 +8,7 @@ _startTime = diag_tickTime;
 
 _cacheDistMin = "ws_param_cacheDis" call bis_fnc_getParamValue;	// Min distance for generating new cache
 _cacheDistMax = _cacheDistMin*(3.5 min ha_param_cacheNum);	// Max distance for generating new cache
-_cacheDistRand = 100; 				//Random factor for cache placement
+_cacheDistRand = 50; 				//Random factor for cache placement
 _spawnMinSideDistance = 2500;		// Min distance sides spawn from one another
 _spawnMaxSideDistance = 4000;		// Max distance sides spawn from one another
 _spawnDefenderMinCacheDistance = 250;	// Min distance for defender to spawn from any cache
