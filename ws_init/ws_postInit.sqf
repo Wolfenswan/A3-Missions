@@ -1,6 +1,12 @@
 [] execVM "ha_spottingMarkers.sqf";
 
+
 asr_ai3_main_radiorange = 0; // Disable ASR AI3 radionet to prevent FIA AI guards to move
+
+if (isNIl "ws_param_hc") then {ws_param_hc = "ws_param_hc" call BIS_fnc_getParamValue;};
+
+// Only for players
+if (!isDedicated && !ws_isHC) then {
 
 ["ws_var_sideDead",0] call ws_fnc_setGVar;
 
@@ -26,10 +32,4 @@ if (!isDedicated) then {
  };
 sleep 10;
  ["CRATESISTANCE","SOMEWHERE IN ALTIS"] call ws_fnc_showIntro;
-
-};
-
-if (isServer) then {
-	sleep 10;
-{_x allowDamage true} forEach vehicles;
 };
