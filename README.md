@@ -1,6 +1,5 @@
 # F3-Folk ARPS Mission-making Template #
 
-
 ## Changes from default F3 ##
 
 * Wolfenswan's function library (ws_fnc) integrated
@@ -13,5 +12,5 @@
   * Pre-configured endings 1 -3 with generic titles and texts
 
 ## Versions ##
-* F3 3-4-0 RC1
+* F3 3-4-0
 * ws_fnc 05/07/2015

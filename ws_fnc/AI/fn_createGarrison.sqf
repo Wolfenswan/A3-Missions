@@ -20,7 +20,7 @@ PARAMETERS:
 2. Radius of area to be considered																				 | MANDATORY - int
 3. Side of units to spawn																						 | MANDATORY - side (east, west, resistance)
 4. Number of units.																								 | OPTIONAL - number - default is No. of available buildings/4
-5. threshold of building positions that can be occupied in the buildings in the area								 | OPTIONAL - number between 1 (=100%) and 0, default is set below
+5. threshold of building positions that can be occupied in the buildings in the area							 | OPTIONAL - number between 1 (=100%) and 0, default is set below
 6. Array of classes to spawn																		           	 | OPTIONAL - array w. strings  - default are classes defined below
 
 EXAMPLE
@@ -38,12 +38,22 @@ private ["_garrisonNATO","_garrisonCSAT","_garrisonAAF","_garrisonFIA","_garriso
 // Default classes (Arma 3)
 // NATO
 _garrisonNATO = ["B_Soldier_lite_F","B_Soldier_F"];
+//_garrisonNATO = ["B_T_Soldier_F"];
+
 // CSAT
 _garrisonCSAT = ["O_Soldier_lite_F","O_Soldier_F"];
+//_garrisonCSAT = ["O_T_Soldier_F"];
+
 // AAF
 _garrisonAAF = ["I_Soldier_lite_F","I_Soldier_F"];
+
 // FIA
 _garrisonFIA = ["B_G_Soldier_lite_F","B_G_Soldier_F"];
+
+// Syndikat
+_garrisonSyndikat = ["I_C_Soldier_Para_1_F","I_C_Soldier_Para_2_F","I_C_Soldier_Para_7_F"];
+//_garrisonSyndikat = ["I_C_Soldier_Bandit_4_F","I_C_Soldier_Bandit_7_F","I_C_Soldier_Bandit_5_F"];
+
 // CIVILIAN
 _garrisonCIV = [""];
 
