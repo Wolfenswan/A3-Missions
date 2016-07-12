@@ -122,7 +122,7 @@ if (_unitfaction in ["ind_f"]) exitwith {
 
 if (_unitfaction in ["ind_c_f"]) exitwith {
 
-#include "f\briefing\f_briefing_syndikat.sqf"
+#include "f\briefing\f_briefing_fia.sqf"
 
 // DEBUG
 	if (f_param_debugMode == 1) then
