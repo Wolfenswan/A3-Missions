@@ -11,9 +11,8 @@ private ["_mkr"];
 // SET KEY VARIABLES
 // Using variables passed to the script instance, we will create some local variables:
 
+params["_untName",["_mkrType","b_hq"],"_mkrText",["_mkrColor","ColorBlack"]];
 
-
-params["_untName", "_mkrType", "_mkrText", "_mkrColor"];
 private _mkrName = format ["mkr_%1",_untName];
 private _unt = missionNamespace getVariable [_untName, objNull];
 
@@ -39,31 +38,12 @@ if (!alive _unt) exitWith {};
 // CREATE MARKER
 // Depending on the value of _mkrType a different type of marker is created.
 
-switch (_mkrType) do
-{
-
-// Medics
-	case 0:
-	{
-		_mkr = createMarkerLocal [_mkrName,[(getPos _unt select 0),(getPos _unt select 1)]];
-		_mkr setMarkerShapeLocal "ICON";
-		_mkrName setMarkerTypeLocal "b_med";
-		_mkrName setMarkerColorLocal _mkrColor;
-		_mkrName setMarkerSizeLocal [0.5, 0.5];
-		_mkrName setMarkerTextLocal _mkrText;
-	};
-// UAV Operator
-	case 1:
-	{
-		_mkr = createMarkerLocal [_mkrName,[(getPos _unt select 0),(getPos _unt select 1)]];
-		_mkr setMarkerShapeLocal "ICON";
-		_mkrName setMarkerTypeLocal "b_uav";
-		_mkrName setMarkerColorLocal _mkrColor;
-		_mkrName setMarkerSizeLocal [0.5, 0.5];
-		_mkrName setMarkerTextLocal _mkrText;
-	};
-
-};
+_mkr = createMarkerLocal [_mkrName,[(getPos _unt select 0),(getPos _unt select 1)]];
+_mkr setMarkerShapeLocal "ICON";
+_mkrName setMarkerTypeLocal  _mkrType;
+_mkrName setMarkerColorLocal _mkrColor;
+_mkrName setMarkerSizeLocal [0.8, 0.8];
+_mkrName setMarkerTextLocal _mkrText;
 
 // ====================================================================================
 

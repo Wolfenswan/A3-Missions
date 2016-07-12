@@ -286,10 +286,65 @@ _groups = [
 ["GrpAAF_TH8","AAF TH8 -"],
 ["GrpAAF_AH1","AAF AH1 -"],
 
+// ====================================================================================
+
+// GROUP IDs: INDEPENDENT > SYNDIKAT
+// Automatically assigns intelligible names to groups
+
+["GrpSyn_CO","Syndikat CO -"],
+["GrpSyn_DC","Syndikat DC -"],
+["GrpSyn_COV","Syndikat COV -"],
+
+["GrpSyn_ASL","Syndikat ASL -"],
+["GrpSyn_A1","Syndikat A1 -"],
+["GrpSyn_A2","Syndikat A2 -"],
+["GrpSyn_AV","Syndikat AV -"],
+
+["GrpSyn_BSL","Syndikat BSL -"],
+["GrpSyn_B1","Syndikat B1 -"],
+["GrpSyn_B2","Syndikat B2 -"],
+["GrpSyn_BV","Syndikat BV -"],
+
+["GrpSyn_CSL","Syndikat CSL -"],
+["GrpSyn_C1","Syndikat C1 -"],
+["GrpSyn_C2","Syndikat C2 -"],
+["GrpSyn_CV","Syndikat CV -"],
+
+["GrpSyn_JSL","Syndikat JSL -"],
+["GrpSyn_J1","Syndikat J1 -"],
+["GrpSyn_J2","Syndikat J2 -"],
+["GrpSyn_JV","Syndikat JV -"],
+
+["GrpSyn_MMG1","Syndikat MMG1 -"],
+["GrpSyn_MMG2","Syndikat MMG2 -"],
+["GrpSyn_HMG1","Syndikat HMG1 -"],
+["GrpSyn_MAT1","Syndikat MAT1 -"],
+["GrpSyn_MAT2","Syndikat MAT2 -"],
+["GrpSyn_HAT1","Syndikat HAT1 -"],
+["GrpSyn_MTR1","Syndikat MTR1 -"],
+["GrpSyn_MSAM1","Syndikat MSAM1 -"],
+["GrpSyn_HSAM1","Syndikat HSAM1 -"],
+["GrpSyn_ST1","Syndikat ST1 -"],
+["GrpSyn_DT1","Syndikat DT1 -"],
+["GrpSyn_ENG1","Syndikat ENG1 -"],
+
+["GrpSyn_IFV1","Syndikat IFV1 -"],
+["GrpSyn_IFV2","Syndikat IFV2 -"],
+["GrpSyn_TNK1","Syndikat TNK1 -"],
+
+["GrpSyn_TH1","Syndikat TH1 -"],
+["GrpSyn_TH2","Syndikat TH2 -"],
+["GrpSyn_TH3","Syndikat TH3 -"],
+["GrpSyn_TH4","Syndikat TH4 -"],
+["GrpSyn_TH5","Syndikat TH5 -"],
+["GrpSyn_TH6","Syndikat TH6 -"],
+["GrpSyn_TH7","Syndikat TH7 -"],
+["GrpSyn_TH8","Syndikat TH8 -"],
+["GrpSyn_AH1","Syndikat AH1 -"],
 
 // ====================================================================================
 
-// GROUP IDs: OPFOR > FIA
+// GROUP IDs: Independent > FIA
 // Automatically assigns intelligible names to groups
 
 ["GrpIFIA_CO","FIA I CO -"],
