@@ -227,4 +227,4 @@ f_wound_extraFAK = 2;
 // ====================================================================================
 
 // Wolfenswan - post Init
-[] execVM "ws_init\ws_postInit.sqf";
+//[] execVM "ws_init\ws_postInit.sqf";
