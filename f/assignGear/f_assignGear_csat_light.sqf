@@ -51,8 +51,8 @@ switch (_typeofUnit) do
 	case "ftl":
 	{
 		_unit addmagazines [_glriflemag, 1];
-		_unit addweapon _glrifle;
 		_unit addmagazines [_glmag, 1];
+		_unit addweapon _glrifle;
 		_unit addItem _firstaid;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_glriflemag, 2];
@@ -66,8 +66,8 @@ switch (_typeofUnit) do
 	case "dc":
 	{
 		_unit addmagazines [_glriflemag, 1];
-		_unit addweapon _glrifle;
 		_unit addmagazines [_glmag, 1];
+		_unit addweapon _glrifle;
 		_unit addweapon _pistol;
 		_unit addmagazines [_pistolmag, 1];
 		_unit addItem _firstaid;
@@ -355,6 +355,7 @@ switch (_typeofUnit) do
 // Vehicle Driver Loadout:
 	case "vd":
 	{
+		_unit setUnitTrait ["engineer",true]; // Can repair
 		_unit addBackpack _bag;
 		_unit addmagazines [_smgmag, 1];
 		_unit addweapon _smg;
@@ -366,6 +367,7 @@ switch (_typeofUnit) do
 // Heli Pilot / Crew Chief Loadout:
 	case "pp, pcc":
 	{
+		_unit setUnitTrait ["engineer",true]; // Can repair
 		_unit addBackpack _bag;
 		_unit addmagazines [_smgmag, 1];
 		_unit addweapon _smg;
@@ -474,8 +476,8 @@ switch (_typeofUnit) do
 	case "gren":
 	{
 		_unit addmagazines [_glriflemag, 1];
-		_unit addweapon _glrifle;
 		_unit addmagazines [_glmag, 1];
+		_unit addweapon _glrifle;
 		_unit addItem _firstaid;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_glriflemag, 2];
