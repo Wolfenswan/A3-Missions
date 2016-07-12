@@ -186,6 +186,13 @@ if (ws_colonel_extracted && ws_wreck_destroyed) then {
 
 // ====================================================================================
 
+// F3 - F3 Mission Conditions Selector
+// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
+
+f_script_setMissionConditions = [] execVM "f\missionConditions\f_setMissionConditions.sqf";
+
+// ====================================================================================
+
 // F3 - JIP setup
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
