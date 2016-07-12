@@ -52,8 +52,8 @@ switch (_typeofUnit) do
 	case "ftl":
 	{
 		_unit addmagazines [_glriflemag, 1];
-		_unit addweapon _glrifle;
 		_unit addmagazines [_glmag, 1];
+		_unit addweapon _glrifle;
 		_unit addItem _firstaid;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_glriflemag, 2];
@@ -67,8 +67,8 @@ switch (_typeofUnit) do
 	case "dc":
 	{
 		_unit addmagazines [_glriflemag, 1];
-		_unit addweapon _glrifle;
 		_unit addmagazines [_glmag, 1];
+		_unit addweapon _glrifle;
 		_unit addweapon _pistol;
 		_unit addmagazines [_pistolmag, 1];
 		_unit addItem _firstaid;
@@ -213,7 +213,7 @@ switch (_typeofUnit) do
 // Heavy AT Gunner Loadout:
 	case "hatg":
 	{
-		_unit addBackpack _bag;
+		_unit addBackpack _baghatg;
 		_unit addmagazines [_riflemag, 1];
 		_unit addweapon _rifle;
 		_unit addweapon _HAT;
@@ -226,7 +226,7 @@ switch (_typeofUnit) do
 // Heavy AT Team Leader Loadout:
 	case "hatag":
 	{
-		_unit addBackpack _baglarge;
+		_unit addBackpack _baghatag;
 		_unit addmagazines [_riflemag, 1];
 		_unit addweapon _rifle;
 		_unit addItem _firstaid;
@@ -475,8 +475,8 @@ switch (_typeofUnit) do
 	case "gren":
 	{
 		_unit addmagazines [_glriflemag, 1];
-		_unit addweapon _glrifle;
 		_unit addmagazines [_glmag, 1];
+		_unit addweapon _glrifle;
 		_unit addItem _firstaid;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_glriflemag, 2];
