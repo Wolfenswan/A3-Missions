@@ -5,7 +5,7 @@
 // MARKERS: BLUFOR > NATO
 // Markers seen by players in NATO, NATO (Pacific) & CTRG slots.
 
-if (_unitfaction in ["blu_f","blu_t_f","blu_ctrg_f"]) then {
+if (_unitfaction in ["blu_f","blu_t_f"]) then {
 
 	["GrpNATO_CO",_hq, "CO", "ColorYellow"] spawn f_fnc_localGroupMarker;
 	["GrpNATO_DC",_hq, "DC", "ColorYellow"] spawn f_fnc_localGroupMarker;
@@ -58,6 +58,7 @@ if (_unitfaction in ["blu_f","blu_t_f","blu_ctrg_f"]) then {
 	["GrpNATO_TH8",_hel, "TH8", "ColorOrange"] spawn f_fnc_localGroupMarker;
 
 	["GrpNATO_AH1",_hel, "AH1", "ColorRed"] spawn f_fnc_localGroupMarker;
+	["GrpNATO_AH2",_hel, "AH2", "ColorRed"] spawn f_fnc_localGroupMarker;
 
 	["UnitNATO_CO_M",_med, "COM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
 	["UnitNATO_DC_M",_med, "DCM", "ColorBlack"] spawn f_fnc_localSpecialistMarker;
@@ -71,7 +72,7 @@ if (_unitfaction in ["blu_f","blu_t_f","blu_ctrg_f"]) then {
 // MARKERS: BLUFOR > FIA
 // Markers seen by players in FIA & CTRG slots.
 
-if (_unitfaction in ["blu_g_f","blu_ctrg_f"]) then {
+if (_unitfaction in ["blu_g_f"]) then {
 	["GrpFIA_CO",_hq, "CO", "ColorYellow"] spawn f_fnc_localGroupMarker;
 	["GrpFIA_DC",_hq, "DC", "ColorYellow"] spawn f_fnc_localGroupMarker;
 	["GrpFIA_COV",_ifv, "COV", "ColorYellow"] spawn f_fnc_localGroupMarker;

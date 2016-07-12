@@ -10,8 +10,8 @@ _mkrs = ["mkrArea"] call ws_fnc_collectMarkers;
 {_x setMarkerAlpha 0;} forEach _mkrs;
 _mkr = _mkrs call ws_fnc_selectRandom;
 
-_pos = getPos Wreck;
-//_pos = [([_mkr,true] call ws_fnc_getPos), 0, 500, 0.5,0,0.5,0] call BIS_fnc_findSafePos;
+//_pos = getPos Wreck;
+_pos = [([_mkr,true] call ws_fnc_getPos), 0, 500, 0.5,0,0.5,0] call BIS_fnc_findSafePos;
 _mkrZ = createMarkerLocal  ["mkrZeus", _pos];
 _mkrZ setMarkerTypeLocal "mil_dot";
 _mkrZ setMarkerTextLocal "Crashsite";

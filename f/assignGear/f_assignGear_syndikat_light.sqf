@@ -10,6 +10,12 @@ switch (_typeofUnit) do
 {
 
 // ====================================================================================
+
+  case "o":
+     {
+         _unit addmagazines ["6Rnd_45ACP_Cylinder",6];
+         _unit addweapon "hgun_Pistol_heavy_02_F";
+ 	};
 // Automatic Rifleman Loadout:
 	case "ar":
 	{

@@ -229,12 +229,12 @@ _specOp = [];
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
 
-_baseUniform = ["U_I_C_Soldier_Camo_F","U_I_C_Soldier_Para_1_F","U_I_C_Soldier_Para_2_F","U_I_C_Soldier_Para_3_F","U_I_C_Soldier_Para_4_F","U_I_C_Soldier_Para_5_F"];
+_baseUniform = ["U_I_C_Soldier_Camo_F"];
 _baseHelmet = ["H_Beret_blk"];
-_baseGlasses = ["G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli"];
+_baseGlasses = ["G_Aviator"];
 
 // Vests
-_lightRig = ["V_Chestrig_blk","V_Chestrig_rgr"];
+_lightRig = ["V_BandollierB_oli"];
 _standardRig = ["V_TacVestIR_blk"];
 
 // Diver
@@ -302,13 +302,13 @@ if (_isMan) then {
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	_unit linkItem _nvg;			// Add and equip the faction's nvg
+	//_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
-	_unit linkItem "ItemMap";		// Add and equip the map
+	//_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass
 	_unit linkItem "ItemRadio";		// Add and equip A3's default radio
-	_unit linkItem "ItemWatch";		// Add and equip a watch
-	_unit linkItem "ItemGPS"; 	// Add and equip a GPS
+	//_unit linkItem "ItemWatch";		// Add and equip a watch
+	//_unit linkItem "ItemGPS"; 	// Add and equip a GPS
 
 };
 
@@ -317,7 +317,7 @@ if (_isMan) then {
 // SELECT LOADOUT
 // Pick the appropriate loadout depending on the parameter
 
-_loadout = f_param_loadouts;
+_loadout = 0;
 
 // Light Loadout
 if (_loadout == 0) then {

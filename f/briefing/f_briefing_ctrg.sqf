@@ -2,7 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// FACTION: CTRG
+// FACTION: FIA
 
 // ====================================================================================
 
@@ -11,7 +11,9 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-*** Insert mission credits here. ***
+Made by Wolfenswan for Folk ARPS.<br/>
+Thanks to {C9}Jester for his smoke column script.<br/>
+Credits to Shuko for his ARMA2 mission Jolly Green.
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
 "]];
@@ -23,31 +25,7 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
-"]];
-
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-<font size='18'>COMMANDER'S INTENT</font>
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-<font size='18'>MOVEMENT PLAN</font>
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-<font size='18'>FIRE SUPPORT PLAN</font>
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-<font size='18'>SPECIAL TASKS</font>
-<br/>
-*** Insert instructions for specific units here. ***
+It looks like our GPS equipment got scrambled in the crash and there isn't a single good old paper map on this marvel of future technology.<br/>
 "]];
 
 // ====================================================================================
@@ -57,7 +35,12 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 
 _mis = player createDiaryRecord ["diary", ["Mission","
 <br/>
-*** Insert the mission here. ***
+1. We are at the crash location, somewhere on Tanoa.<br/>
+2. Get your bearings and establish contact to NATO troops (flares, chemlights etc.).<br/>
+3. Bring all surviving troops back to base.<br/><br/>
+<b>OPTIONAL:</b><br/>
+1. Ensure the colonel's survival.<br/>
+2. Use the demo charges transported by the extraction helicopter to destroy the wreck.<br/>
 "]];
 
 // ====================================================================================
@@ -67,15 +50,16 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+As part of a COIN operation, we were tasked to exfill a Syndikat colonel willing to trade information for protection. We managed to extract the mark but had to shoot our way out. Although we reached the helicopter, it was shot down shortly afterwards and we went down somewhere on Tanoa.
 <br/><br/>
-<font size='18'>ENEMY FORCES</font>
+ENEMY FORCES
 <br/>
-*** Insert information about enemy forces here.***
-<br/><br/>
-<font size='18'>FRIENDLY FORCES</font>
+Syndikat forces will be on their way to mop up the survivors and take out the colonel.<br/><br/>
+FRIENDLY FORCES
 <br/>
-*** Insert information about friendly forces here.***
+NATO troops will hopefully be on their way to extract us.<br/><br/>
+RADIO CONTACT<br/>
+Host decides whether the survivors have radio contact to the NATO helicopter right from the beginning or only after a certain time. It is suggested to let the helicopter know the rough direction of the crash but only establish radio contact once visual confirmation took place.
 "]];
 
 // ====================================================================================

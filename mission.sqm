@@ -8,18 +8,18 @@ class EditorData
 	toggles=1537;
 	class ItemIDProvider
 	{
-		nextID=253;
+		nextID=257;
 	};
 	class MarkerIDProvider
 	{
-		nextID=10;
+		nextID=11;
 	};
 	class Camera
 	{
 		pos[]={1802.6577,38.450001,12920.6};
 		dir[]={0,-0.70710683,0.70710683};
 		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,-0};
+		aside[]={0.99999994,0,0};
 	};
 };
 binarizationWanted=0;
@@ -35,7 +35,6 @@ addons[]=
 	"A3_Armor_F_Gamma_MBT_01",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Data_F_Curator_Virtual",
-	"A3_Modules_F",
 	"A3_Characters_F",
 	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Characters_F_Exp",
@@ -46,7 +45,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=12;
+		items=11;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -98,33 +97,26 @@ class AddonsMetaData
 		};
 		class Item7
 		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="http://www.arma3.com";
-		};
-		class Item8
-		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item9
+		class Item8
 		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircrafts";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item10
+		class Item9
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item11
+		class Item10
 		{
 			className="A3_Air_F";
 			name="Arma 3 Alpha - Aircrafts";
@@ -140,10 +132,265 @@ class ScenarioData
 	overviewText="Randomized CSAR mission. Up to 10 players can be crash survivors., rest are crew for the helicopters. 2 ZEUS slots are available.";
 	overViewPicture="pic.jpg";
 	onLoadMission="Made with the F3 Mission Making Framework.";
+	loadScreen="pic.jpg";
+	class Header
+	{
+		gameType="Zeus";
+	};
 };
 class CustomAttributes
 {
 	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="None";
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="ReviveRequiredTrait";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="ReviveMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute3
+		{
+			property="ReviveRequiredItemsFakConsumed";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute4
+		{
+			property="SharedObjectives";
+			expression="if (isMultiplayer) then {[_value] spawn bis_fnc_sharedObjectives;};";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute5
+		{
+			property="ReviveMedicSpeedMultiplier";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		class Attribute6
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute7
+		{
+			property="ReviveForceRespawnDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=3;
+				};
+			};
+		};
+		class Attribute8
+		{
+			property="ReviveBleedOutDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=20;
+				};
+			};
+		};
+		class Attribute9
+		{
+			property="ReviveDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=6;
+				};
+			};
+		};
+		class Attribute10
+		{
+			property="ReviveUnconsciousStateMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute11
+		{
+			property="ReviveRequiredItems";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		nAttributes=12;
+	};
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -172,7 +419,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="fa3_cz21_JollyGreenHell_v1";
+		briefingName="fa3_cz21_JollyGreenHell_v3";
 		overviewText="A botched extraction requires NATO to clean up the evidence and extract the downed team. If transport helicopters are left empty ZEUS should provide the extraction.";
 		resistanceWest=0;
 		resistanceEast=1;
@@ -181,15 +428,11 @@ class Mission
 		forecastWeather=1;
 		forecastWind=0;
 		forecastWaves=0;
-		rainForced=1;
-		lightningsForced=1;
-		wavesForced=1;
-		windForced=1;
 		year=2035;
 		month=7;
 		day=6;
-		hour=12;
-		minute=15;
+		hour=24;
+		minute=0;
 		startFogDecay=0.0049333;
 		forecastFogDecay=0.0049333;
 	};
@@ -1651,12 +1894,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={1805.0773,44.746155,12941.456};
-				angles[]={0,6.1989717,0};
+				position[]={1805.077,44.745998,12941.456};
+				angles[]={0,6.1989727,0};
 			};
 			id=102;
 			type="ModuleCuratorSetSideCosts_F";
-			atlOffset=31.296154;
+			atlOffset=31.295998;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1731,7 +1974,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=-1e+009;
+							value=0;
 						};
 					};
 				};
@@ -2051,19 +2294,6 @@ class Mission
 		};
 		class Item83
 		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={1754.5265,45.323566,12921.085};
-				angles[]={0,0.6478712,0};
-			};
-			init="call compile preprocessFile ""ws_init\ws_preInit.sqf"";";
-			id=97;
-			type="Logic";
-			atlOffset=31.893566;
-		};
-		class Item84
-		{
 			dataType="Marker";
 			position[]={7854.9507,210.44565,11743.788};
 			name="mkrArea";
@@ -2073,7 +2303,7 @@ class Mission
 			b=800;
 			id=137;
 		};
-		class Item85
+		class Item84
 		{
 			dataType="Marker";
 			position[]={11940.857,-13.581299,11386.188};
@@ -2085,7 +2315,7 @@ class Mission
 			id=138;
 			atlOffset=-352.52353;
 		};
-		class Item86
+		class Item85
 		{
 			dataType="Marker";
 			position[]={11979.501,1.2601242e+036,4364.3589};
@@ -2097,7 +2327,7 @@ class Mission
 			id=142;
 			atlOffset=1.2601242e+036;
 		};
-		class Item87
+		class Item86
 		{
 			dataType="Marker";
 			position[]={10782.271,1.2594853e+036,4313.0928};
@@ -2109,7 +2339,7 @@ class Mission
 			id=143;
 			atlOffset=1.2594853e+036;
 		};
-		class Item88
+		class Item87
 		{
 			dataType="Marker";
 			position[]={10351.928,1.2601242e+036,3312.8401};
@@ -2121,7 +2351,7 @@ class Mission
 			id=144;
 			atlOffset=1.2601242e+036;
 		};
-		class Item89
+		class Item88
 		{
 			dataType="Marker";
 			position[]={10034.725,2.1507233e+027,10125.489};
@@ -2133,7 +2363,7 @@ class Mission
 			id=145;
 			atlOffset=2.1507233e+027;
 		};
-		class Item90
+		class Item89
 		{
 			dataType="Marker";
 			position[]={2820.2356,-111.05518,2750.5793};
@@ -2146,7 +2376,7 @@ class Mission
 			id=146;
 			atlOffset=-246.01221;
 		};
-		class Item91
+		class Item90
 		{
 			dataType="Marker";
 			position[]={4544.1821,55.50211,2999.3105};
@@ -2158,7 +2388,7 @@ class Mission
 			angle=202.55695;
 			id=147;
 		};
-		class Item92
+		class Item91
 		{
 			dataType="Marker";
 			position[]={8215.6523,32.831955,10103.092};
@@ -2169,7 +2399,7 @@ class Mission
 			b=800;
 			id=157;
 		};
-		class Item93
+		class Item92
 		{
 			dataType="Marker";
 			position[]={9025.4512,214.80042,8524.5664};
@@ -2181,7 +2411,7 @@ class Mission
 			id=158;
 			atlOffset=-14.778397;
 		};
-		class Item94
+		class Item93
 		{
 			dataType="Marker";
 			position[]={10639.514,256.99487,8521.4902};
@@ -2193,7 +2423,7 @@ class Mission
 			id=159;
 			atlOffset=-19.074188;
 		};
-		class Item95
+		class Item94
 		{
 			dataType="Marker";
 			position[]={12243.265,81.851074,8913.1445};
@@ -2205,7 +2435,7 @@ class Mission
 			id=160;
 			atlOffset=-5.6206818;
 		};
-		class Item96
+		class Item95
 		{
 			dataType="Group";
 			side="West";
@@ -2290,7 +2520,7 @@ class Mission
 			};
 			id=98;
 		};
-		class Item97
+		class Item96
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2336,7 +2566,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item98
+		class Item97
 		{
 			dataType="Group";
 			side="West";
@@ -2491,7 +2721,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="GrpNATO_Grnd = group this; nul = [""o"",this,""ind_f""] call f_fnc_assignGear;";
+						init="GrpNATO_Grnd = group this; nul = [""o"",this] call f_fnc_assignGear;";
 						name="UnitNATO_VIP";
 						description="CTRG - Syndikat Colonel (VIP)";
 						isPlayable=1;
@@ -2583,7 +2813,7 @@ class Mission
 			};
 			id=92;
 		};
-		class Item99
+		class Item98
 		{
 			dataType="Object";
 			class PositionInfo
@@ -2601,7 +2831,7 @@ class Mission
 			type="Land_Cargo_Tower_V1_No2_F";
 			atlOffset=-9.5367432e-007;
 		};
-		class Item100
+		class Item99
 		{
 			dataType="Group";
 			side="West";
@@ -2956,7 +3186,7 @@ class Mission
 			};
 			id=205;
 		};
-		class Item101
+		class Item100
 		{
 			dataType="Group";
 			side="West";
@@ -3134,7 +3364,7 @@ class Mission
 			};
 			id=212;
 		};
-		class Item102
+		class Item101
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3154,7 +3384,7 @@ class Mission
 			id=217;
 			type="B_Heli_Transport_01_camo_F";
 		};
-		class Item103
+		class Item102
 		{
 			dataType="Group";
 			side="West";
@@ -3309,7 +3539,7 @@ class Mission
 			};
 			id=218;
 		};
-		class Item104
+		class Item103
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3329,7 +3559,7 @@ class Mission
 			id=223;
 			type="B_Heli_Transport_01_camo_F";
 		};
-		class Item105
+		class Item104
 		{
 			dataType="Group";
 			side="West";
@@ -3385,7 +3615,7 @@ class Mission
 			};
 			id=224;
 		};
-		class Item106
+		class Item105
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3403,7 +3633,7 @@ class Mission
 			id=226;
 			type="B_Heli_Light_01_armed_F";
 		};
-		class Item107
+		class Item106
 		{
 			dataType="Group";
 			side="West";
@@ -3495,7 +3725,7 @@ class Mission
 			id=227;
 			atlOffset=0.0080003738;
 		};
-		class Item108
+		class Item107
 		{
 			dataType="Object";
 			class PositionInfo
@@ -3514,6 +3744,17 @@ class Mission
 			id=230;
 			type="B_Heli_Attack_01_F";
 			atlOffset=0.0080003738;
+		};
+		class Item108
+		{
+			dataType="Marker";
+			position[]={1764.5066,0,12923.527};
+			name="mkrZeus";
+			text="Crashsite";
+			type="mil_dot";
+			colorName="ColorRed";
+			id=256;
+			atlOffset=-13.43;
 		};
 	};
 	class Connections

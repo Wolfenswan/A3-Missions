@@ -2,7 +2,7 @@
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 // ====================================================================================
 
-// FACTION: ZEUS
+// FACTION: CSAT
 
 // ====================================================================================
 
@@ -11,53 +11,11 @@
 
 _cre = player createDiaryRecord ["diary", ["Credits","
 <br/>
-*** Insert mission credits here. ***
+Made by Wolfenswan for Folk ARPS.<br/>
+Thanks to {C9}Jester for his smoke column script.<br/>
+Credits to Shuko for his ARMA2 mission Jolly Green.
 <br/><br/>
 Made with F3 (http://www.ferstaberinde.com/f3/en/)
-"]];
-
-// ====================================================================================
-
-// NOTES: ADMINISTRATION
-// The code below creates the administration sub-section of notes.
-
-_adm = player createDiaryRecord ["diary", ["Administration","
-<br/>
-*** Insert information on administration and logistics here. ***
-"]];
-
-// ====================================================================================
-
-// NOTES: EXECUTION
-// The code below creates the execution sub-section of notes.
-
-_exe = player createDiaryRecord ["diary", ["Execution","
-<br/>
-<font size='18'>COMMANDER'S INTENT</font>
-<br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-<font size='18'>MOVEMENT PLAN</font>
-<br/>
-*** Insert movement instructions here. ***
-<br/><br/>
-<font size='18'>FIRE SUPPORT PLAN</font>
-<br/>
-*** Insert fire support instructions here. ***
-<br/><br/>
-<font size='18'>SPECIAL TASKS</font>
-<br/>
-*** Insert instructions for specific units here. ***
-"]];
-
-// ====================================================================================
-
-// NOTES: MISSION
-// The code below creates the mission sub-section of notes.
-
-_mis = player createDiaryRecord ["diary", ["Mission","
-<br/>
-*** Insert the mission here. ***
 "]];
 
 // ====================================================================================
@@ -67,15 +25,15 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+The players have crash-landed at the indicated location. They have neither maps nor GPS and need to coordinate with a transport helicopter to extract. Your task is to provide a challenge and to keep the players on the move. Units placed by you won't come equipped with maps or GPS by default.
 <br/><br/>
-<font size='18'>ENEMY FORCES</font>
+AVAILABLE ADDONS
 <br/>
-*** Insert information about enemy forces here.***
-<br/><br/>
-<font size='18'>FRIENDLY FORCES</font>
+You can place units from both BLUFOR and INDEPENDENT side. INDEPENDENT is hostile to the players, use BLUFOR only if you intend to simulate reinforcements or friendly guerilla.<br/>
+Several useful tools can be found in the 'modules'-category. Use Zeus>Remote Control to steer AI.<br/><br/>
+CONDUCT
 <br/>
-*** Insert information about friendly forces here.***
+An initial period of around 5 minutes is suggested to let players get an idea of where they might be and what the surroundings look like.<br/>Place units logically - it should make sense how they got there and why they are attacking from that angle.<br/>Do not constantly but pressure on the players, give them some time to breathe while you are preparing AI elsewhere. Also keep in mind that heavier vehicles will target and often shred the transport heli.
 "]];
 
 // ====================================================================================

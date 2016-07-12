@@ -4,13 +4,10 @@ if (isNil "ws_colonel_extracted") then {ws_colonel_extracted = false};
 if (isNil "ws_colonel_killed") then {ws_colonel_killed = false};
 if (isNil "ws_wreck_destroyed") then {ws_wreck_destroyed = false};
 
-if (str vehicle player in ["UnitZeus","UnitZeus_1"]) then {
+if (faction player == "") then {
 	player setPos ws_wreckloc;
-	_mkr = createMarkerLocal  ["mkrZeus", ws_wreckloc];
-	_mkr setMarkerTypeLocal "mil_dot";
-	_mkr setMarkerTextLocal "Crashsite";
-	_mkr setMarkerColorLocal "ColorRed";
-};
+	"mkrZeus" setMarkerPosLocal ws_wreckloc;
+} else {"mkrZeus" setMarkerAlphaLocal 0};
 
 // Display a short text intro
 if (!isDedicated) then {

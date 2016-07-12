@@ -79,7 +79,7 @@ if (f_param_debugMode == 1) then
 // automatically includes a file which contains the appropriate equipment data.
 
 if (_faction in ["blu_f","nato"]) then {
-	#include "f_assignGear_nato.sqf"
+	#include "f_assignGear_natoPacific.sqf"
 };
 
 // ====================================================================================
