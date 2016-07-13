@@ -367,6 +367,7 @@ switch (_typeofUnit) do
 // Vehicle Driver Loadout:
 	case "vd":
 	{
+		_unit setUnitTrait ["engineer",true]; // Can repair
 		_unit addBackpack _bag;
 		_unit addmagazines [_smgmag, 1];
 		_unit addweapon _smg;
@@ -379,6 +380,7 @@ switch (_typeofUnit) do
 // Heli Pilot / Crew Chief Loadout:
 	case "pp, pcc":
 	{
+		_unit setUnitTrait ["engineer",true]; // Can repair
 		_unit addBackpack _bag;
 		_unit addmagazines [_smgmag, 1];
 		_unit addweapon _smg;
