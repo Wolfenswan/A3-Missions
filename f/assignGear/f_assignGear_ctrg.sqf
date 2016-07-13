@@ -65,7 +65,7 @@ _attach2 = "acc_flashlight";	// Flashlight
 _silencer1 = "muzzle_snds_M";	// 5.56 suppressor
 _silencer2 = "muzzle_snds_H";	// 6.5 suppressor
 
-_scope1 = "optic_ACO";	// Basic Scope
+_scope1 = "optic_ACO";			// Basic Scope
 _scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
 _scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
 
@@ -161,7 +161,7 @@ _chemyellow =  "Chemlight_yellow";
 _chemblue = "Chemlight_blue";
 
 // Backpacks
-_bags = "B_AssaultPack_rgr";					// Regular bag
+_bag = "B_AssaultPack_rgr";					// Regular bag
 _baglarge =  "B_Kitbag_rgr"; 			// Large bag
 _bagdiver =  "B_AssaultPack_blk";		// used by divers
 _baguav = "B_UAV_01_backpack_F";			// used by UAV operator
@@ -234,8 +234,8 @@ _specOp = [];
 
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
-_baseUniform = ["U_B_CTRG_1","U_B_CTRG_2","U_B_CTRG_3"];
-_baseHelmet = ["H_Watchcap_khk","H_Shemag_olive_hs","H_MilCap_tna_F","H_Cap_khaki_specops_UK","H_Bandanna_camo","H_Bandanna_cbr","H_Bandanna_khk_hs","H_Booniehat_khk","H_Booniehat_khk_hs","H_Booniehat_oli","H_Booniehat_tna_F"];
+_baseUniform = ["U_B_CTRG_1","U_B_CTRG_3"];
+_baseHelmet = ["H_Watchcap_khk","H_Shemag_olive_hs","H_Cap_khaki_specops_UK","H_Bandanna_camo","H_Bandanna_cbr","H_Bandanna_khk_hs","H_Booniehat_khk","H_Booniehat_khk_hs"];
 _baseGlasses = [];
 
 // Vests

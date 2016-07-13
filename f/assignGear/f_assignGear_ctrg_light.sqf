@@ -13,7 +13,7 @@ switch (_typeofUnit) do
 // Automatic Rifleman Loadout:
 	case "ar":
 	{
-		_unit addBackpack _bag;
+		//_unit addBackpack _bag;
 		_unit addmagazines [_ARmag, 1];
 		_unit addweapon _AR;
 		_unit addItem _firstaid;
@@ -21,6 +21,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_ARmag, 1];
 		_unit addmagazines [_ARmag_tr, 1];
 		_unit addmagazines [_grenade, 1];
+		_attachments pushback (_bipod2);
+		_unit addWeapon "Rangefinder";
 	};
 // Rifleman (AT) Loadout:
 	case "rat":
@@ -28,8 +30,8 @@ switch (_typeofUnit) do
 		_unit addBackpack _bag;
 		_unit addmagazines [_riflemag, 1];
 		_unit addweapon _rifle;
-		_unit addweapon _RAT;
 		_unit addmagazines [_RATmag, 1];
+		_unit addweapon _RAT;
 		_unit addItem _firstaid;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_riflemag, 2];
@@ -62,6 +64,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glsmokewhite, 3];
 		_unit addPrimaryWeaponItem "acc_pointer_IR";
 		_unit addmagazines [_smokegrenadegreen, 2];
+		_unit addWeapon "Rangefinder";
 	};
 // Squad Leader / DC Loadout:
 	case "dc":
@@ -80,6 +83,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_pistolmag, 2];
 		_unit addPrimaryWeaponItem "acc_pointer_IR";
 		_unit addmagazines [_smokegrenadepurple, 3];
+		_unit addWeapon "Rangefinder";
 	};
 // Platoon CO Loadout:
 	case "co":
@@ -135,6 +139,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_DMriflemag, 4];
 		_unit addmagazines [_grenade, 1];
+		_attachments = [_bipod2,_scope2];
 	};
 // Medium MG Gunner Loadout:
 	case "mmgg":
@@ -189,8 +194,8 @@ switch (_typeofUnit) do
 		_unit addBackpack _bagLarge;
 		_unit addmagazines [_riflemag, 1];
 		_unit addweapon _rifle;
-		_unit addweapon _RAT;
 		_unit addmagazines [_RATmag, 1];
+		_unit addweapon _RAT;
 		_unit addItem _firstaid;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_riflemag, 2];
