@@ -111,8 +111,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glriflemag, 2];
 		_unit addmagazines [_glriflemag_tr, 2];
 		_unit addmagazines [_glsmokered, 8];
-		_unit addmagazines ["Laserbatteries", 2];
-		_unit addWeapon "Rangefinder";
+        _unit addmagazines ["Laserbatteries", 1];
+		_unit addWeapon _laserdesignator;
 	};
 // Medic Loadout:
 	case "m":
@@ -349,7 +349,6 @@ switch (_typeofUnit) do
 		_unit addmagazines [_riflemag, 2];
 		_unit addmagazines [_riflemag_tr, 2];
 		_unit addmagazines [_grenade, 2];
-		_unit addmagazines ["Laserbatteries", 2];
 		_unit addmagazines [_SNrifleMag, 3];
 		_unit addWeapon "Rangefinder";
 	};
@@ -387,8 +386,21 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenadeblue, 5];
 		_unit addItem "ToolKit";
 	};
-// Heli Pilot / Crew Chief Loadout:
-	case "pp, pcc":
+// Heli Pilot Loadout:
+	case "pp":
+	{
+		_unit setUnitTrait ["engineer",true]; // Can repair
+		_unit addBackpack _bag;
+		_unit addmagazines [_smgmag, 1];
+		_unit addweapon _smg;
+		_unit addItem _firstaid;
+		_unit addmagazines [_smokegrenade, 1];
+		_unit addmagazines [_smgmag, 4];
+		_unit addmagazines [_smokegrenadeblue, 5];
+		_unit addItem "ToolKit";
+	};
+// Heli Crew Chief Loadout:
+	case "pcc":
 	{
 		_unit setUnitTrait ["engineer",true]; // Can repair
 		_unit addBackpack _bag;

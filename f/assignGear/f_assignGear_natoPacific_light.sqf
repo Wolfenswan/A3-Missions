@@ -116,8 +116,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glriflemag_tr, 2];
 		_unit addmagazines [_glsmokered, 8];
 		_attachments pushback (_attach1); // Adds laser pointer, keeps default scope
-		_unit addWeapon "Rangefinder";
-		_unit addmagazines ["Laserbatteries", 2];
+        _unit addmagazines ["Laserbatteries", 1];
+		_unit addWeapon _laserdesignator;
 	};
 // Medic Loadout:
 	case "m":
@@ -347,7 +347,6 @@ switch (_typeofUnit) do
 		_unit addmagazines [_riflemag, 2];
 		_unit addmagazines [_riflemag_tr, 2];
 		_unit addmagazines [_grenade, 2];
-		_unit addmagazines ["Laserbatteries", 2];
 		_attachments pushback (_attach1); // Adds laser pointer, keeps default scope
 		_unit addWeapon "Rangefinder";
 		_unit addmagazines [_SNrifleMag, 3];
@@ -383,8 +382,20 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smgmag, 4];
 		_unit addItem "ToolKit";
 	};
-// Helicopter Pilot / Crew Chief Loadout:
-	case "pp, pcc":
+// Helicopter Pilot Loadout:
+	case "pp":
+	{
+		_unit setUnitTrait ["engineer",true]; // Can repair
+		_unit addBackpack _bag;
+		_unit addmagazines [_smgmag, 1];
+		_unit addweapon _smg;
+		_unit addItem _firstaid;
+		_unit addmagazines [_smokegrenadeblue, 4];
+		_unit addmagazines [_smgmag, 4];
+		_unit addItem "ToolKit";
+	};
+// Helicopter Crew Chief Loadout:
+	case "pcc":
 	{
 		_unit setUnitTrait ["engineer",true]; // Can repair
 		_unit addBackpack _bag;
