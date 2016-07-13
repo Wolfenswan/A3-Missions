@@ -24,7 +24,7 @@
 //		hatag		- heavy AT assistant (deployable)
 //		mtrg		- mortar gunner (deployable)
 //		mtrag		- mortar assistant (deployable)
-//		msamg		- medium SAM gunner
+//		msamg		- medium SAM gunner"
 //		msamag		- medium SAM assistant gunner
 //		hsamg		- heavy SAM gunner (deployable)
 //		hsamag		- heavy SAM assistant gunner (deployable)
@@ -188,7 +188,7 @@ _ARmag = "100Rnd_65x39_caseless_mag";
 _ARmag_tr = "100Rnd_65x39_caseless_mag_Tracer";
 
 // Medium MG
-_MMG = "MMG_02_base_F";
+_MMG = "MMG_02_camo_F";
 _MMGmag = "130Rnd_338_Mag";
 _MMGmag_tr = "130Rnd_338_Mag";
 
