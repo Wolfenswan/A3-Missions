@@ -62,7 +62,7 @@
 _attach1 = "acc_pointer_IR";	// IR Laser
 _attach2 = "acc_flashlight";	// Flashlight
 
-_silencer1 = "muzzle_snds_M";	// 5.56 suppressor
+_silencer1 = "mmuzzle_snds_B";	// 7.62 suppressor
 _silencer2 = "muzzle_snds_H";	// 6.5 suppressor
 
 _scope1 = "optic_ACO";			// ACO
@@ -73,7 +73,7 @@ _bipod1 = "bipod_01_F_mtp";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
-_attachments = [_attach2,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_scope1]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -83,7 +83,7 @@ _attachments = [_attach2,_scope1]; // The default attachment set for most units,
 // ====================================================================================
 
 // ATTACHMENTS - HANDGUN
-_hg_silencer1 = "muzzle_snds_L";	// 9mm suppressor
+_hg_silencer1 = "";					// No suppressor for Zubr
 
 _hg_scope1 = "optic_mrd";			// MRD
 
@@ -140,13 +140,18 @@ _grenade = "HandGrenade";
 _Mgrenade = "MiniGrenade";
 _smokegrenade = "SmokeShell";
 _smokegrenadegreen = "SmokeShellGreen";
+_smokegrenadeblue = "SmokeShellBlue";
+_smokegrenadepurple = "SmokeShellPurple";
 
 // misc medical items.
 _firstaid = "FirstAidKit";
 _medkit = "Medikit";
 
-// Night Vision Goggles (NVGoggles)
-_nvg = "NVGoggles";
+// Night Vision Goggles
+_nvg = "NVGoggles_INDEP";
+
+// Laserdesignator
+_laserdesignator = "Laserdesignator_01_khk_F";
 
 // UAV Terminal
 _uavterminal = "I_UavTerminal";
@@ -164,6 +169,7 @@ _bagdiver =  "B_AssaultPack_blk";		// used by divers
 _baguav = "I_UAV_01_backpack_F";			// used by UAV operator
 _baghmgg = "B_HMG_01_weapon_F";				// used by Heavy MG gunner
 _baghmgag = "B_HMG_01_support_F";			// used by Heavy MG assistant gunner
+_baghatg = "B_AssaultPack_rgr";				// Used by Heavy AT Gunner
 _bagmtrg = "B_Mortar_01_weapon_F";			// used by Mortar gunner
 _bagmtrag = "B_Mortar_01_support_F";		// used by Mortar assistant gunner
 _baghsamg = "B_AA_01_weapon_F";				// used by Heavy SAM gunner
@@ -182,7 +188,7 @@ _MMG = "LMG_Zafir_F";
 _MMGmag = "150Rnd_762x54_Box";
 
 // Marksman rifle
-_DMrifle = "srifle_DMR_03_woodland_F";
+_DMrifle = "srifle_DMR_03_F";
 _DMriflemag = "20Rnd_762x51_Mag";
 
 // Rifleman AT
@@ -191,14 +197,14 @@ _RATmag = "RPG32_F";
 
 // Medium AT
 _MAT = "launch_NLAW_F";
-_MATmag = "NLAW_F";
+_MATmag1 = "NLAW_F";
 
 // Heavy AT
-_HAT = "launch_Titan_F";
+_HAT = "launch_I_Titan_short_F";
 _HATmag1 = "Titan_AT";
 
 // Surface Air
-_SAM = "launch_I_Titan_short_F";
+_SAM = "launch_Titan_F";
 _SAMmag = "Titan_AA";
 
 // Sniper

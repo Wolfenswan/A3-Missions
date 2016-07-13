@@ -65,15 +65,15 @@ _attach2 = "acc_flashlight";	// Flashlight
 _silencer1 = "muzzle_snds_M";	// 5.56 suppressor
 _silencer2 = "muzzle_snds_H";	// 6.5 suppressor
 
-_scope1 = "optic_Holosight";	// Basic Scope
-_scope2 = "optic_MRCO";			// MRCO Scope - 1x - 6x
-_scope3 = "optic_SOS";			// SOS Scope - 18x - 75x
+_scope1 = "optic_Holosight_khk_F";	// Basic Scope
+_scope2 = "optic_Hamr_khk_F";		// RCO Scope
+_scope3 = "optic_LRPS_tna_F";		// LRPS
 
 _bipod1 = "bipod_01_F_snd";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
-_attachments = [_attach2,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_scope1]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -149,8 +149,11 @@ _smokegrenadepurple = "SmokeShellPurple";
 _firstaid = "FirstAidKit";
 _medkit = "Medikit";
 
-// Night Vision Goggles (NVGoggles)
+// Night Vision Goggles
 _nvg = "NVGoggles";
+
+// Laserdesignator
+_laserdesignator = "Laserdesignator_01_khk_F";
 
 // UAV Terminal
 _uavterminal = "B_UavTerminal";	  // BLUFOR - FIA
@@ -185,7 +188,7 @@ _ARmag = "100Rnd_65x39_caseless_mag";
 _ARmag_tr = "100Rnd_65x39_caseless_mag_Tracer";
 
 // Medium MG
-_MMG = "MMG_02_base_F";
+_MMG = "MMG_02_camo_F";
 _MMGmag = "130Rnd_338_Mag";
 _MMGmag_tr = "130Rnd_338_Mag";
 
@@ -195,7 +198,7 @@ _MMGmag_tr = "130Rnd_338_Mag";
 // _MMGmag_tr = "150Rnd_762x54_Box"_Tracer";
 
 // Marksman rifle
-_DMrifle = "arifle_MXM_F";
+_DMrifle = "arifle_MXM_khk_F";
 _DMriflemag = "30Rnd_65x39_caseless_mag";
 _DMriflemag_tr = "30Rnd_65x39_caseless_mag_Tracer";
 

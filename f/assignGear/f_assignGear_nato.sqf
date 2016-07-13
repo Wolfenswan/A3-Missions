@@ -24,7 +24,7 @@
 //		hatag		- heavy AT assistant (deployable)
 //		mtrg		- mortar gunner (deployable)
 //		mtrag		- mortar assistant (deployable)
-//		msamg		- medium SAM gunner
+//		msamg		- medium SAM gunner"
 //		msamag		- medium SAM assistant gunner
 //		hsamg		- heavy SAM gunner (deployable)
 //		hsamag		- heavy SAM assistant gunner (deployable)
@@ -73,7 +73,7 @@ _bipod1 = "bipod_01_F_snd";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
-_attachments = [_attach2,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_scope1]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -149,8 +149,11 @@ _smokegrenadepurple = "SmokeShellPurple";
 _firstaid = "FirstAidKit";
 _medkit = "Medikit";
 
-// Night Vision Goggles (NVGoggles)
+// Night Vision Goggles
 _nvg = "NVGoggles";
+
+// Laserdesignator
+_laserdesignator = "Laserdesignator";
 
 // UAV Terminal
 _uavterminal = "B_UavTerminal";	  // BLUFOR - FIA
@@ -185,7 +188,7 @@ _ARmag = "100Rnd_65x39_caseless_mag";
 _ARmag_tr = "100Rnd_65x39_caseless_mag_Tracer";
 
 // Medium MG
-_MMG = "MMG_02_base_F";
+_MMG = "MMG_02_camo_F";
 _MMGmag = "130Rnd_338_Mag";
 _MMGmag_tr = "130Rnd_338_Mag";
 
