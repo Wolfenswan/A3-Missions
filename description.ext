@@ -146,11 +146,11 @@ class Params
 // F3 - Folk Assign Gear Script
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-    class f_param_backpacks
+    class f_param_loadouts
     {
             title = "$STR_f_param_loadouts";
-            values[] = {0,1,2};
-            texts[] = {"Light","Medium","Heavy"};
+            values[] = {0,1};
+            texts[] = {"Light","Standard"};
             default = 1;
     };
 
@@ -175,7 +175,7 @@ class Params
     class f_param_medical
     {
             title = "Medical System";
-            values[] = {0,1};
+            values[] = {0,1,2};
             texts[] = {"Arma 3 Default","F3 Simple Wounding System"};
             default = 1;
     };
@@ -360,9 +360,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "FIA Victory";
+		title = "Syndikat Victory";
 		subtitle = "";
-		description = "FIA successfully held on to their precious vital caches. FIA wins.";
+		description = "Syndikat successfully held on to their precious vital caches. Syndikat wins.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -372,7 +372,7 @@ class CfgDebriefing
 	{
 		title = "Attacker Victory";
 		subtitle = "";
-		description = "FIA forces has been wiped out.";
+		description = "Syndikat forces has been wiped out.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -380,9 +380,9 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "FIA Victory";
+		title = "Syndikat Victory";
 		subtitle = "";
-		description = "AAF forces have been wiped out. FIA wins.";
+		description = "AAF forces have been wiped out. Syndikat wins.";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -457,7 +457,7 @@ class CfgFunctions
 
 	#include "ws_fnc\config.hpp"
 
-	class c
+	class Cratesistance
       {
           class mission {
               file ="mission";
@@ -467,7 +467,20 @@ class CfgFunctions
               };
           };
      };
-
+	class f3_ws
+	{
+      class init {
+          file ="ws_init";
+          class preInit
+          {
+              preInit = 1;
+          };
+          class postInit
+          {
+              postInit = 1;
+          };
+      };
+	};
 };
 
 // ============================================================================================

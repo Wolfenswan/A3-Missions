@@ -238,6 +238,3 @@ f_wound_extraFAK = 2;
 [] execVM "f\medical\medical_init.sqf";
 
 // ====================================================================================
-
-// Wolfenswan - post Init
-[] execVM "ws_init\ws_postInit.sqf";
