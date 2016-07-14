@@ -10,9 +10,6 @@ if !(isServer) exitWith {ws_initDone = true};
 publicVariable "ws_eola_defenders";
 publicVariable "ws_eola_ending";
 
-// Disable Thermal Imaging for these vehicles
-{_x disableTIEquipment true;} forEach [];
-
 if (isNil "ws_mkr_array") then {ws_mkr_array = [];};
 
 _markers = ["mkrEolaCache"] call ws_fnc_collectMarkers;
@@ -33,7 +30,7 @@ for "_x" from 1 to ws_eola_caches_present do {
 	 _box = _this select 0;
 	 _ammoName = _this select 4;
 
-	 if (_ammoName == "DemoCharge_Remote_Ammo") then {
+	 if (_ammoName == "DemoCharge_Remote_Ammo" || _ammoName == "DemoCharge_Remote_Ammo") then {
 	 	[_box] execVM "ws_scripts\ws_eola_cache_destroyed.sqf";
 	 	};
 	}];

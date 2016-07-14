@@ -13,24 +13,21 @@ _unit setVariable ["BIS_enableRandomization", false];
 removeUniform _unit;
 removeHeadgear _unit;
 removeVest _unit;
+removeGoggles _unit;
 
 // Assign default clothes
 _uniform = _baseUniform;
 _helmet = _baseHelmet;
-_rig = _mediumRig;
 _glasses = _baseGlasses;
 
+// Select the default rig
+_rig = switch (f_param_loadouts) do {
+	case 0:{_lightRig};
+	case 1:{_standardRig};
+	default{_standardRig};
+};
+
 // Flip through unit to assign specialized uniforms
-
-// Light
-if (_typeOfUnit in _light) then {
-	_rig = _lightRig;
-};
-
-// Heavy
-if (_typeOfUnit in _heavy) then {
-	_rig = _heavyRig;
-};
 
 // Pilot
 if (_typeOfUnit in _pilot) then {

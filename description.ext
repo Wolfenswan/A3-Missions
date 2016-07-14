@@ -1,35 +1,5 @@
 // ============================================================================================
 
-// F3 - Mission Header
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-class Header
-{
-	gameType = Defend;
-	minPlayers = 1;
-	maxPlayers = 453;
-};
-
-// ============================================================================================
-
-// F3 - Loading Screen
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-onLoadName = "X-EOLA MissionStub";
-onLoadMission = "Made with the F3 Mission Development Framework";
-author = "YourName";
-loadScreen = "loadLogo.jpg";
-overviewPicture = "overviewLogo.jpg";
-
-// ============================================================================================
-
-// F3 - Debug Console
-// Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
-
-enableDebugConsole = 1;
-
-// ============================================================================================
-
 // F3 - Respawn Settings
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
@@ -168,7 +138,6 @@ class Params
             values[] = {0,1};
             texts[] = {"Off","On"};
             default = 0;
-            code = "f_var_debugMode = %1";
     };
 
 // ============================================================================================
@@ -176,13 +145,12 @@ class Params
 // F3 - Folk Assign Gear Script
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-    class f_param_backpacks
+    class f_param_loadouts
     {
             title = "$STR_f_param_loadouts";
-            values[] = {0,1,2};
-            texts[] = {"Light","Medium","Heavy"};
+            values[] = {0,1};
+            texts[] = {"Light","Standard"};
             default = 1;
-            code = "f_param_backpacks = %1";
     };
 
 // ============================================================================================
@@ -193,10 +161,9 @@ class Params
     class f_param_radios
     {
             title = "Radio System";
-            values[] = {0,1,2,3};
-            texts[] = {"Off","ACRE","TFR","ACRE2"};
+            values[] = {0,2,3};
+            texts[] = {"Off","TFR","ACRE2"};
             default = 0;
-            code = "f_var_radios = %1";
     };
 
 // ============================================================================================
@@ -207,10 +174,9 @@ class Params
     class f_param_medical
     {
             title = "Medical System";
-            values[] = {0,1,2};
-            texts[] = {"Arma 3 Default","F3 Simple Wounding System","Authentic Gameplay Mod"};
+            values[] = {0,1};
+            texts[] = {"Arma 3 Default","F3 Simple Wounding System"};
             default = 1;
-            code = "f_var_medical = %1";
     };
 
 // ============================================================================================
@@ -224,7 +190,6 @@ class Params
             values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
             texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
             default = 1;
-            code = "f_param_mission_timer = %1";
     };
 
 // ============================================================================================
@@ -235,34 +200,35 @@ class Params
 	class f_param_weather
 	{
 		title = "$STR_f_param_weather";
-		values[] = {0,1,2,3,4,5,6,7,8};
-		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8};
+		values[] = {0,1,2,3,4,5,6,7,8,9};
+		texts[] = {$STR_f_param_weather_Option0,$STR_f_param_weather_Option1,$STR_f_param_weather_Option2,$STR_f_param_weather_Option3,$STR_f_param_weather_Option4,$STR_f_param_weather_Option5,$STR_f_param_weather_Option6,$STR_f_param_weather_Option7,$STR_f_param_weather_Option8,$STR_f_param_weather_Option11};
 		default = 0;
-		function = "f_fnc_setWeather";		// This function is called to apply the values
-		isGlobal = 0;						// Execute this only on the server
-		code = "f_param_weather = %1";
 	};
 
 	class f_param_fog
 	{
-		title = "Fog";
-		values[] = {0,1,2};
-		texts[] = {"None","Light","Heavy"};
-		default = 0;
-		function = "f_fnc_SetFog";			// This function is called to apply the values
-		isGlobal = 0;						// Execute this only on the server
-		code = "f_param_fog = %1";
+		title = "Override Fog";
+		values[] = {0,1,2,4};
+		texts[] = {"No Fog","Light Fog","Heavy Fog","Use default"};
+		default = 4;
 	};
 
-    class f_param_timeOfDay
+	class f_param_wind
+	{
+		title = "Override Wind";
+		values[] = {0,1,2,4};
+		texts[] = {"No Wind","Light Wind","Heavy Wind","Use default"};
+		default = 4;
+	};
+
+  class f_param_timeOfDay
 	{
 		title = "$STR_f_param_timeOfDay";
-		values[] = {0,1,2,3,4,5,6,7};
-		texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7};
+		values[] = {0,1,2,3,4,5,6,7,8};
+		texts[] = {$STR_f_param_timeOfDay_Option0,$STR_f_param_timeOfDay_Option1,$STR_f_param_timeOfDay_Option2,$STR_f_param_timeOfDay_Option3,$STR_f_param_timeOfDay_Option4,$STR_f_param_timeOfDay_Option5,$STR_f_param_timeOfDay_Option6,$STR_f_param_timeOfDay_Option7,$STR_f_param_timeOfDay_Option8};
 		default = 4;
-		function = "f_fnc_setTime";			// This function is called to apply the values
- 		isGlobal = 0;						// Execute this only on the server
- 		code = "f_param_timeOfDay = %1";
+		function = "f_fnc_setTime"; // This function is called to apply the values
+ 		isGlobal = 0; // Execute this only on the server
 	};
 
 // ============================================================================================
@@ -270,47 +236,41 @@ class Params
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-class f_param_AISkill_BLUFOR
-{
-	title = "$STR_f_param_AISkill_BLUFOR";
-	values[] = {0,1,2,3};
-	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-	default = 1;
-	code = "f_param_AISkill_BLUFOR = %1";
-};
+	class f_param_AISkill_BLUFOR
+	{
+		title = "$STR_f_param_AISkill_BLUFOR";
+		values[] = {0,1,2,3};
+		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+		default = 1;
+	};
 
-class f_param_AISkill_OPFOR
-{
-	title = "$STR_f_param_AISkill_OPFOR";
-	values[] = {0,1,2,3};
-	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-	default = 1;
-	code = "f_param_AISkill_OPFOR = %1";
-};
+	class f_param_AISkill_OPFOR
+	{
+		title = "$STR_f_param_AISkill_OPFOR";
+		values[] = {0,1,2,3};
+		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+		default = 1;
+	};
 
-class f_param_AISkill_INDP
-{
-	title = "$STR_f_param_AISkill_INDP";
-	values[] = {0,1,2,3};
-	texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
-	default = 1;
-	code = "f_param_AISkill_INDP = %1";
-};
+	class f_param_AISkill_INDP
+	{
+		title = "$STR_f_param_AISkill_INDP";
+		values[] = {0,1,2,3};
+		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
+		default = 1;
+	};
 
 // ============================================================================================
 
 // F3 - Caching
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
-/*
 	class f_param_caching
 	{
 		title = "Cache AI outside distance (m)";
 		values[] = {0,600,800,1000,1500,2000};
 		default = 0;
-		code = "f_param_caching = %1";
 	};
-*/
 
 // ============================================================================================
 
@@ -318,23 +278,24 @@ class f_param_AISkill_INDP
 // WARNING: DO NOT DELETE OR COMMENT OUT THIS CODE BLOCK
 
 // X-Eola-specific parameters
-    class ws_param_caches_present
-    {
-        title = "Caches present";
-        values[] = {2,4,6,8,10,12};
-        texts[] = {"2","4","6","8","10","12"};
-        default = 6;
-        code = "ws_eola_caches_present = %1";
-    };
+      class ws_param_caches_present
+      {
+          title = "Caches present";
+          values[] = {2,4,6,8,10,12};
+          texts[] = {"2","4","6","8","10","12"};
+          default = 6;
+          code = "ws_eola_caches_present = %1";
+      };
 
-    class ws_param_caches_target
-    {
-        title = "Caches to destroy";
-        values[] = {2,4,6,8,10,12};
-        texts[] = {"2","4","6","8","10","12"};
-        default = 4;
-        code = "ws_eola_caches_target = %1";
-    };
+      class ws_param_caches_target
+      {
+          title = "Caches to destroy";
+          values[] = {2,4,6,8,10,12};
+          texts[] = {"2","4","6","8","10","12"};
+          default = 4;
+          code = "ws_eola_caches_target = %1";
+      };
+
 
 
 };
@@ -348,9 +309,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "BLUFOR looses!";
+		title = "Ending #1";
 		subtitle = "";
-		description = "All BLUFOR units were killed.";
+		description = "*** Insert debriefing #1 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -358,9 +319,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "AAF looses!";
+		title = "Ending #2";
 		subtitle = "";
-		description = "All AAF units were killed.";
+		description = "*** Insert debriefing #2 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -368,9 +329,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "OPFOR looses!";
+		title = "Ending #3";
 		subtitle = "";
-		description = "All CSAT units were killed.";
+		description = "*** Insert debriefing #3 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -378,9 +339,9 @@ class CfgDebriefing
 
 	class End4
 	{
-		title = "Attackers win!";
+		title = "Attackers Win";
 		subtitle = "";
-		description = "All caches were destroyed!";
+		description = "The attackers destroyed all caches!";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -451,130 +412,9 @@ class CfgRespawnTemplates
 
 class CfgFunctions
 {
-	//ws_fnc
+	#include "f\common\functions.hpp"
+
 	#include "ws_fnc\config.hpp"
-
-	class F // Defines the "owner"
-	{
-		class common // category
-		{
-			file = "f\common";
-			// Defines the function to preInit (the paramArray dosent seem to be constructed at preInit stage).
-			class processParamsArray
-			{
-				preInit = 1;
-				postInit = 1;
-			};
-
-			class nearPlayer{};
-		};
-		class mpEnd
-		{
-			file = "f\mpEnd";
-			class mpEnd{};
-			class mpEndReceiver{};
-		};
-		class assignGear
-		{
-			// Defines the functions to preInit the compling of the assignGear function used by units.
-			file = "f\assignGear";
-			class assignGear{};
-		};
-		class setGroupID
-		{
-			file = "f\setGroupID";
-			class setGroupID{};
-		};
-		class missionConditions
-		{
-			file = "f\missionConditions";
-			class SetTime{};
-			class SetFog{};
-			class SetWeather{};
-		};
-		class cache
-		{
-			file = "f\cache";
-			class cInit {};
-			class cTracker {};
-			class gCache {};
-			class gUncache {};
-		};
-		class groupMarkers {
-			file = "f\groupMarkers";
-			class localGroupMarker{};
-			class localSpecialistMarker{};
-		};
-		class authorisedCrew
-		{
-			file = "f\authorisedCrew";
-			class authorisedCrewCheck {};
-		};
-		class FTMemberMarkers
-		{
-			file = "f\FTMemberMarkers";
-			class SetLocalFTMemberMarkers{};
-			class GetMarkerColor{};
-			class LocalFTMarkerSync{};
-		};
-		class bodyRemoval
-		{
-			file = "f\removeBody";
-			class removeBody{};
-		};
-		class setAISkill
-		{
-			file = "f\setAISKill";
-			class setAISKill{};
-		};
-		class mapClickTeleport
-		{
-			file = "f\mapClickTeleport";
-			class mapClickTeleportUnit{};
-			class mapClickTeleportGroup{};
-		};
-		class nametag
-		{
-			file = "f\nametag";
-			class drawNameTag{};
-		};
-		class preMount
-		{
-			file = "f\preMount";
-			class mountGroups{};
-		};
-		class zeus
-		{
-			file = "f\zeus";
-			class zeusInit{};
-			class zeusAddAddons{};
-			class zeusAddObjects{};
-		};
-		class acre
-		{
-			file = "f\radios\acre";
-			class acre_removeRadios{};
-			class acre_addRadios{};
-			class acre_setRadioFrequencies{};
-			class acre_configureSpectatorChat{};
-		};
-		class tfr
-		{
-			file = "f\radios\tfr";
-			class tfr_removeRadios{};
-			class tfr_addRadios{};
-			class tfr_setRadioFrequencies{};
-			class tfr_configureSpectatorChat{};
-		};
-		class safeStart
-		{
-			file = "f\safeStart"
-			class safety{};
-		};
-		#include "f\simplewoundingsystem\config.hpp"
-		#include "f\spect\functions.hpp"
-
-	};
 };
 
 // ============================================================================================
@@ -584,4 +424,3 @@ class CfgFunctions
 class CfgUnitInsignia {
 	#include "f\assignGear\insignia\define.hpp"
 };
-// ============================================================================================
