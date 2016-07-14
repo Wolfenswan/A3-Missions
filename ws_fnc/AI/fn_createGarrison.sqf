@@ -65,7 +65,7 @@ _debug = if !(isNil "ws_debug") then {ws_debug} else {false};
 // Declare Variables
 _area = (_this select 0) call ws_fnc_getEPos;
 _radius = _this select 1;
-_side = _this select 2;
+_side = str (_this select 2);
 _int = if (count _this > 3) then {_this select 3} else {0};
 _thrsh = if (count _this > 4) then {_this select 4} else {_threshold};
 _classes = if (count _this > 5) then {_this select 5} else {[]};
@@ -79,13 +79,13 @@ _classes = if (count _this > 5) then {_this select 5} else {[]};
 // If default classes are being used, select the corresponding array
 if (count _classes == 0) then {
 	switch (_side) do {
-		case west: {_classes = _garrisonNATO};
-		case blufor: {_classes = _garrisonNATO};
-		case east: {_classes = _garrisonCSAT};
-		case opfor: {_classes = _garrisonCSAT};
-		case resistance: {_classes = _garrisonAAF};
-		case independent: {_classes = _garrisonAAF};
-		case civilian: {_classes = _garrisonCIV};
+		case "west": {_classes = _garrisonNATO};
+		case "blufor": {_classes = _garrisonNATO};
+		case "east": {_classes = _garrisonCSAT};
+		case "opfor": {_classes = _garrisonCSAT};
+		case "resistance": {_classes = _garrisonAAF};
+		case "independent": {_classes = _garrisonAAF};
+		case "civilian": {_classes = _garrisonCIV};
 	};
 };
 
