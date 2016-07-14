@@ -225,3 +225,5 @@ f_wound_extraFAK = 2;
 [] execVM "f\medical\medical_init.sqf";
 
 // ====================================================================================
+
+[] execVM "ws_init\fn_postInit.sqf";

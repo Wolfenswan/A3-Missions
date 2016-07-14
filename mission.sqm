@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=370;
+		nextID=373;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2313.9023,92.468399,3569.2878};
-		dir[]={0.89846474,-0.4312489,0.08249341};
-		up[]={0.42944494,0.90223169,0.039430559};
-		aside[]={0.091432147,-2.4738256e-009,-0.99582076};
+		pos[]={4364.7197,48.186249,8418.4443};
+		dir[]={0.54532146,-0.51238245,0.66339928};
+		up[]={0.32536989,0.85875475,0.39582169};
+		aside[]={0.77250862,-1.1757948e-007,-0.63501078};
 	};
 };
 binarizationWanted=0;
@@ -102,8 +102,10 @@ class AddonsMetaData
 randomSeed=13456871;
 class ScenarioData
 {
-	author="Wolfenswan & Harakka";
-	overviewText="CSAT seek and destroy Syndikat's caches. Syndikat does only get flashlights.";
+	author="Wolfenswan  Harakka";
+	overviewText="CSAT seek and destroy Syndikat's caches. Mission's fully randomized.";
+	overViewPicture="overviewlogo.jpg";
+	loadScreen="loadlogo.jpg";
 	class Header
 	{
 		gameType="TDM";
@@ -392,7 +394,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="fa3_a88_cratesistance_tanoa_v1";
+		briefingName="fa3_a88_cratesistance_tanoa_v2";
 		overviewText="CSAT seek and destroy Syndikat's caches. Only CSAT has NVGs.";
 		resistanceWest=0;
 		startWeather=0.84999996;
@@ -467,7 +469,7 @@ class Mission
 		class Item4
 		{
 			dataType="Trigger";
-			position[]={4104.5649,-0.29991722,7929.7759};
+			position[]={4220.478,0,8002.0039};
 			class Attributes
 			{
 				condition="(time/60) >= ha_param_missionTime";
@@ -478,12 +480,12 @@ class Mission
 			};
 			id=18;
 			type="EmptyDetector";
-			atlOffset=11.735761;
+			atlOffset=7.6899414;
 		};
 		class Item5
 		{
 			dataType="Trigger";
-			position[]={4257.7168,0,7949.4067};
+			position[]={4250.2891,0,8003.1499};
 			class Attributes
 			{
 				condition="(time/60) >= (ha_param_missionTime/2)";
@@ -494,7 +496,7 @@ class Mission
 			};
 			id=19;
 			type="EmptyDetector";
-			atlOffset=10.255328;
+			atlOffset=5.9563074;
 		};
 		class Item6
 		{
@@ -3829,51 +3831,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4401.5991,4.2823048,8465.0146};
-						angles[]={0.053282689,5.7346315,0.010664274};
-					};
-					side="Independent";
-					flags=5;
-					class Attributes
-					{
-						init="[""m"",this] call f_fnc_assignGear;";
-						name="UnitSyn_BSL_M";
-						description="Syndikat Bravo Medic";
-						isPlayable=1;
-					};
-					id=247;
-					type="I_C_Soldier_Para_3_F";
-					atlOffset=0.015265465;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.02;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4401.5991,4.2823048,8465.0146};
+						position[]={4401.6094,4.2823839,8465.0146};
 						angles[]={0.053282689,5.7346315,0.010664274};
 					};
 					side="Independent";
@@ -3888,7 +3846,7 @@ class Mission
 					};
 					id=248;
 					type="I_C_Soldier_Para_2_F";
-					atlOffset=0.015265465;
+					atlOffset=0.015236855;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -3913,6 +3871,50 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4401.6094,4.2823839,8465.0146};
+						angles[]={0.053282689,5.7346315,0.010664274};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="[""m"",this] call f_fnc_assignGear;";
+						name="UnitSyn_BSL_M";
+						description="Syndikat Bravo Medic";
+						isPlayable=1;
+					};
+					id=247;
+					type="I_C_Soldier_Para_3_F";
+					atlOffset=0.015236855;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.02;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			class Attributes
 			{
@@ -3930,7 +3932,7 @@ class Mission
 					class Item0
 					{
 						linkID=0;
-						item0=247;
+						item0=248;
 						item1=331;
 						class CustomData
 						{
@@ -3940,7 +3942,7 @@ class Mission
 					class Item1
 					{
 						linkID=1;
-						item0=248;
+						item0=247;
 						item1=331;
 						class CustomData
 						{
@@ -4678,51 +4680,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4415.3755,4.0590572,8471.8096};
-						angles[]={0.045302324,5.7346315,0.0026744273};
-					};
-					side="Independent";
-					flags=5;
-					class Attributes
-					{
-						init="[""m"",this] call f_fnc_assignGear;";
-						name="UnitSyn_CSL_M";
-						description="Syndikat Charlie Medic";
-						isPlayable=1;
-					};
-					id=264;
-					type="I_C_Soldier_Para_3_F";
-					atlOffset=0.016400814;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=0.94999999;
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4415.3755,4.0590572,8471.8096};
+						position[]={4415.3652,4.0587139,8471.8154};
 						angles[]={0.045302324,5.7346315,0.0026744273};
 					};
 					side="Independent";
@@ -4737,7 +4695,7 @@ class Mission
 					};
 					id=265;
 					type="I_C_Soldier_Para_2_F";
-					atlOffset=0.016400814;
+					atlOffset=0.016375542;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -4762,6 +4720,50 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={4415.3652,4.0587139,8471.8154};
+						angles[]={0.045302324,5.7346315,0.0026744273};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="[""m"",this] call f_fnc_assignGear;";
+						name="UnitSyn_CSL_M";
+						description="Syndikat Charlie Medic";
+						isPlayable=1;
+					};
+					id=264;
+					type="I_C_Soldier_Para_3_F";
+					atlOffset=0.016375542;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.94999999;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			class Attributes
 			{
@@ -4779,7 +4781,7 @@ class Mission
 					class Item0
 					{
 						linkID=0;
-						item0=264;
+						item0=265;
 						item1=333;
 						class CustomData
 						{
@@ -4789,7 +4791,7 @@ class Mission
 					class Item1
 					{
 						linkID=1;
-						item0=265;
+						item0=264;
 						item1=333;
 						class CustomData
 						{
@@ -5654,7 +5656,7 @@ class Mission
 				angles[]={0.053282689,5.7346315,0.010664274};
 			};
 			side="Independent";
-			flags=4;
+			flags=6;
 			class Attributes
 			{
 				skill=0.60000002;
@@ -5675,7 +5677,7 @@ class Mission
 				angles[]={0.045302324,5.7346315,0.0026744273};
 			};
 			side="Independent";
-			flags=4;
+			flags=6;
 			class Attributes
 			{
 				skill=0.60000002;
@@ -5835,7 +5837,7 @@ class Mission
 			fillName="SolidBorder";
 			a=350;
 			b=550;
-			angle=101.19232;
+			angle=101.19228;
 			drawBorder=1;
 			id=360;
 			atlOffset=-31.844929;
@@ -5857,7 +5859,7 @@ class Mission
 				textures="Guerilla_05";
 			};
 			id=367;
-			type="I_G_Offroad_01_F";
+			type="B_G_Offroad_01_F";
 			atlOffset=-0.00025224686;
 		};
 		class Item47
@@ -5877,7 +5879,7 @@ class Mission
 				textures="Guerilla_05";
 			};
 			id=368;
-			type="I_G_Offroad_01_F";
+			type="B_G_Offroad_01_F";
 			atlOffset=5.2452087e-005;
 		};
 		class Item48
@@ -5897,7 +5899,7 @@ class Mission
 				textures="Guerilla_05";
 			};
 			id=369;
-			type="I_G_Offroad_01_F";
+			type="B_G_Offroad_01_F";
 			atlOffset=-0.00043773651;
 		};
 	};
