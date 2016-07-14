@@ -453,7 +453,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_riflemag, 2];
 		_unit addmagazines [_riflemag_tr, 2];
-		_unit addItem _uavterminal;
+		_unit linkItem _uavterminal;
 	};
 // Diver Loadout:
 	case "div":

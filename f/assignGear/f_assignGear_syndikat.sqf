@@ -73,7 +73,7 @@ _bipod1 = "bipod_01_F_mtp";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
-_attachments = [_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_scope1,_attach2]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -95,12 +95,12 @@ _hg_attachments= []; // The default attachment set for handguns, overwritten in 
 // WEAPON SELECTION
 
 // Standard Riflemen ( MMG Assistant Gunner, Assistant Automatic Rifleman, MAT Assistant Gunner, MTR Assistant Gunner, Rifleman)
-_rifle = "arifle_AK12_F"; // Slight randomization, biased towards TRG
+_rifle = "arifle_AKM_F";
 _riflemag = "30Rnd_762x39_Mag_F";
 _riflemag_tr = "30Rnd_762x39_Mag_Tracer_F";
 
 // Standard Carabineer (Medic, Rifleman (AT), MAT Gunner, MTR Gunner, Carabineer)
-_carbine = "arifle_AKS_F"; // Slight randomization, biased towards TRG
+_carbine = "arifle_AKS_F";
 _carbinemag = "30Rnd_545x39_Mag_F";
 _carbinemag_tr = "30Rnd_545x39_Mag_Tracer_F";
 
@@ -184,8 +184,8 @@ _ARmag = "200Rnd_556x45_Box_F";
 _ARmag_tr = "200Rnd_556x45_Box_Tracer_F";
 
 // Medium MG
-_MMG = "LMG_Zafir_F";
-_MMGmag = "150Rnd_762x54_Box";
+_MMG = _ar;
+_MMGmag = _ARmag;
 
 // Marksman rifle
 _DMrifle = "srifle_DMR_03_F";
@@ -235,8 +235,8 @@ _specOp = [];
 // Basic clothing
 // The outfit-piece is randomly selected from the array for each unit
 
-_baseUniform = ["U_I_C_Soldier_Camo_F","U_I_C_Soldier_Para_1_F","U_I_C_Soldier_Para_2_F","U_I_C_Soldier_Para_3_F","U_I_C_Soldier_Para_4_F","U_I_C_Soldier_Para_5_F"];
-_baseHelmet = ["H_Beret_blk"];
+_baseUniform = ["U_I_C_Soldier_Bandit_1_F","U_I_C_Soldier_Bandit_2_F","U_I_C_Soldier_Bandit_3_F","U_I_C_Soldier_Bandit_4_F","U_I_C_Soldier_Bandit_5_F"];
+_baseHelmet = ["H_Bandanna_khk","H_Bandanna_cbr","H_Bandanna_sand"];
 _baseGlasses = ["G_Bandanna_blk","G_Bandanna_khk","G_Bandanna_oli"];
 
 // Vests
@@ -308,7 +308,7 @@ if (_isMan) then {
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	_unit linkItem _nvg;			// Add and equip the faction's nvg
+	//_unit linkItem _nvg;			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
 	_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass

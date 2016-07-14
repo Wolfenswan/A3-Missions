@@ -18,7 +18,7 @@ _cacheNum = ha_param_cacheNum;		// Number of caches
 _cacheList = [];	// List of all cache coordinates
 _blacklist = ["mkr_blacklist"] call ws_fnc_collectMarkers;	// List of area markers where caches won't spawn
 
-{_x setMarkerAlpha 0} forEach (_blacklist + ["mkr_playArea","ws_attack_start","ws_defend_start","ws_defend_start_area"]);
+{_x setMarkerAlpha 0} forEach (_blacklist + ["mkr_playArea","ws_defend_start","ws_defend_start_area"]);
 
 // Find position of first cache
 _cacheList = _cacheList + [["mkr_playArea", false, _blacklist] call SHK_pos];
@@ -72,25 +72,6 @@ while {count _posDefenderStart == 0} do {
 
 _nmkr setMarkerSizeLocal [_spawnMinSideDistance,_spawnMinSideDistance];
 
-// Find attacker start position
-/*
-_posAttackerStart = [];
-_debugIterations = 0;
-while {count _posAttackerStart == 0} do {
-	_potentialPos = [_nmkr, false, _blacklist] call SHK_pos;
-	_nearCaches = {_x distance _potentialPos <= _spawnAttackerMinCacheDistance} count _cacheList;
-	_toonear = _potentialPos distance _posDefenderStart <= _spawnMinSideDistance;
-	_toofar = _potentialPos distance _posDefenderStart >= _spawnMaxSideDistance;
-
-	if (_nearCaches == 0 && !_toonear && !_toofar) exitWith {
-		_posAttackerStart = _potentialPos
-;		//diag_log format["Attacker spawn found after %1 iterations", _debugIterations];
-	};
-	_debugIterations = _debugIterations + 1;
-	if (_debugIterations > 1000) exitWith {diag_log "Too long loop"};
-};
-*/
-
 //"ws_attack_start" setMarkerPos _posAttackerStart;
 "ws_attack_start" setMarkerAlpha 0;
 "ws_defend_start" setMarkerPos _posDefenderStart;
@@ -99,45 +80,6 @@ while {count _posAttackerStart == 0} do {
 {
 	[_forEachIndex, _x] call compile preprocessFileLineNumbers "ha_serverCreateCache.sqf";
 } forEach _cacheList;
-
-// Mount all groups
-/*[[VehFIA_Car1],["GrpFIA_CO"]] call f_fnc_mountGroups;
-[[VehFIA_Tr1,VehFIA_Tr2],["GrpFIA_ASL","GrpFIA_A1","GrpFIA_A2","GrpFIA_A3"]] call f_fnc_mountGroups;
-[[VehFIA_Tr2,VehFIA_Tr3],["GrpFIA_BSL","GrpFIA_B1","GrpFIA_B2","GrpFIA_B3"]] call f_fnc_mountGroups;
-[[VehFIA_Tr3,VehFIA_Tr4],["GrpFIA_CSL","GrpFIA_C1","GrpFIA_C2","GrpFIA_C3"]] call f_fnc_mountGroups;
-
-[[VehAAF_Car1],["GrpAAF_CO"]] call f_fnc_mountGroups;
-[[VehAAF_Tr1],["GrpAAF_ASL","GrpAAF_A1","GrpAAF_A2","GrpAAF_A3"]] call f_fnc_mountGroups;
-[[VehAAF_Tr2],["GrpAAF_BSL","GrpAAF_B1","GrpAAF_B2","GrpAAF_B3"]] call f_fnc_mountGroups;
-[[VehAAF_Tr3],["GrpAAF_CSL","GrpAAF_C1","GrpAAF_C2","GrpAAF_C3"]] call f_fnc_mountGroups;*/
-
-/*
-_postemp = _posDefenderStart;
-//_posTemp = [_posDefenderStart, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
-{
-	if (count crew _x == 0) then {deleteVehicle _x} else {
-		_pos = [_posTemp, 0, 100, 8, 0, 2, 0] call BIS_fnc_findSafePos;
-		//_pos = _pos findEmptyPosition [0,20,typeOf _x];
-		_x allowDamage false;
-		_x setPos _pos;
-		_posTemp = _pos;
-	};
-} forEach [VehFIA_CAR1,VehFIA_Tr1,VehFIA_Tr2,VehFIA_Tr3,VehFIA_Tr4,VehFIA_Tr5,VehFIA_Tr6];
-*/
-
-/*
-_postemp = _posAttackerStart;
-//_posTemp = [_posAttackerStart, 5, 100, 8, 0, 5, 0] call BIS_fnc_findSafePos;
-{
-	if (count crew _x == 0) then {deleteVehicle _x} else {
-		_pos = [_posTemp, 0, 100, 8, 0, 2, 0] call BIS_fnc_findSafePos;
-		//_pos = _pos findEmptyPosition [0,20,typeOf _x];
-		_x allowDamage false;
-		_x setPos _pos;
-		_posTemp = _pos;
-	};
-} forEach [VehAAF_Car1,VehAAF_Car2,VehAAF_Tr1,VehAAF_Tr2,VehAAF_Tr3];
-*/
 
 if !(isNil "UnitCSAT_CO_UAV") then {
 	UnitCSAT_CO_UAV connectTerminalToUAV uav1;

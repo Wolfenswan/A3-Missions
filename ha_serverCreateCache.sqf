@@ -11,8 +11,9 @@ _id = _this select 0;
 _tentativePos = _this select 1;
 
 // Try to find an empty position for a camo net
-_pos = [_tentativePos, 0, 50, 5, 0, 0, 0] call BIS_fnc_findSafePos;
-if (count _pos == 0) then { _pos = _tentativePos };
+//_pos = [_tentativePos, 0, 100, 0.5,0,0.5,0] call BIS_fnc_findSafePos;
+//if (count _pos == 0) then { _pos = _tentativePos };
+_pos = _tentativePos;
 
 //diag_log format["Creating cache, id: %1, pos: %2", _id, _pos];
 _markerName = format["ha_cache_%1", _id];
@@ -42,11 +43,11 @@ _crate addEventHandler [
 	}];
 
 //_camonet = "CamoNet_INDP_open_F" createVehicle _pos;
-_grp = [_pos, west, ["B_G_Soldier_F", "B_G_Soldier_lite_F"],[], [], [0.2,0.2], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
+_grp = [_pos, resistance, ["I_C_Soldier_Bandit_4_F","I_C_Soldier_Bandit_7_F"],[], [], [0.2,0.2], [], [2, 0.4], random 359] call BIS_fnc_spawnGroup;
 [_grp,_pos,["hold"]] call ws_fnc_addWaypoint;
 [_grp,"SAFE","WHITE"] call ws_fnc_setAIMode;
 
-f_param_AISkill_BLUFOR = 3;
+f_param_AISkill_INDP = 3;
 (units _grp) execVm "f\setAISkill\f_setAISkill.sqf";
 
 // Set marker settings

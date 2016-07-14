@@ -27,7 +27,7 @@ f_ha_createMarkers = {
 if(!isServer) exitWith{};
 
 sleep 5;
-_spotterSide = west;		// This side will report and receive sightings
+_spotterSide = independent;		// This side will report and receive sightings
 _spotters = [];
 // Generate a list of units that do the spotting
 {
@@ -56,6 +56,7 @@ while {true} do {
 		_spotted = _spotter call BIS_fnc_enemyTargets;
 		{
 			if (_x distance (_spotted select 0) < 100) then {_spotted = _spotted - [_x]};
+			if (vehicle _x != _x) then {_spotted = _spotted - [_x]};
 		} forEach (_spotted - [_spotted select 0]);
 
 		{

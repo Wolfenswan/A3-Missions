@@ -99,8 +99,8 @@ if (_faction in ["blu_t_f","natopacific"]) then {
 // automatically includes a file which contains the appropriate equipment data.
 
 if (_faction in ["opf_f","csat"]) then {
-	#include "f_assignGear_csat.sqf"
-	// #include "f_assignGear_csatPacific.sqf" // Use CSAT Pacific loadouts on CSAT non-Pacific units (e.g. Folk ARPS Platoons)
+	//#include "f_assignGear_csat.sqf"
+	#include "f_assignGear_csatPacific.sqf" // Use CSAT Pacific loadouts on CSAT non-Pacific units (e.g. Folk ARPS Platoons)
 };
 
 // ====================================================================================

@@ -251,7 +251,7 @@ _specOp = [];
 
 // Woodland-Hex
 _baseUniform = ["U_O_CombatUniform_ocamo"];
-_baseHelmet = ["H_HelmetO_ocamo"];
+_baseHelmet = ["H_Booniehat_khk_hs","H_MilCap_ghex_F"];
 _baseGlasses = [];
 
 // Urban
@@ -337,6 +337,7 @@ if (_isMan) then {
 	_unit linkItem "ItemRadio";		// Add and equip A3's default radio
 	_unit linkItem "ItemWatch";		// Add and equip a watch
 	_unit linkItem "ItemGPS"; 	// Add and equip a GPS
+	_unit addMagazines [_satchel,1];
 
 };
 

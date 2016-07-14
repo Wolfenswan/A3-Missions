@@ -20,31 +20,21 @@ _halo = "ws_param_halo" call bis_fnc_getParamValue;
 
 if (_halo == 1 && side player == east) then {
 	f_var_mapClickTeleport_Uses = 1;					// How often the teleport action can be used. 0 = infinite usage.
-	f_var_mapClickTeleport_TimeLimit = 120; 			// If higher than 0 the action will be removed after the given time.
+	f_var_mapClickTeleport_TimeLimit = 180; 			// If higher than 0 the action will be removed after the given time.
 	f_var_mapClickTeleport_GroupTeleport = true; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
 	f_var_mapClickTeleport_Units = [];				// Restrict map click teleport to these units
 	f_var_mapClickTeleport_Height = 600;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
 	[] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
 };
 
-if (side player == resistance) then {
+if (side player == independent) then {
 	f_var_mapClickTeleport_Uses = 1;					// How often the teleport action can be used. 0 = infinite usage.
-	f_var_mapClickTeleport_TimeLimit = 120; 			// If higher than 0 the action will be removed after the given time.
+	f_var_mapClickTeleport_TimeLimit = 180; 			// If higher than 0 the action will be removed after the given time.
 	f_var_mapClickTeleport_GroupTeleport = false; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
-	f_var_mapClickTeleport_Units = ["UnitAAF_CO","UnitAAF_ASL_SL","UnitAAF_BSL_SL","UnitAAF_CSL_SL"];				// Restrict map click teleport to these units
+	f_var_mapClickTeleport_Units = ["UnitSyn_CO","UnitSyn_ASL_SL","UnitSyn_BSL_SL","UnitSyn_CSL_SL","UnitSyn_A2_FTL","UnitSyn_B2_FTL","UnitSyn_C2_FTL","UnitSyn_IFV1_D"];				// Restrict map click teleport to these units
 	f_var_mapClickTeleport_Height = 0;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
 	[] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
 };
-
-if (side player == blufor) then {
-	f_var_mapClickTeleport_Uses = 1;					// How often the teleport action can be used. 0 = infinite usage.
-	f_var_mapClickTeleport_TimeLimit = 120; 			// If higher than 0 the action will be removed after the given time.
-	f_var_mapClickTeleport_GroupTeleport = false; 	// False: everyone can teleport. True: Only group leaders can teleport and will move their entire group.
-	f_var_mapClickTeleport_Units = ["UnitFIA_CO","UnitFIA_ASL_SL","UnitFIA_BSL_SL","UnitFIA_CSL_SL","UnitFIA_A2_FTL","UnitFIA_B2_FTL","UnitFIA_C2_FTL"];				// Restrict map click teleport to these units
-	f_var_mapClickTeleport_Height = 0;				// If > 0 map click teleport will act as a HALO drop and automatically assign parachutes to units
-	[] execVM "f\mapClickTeleport\f_mapClickTeleportAction.sqf";
-};
-
 
 // ====================================================================================
 
@@ -129,15 +119,12 @@ f_var_doNotRemoveBodies = [];
 // [[GroupName or SIDE],100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 // [[GroupName or SIDE],100,{code}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
-// BLUFOR > NATO
-[BLUFOR,100,3] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
-
 _affCas = "ws_param_aafCas" call bis_fnc_getParamValue;
 // OPFOR > CSAT
 [OPFOR,_affCas,{ws_var_sideDead = ws_var_sideDead + 1}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
-// INDEPENDENT > AAF
-[INDEPENDENT,_affCas,{ws_var_sideDead = ws_var_sideDead + 1}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+// INDEPENDENT > Syndikat
+[INDEPENDENT,100,3] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // ====================================================================================
 

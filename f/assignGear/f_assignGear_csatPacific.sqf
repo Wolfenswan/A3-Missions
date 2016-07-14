@@ -226,7 +226,7 @@ _SNrifleMag = "5Rnd_127x108_Mag";
 
 // Engineer items
 _ATmine = "ATMine_Range_Mag";
-_satchel = "SatchelCharge_Remote_Mag";
+_satchel = "DemoCharge_Remote_Mag";
 _APmine1 = "APERSBoundingMine_Range_Mag";
 _APmine2 = "APERSMine_Range_Mag";
 
@@ -250,7 +250,7 @@ _specOp = [];
 
 // Woodland-Hex
 _baseUniform = ["U_O_T_Soldier_F"];
-_baseHelmet = ["H_HelmetO_ghex_F"];
+_baseHelmet = ["H_Booniehat_khk_hs","H_MilCap_ghex_F"];
 _baseGlasses = [];
 
 // Urban
@@ -332,6 +332,7 @@ if (_isMan) then {
 	_unit linkItem "ItemRadio";		// Add and equip A3's default radio
 	_unit linkItem "ItemWatch";		// Add and equip a watch
 	_unit linkItem "ItemGPS"; 		// Add and equip a GPS
+	_unit addMagazines [_satchel,1];
 
 };
 
