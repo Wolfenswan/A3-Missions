@@ -121,7 +121,7 @@ f_var_doNotRemoveBodies = [];
 
 _affCas = "ws_param_aafCas" call bis_fnc_getParamValue;
 // OPFOR > CSAT
-[OPFOR,_affCas,{ws_var_sideDead = ws_var_sideDead + 1}] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
+[OPFOR,_affCas,2] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // INDEPENDENT > Syndikat
 [INDEPENDENT,100,3] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
