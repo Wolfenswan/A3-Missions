@@ -1,4 +1,4 @@
-// On players do
+// On players
 if (!isDedicated) then {
 	if (side player == ws_eola_defenders) then {
 		{_x setMarkerAlphaLocal 1} forEach ws_mkr_array;

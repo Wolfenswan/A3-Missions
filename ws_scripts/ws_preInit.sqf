@@ -36,14 +36,14 @@ for "_x" from 1 to ws_eola_caches_present do {
 	}];
 };
 
- 	{
-		_mkr = createMarker [format ["%1",_x],getPos _x];
-		_mkr setMarkerColor "ColorWhite";
-		_mkr setMarkerSize [0.5,0.5];
-		_mkr setMarkerType "mil_triangle";
-		ws_mkr_array = ws_mkr_array + [_mkr];
-		_mkr setMarkerAlpha 0;
-	} forEach ws_cache_array;
+{
+	_mkr = createMarker [format ["%1",_x],getPos _x];
+	_mkr setMarkerColor "ColorWhite";
+	_mkr setMarkerSize [0.5,0.5];
+	_mkr setMarkerType "mil_triangle";
+	ws_mkr_array = ws_mkr_array + [_mkr];
+	_mkr setMarkerAlpha 0;
+} forEach ws_cache_array;
 
 publicVariable "ws_mkr_array";
 

@@ -415,6 +415,23 @@ class CfgFunctions
 	#include "f\common\functions.hpp"
 
 	#include "ws_fnc\config.hpp"
+
+	class f3_ws
+	{
+      class init {
+          file ="ws_init";
+          class preInit
+          {
+          	  file = "ws_preInit.sqf";
+              preInit = 1;
+          };
+          class postInit
+          {
+             file = "ws_postInit.sqf";
+              postInit = 1;
+          };
+      };
+	};
 };
 
 // ============================================================================================

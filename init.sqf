@@ -222,7 +222,3 @@ f_var_doNotRemoveBodies = [];
 // [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // ====================================================================================
-
-// X-Eola Init
-
-[] execVM "ws_scripts\ws_postInit.sqf";
