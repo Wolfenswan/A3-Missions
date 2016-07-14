@@ -222,3 +222,8 @@ f_var_doNotRemoveBodies = [];
 // [INDEPENDENT,100,1] execVM "f\casualtiesCap\f_CasualtiesCapCheck.sqf";
 
 // ====================================================================================
+
+// X-Eola specific. Show markers to defenders
+if (side player == ws_eola_defenders) then {
+	{_x setMarkerAlphaLocal 1} forEach ws_mkr_array;
+};

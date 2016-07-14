@@ -1,5 +1,6 @@
 if (isNil "ws_initDone") then {ws_initDone = false};
-if (ws_initDone) exitWith {};
+if (isNil "ws_serverinitDone") then {ws_serverinitDone = false};
+if (ws_initDone || ws_serverInitDone) exitWith {};
 
 ws_debug = false;
 
@@ -53,14 +54,7 @@ for "_x" from 1 to ws_eola_caches_present do {
 publicVariable "ws_mkr_array";
 
 ws_initDone = true;
-
-// On players
-if (!isDedicated) then {
-	if (side player == ws_eola_defenders) then {
-		{_x setMarkerAlphaLocal 1} forEach ws_mkr_array;
-	};
-};
-
+ws_serverInitDone = true; publicVariable "ws_serverInitDone";
 
 // Do stuff on  Server (e.g. spawning)
 if (isServer) then {
