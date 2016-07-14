@@ -104,10 +104,266 @@ class ScenarioData
 {
 	author="Wolfenswan";
 	overviewText="CSAT seek and destroy Syndikat's caches. Syndikat does only get flashlights.";
+	class Header
+	{
+		gameType="TDM";
+		minPlayers=2;
+		maxPlayers=88;
+	};
 };
 class CustomAttributes
 {
 	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=1;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="None";
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="ReviveRequiredTrait";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="ReviveMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute3
+		{
+			property="ReviveRequiredItemsFakConsumed";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute4
+		{
+			property="SharedObjectives";
+			expression="if (isMultiplayer) then {[_value] spawn bis_fnc_sharedObjectives;};";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute5
+		{
+			property="ReviveMedicSpeedMultiplier";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		class Attribute6
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute7
+		{
+			property="ReviveForceRespawnDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=3;
+				};
+			};
+		};
+		class Attribute8
+		{
+			property="ReviveBleedOutDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=20;
+				};
+			};
+		};
+		class Attribute9
+		{
+			property="ReviveDelay";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=6;
+				};
+			};
+		};
+		class Attribute10
+		{
+			property="ReviveUnconsciousStateMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute11
+		{
+			property="ReviveRequiredItems";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		nAttributes=12;
+	};
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -137,7 +393,7 @@ class Mission
 	class Intel
 	{
 		briefingName="fa3_a88_cratesistance_tanoa_v1";
-		overviewText="AAF/CSAT seek and destroy FIA-defended caches. AAF are motorized, CSAT are airborne/HSLD. Attackers should have numerical edge.";
+		overviewText="CSAT seek and destroy Syndikat's caches. Only CSAT has NVGs.";
 		resistanceWest=0;
 		resistanceEast=1;
 		startWeather=0.84999996;
@@ -1283,7 +1539,7 @@ class Mission
 					};
 					id=172;
 					type="O_T_Medic_F";
-					atlOffset=-0.053125381;
+					atlOffset=-0.053124428;
 				};
 			};
 			class Attributes
@@ -1354,7 +1610,7 @@ class Mission
 					};
 					id=174;
 					type="O_T_Soldier_TL_F";
-					atlOffset=-9.5367432e-007;
+					atlOffset=-0.053255081;
 				};
 				class Item1
 				{
@@ -1423,7 +1679,7 @@ class Mission
 					};
 					id=176;
 					type="O_T_Soldier_AR_F";
-					atlOffset=-9.5367432e-007;
+					atlOffset=-0.053255081;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -5594,7 +5850,7 @@ class Mission
 			fillName="SolidBorder";
 			a=350;
 			b=550;
-			angle=101.19234;
+			angle=101.19233;
 			drawBorder=1;
 			id=360;
 			atlOffset=-31.844929;
