@@ -5,12 +5,11 @@ The missions can be found on GitHub:<br/>
 Each branch is a different mission, some are WIP.<br/>
 
 <b>Current F3 Version:</b><br/>
-<i>3-3-0</i>
+<i>3-4-0</i>
 
 <b>Mission description</b><br/>
 A mission stub for a cache-hunt adversarials. Randomized cache locations and settings configurable by parameter. Doesn't require any additional scripting. See<br/>
-folkarps.com/forum/viewtopic.php?f=44&t=1218&p=9297<br/>
-For a detailled explanation.
+folkarps.com/forum/viewtopic.php?f=44&t=1218&p=9297 for a detailed explanation.
 
 <b>Contact</b><br/>
 folkarps.com<br/>

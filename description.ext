@@ -284,7 +284,6 @@ class Params
           values[] = {2,4,6,8,10,12};
           texts[] = {"2","4","6","8","10","12"};
           default = 6;
-          code = "ws_eola_caches_present = %1";
       };
 
       class ws_param_caches_target
@@ -293,10 +292,7 @@ class Params
           values[] = {2,4,6,8,10,12};
           texts[] = {"2","4","6","8","10","12"};
           default = 4;
-          code = "ws_eola_caches_target = %1";
       };
-
-
 
 };
 
@@ -419,15 +415,9 @@ class CfgFunctions
 	class f3_ws
 	{
       class init {
-          file ="ws_init";
-          class preInit
-          {
-          	  file = "ws_preInit.sqf";
-              preInit = 1;
-          };
+          file ="ws_scripts";
           class postInit
           {
-             file = "ws_postInit.sqf";
               postInit = 1;
           };
       };

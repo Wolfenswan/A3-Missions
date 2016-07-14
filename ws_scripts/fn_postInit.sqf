@@ -1,9 +1,12 @@
-#include "ws_eola_setup.sqf";
-
 if (isNil "ws_initDone") then {ws_initDone = false};
 if (ws_initDone) exitWith {};
 
-ws_debug = if (ws_param_dbg == 0) then {false} else {true};
+ws_debug = false;
+
+ws_eola_caches_present = ws_param_caches_present;
+ws_eola_caches_target = ws_param_caches_target;
+
+if (ws_eola_caches_target > ws_eola_caches_present) then {ws_eola_caches_target = ws_eola_caches_present};
 
 if !(isServer) exitWith {ws_initDone = true};
 
@@ -13,6 +16,7 @@ publicVariable "ws_eola_ending";
 if (isNil "ws_mkr_array") then {ws_mkr_array = [];};
 
 _markers = ["mkrEolaCache"] call ws_fnc_collectMarkers;
+
 if (count _markers < ws_eola_caches_present) then {ws_eola_caches_present = count _markers};
 
 ws_cache_array = [];
@@ -41,11 +45,30 @@ for "_x" from 1 to ws_eola_caches_present do {
 	_mkr setMarkerColor "ColorWhite";
 	_mkr setMarkerSize [0.5,0.5];
 	_mkr setMarkerType "mil_triangle";
+	_mkr setMarkerColor "ColorGreen";
 	ws_mkr_array = ws_mkr_array + [_mkr];
 	_mkr setMarkerAlpha 0;
 } forEach ws_cache_array;
 
 publicVariable "ws_mkr_array";
 
-
 ws_initDone = true;
+
+// On players
+if (!isDedicated) then {
+	if (side player == ws_eola_defenders) then {
+		{_x setMarkerAlphaLocal 1} forEach ws_mkr_array;
+	};
+};
+
+
+// Do stuff on  Server (e.g. spawning)
+if (isServer) then {
+	//[] call ws_fnc_createGarrison
+
+	// Recalculate F3 variables
+	//[0] execVM "f\common\f_setLocalVars.sqf";
+
+	// If units were spawned set AI skill again
+	//[] execVM "f\setAISKill\f_setAISkill.sqf";
+};
