@@ -15,7 +15,8 @@ switch (_typeofUnit) do
 	{
 		_unit addBackpack _bag;
 		_unit addmagazines [_ARmag, 1];
-		_unit addweapon _AR ;
+		_unit addweapon _AR;
+		_attachments pushback (_bipod1); // Adds the bipod
 		_unit addItem _firstaid ;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_ARmag, 1];
@@ -27,8 +28,8 @@ switch (_typeofUnit) do
 		_unit addBackpack _bag;
 		_unit addmagazines [_carbinemag, 1];
 		_unit addweapon _carbine;
-		_unit addweapon _RAT;
 		_unit addmagazines [_RATmag, 1];
+		_unit addweapon _RAT;
 		_unit addItem _firstaid ;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_carbinemag, 2];
@@ -59,7 +60,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glriflemag_tr, 2];
 		_unit addmagazines [_glmag, 5];
 		_unit addmagazines [_glsmokewhite, 3];
-		_unit addPrimaryWeaponItem "acc_pointer_IR";
+		_attachments pushback (_attach1); // Adds laser pointer, keeps default scope
+		_unit addWeapon "Rangefinder";
 		_unit addmagazines [_smokegrenadegreen, 2];
 	};
 // Squad Leader / DC Loadout:
@@ -77,7 +79,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glmag, 5];
 		_unit addmagazines [_glsmokewhite, 3];
 		_unit addmagazines [_pistolmag, 2];
-		_unit addPrimaryWeaponItem "acc_pointer_IR";
+		_attachments pushback (_attach1); // Adds laser pointer, keeps default scope
+		_unit addWeapon "Rangefinder";
 		_unit addmagazines [_smokegrenadepurple, 3];
 	};
 // Platoon CO Loadout:
@@ -95,7 +98,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glsmokewhite, 3];
 		_unit addmagazines [_glsmokered, 3];
 		_unit addmagazines [_pistolmag, 4];
-		_unit addPrimaryWeaponItem "acc_pointer_IR";
+		_attachments pushback (_attach1); // Adds laser pointer, keeps default scope
+		_unit addWeapon "Rangefinder";
 		_unit addmagazines [_smokegrenadepurple, 3];
 	};
 // JTAC Loadout:
@@ -109,8 +113,9 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glriflemag, 2];
 		_unit addmagazines [_glriflemag_tr, 2];
 		_unit addmagazines [_glsmokered, 8];
-		_unit addPrimaryWeaponItem "acc_pointer_IR";
-		_unit addmagazines ["Laserbatteries", 2];
+		_attachments pushback (_attach1); // Adds laser pointer, keeps default scope
+        _unit addmagazines ["Laserbatteries", 1];
+		_unit addWeapon _laserdesignator;
 	};
 // Medic Loadout:
 	case "m":
@@ -130,6 +135,7 @@ switch (_typeofUnit) do
 	{
 		_unit addmagazines [_DMriflemag, 1];
 		_unit addweapon _DMrifle;
+		_attachments = [_bipod1,_scope2]; // Overwrites default attachments to add a bipod and scope 2
 		_unit addItem _firstaid ;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_DMriflemag, 4];
@@ -141,6 +147,7 @@ switch (_typeofUnit) do
 		_unit addBackpack _bag;
 		_unit addmagazines [_MMGmag, 1];
 		_unit addweapon _MMG;
+		_attachments pushback (_bipod1); // Adds the bipod
 		_unit addItem _firstaid ;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_MMGmag, 1];
@@ -158,6 +165,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_grenade, 1];
 		_unit addmagazines [_MMGmag, 1];
 		_unit addmagazines [_MMGmag, 1];
+		_unit addWeapon "Rangefinder";
 	};
 // Heavy MG Gunner Loadout:
 	case "hmgg":
@@ -181,6 +189,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_riflemag, 2];
 		_unit addmagazines [_riflemag_tr, 2];
 		_unit addmagazines [_grenade, 1];
+		_unit addWeapon "Rangefinder";
 	};
 // Medium AT Gunner Loadout:
 	case "matg":
@@ -188,8 +197,8 @@ switch (_typeofUnit) do
 		_unit addBackpack _bagLarge;
 		_unit addmagazines [_carbinemag, 1];
 		_unit addweapon _carbine;
+        _unit addmagazines [_MATmag1, 1];
 		_unit addweapon _MAT;
-		_unit addmagazines [_MATmag1, 1];
 		_unit addItem _firstaid ;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_carbinemag, 2];
@@ -208,6 +217,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_riflemag_tr, 2];
 		_unit addmagazines [_grenade, 1];
 		_unit addmagazines [_MATmag1, 2];
+		_unit addWeapon "Rangefinder";
 	};
 // Heavy AT Gunner Loadout:
 	case "hatg":
@@ -215,8 +225,8 @@ switch (_typeofUnit) do
 		_unit addBackpack _baghatg;
 		_unit addmagazines [_carbinemag, 1];
 		_unit addweapon _carbine;
-		_unit addweapon _HAT;
 		_unit addmagazines [_HATmag1, 1];
+		_unit addweapon _HAT;
 		_unit addItem _firstaid ;
 		_unit addmagazines [_smokegrenade, 4];
 		_unit addmagazines [_carbinemag, 2];
@@ -234,6 +244,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_riflemag_tr, 2];
 		_unit addmagazines [_grenade, 1];
 		_unit addmagazines [_HATmag1, 2];
+		_unit addWeapon "Rangefinder";
 	};
 // Mortar Gunner Loadout:
 	case "mtrg":
@@ -257,6 +268,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_riflemag, 2];
 		_unit addmagazines [_riflemag_tr, 2];
 		_unit addmagazines [_grenade, 1];
+		_unit addWeapon "Rangefinder";
 	};
 // Medium SAM Gunner Loadout:
 	case "msamg":
@@ -283,6 +295,7 @@ switch (_typeofUnit) do
 		_unit addmagazines [_riflemag_tr, 2];
 		_unit addmagazines [_grenade, 1];
 		_unit addmagazines [_SAMmag, 1];
+		_unit addWeapon "Rangefinder";
 	};
 // Heavy SAM Gunner Loadout:
 	case "hsamg":
@@ -306,12 +319,14 @@ switch (_typeofUnit) do
 		_unit addmagazines [_riflemag, 2];
 		_unit addmagazines [_riflemag_tr, 2];
 		_unit addmagazines [_grenade, 1];
+		_unit addWeapon "Rangefinder";
 	};
 // Sniper Loadout:
 	case "sn":
 	{
 		_unit addmagazines [_SNrifleMag, 1];
 		_unit addweapon _SNrifle;
+		_attachments = [_bipod1,_scope3]; // Overwrites default attachments to add a bipod and scope 3
 		_unit addweapon _pistol;
 		_unit addmagazines [_pistolmag, 1];
 		_unit addItem _firstaid ;
@@ -330,8 +345,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_riflemag_tr, 2];
 		_unit addmagazines [_grenade, 2];
 		_unit addmagazines [_SNrifleMag, 3];
-		_unit addPrimaryWeaponItem "acc_pointer_IR";
-		_unit addmagazines ["Laserbatteries", 2];
+		_attachments pushback (_attach1); // Adds laser pointer, keeps default scope
+		_unit addweapon "Rangefinder";
 	};
 // Vehicle Commander Loadout:
 	case "vc":
@@ -355,6 +370,7 @@ switch (_typeofUnit) do
 // Vehicle Driver Loadout:
 	case "vd":
 	{
+		_unit setUnitTrait ["engineer",true]; // Can repair
 		_unit addBackpack _bag;
 		_unit addmagazines [_smgmag, 1];
 		_unit addweapon _smg;
@@ -363,9 +379,22 @@ switch (_typeofUnit) do
 		_unit addmagazines [_smgmag, 4];
 		_unit addItem "ToolKit";
 	};
-// Heli Pilot / Crew Chief Loadout:
-	case "pp, pcc":
+// Heli Pilot Loadout:
+	case "pp":
 	{
+		_unit setUnitTrait ["engineer",true]; // Can repair
+		_unit addBackpack _bag;
+		_unit addmagazines [_smgmag, 1];
+		_unit addweapon _smg;
+		_unit addItem _firstaid ;
+		_unit addmagazines [_smokegrenadeblue, 4];
+		_unit addmagazines [_smgmag, 4];
+		_unit addItem "ToolKit";
+	};
+// Heli Crew Chief Loadout:
+	case "pcc":
+	{
+		_unit setUnitTrait ["engineer",true]; // Can repair
 		_unit addBackpack _bag;
 		_unit addmagazines [_smgmag, 1];
 		_unit addweapon _smg;

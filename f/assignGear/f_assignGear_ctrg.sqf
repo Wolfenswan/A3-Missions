@@ -73,7 +73,7 @@ _bipod1 = "bipod_01_F_snd";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
-_attachments = [_attach2,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_scope1]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -148,8 +148,11 @@ _smokegrenadeblue = "SmokeShellBlue";
 _firstaid = "FirstAidKit";
 _medkit = "Medikit";
 
-// Night Vision Goggles (NVGoggles)
+// Night Vision Goggles
 _nvg = "NVGoggles";
+
+// Laserdesignator
+_laserdesignator = "Laserdesignator";
 
 // UAV Terminal
 _uavterminal = "B_UavTerminal";
@@ -161,7 +164,7 @@ _chemyellow =  "Chemlight_yellow";
 _chemblue = "Chemlight_blue";
 
 // Backpacks
-_bags = "B_AssaultPack_rgr";					// Regular bag
+_bag = "B_AssaultPack_rgr";					// Regular bag
 _baglarge =  "B_Kitbag_rgr"; 			// Large bag
 _bagdiver =  "B_AssaultPack_blk";		// used by divers
 _baguav = "B_UAV_01_backpack_F";			// used by UAV operator
@@ -183,7 +186,7 @@ _ARmag = "150Rnd_556x45_Drum_Mag_F";
 _ARmag_tr = "150Rnd_556x45_Drum_Mag_Tracer_F";
 
 // Medium MG
-_MMG = "MMG_02_base_F";
+_MMG = "MMG_02_black_F";
 _MMGmag = "130Rnd_338_Mag";
 _MMGmag_tr = "130Rnd_338_Mag";
 

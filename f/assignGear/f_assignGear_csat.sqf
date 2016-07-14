@@ -73,7 +73,7 @@ _bipod1 = "bipod_02_F_hex";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
-_attachments = [_attach2,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_scope1]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -147,8 +147,12 @@ _smokegrenadepurple = "SmokeShellPurple";
 _firstaid = "FirstAidKit";
 _medkit = "Medikit";
 
-// Night Vision Goggles (NVGoggles)
-_nvg = "NVGoggles_OPFOR";
+// Night Vision Goggles
+_nvg = "O_NVGoggles_hex_F";
+//_nvg = "O_NVGoggles_urb_F";
+
+// Laserdesignator
+_laserdesignator = "Laserdesignator_02";
 
 // UAV Terminal
 _uavterminal = "O_UavTerminal";
@@ -183,7 +187,7 @@ _ARmag = "200Rnd_65x39_cased_Box";
 _ARmag_tr = "200Rnd_65x39_cased_Box_Tracer";
 
 // Medium MG
-_MMG = "MMG_01_base_F";
+_MMG = "MMG_01_hex_F";
 _MMGmag = "150Rnd_93x64_Mag";
 _MMGmag_tr = "150Rnd_93x64_Mag";
 
@@ -287,9 +291,9 @@ _ghillieRig = ["V_HarnessO_brn"];
 _ghillieGlasses = [];
 
 // Spec Op
-_sfuniform = ["U_O_SpecopsUniform_ocamo"];
-_sfhelmet = ["H_HelmetSpecO_ocamo","H_HelmetSpecO_blk"];
-_sfRig = ["V_PlateCarrier1_blk"];
+_sfuniform = ["U_O_SpecopsUniform_ocamo"]; // Viper: ["U_O_V_Soldier_Viper_hex_F"];
+_sfhelmet = ["H_HelmetSpecO_ocamo"];	   //Viper: ["H_HelmetO_ViperSP_hex_F"]; IMPORTANT: Will be overriden if nvg is added afterwards
+_sfRig = _standardRig;
 _sfGlasses = [];
 
 // ====================================================================================

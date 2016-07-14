@@ -73,7 +73,7 @@ _bipod1 = "bipod_03_F_oli";		// Default bipod
 _bipod2 = "bipod_03_F_blk";		// Black bipod
 
 // Default setup
-_attachments = [_attach2,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_scope1]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -113,7 +113,7 @@ _smgmag_tr = "30Rnd_9x21_Mag";
 _diverWep = "arifle_SDAR_F";
 _diverMag1 = "30Rnd_556x45_Stanag";
 _diverMag2 = "30Rnd_556x45_Stanag_Tracer_Yellow";
-_diverMag2 = "20Rnd_556x45_UW_mag";
+_diverMag3 = "20Rnd_556x45_UW_mag";
 
 // Rifle with GL and HE grenades (CO, DC, FTLs)
 _glrifle = "arifle_Mk20_GL_F";
@@ -148,8 +148,11 @@ _smokegrenadepurple = "SmokeShellPurple";
 _firstaid = "FirstAidKit";
 _medkit = "Medikit";
 
-// Night Vision Goggles (NVGoggles)
+// Night Vision Goggles
 _nvg = "NVGoggles_INDEP";
+
+// Laserdesignator
+_laserdesignator = "Laserdesignator_03";
 
 // UAV Terminal
 _uavterminal = "I_UavTerminal";

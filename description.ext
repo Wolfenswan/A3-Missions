@@ -140,9 +140,9 @@ class Params
     class f_param_medical
     {
             title = "Medical System";
-            values[] = {0,1};
-            texts[] = {"Arma 3 Default","F3 Simple Wounding System"};
-            default = 1;
+            values[] = {0,1,2};
+            texts[] = {"Arma 3 Default","F3 Simple Wounding System","Authentic Gameplay Mod"};
+            default = 0;
     };
 
 // ============================================================================================
@@ -155,7 +155,7 @@ class Params
             title = "$STR_f_param_mission_timer";
             values[] = {0,1,2,3,4,5,6,7,8,9,10,15};
             texts[] = {"$STR_f_param_mission_timer_off","1","2","3","4","5","6","7","8","9","10","15"};
-            default = 1;
+            default = 0;
     };
 
 // ============================================================================================
@@ -202,6 +202,7 @@ class Params
 // F3 - AI Skill Selector
 // Credits: Please see the F3 online manual (http://www.ferstaberinde.com/f3/en/)
 
+/*
 	class f_param_AISkill_BLUFOR
 	{
 		title = "$STR_f_param_AISkill_BLUFOR";
@@ -209,7 +210,9 @@ class Params
 		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
 		default = 1;
 	};
+*/
 
+/*
 	class f_param_AISkill_OPFOR
 	{
 		title = "$STR_f_param_AISkill_OPFOR";
@@ -217,7 +220,9 @@ class Params
 		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
 		default = 1;
 	};
+*/
 
+/*
 	class f_param_AISkill_INDP
 	{
 		title = "$STR_f_param_AISkill_INDP";
@@ -225,6 +230,7 @@ class Params
 		texts[] = {$STR_f_param_AISkill_Option0,$STR_f_param_AISkill_Option1,$STR_f_param_AISkill_Option2,$STR_f_param_AISkill_Option3};
 		default = 1;
 	};
+*/
 
 // ============================================================================================
 
@@ -254,9 +260,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "MISSION SUCCESS";
+		title = "Ending #1";
 		subtitle = "";
-		description = "The platoon managed to fulfill all objectives according to plan.";
+		description = "*** Insert debriefing #1 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -264,9 +270,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "MISSION FAILURE";
+		title = "Ending #2";
 		subtitle = "";
-		description = "The platoon failed at fulfilling it's obejctives.";
+		description = "*** Insert debriefing #2 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -274,9 +280,9 @@ class CfgDebriefing
 
 	class End3
 	{
-		title = "MISSION INCONCLUSIVE";
+		title = "Ending #3";
 		subtitle = "";
-		description = "The platoon either did not fulfill it's objectives to satisfication or had the mission ended in a stalemate.";
+		description = "*** Insert debriefing #3 here. ***";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -311,6 +317,7 @@ class CfgDebriefing
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
 	};
+
 };
 
 // ============================================================================================
@@ -357,23 +364,6 @@ class CfgRespawnTemplates
 class CfgFunctions
 {
 	#include "f\common\functions.hpp"
-
-	#include "ws_fnc\config.hpp"
-
-	class f3_ws
-	{
-      class init {
-          file ="ws_init";
-          class preInit
-          {
-              preInit = 1;
-          };
-          class postInit
-          {
-              postInit = 1;
-          };
-      };
-	};
 };
 
 // ============================================================================================
