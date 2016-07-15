@@ -73,7 +73,7 @@ _bipod1 = "bipod_01_F_mtp";		// Default bipod
 _bipod2 = "bipod_02_F_blk";		// Black bipod
 
 // Default setup
-_attachments = [_scope1]; // The default attachment set for most units, overwritten in the individual unitType
+_attachments = [_attach2,_scope1]; // The default attachment set for most units, overwritten in the individual unitType
 
 // [] = remove all
 // [_attach1,_scope1,_silencer] = remove all, add items assigned in _attach1, _scope1 and _silencer1
@@ -309,7 +309,7 @@ if (_isMan) then {
 	// ADD UNIVERSAL ITEMS
 	// Add items universal to all units of this faction
 
-	_unit linkItem _nvg;			// Add and equip the faction's nvg
+	if (ws_param_synnvg == 1) then {_unit linkItem _nvg;};			// Add and equip the faction's nvg
 	_unit addItem _firstaid;		// Add a single first aid kit (FAK)
 	_unit linkItem "ItemMap";		// Add and equip the map
 	_unit linkItem "ItemCompass";	// Add and equip a compass

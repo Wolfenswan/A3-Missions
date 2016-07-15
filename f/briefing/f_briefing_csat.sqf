@@ -24,7 +24,11 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-*** Insert information on administration and logistics here. ***
+CO - Qilin (Unarmed)<br/><br/>
+PER SQUAD:<br/>
+SL - Quadbike<br/>
+FT1 - Qilin (Armed)<br/>
+FT2 - Qilin (Unarmed)<br/>
 "]];
 
 // ====================================================================================
@@ -34,21 +38,18 @@ _adm = player createDiaryRecord ["diary", ["Administration","
 
 _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
-<font size='18'>COMMANDER'S INTENT</font>
+<font size='18'>DEPLOYMENT</font>
 <br/>
-*** Insert very short summary of plan here. ***
-<br/><br/>
-<font size='18'>MOVEMENT PLAN</font>
-<br/>
-*** Insert movement instructions here. ***
+Every element leader has one 'Teleport' action available. Using it will open the map. Clicking somewhere will move the group's vehicle to the location. It is important that all group members are inside the vehicle when the teleport is used.
 <br/><br/>
 <font size='18'>FIRE SUPPORT PLAN</font>
 <br/>
-*** Insert fire support instructions here. ***
+A mortar battery is on standby and under CO's direct command.
 <br/><br/>
-<font size='18'>SPECIAL TASKS</font>
+<font size='18'>SANCTITY OF HISTORIC LANDMARKS</font>
 <br/>
-*** Insert instructions for specific units here. ***
+Tanoa's Society for the Preservation for Historic Landmarks and Artifacts has asked us to consider avoiding any damage to any archaelogical landmarks. We've politely declined their request.
+<br/><br/>
 "]];
 
 // ====================================================================================
@@ -56,10 +57,14 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 // NOTES: MISSION
 // The code below creates the mission sub-section of notes.
 
-_mis = player createDiaryRecord ["diary", ["Mission","
+_mis = player createDiaryRecord ["diary", ["Mission",format ["
 <br/>
-*** Insert the mission here. ***
-"]];
+1. Deploy your groups outside the indicated AO. See EXECUTION for details.<br/>
+2. Move towards the suspected cache locations (red circles).<br/>
+3. Destroy %1 out of %2 caches.<br/>
+4. The temple is dominated by a cliff and surrounded by rocks. Plan accordingly.<br/>
+<img image='intel.jpg'>
+",ws_param_caches_target,ws_param_caches_present]]];
 
 // ====================================================================================
 
@@ -68,15 +73,11 @@ _mis = player createDiaryRecord ["diary", ["Mission","
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-*** Insert general information about the situation here.***
+The Syndikat cartell's smuggling operation have gone on for far too long. Today we will stop them.
 <br/><br/>
 <font size='18'>ENEMY FORCES</font>
 <br/>
-*** Insert information about enemy forces here.***
-<br/><br/>
-<font size='18'>FRIENDLY FORCES</font>
-<br/>
-*** Insert information about friendly forces here.***
+Up to a platoon of ill-equipped but highly motivated paramilitaries.
 "]];
 
 // ====================================================================================

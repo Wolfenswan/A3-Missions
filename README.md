@@ -8,8 +8,7 @@ Each branch is a different mission, some are WIP.<br/>
 <i>3-4-0</i>
 
 <b>Mission description</b><br/>
-A mission stub for a cache-hunt adversarials. Randomized cache locations and settings configurable by parameter. Doesn't require any additional scripting. See<br/>
-folkarps.com/forum/viewtopic.php?f=44&t=1218&p=9297 for a detailed explanation.
+Cache-Hunt adversarial with slight randomization. CSAT in LSVs attempts to raid Syndikat's smuggling operation. Centerpiece of the mission are the south-western temple ruins.
 
 <b>Contact</b><br/>
 folkarps.com<br/>

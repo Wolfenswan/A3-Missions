@@ -1,3 +1,5 @@
+onLoadName = "Templeola";
+
 // ============================================================================================
 
 // F3 - Respawn Settings
@@ -281,17 +283,25 @@ class Params
       class ws_param_caches_present
       {
           title = "Caches present";
-          values[] = {2,4,6,8,10,12};
-          texts[] = {"2","4","6","8","10","12"};
+          values[] = {4,5,6,8};
+          texts[] = {"4","5","6","8"};
           default = 6;
       };
 
       class ws_param_caches_target
       {
           title = "Caches to destroy";
-          values[] = {2,4,6,8,10,12};
-          texts[] = {"2","4","6","8","10","12"};
+          values[] = {3,4,6,8};
+          texts[] = {"3","4","6","8"};
           default = 4;
+      };
+
+      class ws_param_synnvg
+      {
+          title = "NVGs for Syndikat";
+          values[] = {0,1};
+          texts[] = {"No","Yes"};
+          default = 0;
       };
 
 };
@@ -305,9 +315,9 @@ class CfgDebriefing
 {
 	class End1
 	{
-		title = "Ending #1";
+		title = "CSAT Wiped Out";
 		subtitle = "";
-		description = "*** Insert debriefing #1 here. ***";
+		description = "All CSAT forces were destroyed. Victory for the Syndikat";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};
@@ -315,9 +325,9 @@ class CfgDebriefing
 
 	class End2
 	{
-		title = "Ending #2";
+		title = "Syndikat Wiped Out";
 		subtitle = "";
-		description = "*** Insert debriefing #2 here. ***";
+		description = "All Syndikat forces were destroyed. Victory for CSAT";
 		// pictureBackground = "";
 		// picture = "";
 		// pictureColor[] = {0.0,0.3,0.6,1};

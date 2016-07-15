@@ -27,8 +27,8 @@ _faction = toLower (param[2, (faction _unit)]);
 // Altis and Tanoa. Additionally, CSAT has an urban camo option. The following variables
 // can be changed to apply the desired style of insignia to the NATO and CSAT platoons.
 
-_insignia_style_NATO = "Altis"; // Options: "Altis" | "Tanoa"
-_insignia_style_CSAT = "Altis"; // Options: "Altis" | "Tanoa" | "Urban"
+_insignia_style_NATO = "Tanoa"; // Options: "Altis" | "Tanoa"
+_insignia_style_CSAT = "Tanoa"; // Options: "Altis" | "Tanoa" | "Urban"
 
 _insignia_styles = [_insignia_style_NATO,_insignia_style_CSAT];
 [_unit,_typeofUnit,_insignia_styles] spawn {
@@ -99,8 +99,8 @@ if (_faction in ["blu_t_f","natopacific"]) then {
 // automatically includes a file which contains the appropriate equipment data.
 
 if (_faction in ["opf_f","csat"]) then {
-	#include "f_assignGear_csat.sqf"
-	// #include "f_assignGear_csatPacific.sqf" // Use CSAT Pacific loadouts on CSAT non-Pacific units (e.g. Folk ARPS Platoons)
+	//#include "f_assignGear_csat.sqf"
+	#include "f_assignGear_csatPacific.sqf" // Use CSAT Pacific loadouts on CSAT non-Pacific units (e.g. Folk ARPS Platoons)
 };
 
 // ====================================================================================
