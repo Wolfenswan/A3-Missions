@@ -8,11 +8,11 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1050;
+		nextID=1062;
 	};
 	class MarkerIDProvider
 	{
-		nextID=1;
+		nextID=2;
 	};
 	class Camera
 	{
@@ -59,8 +59,8 @@ addons[]=
 	"A3_Characters_F_Exp",
 	"A3_Soft_F_Exp_Offroad_02",
 	"A3_Soft_F_Exp_Van_01",
-	"A3_Ui_F",
-	"A3_Modules_F"
+	"A3_Modules_F",
+	"A3_Ui_F"
 };
 class AddonsMetaData
 {
@@ -30700,124 +30700,16 @@ class Mission
 		};
 		class Item349
 		{
-			dataType="Marker";
-			position[]={1112.8195,6.2647338e+016,2292.8684};
-			name="mkrEolaCache";
-			type="mil_circle";
-			id=1034;
-			atlOffset=6.2647338e+016;
-		};
-		class Item350
-		{
-			dataType="Marker";
-			position[]={1369.8925,6.2647338e+016,2283.1108};
-			name="mkrEolaCache_1";
-			type="mil_circle";
-			id=1035;
-			atlOffset=6.2647338e+016;
-		};
-		class Item351
-		{
-			dataType="Marker";
-			position[]={1626.9657,6.2647338e+016,2274.3696};
-			name="mkrEolaCache_2";
-			type="mil_circle";
-			id=1036;
-			atlOffset=6.2647338e+016;
-		};
-		class Item352
-		{
-			dataType="Marker";
-			position[]={1860.8982,6.2647338e+016,2274.8433};
-			name="mkrEolaCache_3";
-			type="mil_circle";
-			id=1037;
-			atlOffset=6.2647338e+016;
-		};
-		class Item353
-		{
-			dataType="Marker";
-			position[]={1120.2181,6.2647338e+016,2137.8345};
-			name="mkrEolaCache_4";
-			type="mil_circle";
-			id=1038;
-			atlOffset=6.2647338e+016;
-		};
-		class Item354
-		{
-			dataType="Marker";
-			position[]={1373.9891,6.2647338e+016,2130.9077};
-			name="mkrEolaCache_5";
-			type="mil_circle";
-			id=1039;
-			atlOffset=6.2647338e+016;
-		};
-		class Item355
-		{
-			dataType="Marker";
-			position[]={1630.6642,6.2647338e+016,2134.1338};
-			name="mkrEolaCache_6";
-			type="mil_circle";
-			id=1040;
-			atlOffset=6.2647338e+016;
-		};
-		class Item356
-		{
-			dataType="Marker";
-			position[]={1876.1685,6.2647338e+016,2128.5483};
-			name="mkrEolaCache_7";
-			type="mil_circle";
-			id=1041;
-			atlOffset=6.2647338e+016;
-		};
-		class Item357
-		{
-			dataType="Marker";
-			position[]={1116.5189,6.2647338e+016,1992.8599};
-			name="mkrEolaCache_8";
-			type="mil_circle";
-			id=1042;
-			atlOffset=6.2647338e+016;
-		};
-		class Item358
-		{
-			dataType="Marker";
-			position[]={1385.088,6.2647338e+016,2000.7324};
-			name="mkrEolaCache_9";
-			type="mil_circle";
-			id=1043;
-			atlOffset=6.2647338e+016;
-		};
-		class Item359
-		{
-			dataType="Marker";
-			position[]={1637.1211,6.2647338e+016,1996.5605};
-			name="mkrEolaCache_10";
-			type="mil_circle";
-			id=1044;
-			atlOffset=6.2647338e+016;
-		};
-		class Item360
-		{
-			dataType="Marker";
-			position[]={1872.0703,6.2647338e+016,1982.7065};
-			name="mkrEolaCache_11";
-			type="mil_circle";
-			id=1045;
-			atlOffset=6.2647338e+016;
-		};
-		class Item361
-		{
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={2004.444,5,2162.144};
+				position[]={1497.9611,5,2162.292};
 			};
 			title="Cache markers";
-			description="Every circle is considered a possible cache location. You can have as many you want as long as they follow the naming system (mkrEolaCache_X). If you reduce them to a number <12 then remember to configure the parameter afterwards.";
+			description="Every circle is considered a possible cache location. The script will place the cache anywhere inside the circle. You can increase it's size freely." \n "" \n "You can have as many markers you want, as long as they follow the naming system (mkrEolaCache_X). If you reduce them to a number <12 then remember to configure the parameter afterwards.";
 			id=1046;
 		};
-		class Item362
+		class Item350
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -30829,7 +30721,7 @@ class Mission
 			id=1047;
 			type="Logic";
 		};
-		class Item363
+		class Item351
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -30839,6 +30731,174 @@ class Mission
 			title="Eola Setup - DO NOT DELETE";
 			description="The variables in this init configure which side is defending (knows exact cache locations) and which ending should fire when all caches are destroyed.";
 			id=1049;
+		};
+		class Item352
+		{
+			dataType="Marker";
+			position[]={1227.6644,5,2202.4639};
+			name="mkrEolaCache";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1050;
+		};
+		class Item353
+		{
+			dataType="Marker";
+			position[]={1299.8197,5,2207.1753};
+			name="mkrEolaCache_1";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1051;
+		};
+		class Item354
+		{
+			dataType="Marker";
+			position[]={1345.7974,5,2201.7007};
+			name="mkrEolaCache_2";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1052;
+		};
+		class Item355
+		{
+			dataType="Marker";
+			position[]={1439.9419,5,2199.5112};
+			name="mkrEolaCache_3";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1053;
+		};
+		class Item356
+		{
+			dataType="Marker";
+			position[]={1218.8116,5,2159.0073};
+			name="mkrEolaCache_4";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1054;
+		};
+		class Item357
+		{
+			dataType="Marker";
+			position[]={1296.5355,5,2157.9126};
+			name="mkrEolaCache_5";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1055;
+		};
+		class Item358
+		{
+			dataType="Marker";
+			position[]={1352.3656,5,2149.1553};
+			name="mkrEolaCache_6";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1056;
+		};
+		class Item359
+		{
+			dataType="Marker";
+			position[]={1448.6995,5,2157.9126};
+			name="mkrEolaCache_7";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1057;
+		};
+		class Item360
+		{
+			dataType="Marker";
+			position[]={1225.3799,5,2105.3672};
+			name="mkrEolaCache_8";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1058;
+		};
+		class Item361
+		{
+			dataType="Marker";
+			position[]={1295.4409,5,2099.8936};
+			name="mkrEolaCache_9";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1059;
+		};
+		class Item362
+		{
+			dataType="Marker";
+			position[]={1344.7026,5,2106.4614};
+			name="mkrEolaCache_10";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1060;
+		};
+		class Item363
+		{
+			dataType="Marker";
+			position[]={1444.3207,5,2103.1772};
+			name="mkrEolaCache_11";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorRed";
+			fillName="Border";
+			a=10;
+			b=10;
+			drawBorder=1;
+			id=1061;
 		};
 	};
 	class Connections
