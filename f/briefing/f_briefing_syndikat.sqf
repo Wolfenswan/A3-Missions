@@ -25,7 +25,7 @@ _exe = player createDiaryRecord ["diary", ["Execution","
 <br/>
 <font size='18'>DEPLOYMENT</font>
 <br/>
-Every element leader has one 'Teleport' action available. Using it will open the map. Clicking somewhere will move the entire group to the location. Try to stay clear of rocks etc.
+Every element leader has one 'Teleport' action available. Using it will open the map. Clicking somewhere will move the entire group to the location. Remember: Friends don't let friends get teleported into rocks.
 "]];
 
 // ====================================================================================
@@ -37,7 +37,12 @@ _mis = player createDiaryRecord ["diary", ["Mission",format ["
 <br/>
 1. Deploy your groups next to the indicated cache locations (red circles). See EXECUTION for details.<br/>
 2. Protect the caches, indicated by green triangles.<br/>
-3. CSAT will have to destroy %1 out of %2 caches.
+3. CSAT will have to destroy %1 out of %2 caches.<br/><br/>
+
+INTEL<br/>
+The temple is nestled into the mountainside and dominated by a large cliff. Plan accordingly.<br/>
+Entrances to the temple complext are marked. The large cliff can also be <marker name='mkrScale'>scaled</marker> from the south-east as well.<br/>
+<img image='intel.jpg' width='500' height='312'>
 ",ws_param_caches_target,ws_param_caches_present]]];
 
 // ====================================================================================

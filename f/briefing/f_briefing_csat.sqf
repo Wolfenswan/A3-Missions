@@ -48,7 +48,7 @@ A mortar battery is on standby and under CO's direct command.
 <br/><br/>
 <font size='18'>SANCTITY OF HISTORIC LANDMARKS</font>
 <br/>
-Tanoa's Society for the Preservation for Historic Landmarks and Artifacts has asked us to consider avoiding any damage to any archaelogical landmarks. We've politely declined their request.
+Tanoa's Society for the Preservation of Historic Landmarks and Artifacts has asked us to kindly avoid any damage to archaelogical landmarks. We've politely declined their request.
 <br/><br/>
 "]];
 
@@ -59,11 +59,14 @@ Tanoa's Society for the Preservation for Historic Landmarks and Artifacts has as
 
 _mis = player createDiaryRecord ["diary", ["Mission",format ["
 <br/>
-1. Deploy your groups outside the indicated AO. See EXECUTION for details.<br/>
+1. Deploy your groups outside the <marker name='mkrAO'>indicated AO</marker>. See EXECUTION for details.<br/>
 2. Move towards the suspected cache locations (red circles).<br/>
-3. Destroy %1 out of %2 caches.<br/>
-4. The temple is dominated by a cliff and surrounded by rocks. Plan accordingly.<br/>
-<img image='intel.jpg'>
+3. Destroy %1 out of %2 caches.<br/><br/>
+
+INTEL<br/>
+The temple is nestled into the mountainside and dominated by a large cliff. Plan accordingly.<br/>
+Entrances to the temple complext are marked. The large cliff can also be <marker name='mkrScale'>scaled</marker> from the south-east as well.<br/>
+<img image='intel.jpg' width='500' height='312'>
 ",ws_param_caches_target,ws_param_caches_present]]];
 
 // ====================================================================================
@@ -73,7 +76,7 @@ _mis = player createDiaryRecord ["diary", ["Mission",format ["
 
 _sit = player createDiaryRecord ["diary", ["Situation","
 <br/>
-The Syndikat cartell's smuggling operation have gone on for far too long. Today we will stop them.
+Syndikat's smuggling operation have gone on for far too long. Today we will stop them.
 <br/><br/>
 <font size='18'>ENEMY FORCES</font>
 <br/>
