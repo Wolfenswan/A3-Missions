@@ -99,13 +99,21 @@
 	}] call _fnc_createGroupType;
 
 	// Ambush (POI)
-	[_logic,"ambush",{
+	[_logic,"ambush-poi",{
 		params ["_grp","_trg","_classes"];
 		private _poi = [_trg] call _fnc_getGoodPoi;
 		if (isNull _poi) exitWith {
 			["ws_sss DBG: ",[_trg, _type]," does not have any valid POIs left but is trying to spawn groups on them!"] call ws_fnc_debugtext;
 		};
 		private _pos = getPos _poi;
+		private _newgrp = ([_pos,side leader _grp,count units _grp,[_classes,[]]] call ws_fnc_createGroup) select 0;
+		[_newgrp,_pos,["ambush"]] call ws_fnc_addWaypoint;
+		_newgrp
+	}] call _fnc_createGroupType;
+
+	[_logic,"ambush-road",{
+		params ["_grp","_trg","_classes"];
+		private _pos = [([_trg] call ws_fnc_getPosInArea)] call ws_fnc_NearestRoadPos;
 		private _newgrp = ([_pos,side leader _grp,count units _grp,[_classes,[]]] call ws_fnc_createGroup) select 0;
 		[_newgrp,_pos,["ambush"]] call ws_fnc_addWaypoint;
 		_newgrp
