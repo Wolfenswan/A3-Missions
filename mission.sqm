@@ -166,7 +166,7 @@ class Mission
 				position[]={3568.054,5,3210.4041};
 			};
 			name="ws_sss_controller";
-			init="this setVariable [""hold"",0];" \n "this setVariable [""hold-poi"",0];" \n "this setVariable [""patrol"",0];" \n "this setVariable [""patrol-poi"",0];" \n "this setVariable [""garrison"",0];" \n "this setVariable [""garrison-poi"",2];";
+			init="this setVariable [""hold"",0];" \n "this setVariable [""hold-poi"",0];" \n "this setVariable [""patrol"",0];" \n "this setVariable [""patrol-poi"",0];" \n "this setVariable [""garrison"",0];" \n "this setVariable [""garrison-poi"",0];" \n "this setVariable [""ambush"",2];" \n "this setVariable [""ambush-poi"",2];";
 			id=52;
 			type="Logic";
 		};
@@ -369,7 +369,7 @@ class Mission
 			};
 			class Attributes
 			{
-				init="this setVariable [""garrison-poi"",true];";
+				init="this setVariable [""ambush"",true];" \n "this setVariable [""ambush-poi"",true];";
 			};
 			id=68;
 		};

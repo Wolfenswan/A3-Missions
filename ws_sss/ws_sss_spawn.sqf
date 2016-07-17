@@ -76,7 +76,7 @@
 		_newgrp
 	}] call _fnc_createGroupType;
 
-	// Garrison
+	// Garrison (POI)
 	[_logic,"garrison-poi",{
 		params ["_grp","_trg","_classes"];
 		private _poi = [_trg] call _fnc_getGoodPoi;
