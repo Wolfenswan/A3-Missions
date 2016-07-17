@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=103;
+		nextID=114;
 	};
 	class MarkerIDProvider
 	{
@@ -28,13 +28,15 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Characters_F_Exp_Civil",
 	"A3_Modules_F",
-	"A3_Characters_F_Mark"
+	"A3_Characters_F_Mark",
+	"A3_Structures_F_Households_House_Small02",
+	"A3_Structures_F_Households_House_Small01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -60,6 +62,13 @@ class AddonsMetaData
 		{
 			className="A3_Characters_F_Mark";
 			name="Arma 3 Marksmen - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Structures_F_Households";
+			name="Arma 3 - Houses";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
@@ -93,7 +102,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=17;
+		items=24;
 		class Item0
 		{
 			dataType="Group";
@@ -106,7 +115,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3668.7083,5.0014391,3124.4177};
+						position[]={3888.7781,5.0014391,2784.6453};
 					};
 					side="Civilian";
 					flags=6;
@@ -154,35 +163,35 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3568.0537,5,3210.4043};
+				position[]={3568.054,5,3210.4041};
 			};
 			name="ws_sss_controller";
-			init="this setVariable [""garrison"",1];" \n "this setVariable [""hold"",0];" \n "this setVariable [""hold-poi"",20];" \n "this setVariable [""patrol"",0];" \n "this setVariable [""patrol-poi"",0];";
+			init="this setVariable [""hold"",0];" \n "this setVariable [""hold-poi"",0];" \n "this setVariable [""patrol"",0];" \n "this setVariable [""patrol-poi"",0];" \n "this setVariable [""garrison"",0];" \n "this setVariable [""garrison-poi"",2];";
 			id=52;
 			type="Logic";
 		};
 		class Item2
 		{
 			dataType="Trigger";
-			position[]={3923.342,31.319542,3031.1411};
+			position[]={4132.3647,31.32,3448.7471};
 			class Attributes
 			{
 				name="ws_sss_trg";
-				sizeA=250;
-				sizeB=250;
+				sizeA=500;
+				sizeB=500;
 			};
 			id=62;
 			type="EmptyDetectorAreaR50";
-			atlOffset=26.319542;
+			atlOffset=26.32;
 		};
 		class Item3
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3891.5444,5,2849.082};
+				position[]={4349.6899,5,3260.5591};
 			};
-			init="this setVariable [""poi"",true];" \n "this setVariable [""maxGroups"",3];";
+			init="this setVariable [""poi"",true];" \n "this setVariable [""maxGroups"",1];";
 			id=63;
 			type="Logic";
 		};
@@ -191,24 +200,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3784.8794,5,3066.6082};
+				position[]={4126.0669,5,3418.854};
 			};
-			init="this setVariable [""poi"",true];" \n "this setVariable [""maxGroups"",3];";
+			init="this setVariable [""poi"",true];" \n "this setVariable [""maxGroups"",1];";
 			id=64;
 			type="Logic";
 		};
 		class Item5
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={4035.7405,5,2894.1321};
-			};
-			init="this setVariable [""poi"",true];" \n "this setVariable [""maxGroups"",3];";
-			id=65;
-			type="Logic";
-		};
-		class Item6
 		{
 			dataType="Group";
 			side="West";
@@ -371,11 +369,11 @@ class Mission
 			};
 			class Attributes
 			{
-				init="this setVariable [""hold"",true];" \n "this setVariable [""hold-poi"",true];" \n "";
+				init="this setVariable [""garrison-poi"",true];";
 			};
 			id=68;
 		};
-		class Item7
+		class Item6
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -383,22 +381,22 @@ class Mission
 				position[]={3452.5349,5,3210.6321};
 			};
 			name="ws_debug";
-			init="ws_debug = false;";
+			init="ws_debug = true;";
 			id=81;
 			type="Logic";
 		};
-		class Item8
+		class Item7
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4249.3174,5,3018.7046};
+				position[]={4130.7681,5,3514.2275};
 			};
 			init="comment ""Placeholder"";" \n "this setVariable [""config"",true];" \n "this setVariable [""maxGroups"",-1];";
 			id=82;
 			type="Logic";
 		};
-		class Item9
+		class Item8
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -408,17 +406,17 @@ class Mission
 			title="Debug Controller";
 			id=83;
 		};
-		class Item10
+		class Item9
 		{
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={3560.7427,5,3211.8652};
+				position[]={3554.2,5,3212.5659};
 			};
-			title="Main Controller";
+			title="Spawn Controller";
 			id=84;
 		};
-		class Item11
+		class Item10
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -428,7 +426,7 @@ class Mission
 			title="Blueprint Groups";
 			id=85;
 		};
-		class Item12
+		class Item11
 		{
 			dataType="Group";
 			side="West";
@@ -471,21 +469,23 @@ class Mission
 			};
 			class Attributes
 			{
-				init="this setVariable [""patrol"",true];";
+				init="this setVariable [""patrol"",true];" \n "this setVariable [""patrol-poi"",true];";
+				behaviour="SAFE";
+				speedMode="LIMITED";
 			};
 			id=86;
 		};
-		class Item13
+		class Item12
 		{
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={4027.6841,5,3220.801};
+				position[]={4189.8599,5,3448.7471};
 			};
 			title="Triggers defining Area";
 			id=89;
 		};
-		class Item14
+		class Item13
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -495,18 +495,18 @@ class Mission
 			title="Special Points of Interest in Area";
 			id=91;
 		};
-		class Item15
+		class Item14
 		{
 			dataType="Comment";
 			class PositionInfo
 			{
-				position[]={4215.6416,5,3020.3462};
+				position[]={4186.666,5,3506.2422};
 			};
 			title="Trigger Configuration";
 			description="Placeholder";
 			id=92;
 		};
-		class Item16
+		class Item15
 		{
 			dataType="Group";
 			side="West";
@@ -675,16 +675,131 @@ class Mission
 			};
 			id=94;
 		};
+		class Item16
+		{
+			dataType="Trigger";
+			position[]={3449.8169,5,3247.2009};
+			class Attributes
+			{
+				onActivation="nul = [] execVM ""ws_sss\ws_sss_init.sqf"";";
+				sizeA=0;
+				sizeB=0;
+				repeatable=1;
+				activationBy="ALPHA";
+			};
+			id=103;
+			type="EmptyDetector";
+		};
+		class Item17
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={3464.248,5,3245.7581};
+			};
+			title="Debug Trigger";
+			id=104;
+		};
+		class Item18
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4150.8398,6.1250415,3418.6543};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=108;
+			type="Land_i_House_Small_02_V2_F";
+		};
+		class Item19
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4334.7837,6.3420548,3280.8057};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=109;
+			type="Land_i_House_Small_01_V2_F";
+		};
+		class Item20
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4108.3755,6.1250415,3425.2461};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=110;
+			type="Land_i_House_Small_02_V3_F";
+		};
+		class Item21
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4130.29,6.1250415,3396.5776};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=111;
+			type="Land_i_House_Small_02_V3_F";
+		};
+		class Item22
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4344.7393,6.1250415,3248.3413};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=112;
+			type="Land_i_House_Small_02_V3_F";
+		};
+		class Item23
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4368.4575,6.1250415,3275.0239};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=113;
+			type="Land_i_House_Small_02_V3_F";
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=8;
+			nextID=7;
 		};
 		class Links
 		{
-			items=8;
+			items=7;
 			class Item0
 			{
 				linkID=0;
@@ -718,8 +833,8 @@ class Mission
 			class Item3
 			{
 				linkID=3;
-				item0=65;
-				item1=62;
+				item0=52;
+				item1=54;
 				class CustomData
 				{
 					type="Sync";
@@ -728,8 +843,8 @@ class Mission
 			class Item4
 			{
 				linkID=4;
-				item0=52;
-				item1=54;
+				item0=82;
+				item1=62;
 				class CustomData
 				{
 					type="Sync";
@@ -738,8 +853,8 @@ class Mission
 			class Item5
 			{
 				linkID=5;
-				item0=82;
-				item1=62;
+				item0=87;
+				item1=52;
 				class CustomData
 				{
 					type="Sync";
@@ -748,16 +863,6 @@ class Mission
 			class Item6
 			{
 				linkID=6;
-				item0=87;
-				item1=52;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item7
-			{
-				linkID=7;
 				item0=95;
 				item1=52;
 				class CustomData

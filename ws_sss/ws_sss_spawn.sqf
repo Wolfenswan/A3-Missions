@@ -34,7 +34,7 @@
 		};
 		private _pos = getPos _poi;
 		private _newgrp = ([_pos,side leader _grp,count units _grp,[_classes,[]]] call ws_fnc_createGroup) select 0;
-		[_newgrp,_pos,["HOLD",20]] call ws_fnc_addWaypoint;
+		[_newgrp,_pos,["HOLD",50]] call ws_fnc_addWaypoint;
 		_poi getVariable ["groupspresent",[]] pushback (_newgrp);
 		_newgrp
 	}] call _fnc_createGroupType;
@@ -44,7 +44,7 @@
 		params ["_grp","_trg","_classes"];
 		private _pos = [_trg] call ws_fnc_getPosInArea;
 		private _newgrp = ([_pos,side leader _grp,count units _grp,[_classes,[]]] call ws_fnc_createGroup) select 0;
-		[_newgrp,_pos,["patrol",40]] call ws_fnc_addWaypoint;
+		[_newgrp,_pos,["patrol",400]] call ws_fnc_addWaypoint;
 		_newgrp
 	}] call _fnc_createGroupType;
 
@@ -57,6 +57,8 @@
 		};
 		private _pos = getPos _poi;
 		private _newgrp = ([_pos,side leader _grp,count units _grp,[_classes,[]]] call ws_fnc_createGroup) select 0;
+
+		// TODO Randomize patrol points
 		{
 			[_newgrp,getPos _x,["move"]] call ws_fnc_addWaypoint;
 		} forEach(_trg getVariable ["pois",[]]);
@@ -66,10 +68,22 @@
 	}] call _fnc_createGroupType;
 
 	// Garrison
-	// TODO Add way to pre-select buildings
 	[_logic,"garrison",{
 		params ["_grp","_trg","_classes"];
-		private _pos = [_trg] call ws_fnc_getPosInArea;
+		private _pos = nearestBuilding ([_trg] call ws_fnc_getPosInArea);
+		private _newgrp = ([_pos,side leader _grp,count units _grp,[_classes,[]]] call ws_fnc_createGroup) select 0;
+		[_newgrp,_pos,["garrison",count units _newgrp * 20]] call ws_fnc_addWaypoint;
+		_newgrp
+	}] call _fnc_createGroupType;
+
+	// Garrison
+	[_logic,"garrison-poi",{
+		params ["_grp","_trg","_classes"];
+		private _poi = [_trg] call _fnc_getGoodPoi;
+		if (isNull _poi) exitWith {
+			["ws_sss DBG: ",[_trg, _type]," does not have any valid POIs left but is trying to spawn groups on them!"] call ws_fnc_debugtext;
+		};
+		private _pos = nearestBuilding _poi;
 		private _newgrp = ([_pos,side leader _grp,count units _grp,[_classes,[]]] call ws_fnc_createGroup) select 0;
 		[_newgrp,_pos,["garrison",count units _newgrp * 20]] call ws_fnc_addWaypoint;
 		_newgrp
@@ -100,6 +114,7 @@
 } forEach _logics;
 
 // Clean-Up
+/*
 {
 private _grps = _x getVariable ["groups",[]];
 	{

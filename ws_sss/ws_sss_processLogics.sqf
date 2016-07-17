@@ -29,7 +29,7 @@ private _logics = [ws_sss_controller] call ws_fnc_collectObjectsNUm;
 
 				// Process the POIs
 				if (_x getVariable ["poi",false]) then {
-					_poi setVariable ["groupspresent",[]];
+					_x setVariable ["groupspresent",[]];
 					_pois pushback (_x);
 				};
 			} forEach synchronizedObjects _trg;
