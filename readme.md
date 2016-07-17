@@ -12,7 +12,7 @@ My goal is to create a simple spawn system, aimed at two types of mission makers
 **FEATURES**
 
 * Easy to use spawn system, with no need for SQF scripting or knowing class names.
-* Currently supports spawning of the following groups: Hold, Patrol, Garrison & Ambush
+* Currently supports spawning of the following groups: Hold, Patrol, Garrison, Ambush, Ambush-road
 * All groups are either placed randomly in the selected area or focus on pre-placed "points of interest"
 
 **SETUP & DOCUMENTANTION**
