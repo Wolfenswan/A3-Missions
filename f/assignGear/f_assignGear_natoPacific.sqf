@@ -150,7 +150,7 @@ _firstaid = "FirstAidKit";
 _medkit = "Medikit";
 
 // Night Vision Goggles
-_nvg = "NVGoggles";
+_nvg = "NVGoggles_tna_F";
 
 // Laserdesignator
 _laserdesignator = "Laserdesignator_01_khk_F";
@@ -227,6 +227,7 @@ _SNrifleMag = "7Rnd_408_Mag";
 // Engineer items
 _ATmine = "ATMine_Range_Mag";
 _satchel = "SatchelCharge_Remote_Mag";
+_democharge = "DemoCharge_Remote_Mag";
 _APmine1 = "APERSBoundingMine_Range_Mag";
 _APmine2 = "APERSMine_Range_Mag";
 
