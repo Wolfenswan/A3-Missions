@@ -23,7 +23,7 @@ Wreck addEventHandler [
  _box = _this select 0;
  _ammoName = _this select 4;
 
- if (_ammoName == "DemoCharge_Remote_Ammo") exitWith {[_box] execVM "ws_scripts\ws_wreck_destroyed.sqf";};
+ if (_ammoName == "DemoCharge_Remote_Ammo" || _ammoName == "SatchelCharge_Remote_Ammo") exitWith {[_box] execVM "ws_scripts\ws_wreck_destroyed.sqf";};
  0
 }];
 

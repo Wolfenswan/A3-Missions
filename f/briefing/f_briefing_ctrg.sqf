@@ -25,7 +25,8 @@ Made with F3 (http://www.ferstaberinde.com/f3/en/)
 
 _adm = player createDiaryRecord ["diary", ["Administration","
 <br/>
-It looks like our GPS equipment got scrambled in the crash and there isn't a single good old paper map on this marvel of future technology.<br/>
+It looks like our GPS equipment got scrambled in the crash and there isn't a single good old paper map on this marvel of future technology.<br/><br/>
+There are some additional flares in the crashed helicopter.
 "]];
 
 // ====================================================================================

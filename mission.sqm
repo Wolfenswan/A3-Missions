@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1802.6577,38.450001,12920.6};
-		dir[]={0,-0.70710683,0.70710683};
-		up[]={0,0.70710677,0.70710677};
-		aside[]={0.99999994,0,0};
+		pos[]={1772.0972,49.523628,12848.598};
+		dir[]={0.23056653,-0.58955806,0.77412838};
+		up[]={0.16828938,0.80772412,0.56503159};
+		aside[]={0.95839977,5.2154064e-008,-0.28544974};
 	};
 };
 binarizationWanted=0;
@@ -45,7 +45,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=12;
+		items=11;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -104,25 +104,19 @@ class AddonsMetaData
 		};
 		class Item8
 		{
-			className="asr_ai3_main";
-			name="asr_ai3_main";
-			author="Robalo";
-		};
-		class Item9
-		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircrafts";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item10
+		class Item9
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
-		class Item11
+		class Item10
 		{
 			className="A3_Air_F";
 			name="Arma 3 Alpha - Aircrafts";
@@ -437,8 +431,8 @@ class Mission
 		year=2035;
 		month=7;
 		day=6;
-		hour=24;
-		minute=0;
+		hour=11;
+		minute=20;
 		startFogDecay=0.0049333;
 		forecastFogDecay=0.0049333;
 	};
@@ -457,19 +451,19 @@ class Mission
 		class Item1
 		{
 			dataType="Trigger";
-			position[]={1746.4445,45.224434,12923.532};
-			angle=0.6478712;
+			position[]={1737.7747,45.223988,12938.688};
+			angle=0.64786613;
 			class Attributes
 			{
 				condition="!alive UnitNATO_VIP && !ws_colonel_extracted";
-				onActivation="ws_colonel_killed = true; [""ws_alert"",[""The colonel has been killed!""]] call Bis_fnc_shownotification";
+				onActivation="ws_colonel_killed = true;";
 				sizeA=0;
 				sizeB=0;
 				interuptable=1;
 			};
 			id=9;
 			type="EmptyDetector";
-			atlOffset=31.794434;
+			atlOffset=31.793987;
 		};
 		class Item2
 		{
@@ -2542,7 +2536,7 @@ class Mission
 				skill=0.60000002;
 				ammo=0.40960929;
 				fuel=0;
-				init="this lockDriver true; this lockTurret [[0],true]; this disableAI ""move""; this engineOn false;";
+				init="this lockDriver true; this lockTurret [[0],true]; this disableAI ""move""; this engineOn false;[""v_helo_l"",this,""ctrg""] call f_fnc_assignGear;";
 				name="Wreck";
 				textures="Olive";
 			};
@@ -3027,7 +3021,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={1764.3719,13.431439,12923.84};
-						angles[]={6.2751918,0.70221579,0};
+						angles[]={0,0.70221579,0};
 					};
 					side="West";
 					flags=4;
@@ -3204,7 +3198,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2357.7463,13.451439,13335.574};
+						position[]={2357.7461,13.451439,13335.574};
 						angles[]={0,4.0643134,0};
 					};
 					side="West";
@@ -3249,7 +3243,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2357.7463,13.451439,13335.574};
+						position[]={2357.7461,13.451439,13335.574};
 						angles[]={0,4.0643134,0};
 					};
 					side="West";
@@ -3271,7 +3265,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2357.7463,13.451439,13335.574};
+						position[]={2357.7461,13.451439,13335.574};
 						angles[]={0,4.0643134,0};
 					};
 					side="West";
@@ -3293,7 +3287,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2357.7463,13.451439,13335.574};
+						position[]={2357.7461,13.451439,13335.574};
 						angles[]={0,4.0643134,0};
 					};
 					side="West";
@@ -3375,7 +3369,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2357.7463,15.589248,13335.524};
+				position[]={2357.7461,15.589248,13335.524};
 				angles[]={0,4.0643134,0};
 			};
 			side="West";
@@ -3383,9 +3377,9 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="[""v_ifv"",this] call f_fnc_assignGear;";
+				init="[""v_helo_m"",this,""ctrg""] call f_fnc_assignGear;";
 				name="VehNATO_TH1";
-				textures="Olive";
+				textures="Black";
 			};
 			id=217;
 			type="B_Heli_Transport_01_camo_F";
@@ -3558,9 +3552,9 @@ class Mission
 			class Attributes
 			{
 				skill=0.60000002;
-				init="[""v_ifv"",this] call f_fnc_assignGear;";
+				init="[""v_helo_m"",this,""ctrg""] call f_fnc_assignGear;";
 				name="VehNATO_TH2";
-				textures="Olive";
+				textures="Black";
 			};
 			id=223;
 			type="B_Heli_Transport_01_camo_F";
@@ -3652,7 +3646,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2419.874,12.851121,13337.513};
-						angles[]={6.2192717,6.2489772,6.2778621};
+						angles[]={6.2192731,4.2370195,6.2778587};
 					};
 					side="West";
 					flags=6;
@@ -3675,7 +3669,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={2419.874,12.851121,13337.513};
-						angles[]={6.2192717,6.2489772,6.2778621};
+						angles[]={6.2192731,4.2370195,6.2778587};
 					};
 					side="West";
 					flags=4;
@@ -3737,7 +3731,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2419.8843,14.77766,13337.34};
-				angles[]={6.2192717,6.2489772,6.2778621};
+				angles[]={6.2192731,4.2370195,6.2778587};
 			};
 			side="West";
 			flags=6;

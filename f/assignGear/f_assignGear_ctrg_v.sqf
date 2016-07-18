@@ -78,7 +78,7 @@
 		_unit addItemCargoGlobal [_firstaid,2];
 		_unit addItemCargoGlobal ["Toolkit",1];
 	};
-	
+
 //CARGO: Rotary Transport Light
     case "v_helo_l":
     {
@@ -86,18 +86,13 @@
 	    clearMagazineCargoGlobal _unit;
 	    clearItemCargoGlobal _unit;
 	    clearBackpackCargoGlobal _unit;
-	    _unit addMagazineCargoGlobal [_riflemag, 5];
-	    _unit addMagazineCargoGlobal [_glriflemag, 5];
-	    _unit addMagazineCargoGlobal [_armag, 2];
-	    _unit addMagazineCargoGlobal [_carbinemag, 5];
-	    _unit addMagazineCargoGlobal [_smokegrenade,4];
-	    _unit addMagazineCargoGlobal [_smokegrenadegreen,2];
-	    _unit addMagazineCargoGlobal [_chemgreen,4];
+	    _unit addMagazineCargoGlobal [_glflarered, 6];
+	    _unit addMagazineCargoGlobal [_glflarewhite, 6];
+	    _unit addMagazineCargoGlobal [_glflareyellow, 2];
 		_unit addItemCargoGlobal [_firstaid,2];
-	    _unit addBackpackCargoGlobal ["B_Parachute",2];
 		_unit addItemCargoGlobal ["Toolkit",1];
 	};
-	
+
 //CARGO: Rotary Transport Medium
     case "v_helo_m":
 	{
@@ -105,25 +100,12 @@
 		clearMagazineCargoGlobal _unit;
 		clearItemCargoGlobal _unit;
 		clearBackpackCargoGlobal _unit;
-	    _unit addWeaponCargoGlobal [_carbine,2];
-		_unit addWeaponCargoGlobal [_rat,1];
-		_unit addMagazineCargoGlobal [_riflemag,10];
-		_unit addMagazineCargoGlobal [_glriflemag,10];
-		_unit addMagazineCargoGlobal [_carbinemag,10];
-		_unit addMagazineCargoGlobal [_armag,6];
-		_unit addMagazineCargoGlobal [_ratmag,1];
-		_unit addMagazineCargoGlobal [_grenade,4];
-		_unit addmagazineCargoGlobal [_mgrenade,4];
-		_unit addMagazineCargoGlobal [_smokegrenade,8];
-		_unit addMagazineCargoGlobal [_smokegrenadegreen,4];
-		_unit addMagazineCargoGlobal [_glmag,12];
-		_unit addMagazineCargoGlobal [_chemgreen,4];
-		_unit addBackpackCargoGlobal [_bagmedium,2];
-		_unit addItemCargoGlobal [_firstaid,4];
-		_unit addBackpackCargoGlobal ["B_Parachute",2];
+	    _unit addMagazineCargoGlobal [_satchel,4];
+		_unit addItemCargoGlobal [_firstaid,10];
+		_unit addBackpackCargoGlobal ["B_Parachute",4];
 		_unit addItemCargoGlobal ["Toolkit",1];
 	};
-	
+
 //CARGO: Rotary Transport Heavy
     case "v_helo_h":
 	{
@@ -150,7 +132,7 @@
 		_unit addBackpackCargoGlobal ["B_Parachute",4];
 		_unit addItemCargoGlobal ["Toolkit",1];
 	};
-	
+
 //CARGO: Rotary Attack
     case "v_helo_a":
 	{
@@ -163,7 +145,7 @@
 		_unit addMagazineCargoGlobal [_chemgreen,4];
 		_unit addItemCargoGlobal [_firstaid,2];
 	};
-	
+
 //CARGO: Jet
     case "v_jet":
 	{

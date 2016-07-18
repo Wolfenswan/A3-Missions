@@ -17,7 +17,7 @@ private _faction = toLower (faction _unit);
 
 _typeofUnit = toLower _typeofUnit;
 _faction = toLower (param[2, (faction _unit)]);
-f_param_loadouts = 0;
+f_param_loadouts = 1;
 
 // ====================================================================================
 

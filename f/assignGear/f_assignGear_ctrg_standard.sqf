@@ -60,7 +60,8 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glriflemag, 4];
 		_unit addmagazines [_glriflemag_tr, 2];
 		_unit addmagazines [_glmag, 5];
-		_unit addmagazines [_glsmokewhite, 3];
+		_unit addmagazines [_glsmokewhite, 2];
+		_unit addmagazines [_glflarered, 2];
 		_attachments pushback (_attach1); // Adds laser pointer, keeps default scope
 		_unit addWeapon "Rangefinder";
 		_unit addmagazines [_smokegrenadegreen, 2];
@@ -78,11 +79,13 @@ switch (_typeofUnit) do
 		_unit addmagazines [_glriflemag, 4];
 		_unit addmagazines [_glriflemag_tr, 2];
 		_unit addmagazines [_glmag, 5];
-		_unit addmagazines [_glsmokewhite, 3];
+		_unit addmagazines [_glsmokewhite,2];
+		_unit addmagazines [_glflarered, 2];
 		_unit addmagazines [_pistolmag, 2];
 		_attachments pushback (_attach1); // Adds laser pointer, keeps default scope
 		_unit addWeapon "Rangefinder";
-		_unit addmagazines [_smokegrenadepurple, 3];
+		_unit addmagazines [_smokegrenadegreen, 2];
+		_unit addmagazines [_smokegrenadepurple, 1];
 	};
 // Platoon CO Loadout:
 	case "co":
